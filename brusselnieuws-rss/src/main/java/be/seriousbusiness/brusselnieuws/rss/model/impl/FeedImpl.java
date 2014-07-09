@@ -53,5 +53,15 @@ public class FeedImpl extends AbstractContent implements Feed {
 		}
 		return articles;
 	}
+	
+	@Override
+	public String toString(){
+		final StringBuilder stringBuilder=new StringBuilder();
+		stringBuilder.append(getTitle());
+		for(final Article article : articles){
+			stringBuilder.append("\n").append(article);
+		}
+		return stringBuilder.toString();
+	}
 
 }

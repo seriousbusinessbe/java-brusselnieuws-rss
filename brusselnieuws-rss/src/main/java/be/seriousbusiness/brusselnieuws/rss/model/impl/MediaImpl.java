@@ -28,5 +28,10 @@ public class MediaImpl implements Media {
 	public MediaType getType() {
 		return mediaType;
 	}
+	
+	@Override
+	public String toString(){
+		return link.toString();
+	}
 
 }

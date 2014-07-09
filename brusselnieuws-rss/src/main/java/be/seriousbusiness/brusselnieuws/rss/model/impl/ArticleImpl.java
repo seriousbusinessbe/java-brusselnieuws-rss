@@ -1,5 +1,6 @@
 package be.seriousbusiness.brusselnieuws.rss.model.impl;
 
+import java.text.SimpleDateFormat;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -50,6 +51,11 @@ public class ArticleImpl extends AbstractContent implements Article {
 	@Override
 	public DateTime getPublicationDate() {
 		return publicationDate;
+	}
+	
+	@Override
+	public String toString(){
+		return publicationDate!=null ? new SimpleDateFormat("dd/MM/yyyy HH:mm").format(publicationDate.toDate()) : "" + super.toString();
 	}
 
 }

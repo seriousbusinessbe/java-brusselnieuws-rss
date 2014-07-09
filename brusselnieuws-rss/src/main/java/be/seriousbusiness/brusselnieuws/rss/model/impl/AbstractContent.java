@@ -27,5 +27,9 @@ public abstract class AbstractContent implements Content {
 	public boolean hasDescription() {
 		return description!=null;
 	}
+	
+	public String toString(){
+		return title;
+	}
 
 }

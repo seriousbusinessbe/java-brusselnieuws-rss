@@ -17,5 +17,10 @@ public class CategoryImpl implements Category {
 	public URL getLink() {
 		return link;
 	}
+	
+	@Override
+	public String toString(){
+		return name;
+	}
 
 }
