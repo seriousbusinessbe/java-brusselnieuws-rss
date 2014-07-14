@@ -14,7 +14,7 @@ public interface Feed extends Content {
 	 * Get the number of articles.
 	 * @return number of articles
 	 */
-	int getSize();
+	int size();
 	
 	/**
 	 * Get all articles published on this feed,</br>

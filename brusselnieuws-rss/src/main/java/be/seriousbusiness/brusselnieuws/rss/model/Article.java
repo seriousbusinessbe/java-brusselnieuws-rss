@@ -30,7 +30,7 @@ public interface Article extends Content {
 	 * @param category the category to look for
 	 * @return <code>true</code> when this article is assigned to the given category
 	 */
-	boolean inCategory(final Category category);
+	boolean hasCategory(final Category category);
 	
 	/**
 	 * Get the media (Videos, images, ...) attached to this article.

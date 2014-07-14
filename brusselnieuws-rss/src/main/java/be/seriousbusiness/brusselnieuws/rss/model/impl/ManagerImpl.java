@@ -6,7 +6,6 @@ import java.util.Set;
 import be.seriousbusiness.brusselnieuws.rss.model.Manager;
 
 public class ManagerImpl<E> implements Manager<E> {
-	private int size;
 	private Set<E> entities;
 	
 	/**
@@ -33,14 +32,13 @@ public class ManagerImpl<E> implements Manager<E> {
 	}
 
 	@Override
-	public int getSize() {
-		return size;
+	public int size() {
+		return entities.size();
 	}
 
-	protected void add(final E e) throws IllegalArgumentException {
-		if(e==null){
-			throw new IllegalArgumentException("The entity is null");
-		}else if(!entities.contains(e)){
+	@Override
+	public void add(final E e) {
+		if(e!=null && !entities.contains(e)){
 			entities.add(e);
 		}
 	}
@@ -48,6 +46,11 @@ public class ManagerImpl<E> implements Manager<E> {
 	@Override
 	public Set<E> getAll() {
 		return new HashSet<E>(entities);
+	}
+
+	@Override
+	public boolean has(final E e) {
+		return entities.contains(e);
 	}
 
 }

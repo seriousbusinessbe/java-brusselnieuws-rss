@@ -13,14 +13,23 @@ public class FeedImpl extends AbstractContent implements Feed {
 	
 	/**
 	 * Create a new FeedImpl without articles.
+	 * @param title
+	 * @throws IllegalArgumentException when the title is <code>null</code>
 	 */
-	public FeedImpl(){
+	protected FeedImpl(final String title) throws IllegalArgumentException{
+		super(title);
 		articles=new HashSet<Article>();
 	}
 
 	@Override
-	public int getSize() {
+	public int size() {
 		return articles.size();
+	}
+	
+	protected void addArticle(final Article article){
+		if(article!=null && !articles.contains(article)){
+			articles.add(article);
+		}
 	}
 
 	@Override
@@ -46,7 +55,7 @@ public class FeedImpl extends AbstractContent implements Feed {
 		final Set<Article> articles=new HashSet<Article>();
 		if(category!=null){
 			for(final Article article : articles){
-				if(article.inCategory(category)){
+				if(article.hasCategory(category)){
 					articles.add(article);
 				}
 			}
