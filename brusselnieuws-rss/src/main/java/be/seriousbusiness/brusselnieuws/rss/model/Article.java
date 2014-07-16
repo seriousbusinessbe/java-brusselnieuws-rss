@@ -34,9 +34,9 @@ public interface Article extends Content {
 	
 	/**
 	 * Get the media (Videos, images, ...) attached to this article.
-	 * @return a set of media, empty when none
+	 * @return a set of mediums, empty when none
 	 */
-	Set<Media> getMedia();
+	Set<Medium> getMedia();
 	
 	/**
 	 * Get the categories this article is in.

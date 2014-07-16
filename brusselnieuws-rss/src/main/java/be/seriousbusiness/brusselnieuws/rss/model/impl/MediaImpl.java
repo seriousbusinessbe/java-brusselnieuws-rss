@@ -2,18 +2,51 @@ package be.seriousbusiness.brusselnieuws.rss.model.impl;
 
 import java.net.URL;
 
-import be.seriousbusiness.brusselnieuws.rss.model.Media;
-import be.seriousbusiness.brusselnieuws.rss.model.MediaType;
+import be.seriousbusiness.brusselnieuws.rss.model.Medium;
+import be.seriousbusiness.brusselnieuws.rss.model.MediumType;
 
-public class MediaImpl implements Media {
+public class MediaImpl implements Medium {
 	private long size;
 	private URL link;
-	private MediaType mediaType;
+	private MediumType mediumType;
 	
-	public MediaImpl(final URL link,final MediaType mediaType) throws IllegalArgumentException{
+	public static class Builder{
+		private Long size;
+		private URL link;
+		private MediumType mediumType;
+		
+		public MediaImpl build(){
+			return new MediaImpl(this);
+		}
+		
+		public Builder size(final long size){
+			this.size=size;
+			return this;
+		}
+		
+		public Builder link(final URL link){
+			this.link=link;
+			return this;
+		}
+		
+		public Builder type(final MediumType mediumType){
+			this.mediumType=mediumType;
+			return this;
+		}
+		
+	}
+	
+	private MediaImpl(final Builder builder) throws IllegalArgumentException{
+		this(builder.link,builder.mediumType);
+		if(builder.size!=null){
+			setSize(size);
+		}
+	}
+	
+	protected MediaImpl(final URL link,final MediumType mediumType) throws IllegalArgumentException{
 		size=0;
 		setLink(link);
-		setType(mediaType);
+		setType(mediumType);
 	}
 	
 	/**
@@ -50,16 +83,16 @@ public class MediaImpl implements Media {
 		return link;
 	}
 	
-	protected void setType(final MediaType mediaType) throws IllegalArgumentException{
-		if(mediaType==null){
-			throw new IllegalArgumentException("The media type is null");
+	protected void setType(final MediumType mediumType) throws IllegalArgumentException{
+		if(mediumType==null){
+			throw new IllegalArgumentException("The medium type is null");
 		}
-		this.mediaType=mediaType;
+		this.mediumType=mediumType;
 	}
 
 	@Override
-	public MediaType getType() {
-		return mediaType;
+	public MediumType getType() {
+		return mediumType;
 	}
 	
 	@Override

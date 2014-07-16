@@ -2,8 +2,8 @@ package be.seriousbusiness.brusselnieuws.rss.model.builder;
 
 import java.net.URL;
 
-import be.seriousbusiness.brusselnieuws.rss.model.Media;
-import be.seriousbusiness.brusselnieuws.rss.model.MediaType;
+import be.seriousbusiness.brusselnieuws.rss.model.Medium;
+import be.seriousbusiness.brusselnieuws.rss.model.MediumType;
 
 /**
  * Defines a Media builder.
@@ -11,7 +11,7 @@ import be.seriousbusiness.brusselnieuws.rss.model.MediaType;
  * @author Serious Business
  *
  */
-public interface MediaBuilder extends Builder<Media> {
+public interface MediaBuilder extends Builder<Medium> {
 	
 	/**
 	 * Set a size
@@ -32,6 +32,6 @@ public interface MediaBuilder extends Builder<Media> {
 	 * @param mediaType
 	 * @return this MediaBuilder
 	 */
-	MediaBuilder type(final MediaType mediaType);
+	MediaBuilder type(final MediumType mediaType);
 
 }

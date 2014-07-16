@@ -5,7 +5,7 @@ import org.joda.time.DateTime;
 import be.seriousbusiness.brusselnieuws.rss.model.Article;
 import be.seriousbusiness.brusselnieuws.rss.model.Author;
 import be.seriousbusiness.brusselnieuws.rss.model.Category;
-import be.seriousbusiness.brusselnieuws.rss.model.Media;
+import be.seriousbusiness.brusselnieuws.rss.model.Medium;
 
 /**
  * Defines an Article builder.
@@ -32,12 +32,12 @@ public interface ArticleBuilder extends ContentBuilder<Article> {
 	ArticleBuilder add(final Category category);
 	
 	/**
-	 * Add media.</br>
+	 * Add a medium.</br>
 	 * Nothing happens when <code>null</code> or already added.
-	 * @param media
+	 * @param medium
 	 * @return this ArticleBuilder
 	 */
-	ArticleBuilder add(final Media media);
+	ArticleBuilder add(final Medium medium);
 	
 	/**
 	 * Set a publication date.
