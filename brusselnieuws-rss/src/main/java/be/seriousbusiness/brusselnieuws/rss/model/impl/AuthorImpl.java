@@ -5,6 +5,23 @@ import be.seriousbusiness.brusselnieuws.rss.model.Author;
 public class AuthorImpl implements Author {
 	private String name;
 	
+	public static class Builder{
+		private String name;
+		
+		public AuthorImpl build(){
+			return new AuthorImpl(this);
+		}
+		
+		public Builder name(final String name){
+			this.name=name;
+			return this;
+		}
+	}
+	
+	private AuthorImpl(final Builder builder) throws IllegalArgumentException {
+		this(builder.name);
+	}
+	
 	/**
 	 * Create a new Author
 	 * @param name

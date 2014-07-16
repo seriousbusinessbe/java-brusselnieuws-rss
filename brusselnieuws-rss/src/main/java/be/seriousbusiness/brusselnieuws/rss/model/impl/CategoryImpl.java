@@ -8,6 +8,32 @@ public class CategoryImpl implements Category {
 	private String name;
 	private URL link;
 	
+	public static class Builder{
+		private String name;
+		private URL link;
+		
+		public CategoryImpl build(){
+			return new CategoryImpl(this);
+		}
+		
+		public Builder name(final String name){
+			this.name=name;
+			return this;
+		}
+		
+		public Builder link(final URL link){
+			this.link=link;
+			return this;
+		}
+	}
+	
+	private CategoryImpl(final Builder builder) throws IllegalArgumentException{
+		this(builder.name);
+		if(link!=null){
+			setLink(builder.link);
+		}
+	}
+	
 	/**
 	 * Create a new Category
 	 * @param name
