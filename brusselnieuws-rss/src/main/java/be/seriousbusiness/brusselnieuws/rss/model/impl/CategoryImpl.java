@@ -29,7 +29,7 @@ public class CategoryImpl implements Category {
 	
 	private CategoryImpl(final Builder builder) throws IllegalArgumentException{
 		this(builder.name);
-		if(link!=null){
+		if(builder.link!=null){
 			setLink(builder.link);
 		}
 	}
@@ -52,7 +52,7 @@ public class CategoryImpl implements Category {
 		if(name==null || name.isEmpty()){
 			throw new IllegalArgumentException("The name is null or empty");
 		}
-		this.name=name.trim();
+		this.name=name.trim().toLowerCase();
 	}
 
 	@Override
@@ -75,6 +75,16 @@ public class CategoryImpl implements Category {
 	@Override
 	public URL getLink() {
 		return link;
+	}
+	
+	@Override
+	public boolean equals(final Object obj){
+		if(obj!=null && obj instanceof Category){
+			final Category category=(Category)obj;
+			return link.equals(category.getLink()) &&
+					name.equals(category.getName());
+		}
+		return false;
 	}
 	
 	@Override

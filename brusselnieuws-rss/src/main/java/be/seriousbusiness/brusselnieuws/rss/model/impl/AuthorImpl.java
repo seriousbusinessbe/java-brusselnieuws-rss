@@ -49,6 +49,11 @@ public class AuthorImpl implements Author {
 	}
 	
 	@Override
+	public boolean equals(final Object obj){
+		return obj!=null && obj instanceof Author && name.equals(((Author)obj).getName());
+	}
+	
+	@Override
 	public String toString(){
 		return name;
 	}

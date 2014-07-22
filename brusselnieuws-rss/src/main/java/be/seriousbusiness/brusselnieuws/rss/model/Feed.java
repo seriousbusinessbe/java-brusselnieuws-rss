@@ -1,6 +1,6 @@
 package be.seriousbusiness.brusselnieuws.rss.model;
 
-import java.util.Set;
+import java.util.List;
 
 /**
  * Represents a feed published by brusselnieuws.be
@@ -19,21 +19,28 @@ public interface Feed extends Content {
 	/**
 	 * Get all articles published on this feed,</br>
 	 * ordered by publication date.
-	 * @return a set of articles, empty when none published
+	 * @return a list of articles, empty when none published
 	 */
-	Set<Article> getArticles();
+	List<Article> getArticles();
+	
+	/**
+	 * Check if an article is added to this feed.
+	 * @param article the article to look for
+	 * @return <code>true</code>
+	 */
+	boolean hasArticle(final Article article);
 	
 	/**
 	 * Get all articles by author.
 	 * @param author the author to look for
-	 * @return a set of articles, empty when none found
+	 * @return a list of articles, empty when none found
 	 */
-	Set<Article> getArticles(final Author author);
+	List<Article> getArticles(final Author author);
 	
 	/**
 	 * Get all articles by category.
 	 * @param category the category to look for
-	 * @return a set of articles, empty when none found
+	 * @return a list of articles, empty when none found
 	 */
-	Set<Article> getArticles(final Category category);
+	List<Article> getArticles(final Category category);
 }

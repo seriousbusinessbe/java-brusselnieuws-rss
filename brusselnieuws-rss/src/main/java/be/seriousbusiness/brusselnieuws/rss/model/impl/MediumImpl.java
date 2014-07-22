@@ -5,7 +5,7 @@ import java.net.URL;
 import be.seriousbusiness.brusselnieuws.rss.model.Medium;
 import be.seriousbusiness.brusselnieuws.rss.model.MediumType;
 
-public class MediaImpl implements Medium {
+public class MediumImpl implements Medium {
 	private long size;
 	private URL link;
 	private MediumType mediumType;
@@ -15,8 +15,8 @@ public class MediaImpl implements Medium {
 		private URL link;
 		private MediumType mediumType;
 		
-		public MediaImpl build(){
-			return new MediaImpl(this);
+		public MediumImpl build(){
+			return new MediumImpl(this);
 		}
 		
 		public Builder size(final long size){
@@ -36,14 +36,14 @@ public class MediaImpl implements Medium {
 		
 	}
 	
-	private MediaImpl(final Builder builder) throws IllegalArgumentException{
+	private MediumImpl(final Builder builder) throws IllegalArgumentException{
 		this(builder.link,builder.mediumType);
 		if(builder.size!=null){
-			setSize(size);
+			setSize(builder.size);
 		}
 	}
 	
-	protected MediaImpl(final URL link,final MediumType mediumType) throws IllegalArgumentException{
+	protected MediumImpl(final URL link,final MediumType mediumType) throws IllegalArgumentException{
 		size=0;
 		setLink(link);
 		setType(mediumType);
@@ -93,6 +93,17 @@ public class MediaImpl implements Medium {
 	@Override
 	public MediumType getType() {
 		return mediumType;
+	}
+	
+	@Override
+	public boolean equals(final Object obj){
+		if(obj!=null && obj instanceof Medium){
+			final Medium medium=(Medium)obj;
+			return link.equals(medium.getLink()) &&
+					mediumType.equals(medium.getType()) &&
+					size==medium.getSize();
+		}
+		return false;
 	}
 	
 	@Override

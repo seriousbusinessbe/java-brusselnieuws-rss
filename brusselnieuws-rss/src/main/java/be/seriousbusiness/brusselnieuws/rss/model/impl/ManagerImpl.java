@@ -52,5 +52,11 @@ public class ManagerImpl<E> implements Manager<E> {
 	public boolean has(final E e) {
 		return entities.contains(e);
 	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public boolean equals(final Object obj){
+		return obj!=null && obj instanceof Manager && entities.equals(((Manager<E>)obj).getAll());
+	}
 
 }
