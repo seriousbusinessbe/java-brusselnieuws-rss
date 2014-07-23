@@ -65,5 +65,19 @@ public class ManagerImpl<E> implements Manager<E> {
 	public boolean equals(final Object obj){
 		return obj!=null && obj instanceof Manager && entities.equals(((Manager<E>)obj).getAll());
 	}
+	
+	@Override
+	public int hashCode(){
+		return entities.hashCode();
+	}
+	
+	@Override
+	public String toString(){
+		final StringBuilder stringBuilder=new StringBuilder();
+		for(final E entity : entities){
+			stringBuilder.append(entity.toString()).append("\n");
+		}
+		return stringBuilder.toString();
+	}
 
 }

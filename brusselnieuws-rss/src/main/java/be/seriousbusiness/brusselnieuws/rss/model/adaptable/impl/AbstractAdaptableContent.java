@@ -89,6 +89,11 @@ public abstract class AbstractAdaptableContent implements AdaptableContent {
 	}
 	
 	@Override
+	public int hashCode(){
+		return title.hashCode() * description.hashCode() * link.hashCode();
+	}
+	
+	@Override
 	public String toString(){
 		return title;
 	}

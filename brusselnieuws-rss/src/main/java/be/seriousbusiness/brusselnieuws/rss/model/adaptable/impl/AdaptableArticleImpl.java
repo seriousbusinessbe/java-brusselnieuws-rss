@@ -220,6 +220,11 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent implements Ad
 	}
 	
 	@Override
+	public int hashCode(){
+		return authorManager.hashCode() * categoryManager.hashCode() * mediumManager.hashCode() * publicationDate.hashCode() * super.hashCode();
+	}
+	
+	@Override
 	public String toString(){
 		return (publicationDate!=null ? new SimpleDateFormat("dd/MM/yyyy HH:mm").format(publicationDate.toDate()) : "") + " - " + super.toString();
 	}

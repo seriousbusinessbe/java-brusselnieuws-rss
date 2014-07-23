@@ -88,6 +88,11 @@ public class CategoryImpl implements Category {
 	}
 	
 	@Override
+	public int hashCode(){
+		return link.hashCode() * name.hashCode();
+	}
+	
+	@Override
 	public String toString(){
 		return name;
 	}

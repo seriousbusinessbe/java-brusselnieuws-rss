@@ -129,6 +129,11 @@ public class AdaptableFeedImpl extends AbstractAdaptableContent implements Adapt
 	}
 	
 	@Override
+	public int hashCode(){
+		return articles.hashCode() * super.hashCode();
+	}
+	
+	@Override
 	public String toString(){
 		final StringBuilder stringBuilder=new StringBuilder();
 		stringBuilder.append(getTitle());

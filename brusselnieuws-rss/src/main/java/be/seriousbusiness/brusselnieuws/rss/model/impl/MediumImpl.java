@@ -1,5 +1,6 @@
 package be.seriousbusiness.brusselnieuws.rss.model.impl;
 
+import java.math.BigDecimal;
 import java.net.URL;
 
 import be.seriousbusiness.brusselnieuws.rss.model.Medium;
@@ -104,6 +105,11 @@ public class MediumImpl implements Medium {
 					size==medium.getSize();
 		}
 		return false;
+	}
+	
+	@Override
+	public int hashCode(){
+		return new BigDecimal(link.hashCode() * mediumType.hashCode() * size).intValueExact();
 	}
 	
 	@Override
