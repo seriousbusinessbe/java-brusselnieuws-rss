@@ -2,8 +2,6 @@ package be.seriousbusiness.brusselnieuws.rss.model.adaptable.impl;
 
 import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -26,6 +24,7 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent implements Ad
 	private final Manager<Medium> mediumManager;
 	private final Manager<Category> categoryManager;
 	private DateTime publicationDate;
+	private boolean read;
 	
 	public static class Builder {
 		private String title,description;
@@ -77,7 +76,7 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent implements Ad
 	}
 	
 	private AdaptableArticleImpl(final Builder builder) throws IllegalArgumentException{
-		this(builder.title,new ManagerImpl<Author>(),new ManagerImpl<Medium>(),new ManagerImpl<Category>());
+		this(builder.title,new ManagerImpl<Author>(),new ManagerImpl<Medium>(),new ManagerImpl<Category>(),false);
 		if(builder.description!=null){
 			setDescription(builder.description);
 		}
@@ -98,7 +97,7 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent implements Ad
 		}
 	}
 	
-	protected AdaptableArticleImpl(final String title,final Manager<Author> authorManager,final Manager<Medium> mediumManager,final Manager<Category> categoryManager) throws IllegalArgumentException{
+	protected AdaptableArticleImpl(final String title,final Manager<Author> authorManager,final Manager<Medium> mediumManager,final Manager<Category> categoryManager,final boolean read) throws IllegalArgumentException{
 		super(title);
 		if(authorManager==null){
 			throw new IllegalArgumentException("The author manager is null");
@@ -112,6 +111,7 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent implements Ad
 		this.authorManager=authorManager;
 		this.mediumManager=mediumManager;
 		this.categoryManager=categoryManager;
+		this.read=read;
 	}
 	
 	@Override
@@ -126,10 +126,7 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent implements Ad
 
 	@Override
 	public List<Author> getAuthors() {
-		final Set<Author> authors=authorManager.getAll();
-		final List<Author> orderedAuthorList=Arrays.asList(authors.toArray(new Author[authors.size()]));
-		Collections.sort(orderedAuthorList,new AuthorNameComparator());
-		return orderedAuthorList;
+		return authorManager.getAll(new AuthorNameComparator());
 	}
 	
 	@Override
@@ -159,10 +156,7 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent implements Ad
 
 	@Override
 	public List<Medium> getMedia() {
-		final Set<Medium> media=mediumManager.getAll();
-		final List<Medium> orderedMediumList=Arrays.asList(media.toArray(new Medium[media.size()]));
-		Collections.sort(orderedMediumList,new MediumMediumTypeComparator());
-		return orderedMediumList;
+		return mediumManager.getAll(new MediumMediumTypeComparator());
 	}
 	
 	@Override
@@ -182,10 +176,7 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent implements Ad
 
 	@Override
 	public List<Category> getCategories() {
-		final Set<Category> categories=categoryManager.getAll();
-		final List<Category> orderedCategoryList=Arrays.asList(categories.toArray(new Category[categories.size()]));
-		Collections.sort(orderedCategoryList,new CategoryNameComparator());
-		return orderedCategoryList;
+		return categoryManager.getAll(new CategoryNameComparator());
 	}
 	
 	/**
@@ -203,6 +194,16 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent implements Ad
 	@Override
 	public DateTime getPublicationDate() {
 		return publicationDate;
+	}
+	
+	@Override
+	public boolean isRead() {
+		return read;
+	}
+	
+	@Override
+	public void read() {
+		read=true;
 	}
 	
 	@Override

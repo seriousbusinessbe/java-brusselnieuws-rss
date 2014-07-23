@@ -12,7 +12,7 @@ public interface Category {
 	
 	/**
 	 * Get the name.
-	 * @return the name
+	 * @return the name in lower case
 	 */
 	String getName();
 	

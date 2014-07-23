@@ -1,6 +1,8 @@
 package be.seriousbusiness.brusselnieuws.rss.model.impl;
 
+import java.util.Comparator;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import be.seriousbusiness.brusselnieuws.rss.model.Manager;
@@ -46,6 +48,11 @@ public class ManagerImpl<E> implements Manager<E> {
 	@Override
 	public Set<E> getAll() {
 		return new HashSet<E>(entities);
+	}
+	
+	@Override
+	public List<E> getAll(final Comparator<E> comparator) {
+		return ManagerUtil.toOrderedList(entities, comparator);
 	}
 
 	@Override

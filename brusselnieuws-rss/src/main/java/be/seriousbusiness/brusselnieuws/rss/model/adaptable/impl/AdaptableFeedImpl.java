@@ -1,8 +1,6 @@
 package be.seriousbusiness.brusselnieuws.rss.model.adaptable.impl;
 
 import java.net.URL;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -14,6 +12,7 @@ import be.seriousbusiness.brusselnieuws.rss.model.Feed;
 import be.seriousbusiness.brusselnieuws.rss.model.Medium;
 import be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableFeed;
 import be.seriousbusiness.brusselnieuws.rss.model.comparator.ArticlePublicationDateComparator;
+import be.seriousbusiness.brusselnieuws.rss.model.impl.ManagerUtil;
 
 public class AdaptableFeedImpl extends AbstractAdaptableContent implements AdaptableFeed {
 	private Set<Article> articles;
@@ -90,11 +89,7 @@ public class AdaptableFeedImpl extends AbstractAdaptableContent implements Adapt
 	}
 	
 	private static final List<Article> orderByPublicationDate(final Set<Article> articles){
-		//Set<Article> orderedArticles=new TreeSet<Article>(new ArticlePublicationDateComparator());
-		//orderedArticles.addAll(articles);
-		final List<Article> orderedArticleList=Arrays.asList(articles.toArray(new Article[articles.size()]));
-		Collections.sort(orderedArticleList,new ArticlePublicationDateComparator());
-		return orderedArticleList;
+		return ManagerUtil.toOrderedList(articles,new ArticlePublicationDateComparator());
 	}
 
 	@Override

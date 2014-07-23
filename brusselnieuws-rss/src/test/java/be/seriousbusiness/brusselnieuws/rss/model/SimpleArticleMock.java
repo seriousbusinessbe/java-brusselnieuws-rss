@@ -83,4 +83,12 @@ public class SimpleArticleMock implements Article {
 		return publicationDate;
 	}
 
+	@Override
+	public boolean isRead() {
+		return false;
+	}
+
+	@Override
+	public void read() {}
+
 }

@@ -1,5 +1,7 @@
 package be.seriousbusiness.brusselnieuws.rss.model;
 
+import java.util.Comparator;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -22,6 +24,13 @@ public interface Manager<E> {
 	 * @return a set of {@link E}, empty when none
 	 */
 	Set<E> getAll();
+	
+	/**
+	 * Get an ordered copy of all {@link E}.
+	 * @param comparator the comparator the order the list
+	 * @return
+	 */
+	List<E> getAll(final Comparator<E> comparator);
 	
 	/**
 	 * Check if a manager contains {@link E} or not

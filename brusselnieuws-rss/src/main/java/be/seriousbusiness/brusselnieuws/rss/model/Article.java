@@ -67,5 +67,16 @@ public interface Article extends Content {
 	 * @return the publication date
 	 */
 	DateTime getPublicationDate();
+	
+	/**
+	 * Check if this article is read or not.
+	 * @return <code>true</code> when read
+	 */
+	boolean isRead();
+	
+	/**
+	 * Mark this article read.
+	 */
+	void read();
 
 }

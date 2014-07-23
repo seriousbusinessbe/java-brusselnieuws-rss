@@ -40,7 +40,7 @@ public class AuthorImpl implements Author {
 		if(name==null || name.isEmpty()){
 			throw new IllegalArgumentException("The name is null or empty");
 		}
-		this.name=name.trim();
+		this.name=name.trim().toLowerCase();
 	}
 
 	@Override

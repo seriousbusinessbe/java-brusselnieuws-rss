@@ -10,7 +10,7 @@ public interface Author {
 	
 	/**
 	 * Get the name.
-	 * @return the name
+	 * @return the name in lower case
 	 */
 	String getName();
 

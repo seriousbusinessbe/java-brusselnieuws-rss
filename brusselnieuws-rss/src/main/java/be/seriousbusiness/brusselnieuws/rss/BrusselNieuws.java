@@ -4,6 +4,7 @@ import be.seriousbusiness.brusselnieuws.rss.model.Author;
 import be.seriousbusiness.brusselnieuws.rss.model.Category;
 import be.seriousbusiness.brusselnieuws.rss.model.Feed;
 import be.seriousbusiness.brusselnieuws.rss.model.Manager;
+import be.seriousbusiness.brusselnieuws.rss.model.Municipality;
 
 /**
  * Makes brusselnieuws.be rss content available 
@@ -30,5 +31,16 @@ public interface BrusselNieuws {
 	 * @return
 	 */
 	Manager<Author> getAuthorManager();
+	
+	Feed getNews();
+	Feed getNewsSurvey();
+	Feed getSocietyNews();
+	Feed getCityNews();
+	Feed getPoliticalNews();
+	Feed getHumanNews();
+	Feed getEconomicalNews();
+	Feed getSportNews();
+	
+	Feed getNews(final Municipality municipality);
 
 }

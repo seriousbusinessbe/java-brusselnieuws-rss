@@ -2,6 +2,8 @@ package be.seriousbusiness.brusselnieuws.rss.reader.impl;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNotEquals;
+
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -126,6 +128,7 @@ public class BrusselNieuwsRssReaderTest {
 				assertNotNull("The medium size should not be null",medium.getSize());
 				assertNotNull("The medium type should not be null",medium.getType());
 				assertNotNull("The medium link should not be null",medium.getLink());
+				assertNotEquals("An unknown medium type is found",MediumType.UNKNOWN,medium.getType());
 			}
 		}
 		LOGGER.debug("Live feed under test:\n{}",feed);
