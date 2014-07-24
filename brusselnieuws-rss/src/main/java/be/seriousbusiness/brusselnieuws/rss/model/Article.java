@@ -78,5 +78,16 @@ public interface Article extends Content {
 	 * Mark this article read.
 	 */
 	void read();
+	
+	/**
+	 * Check if this article is archived.
+	 * @return< code>true</code> when archived
+	 */
+	boolean isArchived();
+	
+	/**
+	 * Mark this article archived.
+	 */
+	void archive();
 
 }

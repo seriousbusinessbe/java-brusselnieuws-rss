@@ -24,8 +24,14 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent implements Ad
 	private final Manager<Medium> mediumManager;
 	private final Manager<Category> categoryManager;
 	private DateTime publicationDate;
-	private boolean read;
+	private boolean read,archived;
 	
+	/**
+	 * Build a new AdaptableArticle.</br>
+	 * By default the article is not read nor archived.
+	 * @author stefanborghys
+	 *
+	 */
 	public static class Builder {
 		private String title,description;
 		private URL link;
@@ -33,6 +39,7 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent implements Ad
 		private final Set<Medium> media=new HashSet<Medium>();
 		private final Set<Category> categories=new HashSet<Category>();
 		private DateTime publicationDate;
+		private boolean read=false,archived=false;
 
 		public AdaptableArticleImpl build() {
 			return new AdaptableArticleImpl(this);
@@ -72,11 +79,21 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent implements Ad
 			this.publicationDate=publicationDate;
 			return this;
 		}
+		
+		public Builder read(final boolean read){
+			this.read=read;
+			return this;
+		}
+		
+		public Builder archive(final boolean archived){
+			this.archived=archived;
+			return this;
+		}
 
 	}
 	
 	private AdaptableArticleImpl(final Builder builder) throws IllegalArgumentException{
-		this(builder.title,new ManagerImpl<Author>(),new ManagerImpl<Medium>(),new ManagerImpl<Category>(),false);
+		this(builder.title,new ManagerImpl<Author>(),new ManagerImpl<Medium>(),new ManagerImpl<Category>(),builder.read,builder.archived);
 		if(builder.description!=null){
 			setDescription(builder.description);
 		}
@@ -97,7 +114,7 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent implements Ad
 		}
 	}
 	
-	protected AdaptableArticleImpl(final String title,final Manager<Author> authorManager,final Manager<Medium> mediumManager,final Manager<Category> categoryManager,final boolean read) throws IllegalArgumentException{
+	protected AdaptableArticleImpl(final String title,final Manager<Author> authorManager,final Manager<Medium> mediumManager,final Manager<Category> categoryManager,final boolean read,final boolean archived) throws IllegalArgumentException{
 		super(title);
 		if(authorManager==null){
 			throw new IllegalArgumentException("The author manager is null");
@@ -112,6 +129,7 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent implements Ad
 		this.mediumManager=mediumManager;
 		this.categoryManager=categoryManager;
 		this.read=read;
+		this.archived=archived;
 	}
 	
 	@Override
@@ -204,6 +222,16 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent implements Ad
 	@Override
 	public void read() {
 		read=true;
+	}
+	
+	@Override
+	public boolean isArchived() {
+		return archived;
+	}
+
+	@Override
+	public void archive() {
+		archived=true;
 	}
 	
 	@Override

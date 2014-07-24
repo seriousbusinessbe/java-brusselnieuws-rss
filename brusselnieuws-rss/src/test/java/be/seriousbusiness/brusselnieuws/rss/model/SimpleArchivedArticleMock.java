@@ -9,19 +9,19 @@ import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class SimpleArticleMock implements Article {
-	private static final Logger LOGGER=LoggerFactory.getLogger(SimpleArticleMock.class);
+public class SimpleArchivedArticleMock implements Article {
+	private static final Logger LOGGER=LoggerFactory.getLogger(SimpleArchivedArticleMock.class);
 	private DateTime publicationDate=DateTime.now();
 
 	@Override
 	public String getTitle() {
-		return "Simple Article Mock";
+		return "Simple Archived Article Mock";
 	}
 
 	@Override
 	public URL getLink() {
 		try {
-			return new URL("http://www.google.be");
+			return new URL("http://www.brusselnieuws.be");
 		} catch (final MalformedURLException e) {
 			LOGGER.error("Malformed URL",e);
 			return null;
@@ -30,7 +30,7 @@ public class SimpleArticleMock implements Article {
 
 	@Override
 	public String getDescription() {
-		return "Simple Article Mock description";
+		return "Simple Archived Article Mock description";
 	}
 
 	@Override
@@ -93,10 +93,11 @@ public class SimpleArticleMock implements Article {
 
 	@Override
 	public boolean isArchived() {
-		return false;
+		return true;
 	}
 
 	@Override
 	public void archive() {}
 
 }
+

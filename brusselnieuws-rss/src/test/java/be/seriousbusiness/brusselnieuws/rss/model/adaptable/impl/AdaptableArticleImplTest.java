@@ -9,6 +9,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 
 import be.seriousbusiness.brusselnieuws.rss.model.Article;
 import be.seriousbusiness.brusselnieuws.rss.model.Author;
@@ -39,6 +42,7 @@ public class AdaptableArticleImplTest extends AbstractAdaptableArticleTest<Adapt
 		final Author author=new SimpleAuthorMock();
 		final Medium medium=new SimpleMediumMock();
 		final Category category=new SimpleCategoryMock();
+		final boolean read=true,archived=false;
 		final Article article=new AdaptableArticleImpl.Builder().
 				title(title).
 				description(description).
@@ -47,6 +51,8 @@ public class AdaptableArticleImplTest extends AbstractAdaptableArticleTest<Adapt
 				add(author).
 				add(medium).
 				add(category).
+				read(read).
+				archive(archived).
 				build();
 		assertEquals("The title is not set",title,article.getTitle());
 		assertEquals("The description is not set",description,article.getDescription());
@@ -64,6 +70,22 @@ public class AdaptableArticleImplTest extends AbstractAdaptableArticleTest<Adapt
 		assertNotNull("The list of mediums is null",media);
 		assertEquals("The number of mediums should be one",1,media.size());
 		assertEquals("The retrieved medium is not equal to the one set",medium,media.get(0));
+		assertEquals("The article is not set read",read,article.isRead());
+		assertEquals("The article should not be archived",archived,article.isArchived());
+	}
+	
+	@Test
+	public void testRead(){
+		assertFalse("The article should not be set read by default",adaptable.isRead());
+		adaptable.read();
+		assertTrue("The article should be set read",adaptable.isRead());
+	}
+	
+	@Test
+	public void testArchive(){
+		assertFalse("The article should not be set archived by default",adaptable.isArchived());
+		adaptable.archive();
+		assertTrue("The article should be set archived",adaptable.isArchived());
 	}
 
 }

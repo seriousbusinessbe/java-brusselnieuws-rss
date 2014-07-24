@@ -101,7 +101,7 @@ public class AdaptableFeedImpl extends AbstractAdaptableContent implements Adapt
 	public List<Article> getArticles(final Author author) {
 		final Set<Article> articles=new HashSet<Article>();
 		if(author!=null){
-			for(final Article article : articles){
+			for(final Article article : this.articles){
 				if(article.hasAuthor(author)){
 					articles.add(article);
 				}
@@ -114,10 +114,21 @@ public class AdaptableFeedImpl extends AbstractAdaptableContent implements Adapt
 	public List<Article> getArticles(final Category category) {
 		final Set<Article> articles=new HashSet<Article>();
 		if(category!=null){
-			for(final Article article : articles){
+			for(final Article article : this.articles){
 				if(article.hasCategory(category)){
 					articles.add(article);
 				}
+			}
+		}
+		return orderByPublicationDate(articles);
+	}
+	
+	@Override
+	public List<Article> getArticles(final boolean archived) {
+		final Set<Article> articles=new HashSet<Article>();
+		for(final Article article : this.articles){
+			if(article.isArchived()==archived){
+				articles.add(article);
 			}
 		}
 		return orderByPublicationDate(articles);
@@ -142,5 +153,7 @@ public class AdaptableFeedImpl extends AbstractAdaptableContent implements Adapt
 		}
 		return stringBuilder.toString();
 	}
+
+	
 
 }
