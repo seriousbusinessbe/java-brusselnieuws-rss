@@ -13,7 +13,6 @@ import be.seriousbusiness.brusselnieuws.rss.model.Article;
 import be.seriousbusiness.brusselnieuws.rss.model.Author;
 import be.seriousbusiness.brusselnieuws.rss.model.Category;
 import be.seriousbusiness.brusselnieuws.rss.model.Manager;
-import be.seriousbusiness.brusselnieuws.rss.model.Medium;
 import be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableArticle;
 import be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableFeed;
 import be.seriousbusiness.brusselnieuws.rss.model.adaptable.impl.AdaptableArticleImpl;
@@ -32,32 +31,20 @@ import com.sun.syndication.io.XmlReader;
 public class BrusselNieuwsRssReader implements RssReader {
 	private static final Logger LOGGER=LoggerFactory.getLogger(BrusselNieuwsRssReader.class);
 	private final URL url;
-	private AdaptableFeed adaptableFeed;
-	private final Manager<Author> authorManager;
-	private final Manager<Category> categoryManager;
+	private AdaptableFeed adaptableFeed,mainAdaptableFeed;
+	private Manager<Author> authorManager;
+	private Manager<Category> categoryManager;
 	
 	/**
 	 * Create a new BrusselNieuwsRssReader looking for data on a given URL.
-	 * @param url
-	 * @param authorManager
-	 * @param categoryManager
-	 * @throws IllegalArgumentException when the URL, feed, author manager or category manager is <code>null</code>
+	 * @param url the URL to read feed from
+	 * @throws IllegalArgumentException when the URL is <code>null</code>
 	 */
-	public BrusselNieuwsRssReader(final URL url,
-			final Manager<Author> authorManager,
-			final Manager<Category> categoryManager) throws IllegalArgumentException{
+	public BrusselNieuwsRssReader(final URL url) throws IllegalArgumentException{
 		if(url==null){
 			throw new IllegalArgumentException("The url is null");
 		}
-		if(authorManager==null){
-			throw new IllegalArgumentException("The author manager is null");
-		}
-		if(categoryManager==null){
-			throw new IllegalArgumentException("The category manager is null");
-		}
 		this.url=url;
-		this.authorManager=authorManager;
-		this.categoryManager=categoryManager;
 	}
 	
 	@Override
@@ -67,15 +54,46 @@ public class BrusselNieuwsRssReader implements RssReader {
 		}
 		this.adaptableFeed=adaptableFeed;
 	}
+	
+	public void setMainAdaptableFeed(final AdaptableFeed mainAdaptableFeed) throws IllegalArgumentException {
+		if(mainAdaptableFeed==null){
+			throw new IllegalArgumentException("The main adaptable feed is null");
+		}
+		this.mainAdaptableFeed=mainAdaptableFeed;
+	}
+	
+	/**
+	 * Set an AuthorManager which will be used to add authors from all found articles.
+	 * @param authorManager
+	 * @throws IllegalArgumentException when the author manager is <code>null</code>
+	 */
+	public void setAuthorManager(final Manager<Author> authorManager) throws IllegalArgumentException{
+		if(authorManager==null){
+			throw new IllegalArgumentException("The author manager is null");
+		}
+		this.authorManager=authorManager;
+	}
+	
+	/**
+	 * 
+	 * @param categoryManager
+	 * @throws IllegalArgumentException
+	 */
+	public void setCategoryManager(final Manager<Category> categoryManager) throws IllegalArgumentException{
+		if(categoryManager==null){
+			throw new IllegalArgumentException("The category manager is null");
+		}
+		this.categoryManager=categoryManager;
+	}
 
 	@Override
 	public void updateFeed() {
 		if(adaptableFeed!=null){
-			updateFeed(adaptableFeed,url,authorManager,categoryManager);
+			updateFeed(adaptableFeed,mainAdaptableFeed,url,authorManager,categoryManager);
 		}
 	}
 	
-	private static final void updateFeed(final AdaptableFeed adaptableFeed,final URL url,final Manager<Author> authorManager,final Manager<Category> categoryManager){
+	private static final void updateFeed(final AdaptableFeed adaptableFeed,final AdaptableFeed mainAdaptableFeed,final URL url,final Manager<Author> authorManager,final Manager<Category> categoryManager){
 		final SyndFeedInput syndFeedInput=new SyndFeedInput();
 		try {
 			final SyndFeed syndFeed=syndFeedInput.build(new XmlReader(url));
@@ -86,7 +104,11 @@ public class BrusselNieuwsRssReader implements RssReader {
 			final List<SyndEntry> feedEntries=syndFeed.getEntries();
 			if(feedEntries!=null){
 				for(final SyndEntry syndEntry : feedEntries){
-					adaptableFeed.add(getArticle(syndEntry,authorManager,categoryManager));
+					if(mainAdaptableFeed!=null){
+						adaptableFeed.add(mainAdaptableFeed.add(getArticle(syndEntry,authorManager,categoryManager)));
+					}else{
+						adaptableFeed.add(getArticle(syndEntry,authorManager,categoryManager));
+					}
 				}
 			}
 		} catch (final IllegalArgumentException e) {
@@ -111,8 +133,10 @@ public class BrusselNieuwsRssReader implements RssReader {
 			if(entryAuthors!=null){
 				for(final SyndPerson syndPerson : entryAuthors){
 					final Author author=BrusselNieuwsRssReaderHelper.map(syndPerson);
-					authorManager.add(author);
 					adaptableArticle.add(author);
+					if(authorManager!=null){
+						authorManager.add(author);
+					}
 				}
 			}
 			/*
@@ -129,16 +153,17 @@ public class BrusselNieuwsRssReader implements RssReader {
 			if(syndCategories!=null){
 				for(final SyndCategory syndCategory : syndCategories){
 					final Category category=BrusselNieuwsRssReaderHelper.map(syndCategory);
-					categoryManager.add(category);
 					adaptableArticle.add(category);
+					if(categoryManager!=null){
+						categoryManager.add(category);
+					}
 				}
 			}
 			@SuppressWarnings("unchecked")
 			final List<SyndEnclosure> syndEnclosures=syndEntry.getEnclosures();
 			if(syndEnclosures!=null){
 				for(final SyndEnclosure syndEnclosure : syndEnclosures){
-					final Medium medium=BrusselNieuwsRssReaderHelper.map(syndEnclosure);
-					adaptableArticle.add(medium);
+					adaptableArticle.add(BrusselNieuwsRssReaderHelper.map(syndEnclosure));
 				}
 			}
 			return adaptableArticle;

@@ -1,5 +1,8 @@
 package be.seriousbusiness.brusselnieuws.rss.model.adaptable;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -80,5 +83,27 @@ public abstract class AbstractAdaptableArticleTest<A extends AdaptableArticle> e
 		Assert.assertEquals("The number of media should have increased",numberOfMedia+1,adaptable.numberOfMedia(),0.0);
 	}
 	
+	@Test
+	public void testRead(){
+		assertFalse("The article should not be set read by default",adaptable.isRead());
+		adaptable.read();
+		assertTrue("The article should be set read",adaptable.isRead());
+	}
+	
+	@Test
+	public void testArchive(){
+		assertFalse("The article should not be set archived by default",adaptable.isArchived());
+		adaptable.archive();
+		assertTrue("The article should be set archived",adaptable.isArchived());
+	}
+	
+	@Test
+	public void testFavorite(){
+		assertFalse("The article should not be set favorite by default",adaptable.isFavorite());
+		adaptable.setFavorite(false);
+		assertFalse("The article should not be set favorite",adaptable.isFavorite());
+		adaptable.setFavorite(true);
+		assertTrue("The article should be set as favorite",adaptable.isFavorite());
+	}
 
 }

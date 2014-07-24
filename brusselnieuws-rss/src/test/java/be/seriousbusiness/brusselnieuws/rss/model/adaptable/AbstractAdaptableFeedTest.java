@@ -44,18 +44,20 @@ public abstract class AbstractAdaptableFeedTest<F extends AdaptableFeed> extends
 		adaptable.add(article);
 		assertEquals("The feed size should have increased",size+1,adaptable.size(),0.0);
 		assertTrue("The feed should have the new article",adaptable.hasArticle(article));
+		assertEquals("The added article should be returned",article,adaptable.add(article));
 	}
 	
 	@Test
-	public void testGetArticlesArchived(){
+	public void testGetArticlesArchived() throws InterruptedException{
 		List<Article> archivedArticles=adaptable.getArticles(true),notArchivedArticles=adaptable.getArticles(false);
 		assertNotNull("The list of archived articles should not be null",archivedArticles);
 		assertNotNull("The list of not archived articles should not be null",notArchivedArticles);
 		assertEquals("The list of archived articles should be empty",0,archivedArticles.size());
 		assertEquals("The list of not archived articles should be empty",0,notArchivedArticles.size());
 		final Article simpleArticle=new SimpleArticleMock(),
-				archivedArticle1=new SimpleArchivedArticleMock(),
-				archivedArticle2=new SimpleArchivedArticleMock();
+				archivedArticle1=new SimpleArchivedArticleMock();
+		Thread.sleep(1000); // Sleep for 1 seconc, so both SimpleArchivedArticleMocks have a different publication time which will make them unique
+		final Article archivedArticle2=new SimpleArchivedArticleMock();
 		adaptable.add(simpleArticle);
 		adaptable.add(archivedArticle1);
 		adaptable.add(archivedArticle2);

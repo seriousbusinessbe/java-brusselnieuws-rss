@@ -89,5 +89,18 @@ public interface Article extends Content {
 	 * Mark this article archived.
 	 */
 	void archive();
-
+	
+	/**
+	 * Check if this article is marked as favorite.
+	 * @return <code>true</code> when a favorite
+	 */
+	boolean isFavorite();
+	
+	/**
+	 * Mark this article as favorite.
+	 * @param favorite <code>true</code> when favorite,
+	 * otherwise <code>false</code>
+	 */
+	void setFavorite(final boolean favorite);
+	
 }

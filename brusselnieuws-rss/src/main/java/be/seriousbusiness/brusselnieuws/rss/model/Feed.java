@@ -2,6 +2,8 @@ package be.seriousbusiness.brusselnieuws.rss.model;
 
 import java.util.List;
 
+import be.seriousbusiness.brusselnieuws.rss.model.listener.FeedListener;
+
 /**
  * Represents a feed published by brusselnieuws.be
  * @author Stefan Borghys
@@ -53,4 +55,16 @@ public interface Feed extends Content {
 	 * @return a list of articles marked archived or not, empty when none found
 	 */
 	List<Article> getArticles(final boolean archived);
+	
+	/**
+	 * Add a Feedlistener to get notifications from this feed when a new article is found.
+	 * @param feedListener the feedlistener who needs to be notified
+	 */
+	void attach(final FeedListener feedListener);
+	
+	/**
+	 * Remove a Feedlistener so notifications from this feed are stopped.
+	 * @param feedListener the feedlistener to detach
+	 */
+	void detach(final FeedListener feedListener);
 }

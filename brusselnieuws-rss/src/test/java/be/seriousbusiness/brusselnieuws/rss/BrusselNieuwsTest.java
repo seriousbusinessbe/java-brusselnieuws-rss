@@ -40,6 +40,7 @@ public class BrusselNieuwsTest {
 			brusselNieuws.updateFeed(municipality, adaptableFeed);
 			AbstractRssReaderTest.assertAdaptableFeed(adaptableFeed);
 		}
+		LOGGER.debug("Main FEED: {}",brusselNieuws.getMainFeed());
 	}
 	
 	@Test

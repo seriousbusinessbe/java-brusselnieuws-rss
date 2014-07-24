@@ -47,7 +47,9 @@ public class BrusselNieuwsRssReaderTest {
 	@Test
 	public void testBrusselNieuwsRssReaderLocal() throws MalformedURLException{
 		final URL url=new File("src/test/resources/brusselnieuws_be_nl_hoofdpunten_feed.xml").toURI().toURL();
-		final BrusselNieuwsRssReader brusselNieuwsRssReader=new BrusselNieuwsRssReader(url,authorManager,categoryManager);
+		final BrusselNieuwsRssReader brusselNieuwsRssReader=new BrusselNieuwsRssReader(url);
+		brusselNieuwsRssReader.setAuthorManager(authorManager);
+		brusselNieuwsRssReader.setCategoryManager(categoryManager);
 		brusselNieuwsRssReader.setAdaptableFeed(adaptableFeed);
 		brusselNieuwsRssReader.updateFeed();
 		assertEquals("BrusselNieuws RSS - Hoofdpunten",adaptableFeed.getTitle());
@@ -94,7 +96,9 @@ public class BrusselNieuwsRssReaderTest {
 	 */
 	@Test
 	public void testBrusselNieuwsRssReaderLive() throws MalformedURLException{
-		final BrusselNieuwsRssReader brusselNieuwsRssReader=new BrusselNieuwsRssReader(new URL("http://www.brusselnieuws.be/nl/hoofdpunten/feed"),authorManager,categoryManager);
+		final BrusselNieuwsRssReader brusselNieuwsRssReader=new BrusselNieuwsRssReader(new URL("http://www.brusselnieuws.be/nl/hoofdpunten/feed"));
+		brusselNieuwsRssReader.setAuthorManager(authorManager);
+		brusselNieuwsRssReader.setCategoryManager(categoryManager);
 		brusselNieuwsRssReader.setAdaptableFeed(adaptableFeed);
 		brusselNieuwsRssReader.updateFeed();
 		AbstractRssReaderTest.assertAdaptableFeed(adaptableFeed);

@@ -99,5 +99,13 @@ public class SimpleArchivedArticleMock implements Article {
 	@Override
 	public void archive() {}
 
+	@Override
+	public boolean isFavorite() {
+		return false;
+	}
+
+	@Override
+	public void setFavorite(boolean favorite) {}
+
 }
 

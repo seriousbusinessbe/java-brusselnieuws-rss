@@ -15,8 +15,9 @@ public interface AdaptableFeed extends Feed, AdaptableContent {
 	/**
 	 * Add a new article.</br>
 	 * No action is performed when the article is <code>null</code> or already added.
-	 * @param article
+	 * @param article the article to add
+	 * @return the added or already added article.</br>
 	 */
-	void add(final Article article);
+	Article add(final Article article);
 
 }

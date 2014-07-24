@@ -2,8 +2,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 		
 	<context:annotation-config/>
 	
@@ -13,6 +15,10 @@
 	
 	<bean id="categoryManager" class="be.seriousbusiness.brusselnieuws.rss.model.impl.ManagerImpl" scope="singleton"/>
 	
+	<bean id="mainAdaptableFeed" class="be.seriousbusiness.brusselnieuws.rss.model.adaptable.impl.AdaptableFeedImpl" scope="singleton">
+		<constructor-arg index="0" value="Main feed"/>
+	</bean>
+		
 	<!-- RSS Reader -->
 	
 	<bean id="RssReader" class="be.seriousbusiness.brusselnieuws.rss.reader.impl.BrusselNieuwsRssReader">
@@ -21,8 +27,9 @@
 				<constructor-arg value="${rss.news.main}"/>
 			</bean>
 		</constructor-arg>
-		<constructor-arg index="1" ref="authorManager"/>
-		<constructor-arg index="2" ref="categoryManager"/>
+		<property name="authorManager" ref="authorManager"/>
+		<property name="categoryManager" ref="categoryManager"/>
+		<property name="mainAdaptableFeed" ref="mainAdaptableFeed"/>
 	</bean>
 	
 	<!-- NEWS -->
@@ -411,37 +418,39 @@
 		</constructor-arg>
 	</bean>
 	
+	
+	
+	<util:map id="municipalitiesReadersMap" 
+	key-type="be.seriousbusiness.brusselnieuws.rss.model.Municipality" 
+	value-type="be.seriousbusiness.brusselnieuws.rss.reader.RssReader" 
+	map-class="java.util.HashMap">
+		<entry key="ANDERLECHT" value-ref="municipalityAnderlechtRssReader" />
+	    <entry key="ANDERLECHT" value-ref="municipalityAnderlechtRssReader" />
+		<entry key="BRUSSEL_STAD" value-ref="municipalityBrusselRssReader" />
+		<entry key="ELSENE" value-ref="municipalityElseneRssReader" />
+		<entry key="ETTERBEEK" value-ref="municipalityEtterbeekRssReader" />
+		<entry key="EVERE" value-ref="municipalityEvereRssReader" />
+		<entry key="GANSHOREN" value-ref="municipalityGanshorenRssReader" />
+		<entry key="HAREN" value-ref="municipalityHarenRssReader" />
+		<entry key="JETTE" value-ref="municipalityJetteRssReader" />
+		<entry key="KOEKELBERG" value-ref="municipalityKoekelbergRssReader" />
+		<entry key="LAKEN" value-ref="municipalityLakenRssReader" />
+		<entry key="NEDER_OVER_HEEMBEEK" value-ref="municipalityNederOverHeembeekRssReader" />
+		<entry key="OUDERGEM" value-ref="municipalityOudergemRssReader" />
+		<entry key="SCHAARBEEK" value-ref="municipalitySchaarbeekRssReader" />
+		<entry key="SINT_AGATHA_BERCHEM" value-ref="municipalitySintAgathaBerchemRssReader" />
+		<entry key="SINT_GILLIS" value-ref="municipalitySintGillisRssReader" />
+		<entry key="SING_JANS_MOLENBEEK" value-ref="municipalitySintJansMolenbeekRssReader" />
+		<entry key="SINT_JOOST_TEN_NODE" value-ref="municipalitySintJoostTenNodeRssReader" />
+		<entry key="SINT_LAMBRECHTS_WOLUWE" value-ref="municipalitySintLambrechtsWoluweRssReader" />
+		<entry key="SINT_PIETERS_WOLUWE" value-ref="municipalitySintPietersWoluweRssReader" />
+		<entry key="UKKEL" value-ref="municipalityUkkelRssReader" />
+		<entry key="VORST" value-ref="municipalityVorstRssReader" />
+		<entry key="WATERMAAL_BOSVOORDE" value-ref="municipalityWatermaalBosvoordeRssReader" />
+	</util:map>
+	
 	<bean id="brusselNieuws" class="be.seriousbusiness.brusselnieuws.rss.BrusselNieuws">
-		<property name="authorManager" ref="authorManager"/>
-		<property name="categoryManager" ref="categoryManager"/>
-		<property name="municipalitiesReaders">
-			<map>
-				<entry key="ANDERLECHT" value-ref="municipalityAnderlechtRssReader" />
-				<entry key="BRUSSEL_STAD" value-ref="municipalityBrusselRssReader" />
-				<entry key="ELSENE" value-ref="municipalityElseneRssReader" />
-				<entry key="ETTERBEEK" value-ref="municipalityEtterbeekRssReader" />
-				<entry key="EVERE" value-ref="municipalityEvereRssReader" />
-				<entry key="GANSHOREN" value-ref="municipalityGanshorenRssReader" />
-				<entry key="HAREN" value-ref="municipalityHarenRssReader" />
-				<entry key="JETTE" value-ref="municipalityJetteRssReader" />
-				<entry key="KOEKELBERG" value-ref="municipalityKoekelbergRssReader" />
-				<entry key="LAKEN" value-ref="municipalityLakenRssReader" />
-				<entry key="NEDER_OVER_HEEMBEEK" value-ref="municipalityNederOverHeembeekRssReader" />
-				<entry key="OUDERGEM" value-ref="municipalityOudergemRssReader" />
-				<entry key="SCHAARBEEK" value-ref="municipalitySchaarbeekRssReader" />
-				<entry key="SINT_AGATHA_BERCHEM" value-ref="municipalitySintAgathaBerchemRssReader" />
-				<entry key="SINT_GILLIS" value-ref="municipalitySintGillisRssReader" />
-				<entry key="SING_JANS_MOLENBEEK" value-ref="municipalitySintJansMolenbeekRssReader" />
-				<entry key="SINT_JOOST_TEN_NODE" value-ref="municipalitySintJoostTenNodeRssReader" />
-				<entry key="SINT_LAMBRECHTS_WOLUWE" value-ref="municipalitySintLambrechtsWoluweRssReader" />
-				<entry key="SINT_PIETERS_WOLUWE" value-ref="municipalitySintPietersWoluweRssReader" />
-				<entry key="UKKEL" value-ref="municipalityUkkelRssReader" />
-				<entry key="VORST" value-ref="municipalityVorstRssReader" />
-				<entry key="WATERMAAL_BOSVOORDE" value-ref="municipalityWatermaalBosvoordeRssReader" />
-			</map>
-		</property>
-	</bean>
-	
-	
+		<property name="municipalitiesReaders" ref="municipalitiesReadersMap" />
+	</bean>	
 
 </beans>

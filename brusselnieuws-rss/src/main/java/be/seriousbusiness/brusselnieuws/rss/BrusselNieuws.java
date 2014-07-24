@@ -2,8 +2,13 @@ package be.seriousbusiness.brusselnieuws.rss;
 
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
 import be.seriousbusiness.brusselnieuws.rss.model.Author;
 import be.seriousbusiness.brusselnieuws.rss.model.Category;
+import be.seriousbusiness.brusselnieuws.rss.model.Feed;
 import be.seriousbusiness.brusselnieuws.rss.model.Manager;
 import be.seriousbusiness.brusselnieuws.rss.model.Municipality;
 import be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableFeed;
@@ -15,21 +20,21 @@ import be.seriousbusiness.brusselnieuws.rss.reader.RssReader;
  * @author Serious Business
  *
  */
+@Component
 public class BrusselNieuws {
 	private Map<Municipality,RssReader> municipalitiesReaders;
+	@Autowired(required=true)
+	@Qualifier("authorManager")
 	private Manager<Author> authorManager;
+	@Autowired(required=true)
+	@Qualifier("categoryManager")
 	private Manager<Category> categoryManager;
+	@Autowired(required=true)
+	@Qualifier("mainAdaptableFeed")
+	private AdaptableFeed adaptableFeed;
 	
 	public void setMunicipalitiesReaders(final Map<Municipality,RssReader> municipalitiesReaders){
 		this.municipalitiesReaders=municipalitiesReaders;
-	}
-	
-	public void setAuthorManager(final Manager<Author> authorManager){
-		this.authorManager=authorManager;
-	}
-	
-	public void setCategoryManager(final Manager<Category> categoryManager){
-		this.categoryManager=categoryManager;
 	}
 	
 	/**
@@ -47,6 +52,12 @@ public class BrusselNieuws {
 	Manager<Author> getAuthorManager(){
 		return authorManager;
 	}
+	
+	Feed getMainFeed(){
+		return adaptableFeed;
+	}
+	
+	
 	
 	public void updateFeed(final Municipality municipality,final AdaptableFeed adaptableFeed){
 		final RssReader rssReader=municipalitiesReaders.get(municipality);
