@@ -12,7 +12,6 @@ import org.slf4j.LoggerFactory;
 import be.seriousbusiness.brusselnieuws.rss.model.Article;
 import be.seriousbusiness.brusselnieuws.rss.model.Author;
 import be.seriousbusiness.brusselnieuws.rss.model.Category;
-import be.seriousbusiness.brusselnieuws.rss.model.Feed;
 import be.seriousbusiness.brusselnieuws.rss.model.Manager;
 import be.seriousbusiness.brusselnieuws.rss.model.Medium;
 import be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableArticle;
@@ -33,26 +32,22 @@ import com.sun.syndication.io.XmlReader;
 public class BrusselNieuwsRssReader implements RssReader {
 	private static final Logger LOGGER=LoggerFactory.getLogger(BrusselNieuwsRssReader.class);
 	private final URL url;
-	private final AdaptableFeed adaptableFeed;
+	private AdaptableFeed adaptableFeed;
 	private final Manager<Author> authorManager;
 	private final Manager<Category> categoryManager;
 	
 	/**
 	 * Create a new BrusselNieuwsRssReader looking for data on a given URL.
 	 * @param url
-	 * @param feed
 	 * @param authorManager
 	 * @param categoryManager
 	 * @throws IllegalArgumentException when the URL, feed, author manager or category manager is <code>null</code>
 	 */
-	public BrusselNieuwsRssReader(final URL url,final AdaptableFeed adaptableFeed,
+	public BrusselNieuwsRssReader(final URL url,
 			final Manager<Author> authorManager,
 			final Manager<Category> categoryManager) throws IllegalArgumentException{
 		if(url==null){
 			throw new IllegalArgumentException("The url is null");
-		}
-		if(adaptableFeed==null){
-			throw new IllegalArgumentException("The feed is null");
 		}
 		if(authorManager==null){
 			throw new IllegalArgumentException("The author manager is null");
@@ -61,15 +56,23 @@ public class BrusselNieuwsRssReader implements RssReader {
 			throw new IllegalArgumentException("The category manager is null");
 		}
 		this.url=url;
-		this.adaptableFeed=adaptableFeed;
 		this.authorManager=authorManager;
 		this.categoryManager=categoryManager;
 	}
+	
+	@Override
+	public void setAdaptableFeed(final AdaptableFeed adaptableFeed) throws IllegalArgumentException {
+		if(adaptableFeed==null){
+			throw new IllegalArgumentException("The Adaptable Feed is null");
+		}
+		this.adaptableFeed=adaptableFeed;
+	}
 
 	@Override
-	public Feed getFeed() {
-		updateFeed(adaptableFeed,url,authorManager,categoryManager);
-		return adaptableFeed;
+	public void updateFeed() {
+		if(adaptableFeed!=null){
+			updateFeed(adaptableFeed,url,authorManager,categoryManager);
+		}
 	}
 	
 	private static final void updateFeed(final AdaptableFeed adaptableFeed,final URL url,final Manager<Author> authorManager,final Manager<Category> categoryManager){
@@ -87,11 +90,11 @@ public class BrusselNieuwsRssReader implements RssReader {
 				}
 			}
 		} catch (final IllegalArgumentException e) {
-			LOGGER.error("The feed type could not be understood by the parsers",e);
+			LOGGER.error("Feed type '{}' could not be understood by the parsers",url.toString(),e);
 		} catch (final FeedException e) {
-			LOGGER.error("The feed could not be parsed",e);
+			LOGGER.error("Feed '{}' could not be parsed",url.toString(),e);
 		} catch (final IOException e) {
-			LOGGER.error("The URL stream could not be read",e);
+			LOGGER.error("URL stream '{}' could not be read",url.toString(),e);
 		}
 	}
 	
@@ -144,7 +147,5 @@ public class BrusselNieuwsRssReader implements RssReader {
 			return null;
 		}
 	}
-	
-	
 
 }

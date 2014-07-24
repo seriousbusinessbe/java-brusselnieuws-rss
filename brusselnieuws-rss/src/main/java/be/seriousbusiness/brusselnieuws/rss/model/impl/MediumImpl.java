@@ -109,7 +109,7 @@ public class MediumImpl implements Medium {
 	
 	@Override
 	public int hashCode(){
-		return new BigDecimal(link.hashCode() * mediumType.hashCode() * size).intValueExact();
+		return new BigDecimal(link.hashCode() * mediumType.hashCode() + size).intValueExact();
 	}
 	
 	@Override
