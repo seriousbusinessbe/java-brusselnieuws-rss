@@ -8,7 +8,7 @@ import java.net.URL;
  * @author Serious Business
  *
  */
-public interface Content {
+public interface Content<ID> extends Id<ID> {
 	
 	/**
 	 * Get the title.

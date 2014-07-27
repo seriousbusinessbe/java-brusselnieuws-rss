@@ -11,7 +11,7 @@ import be.seriousbusiness.brusselnieuws.rss.model.Content;
  * @author Serious Business
  *
  */
-public interface AdaptableContent extends Content {
+public interface AdaptableContent<ID> extends Content<ID> {
 	
 	/**
 	 * Set a new title.</br>

@@ -10,7 +10,7 @@ import org.joda.time.DateTime;
  * @author Serious Business
  *
  */
-public interface Article extends Content {
+public interface Article extends Content<Long> {
 	
 	/**
 	 * Get the number of authors who have written this article.

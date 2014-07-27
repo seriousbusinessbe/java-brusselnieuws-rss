@@ -1,23 +1,30 @@
-package be.seriousbusiness.brusselnieuws.rss.model.impl;
+package be.seriousbusiness.brusselnieuws.rss.model.adaptable.impl;
 
 import java.math.BigDecimal;
 import java.net.URL;
 
 import be.seriousbusiness.brusselnieuws.rss.model.Medium;
 import be.seriousbusiness.brusselnieuws.rss.model.MediumType;
+import be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableMedium;
 
-public class MediumImpl implements Medium {
+public class AdaptableMediumImpl extends AdaptableIdImpl<Long>  implements AdaptableMedium {
 	private long size;
 	private URL link;
 	private MediumType mediumType;
 	
 	public static class Builder{
+		private Long id;
 		private Long size;
 		private URL link;
 		private MediumType mediumType;
 		
-		public MediumImpl build(){
-			return new MediumImpl(this);
+		public AdaptableMediumImpl build(){
+			return new AdaptableMediumImpl(this);
+		}
+		
+		public Builder id(final long id){
+			this.id=id;
+			return this;
 		}
 		
 		public Builder size(final long size){
@@ -37,25 +44,28 @@ public class MediumImpl implements Medium {
 		
 	}
 	
-	private MediumImpl(final Builder builder) throws IllegalArgumentException{
+	private AdaptableMediumImpl(final Builder builder) throws IllegalArgumentException{
 		this(builder.link,builder.mediumType);
+		if(builder.id!=null){
+			setId(builder.id);
+		}
 		if(builder.size!=null){
 			setSize(builder.size);
 		}
 	}
 	
-	protected MediumImpl(final URL link,final MediumType mediumType) throws IllegalArgumentException{
+	protected AdaptableMediumImpl(final URL link,final MediumType mediumType) throws IllegalArgumentException{
 		size=0;
 		setLink(link);
 		setType(mediumType);
 	}
 	
-	/**
-	 * Set a size
-	 * @param size
-	 * @throws IllegalArgumentException when negative
-	 */
-	protected void setSize(final long size) throws IllegalArgumentException{
+	public AdaptableMediumImpl(){
+		
+	}
+	
+	@Override
+	public void setSize(final long size) throws IllegalArgumentException{
 		if(size<0){
 			throw new IllegalArgumentException("The size is negative");
 		}
@@ -67,12 +77,8 @@ public class MediumImpl implements Medium {
 		return size;
 	}
 	
-	/**
-	 * Set a link
-	 * @param link
-	 * @throws IllegalArgumentException when <code>null</code>
-	 */
-	protected void setLink(final URL link) throws IllegalArgumentException{
+	@Override
+	public void setLink(final URL link) throws IllegalArgumentException{
 		if(link==null){
 			throw new IllegalArgumentException("The link cannot be null");
 		}
@@ -84,7 +90,8 @@ public class MediumImpl implements Medium {
 		return link;
 	}
 	
-	protected void setType(final MediumType mediumType) throws IllegalArgumentException{
+	@Override
+	public void setType(final MediumType mediumType) throws IllegalArgumentException{
 		if(mediumType==null){
 			throw new IllegalArgumentException("The medium type is null");
 		}
@@ -100,7 +107,8 @@ public class MediumImpl implements Medium {
 	public boolean equals(final Object obj){
 		if(obj!=null && obj instanceof Medium){
 			final Medium medium=(Medium)obj;
-			return link.equals(medium.getLink()) &&
+			return super.equals(obj) && 
+					link.equals(medium.getLink()) &&
 					mediumType.equals(medium.getType()) &&
 					size==medium.getSize();
 		}
@@ -109,12 +117,12 @@ public class MediumImpl implements Medium {
 	
 	@Override
 	public int hashCode(){
-		return new BigDecimal(link.hashCode() * mediumType.hashCode() + size).intValueExact();
+		return new BigDecimal(super.hashCode() * link.hashCode() * mediumType.hashCode() + size).intValueExact();
 	}
 	
 	@Override
 	public String toString(){
-		return link.toString();
+		return super.toString() + " " + link.toString();
 	}
 
 }

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+          
+    <!-- Custom Converters -->
+	<configuration>
+	    <custom-converters>
+	        <converter type="be.seriousbusiness.brusselnieuws.rss.datasource.dto.dozer.MediumTypeDTOToMediumTypeConverter">
+	            <class-a>be.seriousbusiness.brusselnieuws.rss.datasource.dto.MediumTypeDTO</class-a>
+	            <class-b>be.seriousbusiness.brusselnieuws.rss.model.MediumType</class-b>
+	        </converter>
+	    </custom-converters>
+	</configuration>
+          
+  	<!-- CategoryDTO to AdaptableCategory -->
+	<mapping> 
+		<class-a>be.seriousbusiness.brusselnieuws.rss.datasource.dto.CategoryDTO</class-a>
+		<class-b>be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableCategory</class-b> 
+		<!-- Super Class Mapping -->  
+		<field>
+			<a>id</a> 
+			<b>id</b>
+		</field>
+	</mapping>  
+  
+  	<!-- AuthorDTO to AdaptableAuthor -->
+	<mapping>
+		<class-a>be.seriousbusiness.brusselnieuws.rss.datasource.dto.AuthorDTO</class-a>
+		<class-b>be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableAuthor</class-b>
+		<!-- Super Class Mapping -->  
+		<field>
+			<a>id</a> 
+			<b>id</b>
+		</field>
+	</mapping>
+  
+	<!-- MediumDTO to AdaptablMedium -->
+	<mapping>
+	  	<class-a>be.seriousbusiness.brusselnieuws.rss.datasource.dto.MediumDTO</class-a>
+	  	<class-b>be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableMedium</class-b>
+		 <field>
+			<a>mediumTypeDTO</a> 
+			<b>type</b>
+		</field>
+	</mapping>
+
+</mappings> 

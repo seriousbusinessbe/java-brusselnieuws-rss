@@ -3,10 +3,9 @@ package be.seriousbusiness.brusselnieuws.rss.model.adaptable.impl;
 import java.net.URL;
 
 import be.seriousbusiness.brusselnieuws.rss.model.Content;
-import be.seriousbusiness.brusselnieuws.rss.model.Manager;
 import be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableContent;
 
-public abstract class AbstractAdaptableContent implements AdaptableContent {
+public abstract class AbstractAdaptableContent<ID> extends AdaptableIdImpl<ID> implements AdaptableContent<ID> {
 	private String title,description;
 	private URL link;
 	
@@ -79,9 +78,11 @@ public abstract class AbstractAdaptableContent implements AdaptableContent {
 	
 	@Override
 	public boolean equals(final Object obj){
-		if(obj!=null && obj instanceof Manager){
-			final Content content=(Content)obj;
-			return title.equals(content.getTitle()) &&
+		if(obj!=null && obj instanceof Content){
+			@SuppressWarnings("unchecked")
+			final Content<ID> content=(Content<ID>)obj;
+			return super.equals(content) && 
+					title.equals(content.getTitle()) &&
 					description.equals(content.getDescription()) &&
 					link.equals(content.getLink());
 		}
@@ -90,12 +91,12 @@ public abstract class AbstractAdaptableContent implements AdaptableContent {
 	
 	@Override
 	public int hashCode(){
-		return title.hashCode() * description.hashCode() * link.hashCode();
+		return super.hashCode() * title.hashCode() * description.hashCode() * link.hashCode();
 	}
 	
 	@Override
 	public String toString(){
-		return title;
+		return super.toString() + " " + title;
 	}
 
 }

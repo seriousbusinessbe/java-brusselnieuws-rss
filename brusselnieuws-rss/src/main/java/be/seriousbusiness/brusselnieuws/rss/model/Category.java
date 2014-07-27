@@ -8,7 +8,7 @@ import java.net.URL;
  * @author Serious Business
  *
  */
-public interface Category {
+public interface Category extends Id<Long> {
 	
 	/**
 	 * Get the name.

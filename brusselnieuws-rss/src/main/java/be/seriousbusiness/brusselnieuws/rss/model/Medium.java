@@ -8,7 +8,7 @@ import java.net.URL;
  * @author Serious Business
  *
  */
-public interface Medium {
+public interface Medium extends Id<Long> {
 	
 	/**
 	 * Get the size in bytes.

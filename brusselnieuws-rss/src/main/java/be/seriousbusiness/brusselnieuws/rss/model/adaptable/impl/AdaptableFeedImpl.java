@@ -9,23 +9,28 @@ import be.seriousbusiness.brusselnieuws.rss.model.Article;
 import be.seriousbusiness.brusselnieuws.rss.model.Author;
 import be.seriousbusiness.brusselnieuws.rss.model.Category;
 import be.seriousbusiness.brusselnieuws.rss.model.Feed;
-import be.seriousbusiness.brusselnieuws.rss.model.Medium;
 import be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableFeed;
 import be.seriousbusiness.brusselnieuws.rss.model.comparator.ArticlePublicationDateComparator;
 import be.seriousbusiness.brusselnieuws.rss.model.impl.ManagerUtil;
 import be.seriousbusiness.brusselnieuws.rss.model.listener.FeedListener;
 
-public class AdaptableFeedImpl extends AbstractAdaptableContent implements AdaptableFeed {
+public class AdaptableFeedImpl extends AbstractAdaptableContent<Long> implements AdaptableFeed {
 	private Set<Article> articles;
 	private Set<FeedListener> feedListeners;
 	
 	public static class Builder {
+		private Long id;
 		private String title,description;
 		private URL link;
 		private final Set<Article> articles=new HashSet<Article>();
 
 		public AdaptableFeedImpl build() {
 			return new AdaptableFeedImpl(this);
+		}
+		
+		public Builder id(final long id){
+			this.id=id;
+			return this;
 		}
 		
 		public Builder title(final String title) {
@@ -52,6 +57,9 @@ public class AdaptableFeedImpl extends AbstractAdaptableContent implements Adapt
 	
 	private AdaptableFeedImpl(final Builder builder) throws IllegalArgumentException{
 		this(builder.title);
+		if(builder.id!=null){
+			setId(builder.id);
+		}
 		if(builder.description!=null){
 			setDescription(builder.description);
 		}
@@ -149,7 +157,7 @@ public class AdaptableFeedImpl extends AbstractAdaptableContent implements Adapt
 	
 	@Override
 	public boolean equals(final Object obj){
-		return obj!=null && obj instanceof Medium && articles.equals(((Feed)obj).getArticles()) && super.equals(obj);
+		return obj!=null && obj instanceof Feed && articles.equals(((Feed)obj).getArticles()) && super.equals(obj);
 	}
 	
 	@Override
@@ -160,6 +168,7 @@ public class AdaptableFeedImpl extends AbstractAdaptableContent implements Adapt
 	@Override
 	public String toString(){
 		final StringBuilder stringBuilder=new StringBuilder();
+		stringBuilder.append(super.toString()).append(" ");
 		stringBuilder.append(getTitle());
 		for(final Article article : getArticles()){
 			stringBuilder.append("\n").append(article);

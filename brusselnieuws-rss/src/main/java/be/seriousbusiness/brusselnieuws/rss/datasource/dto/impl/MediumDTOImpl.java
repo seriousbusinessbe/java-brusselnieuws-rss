@@ -6,7 +6,7 @@ import be.seriousbusiness.brusselnieuws.rss.datasource.dto.MediumTypeDTO;
 public class MediumDTOImpl implements MediumDTO {
 	private String link;
 	private MediumTypeDTO mediumTypeDTO;
-	private double size;
+	private long size;
 	
 	@Override
 	public String getLink() {
@@ -29,12 +29,12 @@ public class MediumDTOImpl implements MediumDTO {
 	}
 	
 	@Override
-	public double getSize() {
+	public long getSize() {
 		return size;
 	}
 	
 	@Override
-	public void setSize(final double size) {
+	public void setSize(final long size) {
 		this.size = size;
 	}
 

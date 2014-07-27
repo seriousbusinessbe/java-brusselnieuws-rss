@@ -10,7 +10,7 @@ import be.seriousbusiness.brusselnieuws.rss.model.listener.FeedListener;
  * @author Serious Business
  *
  */
-public interface Feed extends Content {
+public interface Feed extends Content<Long> {
 	
 	/**
 	 * Get the number of articles.

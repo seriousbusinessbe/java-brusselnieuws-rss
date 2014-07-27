@@ -10,7 +10,7 @@ import be.seriousbusiness.brusselnieuws.rss.model.Feed;
  * @author Serious Business
  *
  */
-public interface AdaptableFeed extends Feed, AdaptableContent {
+public interface AdaptableFeed extends Feed, AdaptableContent<Long> {
 	
 	/**
 	 * Add a new article.</br>

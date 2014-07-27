@@ -9,6 +9,10 @@
 		
 	<context:annotation-config/>
 	
+	<!-- IMPORTS -->
+	
+	<import resource="test-dozer-config.xml"/>
+	
 	<context:property-placeholder location="classpath:configuration.properties"/>
 		
 	<bean id="authorManager" class="be.seriousbusiness.brusselnieuws.rss.model.impl.ManagerImpl" scope="singleton"/>

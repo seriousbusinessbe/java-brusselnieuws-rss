@@ -4,10 +4,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
 
+import static org.junit.Assert.assertEquals;
 import be.seriousbusiness.brusselnieuws.rss.model.Medium;
 import be.seriousbusiness.brusselnieuws.rss.model.MediumType;
+import be.seriousbusiness.brusselnieuws.rss.model.adaptable.impl.AdaptableMediumImpl;
 
 public class MediumImplTest {
 	
@@ -16,7 +17,7 @@ public class MediumImplTest {
 		final URL link=new URL("http://www.brusselnieuws.be");
 		final long size=28764;
 		final MediumType mediumType=MediumType.IMAGE_PNG;
-		final Medium medium=new MediumImpl.Builder().
+		final Medium medium=new AdaptableMediumImpl.Builder().
 				link(link).
 				size(size).
 				type(mediumType).

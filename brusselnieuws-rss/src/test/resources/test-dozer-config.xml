@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- DozerBeanMapper -->
+	
+	<bean id="dozerBeanMapper" class="org.dozer.DozerBeanMapper">
+		<!-- Set Mapping File(s) -->
+		<property name="mappingFiles">
+			<list>
+				<value>test-dozer-DTO-Adaptable-mapping.xml</value>
+			</list>
+		</property>
+		<!-- Set Custom Converter(s) -->
+		<!-- Only interesting when these custom converters are used over multiple mapping files
+		<property name="customConvertersWithId"> 
+	      <map> 
+	        <entry key="MediumTypeDTOToMediumTypeConverter" value-ref="mediumTypeDTOToMediumTypeConverter"/> 
+	      </map> 
+	    </property>
+	     -->
+	</bean>
+	
+	<!-- Custom Converter -->
+	
+	<bean id="mediumTypeDTOToMediumTypeConverter" class="be.seriousbusiness.brusselnieuws.rss.datasource.dto.dozer.MediumTypeDTOToMediumTypeConverter" />
+	
+</beans>

@@ -1,19 +1,26 @@
-package be.seriousbusiness.brusselnieuws.rss.model.impl;
+package be.seriousbusiness.brusselnieuws.rss.model.adaptable.impl;
 
 import java.net.URL;
 
 import be.seriousbusiness.brusselnieuws.rss.model.Category;
+import be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableCategory;
 
-public class CategoryImpl implements Category {
+public class AdaptableCategoryImpl extends AdaptableIdImpl<Long> implements AdaptableCategory {
 	private String name;
 	private URL link;
 	
 	public static class Builder{
 		private String name;
 		private URL link;
+		private Long id;
 		
-		public CategoryImpl build(){
-			return new CategoryImpl(this);
+		public AdaptableCategoryImpl build(){
+			return new AdaptableCategoryImpl(this);
+		}
+		
+		public Builder id(final long id){
+			this.id=id;
+			return this;
 		}
 		
 		public Builder name(final String name){
@@ -27,8 +34,11 @@ public class CategoryImpl implements Category {
 		}
 	}
 	
-	private CategoryImpl(final Builder builder) throws IllegalArgumentException{
+	private AdaptableCategoryImpl(final Builder builder) throws IllegalArgumentException{
 		this(builder.name);
+		if(builder.id!=null){
+			setId(builder.id);
+		}
 		if(builder.link!=null){
 			setLink(builder.link);
 		}
@@ -39,16 +49,19 @@ public class CategoryImpl implements Category {
 	 * @param name
 	 * @throws IllegalArgumentException when the name is <code>null</code> or empty
 	 */
-	protected CategoryImpl(final String name) throws IllegalArgumentException{
+	protected AdaptableCategoryImpl(final String name) throws IllegalArgumentException{
 		setName(name);
 	}
 	
 	/**
-	 * Set a name
-	 * @param name
-	 * @throws IllegalArgumentException when <code>null</code> or empty
+	 * Dozer constructor.
 	 */
-	protected void setName(final String name) throws IllegalArgumentException{
+	public AdaptableCategoryImpl(){
+		
+	}
+	
+	@Override
+	public void setName(final String name) throws IllegalArgumentException{
 		if(name==null || name.isEmpty()){
 			throw new IllegalArgumentException("The name is null or empty");
 		}
@@ -60,12 +73,8 @@ public class CategoryImpl implements Category {
 		return name;
 	}
 	
-	/**
-	 * Set a link
-	 * @param link
-	 * @throws IllegalArgumentException when <code>null</code>
-	 */
-	protected void setLink(final URL link) throws IllegalArgumentException{
+	@Override
+	public void setLink(final URL link) throws IllegalArgumentException{
 		if(link==null){
 			throw new IllegalArgumentException("The link cannot be null");
 		}
@@ -81,7 +90,8 @@ public class CategoryImpl implements Category {
 	public boolean equals(final Object obj){
 		if(obj!=null && obj instanceof Category){
 			final Category category=(Category)obj;
-			return link.equals(category.getLink()) &&
+			return super.equals(obj) && 
+					link.equals(category.getLink()) &&
 					name.equals(category.getName());
 		}
 		return false;
@@ -89,12 +99,12 @@ public class CategoryImpl implements Category {
 	
 	@Override
 	public int hashCode(){
-		return link.hashCode() * name.hashCode();
+		return super.hashCode() * link.hashCode() * name.hashCode();
 	}
 	
 	@Override
 	public String toString(){
-		return name;
+		return super.toString() + " " + name;
 	}
 
 }

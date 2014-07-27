@@ -6,7 +6,7 @@ package be.seriousbusiness.brusselnieuws.rss.model;
  * @author Serious Business
  *
  */
-public interface Author {
+public interface Author extends Id<Long> {
 	
 	/**
 	 * Get the name.

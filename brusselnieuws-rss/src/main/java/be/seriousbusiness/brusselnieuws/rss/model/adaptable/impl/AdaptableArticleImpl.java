@@ -19,7 +19,7 @@ import be.seriousbusiness.brusselnieuws.rss.model.comparator.CategoryNameCompara
 import be.seriousbusiness.brusselnieuws.rss.model.comparator.MediumMediumTypeComparator;
 import be.seriousbusiness.brusselnieuws.rss.model.impl.ManagerImpl;
 
-public class AdaptableArticleImpl extends AbstractAdaptableContent implements AdaptableArticle {
+public class AdaptableArticleImpl extends AbstractAdaptableContent<Long> implements AdaptableArticle {
 	private final Manager<Author> authorManager;
 	private final Manager<Medium> mediumManager;
 	private final Manager<Category> categoryManager;
@@ -33,6 +33,7 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent implements Ad
 	 *
 	 */
 	public static class Builder {
+		private Long id;
 		private String title,description;
 		private URL link;
 		private final Set<Author> authors=new HashSet<Author>();
@@ -43,6 +44,11 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent implements Ad
 
 		public AdaptableArticleImpl build() {
 			return new AdaptableArticleImpl(this);
+		}
+		
+		public Builder id(final long id){
+			this.id=id;
+			return this;
 		}
 		
 		public Builder title(final String title) {
@@ -99,6 +105,9 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent implements Ad
 	
 	private AdaptableArticleImpl(final Builder builder) throws IllegalArgumentException{
 		this(builder.title,new ManagerImpl<Author>(),new ManagerImpl<Medium>(),new ManagerImpl<Category>(),builder.read,builder.archived,builder.favorite);
+		if(builder.id!=null){
+			setId(builder.id);
+		}
 		if(builder.description!=null){
 			setDescription(builder.description);
 		}
@@ -254,7 +263,8 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent implements Ad
 	public boolean equals(final Object obj){
 		if(obj!=null && obj instanceof Manager){
 			final Article article=(Article)obj;
-			return authorManager.equals(article.getAuthors()) &&
+			return super.equals(obj) && 
+					authorManager.equals(article.getAuthors()) &&
 					categoryManager.equals(article.getCategories()) &&
 					mediumManager.equals(article.getMedia()) &&
 					publicationDate.equals(article.getPublicationDate()) &&
@@ -265,12 +275,12 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent implements Ad
 	
 	@Override
 	public int hashCode(){
-		return authorManager.hashCode() * categoryManager.hashCode() * mediumManager.hashCode() * publicationDate.hashCode() * super.hashCode();
+		return super.hashCode() * authorManager.hashCode() * categoryManager.hashCode() * mediumManager.hashCode() * publicationDate.hashCode() * super.hashCode();
 	}
 	
 	@Override
 	public String toString(){
-		return (publicationDate!=null ? new SimpleDateFormat("dd/MM/yyyy HH:mm").format(publicationDate.toDate()) : "") + " - " + super.toString();
+		return super.toString() + " " + (publicationDate!=null ? new SimpleDateFormat("dd/MM/yyyy HH:mm").format(publicationDate.toDate()) : "") + " - " + super.toString();
 	}
 
 }

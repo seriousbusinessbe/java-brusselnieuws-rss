@@ -12,7 +12,7 @@ import be.seriousbusiness.brusselnieuws.rss.model.Medium;
  * @author Serious Business
  *
  */
-public interface AdaptableArticle extends Article, AdaptableContent {
+public interface AdaptableArticle extends Article, AdaptableContent<Long> {
 	
 	/**
 	 * Add a new author.</br>

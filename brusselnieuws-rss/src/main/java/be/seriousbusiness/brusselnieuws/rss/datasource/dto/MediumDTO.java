@@ -7,7 +7,7 @@ public interface MediumDTO {
 	void setLink(final String link);
 	MediumTypeDTO getMediumTypeDTO();
 	void setMediumTypeDTO(final MediumTypeDTO mediumTypeDTO);
-	double getSize();
-	void setSize(final double size);
+	long getSize();
+	void setSize(final long size);
 
 }
