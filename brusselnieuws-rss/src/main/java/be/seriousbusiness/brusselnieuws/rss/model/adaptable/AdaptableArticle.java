@@ -1,5 +1,9 @@
 package be.seriousbusiness.brusselnieuws.rss.model.adaptable;
 
+import java.util.Set;
+
+import org.joda.time.DateTime;
+
 import be.seriousbusiness.brusselnieuws.rss.model.Article;
 import be.seriousbusiness.brusselnieuws.rss.model.Author;
 import be.seriousbusiness.brusselnieuws.rss.model.Category;
@@ -22,6 +26,14 @@ public interface AdaptableArticle extends Article, AdaptableContent<Long> {
 	void add(final Author author);
 	
 	/**
+	 * Set a new Set of authors.
+	 * This method is solely introduced for the Dozer mappings.</br>
+	 * Preferably use the add() method defined by above.
+	 * @param authors
+	 */
+	void setAuthors(final Set<Author> authors);
+	
+	/**
 	 * Add a new Media.</br>
 	 * No action is performed when <code<null</code>
 	 * @param author
@@ -34,5 +46,28 @@ public interface AdaptableArticle extends Article, AdaptableContent<Long> {
 	 * @param author
 	 */
 	void add(final Category category);
+	
+	/**
+	 * Set a publication date.
+	 * @param publicationDate
+	 * @throws IllegalArgumentException when <code>null</code> or in the future
+	 */
+	void setPublicationDate(final DateTime publicationDate) throws IllegalArgumentException;
+	
+	/**
+	 * Set this article archived.</br>
+	 * This method is solely introduced for the Dozer mappings.</br>
+	 * Preferably use the archive() method defined by Article.
+	 * @param archived
+	 */
+	void setArchived(final boolean archived);
+	
+	/**
+	 * Set this article read.</br>
+	 * This method is solely introduced for the Dozer mappings.</br>
+	 * Preferably use the read() method defined by Article.
+	 * @param read
+	 */
+	void setRead(final boolean read);
 
 }

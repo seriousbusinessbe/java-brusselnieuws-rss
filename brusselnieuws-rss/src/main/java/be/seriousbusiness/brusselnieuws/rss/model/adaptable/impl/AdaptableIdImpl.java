@@ -21,12 +21,17 @@ public class AdaptableIdImpl<ID> implements AdaptableId<ID> {
 	
 	@Override
 	public boolean equals(final Object obj){
-		return obj!=null && obj instanceof Id<?> && this.id.equals(((Id<?>)obj).getId());
+		if(obj!=null && obj instanceof Id<?>){
+			@SuppressWarnings("unchecked")
+			final Id<ID> id=(Id<ID>)obj;
+			return (this.id==null && id.getId()==null) || (this.id.equals(id.getId()));
+		}
+		return false;
 	}
 	
 	@Override
 	public int hashCode(){
-		return id.hashCode();
+		return id==null ? 1 : id.hashCode();
 	}
 	
 	@Override

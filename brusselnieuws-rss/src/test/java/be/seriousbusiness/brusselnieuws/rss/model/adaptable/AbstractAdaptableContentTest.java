@@ -9,7 +9,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-public abstract class AbstractAdaptableContentTest<C extends AdaptableContent> {
+public abstract class AbstractAdaptableContentTest<ID,C extends AdaptableContent<ID>> {
 	protected C adaptable;
 	
 	@Rule

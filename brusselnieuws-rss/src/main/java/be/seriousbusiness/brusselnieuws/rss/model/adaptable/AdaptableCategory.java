@@ -11,7 +11,7 @@ import be.seriousbusiness.brusselnieuws.rss.model.Category;
  * @author Serious Business
  *
  */
-public interface AdaptableCategory extends Category {
+public interface AdaptableCategory extends Category, AdaptableId<Long> {
 	
 	/**
 	 * Set a new name.</br>

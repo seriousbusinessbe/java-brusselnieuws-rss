@@ -29,4 +29,9 @@ public class SimpleMediumMock implements Medium {
 		return MediumType.IMAGE_PNG;
 	}
 
+	@Override
+	public Long getId() {
+		return 20191817l;
+	}
+
 }

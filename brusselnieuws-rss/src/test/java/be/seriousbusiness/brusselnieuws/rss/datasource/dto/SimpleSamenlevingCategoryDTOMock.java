@@ -1,6 +1,6 @@
 package be.seriousbusiness.brusselnieuws.rss.datasource.dto;
 
-public class SimpleCategoryDTOMock implements CategoryDTO {
+public class SimpleSamenlevingCategoryDTOMock implements CategoryDTO {
 
 	@Override
 	public Long getId() {
@@ -12,7 +12,7 @@ public class SimpleCategoryDTOMock implements CategoryDTO {
 
 	@Override
 	public String getName() {
-		return "simple category dto mock";
+		return "simple samenleving category dto mock";
 	}
 
 	@Override

@@ -5,12 +5,13 @@ import java.util.Set;
 import be.seriousbusiness.brusselnieuws.rss.datasource.dto.ArticleDTO;
 import be.seriousbusiness.brusselnieuws.rss.datasource.dto.AuthorDTO;
 import be.seriousbusiness.brusselnieuws.rss.datasource.dto.CategoryDTO;
+import be.seriousbusiness.brusselnieuws.rss.datasource.dto.MediumDTO;
 
 public class ArticleDTOImpl extends DTOImpl<Long> implements ArticleDTO {
 	private String title,link,description;
 	private long publicationDate;
 	private boolean read,archived,favorite;
-	private Set<MediumDTOImpl> mediumDTOs;
+	private Set<MediumDTO> mediumDTOs;
 	private Set<CategoryDTO> categoryDTOs;
 	private Set<AuthorDTO> authorDTOs;
 	
@@ -84,12 +85,12 @@ public class ArticleDTOImpl extends DTOImpl<Long> implements ArticleDTO {
 	}
 	
 	@Override
-	public Set<MediumDTOImpl> getMediumDTOs() {
+	public Set<MediumDTO> getMediumDTOs() {
 		return mediumDTOs;
 	}
 	
 	@Override
-	public void setMediumDTOs(final Set<MediumDTOImpl> mediumDTOs) {
+	public void setMediumDTOs(final Set<MediumDTO> mediumDTOs) {
 		this.mediumDTOs = mediumDTOs;
 	}
 	

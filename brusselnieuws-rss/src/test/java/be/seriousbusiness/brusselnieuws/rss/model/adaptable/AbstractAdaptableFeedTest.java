@@ -14,7 +14,7 @@ import be.seriousbusiness.brusselnieuws.rss.model.Article;
 import be.seriousbusiness.brusselnieuws.rss.model.SimpleArchivedArticleMock;
 import be.seriousbusiness.brusselnieuws.rss.model.SimpleArticleMock;
 
-public abstract class AbstractAdaptableFeedTest<F extends AdaptableFeed> extends AbstractAdaptableContentTest<F> {
+public abstract class AbstractAdaptableFeedTest<F extends AdaptableFeed> extends AbstractAdaptableContentTest<Long,F> {
 	
 	/**
 	 * Creates a new AdaptableFeed implementation under test,</br>

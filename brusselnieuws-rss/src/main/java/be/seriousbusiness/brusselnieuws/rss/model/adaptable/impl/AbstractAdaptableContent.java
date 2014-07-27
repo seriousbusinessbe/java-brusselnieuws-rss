@@ -17,6 +17,10 @@ public abstract class AbstractAdaptableContent<ID> extends AdaptableIdImpl<ID> i
 		setTitle(title);
 	}
 	
+	public AbstractAdaptableContent(){
+		
+	}
+	
 	/**
 	 * Set a title
 	 * @param title

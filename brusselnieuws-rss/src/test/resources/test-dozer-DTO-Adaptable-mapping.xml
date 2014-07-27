@@ -11,6 +11,10 @@
 	            <class-a>be.seriousbusiness.brusselnieuws.rss.datasource.dto.MediumTypeDTO</class-a>
 	            <class-b>be.seriousbusiness.brusselnieuws.rss.model.MediumType</class-b>
 	        </converter>
+	        <converter type="be.seriousbusiness.brusselnieuws.rss.datasource.dto.dozer.LongToDateTimeConverter">
+	        	<class-a>java.lang.Long</class-a>
+	            <class-b>org.joda.time.DateTime</class-b>
+	        </converter>
 	    </custom-converters>
 	</configuration>
           
@@ -18,7 +22,7 @@
 	<mapping> 
 		<class-a>be.seriousbusiness.brusselnieuws.rss.datasource.dto.CategoryDTO</class-a>
 		<class-b>be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableCategory</class-b> 
-		<!-- Super Class Mapping -->  
+		<!-- Super Class Mapping --> 
 		<field>
 			<a>id</a> 
 			<b>id</b>
@@ -40,10 +44,29 @@
 	<mapping>
 	  	<class-a>be.seriousbusiness.brusselnieuws.rss.datasource.dto.MediumDTO</class-a>
 	  	<class-b>be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableMedium</class-b>
+	  	<!-- Mapping of MediumTypeDTO to MediumType -->
 		 <field>
 			<a>mediumTypeDTO</a> 
 			<b>type</b>
 		</field>
+	</mapping>
+	
+	<!-- ArticleDTO to AdaptablArticle -->
+	<mapping>
+	  	<class-a>be.seriousbusiness.brusselnieuws.rss.datasource.dto.ArticleDTO</class-a>
+	  	<class-b>be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableArticle</class-b>
+		<!-- Super Class Mapping -->  
+		<field>
+			<a>id</a> 
+			<b>id</b>
+		</field>
+		<!-- Collection Mapping -->
+		<!-- 
+		<field relationship-type="non-cumulative">
+			<a>unequalNamedList</a> 
+			<b>theMappedUnequallyNamedList</b> 
+		</field> 
+		-->
 	</mapping>
 
 </mappings> 

@@ -1,6 +1,6 @@
 package be.seriousbusiness.brusselnieuws.rss.datasource.dto;
 
-public class SimpleMediumTypeDTOMock implements MediumTypeDTO{
+public class SimpleImageJpegMediumTypeDTOMock implements MediumTypeDTO{
 
 	@Override
 	public Long getId() {

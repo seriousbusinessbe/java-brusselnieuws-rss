@@ -14,7 +14,7 @@ import be.seriousbusiness.brusselnieuws.rss.model.SimpleCategoryMock;
 import be.seriousbusiness.brusselnieuws.rss.model.SimpleMediumMock;
 
 
-public abstract class AbstractAdaptableArticleTest<A extends AdaptableArticle> extends AbstractAdaptableContentTest<A> {
+public abstract class AbstractAdaptableArticleTest<A extends AdaptableArticle> extends AbstractAdaptableContentTest<Long,A> {
 
 	/**
 	 * Test if a <code>null</code> author is not added.

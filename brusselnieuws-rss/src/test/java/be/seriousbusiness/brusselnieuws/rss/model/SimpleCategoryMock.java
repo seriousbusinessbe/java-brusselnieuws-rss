@@ -24,4 +24,9 @@ public class SimpleCategoryMock implements Category {
 		}
 	}
 
+	@Override
+	public Long getId() {
+		return 16151413l;
+	}
+
 }

@@ -1,10 +1,12 @@
 package be.seriousbusiness.brusselnieuws.rss.datasource.dto;
 
-public class SimpleMediumDTOMock implements MediumDTO {
+public class SimplePngMediumDTOMock implements MediumDTO {
+	private final MediumTypeDTO mediumTypeDTO=new SimpleImagePngMediumTypeDTOMock();
+
 
 	@Override
 	public String getLink() {
-		return "http://www.brusselnieuws.be/sites/default/files/styles/bn_220_crop/public/article_media/images/gazabetoging.jpg";
+		return "http://www.brusselnieuws.be/sites/default/files/styles/bn_220_crop/public/article_media/images/nationalebank.png";
 	}
 
 	@Override
@@ -12,7 +14,7 @@ public class SimpleMediumDTOMock implements MediumDTO {
 
 	@Override
 	public MediumTypeDTO getMediumTypeDTO() {
-		return new SimpleMediumTypeDTOMock();
+		return mediumTypeDTO;
 	}
 
 	@Override
@@ -20,7 +22,7 @@ public class SimpleMediumDTOMock implements MediumDTO {
 
 	@Override
 	public long getSize() {
-		return 4892l;
+		return 89092;
 	}
 
 	@Override

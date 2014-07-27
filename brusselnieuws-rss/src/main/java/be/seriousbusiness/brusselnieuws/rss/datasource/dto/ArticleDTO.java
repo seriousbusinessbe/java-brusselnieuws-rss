@@ -2,8 +2,6 @@ package be.seriousbusiness.brusselnieuws.rss.datasource.dto;
 
 import java.util.Set;
 
-import be.seriousbusiness.brusselnieuws.rss.datasource.dto.impl.MediumDTOImpl;
-
 public interface ArticleDTO extends DTO<Long> {
 	
 	String getTitle();
@@ -20,8 +18,8 @@ public interface ArticleDTO extends DTO<Long> {
 	void setArchived(final boolean archived);
 	boolean isFavorite();
 	void setFavorite(final boolean favorite);
-	Set<MediumDTOImpl> getMediumDTOs();
-	void setMediumDTOs(final Set<MediumDTOImpl> mediumDTOs);
+	Set<MediumDTO> getMediumDTOs();
+	void setMediumDTOs(final Set<MediumDTO> mediumDTOs);
 	Set<CategoryDTO> getCategoryDTOs();
 	void setCategoryDTOs(final Set<CategoryDTO> categoryDTOs);
 	Set<AuthorDTO> getAuthorDTOs();

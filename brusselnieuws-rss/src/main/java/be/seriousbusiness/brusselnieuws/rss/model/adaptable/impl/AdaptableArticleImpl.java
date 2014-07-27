@@ -147,6 +147,13 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent<Long> impleme
 		this.favorite=favorite;
 	}
 	
+	public AdaptableArticleImpl(){
+		authorManager=new ManagerImpl<Author>();
+		mediumManager=new ManagerImpl<Medium>();
+		categoryManager=new ManagerImpl<Category>();
+		
+	}
+	
 	@Override
 	public int numberOfAuthors() {
 		return authorManager.size();
@@ -160,6 +167,15 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent<Long> impleme
 	@Override
 	public List<Author> getAuthors() {
 		return authorManager.getAll(new AuthorNameComparator());
+	}
+	
+	@Override
+	public void setAuthors(Set<Author> authors) {
+		if(authors!=null){
+			for(final Author author : authors){
+				authorManager.add(author);
+			}
+		}
 	}
 	
 	@Override
@@ -212,12 +228,8 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent<Long> impleme
 		return categoryManager.getAll(new CategoryNameComparator());
 	}
 	
-	/**
-	 * Set a publication date
-	 * @param publicationDate
-	 * @throws IllegalArgumentException when <code>null</code> or in the future
-	 */
-	protected void setPublicationDate(final DateTime publicationDate) throws IllegalArgumentException{
+	@Override
+	public void setPublicationDate(final DateTime publicationDate) throws IllegalArgumentException{
 		if(publicationDate==null || publicationDate.isAfterNow()){
 			throw new IllegalArgumentException("The publication date is null or in the future");
 		}
@@ -235,18 +247,28 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent<Long> impleme
 	}
 	
 	@Override
+	public void setRead(boolean read) {
+		this.read=read;
+	}
+	
+	@Override
 	public void read() {
-		read=true;
+		setRead(true);
 	}
 	
 	@Override
 	public boolean isArchived() {
 		return archived;
 	}
+	
+	@Override
+	public void setArchived(final boolean archived) {
+		this.archived=archived;
+	}
 
 	@Override
 	public void archive() {
-		archived=true;
+		setArchived(true);
 	}
 	
 	@Override

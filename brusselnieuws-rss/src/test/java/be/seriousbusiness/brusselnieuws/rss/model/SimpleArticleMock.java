@@ -107,4 +107,9 @@ public class SimpleArticleMock implements Article {
 	@Override
 	public void setFavorite(boolean favorite) {}
 
+	@Override
+	public Long getId() {
+		return 8765l;
+	}
+
 }

@@ -21,4 +21,5 @@ public interface Category extends Id<Long> {
 	 * @return the web URL
 	 */
 	URL getLink();
+	
 }
