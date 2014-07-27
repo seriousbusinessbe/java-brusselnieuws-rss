@@ -3,7 +3,6 @@ package be.seriousbusiness.brusselnieuws.rss.datasource.dto;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-
 import java.util.List;
 import java.util.Set;
 
@@ -42,7 +41,6 @@ public class DozerDTOAdaptableMappingTest {
 		assertEquals("The id is not correctly mapped",dto.getId(),id.getId());
 	}
 	
-	@Ignore
 	@Test
 	public void testCategoryDTOToAdaptableCategoryMapping(){
 		final CategoryDTO categoryDTO=new SimpleSamenlevingCategoryDTOMock();
