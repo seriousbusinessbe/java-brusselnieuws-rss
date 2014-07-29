@@ -10,7 +10,6 @@
 	<context:annotation-config/>
 	
 	<!-- IMPORTS -->
-	
 	<import resource="test-dozer-config.xml"/>
 	
 	<context:property-placeholder location="classpath:configuration.properties"/>

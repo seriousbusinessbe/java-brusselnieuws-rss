@@ -23,7 +23,8 @@
 	</bean>
 	
 	<!-- Custom Converter -->
-	
+	<!-- 
 	<bean id="mediumTypeDTOToMediumTypeConverter" class="be.seriousbusiness.brusselnieuws.rss.datasource.dto.dozer.MediumTypeDTOToMediumTypeConverter" />
+	 -->
 	
 </beans>

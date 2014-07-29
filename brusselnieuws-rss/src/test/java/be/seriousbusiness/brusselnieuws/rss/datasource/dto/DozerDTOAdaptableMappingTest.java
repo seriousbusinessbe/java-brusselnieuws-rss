@@ -27,7 +27,6 @@ import be.seriousbusiness.brusselnieuws.rss.model.adaptable.impl.AdaptableAuthor
 import be.seriousbusiness.brusselnieuws.rss.model.adaptable.impl.AdaptableCategoryImpl;
 import be.seriousbusiness.brusselnieuws.rss.model.adaptable.impl.AdaptableMediumImpl;
 
-@Ignore
 @ContextConfiguration("classpath:test-dozer-config.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
 public class DozerDTOAdaptableMappingTest {

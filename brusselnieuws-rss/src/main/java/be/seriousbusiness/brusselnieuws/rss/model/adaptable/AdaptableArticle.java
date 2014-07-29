@@ -1,6 +1,6 @@
 package be.seriousbusiness.brusselnieuws.rss.model.adaptable;
 
-import java.util.Set;
+import java.util.List;
 
 import org.joda.time.DateTime;
 
@@ -28,10 +28,11 @@ public interface AdaptableArticle extends Article, AdaptableContent<Long> {
 	/**
 	 * Set a new Set of authors.
 	 * This method is solely introduced for the Dozer mappings.</br>
-	 * Preferably use the add() method defined by above.
-	 * @param authors
+	 * Preferably use the add() method defined by above.</br>
+	 * No action is performed when the list of authors is <code>null</code> or empty.
+	 * @param authors 
 	 */
-	void setAuthors(final Set<Author> authors);
+	void setAuthors(final List<Author> authors);
 	
 	/**
 	 * Add a new Media.</br>
@@ -41,12 +42,30 @@ public interface AdaptableArticle extends Article, AdaptableContent<Long> {
 	void add(final Medium medium);
 	
 	/**
+	 * Set a new Set of mediums.
+	 * This method is solely introduced for the Dozer mappings.</br>
+	 * Preferably use the add() method defined by above.</br>
+	 * No action is performed when the list of mediums is <code>null</code> or empty.
+	 * @param media
+	 */
+	void setMedia(final List<Medium> media);
+	
+	/**
 	 * Add a new Category.</br>
 	 * No action is performed when <code<null</code>
 	 * @param author
 	 */
 	void add(final Category category);
 	
+	/**
+	 * Set a new Set of categories.
+	 * This method is solely introduced for the Dozer mappings.</br>
+	 * Preferably use the add() method defined by above.</br>
+	 * No action is performed when the list of categories is <code>null</code> or empty.
+	 * @param categories
+	 */
+	void setCategories(final List<Category> categories);
+		
 	/**
 	 * Set a publication date.
 	 * @param publicationDate

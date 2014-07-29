@@ -57,7 +57,6 @@ public class AdaptableCategoryImpl extends AdaptableIdImpl<Long> implements Adap
 	 * Dozer constructor.
 	 */
 	public AdaptableCategoryImpl(){
-		
 	}
 	
 	@Override

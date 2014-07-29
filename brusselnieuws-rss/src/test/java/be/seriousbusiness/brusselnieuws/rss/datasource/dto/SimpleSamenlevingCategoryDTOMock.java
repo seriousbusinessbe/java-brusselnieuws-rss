@@ -16,7 +16,7 @@ public class SimpleSamenlevingCategoryDTOMock implements CategoryDTO {
 	}
 
 	@Override
-	public void setName(String name) {}
+	public void setName(final String name) {}
 
 	@Override
 	public String getLink() {
@@ -24,6 +24,6 @@ public class SimpleSamenlevingCategoryDTOMock implements CategoryDTO {
 	}
 
 	@Override
-	public void setLink(String link) {}
+	public void setLink(final String link) {}
 
 }

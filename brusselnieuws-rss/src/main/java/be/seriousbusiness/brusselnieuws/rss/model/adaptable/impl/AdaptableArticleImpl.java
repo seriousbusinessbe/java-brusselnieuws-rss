@@ -170,10 +170,10 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent<Long> impleme
 	}
 	
 	@Override
-	public void setAuthors(Set<Author> authors) {
+	public void setAuthors(List<Author> authors) {
 		if(authors!=null){
 			for(final Author author : authors){
-				authorManager.add(author);
+				add(author);
 			}
 		}
 	}
@@ -202,6 +202,15 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent<Long> impleme
 	public void add(final Medium medium) {
 		mediumManager.add(medium);
 	}
+	
+	@Override
+	public void setMedia(final List<Medium> media) {
+		if(media!=null){
+			for(final Medium medium : media){
+				add(medium);
+			}
+		}
+	}
 
 	@Override
 	public List<Medium> getMedia() {
@@ -221,6 +230,16 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent<Long> impleme
 	@Override
 	public void add(final Category category) {
 		categoryManager.add(category);
+	}
+	
+	@Override
+	public void setCategories(final List<Category> categories) {
+		if(categories!=null){
+			for(final Category category : categories){
+				add(category);
+			}
+		}
+		
 	}
 
 	@Override

@@ -15,31 +15,27 @@
 	        	<class-a>java.lang.Long</class-a>
 	            <class-b>org.joda.time.DateTime</class-b>
 	        </converter>
+	        <!-- 
+	        <converter type="be.seriousbusiness.brusselnieuws.rss.datasource.dto.dozer.CategoryDTOToAdaptableCategoryConverter">
+	        	<class-a>be.seriousbusiness.brusselnieuws.rss.datasource.dto.CategoryDTO</class-a>
+	        	<class-b>be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableCategory</class-b>
+	        </converter>
+	        -->
 	    </custom-converters>
 	</configuration>
           
-  	<!-- CategoryDTO to AdaptableCategory -->
+   	<!-- CategoryDTO to AdaptableCategory -->
 	<mapping> 
 		<class-a>be.seriousbusiness.brusselnieuws.rss.datasource.dto.CategoryDTO</class-a>
 		<class-b>be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableCategory</class-b> 
-		<!-- Super Class Mapping --> 
-		<field>
-			<a>id</a> 
-			<b>id</b>
-		</field>
 	</mapping>  
-  
-  	<!-- AuthorDTO to AdaptableAuthor -->
+	
+	<!-- AuthorDTO to AdaptableAuthor -->
 	<mapping>
 		<class-a>be.seriousbusiness.brusselnieuws.rss.datasource.dto.AuthorDTO</class-a>
 		<class-b>be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableAuthor</class-b>
-		<!-- Super Class Mapping -->  
-		<field>
-			<a>id</a> 
-			<b>id</b>
-		</field>
 	</mapping>
-  
+	
 	<!-- MediumDTO to AdaptablMedium -->
 	<mapping>
 	  	<class-a>be.seriousbusiness.brusselnieuws.rss.datasource.dto.MediumDTO</class-a>
@@ -55,18 +51,23 @@
 	<mapping>
 	  	<class-a>be.seriousbusiness.brusselnieuws.rss.datasource.dto.ArticleDTO</class-a>
 	  	<class-b>be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableArticle</class-b>
-		<!-- Super Class Mapping -->  
-		<field>
-			<a>id</a> 
-			<b>id</b>
-		</field>
-		<!-- Collection Mapping -->
-		<!-- 
-		<field relationship-type="non-cumulative">
-			<a>unequalNamedList</a> 
-			<b>theMappedUnequallyNamedList</b> 
-		</field> 
-		-->
+	  	<field relationship-type="non-cumulative">
+	  		<a>categoryDTOs</a>
+	  		<b>categories</b>
+	  		<a-hint>be.seriousbusiness.brusselnieuws.rss.datasource.dto.CategoryDTO</a-hint>
+	  		<b-hint>be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableCategory</b-hint>
+	  	</field>
+	  	<field relationship-type="non-cumulative">
+	  		<a>authorDTOs</a>
+	  		<b>authors</b>
+	  		<a-hint>be.seriousbusiness.brusselnieuws.rss.datasource.dto.AuthorDTO</a-hint>
+	  		<b-hint>be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableAuthor</b-hint>
+	  	</field>
+	  	<field relationship-type="non-cumulative">
+	  		<a>mediumDTOs</a>
+	  		<b>media</b>
+	  		<a-hint>be.seriousbusiness.brusselnieuws.rss.datasource.dto.MediumDTO</a-hint>
+	  		<b-hint>be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableMedium</b-hint>
+	  	</field>
 	</mapping>
-
-</mappings> 
+</mappings>
