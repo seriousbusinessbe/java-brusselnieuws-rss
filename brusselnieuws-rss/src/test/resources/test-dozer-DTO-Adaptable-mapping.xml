@@ -7,20 +7,14 @@
     <!-- Custom Converters -->
 	<configuration>
 	    <custom-converters>
-	        <converter type="be.seriousbusiness.brusselnieuws.rss.datasource.dto.dozer.MediumTypeDTOToMediumTypeConverter">
+	        <converter type="be.seriousbusiness.brusselnieuws.rss.datasource.dto.dozer.converter.MediumTypeDTOToMediumTypeConverter">
 	            <class-a>be.seriousbusiness.brusselnieuws.rss.datasource.dto.MediumTypeDTO</class-a>
 	            <class-b>be.seriousbusiness.brusselnieuws.rss.model.MediumType</class-b>
 	        </converter>
-	        <converter type="be.seriousbusiness.brusselnieuws.rss.datasource.dto.dozer.LongToDateTimeConverter">
+	        <converter type="be.seriousbusiness.brusselnieuws.rss.datasource.dto.dozer.converter.LongToDateTimeConverter">
 	        	<class-a>java.lang.Long</class-a>
 	            <class-b>org.joda.time.DateTime</class-b>
 	        </converter>
-	        <!-- 
-	        <converter type="be.seriousbusiness.brusselnieuws.rss.datasource.dto.dozer.CategoryDTOToAdaptableCategoryConverter">
-	        	<class-a>be.seriousbusiness.brusselnieuws.rss.datasource.dto.CategoryDTO</class-a>
-	        	<class-b>be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableCategory</class-b>
-	        </converter>
-	        -->
 	    </custom-converters>
 	</configuration>
           
@@ -48,26 +42,23 @@
 	</mapping>
 	
 	<!-- ArticleDTO to AdaptablArticle -->
+	<!-- Following used custom converters are set in the mapper which is injected by Spring -->
+	<!-- The configuration can be found in: test-dozer-config.xml -->
+	<!-- This is solely because these converters are Autowired and need to be injected by Spring -->
 	<mapping>
 	  	<class-a>be.seriousbusiness.brusselnieuws.rss.datasource.dto.ArticleDTO</class-a>
 	  	<class-b>be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableArticle</class-b>
-	  	<field relationship-type="non-cumulative">
+	  	<field custom-converter-id="CategoryDTOSetToAdaptableCategoryListConverter">
 	  		<a>categoryDTOs</a>
 	  		<b>categories</b>
-	  		<a-hint>be.seriousbusiness.brusselnieuws.rss.datasource.dto.CategoryDTO</a-hint>
-	  		<b-hint>be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableCategory</b-hint>
 	  	</field>
-	  	<field relationship-type="non-cumulative">
+	  	<field custom-converter-id="AuthorDTOSetToAdaptableAuthorListConverter">
 	  		<a>authorDTOs</a>
 	  		<b>authors</b>
-	  		<a-hint>be.seriousbusiness.brusselnieuws.rss.datasource.dto.AuthorDTO</a-hint>
-	  		<b-hint>be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableAuthor</b-hint>
 	  	</field>
-	  	<field relationship-type="non-cumulative">
+	  	<field custom-converter-id="MediumDTOSetToAdaptableMediumListConverter">
 	  		<a>mediumDTOs</a>
 	  		<b>media</b>
-	  		<a-hint>be.seriousbusiness.brusselnieuws.rss.datasource.dto.MediumDTO</a-hint>
-	  		<b-hint>be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableMedium</b-hint>
 	  	</field>
 	</mapping>
 </mappings>

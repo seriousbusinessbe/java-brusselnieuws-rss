@@ -151,7 +151,6 @@ public class AdaptableArticleImpl extends AbstractAdaptableContent<Long> impleme
 		authorManager=new ManagerImpl<Author>();
 		mediumManager=new ManagerImpl<Medium>();
 		categoryManager=new ManagerImpl<Category>();
-		
 	}
 	
 	@Override

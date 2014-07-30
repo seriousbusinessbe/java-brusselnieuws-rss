@@ -1,4 +1,4 @@
-package be.seriousbusiness.brusselnieuws.rss.datasource.dto.dozer;
+package be.seriousbusiness.brusselnieuws.rss.datasource.dto.dozer.converter;
 
 import org.dozer.CustomConverter;
 import org.dozer.DozerConverter;
@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import be.seriousbusiness.brusselnieuws.rss.datasource.dto.MediumTypeDTO;
+import be.seriousbusiness.brusselnieuws.rss.datasource.dto.dozer.MapperUtil;
 import be.seriousbusiness.brusselnieuws.rss.model.MediumType;
 
 /**
@@ -21,16 +22,6 @@ public class MediumTypeDTOToMediumTypeConverter extends DozerConverter<MediumTyp
 		super(MediumTypeDTO.class,MediumType.class);
 	}
 
-	
-	private static final boolean implementsInterface(final Class<?> classClass,final Class<?> interfaceClass){
-		for(final Class<?> cls : classClass.getInterfaces()){
-			if(cls.equals(interfaceClass)){
-				return true;
-			}
-		}
-		return false;
-	}
-
 	@Override
 	public Object convert(Object existingDestinationFieldValue,
 			Object sourceFieldValue, Class<?> destinationClass,
@@ -38,7 +29,7 @@ public class MediumTypeDTOToMediumTypeConverter extends DozerConverter<MediumTyp
 		if(sourceClass==null || sourceFieldValue==null){
 			LOGGER.debug("Converted MediumTypeDTO 'null' to MediumType '{}'",MediumType.UNKNOWN);
 			return MediumType.UNKNOWN;
-		}else if(implementsInterface(sourceClass,MediumTypeDTO.class) && destinationClass.isEnum() && destinationClass.equals(MediumType.class)){
+		}else if(MapperUtil.hasInterface(sourceClass,MediumTypeDTO.class) && destinationClass.isEnum() && destinationClass.equals(MediumType.class)){
 			final MediumTypeDTO mediumTypeDTO=(MediumTypeDTO)sourceFieldValue;
 			final MediumType mediumType=MediumType.find(mediumTypeDTO.getType());
 			LOGGER.debug("Converted MediumTypeDTO '{}' to MediumType '{}'",mediumTypeDTO.getType(),mediumType.toString());

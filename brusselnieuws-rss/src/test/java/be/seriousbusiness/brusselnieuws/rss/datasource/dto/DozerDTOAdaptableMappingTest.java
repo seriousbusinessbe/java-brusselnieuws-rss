@@ -8,7 +8,6 @@ import java.util.Set;
 
 import org.dozer.Mapper;
 import org.joda.time.DateTime;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -84,7 +83,6 @@ public class DozerDTOAdaptableMappingTest {
 		assertEquals("The collection of mediums is not correctly mapped",articleDTO.getMediumDTOs().size(),adaptableArticle.getMedia().size());
 	}
 	
-	@Ignore
 	@Test
 	public void testArticleDTOToAdaptableArticleDeepMapping(){
 		final ArticleDTO articleDTO=new CompleteArticleDTOMock();
@@ -100,9 +98,6 @@ public class DozerDTOAdaptableMappingTest {
 		final Set<AuthorDTO> authorDTOs=articleDTO.getAuthorDTOs();
 		final List<Author> authors=adaptableArticle.getAuthors();
 		assertEquals("The collection of authors is not correctly mapped",authorDTOs.size(),authors.size());
-		for(final AuthorDTO authorDTO : authorDTOs){
-			//authors.c
-		}
 		assertEquals("The collection of categories is not correctly mapped",articleDTO.getCategoryDTOs().size(),adaptableArticle.getCategories().size());
 		assertEquals("The collection of mediums is not correctly mapped",articleDTO.getMediumDTOs().size(),adaptableArticle.getMedia().size());
 	}

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	
+	<context:annotation-config/>
+	
+	<context:component-scan base-package="be.seriousbusiness.brusselnieuws.rss.datasource.dto.dozer"/>
 	
 	<!-- DozerBeanMapper -->
 	
@@ -13,18 +19,22 @@
 			</list>
 		</property>
 		<!-- Set Custom Converter(s) -->
-		<!-- Only interesting when these custom converters are used over multiple mapping files
+		<!-- Only interesting when these custom converters are used over multiple mapping files -->
 		<property name="customConvertersWithId"> 
 	      <map> 
-	        <entry key="MediumTypeDTOToMediumTypeConverter" value-ref="mediumTypeDTOToMediumTypeConverter"/> 
+	        <entry key="CategoryDTOSetToAdaptableCategoryListConverter" value-ref="categoryDTOSetToAdaptableCategoryListConverter"/>
+	        <entry key="MediumDTOSetToAdaptableMediumListConverter" value-ref="mediumDTOSetToAdaptableMediumListConverter"/>
+	        <entry key="AuthorDTOSetToAdaptableAuthorListConverter" value-ref="authorDTOSetToAdaptableAuthorListConverter"/>
 	      </map> 
 	    </property>
-	     -->
 	</bean>
 	
 	<!-- Custom Converter -->
-	<!-- 
-	<bean id="mediumTypeDTOToMediumTypeConverter" class="be.seriousbusiness.brusselnieuws.rss.datasource.dto.dozer.MediumTypeDTOToMediumTypeConverter" />
-	 -->
+	 
+	<bean id="categoryDTOSetToAdaptableCategoryListConverter" class="be.seriousbusiness.brusselnieuws.rss.datasource.dto.dozer.converter.CategoryDTOSetToAdaptableCategoryListConverter"/>
+	
+	<bean id="mediumDTOSetToAdaptableMediumListConverter" class="be.seriousbusiness.brusselnieuws.rss.datasource.dto.dozer.converter.MediumDTOSetToAdaptableMediumListConverter"/>
+	
+	<bean id="authorDTOSetToAdaptableAuthorListConverter" class="be.seriousbusiness.brusselnieuws.rss.datasource.dto.dozer.converter.AuthorDTOSetToAdaptableAuthorListConverter"/>
 	
 </beans>

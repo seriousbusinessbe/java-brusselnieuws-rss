@@ -8,7 +8,7 @@ import be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableContent;
 public abstract class AbstractAdaptableContent<ID> extends AdaptableIdImpl<ID> implements AdaptableContent<ID> {
 	private String title,description;
 	private URL link;
-	
+
 	/**
 	 * @param title
 	 * @throws IllegalArgumentException when the title is <code>null</code>

@@ -9,6 +9,8 @@
 		
 	<context:annotation-config/>
 	
+	<context:component-scan base-package="be.seriousbusiness.brusselnieuws.rss"/>
+	
 	<!-- IMPORTS -->
 	<import resource="test-dozer-config.xml"/>
 	

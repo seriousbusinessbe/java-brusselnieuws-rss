@@ -1,4 +1,4 @@
-package be.seriousbusiness.brusselnieuws.rss.datasource.dto.dozer;
+package be.seriousbusiness.brusselnieuws.rss.datasource.dto.dozer.converter;
 
 import org.dozer.CustomConverter;
 import org.joda.time.DateTime;
