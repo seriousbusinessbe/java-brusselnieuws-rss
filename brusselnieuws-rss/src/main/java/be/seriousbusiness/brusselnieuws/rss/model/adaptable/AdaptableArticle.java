@@ -26,7 +26,7 @@ public interface AdaptableArticle extends Article, AdaptableContent<Long> {
 	void add(final Author author);
 	
 	/**
-	 * Set a new Set of authors.
+	 * Set a new List of authors.
 	 * This method is solely introduced for the Dozer mappings.</br>
 	 * Preferably use the add() method defined by above.</br>
 	 * No action is performed when the list of authors is <code>null</code> or empty.
@@ -42,7 +42,7 @@ public interface AdaptableArticle extends Article, AdaptableContent<Long> {
 	void add(final Medium medium);
 	
 	/**
-	 * Set a new Set of mediums.
+	 * Set a new List of mediums.
 	 * This method is solely introduced for the Dozer mappings.</br>
 	 * Preferably use the add() method defined by above.</br>
 	 * No action is performed when the list of mediums is <code>null</code> or empty.
@@ -58,7 +58,7 @@ public interface AdaptableArticle extends Article, AdaptableContent<Long> {
 	void add(final Category category);
 	
 	/**
-	 * Set a new Set of categories.
+	 * Set a new List of categories.
 	 * This method is solely introduced for the Dozer mappings.</br>
 	 * Preferably use the add() method defined by above.</br>
 	 * No action is performed when the list of categories is <code>null</code> or empty.

@@ -6,6 +6,7 @@
           
     <!-- Custom Converters -->
 	<configuration>
+		<relationship-type>non-cumulative</relationship-type>
 	    <custom-converters>
 	        <converter type="be.seriousbusiness.brusselnieuws.rss.datasource.dto.dozer.converter.MediumTypeDTOToMediumTypeConverter">
 	            <class-a>be.seriousbusiness.brusselnieuws.rss.datasource.dto.MediumTypeDTO</class-a>
@@ -59,6 +60,16 @@
 	  	<field custom-converter-id="MediumDTOSetToAdaptableMediumListConverter">
 	  		<a>mediumDTOs</a>
 	  		<b>media</b>
+	  	</field>
+	</mapping>
+	
+	<!-- FeedDTO to AdaptablFeed -->
+	<mapping>
+	  	<class-a>be.seriousbusiness.brusselnieuws.rss.datasource.dto.FeedDTO</class-a>
+	  	<class-b>be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableFeed</class-b>
+	  	<field custom-converter-id="FeedDTOSetToAdaptableFeedListConverter">
+	  		<a>articleDTOs</a>
+	  		<b>articles</b>
 	  	</field>
 	</mapping>
 </mappings>

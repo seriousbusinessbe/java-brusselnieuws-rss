@@ -25,6 +25,7 @@
 	        <entry key="CategoryDTOSetToAdaptableCategoryListConverter" value-ref="categoryDTOSetToAdaptableCategoryListConverter"/>
 	        <entry key="MediumDTOSetToAdaptableMediumListConverter" value-ref="mediumDTOSetToAdaptableMediumListConverter"/>
 	        <entry key="AuthorDTOSetToAdaptableAuthorListConverter" value-ref="authorDTOSetToAdaptableAuthorListConverter"/>
+	        <entry key="FeedDTOSetToAdaptableFeedListConverter" value-ref="feedDTOSetToAdaptableFeedListConverter"/>
 	      </map> 
 	    </property>
 	</bean>
@@ -36,5 +37,7 @@
 	<bean id="mediumDTOSetToAdaptableMediumListConverter" class="be.seriousbusiness.brusselnieuws.rss.datasource.dto.dozer.converter.MediumDTOSetToAdaptableMediumListConverter"/>
 	
 	<bean id="authorDTOSetToAdaptableAuthorListConverter" class="be.seriousbusiness.brusselnieuws.rss.datasource.dto.dozer.converter.AuthorDTOSetToAdaptableAuthorListConverter"/>
+	
+	<bean id="feedDTOSetToAdaptableFeedListConverter" class="be.seriousbusiness.brusselnieuws.rss.datasource.dto.dozer.converter.FeedDTOSetToAdaptableFeedListConverter"/>
 	
 </beans>

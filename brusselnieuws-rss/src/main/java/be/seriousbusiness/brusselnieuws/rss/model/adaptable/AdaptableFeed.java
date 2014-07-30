@@ -1,5 +1,7 @@
 package be.seriousbusiness.brusselnieuws.rss.model.adaptable;
 
+import java.util.List;
+
 import be.seriousbusiness.brusselnieuws.rss.model.Article;
 import be.seriousbusiness.brusselnieuws.rss.model.Feed;
 
@@ -19,5 +21,14 @@ public interface AdaptableFeed extends Feed, AdaptableContent<Long> {
 	 * @return the added or already added article.</br>
 	 */
 	Article add(final Article article);
+	
+	/**
+	 * Set a new List of articles.
+	 * This method is solely introduced for the Dozer mappings.</br>
+	 * Preferably use the add() method defined by above.</br>
+	 * No action is performed when the list of articles is <code>null</code> or empty.
+	 * @return a list of articles, empty when none published
+	 */
+	void setArticles(final List<Article> articles);
 
 }

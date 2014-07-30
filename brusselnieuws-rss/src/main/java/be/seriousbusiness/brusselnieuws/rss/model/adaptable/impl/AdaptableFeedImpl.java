@@ -15,8 +15,8 @@ import be.seriousbusiness.brusselnieuws.rss.model.impl.ManagerUtil;
 import be.seriousbusiness.brusselnieuws.rss.model.listener.FeedListener;
 
 public class AdaptableFeedImpl extends AbstractAdaptableContent<Long> implements AdaptableFeed {
-	private Set<Article> articles;
-	private Set<FeedListener> feedListeners;
+	private Set<Article> articles=new HashSet<Article>();
+	private Set<FeedListener> feedListeners=new HashSet<FeedListener>();
 	
 	public static class Builder {
 		private Long id;
@@ -78,8 +78,9 @@ public class AdaptableFeedImpl extends AbstractAdaptableContent<Long> implements
 	 */
 	protected AdaptableFeedImpl(final String title) throws IllegalArgumentException{
 		super(title);
-		articles=new HashSet<Article>();
-		feedListeners=new HashSet<FeedListener>();
+	}
+	
+	public AdaptableFeedImpl(){
 	}
 
 	@Override
@@ -156,6 +157,15 @@ public class AdaptableFeedImpl extends AbstractAdaptableContent<Long> implements
 	}
 	
 	@Override
+	public void setArticles(final List<Article> articles) {
+		if(articles!=null){
+			for(final Article article : articles){
+				add(article);
+			}
+		}
+	}	
+	
+	@Override
 	public boolean equals(final Object obj){
 		return obj!=null && obj instanceof Feed && articles.equals(((Feed)obj).getArticles()) && super.equals(obj);
 	}
@@ -196,6 +206,6 @@ public class AdaptableFeedImpl extends AbstractAdaptableContent<Long> implements
 	@Override
 	public void detach(final FeedListener feedListener) {
 		feedListeners.remove(feedListener);
-	}	
+	}
 
 }

@@ -20,10 +20,12 @@ import be.seriousbusiness.brusselnieuws.rss.model.MediumType;
 import be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableArticle;
 import be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableAuthor;
 import be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableCategory;
+import be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableFeed;
 import be.seriousbusiness.brusselnieuws.rss.model.adaptable.AdaptableMedium;
 import be.seriousbusiness.brusselnieuws.rss.model.adaptable.impl.AdaptableArticleImpl;
 import be.seriousbusiness.brusselnieuws.rss.model.adaptable.impl.AdaptableAuthorImpl;
 import be.seriousbusiness.brusselnieuws.rss.model.adaptable.impl.AdaptableCategoryImpl;
+import be.seriousbusiness.brusselnieuws.rss.model.adaptable.impl.AdaptableFeedImpl;
 import be.seriousbusiness.brusselnieuws.rss.model.adaptable.impl.AdaptableMediumImpl;
 
 @ContextConfiguration("classpath:test-dozer-config.xml")
@@ -70,7 +72,7 @@ public class DozerDTOAdaptableMappingTest {
 	public void testArticleDTOToAdaptableArticleMapping(){
 		final ArticleDTO articleDTO=new SimpleArticleDTOMock();
 		final AdaptableArticle adaptableArticle=new AdaptableArticleImpl();
-		mapper.map(articleDTO,adaptableArticle);
+		assertIdMapping(articleDTO,adaptableArticle);
 		assertEquals("The link is not correctly mapped",articleDTO.getLink(),adaptableArticle.getLink().toString());
 		assertEquals("The description is not correctly mapped",articleDTO.getDescription(),adaptableArticle.getDescription());
 		assertEquals("The publication date is not correctly mapped",new DateTime(articleDTO.getPublicationDate()),adaptableArticle.getPublicationDate());
@@ -87,7 +89,7 @@ public class DozerDTOAdaptableMappingTest {
 	public void testArticleDTOToAdaptableArticleDeepMapping(){
 		final ArticleDTO articleDTO=new CompleteArticleDTOMock();
 		final AdaptableArticle adaptableArticle=new AdaptableArticleImpl();
-		mapper.map(articleDTO,adaptableArticle);
+		assertIdMapping(articleDTO,adaptableArticle);
 		assertEquals("The link is not correctly mapped",articleDTO.getLink(),adaptableArticle.getLink().toString());
 		assertEquals("The description is not correctly mapped",articleDTO.getDescription(),adaptableArticle.getDescription());
 		assertEquals("The publication date is not correctly mapped",new DateTime(articleDTO.getPublicationDate()),adaptableArticle.getPublicationDate());
@@ -100,6 +102,17 @@ public class DozerDTOAdaptableMappingTest {
 		assertEquals("The collection of authors is not correctly mapped",authorDTOs.size(),authors.size());
 		assertEquals("The collection of categories is not correctly mapped",articleDTO.getCategoryDTOs().size(),adaptableArticle.getCategories().size());
 		assertEquals("The collection of mediums is not correctly mapped",articleDTO.getMediumDTOs().size(),adaptableArticle.getMedia().size());
+	}
+	
+	@Test
+	public void testFeedDTOToAdaptableFeedMapping(){
+		final FeedDTO feedDTO=new SimpleFeedDTOMock();
+		final AdaptableFeed adaptableFeed=new AdaptableFeedImpl();
+		assertIdMapping(feedDTO,adaptableFeed);
+		assertEquals("The title is not correctly mapped",feedDTO.getTitle(),adaptableFeed.getTitle());
+		assertEquals("The description is not correctly mapped",feedDTO.getDescription(),adaptableFeed.getDescription());
+		assertEquals("The link is not correctly mapped",feedDTO.getLink(),adaptableFeed.getLink().toString());
+		assertEquals("The collection of articles is not correctly mapped",feedDTO.getArticleDTOs().size(),adaptableFeed.size());
 	}
 
 }

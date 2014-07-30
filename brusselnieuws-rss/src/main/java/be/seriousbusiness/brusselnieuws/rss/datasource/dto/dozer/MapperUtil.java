@@ -1,6 +1,5 @@
 package be.seriousbusiness.brusselnieuws.rss.datasource.dto.dozer;
 
-import java.lang.reflect.Type;
 
 public class MapperUtil {
 	
