@@ -12,8 +12,9 @@
   <groupId>be.seriousbusiness.brusselnieuws.rss.datastore.model</groupId>
   <artifactId>brusselnieuws-rss-datastore-model</artifactId>
   <version>1.0-BRUSSELNIEUWS-RSS-DATASTORE-MODEL-SNAPSHOT</version>
-  <name>brusselnieuws-rss-datastore-model</name>
+  <name>Brussel Nieuws RSS Datastore Model</name>
   
   <dependencies>
   </dependencies>
+  <url>http://www.seriousbusiness.be</url>
 </project>

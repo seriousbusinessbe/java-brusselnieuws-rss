@@ -16,10 +16,11 @@ public abstract class AbstractMediumTypeDTOTest<DTO extends MediumTypeDTO> exten
 
 	/**
 	 * Create a new Test Case for MediumTypeDTO implementations.
+	 * @paramm id a positive, non zero id
 	 * @param type a valid non <code>null</code> type
 	 */
-	AbstractMediumTypeDTOTest(final String type) {
-		super(123456789l);
+	AbstractMediumTypeDTOTest(final long id,final String type) {
+		super(id);
 		this.type=type;
 	}
 	
@@ -36,7 +37,5 @@ public abstract class AbstractMediumTypeDTOTest<DTO extends MediumTypeDTO> exten
 		getDTO().setType(type);
 		assertEquals("The retrieved type is not equal to the one set",type,getDTO().getType());
 	}
-	
-	
 
 }
