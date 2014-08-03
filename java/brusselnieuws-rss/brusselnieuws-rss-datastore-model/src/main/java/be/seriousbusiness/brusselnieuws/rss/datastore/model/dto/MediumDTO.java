@@ -10,7 +10,7 @@ public interface MediumDTO {
 	
 	/**
 	 * Get the URL location of this medium. 
-	 * @return <code>String</code> URL location
+	 * @return <code>String</code> URL location, <code>null</code> when not set
 	 */
 	String getLink();
 	
@@ -22,7 +22,7 @@ public interface MediumDTO {
 	
 	/**
 	 * Get the {@link MediumTypeDTO} which represents the type medium.
-	 * @return the type of medium
+	 * @return the type of medium, <code>null</code> when not set
 	 */
 	MediumTypeDTO getMediumTypeDTO();
 	
@@ -34,14 +34,14 @@ public interface MediumDTO {
 	
 	/**
 	 * Get the size expressed in bytes
-	 * @return number of bytes
+	 * @return number of bytes, <code>null</code> when not set
 	 */
-	long getSize();
+	Long getSize();
 	
 	/**
 	 * Set a size in bytes
 	 * @param size number of bytes
 	 */
-	void setSize(final long size);
+	void setSize(final Long size);
 
 }

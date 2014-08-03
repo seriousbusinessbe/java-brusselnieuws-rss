@@ -12,7 +12,7 @@ public interface FeedDTO extends IdDTO<Long> {
 	
 	/**
 	 * Get the feed's title.
-	 * @return title
+	 * @return title, <code>null</code> when not set
 	 */
 	String getTitle();
 	
@@ -24,7 +24,7 @@ public interface FeedDTO extends IdDTO<Long> {
 	
 	/**
 	 * Get the URL host location of this feed.
-	 * @return <code>String</code> URL location
+	 * @return <code>String</code> URL location, <code>null</code> when not set
 	 */
 	String getLink();
 	
@@ -36,7 +36,7 @@ public interface FeedDTO extends IdDTO<Long> {
 	
 	/**
 	 * Get the description.
-	 * @return description
+	 * @return description, <code>null</code> when not set
 	 */
 	String getDescription();
 	
@@ -48,7 +48,7 @@ public interface FeedDTO extends IdDTO<Long> {
 	
 	/**
 	 * Get all published {@link ArticleDTO}(s)
-	 * @return a Set of {@link ArticleDTO}
+	 * @return a Set of {@link ArticleDTO}, <code>null</code> when not set
 	 */
 	Set<ArticleDTO> getArticleDTOs();
 	

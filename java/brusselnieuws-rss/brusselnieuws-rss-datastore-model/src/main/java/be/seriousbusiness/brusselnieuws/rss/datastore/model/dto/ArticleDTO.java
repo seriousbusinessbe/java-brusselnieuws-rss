@@ -12,7 +12,7 @@ public interface ArticleDTO extends IdDTO<Long> {
 	
 	/**
 	 * Get the title
-	 * @return title
+	 * @return title, <code>null</code> when not set
 	 */
 	String getTitle();
 	
@@ -24,7 +24,7 @@ public interface ArticleDTO extends IdDTO<Long> {
 	
 	/**
 	 * Get the URL location of this article. 
-	 * @return <code>String</code> URL location
+	 * @return <code>String</code> URL location, <code>null</code> when not set
 	 */
 	String getLink();
 	
@@ -36,7 +36,7 @@ public interface ArticleDTO extends IdDTO<Long> {
 	
 	/**
 	 * Get the description
-	 * @return description
+	 * @return description, <code>null</code> when not set
 	 */
 	String getDescription();
 	
@@ -48,55 +48,56 @@ public interface ArticleDTO extends IdDTO<Long> {
 	
 	/**
 	 * Get the publication date of elapsed milliseconds since midnight, January 1, 1970 UTC and the moment of publication.
-	 * @return the difference, measured in milliseconds, between the publication time and midnight, January 1, 1970 UTC
+	 * @return the difference, measured in milliseconds, between the publication time and midnight, January 1, 1970 UTC</br>
+	 * <code>null</code> when not set
 	 */
-	long getPublicationDate();
+	Long getPublicationDate();
 	
 	/**
 	 * Set the publication date of elapsed milliseconds since midnight, January 1, 1970 UTC.
 	 * @param publicationDate in milliseconds since 01/01/1970 UTC
 	 */
-	void setPublicationDate(final long publicationDate);
+	void setPublicationDate(final Long publicationDate);
 	
 	/**
 	 * Check if this article is read or not.
 	 * @return <code>true</code> when read
 	 */
-	boolean isRead();
+	Boolean isRead();
 	
 	/**
 	 * Set if the article is read or not.
 	 * @param read <code>true</code> when read
 	 */
-	void setRead(final boolean read);
+	void setRead(final Boolean read);
 	
 	/**
 	 * Check if this article is archived or not.
 	 * @return <code>true</code> when archived
 	 */
-	boolean isArchived();
+	Boolean isArchived();
 	
 	/**
 	 * Set if the article is archived or not.
 	 * @param archived <code>true</code> when archived
 	 */
-	void setArchived(final boolean archived);
+	void setArchived(final Boolean archived);
 	
 	/**
 	 * Check if this article is marked favorite or not.
 	 * @return <code>true</code> when a favorite
 	 */
-	boolean isFavorite();
+	Boolean isFavorite();
 	
 	/**
 	 * Set if the article is a favorite or not.
 	 * @param favorite <code>true</code> when favorite
 	 */
-	void setFavorite(final boolean favorite);
+	void setFavorite(final Boolean favorite);
 	
 	/**
 	 * Get all attached {@link MediumDTO}(s)
-	 * @return a Set of {@link MediumDTO}
+	 * @return a Set of {@link MediumDTO}, <code>null</code> when not set
 	 */
 	Set<MediumDTO> getMediumDTOs();
 	
@@ -108,7 +109,7 @@ public interface ArticleDTO extends IdDTO<Long> {
 	
 	/**
 	 * Get all attached {@link CategoryDTO}(s).
-	 * @return a Set of {@link CategoryDTO}
+	 * @return a Set of {@link CategoryDTO}, <code>null</code> when not set
 	 */
 	Set<CategoryDTO> getCategoryDTOs();
 	
@@ -120,7 +121,7 @@ public interface ArticleDTO extends IdDTO<Long> {
 	
 	/**
 	 * Get all attached {@link AuthorDTO}(s).
-	 * @return a Set of {@link AuthorDTO}
+	 * @return a Set of {@link AuthorDTO}, <code>null</code> when not set
 	 */ 
 	Set<AuthorDTO> getAuthorDTOs();
 	

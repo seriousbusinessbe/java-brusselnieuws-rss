@@ -11,7 +11,7 @@ import org.junit.Test;
  *
  * @param <DTO> the type of {@link CategoryDTO} implementation
  */
-public abstract class CategoryDTOTest<DTO extends CategoryDTO> extends AbstractIdDTOTest<Long,DTO> {
+public abstract class AbstractCategoryDTOTest<DTO extends CategoryDTO> extends AbstractIdDTOTest<Long,DTO> {
 	private final String link,name;
 
 	/**
@@ -20,7 +20,7 @@ public abstract class CategoryDTOTest<DTO extends CategoryDTO> extends AbstractI
 	 * @param link a valid non <code>null</code> link
 	 * @param name a valid non <code>null</code> name
 	 */
-	CategoryDTOTest(final Long id,final String link,final String name) {
+	public AbstractCategoryDTOTest(final Long id,final String link,final String name) {
 		super(id);
 		this.link=link;
 		this.name=name;

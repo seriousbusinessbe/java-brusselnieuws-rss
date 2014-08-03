@@ -19,7 +19,7 @@ public abstract class AbstractMediumTypeDTOTest<DTO extends MediumTypeDTO> exten
 	 * @paramm id a positive, non zero id
 	 * @param type a valid non <code>null</code> type
 	 */
-	AbstractMediumTypeDTOTest(final long id,final String type) {
+	public AbstractMediumTypeDTOTest(final long id,final String type) {
 		super(id);
 		this.type=type;
 	}

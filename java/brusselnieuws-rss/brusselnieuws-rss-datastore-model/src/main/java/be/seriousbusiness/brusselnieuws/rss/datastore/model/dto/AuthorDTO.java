@@ -10,7 +10,7 @@ public interface AuthorDTO extends IdDTO<Long> {
 	
 	/**
 	 * Get the author's name
-	 * @return author name
+	 * @return author name, <code>null</code> when not set
 	 */
 	String getName();
 	

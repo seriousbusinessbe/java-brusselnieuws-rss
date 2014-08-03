@@ -10,7 +10,7 @@ public interface CategoryDTO extends IdDTO<Long> {
 	
 	/**
 	 * Get the category name.
-	 * @return the category name
+	 * @return the category name, <code>null</code> when not set
 	 */
 	String getName();
 	
@@ -22,7 +22,7 @@ public interface CategoryDTO extends IdDTO<Long> {
 	
 	/**
 	 * Get the URL location of this category's web page
-	 * @return <code>String</code> URL location
+	 * @return <code>String</code> URL location, <code>null</code> when not set
 	 */
 	String getLink();
 	

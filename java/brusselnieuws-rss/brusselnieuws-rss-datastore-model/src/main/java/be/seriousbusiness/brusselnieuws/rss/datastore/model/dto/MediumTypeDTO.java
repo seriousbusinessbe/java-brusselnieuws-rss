@@ -10,7 +10,7 @@ public interface MediumTypeDTO extends IdDTO<Long> {
 	
 	/**
 	 * Get the medium type representation.
-	 * @return a <code>String</code> medium type representation
+	 * @return a <code>String</code> medium type representation, <code>null</code> when not set
 	 */
 	String getType();
 	

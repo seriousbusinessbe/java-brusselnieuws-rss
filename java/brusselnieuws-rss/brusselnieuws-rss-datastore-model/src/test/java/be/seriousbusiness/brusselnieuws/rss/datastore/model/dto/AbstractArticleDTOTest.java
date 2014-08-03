@@ -29,13 +29,13 @@ public abstract class AbstractArticleDTOTest<DTO extends ArticleDTO> extends Abs
 	 * @param mediumDTOs a valid non <code>null</code> set of MediumDTO's
 	 * @param description a valid non <code>null</code> description
 	 * @param link a valid non <code>null</code> link
-	 * @param title a valid non <code>null</code> tile
+	 * @param title a valid non <code>null</code> title
 	 * @param publicationDate a valid positive publication date
 	 * @param archived <code>true</code> or <code>false</code>
 	 * @param favorite <code>true</code> or <code>false</code>
 	 * @param read <code>true</code> or <code>false</code>
 	 */
-	AbstractArticleDTOTest(final long id,final Set<AuthorDTO> authorDTOs,final Set<CategoryDTO> categoryDTOs,final Set<MediumDTO> mediumDTOs,
+	public AbstractArticleDTOTest(final long id,final Set<AuthorDTO> authorDTOs,final Set<CategoryDTO> categoryDTOs,final Set<MediumDTO> mediumDTOs,
 			final String description,final String link,final String title,final long publicationDate,
 			final boolean archived,final boolean favorite,final boolean read) {
 		super(id);
@@ -71,25 +71,25 @@ public abstract class AbstractArticleDTOTest<DTO extends ArticleDTO> extends Abs
 	@Override
 	public void testGettersAndSetters(){
 		getDTO().setAuthorDTOs(authorDTOs);
-		assertEquals("The set of AuthorDTO should be null",authorDTOs,getDTO().getAuthorDTOs());
+		assertEquals("The retrieved set of AuthorDTO is not equal to the one set",authorDTOs,getDTO().getAuthorDTOs());
 		getDTO().setCategoryDTOs(categoryDTOs);
-		assertEquals("The set of CategoryDTO should be null",categoryDTOs,getDTO().getCategoryDTOs());
+		assertEquals("The retrieved set of CategoryDTO is not equal to the one set",categoryDTOs,getDTO().getCategoryDTOs());
 		getDTO().setMediumDTOs(mediumDTOs);
-		assertEquals("The set of MediumDTO should be null",mediumDTOs,getDTO().getMediumDTOs());
+		assertEquals("The retrieved set of MediumDTO is not equal to the one set",mediumDTOs,getDTO().getMediumDTOs());
 		getDTO().setDescription(description);
-		assertEquals("The description should be null",description,getDTO().getDescription());
+		assertEquals("The retrieved description is not equal to the one set",description,getDTO().getDescription());
 		getDTO().setLink(link);
-		assertEquals("The link should be null",link,getDTO().getLink());
+		assertEquals("The retrieved link is not equal to the one set",link,getDTO().getLink());
 		getDTO().setPublicationDate(publicationDate);
-		assertEquals("The publication date should be null",publicationDate,getDTO().getPublicationDate());
+		assertEquals("The retrieved publication date is not equal to the one set",publicationDate,getDTO().getPublicationDate(),0.0);
 		getDTO().setTitle(title);
-		assertEquals("The title should be null",title,getDTO().getTitle());
+		assertEquals("The retrieved title is not equal to the one set",title,getDTO().getTitle());
 		getDTO().setArchived(archived);
-		assertEquals("The is archived should be null",archived,getDTO().isArchived());
+		assertEquals("The retrieved archived is not equal to the one set",archived,getDTO().isArchived());
 		getDTO().setFavorite(favorite);
-		assertEquals("The is favorite should be null",favorite,getDTO().isFavorite());
+		assertEquals("The retrieved favorite is not equal to the one set",favorite,getDTO().isFavorite());
 		getDTO().setRead(read);
-		assertEquals("The is read should be null",read,getDTO().isRead());
+		assertEquals("The retrieved read is not equal to the one set",read,getDTO().isRead());
 	}
 
 }

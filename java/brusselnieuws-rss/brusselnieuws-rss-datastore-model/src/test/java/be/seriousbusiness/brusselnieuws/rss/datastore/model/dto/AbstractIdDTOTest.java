@@ -33,7 +33,8 @@ public abstract class AbstractIdDTOTest<ID,DTO extends IdDTO<ID>> implements DTO
 		return dto;
 	}
 	
-	@Before void before(){
+	@Before 
+	public void before(){
 		dto=create();
 	}
 	

@@ -3,6 +3,9 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
+import org.junit.Before;
+import org.junit.Test;
+
 /**
  * Abstract Test Case for MediumDTO implementations.
  * @author stefanborghys
@@ -21,7 +24,7 @@ public abstract class AbstractMediumDTOTest<DTO extends MediumDTO> implements DT
 	 * @param mediumTypeDTO a valid non <code>null</code> {@link MediumTypeDTO}
 	 * @param size a valid size
 	 */
-	AbstractMediumDTOTest(final String link,final MediumTypeDTO mediumTypeDTO,final long size){
+	public AbstractMediumDTOTest(final String link,final MediumTypeDTO mediumTypeDTO,final long size){
 		this.link=link;
 		this.mediumTypeDTO=mediumTypeDTO;
 		this.size=size;
@@ -31,14 +34,21 @@ public abstract class AbstractMediumDTOTest<DTO extends MediumDTO> implements DT
 	public DTO getDTO() {
 		return dto;
 	}
+	
+	@Before 
+	public void before(){
+		dto=create();
+	}
 
+	@Test
 	@Override
 	public void test() {
 		assertNull("The link should be null",dto.getLink());
 		assertNull("The MediumTypeDTO should be null",dto.getMediumTypeDTO());
 		assertNull("The size should be null",dto.getSize());
 	}
-
+	
+	@Test
 	@Override
 	public void testGettersAndSetters() {
 		dto.setLink(link);

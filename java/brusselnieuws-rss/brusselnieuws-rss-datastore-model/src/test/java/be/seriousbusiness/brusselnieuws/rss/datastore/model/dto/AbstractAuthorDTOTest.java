@@ -19,7 +19,7 @@ public abstract class AbstractAuthorDTOTest<DTO extends AuthorDTO> extends Abstr
 	 * @param id a positive, non zero id
 	 * @param name a valid non <code>null</code> link
 	 */
-	AbstractAuthorDTOTest(final long id,final String name) {
+	public AbstractAuthorDTOTest(final long id,final String name) {
 		super(id);
 		this.name=name;
 	}

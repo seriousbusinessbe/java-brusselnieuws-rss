@@ -11,7 +11,7 @@ public interface IdDTO<ID> {
 	
 	/**
 	 * Get the unique id.
-	 * @return unique id
+	 * @return unique id, <code>null</code> when not set
 	 */
 	ID getId();
 	
