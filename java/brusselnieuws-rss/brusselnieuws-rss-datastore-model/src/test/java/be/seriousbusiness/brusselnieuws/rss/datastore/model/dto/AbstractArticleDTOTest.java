@@ -8,7 +8,7 @@ import java.util.Set;
 import org.junit.Test;
 
 /**
- * Abstract Test Case for ArticleDTO implementations.
+ * Defines {@link DTO} base tests.
  * @author stefanborghys
  *
  * @param <DTO> the type of {@link ArticleDTO} implementation
