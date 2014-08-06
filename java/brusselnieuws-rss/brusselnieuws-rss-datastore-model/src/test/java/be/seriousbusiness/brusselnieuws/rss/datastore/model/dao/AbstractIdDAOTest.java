@@ -27,7 +27,6 @@ public abstract class AbstractIdDAOTest<ID,DTO extends IdDTO<ID>,D extends IdDAO
 	 */
 	@Test
 	public void testFindById(){
-		assertDAODTO();
 		getDAO().save(getDTO());
 		assertNotNull("The saved DTO id should not be null",getDTO().getId());
 		final DTO dto=getDAO().findById(getDTO().getId());
@@ -41,8 +40,7 @@ public abstract class AbstractIdDAOTest<ID,DTO extends IdDTO<ID>,D extends IdDAO
 	 */
 	@Override
 	@Test 
-	public void saveDTO(){
-		assertDAODTO();
+	public void testSaveDTO(){
 		getDAO().save(getDTO());
 		assertNotNull("The saved DTO id should not be null",getDTO().getId());
 		final List<DTO> dtos=getDAO().findAll();

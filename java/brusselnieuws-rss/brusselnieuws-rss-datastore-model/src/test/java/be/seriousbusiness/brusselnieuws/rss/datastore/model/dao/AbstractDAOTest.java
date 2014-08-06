@@ -55,8 +55,7 @@ public abstract class AbstractDAOTest<DTO,D extends DAO<DTO>> implements DAOTest
 	 * Test if saving a <code>null</code> value doesn't throws an Exception
 	 */
 	@Test
-	public void saveNull(){
-		assertDAODTO();
+	public void testSaveNull(){
 		dao.save(null);
 	}
 	
@@ -65,12 +64,26 @@ public abstract class AbstractDAOTest<DTO,D extends DAO<DTO>> implements DAOTest
 	 * The List of found {@link DTO} should return the saved DTO.
 	 */
 	@Test 
-	public void saveDTO(){
-		assertDAODTO();
+	public void testSaveDTO(){
 		dao.save(dto);
-		List<DTO> dtos=dao.findAll();
+		final List<DTO> dtos=dao.findAll();
 		assertNotNull("The found list of DTO should not be null",dtos);
 		assertEquals("The number of found DTO should be one",1,dtos.size());
+		assertEquals("The found DTO is not equal to the one saved",dto,dtos.get(0));
+	}
+	
+	/**
+	 * Test the findAll() method before and after saving a DTO.
+	 */
+	@Test 
+	public void testFindAll(){
+		List<DTO> dtos=dao.findAll();
+		assertNotNull("The found list of DTO should be empty by default",dtos);
+		assertEquals("The found list of DTO should be empty by default",0,dtos.size());
+		dao.save(dto);
+		dtos=dao.findAll();
+		assertNotNull("After saving a DTO the found list should not be null",dtos);
+		assertEquals("The found list of DTO should contain one",1,dtos.size());
 		assertEquals("The found DTO is not equal to the one saved",dto,dtos.get(0));
 	}
 
