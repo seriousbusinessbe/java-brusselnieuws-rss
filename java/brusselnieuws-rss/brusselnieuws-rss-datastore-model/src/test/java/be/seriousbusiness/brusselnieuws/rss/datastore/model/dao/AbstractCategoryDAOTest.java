@@ -14,8 +14,8 @@ public abstract class AbstractCategoryDAOTest extends AbstractIdDAOTest<Long,Cat
 	
 	@Override
 	@Test
-	public void assertDAODTO(){
-		super.assertDAODTO();
+	public void testGetDTO(){
+		super.testGetDTO();
 		assertNotNull("The created CategoryDTO name should not be null",getDTO().getName());
 		assertNotNull("The created CategoryDTO link should not be null",getDTO().getLink());
 	}

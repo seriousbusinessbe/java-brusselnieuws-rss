@@ -1,6 +1,6 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl;
 
-import java.util.Set;
+import java.util.List;
 
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.ArticleDTO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AuthorDTO;
@@ -11,9 +11,9 @@ public class ArticleDTOImpl extends IdDTOImpl<Long> implements ArticleDTO {
 	private String title,link,description;
 	private Long publicationDate;
 	private Boolean read,archived,favorite;
-	private Set<MediumDTO> mediumDTOs;
-	private Set<CategoryDTO> categoryDTOs;
-	private Set<AuthorDTO> authorDTOs;
+	private List<MediumDTO> mediumDTOs;
+	private List<CategoryDTO> categoryDTOs;
+	private List<AuthorDTO> authorDTOs;
 
 	@Override
 	public String getTitle() {
@@ -86,32 +86,32 @@ public class ArticleDTOImpl extends IdDTOImpl<Long> implements ArticleDTO {
 	}
 
 	@Override
-	public Set<MediumDTO> getMediumDTOs() {
+	public List<MediumDTO> getMediumDTOs() {
 		return mediumDTOs;
 	}
 
 	@Override
-	public void setMediumDTOs(final Set<MediumDTO> mediumDTOs) {
+	public void setMediumDTOs(final List<MediumDTO> mediumDTOs) {
 		this.mediumDTOs=mediumDTOs;
 	}
 
 	@Override
-	public Set<CategoryDTO> getCategoryDTOs() {
+	public List<CategoryDTO> getCategoryDTOs() {
 		return categoryDTOs;
 	}
 
 	@Override
-	public void setCategoryDTOs(final Set<CategoryDTO> categoryDTOs) {
+	public void setCategoryDTOs(final List<CategoryDTO> categoryDTOs) {
 		this.categoryDTOs=categoryDTOs;
 	}
 
 	@Override
-	public Set<AuthorDTO> getAuthorDTOs() {
+	public List<AuthorDTO> getAuthorDTOs() {
 		return authorDTOs;
 	}
 
 	@Override
-	public void setAuthorDTOs(final Set<AuthorDTO> authorDTOs) {
+	public void setAuthorDTOs(final List<AuthorDTO> authorDTOs) {
 		this.authorDTOs=authorDTOs;
 	}
 

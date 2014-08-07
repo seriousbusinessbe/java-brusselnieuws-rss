@@ -1,6 +1,6 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto;
 
-import java.util.Set;
+import java.util.List;
 
 /**
  * Represents a DTO (data transfer object) responsible for feed information transfer</br>
@@ -50,12 +50,12 @@ public interface FeedDTO extends IdDTO<Long> {
 	 * Get all published {@link ArticleDTO}(s)
 	 * @return a Set of {@link ArticleDTO}, <code>null</code> when not set
 	 */
-	Set<ArticleDTO> getArticleDTOs();
+	List<ArticleDTO> getArticleDTOs();
 	
 	/**
 	 * Set all published {@link ArticleDTO}(s)
-	 * @param articleDTOs a Set of {@link ArticleDTO}
+	 * @param articleDTOs a List of {@link ArticleDTO}
 	 */
-	void setArticleDTOs(final Set<ArticleDTO> articleDTOs);
+	void setArticleDTOs(final List<ArticleDTO> articleDTOs);
 
 }

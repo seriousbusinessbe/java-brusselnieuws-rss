@@ -43,11 +43,18 @@ public abstract class AbstractDAOTest<DTO,D extends DAO<DTO>> implements DAOTest
 	}
 	
 	/**
-	 * Test if the created {@link DAO} and {@link DTO} are correct.
+	 * Test if the created {@link DAO} is initialized as expected.
 	 */
 	@Test
-	public void assertDAODTO(){
+	public void testGetDAO(){
 		assertNotNull("The created DAO under test cannot be null",dao);
+	}
+	
+	/**
+	 * Test if the created {@link DTO} is initialized as expected.
+	 */
+	@Test
+	public void testGetDTO(){
 		assertNotNull("The created DTO under test cannot be null",dto);
 	}
 	

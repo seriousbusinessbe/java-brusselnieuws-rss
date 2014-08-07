@@ -12,8 +12,8 @@ public abstract class AbstractMediumDAOTest extends AbstractDAOTest<MediumDTO,Me
 
 	@Override
 	@Test
-	public void assertDAODTO(){
-		super.assertDAODTO();
+	public void testGetDAO(){
+		super.testGetDAO();
 		assertNotNull("The created DTO link should not be null",getDTO().getLink());
 	}
 	

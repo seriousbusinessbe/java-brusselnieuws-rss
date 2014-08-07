@@ -3,7 +3,7 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
-import java.util.Set;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -14,7 +14,7 @@ import org.junit.Test;
  * @param <DTO> the type of {@link FeedDTO} implementation
  */
 public abstract class AbstractFeedDTOTest<DTO extends FeedDTO> extends AbstractIdDTOTest<Long,DTO> {
-	private Set<ArticleDTO> articleDTOs;
+	private List<ArticleDTO> articleDTOs;
 	private String description,title,link;
 
 	/**
@@ -25,7 +25,7 @@ public abstract class AbstractFeedDTOTest<DTO extends FeedDTO> extends AbstractI
 	 * @param link a valid non <code>null</code> link
 	 * @param title a valid non <code>null</code> title
 	 */
-	public AbstractFeedDTOTest(final long id,final Set<ArticleDTO> articleDTOs,final String description,final String link,final String title) {
+	public AbstractFeedDTOTest(final long id,final List<ArticleDTO> articleDTOs,final String description,final String link,final String title) {
 		super(id);
 		this.articleDTOs=articleDTOs;
 		this.description=description;

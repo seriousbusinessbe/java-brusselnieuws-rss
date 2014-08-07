@@ -13,8 +13,8 @@ public abstract class AbstractAuthorDAOTest extends AbstractIdDAOTest<Long,Autho
 
 	@Override
 	@Test
-	public void assertDAODTO(){
-		super.assertDAODTO();
+	public void testGetDTO(){
+		super.testGetDTO();
 		assertNotNull("The created AuthorDTO name should not be null",getDTO().getName());
 	}
 	

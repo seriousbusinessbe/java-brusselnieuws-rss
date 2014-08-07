@@ -13,11 +13,11 @@ import static org.junit.Assert.assertNull;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.IdDTO;
 
 public abstract class AbstractIdDAOTest<ID,DTO extends IdDTO<ID>,D extends IdDAO<ID,DTO>> extends AbstractDAOTest<DTO,D> {
-
+	
 	@Override
 	@Test
-	public void assertDAODTO(){
-		super.assertDAODTO();
+	public void testGetDTO(){
+		super.testGetDTO();
 		assertNull("The created DTO id should be null",getDTO().getId());
 	}
 	

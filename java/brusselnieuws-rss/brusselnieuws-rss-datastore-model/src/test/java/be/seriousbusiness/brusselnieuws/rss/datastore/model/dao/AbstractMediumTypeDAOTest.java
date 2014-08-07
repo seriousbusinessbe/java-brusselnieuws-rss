@@ -15,8 +15,8 @@ public abstract class AbstractMediumTypeDAOTest extends AbstractIdDAOTest<Long,M
 	
 	@Override
 	@Test
-	public void assertDAODTO(){
-		super.assertDAODTO();
+	public void testGetDTO(){
+		super.testGetDTO();
 		assertNotNull("The created MediumTypeDTO type should not be null",getDTO().getType());
 	}
 	

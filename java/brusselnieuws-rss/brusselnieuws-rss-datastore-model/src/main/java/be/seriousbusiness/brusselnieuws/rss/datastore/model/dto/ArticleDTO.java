@@ -1,6 +1,6 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto;
 
-import java.util.Set;
+import java.util.List;
 
 /**
  * Represents a DTO (data transfer object) responsible for article information transfer</br>
@@ -97,38 +97,38 @@ public interface ArticleDTO extends IdDTO<Long> {
 	
 	/**
 	 * Get all attached {@link MediumDTO}(s)
-	 * @return a Set of {@link MediumDTO}, <code>null</code> when not set
+	 * @return a List of {@link MediumDTO}, <code>null</code> when not set
 	 */
-	Set<MediumDTO> getMediumDTOs();
+	List<MediumDTO> getMediumDTOs();
 	
 	/**
 	 * Set all attached {@link MediumDTO}(s).
-	 * @param mediumDTOs a Set of {@link MediumDTO}
+	 * @param mediumDTOs a List of {@link MediumDTO}
 	 */
-	void setMediumDTOs(final Set<MediumDTO> mediumDTOs);
+	void setMediumDTOs(final List<MediumDTO> mediumDTOs);
 	
 	/**
 	 * Get all attached {@link CategoryDTO}(s).
-	 * @return a Set of {@link CategoryDTO}, <code>null</code> when not set
+	 * @return a List of {@link CategoryDTO}, <code>null</code> when not set
 	 */
-	Set<CategoryDTO> getCategoryDTOs();
+	List<CategoryDTO> getCategoryDTOs();
 	
 	/**
 	 * Set all attached {@link CategoryDTO}(s).
-	 * @param categoryDTOs a Set of {@link CategoryDTO}
+	 * @param categoryDTOs a List of {@link CategoryDTO}
 	 */
-	void setCategoryDTOs(final Set<CategoryDTO> categoryDTOs);
+	void setCategoryDTOs(final List<CategoryDTO> categoryDTOs);
 	
 	/**
 	 * Get all attached {@link AuthorDTO}(s).
-	 * @return a Set of {@link AuthorDTO}, <code>null</code> when not set
+	 * @return a List of {@link AuthorDTO}, <code>null</code> when not set
 	 */ 
-	Set<AuthorDTO> getAuthorDTOs();
+	List<AuthorDTO> getAuthorDTOs();
 	
 	/**
 	 * Set all attached {@link AuthorDTO}(s).
-	 * @param authorDTOs a Set of {@link AuthorDTO}
+	 * @param authorDTOs a List of {@link AuthorDTO}
 	 */
-	void setAuthorDTOs(final Set<AuthorDTO> authorDTOs);
+	void setAuthorDTOs(final List<AuthorDTO> authorDTOs);
 
 }
