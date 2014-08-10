@@ -9,11 +9,11 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AuthorDTO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.CategoryDTO;
 
 /**
- * Describes a DAO (Data Access Object) which is specific for handling {@link ArticleDAO}.
+ * Describes a DAO (Data Access Object), specific for handling {@link ArticleDTO}.
  * @author stefanborghys
- *
+ * @param <DTO> the type of {@link ArticleDTO}
  */
-public interface ArticleDAO extends IdDAO<Long,ArticleDTO> {
+public interface ArticleDAO<DTO extends ArticleDTO> extends IdDAO<Long,DTO> {
 	
 	/**
 	 * Find all {@link ArticleDTO} by title.</br>

@@ -1,9 +1,9 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dao;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
@@ -14,7 +14,14 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.ArticleDTO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AuthorDTO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.CategoryDTO;
 
-public abstract class AbstractArticleDAOTest extends AbstractIdDAOTest<Long,ArticleDTO,ArticleDAO> {
+/**
+ * Abstract Test Case for {@link ArticleDAO} implementations.
+ * @author stefanborghys
+ *
+ * @param <DTO> the type of {@link ArticleDTO} used by the {@link ArticleDAO} implementation
+ * @param <D> the type of {@link ArticleDAO<DTO>} implementation under test
+ */
+public abstract class AbstractArticleDAOTest<DTO extends ArticleDTO,D extends ArticleDAO<DTO>> extends AbstractIdDAOTest<Long,DTO,D> {
 
 	@Override
 	@Test
@@ -160,6 +167,5 @@ public abstract class AbstractArticleDAOTest extends AbstractIdDAOTest<Long,Arti
 		assertEquals("The List of ArticleDTO should contain one ArticleDTO after saving",1,articleDTOs.size());
 		assertEquals("The found ArticleDTO should be equal to the one saved",getDTO(),articleDTOs.get(0));
 	}
-	
 
 }

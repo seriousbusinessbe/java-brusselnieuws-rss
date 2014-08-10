@@ -11,7 +11,14 @@ import static org.junit.Assert.assertEquals;
 
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.MediumTypeDTO;
 
-public abstract class AbstractMediumTypeDAOTest extends AbstractIdDAOTest<Long,MediumTypeDTO,MediumTypeDAO> {
+/**
+ * Abstract Test Case for {@link MediumTypeDAO} implementations.
+ * @author stefanborghys
+ *
+ * @param <DTO> the type of {@link MediumType} used by the {@link MediumTypeDAO} implementation
+ * @param <D> the type of {@link MediumTypeDAO<DTO>} implementation under test
+ */
+public abstract class AbstractMediumTypeDAOTest<DTO extends MediumTypeDTO,D extends MediumTypeDAO<DTO>> extends AbstractIdDAOTest<Long,DTO,D> {
 	
 	@Override
 	@Test

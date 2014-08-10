@@ -3,11 +3,11 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dao;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.MediumDTO;
 
 /**
- * Describes a DAO (Data Access Object) which is specific for handling {@link MediumDTO}.
+ * Describes a DAO (Data Access Object), specific for handling {@link MediumDTO}.
  * @author stefanborghys
- *
+ * @param <DTO> the type of {@link MediumDTO}
  */
-public interface MediumDAO extends DAO<MediumDTO> {
+public interface MediumDAO<DTO extends MediumDTO> extends DAO<DTO> {
 	
 	/**
 	 * Find a {@link MediumDTO} by it's unique link.

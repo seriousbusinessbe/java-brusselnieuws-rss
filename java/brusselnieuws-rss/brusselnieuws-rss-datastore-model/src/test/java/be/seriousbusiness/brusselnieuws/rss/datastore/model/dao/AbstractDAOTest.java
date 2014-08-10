@@ -1,20 +1,20 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dao;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertEquals;
 
 
 /**
  * Defines {@link DAO} base tests.
  * @author stefanborghys
  *
- * @param <DTO> the type of DTO this DAO under test manages
- * @param <D> the type of DAO
+ * @param <DTO> the type of DTO used by the {@link DAO} implementation
+ * @param <D> the type of {@link DAO<DTO>} implementation under test
  */
 public abstract class AbstractDAOTest<DTO,D extends DAO<DTO>> implements DAOTest<DTO,D> {
 	private D dao;
@@ -29,7 +29,9 @@ public abstract class AbstractDAOTest<DTO,D extends DAO<DTO>> implements DAOTest
 	@Before
 	public void before(){
 		dao=createDAO();
+		assert(dao!=null);
 		dto=createDTO();
+		assert(dto!=null);
 	}
 	
 	@Override
@@ -59,16 +61,22 @@ public abstract class AbstractDAOTest<DTO,D extends DAO<DTO>> implements DAOTest
 	}
 	
 	/**
-	 * Test if saving a <code>null</code> value doesn't throws an Exception
+	 * Test saving a <code>null</code> value.</br>
+	 * This should not throw an Exception.</br>
+	 * It should also never be saved.</br>
+	 * The findAll() method should return an empty list of {@link DTO}.
 	 */
 	@Test
 	public void testSaveNull(){
 		dao.save(null);
+		final List<DTO> dtos=dao.findAll();
+		assertNotNull("The found list of DTO should not be null",dtos);
+		assertEquals("The found list of DTO should be empy",0,dtos.size());
 	}
 	
 	/**
-	 * Test saving a newly created DTO.</br>
-	 * The List of found {@link DTO} should return the saved DTO.
+	 * Test saving a newly created {@link DTO}.</br>
+	 * The list of found {@link DTO} should contain the saved DTO.
 	 */
 	@Test 
 	public void testSaveDTO(){
@@ -80,7 +88,7 @@ public abstract class AbstractDAOTest<DTO,D extends DAO<DTO>> implements DAOTest
 	}
 	
 	/**
-	 * Test the findAll() method before and after saving a DTO.
+	 * Test the findAll() method, before and after saving a {@link DTO}.
 	 */
 	@Test 
 	public void testFindAll(){

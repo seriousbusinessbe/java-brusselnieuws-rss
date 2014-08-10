@@ -5,11 +5,11 @@ import java.util.List;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AuthorDTO;
 
 /**
- * Describes a DAO (Data Access Object) which is specific for handling {@link AuthorDTO}.
+ * Describes a DAO (Data Access Object), specific for handling {@link AuthorDTO}.
  * @author stefanborghys
- *
+ * @param <DTO> the type of {@link AuthorDTO}
  */
-public interface AuthorDAO extends IdDAO<Long,AuthorDTO> {
+public interface AuthorDAO<DTO extends AuthorDTO> extends IdDAO<Long,DTO> {
 	
 	/**
 	 * Find all {@link AuthorDTO} by name.

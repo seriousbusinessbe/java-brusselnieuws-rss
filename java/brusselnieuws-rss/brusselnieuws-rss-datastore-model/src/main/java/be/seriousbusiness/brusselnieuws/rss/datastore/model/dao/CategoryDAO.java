@@ -5,11 +5,11 @@ import java.util.List;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.CategoryDTO;
 
 /**
- * Describes a DAO (Data Access Object) which is specific for handling {@link CategoryDTO}.
+ * Describes a DAO (Data Access Object), specific for handling {@link CategoryDTO}.
  * @author stefanborghys
- *
+ * @param <DTO> the type of {@link CategoryDTO}
  */
-public interface CategoryDAO extends IdDAO<Long,CategoryDTO> {
+public interface CategoryDAO<DTO extends CategoryDTO> extends IdDAO<Long,DTO> {
 	
 	/**
 	 * Find all {@link CategoryDTO} by name

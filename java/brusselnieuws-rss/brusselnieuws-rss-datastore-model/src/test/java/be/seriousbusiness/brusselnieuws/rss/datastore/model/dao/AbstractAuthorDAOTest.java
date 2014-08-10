@@ -9,7 +9,14 @@ import org.junit.Test;
 
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AuthorDTO;
 
-public abstract class AbstractAuthorDAOTest extends AbstractIdDAOTest<Long,AuthorDTO,AuthorDAO> {
+/**
+ * Abstract Test Case for {@link AuthorDAO} implementations.
+ * @author stefanborghys
+ *
+ * @param <DTO> the type of {@link AuthorDTO} used by the {@link AuthorDAO} implementation
+ * @param <D> the type of {@link AuthorDAO<DTO>} implementation under test
+ */
+public abstract class AbstractAuthorDAOTest<DTO extends AuthorDTO,D extends AuthorDAO<DTO>> extends AbstractIdDAOTest<Long,DTO,D> {
 
 	@Override
 	@Test

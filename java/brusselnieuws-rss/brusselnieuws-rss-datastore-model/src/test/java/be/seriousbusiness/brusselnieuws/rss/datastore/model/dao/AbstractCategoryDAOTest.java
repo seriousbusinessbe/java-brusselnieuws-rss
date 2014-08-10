@@ -10,7 +10,14 @@ import org.junit.Test;
 
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.CategoryDTO;
 
-public abstract class AbstractCategoryDAOTest extends AbstractIdDAOTest<Long,CategoryDTO,CategoryDAO> {
+/**
+ * Abstract Test Case for {@link CategoryDAO} implementations.
+ * @author stefanborghys
+ *
+ * @param <DTO> the type of {@link CategoryDTO} used by the {@link CategoryDAO} implementation
+ * @param <D> the type of {@link CategoryDAO<DTO>} implementation under test
+ */
+public abstract class AbstractCategoryDAOTest<DTO extends CategoryDTO,D extends CategoryDAO<DTO>> extends AbstractIdDAOTest<Long,DTO,D> {
 	
 	@Override
 	@Test

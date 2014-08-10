@@ -3,8 +3,8 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dao;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.IdDTO;
 
 /**
- * Describes an extended DAO (Data Access Object).</br>
- * Capable of handling {@link IdDTO} (Data Transfer Object).
+ * Describes an extended DAO (Data Access Object),</br>
+ * specific for handling {@link IdDTO} (Data Transfer Object).
  * @author stefanborghys
  *
  * @param <ID> the type of id

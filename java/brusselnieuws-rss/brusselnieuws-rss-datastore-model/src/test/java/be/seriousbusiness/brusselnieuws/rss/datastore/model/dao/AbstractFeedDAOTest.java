@@ -9,7 +9,14 @@ import org.junit.Test;
 
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.FeedDTO;
 
-public abstract class AbstractFeedDAOTest extends AbstractIdDAOTest<Long,FeedDTO,FeedDAO> {
+/**
+ * Abstract Test Case for {@link IdDAO} implementations.
+ * @author stefanborghys
+ *
+ * @param <DTO> the type of {@link FeedDTO} used by the {@link FeedDAO} implementation
+ * @param <D> the type of {@link FeedDAO<DTO>} implementation under test
+ */
+public abstract class AbstractFeedDAOTest<DTO extends FeedDTO,D extends FeedDAO<DTO>> extends AbstractIdDAOTest<Long,DTO,D> {
 
 	@Override
 	@Test

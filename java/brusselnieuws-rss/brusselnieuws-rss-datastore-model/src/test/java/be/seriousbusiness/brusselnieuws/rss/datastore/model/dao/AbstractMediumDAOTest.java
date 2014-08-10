@@ -8,7 +8,14 @@ import org.junit.Test;
 
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.MediumDTO;
 
-public abstract class AbstractMediumDAOTest extends AbstractDAOTest<MediumDTO,MediumDAO> {
+/**
+ * Abstract Test Case for {@link MediumDAO} implementations.
+ * @author stefanborghys
+ *
+ * @param <DTO> the type of {@link MediumDTO} used by the {@link MediumDAO} implementation
+ * @param <D> the type of {@link MediumDAO<DTO>} implementation under test
+ */
+public abstract class AbstractMediumDAOTest<DTO extends MediumDTO,D extends MediumDAO<DTO>> extends AbstractDAOTest<DTO,D> {
 
 	@Override
 	@Test

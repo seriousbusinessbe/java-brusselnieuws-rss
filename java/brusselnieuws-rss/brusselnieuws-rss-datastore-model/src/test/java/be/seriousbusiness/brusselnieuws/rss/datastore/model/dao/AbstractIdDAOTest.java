@@ -1,17 +1,23 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dao;
 
-import java.util.List;
-
-import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
+import java.util.List;
 
+import org.junit.Test;
 
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.IdDTO;
 
+/**
+ * Abstract Test Case for {@link IdDAO} implementations.
+ * @author stefanborghys
+ *
+ * @param <ID> the type of id
+ * @param <DTO> the type of {@link IdDTO<ID>} used by the {@link IdDAO} implementation
+ * @param <D> the type of {@link IdDAO<ID,DTO>} implementation under test
+ */
 public abstract class AbstractIdDAOTest<ID,DTO extends IdDTO<ID>,D extends IdDAO<ID,DTO>> extends AbstractDAOTest<DTO,D> {
 	
 	@Override
