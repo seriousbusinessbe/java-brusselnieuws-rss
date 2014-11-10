@@ -1,12 +1,14 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto;
 
+import java.math.BigInteger;
+
 /**
  * Represents a DTO (data transfer object) responsible for category information transfer</br>
  * between a datastore and model.
  * @author stefanborghys
  *
  */
-public interface CategoryDTO extends IdDTO<Long> {
+public interface CategoryDTO extends IdDTO<BigInteger> {
 	
 	/**
 	 * Get the category name.

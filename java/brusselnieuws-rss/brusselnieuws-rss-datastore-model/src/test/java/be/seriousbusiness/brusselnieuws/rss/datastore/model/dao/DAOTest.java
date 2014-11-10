@@ -25,5 +25,11 @@ public interface DAOTest<DTO,D extends DAO<DTO>> {
 	 * @return the {@link DTO} used under test.
 	 */
 	DTO getDTO();
+	
+	/**
+	 * Set a {@link DTO}
+	 * @param dto
+	 */
+	void setDTO(final DTO dto);
 
 }

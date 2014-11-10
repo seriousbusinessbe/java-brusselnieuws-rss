@@ -4,10 +4,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
-import java.util.List;
-
 import org.junit.Test;
 
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.util.DAOTestUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.IdDTO;
 
 /**
@@ -15,10 +14,12 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.IdDTO;
  * @author stefanborghys
  *
  * @param <ID> the type of id
- * @param <DTO> the type of {@link IdDTO<ID>} used by the {@link IdDAO} implementation
- * @param <D> the type of {@link IdDAO<ID,DTO>} implementation under test
+ * @param <IDDTO> the type of {@link IdDTO<ID>} used by the {@link IdDAO} implementation
+ * @param <IDDAO> the type of {@link IdDAO<ID,DTO>} implementation under test
  */
-public abstract class AbstractIdDAOTest<ID,DTO extends IdDTO<ID>,D extends IdDAO<ID,DTO>> extends AbstractDAOTest<DTO,D> {
+public abstract class AbstractIdDAOTest<ID,
+										IDDTO extends IdDTO<ID>,
+										IDDAO extends IdDAO<ID,IDDTO>> extends AbstractDAOTest<IDDTO,IDDAO> {
 	
 	@Override
 	@Test
@@ -33,26 +34,32 @@ public abstract class AbstractIdDAOTest<ID,DTO extends IdDTO<ID>,D extends IdDAO
 	 */
 	@Test
 	public void testFindById(){
-		getDAO().save(getDTO());
+		setDTO(getDAO().save(getDTO()));
 		assertNotNull("The saved DTO id should not be null",getDTO().getId());
-		final DTO dto=getDAO().findById(getDTO().getId());
-		assertEquals("The saved DTO is not equal to the one found by it's id",dto,getDTO());
+		assertEquals("The saved DTO is not equal to the one found by it's id",getDTO(),getDAO().findById(getDTO().getId()));
+	}
+	
+	/**
+	 * Test finding a {@link DTO} by <code>null</code> id.</br>
+	 * This should not fail but always return <code>null</code>.
+	 */
+	@Test
+	public void testFindByIdNull(){
+		assertNull("Finding a DTO by null id should return null",getDAO().findById(null));
 	}
 	
 	/**
 	 * Test saving a newly created DTO.</br>
 	 * After a successful save the ID should be set.</br>
-	 * And the List of found {@link DTO} should return the saved DTO.
+	 * And the List of found {@link IDDTO} should return the saved DTO.
 	 */
 	@Override
 	@Test 
 	public void testSaveDTO(){
-		getDAO().save(getDTO());
+		DAOTestUtil.assertFindAll(getDAO(),0);
+		setDTO(getDAO().save(getDTO()));
 		assertNotNull("The saved DTO id should not be null",getDTO().getId());
-		final List<DTO> dtos=getDAO().findAll();
-		assertNotNull("The found list of DTO should not be null",dtos);
-		assertEquals("The number of found DTO should be one",1,dtos.size());
-		assertEquals("The found DTO is not equal to the one saved",getDTO(),dtos.get(0));
+		assertEquals("The found DTO is not equal to the one saved",getDTO(),DAOTestUtil.assertFindAll(getDAO(),1).get(0));
 	}
 
 }

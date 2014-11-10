@@ -1,19 +1,19 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dao;
 
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.MediumDTO;
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.MediumDTOImpl;
 
 /**
- * Describes a DAO (Data Access Object), specific for handling {@link MediumDTO}.
+ * Describes a DAO (Data Access Object), specific for handling {@link MediumDTOImpl}.
  * @author stefanborghys
- * @param <DTO> the type of {@link MediumDTO}
+ * 
  */
-public interface MediumDAO<DTO extends MediumDTO> extends DAO<DTO> {
+public interface MediumDAO extends DAO<MediumDTOImpl> {
 	
 	/**
-	 * Find a {@link MediumDTO} by it's unique link.
+	 * Find a {@link MediumDTOImpl} by it's unique link.
 	 * @param link to link to look for
-	 * @return the found {@link MediumDTO} or <code>null</code> when not found
+	 * @return the found {@link MediumDTOImpl} or <code>null</code> when not found
 	 */
-	MediumDTO findByLink(final String link);
+	MediumDTOImpl findByLink(final String link);
 
 }

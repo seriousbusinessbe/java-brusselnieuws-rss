@@ -3,10 +3,11 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dao;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import java.util.List;
-
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.util.DAOTestUtil;
 
 
 /**
@@ -26,12 +27,25 @@ public abstract class AbstractDAOTest<DTO,D extends DAO<DTO>> implements DAOTest
 	@Override
 	public abstract DTO createDTO();
 	
+	/**
+	 * Set up before every test case.</br>
+	 * Creates a new {@link DAO} and {@link DTO}.
+	 */
 	@Before
 	public void before(){
 		dao=createDAO();
-		assert(dao!=null);
+		assert dao!=null;
 		dto=createDTO();
-		assert(dto!=null);
+		assert dto!=null;
+	}
+	
+	/**
+	 * Tear down after every test case.</br>
+	 * Delete's {@link DTO} if set.
+	 */
+	@After
+	public void after(){
+		dao.delete(dto);
 	}
 	
 	@Override
@@ -42,6 +56,11 @@ public abstract class AbstractDAOTest<DTO,D extends DAO<DTO>> implements DAOTest
 	@Override
 	public DTO getDTO(){
 		return dto;
+	}
+	
+	@Override
+	public void setDTO(final DTO dto){
+		this.dto=dto;
 	}
 	
 	/**
@@ -62,16 +81,23 @@ public abstract class AbstractDAOTest<DTO,D extends DAO<DTO>> implements DAOTest
 	
 	/**
 	 * Test saving a <code>null</code> value.</br>
-	 * This should not throw an Exception.</br>
+	 * This should not throw an exception.</br>
 	 * It should also never be saved.</br>
 	 * The findAll() method should return an empty list of {@link DTO}.
 	 */
 	@Test
 	public void testSaveNull(){
 		dao.save(null);
-		final List<DTO> dtos=dao.findAll();
-		assertNotNull("The found list of DTO should not be null",dtos);
-		assertEquals("The found list of DTO should be empy",0,dtos.size());
+		DAOTestUtil.assertFindAll(dao,0);
+	}
+	
+	/**
+	 * Test deleting a <code>null</code>.</br>
+	 * This should not throw an exception.
+	 */
+	@Test
+	public void testDeleteNull(){
+		dao.delete(null);
 	}
 	
 	/**
@@ -80,26 +106,33 @@ public abstract class AbstractDAOTest<DTO,D extends DAO<DTO>> implements DAOTest
 	 */
 	@Test 
 	public void testSaveDTO(){
-		dao.save(dto);
-		final List<DTO> dtos=dao.findAll();
-		assertNotNull("The found list of DTO should not be null",dtos);
-		assertEquals("The number of found DTO should be one",1,dtos.size());
-		assertEquals("The found DTO is not equal to the one saved",dto,dtos.get(0));
+		DAOTestUtil.assertFindAll(dao,0);
+		setDTO(dao.save(dto));
+		assertEquals("The found DTO is not equal to the one saved",dto,DAOTestUtil.assertFindAll(dao,1).get(0));
 	}
 	
 	/**
-	 * Test the findAll() method, before and after saving a {@link DTO}.
+	 * Test deleting a saved {@link DTO}.
+	 */
+	@Test
+	public void testDeleteDTO(){
+		DAOTestUtil.assertFindAll(dao,0);
+		setDTO(dao.save(dto));
+		DAOTestUtil.assertFindAll(dao,1);
+		dao.delete(dto);
+		DAOTestUtil.assertFindAll(dao,0);
+	}
+	
+	/**
+	 * Test the {@link #findAll() findAll()}, before and after saving a {@link DTO}.</br>
+	 * Before saving, no {@link DTO} should be found.</br>
+	 * After saving, one {@link DTO} should be found.
 	 */
 	@Test 
 	public void testFindAll(){
-		List<DTO> dtos=dao.findAll();
-		assertNotNull("The found list of DTO should be empty by default",dtos);
-		assertEquals("The found list of DTO should be empty by default",0,dtos.size());
-		dao.save(dto);
-		dtos=dao.findAll();
-		assertNotNull("After saving a DTO the found list should not be null",dtos);
-		assertEquals("The found list of DTO should contain one",1,dtos.size());
-		assertEquals("The found DTO is not equal to the one saved",dto,dtos.get(0));
+		DAOTestUtil.assertFindAll(dao,0);
+		setDTO(dao.save(dto));
+		assertEquals("The found DTO is not equal to the one saved",dto,DAOTestUtil.assertFindAll(dao,1).get(0));
 	}
 
 }

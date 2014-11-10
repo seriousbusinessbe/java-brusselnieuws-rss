@@ -1,12 +1,14 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto;
 
+import java.math.BigInteger;
+
 /**
  * Represents a DTO (data transfer object) responsible for medium type information transfer</br>
  * between a datastore and model.
  * @author stefanborghys
  *
  */
-public interface MediumTypeDTO extends IdDTO<Long> {
+public interface MediumTypeDTO extends IdDTO<BigInteger> {
 	
 	/**
 	 * Get the medium type representation.

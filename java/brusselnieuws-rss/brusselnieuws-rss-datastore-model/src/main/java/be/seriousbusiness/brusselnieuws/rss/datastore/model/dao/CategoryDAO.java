@@ -1,28 +1,30 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dao;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.CategoryDTO;
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.CategoryDTOImpl;
 
 /**
  * Describes a DAO (Data Access Object), specific for handling {@link CategoryDTO}.
  * @author stefanborghys
- * @param <DTO> the type of {@link CategoryDTO}
+ * 
  */
-public interface CategoryDAO<DTO extends CategoryDTO> extends IdDAO<Long,DTO> {
+public interface CategoryDAO extends IdDAO<BigInteger,CategoryDTOImpl> {
 	
 	/**
-	 * Find all {@link CategoryDTO} by name
+	 * Find all {@link CategoryDTOImpl} by name
 	 * @param name the name to look for
-	 * @return a list of {@link CategoryDTO}, empty when none found
+	 * @return a list of {@link CategoryDTOImpl}, empty when none found
 	 */
-	List<CategoryDTO> findByName(final String name);
+	List<CategoryDTOImpl> findByName(final String name);
 	
 	/**
-	 * Find a {@link CategoryDTO} by it's unique link.
+	 * Find a {@link CategoryDTOImpl} by it's unique link.
 	 * @param link the link to look for
-	 * @return the {@link CategoryDTO} or <code>null</code> when not found
+	 * @return the {@link CategoryDTOImpl} or <code>null</code> when not found
 	 */
-	CategoryDTO findByLink(final String link);
+	CategoryDTOImpl findByLink(final String link);
 
 }

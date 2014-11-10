@@ -1,16 +1,17 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl;
 
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AbstractMediumTypeDTOTest;
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.MediumTypeDTO;
+import java.math.BigInteger;
 
-public class MediumTypeDTOImplTest extends AbstractMediumTypeDTOTest<MediumTypeDTO> {
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AbstractMediumTypeDTOTest;
+
+public class MediumTypeDTOImplTest extends AbstractMediumTypeDTOTest<MediumTypeDTOImpl> {
 
 	public MediumTypeDTOImplTest() {
-		super(123456789l,"image/jpeg");
+		super(BigInteger.valueOf(123456789l),"image/jpeg");
 	}
 
 	@Override
-	public MediumTypeDTO create() {
+	public MediumTypeDTOImpl create() {
 		return new MediumTypeDTOImpl();
 	}
 

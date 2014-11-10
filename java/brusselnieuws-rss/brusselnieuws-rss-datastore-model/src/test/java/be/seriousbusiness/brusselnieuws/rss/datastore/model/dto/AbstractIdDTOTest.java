@@ -11,10 +11,10 @@ import org.junit.Test;
  * @author stefanborghys
  *
  * @param <ID> the type of id
- * @param <DTO> the type of {@link IdDTO<ID>} implementation
+ * @param <IDDTO> the type of {@link IdDTO<ID>} implementation
  */
-public abstract class AbstractIdDTOTest<ID,DTO extends IdDTO<ID>> implements DTOTest<DTO> {
-	private DTO dto;
+public abstract class AbstractIdDTOTest<ID,IDDTO extends IdDTO<ID>> implements DTOTest<IDDTO> {
+	private IDDTO dto;
 	private final ID id;
 	
 	/**
@@ -26,10 +26,10 @@ public abstract class AbstractIdDTOTest<ID,DTO extends IdDTO<ID>> implements DTO
 	}
 		
 	@Override
-	public abstract DTO create();
+	public abstract IDDTO create();
 	
 	@Override
-	public DTO getDTO(){
+	public IDDTO getDTO(){
 		return dto;
 	}
 	

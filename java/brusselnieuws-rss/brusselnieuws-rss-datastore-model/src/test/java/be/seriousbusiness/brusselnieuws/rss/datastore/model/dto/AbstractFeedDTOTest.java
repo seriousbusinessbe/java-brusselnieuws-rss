@@ -3,6 +3,7 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import org.junit.Test;
@@ -11,21 +12,31 @@ import org.junit.Test;
  * Abstract Test Case for FeedDTO implementations.
  * @author stefanborghys
  *
- * @param <DTO> the type of {@link FeedDTO} implementation
+ * @param <MEDIUMTYPEDTO> the type of {@link MediumTypeDTO} implementation
+ * @param <MEDIUMDTO> the type of {@link MediumDTO} implementation
+ * @param <CATEGORYDTO> the type of {@link CategoryDTO} implementation
+ * @param <AUTHORDTO> the type of {@link AuthorDTO} implementation
+ * @param <ARTICLEDTO> the type of {@link ArticleDTO} implementation
+ * @param <FEEDDTO> the type of {@link FeedDTO} implementation
  */
-public abstract class AbstractFeedDTOTest<DTO extends FeedDTO> extends AbstractIdDTOTest<Long,DTO> {
-	private List<ArticleDTO> articleDTOs;
+public abstract class AbstractFeedDTOTest<MEDIUMTYPEDTO extends MediumTypeDTO,
+										MEDIUMDTO extends MediumDTO<MEDIUMTYPEDTO>,
+										CATEGORYDTO extends CategoryDTO,
+										AUTHORDTO extends AuthorDTO,
+										ARTICLEDTO extends ArticleDTO<MEDIUMTYPEDTO,MEDIUMDTO,CATEGORYDTO,AUTHORDTO>,
+										FEEDDTO extends FeedDTO<MEDIUMTYPEDTO,MEDIUMDTO,CATEGORYDTO,AUTHORDTO,ARTICLEDTO>> extends AbstractIdDTOTest<BigInteger,FEEDDTO> {
+	private List<ARTICLEDTO> articleDTOs;
 	private String description,title,link;
 
 	/**
 	 * 
 	 * @param id a positive, non zero id
-	 * @param articleDTOs a valid non <code>null</code> set of ArticleDTO's
+	 * @param articleDTOs a valid non <code>null</code> set of {@link ARTICLEDTO}'s
 	 * @param description a valid non <code>null</code> description
 	 * @param link a valid non <code>null</code> link
 	 * @param title a valid non <code>null</code> title
 	 */
-	public AbstractFeedDTOTest(final long id,final List<ArticleDTO> articleDTOs,final String description,final String link,final String title) {
+	public AbstractFeedDTOTest(final BigInteger id,final List<ARTICLEDTO> articleDTOs,final String description,final String link,final String title) {
 		super(id);
 		this.articleDTOs=articleDTOs;
 		this.description=description;

@@ -1,0 +1,7 @@
+mvn archetype:create -DgroupId=be.seriousbusiness.brusselnieuws.rss -DartifactId=brusselnieuws-rss
+
+mvn archetype:create -DgroupId=be.seriousbusiness.brusselnieuws.rss.datastore.model -DartifactId=brusselnieuws-rss-datastore-model
+
+mvn archetype:create -DgroupId=be.seriousbusiness.brusselnieuws.rss.datastore.mongodb -DartifactId=brusselnieuws-rss-datastore-mongodb
+
+

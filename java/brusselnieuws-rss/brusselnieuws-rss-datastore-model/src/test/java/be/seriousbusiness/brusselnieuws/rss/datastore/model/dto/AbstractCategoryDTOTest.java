@@ -3,15 +3,17 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
+import java.math.BigInteger;
+
 import org.junit.Test;
 
 /**
  * Abstract Test Case for CategoryDTO implementations.
  * @author stefanborghys
  *
- * @param <DTO> the type of {@link CategoryDTO} implementation
+ * @param <CATEGORYDTO> the type of {@link CategoryDTO} implementation
  */
-public abstract class AbstractCategoryDTOTest<DTO extends CategoryDTO> extends AbstractIdDTOTest<Long,DTO> {
+public abstract class AbstractCategoryDTOTest<CATEGORYDTO extends CategoryDTO> extends AbstractIdDTOTest<BigInteger,CATEGORYDTO> {
 	private final String link,name;
 
 	/**
@@ -20,7 +22,7 @@ public abstract class AbstractCategoryDTOTest<DTO extends CategoryDTO> extends A
 	 * @param link a valid non <code>null</code> link
 	 * @param name a valid non <code>null</code> name
 	 */
-	public AbstractCategoryDTOTest(final Long id,final String link,final String name) {
+	public AbstractCategoryDTOTest(final BigInteger id,final String link,final String name) {
 		super(id);
 		this.link=link;
 		this.name=name;

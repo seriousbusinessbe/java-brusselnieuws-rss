@@ -5,23 +5,73 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import org.joda.time.DateTime;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.ArticleDTO;
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AuthorDTO;
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.CategoryDTO;
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.ArticleDTOImpl;
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.AuthorDTOImpl;
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.CategoryDTOImpl;
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.MediumDTOImpl;
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.factory.ArticleDTOImplFactory;
 
 /**
- * Abstract Test Case for {@link ArticleDAO} implementations.
+ * Abstract Test Case for {@link ArticleDTOImpl} implementations.
  * @author stefanborghys
  *
- * @param <DTO> the type of {@link ArticleDTO} used by the {@link ArticleDAO} implementation
- * @param <D> the type of {@link ArticleDAO<DTO>} implementation under test
  */
-public abstract class AbstractArticleDAOTest<DTO extends ArticleDTO,D extends ArticleDAO<DTO>> extends AbstractIdDAOTest<Long,DTO,D> {
+public abstract class AbstractArticleDAOTest extends AbstractIdDAOTest<BigInteger,ArticleDTOImpl,ArticleDAO> {
+	protected AuthorDAO authorDAO;
+	protected CategoryDAO categoryDAO;
+	protected MediumDAO mediumDAO;
+	protected MediumTypeDAO mediumTypeDAO;
+	
+	protected abstract AuthorDAO createAuthorDAO();
+	
+	protected abstract CategoryDAO createCategoryDAO();
+	
+	protected abstract MediumDAO createMediumDAO();
+	
+	protected abstract MediumTypeDAO createMediumTypeDAO();
+	
+	@Override
+	public ArticleDTOImpl createDTO() {
+		return ArticleDTOImplFactory.createNew();
+	}
+	
+	@Override
+	@Before
+	public void before(){
+		super.before();
+		authorDAO=createAuthorDAO();
+		assert authorDAO!=null;
+		categoryDAO=createCategoryDAO();
+		assert categoryDAO!=null;
+		mediumDAO=createMediumDAO();
+		assert mediumDAO!=null;
+		mediumTypeDAO=createMediumTypeDAO();
+		assert mediumTypeDAO!=null;
+	}
+	
+	@Override
+	@After
+	public void after(){
+		for(final MediumDTOImpl mediumDTOImpl : getDTO().getMediumDTOs()){
+			mediumTypeDAO.delete(mediumDTOImpl.getMediumTypeDTO());
+			mediumDAO.delete(mediumDTOImpl);
+		}
+		for(final CategoryDTOImpl categoryDTOImpl : getDTO().getCategoryDTOs()){
+			categoryDAO.delete(categoryDTOImpl);
+		}
+		for(final AuthorDTOImpl authorDTOImpl : getDTO().getAuthorDTOs()){
+			authorDAO.delete(authorDTOImpl);
+		}
+		super.after();
+	}
 
 	@Override
 	@Test
@@ -45,127 +95,181 @@ public abstract class AbstractArticleDAOTest<DTO extends ArticleDTO,D extends Ar
 	}
 	
 	/**
-	 * Test finding an ArticleDTO by title, before and after saving.
+	 * Test finding an {@link ArticleDTOImpl} by title, before and after saving.
 	 */
 	@Test
 	public void testFindByTitle(){
-		List<ArticleDTO> articleDTOs=getDAO().findByTitle(getDTO().getTitle());
-		assertNotNull("The List of ArticleDTO should not be null before saving",articleDTOs);
-		assertTrue("The List of ArticleDTO should be empty before saving",articleDTOs.isEmpty());
-		getDAO().save(getDTO());
-		articleDTOs=getDAO().findByTitle(getDTO().getTitle());
-		assertNotNull("The List of ArticleDTO should not be null after saving",articleDTOs);
-		assertTrue("The List of ArticleDTO should not be empty after saving",articleDTOs.isEmpty());
-		assertEquals("The List of ArticleDTO should contain one ArticleDTO after saving",1,articleDTOs.size());
-		assertEquals("The found ArticleDTO should be equal to the one saved",getDTO(),articleDTOs.get(0));
+		List<ArticleDTOImpl> articleDTOImpls=getDAO().findByTitle(getDTO().getTitle());
+		assertNotNull("The List of ArticleDTO should not be null before saving",articleDTOImpls);
+		assertTrue("The List of ArticleDTO should be empty before saving",articleDTOImpls.isEmpty());
+		setDTO(getDAO().save(getDTO()));
+		articleDTOImpls=getDAO().findByTitle(getDTO().getTitle());
+		assertNotNull("The List of ArticleDTO should not be null after saving",articleDTOImpls);
+		assertFalse("The List of ArticleDTO should not be empty after saving",articleDTOImpls.isEmpty());
+		assertEquals("The List of ArticleDTO should contain one ArticleDTO after saving",1,articleDTOImpls.size());
+		assertEquals("The found ArticleDTO should be equal to the one saved",getDTO(),articleDTOImpls.get(0));
+	}
+	
+	@Test
+	public void testFindByTitleNull(){
+		List<ArticleDTOImpl> articleDTOImpls=getDAO().findByTitle(null);
+		assertNotNull("The List of ArticleDTO should not be null",articleDTOImpls);
+		assertTrue("The List of ArticleDTO should be empty",articleDTOImpls.isEmpty());
+	}
+	
+	@Test
+	public void testFindByTitleEmpty(){
+		List<ArticleDTOImpl> articleDTOImpls=getDAO().findByTitle("");
+		assertNotNull("The List of ArticleDTO should not be null",articleDTOImpls);
+		assertTrue("The List of ArticleDTO should be empty",articleDTOImpls.isEmpty());
 	}
 	
 	/**
-	 * Test finding an ArticleDTO in a range of one day before and after the set publication date.
+	 * Test finding an {@link ArticleDTOImpl} in a range of one day before and after the set publication date.
 	 * Before and after saving the ArticleDTO. 
 	 */
 	@Test 
 	public void testFindBetweenPublicationDates(){
 		final DateTime from=new DateTime(getDTO().getPublicationDate()).minusDays(1);
 		final DateTime to=new DateTime(getDTO().getPublicationDate()).plusDays(1);
-		List<ArticleDTO> articleDTOs=getDAO().findBetweenPublicationDates(from,to);
-		assertNotNull("The List of ArticleDTO should not be null before saving",articleDTOs);
-		assertTrue("The List of ArticleDTO should be empty before saving",articleDTOs.isEmpty());
-		getDAO().save(getDTO());
-		articleDTOs=getDAO().findBetweenPublicationDates(from,to);
-		assertNotNull("The List of ArticleDTO should not be null after saving",articleDTOs);
-		assertTrue("The List of ArticleDTO should not be empty after saving",articleDTOs.isEmpty());
-		assertEquals("The List of ArticleDTO should contain one ArticleDTO after saving",1,articleDTOs.size());
-		assertEquals("The found ArticleDTO should be equal to the one saved",getDTO(),articleDTOs.get(0));
+		List<ArticleDTOImpl> articleDTOImpls=getDAO().findByPublicationDateBetween(from,to);
+		assertNotNull("The List of ArticleDTO should not be null before saving",articleDTOImpls);
+		assertTrue("The List of ArticleDTO should be empty before saving",articleDTOImpls.isEmpty());
+		setDTO(getDAO().save(getDTO()));
+		articleDTOImpls=getDAO().findByPublicationDateBetween(from,to);
+		assertNotNull("The List of ArticleDTO should not be null after saving",articleDTOImpls);
+		assertFalse("The List of ArticleDTO should not be empty after saving",articleDTOImpls.isEmpty());
+		assertEquals("The List of ArticleDTO should contain one ArticleDTO after saving",1,articleDTOImpls.size());
+		assertEquals("The found ArticleDTO should be equal to the one saved",getDTO(),articleDTOImpls.get(0));
 	}
 	
 	/**
-	 * Test finding an ArticleDTO by his read value,</br>
+	 * Test if an {@link ArticleDTOImpl} can be found using it's specific publication date.
+	 */
+	@Test 
+	public void testFindBetweenPublicationDatesExact(){
+		setDTO(getDAO().save(getDTO()));
+		final DateTime exactDateTime=new DateTime(getDTO().getPublicationDate());
+		final List<ArticleDTOImpl> articleDTOImpls=getDAO().findByPublicationDateBetween(exactDateTime,exactDateTime);
+		assertNotNull("The List of ArticleDTO should not be null after saving",articleDTOImpls);
+		assertFalse("The List of ArticleDTO should not be empty after saving",articleDTOImpls.isEmpty());
+		assertEquals("The List of ArticleDTO should contain one ArticleDTO after saving",1,articleDTOImpls.size());
+		assertEquals("The found ArticleDTO should be equal to the one saved",getDTO(),articleDTOImpls.get(0));
+	}
+	
+	/**
+	 * Test if finding a {@link ArticleDTOImpl} by <code>null</code> values returns an empty <code>list</code> of {@link ArticleDTOImpl}.
+	 */
+	@Test 
+	public void testFindBetweenPublicationDatesNull(){
+		List<ArticleDTOImpl> articleDTOImpls=getDAO().findByPublicationDateBetween(null,null);
+		assertNotNull("The List of ArticleDTO should not be null before saving",articleDTOImpls);
+		assertTrue("The List of ArticleDTO should be empty before saving",articleDTOImpls.isEmpty());
+	}
+	
+	/**
+	 * Test finding an {@link ArticleDTOImpl} by his read value,</br>
 	 * before and after saving.
 	 */
 	@Test 
 	public void testFindByRead(){
-		List<ArticleDTO> articleDTOs=getDAO().findByRead(getDTO().isRead());
-		assertNotNull("The List of ArticleDTO should not be null before saving",articleDTOs);
-		assertTrue("The List of ArticleDTO should be empty before saving",articleDTOs.isEmpty());
-		getDAO().save(getDTO());
-		articleDTOs=getDAO().findByRead(getDTO().isRead());
-		assertNotNull("The List of ArticleDTO should not be null after saving",articleDTOs);
-		assertTrue("The List of ArticleDTO should not be empty after saving",articleDTOs.isEmpty());
-		assertEquals("The List of ArticleDTO should contain one ArticleDTO after saving",1,articleDTOs.size());
-		assertEquals("The found ArticleDTO should be equal to the one saved",getDTO(),articleDTOs.get(0));
+		List<ArticleDTOImpl> articleDTOiMPLs=getDAO().findByRead(getDTO().isRead());
+		assertNotNull("The List of ArticleDTO should not be null before saving",articleDTOiMPLs);
+		assertTrue("The List of ArticleDTO should be empty before saving",articleDTOiMPLs.isEmpty());
+		setDTO(getDAO().save(getDTO()));
+		articleDTOiMPLs=getDAO().findByRead(getDTO().isRead());
+		assertNotNull("The List of ArticleDTO should not be null after saving",articleDTOiMPLs);
+		assertFalse("The List of ArticleDTO should not be empty after saving",articleDTOiMPLs.isEmpty());
+		assertEquals("The List of ArticleDTO should contain one ArticleDTO after saving",1,articleDTOiMPLs.size());
+		assertEquals("The found ArticleDTO should be equal to the one saved",getDTO(),articleDTOiMPLs.get(0));
 	}
 	
 	/**
-	 * Test finding an ArticleDTO by his favorite value,</br>
+	 * Test finding an {@link ArticleDTOImpl} by his favorite value,</br>
 	 * before and after saving.
 	 */
 	@Test 
 	public void testFindByFavorite(){
-		List<ArticleDTO> articleDTOs=getDAO().findByFavorite(getDTO().isFavorite());
-		assertNotNull("The List of ArticleDTO should not be null before saving",articleDTOs);
-		assertTrue("The List of ArticleDTO should be empty before saving",articleDTOs.isEmpty());
-		getDAO().save(getDTO());
-		articleDTOs=getDAO().findByFavorite(getDTO().isFavorite());
-		assertNotNull("The List of ArticleDTO should not be null after saving",articleDTOs);
-		assertTrue("The List of ArticleDTO should not be empty after saving",articleDTOs.isEmpty());
-		assertEquals("The List of ArticleDTO should contain one ArticleDTO after saving",1,articleDTOs.size());
-		assertEquals("The found ArticleDTO should be equal to the one saved",getDTO(),articleDTOs.get(0));
+		List<ArticleDTOImpl> articleDTOImpls=getDAO().findByFavorite(getDTO().isFavorite());
+		assertNotNull("The List of ArticleDTO should not be null before saving",articleDTOImpls);
+		assertTrue("The List of ArticleDTO should be empty before saving",articleDTOImpls.isEmpty());
+		setDTO(getDAO().save(getDTO()));
+		articleDTOImpls=getDAO().findByFavorite(getDTO().isFavorite());
+		assertNotNull("The List of ArticleDTO should not be null after saving",articleDTOImpls);
+		assertFalse("The List of ArticleDTO should not be empty after saving",articleDTOImpls.isEmpty());
+		assertEquals("The List of ArticleDTO should contain one ArticleDTO after saving",1,articleDTOImpls.size());
+		assertEquals("The found ArticleDTO should be equal to the one saved",getDTO(),articleDTOImpls.get(0));
 	}
 	
 	/**
-	 * Test finding an ArticleDTO by his archived value,</br>
+	 * Test finding an {@link ArticleDTOImpl} by his archived value,</br>
 	 * before and after saving.
 	 */
 	@Test 
 	public void testFindByArchived(){
-		List<ArticleDTO> articleDTOs=getDAO().findByArchived(getDTO().isArchived());
-		assertNotNull("The List of ArticleDTO should not be null before saving",articleDTOs);
-		assertTrue("The List of ArticleDTO should be empty before saving",articleDTOs.isEmpty());
-		getDAO().save(getDTO());
-		articleDTOs=getDAO().findByArchived(getDTO().isArchived());
-		assertNotNull("The List of ArticleDTO should not be null after saving",articleDTOs);
-		assertTrue("The List of ArticleDTO should not be empty after saving",articleDTOs.isEmpty());
-		assertEquals("The List of ArticleDTO should contain one ArticleDTO after saving",1,articleDTOs.size());
-		assertEquals("The found ArticleDTO should be equal to the one saved",getDTO(),articleDTOs.get(0));
+		List<ArticleDTOImpl> articleDTOImpls=getDAO().findByArchived(getDTO().isArchived());
+		assertNotNull("The List of ArticleDTO should not be null before saving",articleDTOImpls);
+		assertTrue("The List of ArticleDTO should be empty before saving",articleDTOImpls.isEmpty());
+		setDTO(getDAO().save(getDTO()));
+		articleDTOImpls=getDAO().findByArchived(getDTO().isArchived());
+		assertNotNull("The List of ArticleDTO should not be null after saving",articleDTOImpls);
+		assertFalse("The List of ArticleDTO should not be empty after saving",articleDTOImpls.isEmpty());
+		assertEquals("The List of ArticleDTO should contain one ArticleDTO after saving",1,articleDTOImpls.size());
+		assertEquals("The found ArticleDTO should be equal to the one saved",getDTO(),articleDTOImpls.get(0));
 	}
 	
 	/**
-	 * Test finding an ArticleDTO by one of it's CategoryDTO,</br>
+	 * Test finding an {@link ArticleDTOImpl} by one of it's {@link CategoryDTOImpl},</br>
 	 * before an after saving.
 	 */
 	@Test 
 	public void testFindByCategory(){
-		final CategoryDTO categoryDTO=getDTO().getCategoryDTOs().get(0);
-		assertNotNull("The List of CategoryDTO should not be null",categoryDTO);
-		List<ArticleDTO> articleDTOs=getDAO().findByCategory(categoryDTO);
-		assertNotNull("The List of ArticleDTO should not be null before saving",articleDTOs);
-		assertTrue("The List of ArticleDTO should be empty before saving",articleDTOs.isEmpty());
-		getDAO().save(getDTO());
-		articleDTOs=getDAO().findByCategory(categoryDTO);
-		assertNotNull("The List of ArticleDTO should not be null after saving",articleDTOs);
-		assertTrue("The List of ArticleDTO should not be empty after saving",articleDTOs.isEmpty());
-		assertEquals("The List of ArticleDTO should contain one ArticleDTO after saving",1,articleDTOs.size());
-		assertEquals("The found ArticleDTO should be equal to the one saved",getDTO(),articleDTOs.get(0));
+		final CategoryDTOImpl categoryDTOImpl=categoryDAO.save(getDTO().getCategoryDTOs().get(0));
+		getDTO().getCategoryDTOs().set(0,categoryDTOImpl);
+		assertNotNull("The List of CategoryDTO should not be null",categoryDTOImpl);
+		List<ArticleDTOImpl> articleDTOImpls=getDAO().findByCategory(categoryDTOImpl);
+		assertNotNull("The List of ArticleDTO should not be null before saving",articleDTOImpls);
+		assertTrue("The List of ArticleDTO should be empty before saving",articleDTOImpls.isEmpty());
+		setDTO(getDAO().save(getDTO()));
+		articleDTOImpls=getDAO().findByCategory(categoryDTOImpl);
+		assertNotNull("The List of ArticleDTO should not be null after saving",articleDTOImpls);
+		assertFalse("The List of ArticleDTO should not be empty after saving",articleDTOImpls.isEmpty());
+		assertEquals("The List of ArticleDTO should contain one ArticleDTO after saving",1,articleDTOImpls.size());
+		assertEquals("The found ArticleDTO should be equal to the one saved",getDTO(),articleDTOImpls.get(0));
+	}
+	
+	@Test 
+	public void testFindByCategoryNull(){
+		List<ArticleDTOImpl> articleDTOImpls=getDAO().findByCategory(null);
+		assertNotNull("The List of ArticleDTO should not be null",articleDTOImpls);
+		assertTrue("The List of ArticleDTO should be empty",articleDTOImpls.isEmpty());
 	}
 	
 	/**
-	 * Test finding an ArticleDTO by one of it's AuthorDTO,</br>
+	 * Test finding an {@link ArticleDTOImpl} by one of it's {@link AuthorDTOImpl},</br>
 	 * before an after saving.
 	 */
 	@Test 
 	public void testFindByAuthor(){
-		final AuthorDTO authorDTO=getDTO().getAuthorDTOs().get(0);
-		assertNotNull("The List of AuthorDTO should not be null",authorDTO);
-		List<ArticleDTO> articleDTOs=getDAO().findByAuthor(authorDTO);
-		assertNotNull("The List of ArticleDTO should not be null before saving",articleDTOs);
-		assertTrue("The List of ArticleDTO should be empty before saving",articleDTOs.isEmpty());
-		getDAO().save(getDTO());
-		articleDTOs=getDAO().findByAuthor(authorDTO);
-		assertNotNull("The List of ArticleDTO should not be null after saving",articleDTOs);
-		assertTrue("The List of ArticleDTO should not be empty after saving",articleDTOs.isEmpty());
-		assertEquals("The List of ArticleDTO should contain one ArticleDTO after saving",1,articleDTOs.size());
-		assertEquals("The found ArticleDTO should be equal to the one saved",getDTO(),articleDTOs.get(0));
+		final AuthorDTOImpl authorDTOImpl=authorDAO.save(getDTO().getAuthorDTOs().get(0));
+		getDTO().getAuthorDTOs().add(0,authorDTOImpl);
+		assertNotNull("The List of AuthorDTO should not be null",authorDTOImpl);
+		List<ArticleDTOImpl> articleDTOImpls=getDAO().findByAuthor(authorDTOImpl);
+		assertNotNull("The List of ArticleDTO should not be null before saving",articleDTOImpls);
+		assertTrue("The List of ArticleDTO should be empty before saving",articleDTOImpls.isEmpty());
+		setDTO(getDAO().save(getDTO()));
+		articleDTOImpls=getDAO().findByAuthor(authorDTOImpl);
+		assertNotNull("The List of ArticleDTO should not be null after saving",articleDTOImpls);
+		assertFalse("The List of ArticleDTO should not be empty after saving",articleDTOImpls.isEmpty());
+		assertEquals("The List of ArticleDTO should contain one ArticleDTO after saving",1,articleDTOImpls.size());
+		assertEquals("The found ArticleDTO should be equal to the one saved",getDTO(),articleDTOImpls.get(0));
+	}
+	
+	@Test 
+	public void testFindByAuthorNull(){
+		List<ArticleDTOImpl> articleDTOImpls=getDAO().findByAuthor(null);
+		assertNotNull("The List of ArticleDTO should not be null",articleDTOImpls);
+		assertTrue("The List of ArticleDTO should be empty",articleDTOImpls.isEmpty());
 	}
 
 }

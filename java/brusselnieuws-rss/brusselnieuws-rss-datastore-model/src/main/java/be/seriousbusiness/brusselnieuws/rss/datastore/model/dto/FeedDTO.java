@@ -1,5 +1,6 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto;
 
+import java.math.BigInteger;
 import java.util.List;
 
 /**
@@ -7,8 +8,17 @@ import java.util.List;
  * between a datastore and model.
  * @author stefanborghys
  *
+ * @param <MEDIUMTYPEDTO> the type of {@link MediumTypeDTO} implementation
+ * @param <MEDIUM> the type of {@link MediumDTO} implementation
+ * @param <CATEGORYDTO> the type of {@link CategoryDTO} implementation
+ * @param <AUTHORDTO> the type of {@link AuthorDTO} implementation
+ * @param <ARTICLEDTO> the type of {@link ArticleDTO} implementation
  */
-public interface FeedDTO extends IdDTO<Long> {
+public interface FeedDTO<MEDIUMTYPEDTO extends MediumTypeDTO,
+						MEDIUM extends MediumDTO<MEDIUMTYPEDTO>,
+						CATEGORYDTO extends CategoryDTO,
+						AUTHORDTO extends AuthorDTO,
+						ARTICLEDTO extends ArticleDTO<MEDIUMTYPEDTO,MEDIUM,CATEGORYDTO,AUTHORDTO>> extends IdDTO<BigInteger> {
 	
 	/**
 	 * Get the feed's title.
@@ -47,15 +57,15 @@ public interface FeedDTO extends IdDTO<Long> {
 	void setDescription(final String description);
 	
 	/**
-	 * Get all published {@link ArticleDTO}(s)
-	 * @return a Set of {@link ArticleDTO}, <code>null</code> when not set
+	 * Get all published {@link ARTICLEDTO}(s)
+	 * @return a Set of {@link ARTICLEDTO}, <code>null</code> when not set
 	 */
-	List<ArticleDTO> getArticleDTOs();
+	List<ARTICLEDTO> getArticleDTOs();
 	
 	/**
 	 * Set all published {@link ArticleDTO}(s)
 	 * @param articleDTOs a List of {@link ArticleDTO}
 	 */
-	void setArticleDTOs(final List<ArticleDTO> articleDTOs);
+	void setArticleDTOs(final List<ARTICLEDTO> articleDTOs);
 
 }

@@ -3,20 +3,29 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import org.junit.Test;
 
 /**
- * Defines {@link DTO} base tests.
+ * Defines {@link ARTICLEDTO} base tests.
  * @author stefanborghys
  *
- * @param <DTO> the type of {@link ArticleDTO} implementation
+ * @param <MEDIUMTYPEDTO> the type of {@link MediumTypeDTO} implementation
+ * @param <MEDIUMDTO> the type of {@link MediumDTO} implementation
+ * @param <CATEGORYDTO> the type of {@link CategoryDTO} implementation
+ * @param <AUTHORDTO> the type of {@link AuthorDTO} implementation
+ * @param <ARTICLEDTO> the type of {@link ArticleDTO} implementation
  */
-public abstract class AbstractArticleDTOTest<DTO extends ArticleDTO> extends AbstractIdDTOTest<Long,DTO> {
-	private List<AuthorDTO> authorDTOs;
-	private List<CategoryDTO> categoryDTOs;
-	private List<MediumDTO> mediumDTOs;
+public abstract class AbstractArticleDTOTest<MEDIUMTYPEDTO extends MediumTypeDTO,
+											MEDIUMDTO extends MediumDTO<MEDIUMTYPEDTO>,
+											CATEGORYDTO extends CategoryDTO,
+											AUTHORDTO extends AuthorDTO,
+											ARTICLEDTO extends ArticleDTO<MEDIUMTYPEDTO,MEDIUMDTO,CATEGORYDTO,AUTHORDTO>> extends AbstractIdDTOTest<BigInteger,ARTICLEDTO> {
+	private List<AUTHORDTO> authorDTOs;
+	private List<CATEGORYDTO> categoryDTOs;
+	private List<MEDIUMDTO> mediumDTOs;
 	private String description,link,title;
 	private long publicationDate;
 	private boolean archived,favorite,read;
@@ -35,7 +44,7 @@ public abstract class AbstractArticleDTOTest<DTO extends ArticleDTO> extends Abs
 	 * @param favorite <code>true</code> or <code>false</code>
 	 * @param read <code>true</code> or <code>false</code>
 	 */
-	public AbstractArticleDTOTest(final long id,final List<AuthorDTO> authorDTOs,final List<CategoryDTO> categoryDTOs,final List<MediumDTO> mediumDTOs,
+	public AbstractArticleDTOTest(final BigInteger id,final List<AUTHORDTO> authorDTOs,final List<CATEGORYDTO> categoryDTOs,final List<MEDIUMDTO> mediumDTOs,
 			final String description,final String link,final String title,final long publicationDate,
 			final boolean archived,final boolean favorite,final boolean read) {
 		super(id);

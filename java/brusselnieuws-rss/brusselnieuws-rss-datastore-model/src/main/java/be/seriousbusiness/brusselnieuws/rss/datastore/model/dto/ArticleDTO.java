@@ -1,5 +1,6 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto;
 
+import java.math.BigInteger;
 import java.util.List;
 
 /**
@@ -7,8 +8,15 @@ import java.util.List;
  * between a datastore and model.
  * @author stefanborghys
  *
+ * @param <MEDIUMTYPEDTO> the type of {@link MediumTypeDTO} implementation
+ * @param <MEDIUMDTO> the type of {@link MediumDTO} implementation
+ * @param <CATEGORYDTO> the type of {@link CategoryDTO} implementation
+ * @param <AUTHORDTO> the type of {@link AuthorDTO} implementation
  */
-public interface ArticleDTO extends IdDTO<Long> {
+public interface ArticleDTO<MEDIUMTYPEDTO extends MediumTypeDTO,
+							MEDIUMDTO extends MediumDTO<MEDIUMTYPEDTO>,
+							CATEGORYDTO extends CategoryDTO,
+							AUTHORDTO extends AuthorDTO> extends IdDTO<BigInteger> {
 	
 	/**
 	 * Get the title
@@ -72,6 +80,12 @@ public interface ArticleDTO extends IdDTO<Long> {
 	void setRead(final Boolean read);
 	
 	/**
+	 * Get if the article is read or not.
+	 * @return <code>true</code> when read
+	 */
+	Boolean getRead();
+	
+	/**
 	 * Check if this article is archived or not.
 	 * @return <code>true</code> when archived
 	 */
@@ -82,6 +96,12 @@ public interface ArticleDTO extends IdDTO<Long> {
 	 * @param archived <code>true</code> when archived
 	 */
 	void setArchived(final Boolean archived);
+	
+	/**
+	 * Get if the article is archived or not.
+	 * @return <code>true</code> when archived
+	 */
+	Boolean getArchived();
 	
 	/**
 	 * Check if this article is marked favorite or not.
@@ -96,39 +116,45 @@ public interface ArticleDTO extends IdDTO<Long> {
 	void setFavorite(final Boolean favorite);
 	
 	/**
-	 * Get all attached {@link MediumDTO}(s)
-	 * @return a List of {@link MediumDTO}, <code>null</code> when not set
+	 * Get if the article is a favorite or not.
+	 * @return <code>true</code> when favorite
 	 */
-	List<MediumDTO> getMediumDTOs();
+	Boolean getFavorite();
 	
 	/**
-	 * Set all attached {@link MediumDTO}(s).
-	 * @param mediumDTOs a List of {@link MediumDTO}
+	 * Get all attached {@link MEDIUMDTO}(s)
+	 * @return a List of {@link MEDIUMDTO}, <code>null</code> when not set
 	 */
-	void setMediumDTOs(final List<MediumDTO> mediumDTOs);
+	List<MEDIUMDTO> getMediumDTOs();
 	
 	/**
-	 * Get all attached {@link CategoryDTO}(s).
-	 * @return a List of {@link CategoryDTO}, <code>null</code> when not set
+	 * Set all attached {@link MEDIUMDTO}(s).
+	 * @param mediumDTOs a List of {@link MEDIUMDTO}
 	 */
-	List<CategoryDTO> getCategoryDTOs();
+	void setMediumDTOs(final List<MEDIUMDTO> mediumDTOs);
 	
 	/**
-	 * Set all attached {@link CategoryDTO}(s).
-	 * @param categoryDTOs a List of {@link CategoryDTO}
+	 * Get all attached {@link CATEGORYDTO}(s).
+	 * @return a List of {@link CATEGORYDTO}, <code>null</code> when not set
 	 */
-	void setCategoryDTOs(final List<CategoryDTO> categoryDTOs);
+	List<CATEGORYDTO> getCategoryDTOs();
+	
+	/**
+	 * Set all attached {@link CATEGORYDTO}(s).
+	 * @param categoryDTOs a List of {@link CATEGORYDTO}
+	 */
+	void setCategoryDTOs(final List<CATEGORYDTO> categoryDTOs);
 	
 	/**
 	 * Get all attached {@link AuthorDTO}(s).
 	 * @return a List of {@link AuthorDTO}, <code>null</code> when not set
 	 */ 
-	List<AuthorDTO> getAuthorDTOs();
+	List<AUTHORDTO> getAuthorDTOs();
 	
 	/**
-	 * Set all attached {@link AuthorDTO}(s).
-	 * @param authorDTOs a List of {@link AuthorDTO}
+	 * Set all attached {@link AUTHORDTO}(s).
+	 * @param authorDTOs a List of {@link AUTHORDTO}
 	 */
-	void setAuthorDTOs(final List<AuthorDTO> authorDTOs);
+	void setAuthorDTOs(final List<AUTHORDTO> authorDTOs);
 
 }

@@ -3,20 +3,25 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dao;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import org.junit.Test;
 
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AuthorDTO;
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.AuthorDTOImpl;
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.factory.AuthorDTOImplFactory;
 
 /**
  * Abstract Test Case for {@link AuthorDAO} implementations.
  * @author stefanborghys
  *
- * @param <DTO> the type of {@link AuthorDTO} used by the {@link AuthorDAO} implementation
- * @param <D> the type of {@link AuthorDAO<DTO>} implementation under test
  */
-public abstract class AbstractAuthorDAOTest<DTO extends AuthorDTO,D extends AuthorDAO<DTO>> extends AbstractIdDAOTest<Long,DTO,D> {
+public abstract class AbstractAuthorDAOTest extends AbstractIdDAOTest<BigInteger,AuthorDTOImpl,AuthorDAO> {
+	
+	@Override
+	public AuthorDTOImpl createDTO() {
+		return AuthorDTOImplFactory.createNewBrusselNieuws();
+	}
 
 	@Override
 	@Test
@@ -26,15 +31,29 @@ public abstract class AbstractAuthorDAOTest<DTO extends AuthorDTO,D extends Auth
 	}
 	
 	@Test
+	public void testFindByNameNull(){
+		List<AuthorDTOImpl> authorDTOImpls=getDAO().findByName(null);
+		assertNotNull("The list of AuthorDTO should not be null when nothing is found",authorDTOImpls);
+		assertEquals("The list of AuthorDTO should not be empty when nothing is found",0,authorDTOImpls.size());
+	}
+	
+	@Test
+	public void testFindByNameEmpty(){
+		List<AuthorDTOImpl> authorDTOImpls=getDAO().findByName("");
+		assertNotNull("The list of AuthorDTO should not be null when nothing is found",authorDTOImpls);
+		assertEquals("The list of AuthorDTO should not be empty when nothing is found",0,authorDTOImpls.size());
+	}
+	
+	@Test
 	public void testFindByName(){
-		List<AuthorDTO> authorDTOs=getDAO().findByName(getDTO().getName());
-		assertNotNull("The list of AuthorDTO should be null when nothing is saved",authorDTOs);
-		assertEquals("The list of AuthorDTO should be emtpy when nothing is saved",0,authorDTOs.size());
-		getDAO().save(getDTO());
-		authorDTOs=getDAO().findByName(getDTO().getName());
-		assertNotNull("The list of AuthorDTO should not be null",authorDTOs);
-		assertEquals("The list of AuthorDTO should contain the saved DTO",1,authorDTOs.size());
-		assertEquals("The found AuthorDTO should be equal to the one saved",getDTO(),authorDTOs.get(0));
+		List<AuthorDTOImpl> authorDTOImpls=getDAO().findByName(getDTO().getName());
+		assertNotNull("The list of AuthorDTO should not be null when nothing is saved",authorDTOImpls);
+		assertEquals("The list of AuthorDTO should be emtpy when nothing is saved",0,authorDTOImpls.size());
+		setDTO(getDAO().save(getDTO()));
+		authorDTOImpls=getDAO().findByName(getDTO().getName());
+		assertNotNull("The list of AuthorDTO should not be null",authorDTOImpls);
+		assertEquals("The list of AuthorDTO should contain the saved DTO",1,authorDTOImpls.size());
+		assertEquals("The found AuthorDTO should be equal to the one saved",getDTO(),authorDTOImpls.get(0));
 	}
 
 }

@@ -1,19 +1,21 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dao;
 
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.MediumTypeDTO;
+import java.math.BigInteger;
+
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.MediumTypeDTOImpl;
 
 /**
- * Describes a DAO (Data Access Object), specific for handling {@link MediumTypeDTO}.
+ * Describes a DAO (Data Access Object), specific for handling {@link MediumTypeDTOImpl}.
  * @author stefanborghys
- * @param <DTO> the type of {@link MediumTypeDTO}
+ * 
  */
-public interface MediumTypeDAO<DTO extends MediumTypeDTO> extends IdDAO<Long,DTO> {
+public interface MediumTypeDAO extends IdDAO<BigInteger,MediumTypeDTOImpl> {
 	
 	/**
-	 * Find a {@link MediumTypeDTO} by type.
+	 * Find a {@link MediumTypeDTOImpl} by type.
 	 * @param type the type to look for
-	 * @return a {@link MediumTypeDTO} if found, otherwise <code>null</code>
+	 * @return a {@link MediumTypeDTOImpl} if found, otherwise <code>null</code>
 	 */
-	MediumTypeDTO findByType(final String type);
+	MediumTypeDTOImpl findByType(final String type);
 
 }

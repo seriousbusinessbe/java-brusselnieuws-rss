@@ -3,7 +3,7 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.stub;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.MediumDTO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.MediumTypeDTO;
 
-public class MediumDTOStub implements MediumDTO {
+public class MediumDTOStub implements MediumDTO<MediumTypeDTO> {
 	private MediumTypeDTO mediumTypeDTO=new MediumTypeDTOStub();
 
 	@Override

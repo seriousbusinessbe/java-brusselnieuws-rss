@@ -1,75 +1,78 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dao;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import org.joda.time.DateTime;
 
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.ArticleDTO;
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AuthorDTO;
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.CategoryDTO;
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.ArticleDTOImpl;
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.AuthorDTOImpl;
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.CategoryDTOImpl;
 
 /**
- * Describes a DAO (Data Access Object), specific for handling {@link ArticleDTO}.
+ * Describes a DAO (Data Access Object), specific for handling {@link ArticleDTOImpl}.
  * @author stefanborghys
- * @param <DTO> the type of {@link ArticleDTO}
+ *
+ * @param <ARTICLEDTO> the type of {@link ArticleDTO} implementation
  */
-public interface ArticleDAO<DTO extends ArticleDTO> extends IdDAO<Long,DTO> {
+public interface ArticleDAO extends IdDAO<BigInteger,ArticleDTOImpl> {
 	
 	/**
-	 * Find all {@link ArticleDTO} by title.</br>
+	 * Find all {@link ArticleDTOImpl} by title.</br>
 	 * Ordered by publication date from most recent to oldest.
 	 * @param title the title to look for
-	 * @return a List of {@link ArticleDTO}, empty when none found
+	 * @return a List of {@link ArticleDTOImpl}, empty when none found
 	 */
-	List<ArticleDTO> findByTitle(final String title);
+	List<ArticleDTOImpl> findByTitle(final String title);
 	
 	/**
-	 * Find all {@link ArticleDTO} published in a given period.</br>
+	 * Find all {@link ArticleDTOImpl} published in a given period.</br>
 	 * Ordered by publication date from most recent to oldest.
 	 * @param from the start of the period
 	 * @param to the end of the period
-	 * @return a List of {@link ArticleDTO}, empty when none found
+	 * @return a List of {@link ArticleDTOImpl}, empty when none found
 	 */
-	List<ArticleDTO> findBetweenPublicationDates(final DateTime from,final DateTime to);
+	List<ArticleDTOImpl> findByPublicationDateBetween(final DateTime from,final DateTime to);
 	
 	/**
-	 * Find all {@link ArticleDTO} marked read.</br>
+	 * Find all {@link ArticleDTOImpl} marked read.</br>
 	 * Ordered by publication date from most recent to oldest.
 	 * @param read <code>true</code> to look for read, otherwise <code>false</code>
-	 * @return a List of {@link ArticleDTO}, empty when none found
+	 * @return a List of {@link ArticleDTOImpl}, empty when none found
 	 */
-	List<ArticleDTO> findByRead(final boolean read);
+	List<ArticleDTOImpl> findByRead(final boolean read);
 	
 	/**
-	 * Find all {@link ArticleDTO} marked favorite.</br>
+	 * Find all {@link ArticleDTOImpl} marked favorite.</br>
 	 * Ordered by publication date from most recent to oldest.
 	 * @param favorite <code>true</code> to look for favorite, otherwise <code>false</code>
-	 * @return a List of {@link ArticleDTO}, empty when none found
+	 * @return a List of {@link ArticleDTOImpl}, empty when none found
 	 */
-	List<ArticleDTO> findByFavorite(final boolean favorite);
+	List<ArticleDTOImpl> findByFavorite(final boolean favorite);
 	
 	/**
-	 * Find all {@link ArticleDTO} marked archived.</br>
+	 * Find all {@link ArticleDTOImpl} marked archived.</br>
 	 * Ordered by publication date from most recent to oldest.
 	 * @param archived <code>true</code> to look for archived, otherwise <code>false</code>
-	 * @return a List of {@link ArticleDTO}, empty when none found
+	 * @return a List of {@link ArticleDTOImpl}, empty when none found
 	 */
-	List<ArticleDTO> findByArchived(final boolean archived);
+	List<ArticleDTOImpl> findByArchived(final boolean archived);
 	
 	/**
-	 * Find all {@link ArticleDTO} by {@link CategoryDTO}.</br>
+	 * Find all {@link ArticleDTOImpl} by {@link CategoryDTOImpl}.</br>
 	 * Ordered by publication date from most recent to oldest.
-	 * @param categoryDTO the {@link CategoryDTO} to look for
-	 * @return a List of {@link ArticleDTO}, empty when none found
+	 * @param categoryDTO the {@link CategoryDTOImpl} to look for
+	 * @return a List of {@link ArticleDTOImpl}, empty when none found
 	 */
-	List<ArticleDTO> findByCategory(final CategoryDTO categoryDTO);
+	List<ArticleDTOImpl> findByCategory(final CategoryDTOImpl categoryDTOImpl);
 	
 	/**
-	 * Find all {@link ArticleDTO} by {@link AuthorDTO}.</br>
+	 * Find all {@link ArticleDTOImpl} by {@link AuthorDTOImpl}.</br>
 	 * Ordered by publication date from most recent to oldest.
-	 * @param authorDTO the {@link AuthorDTO} to look for
-	 * @return a List of {@link ArticleDTO}, empty when none found
+	 * @param authorDTO the {@link AuthorDTOImpl} to look for
+	 * @return a List of {@link ArticleDTOImpl}, empty when none found
 	 */
-	List<ArticleDTO> findByAuthor(final AuthorDTO authorDTO);
+	List<ArticleDTOImpl> findByAuthor(final AuthorDTOImpl authorDTOImpl);
 	
 }

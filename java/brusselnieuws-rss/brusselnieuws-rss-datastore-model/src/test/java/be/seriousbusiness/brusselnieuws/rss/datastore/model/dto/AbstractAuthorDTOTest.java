@@ -3,15 +3,17 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
+import java.math.BigInteger;
+
 import org.junit.Test;
 
 /**
  * Abstract Test Case for AuthorDTO implementations.
  * @author stefanborghys
  *
- * @param <DTO> the type of {@link AuthorDTO} implementation
+ * @param <AUTHORDTO> the type of {@link AuthorDTO} implementation
  */
-public abstract class AbstractAuthorDTOTest<DTO extends AuthorDTO> extends AbstractIdDTOTest<Long,DTO> {
+public abstract class AbstractAuthorDTOTest<AUTHORDTO extends AuthorDTO> extends AbstractIdDTOTest<BigInteger,AUTHORDTO> {
 	private final String name;
 
 	/**
@@ -19,7 +21,7 @@ public abstract class AbstractAuthorDTOTest<DTO extends AuthorDTO> extends Abstr
 	 * @param id a positive, non zero id
 	 * @param name a valid non <code>null</code> link
 	 */
-	public AbstractAuthorDTOTest(final long id,final String name) {
+	public AbstractAuthorDTOTest(final BigInteger id,final String name) {
 		super(id);
 		this.name=name;
 	}

@@ -1,44 +1,69 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dao;
 
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+
+import java.math.BigInteger;
+
+import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertEquals;
-
-
-
-
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.MediumTypeDTO;
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.exception.NotUniqueException;
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.MediumTypeDTOImpl;
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.factory.MediumTypeDTOImplFactory;
 
 /**
  * Abstract Test Case for {@link MediumTypeDAO} implementations.
  * @author stefanborghys
  *
- * @param <DTO> the type of {@link MediumType} used by the {@link MediumTypeDAO} implementation
- * @param <D> the type of {@link MediumTypeDAO<DTO>} implementation under test
  */
-public abstract class AbstractMediumTypeDAOTest<DTO extends MediumTypeDTO,D extends MediumTypeDAO<DTO>> extends AbstractIdDAOTest<Long,DTO,D> {
+public abstract class AbstractMediumTypeDAOTest extends AbstractIdDAOTest<BigInteger,MediumTypeDTOImpl,MediumTypeDAO> {
+	
+	@Override
+	public MediumTypeDTOImpl createDTO() {
+		return MediumTypeDTOImplFactory.createNewPNG();
+	}
 	
 	@Override
 	@Test
 	public void testGetDTO(){
 		super.testGetDTO();
-		assertNotNull("The created MediumTypeDTO type should not be null",getDTO().getType());
+		assertNotNull("The created MediumTypeDTOImpl type should not be null",getDTO().getType());
 	}
 	
 	/**
-	 * Test finding a MediumTypeDTO implementation by type,</br>
+	 * Test finding a {@link MediumTypeDTOImpl} by type,</br>
 	 * before and after saving it.
 	 */
 	@Test
 	public void testFindByType(){
-		MediumTypeDTO mediumTypeDTO=getDAO().findByType(getDTO().getType());
-		assertNull("No MediumTypeDTO should not be found when nothing is saved",mediumTypeDTO);
-		getDAO().save(getDTO());
-		mediumTypeDTO=getDAO().findByType(getDTO().getType());
-		assertNotNull("A MediumTypeDTO should be found by type when saved",mediumTypeDTO);
-		assertEquals("The found MediumTypeDTO should be equal to the one saved",getDTO(),mediumTypeDTO);
+		MediumTypeDTOImpl mediumTypeDTOImpl=getDAO().findByType(getDTO().getType());
+		assertNull("MediumTypeDTO should not be found when nothing is saved",mediumTypeDTOImpl);
+		setDTO(getDAO().save(getDTO()));
+		mediumTypeDTOImpl=getDAO().findByType(getDTO().getType());
+		assertNotNull("A MediumTypeDTO should be found by type when saved",mediumTypeDTOImpl);
+		Assert.assertEquals("The found MediumTypeDTO is  not equal to the one saved",getDTO(),mediumTypeDTOImpl);
+	}
+	
+	@Test
+	public void testFindByTypeNull(){
+		assertNull("MediumTypeDTO should not be found",getDAO().findByType(null));
+	}
+	
+	@Test
+	public void testFindByTypeEmpty(){
+		assertNull("MediumTypeDTO should not be found",getDAO().findByType(""));
+	}
+	
+	/**
+	 * Test saving a {@link MediumTypeDTOImpl} twice,</br>
+	 * which should throw a {@link NotUniqueException}.
+	 */
+	@Test(expected=NotUniqueException.class)
+	public void testSaveDTONotUniqueException(){
+		final MediumTypeDTOImpl mediumTypeDTOImpl=getDTO();
+		setDTO(getDAO().save(mediumTypeDTOImpl));
+		getDAO().save(mediumTypeDTOImpl);
 	}
 
 }

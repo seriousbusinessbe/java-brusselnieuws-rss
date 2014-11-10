@@ -8,15 +8,15 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.IdDTO;
  * @author stefanborghys
  *
  * @param <ID> the type of id
- * @param <DTO> a type of {@link IdDTO} implementation
+ * @param <IDDTO> a type of {@link IdDTO} implementation
  */
-public interface IdDAO<ID,DTO extends IdDTO<ID>> extends DAO<DTO> {
+public interface IdDAO<ID,IDDTO extends IdDTO<ID>> extends DAO<IDDTO> {
 	
 	/**
-	 * Retrieve a {@link DTO} by unique identifier.
+	 * Retrieve a {@link IDDTO} by unique identifier.
 	 * @param id the identifier to look for.
-	 * @return the found {@link DTO} or <code>null</code> when not found
+	 * @return the found {@link IDDTO} or <code>null</code> when not found
 	 */
-	DTO findById(final ID id);
+	IDDTO findById(final ID id);
 
 }

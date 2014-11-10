@@ -10,12 +10,13 @@ import org.junit.Test;
  * Abstract Test Case for MediumDTO implementations.
  * @author stefanborghys
  *
- * @param <DTO> the type of {@link MediumDTO} implementation
+ * @param <MEDIUMDTO> the type of {@link MediumDTO} implementation
  */
-public abstract class AbstractMediumDTOTest<DTO extends MediumDTO> implements DTOTest<DTO> {
-	private DTO dto;
+public abstract class AbstractMediumDTOTest<MEDIUMTYPEDTO extends MediumTypeDTO,
+											MEDIUMDTO extends MediumDTO<MEDIUMTYPEDTO>> implements DTOTest<MEDIUMDTO> {
+	private MEDIUMDTO dto;
 	private final String link;
-	private final MediumTypeDTO mediumTypeDTO;
+	private final MEDIUMTYPEDTO mediumTypeDTO;
 	private final long size;
 	
 	/**
@@ -24,14 +25,14 @@ public abstract class AbstractMediumDTOTest<DTO extends MediumDTO> implements DT
 	 * @param mediumTypeDTO a valid non <code>null</code> {@link MediumTypeDTO}
 	 * @param size a valid size
 	 */
-	public AbstractMediumDTOTest(final String link,final MediumTypeDTO mediumTypeDTO,final long size){
+	public AbstractMediumDTOTest(final String link,final MEDIUMTYPEDTO mediumTypeDTO,final long size){
 		this.link=link;
 		this.mediumTypeDTO=mediumTypeDTO;
 		this.size=size;
 	}
 
 	@Override
-	public DTO getDTO() {
+	public MEDIUMDTO getDTO() {
 		return dto;
 	}
 	

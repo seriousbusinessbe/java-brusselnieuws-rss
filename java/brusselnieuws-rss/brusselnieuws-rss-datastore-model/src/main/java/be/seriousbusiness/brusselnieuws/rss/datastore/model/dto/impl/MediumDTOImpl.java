@@ -1,11 +1,15 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl;
 
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.MediumDTO;
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.MediumTypeDTO;
+import java.util.HashMap;
+import java.util.Map;
 
-public class MediumDTOImpl extends IdDTOImpl<Long> implements MediumDTO  {
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.MediumDTO;
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.util.DTOUtil;
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.util.ObjectUtil;
+
+public class MediumDTOImpl implements MediumDTO<MediumTypeDTOImpl>  {
 	private String link;
-	private MediumTypeDTO mediumTypeDTO;
+	private MediumTypeDTOImpl mediumTypeDTOImpl;
 	private Long size;
 
 	@Override
@@ -19,13 +23,13 @@ public class MediumDTOImpl extends IdDTOImpl<Long> implements MediumDTO  {
 	}
 
 	@Override
-	public MediumTypeDTO getMediumTypeDTO() {
-		return mediumTypeDTO;
+	public MediumTypeDTOImpl getMediumTypeDTO() {
+		return mediumTypeDTOImpl;
 	}
 
 	@Override
-	public void setMediumTypeDTO(final MediumTypeDTO mediumTypeDTO) {
-		this.mediumTypeDTO=mediumTypeDTO;
+	public void setMediumTypeDTO(final MediumTypeDTOImpl mediumTypeDTOImpl) {
+		this.mediumTypeDTOImpl=mediumTypeDTOImpl;
 	}
 
 	@Override
@@ -36,6 +40,31 @@ public class MediumDTOImpl extends IdDTOImpl<Long> implements MediumDTO  {
 	@Override
 	public void setSize(final Long size) {
 		this.size=size;
+	}
+	
+	@Override
+	public boolean equals(final Object obj){
+		return obj!=null && obj instanceof MediumDTOImpl && 
+				ObjectUtil.isNullOrEqual(link,((MediumDTOImpl)obj).link) &&
+				ObjectUtil.isNullOrEqual(size,((MediumDTOImpl)obj).size) &&
+				ObjectUtil.isNullOrEqual(mediumTypeDTOImpl,((MediumDTOImpl)obj).mediumTypeDTOImpl);
+	}
+	
+	@Override
+	public int hashCode(){
+		return super.hashCode() * 
+				ObjectUtil.hashCode(link) *
+				ObjectUtil.hashCode(size) *
+				ObjectUtil.hashCode(mediumTypeDTOImpl);
+	}
+	
+	@Override
+	public String toString(){
+		final Map<String,Object> fields=new HashMap<String,Object>();
+		fields.put("link",link);
+		fields.put("mediumTypeDTOImpl",mediumTypeDTOImpl);
+		fields.put("size",size);
+		return DTOUtil.stringBuilder("mediumDTOImpl", fields);
 	}
 
 }
