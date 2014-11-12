@@ -10,10 +10,10 @@
 	
 	<!-- Spring Factory Bean for EmbedMongo -->
 	<!-- https://github.com/jirutka/embedmongo-spring -->
-	
+		
 	<bean id="embeddedMongoDbFactory" class="cz.jirutka.spring.embedmongo.EmbeddedMongoFactoryBean"
       p:version="${mongod.version}"
       p:bindIp="${mongod.bindIp}"
-      p:port="${mongod.port}"/>
+      p:port="${mongod.port}" />
 
 </beans>

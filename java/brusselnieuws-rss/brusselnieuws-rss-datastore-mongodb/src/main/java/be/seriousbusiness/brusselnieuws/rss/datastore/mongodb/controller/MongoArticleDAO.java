@@ -117,7 +117,7 @@ public class MongoArticleDAO implements ArticleDAO {
 	public List<ArticleDTOImpl> findByCategory(final CategoryDTOImpl categoryDTOImpl) {
 		LOGGER.debug("Find ArticleDTOImpl(s) by categoryDTOImpl '{}'",categoryDTOImpl);
 		if(categoryDTOImpl!=null){
-			return MapUtil.map(mapper,(List<MongoArticle>)mongoArticleRepository.findByCategories(mapper.map(categoryDTOImpl,MongoCategory.class)),ArticleDTOImpl.class);
+			return MapUtil.map(mapper,(List<MongoArticle>)mongoArticleRepository.findByMongoCategories(mapper.map(categoryDTOImpl,MongoCategory.class)),ArticleDTOImpl.class);
 		}
 		return new ArrayList<ArticleDTOImpl>();
 	}
@@ -126,7 +126,7 @@ public class MongoArticleDAO implements ArticleDAO {
 	public List<ArticleDTOImpl> findByAuthor(final AuthorDTOImpl authorDTOImpl) {
 		LOGGER.debug("Find ArticleDTOImpl(s) by authorDTOImpl '{}'",authorDTOImpl);
 		if(authorDTOImpl!=null){
-			return MapUtil.map(mapper,(List<MongoArticle>)mongoArticleRepository.findByAuthors(mapper.map(authorDTOImpl,MongoAuthor.class)),ArticleDTOImpl.class);
+			return MapUtil.map(mapper,(List<MongoArticle>)mongoArticleRepository.findByMongoAuthors(mapper.map(authorDTOImpl,MongoAuthor.class)),ArticleDTOImpl.class);
 		}
 		return new ArrayList<ArticleDTOImpl>();
 	}

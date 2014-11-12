@@ -19,9 +19,9 @@ public interface MongoArticleRepository extends CrudRepository<MongoArticle,BigI
 	
 	Collection<MongoArticle> findByArchived(final Boolean archived);
 	
-	Collection<MongoArticle> findByCategories(final MongoCategory category);
+	Collection<MongoArticle> findByMongoCategories(final MongoCategory category);
 	
-	Collection<MongoArticle> findByAuthors(final MongoAuthor author);
+	Collection<MongoArticle> findByMongoAuthors(final MongoAuthor author);
 	
 	Collection<MongoArticle> findByPublicationDateBetween(final Long from,final Long to);
 

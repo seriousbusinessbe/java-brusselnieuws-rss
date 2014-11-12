@@ -5,11 +5,11 @@
   <parent>
     <groupId>be.seriousbusiness.brusselnieuws.rss</groupId>
     <artifactId>brusselnieuws-rss</artifactId>
-    <version>1.0-BRUSSELNIEUWS-RSS-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
   </parent>
   <groupId>be.seriousbusiness.brusselnieuws.rss.datastore.mongodb</groupId>
   <artifactId>brusselnieuws-rss-datastore-mongodb</artifactId>
-  <version>1.0-BRUSSELNIEUWS-RSS-DATASTORE-MONGODB-SNAPSHOT</version>
+  <version>1.0-SNAPSHOT</version>
   <name>Brussel Nieuws RSS Datastore Mongodb</name>
   <url>http://www.seriousbusiness.be</url>
   <properties>
@@ -20,12 +20,12 @@
     <dependency>
       <groupId>be.seriousbusiness.brusselnieuws.rss.datastore.model</groupId>
   	  <artifactId>brusselnieuws-rss-datastore-model</artifactId>
-      <version>1.0-BRUSSELNIEUWS-RSS-DATASTORE-MODEL-SNAPSHOT</version>
+      <version>1.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>be.seriousbusiness.brusselnieuws.rss.datastore.model</groupId>
   	  <artifactId>brusselnieuws-rss-datastore-model</artifactId>
-      <version>1.0-BRUSSELNIEUWS-RSS-DATASTORE-MODEL-SNAPSHOT</version>
+      <version>1.0-SNAPSHOT</version>
       <scope>test</scope>
       <type>test-jar</type>
     </dependency>
