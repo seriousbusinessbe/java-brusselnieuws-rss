@@ -8,9 +8,9 @@
 	<!-- 
     <appender name="EMAIL" class="be.imes.framework.logging.JndiMailAppender">
         <smtpHost>ADDRESS-OF-YOUR-SMTP-HOST</smtpHost>
-        <to>ict.logging@imes.be</to>
-        <from>crm-web-test@imes.be</from>
-        <subject>TEST CRM WEB : %logger{0} - %m</subject>
+        <to>test.logging@brusselnieuwsrss.be</to>
+        <from>test.logging.noreply@brusselnieuwsrss.be</from>
+        <subject>Test Brussel Nieuws RSS Datastore Mongodb : %logger{0} - %m</subject>
         <layout class="ch.qos.logback.classic.PatternLayout">
             <pattern>%date{dd/MM/yy HH:mm} %-5level %logger{0} - %msg%n</pattern>
         </layout>
