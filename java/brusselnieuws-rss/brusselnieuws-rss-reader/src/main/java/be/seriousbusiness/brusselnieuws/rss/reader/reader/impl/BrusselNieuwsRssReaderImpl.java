@@ -37,6 +37,7 @@ public class BrusselNieuwsRssReaderImpl implements BrusselNieuwsRssReader<FeedIm
 			final URL link=feed.getLink();
 			try {
 				final SyndFeed syndFeed=new SyndFeedInput().build(new XmlReader(link));
+				feed.setLink(new URL(syndFeed.getLink()));
 				feed.setTitle(syndFeed.getTitle());
 				feed.setDescription(syndFeed.getDescription());
 				// Add articles:
