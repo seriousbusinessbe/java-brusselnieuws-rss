@@ -80,7 +80,7 @@ public abstract class AbstractFeedDAOTest extends AbstractIdDAOTest<BigInteger,F
 	
 	@Override
 	public FeedDTOImpl createDTO() {
-		return FeedDTOImplFactory.createNew();
+		return FeedDTOImplFactory.createNewPolitiek();
 	}
 
 	@Override

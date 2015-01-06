@@ -1,11 +1,7 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.MediumDTO;
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.util.DTOUtil;
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.util.ObjectUtil;
 
 public class MediumDTOImpl implements MediumDTO<MediumTypeDTOImpl>  {
 	private String link;
@@ -60,11 +56,7 @@ public class MediumDTOImpl implements MediumDTO<MediumTypeDTOImpl>  {
 	
 	@Override
 	public String toString(){
-		final Map<String,Object> fields=new HashMap<String,Object>();
-		fields.put("link",link);
-		fields.put("mediumTypeDTOImpl",mediumTypeDTOImpl);
-		fields.put("size",size);
-		return DTOUtil.stringBuilder("mediumDTOImpl", fields);
+		return ObjectUtil.toString(this);
 	}
 
 }

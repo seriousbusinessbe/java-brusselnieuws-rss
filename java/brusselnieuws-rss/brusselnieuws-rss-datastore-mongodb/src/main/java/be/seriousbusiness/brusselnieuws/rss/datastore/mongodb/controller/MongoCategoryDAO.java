@@ -2,6 +2,7 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.controller;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import org.dozer.Mapper;
@@ -9,9 +10,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import be.seriousbusiness.brusselnieuws.rss.common.mapping.util.MapperUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.CategoryDAO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.CategoryDTOImpl;
-import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.controller.mapping.util.MapUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoCategory;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.repository.MongoCategoryRepository;
 
@@ -47,14 +48,14 @@ public class MongoCategoryDAO implements CategoryDAO {
 	@Override
 	public List<CategoryDTOImpl> findAll() {
 		LOGGER.debug("Find all CategoryDTOImpl(s)");
-		return MapUtil.map(mapper,(List<MongoCategory>)mongoCategoryRepository.findAll(),CategoryDTOImpl.class);
+		return MapperUtil.map(mapper,(Collection<MongoCategory>)mongoCategoryRepository.findAll(),CategoryDTOImpl.class);
 	}
 
 	@Override
 	public List<CategoryDTOImpl> findByName(final String name) {
 		LOGGER.debug("Find CategoryDTOImpl by name '{}'",name);
 		if(name!=null && !name.isEmpty()){
-			return MapUtil.map(mapper,(List<MongoCategory>)mongoCategoryRepository.findByName(name),CategoryDTOImpl.class);
+			return MapperUtil.map(mapper,(Collection<MongoCategory>)mongoCategoryRepository.findByName(name),CategoryDTOImpl.class);
 		}
 		return new ArrayList<CategoryDTOImpl>();
 	}

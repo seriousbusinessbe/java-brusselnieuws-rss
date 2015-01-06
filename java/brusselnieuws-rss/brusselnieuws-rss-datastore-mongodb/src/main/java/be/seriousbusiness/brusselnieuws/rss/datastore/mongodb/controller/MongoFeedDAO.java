@@ -2,6 +2,7 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.controller;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import org.dozer.Mapper;
@@ -9,10 +10,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import be.seriousbusiness.brusselnieuws.rss.common.mapping.util.MapperUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.FeedDAO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.ArticleDTOImpl;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.FeedDTOImpl;
-import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.controller.mapping.util.MapUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoFeed;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.repository.MongoFeedRepository;
 
@@ -55,7 +56,7 @@ public class MongoFeedDAO implements FeedDAO {
 	@Override
 	public List<FeedDTOImpl> findAll() {
 		LOGGER.debug("Find all FeedDTOImpl(s)");
-		return MapUtil.map(mapper,(List<MongoFeed>)mongoFeedRepository.findAll(),FeedDTOImpl.class);
+		return MapperUtil.map(mapper,(Collection<MongoFeed>)mongoFeedRepository.findAll(),FeedDTOImpl.class);
 	}
 
 	@Override

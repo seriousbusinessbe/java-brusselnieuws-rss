@@ -1,8 +1,8 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity;
 
 import java.math.BigInteger;
+import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.data.annotation.Id;
@@ -10,8 +10,8 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.FeedDTO;
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.util.EntityUtil;
 
 @Document(collection="feed")
@@ -25,7 +25,7 @@ public class MongoFeed implements FeedDTO<MongoMediumType,MongoMedium,MongoCateg
 	@Field("description")
 	private String description;
 	@DBRef
-	private List<MongoArticle> mongoArticles;
+	private Collection<MongoArticle> mongoArticles;
 
 	@Override
 	public BigInteger getId() {
@@ -68,12 +68,12 @@ public class MongoFeed implements FeedDTO<MongoMediumType,MongoMedium,MongoCateg
 	}
 
 	@Override
-	public List<MongoArticle> getArticleDTOs() {
+	public Collection<MongoArticle> getArticleDTOs() {
 		return mongoArticles;
 	}
 
 	@Override
-	public void setArticleDTOs(final List<MongoArticle> mongoArticles) {
+	public void setArticleDTOs(final Collection<MongoArticle> mongoArticles) {
 		this.mongoArticles=mongoArticles;
 	}
 	

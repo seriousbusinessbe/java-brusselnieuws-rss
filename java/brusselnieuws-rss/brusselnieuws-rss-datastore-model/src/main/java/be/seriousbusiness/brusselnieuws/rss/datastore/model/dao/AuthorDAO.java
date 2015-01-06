@@ -1,7 +1,7 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dao;
 
 import java.math.BigInteger;
-import java.util.List;
+import java.util.Collection;
 
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.AuthorDTOImpl;
 
@@ -15,8 +15,8 @@ public interface AuthorDAO extends IdDAO<BigInteger,AuthorDTOImpl> {
 	/**
 	 * Find all {@link AuthorDTOImpl} by name.
 	 * @param name the name to look for
-	 * @return a List of {@link AuthorDTOImpl}, empty when none found
+	 * @return a {@link Collection} of {@link AuthorDTOImpl}, empty when none found
 	 */
-	List<AuthorDTOImpl> findByName(final String name);
+	Collection<AuthorDTOImpl> findByName(final String name);
 
 }

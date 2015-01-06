@@ -1,12 +1,9 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl;
 
 import java.math.BigInteger;
-import java.util.HashMap;
-import java.util.Map;
 
+import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AuthorDTO;
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.util.DTOUtil;
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.util.ObjectUtil;
 
 public class AuthorDTOImpl extends AbstractIdDTOImpl<BigInteger> implements AuthorDTO  {
 	private String name;
@@ -34,10 +31,7 @@ public class AuthorDTOImpl extends AbstractIdDTOImpl<BigInteger> implements Auth
 	
 	@Override
 	public String toString(){
-		final Map<String,Object> fields=new HashMap<String,Object>();
-		fields.put("id",id);
-		fields.put("name",name);
-		return DTOUtil.stringBuilder("authorDTOImpl", fields);
+		return ObjectUtil.toString(this);
 	}
 
 }

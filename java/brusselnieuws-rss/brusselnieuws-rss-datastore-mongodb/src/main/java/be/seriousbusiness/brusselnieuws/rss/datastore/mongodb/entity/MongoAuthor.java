@@ -8,8 +8,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AuthorDTO;
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.util.EntityUtil;
 
 @Document(collection="author")

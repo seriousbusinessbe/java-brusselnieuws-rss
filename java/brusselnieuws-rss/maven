@@ -4,4 +4,13 @@ mvn archetype:create -DgroupId=be.seriousbusiness.brusselnieuws.rss.datastore.mo
 
 mvn archetype:create -DgroupId=be.seriousbusiness.brusselnieuws.rss.datastore.mongodb -DartifactId=brusselnieuws-rss-datastore-mongodb
 
+mvn archetype:create -DgroupId=be.seriousbusiness.brusselnieuws.rss.reader -DartifactId=brusselnieuws-rss-reader
+
+mvn archetype:create -DgroupId=be.seriousbusiness.brusselnieuws.rss.reader.model -DartifactId=brusselnieuws-rss-reader-model
+
+mvn archetype:create -DgroupId=be.seriousbusiness.brusselnieuws.rss.common -DartifactId=brusselnieuws-rss-common
+
+
+
+
 

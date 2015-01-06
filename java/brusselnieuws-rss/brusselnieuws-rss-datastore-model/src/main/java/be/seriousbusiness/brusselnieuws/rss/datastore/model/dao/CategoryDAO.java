@@ -1,7 +1,7 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dao;
 
 import java.math.BigInteger;
-import java.util.List;
+import java.util.Collection;
 
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.CategoryDTO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.CategoryDTOImpl;
@@ -16,9 +16,9 @@ public interface CategoryDAO extends IdDAO<BigInteger,CategoryDTOImpl> {
 	/**
 	 * Find all {@link CategoryDTOImpl} by name
 	 * @param name the name to look for
-	 * @return a list of {@link CategoryDTOImpl}, empty when none found
+	 * @return a {@link Collection} of {@link CategoryDTOImpl}, empty when none found
 	 */
-	List<CategoryDTOImpl> findByName(final String name);
+	Collection<CategoryDTOImpl> findByName(final String name);
 	
 	/**
 	 * Find a {@link CategoryDTOImpl} by it's unique link.

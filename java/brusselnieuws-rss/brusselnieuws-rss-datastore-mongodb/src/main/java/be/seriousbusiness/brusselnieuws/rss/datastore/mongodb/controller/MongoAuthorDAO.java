@@ -2,6 +2,7 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.controller;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import org.dozer.Mapper;
@@ -9,9 +10,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import be.seriousbusiness.brusselnieuws.rss.common.mapping.util.MapperUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.AuthorDAO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.AuthorDTOImpl;
-import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.controller.mapping.util.MapUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoAuthor;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.repository.MongoAuthorRepository;
 
@@ -46,14 +47,14 @@ public class MongoAuthorDAO implements AuthorDAO {
 	@Override
 	public List<AuthorDTOImpl> findAll() {
 		LOGGER.debug("Find all AuthorDTOImpl(s)");
-		return MapUtil.map(mapper,(List<MongoAuthor>)mongoAuthorRepository.findAll(),AuthorDTOImpl.class);
+		return MapperUtil.map(mapper,(List<MongoAuthor>)mongoAuthorRepository.findAll(),AuthorDTOImpl.class);
 	}
 
 	@Override
 	public List<AuthorDTOImpl> findByName(final String name) {
 		LOGGER.debug("Find AuthorDTOImpl by name '{}'",name);
 		if(name!=null){
-			return MapUtil.map(mapper,(List<MongoAuthor>)mongoAuthorRepository.findByName(name),AuthorDTOImpl.class);
+			return MapperUtil.map(mapper,(Collection<MongoAuthor>)mongoAuthorRepository.findByName(name),AuthorDTOImpl.class);
 		}
 		return new ArrayList<AuthorDTOImpl>();
 	}

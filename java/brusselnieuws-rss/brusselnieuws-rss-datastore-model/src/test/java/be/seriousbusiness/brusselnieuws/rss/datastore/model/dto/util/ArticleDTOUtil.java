@@ -1,6 +1,5 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.util;
 
-import java.math.BigInteger;
 import java.util.List;
 
 import org.junit.Assert;
@@ -29,55 +28,52 @@ public class ArticleDTOUtil {
 		assertEqualsMediumDTOList((List<MediumDTO<?>>)articleDTOA.getMediumDTOs(), (List<MediumDTO<?>>)articleDTOB.getMediumDTOs());
 	}
 	
-	private static final void assertEqualsAuthorDTOList(final List<AuthorDTO> articleDTOAAuthorDTOs,final List<AuthorDTO> articleDTOBAuthorDTOs){
-		Assert.assertNotNull("ArticleDTO A List of AuthorDTO cannot be null",articleDTOAAuthorDTOs);
-		Assert.assertNotNull("ArticleDTO B List of AuthorDTO cannot be null",articleDTOBAuthorDTOs);
+	private static final void assertEqualsAuthorDTOList(final List<AuthorDTO> authorDTOAs,final List<AuthorDTO> authorDTOBs){
+		Assert.assertNotNull("ArticleDTO A List of AuthorDTO cannot be null",authorDTOAs);
+		Assert.assertNotNull("ArticleDTO B List of AuthorDTO cannot be null",authorDTOBs);
 		int numberOfAsserted=0;
-		for(final AuthorDTO articleDTOAAuthorDTO : articleDTOAAuthorDTOs){
-			final BigInteger articleDTOAAuthorDTOId=articleDTOAAuthorDTO.getId();
-			for(final AuthorDTO articleDTOBAuthorDTO : articleDTOBAuthorDTOs){
-				if(articleDTOBAuthorDTO.getId()==articleDTOAAuthorDTOId){
-					AuthorDTOUtil.assertEquals(articleDTOAAuthorDTO, articleDTOBAuthorDTO);
+		for(final AuthorDTO authorDTOA : authorDTOAs){
+			for(final AuthorDTO authorDTOB : authorDTOBs){
+				if(authorDTOB.getId()==authorDTOA.getId()){
+					AuthorDTOUtil.assertEquals(authorDTOA, authorDTOB);
 					numberOfAsserted++;
 				}
 			}
 		}
-		Assert.assertEquals("ArticleDTO A List of AuthorDTO is not equal",articleDTOAAuthorDTOs.size(),numberOfAsserted);
-		Assert.assertEquals("ArticleDTO B List of AuthorDTO is not equal",articleDTOBAuthorDTOs.size(),numberOfAsserted);
+		Assert.assertEquals("ArticleDTO A List of AuthorDTO is not equal",authorDTOAs.size(),numberOfAsserted);
+		Assert.assertEquals("ArticleDTO B List of AuthorDTO is not equal",authorDTOBs.size(),numberOfAsserted);
 	}
 	
-	private static final void assertEqualsCategoryDTOList(final List<CategoryDTO> articleDTOACategoryDTOs,final List<CategoryDTO> articleDTOBCategoryDTOs){
-		Assert.assertNotNull("ArticleDTO A List of CategoryDTO cannot be null",articleDTOACategoryDTOs);
-		Assert.assertNotNull("ArticleDTO B List of CategoryDTO cannot be null",articleDTOBCategoryDTOs);
+	private static final void assertEqualsCategoryDTOList(final List<CategoryDTO> categoryDTOAs,final List<CategoryDTO> categoryDTOBs){
+		Assert.assertNotNull("ArticleDTO A List of CategoryDTO cannot be null",categoryDTOAs);
+		Assert.assertNotNull("ArticleDTO B List of CategoryDTO cannot be null",categoryDTOBs);
 		int numberOfAsserted=0;
-		for(final CategoryDTO articleDTOACategoryDTO : articleDTOACategoryDTOs){
-			final BigInteger articleDTOACategoryDTOId=articleDTOACategoryDTO.getId();
-			for(final CategoryDTO articleDTOBCategoryDTO : articleDTOBCategoryDTOs){
-				if(articleDTOBCategoryDTO.getId()==articleDTOACategoryDTOId){
-					CategoryDTOUtil.assertEquals(articleDTOACategoryDTO, articleDTOBCategoryDTO);
+		for(final CategoryDTO categoryDTOA : categoryDTOAs){
+			for(final CategoryDTO categoryDTOB : categoryDTOBs){
+				if(categoryDTOB.getId()==categoryDTOA.getId()){
+					CategoryDTOUtil.assertEquals(categoryDTOA, categoryDTOB);
 					numberOfAsserted++;
 				}
 			}
 		}
-		Assert.assertEquals("ArticleDTO A List of CategoryDTO is not equal",articleDTOACategoryDTOs.size(),numberOfAsserted);
-		Assert.assertEquals("ArticleDTO B List of CategoryDTO is not equal",articleDTOBCategoryDTOs.size(),numberOfAsserted);
+		Assert.assertEquals("ArticleDTO A List of CategoryDTO is not equal",categoryDTOAs.size(),numberOfAsserted);
+		Assert.assertEquals("ArticleDTO B List of CategoryDTO is not equal",categoryDTOBs.size(),numberOfAsserted);
 	}
 	
-	private static final void assertEqualsMediumDTOList(final List<MediumDTO<?>> articleDTOAMediumDTOs,final List<MediumDTO<?>> articleDTOBMediumDTOs){
-		Assert.assertNotNull("ArticleDTO A List of MediumDTO cannot be null",articleDTOAMediumDTOs);
-		Assert.assertNotNull("ArticleDTO B List of MediumDTO cannot be null",articleDTOBMediumDTOs);
+	private static final void assertEqualsMediumDTOList(final List<MediumDTO<?>> mediumDTOAs,final List<MediumDTO<?>> mediumDTOBs){
+		Assert.assertNotNull("ArticleDTO A List of MediumDTO cannot be null",mediumDTOAs);
+		Assert.assertNotNull("ArticleDTO B List of MediumDTO cannot be null",mediumDTOBs);
 		int numberOfAsserted=0;
-		for(final MediumDTO<?> articleDTOAMediumDTO : articleDTOAMediumDTOs){
-			final String articleDTOACategoryDTOLink=articleDTOAMediumDTO.getLink();
-			for(final MediumDTO<?> articleDTOBAuthorDTO : articleDTOBMediumDTOs){
-				if(articleDTOBAuthorDTO.getLink().equals(articleDTOACategoryDTOLink)){
-					MediumDTOUtil.assertEquals(articleDTOAMediumDTO, articleDTOBAuthorDTO);
+		for(final MediumDTO<?> mediumDTOA : mediumDTOAs){
+			for(final MediumDTO<?> mediumDTOB : mediumDTOBs){
+				if(mediumDTOB.getLink().equals(mediumDTOA.getLink())){
+					MediumDTOUtil.assertEquals(mediumDTOA, mediumDTOB);
 					numberOfAsserted++;
 				}
 			}
 		}
-		Assert.assertEquals("ArticleDTO A List of MediumDTO is not equal",articleDTOAMediumDTOs.size(),numberOfAsserted);
-		Assert.assertEquals("ArticleDTO B List of MediumDTO is not equal",articleDTOBMediumDTOs.size(),numberOfAsserted);
+		Assert.assertEquals("ArticleDTO A List of MediumDTO is not equal",mediumDTOAs.size(),numberOfAsserted);
+		Assert.assertEquals("ArticleDTO B List of MediumDTO is not equal",mediumDTOBs.size(),numberOfAsserted);
 	}
 
 }

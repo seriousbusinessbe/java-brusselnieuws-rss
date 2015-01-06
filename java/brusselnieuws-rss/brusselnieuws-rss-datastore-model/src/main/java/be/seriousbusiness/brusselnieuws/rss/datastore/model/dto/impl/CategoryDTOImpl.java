@@ -1,12 +1,9 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl;
 
 import java.math.BigInteger;
-import java.util.HashMap;
-import java.util.Map;
 
+import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.CategoryDTO;
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.util.DTOUtil;
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.util.ObjectUtil;
 
 public class CategoryDTOImpl extends AbstractIdDTOImpl<BigInteger> implements CategoryDTO {
 	private String name,link;
@@ -45,11 +42,7 @@ public class CategoryDTOImpl extends AbstractIdDTOImpl<BigInteger> implements Ca
 	
 	@Override
 	public String toString(){
-		final Map<String,Object> fields=new HashMap<String,Object>();
-		fields.put("id",id);
-		fields.put("name",name);
-		fields.put("link",link);
-		return DTOUtil.stringBuilder("categoryDTOImpl", fields);
+		return ObjectUtil.toString(this);
 	}
 
 }

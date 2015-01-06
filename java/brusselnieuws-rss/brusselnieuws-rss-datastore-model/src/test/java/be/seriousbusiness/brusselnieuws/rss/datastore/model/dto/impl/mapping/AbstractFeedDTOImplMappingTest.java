@@ -10,7 +10,7 @@ public abstract class AbstractFeedDTOImplMappingTest<A extends FeedDTO<?,?,?,?,?
 
 	@Override
 	protected FeedDTOImpl createDTOB() {
-		return FeedDTOImplFactory.create();
+		return FeedDTOImplFactory.createPolitiek();
 	}
 
 	@Override

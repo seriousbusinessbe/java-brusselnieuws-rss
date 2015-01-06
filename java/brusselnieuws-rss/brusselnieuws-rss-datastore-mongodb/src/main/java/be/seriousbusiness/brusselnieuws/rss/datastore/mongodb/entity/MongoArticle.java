@@ -1,8 +1,8 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity;
 
 import java.math.BigInteger;
+import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.data.annotation.Id;
@@ -10,8 +10,8 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.ArticleDTO;
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.util.EntityUtil;
 
 @Document(collection="article")
@@ -33,11 +33,11 @@ public class MongoArticle implements ArticleDTO<MongoMediumType,MongoMedium,Mong
 	@Field("favorite")
 	private Boolean favorite;
 	@DBRef
-	private List<MongoMedium> mongoMediums;
+	private Collection<MongoMedium> mongoMediums;
 	@DBRef
-	private List<MongoCategory> mongoCategories;
+	private Collection<MongoCategory> mongoCategories;
 	@DBRef
-	private List<MongoAuthor> mongoAuthors;
+	private Collection<MongoAuthor> mongoAuthors;
 
 	@Override
 	public BigInteger getId() {
@@ -135,32 +135,32 @@ public class MongoArticle implements ArticleDTO<MongoMediumType,MongoMedium,Mong
 	}
 
 	@Override
-	public List<MongoMedium> getMediumDTOs() {
+	public Collection<MongoMedium> getMediumDTOs() {
 		return mongoMediums;
 	}
 
 	@Override
-	public void setMediumDTOs(final List<MongoMedium> mongoMediums) {
+	public void setMediumDTOs(final Collection<MongoMedium> mongoMediums) {
 		this.mongoMediums=mongoMediums;
 	}
 
 	@Override
-	public List<MongoCategory> getCategoryDTOs() {
+	public Collection<MongoCategory> getCategoryDTOs() {
 		return mongoCategories;
 	}
 
 	@Override
-	public void setCategoryDTOs(final List<MongoCategory> mongoCategories) {
+	public void setCategoryDTOs(final Collection<MongoCategory> mongoCategories) {
 		this.mongoCategories=mongoCategories;
 	}
 
 	@Override
-	public List<MongoAuthor> getAuthorDTOs() {
+	public Collection<MongoAuthor> getAuthorDTOs() {
 		return mongoAuthors;
 	}
 
 	@Override
-	public void setAuthorDTOs(final List<MongoAuthor> mongoAuthors) {
+	public void setAuthorDTOs(final Collection<MongoAuthor> mongoAuthors) {
 		this.mongoAuthors=mongoAuthors;
 	}
 	

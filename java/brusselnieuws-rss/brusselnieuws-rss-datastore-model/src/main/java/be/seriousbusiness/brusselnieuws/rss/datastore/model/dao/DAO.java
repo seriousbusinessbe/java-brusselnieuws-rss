@@ -1,6 +1,6 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dao;
 
-import java.util.List;
+import java.util.Collection;
 
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.exception.NotUniqueException;
 
@@ -24,9 +24,9 @@ public interface DAO<DTO> {
 	
 	/**
 	 * Retrieve all stored {@link DTO} entities.
-	 * @return a List of {@link DTO}
+	 * @return a {@link Collection} of {@link DTO}
 	 */
-	List<DTO> findAll();
+	Collection<DTO> findAll();
 	
 	/**
 	 * Delete an existing {@link DTO}.

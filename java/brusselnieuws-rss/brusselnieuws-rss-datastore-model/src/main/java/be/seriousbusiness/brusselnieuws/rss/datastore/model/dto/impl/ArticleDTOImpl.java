@@ -1,21 +1,18 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl;
 
 import java.math.BigInteger;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.Collection;
 
+import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.ArticleDTO;
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.util.DTOUtil;
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.util.ObjectUtil;
 
 public class ArticleDTOImpl extends AbstractIdDTOImpl<BigInteger> implements ArticleDTO<MediumTypeDTOImpl,MediumDTOImpl,CategoryDTOImpl,AuthorDTOImpl> {
 	private String title,link,description;
 	private Long publicationDate;
 	private Boolean read,archived,favorite;
-	private List<MediumDTOImpl> mediumDTOImpls;
-	private List<CategoryDTOImpl> categoryDTOImpls;
-	private List<AuthorDTOImpl> authorDTOImpls;
+	private Collection<MediumDTOImpl> mediumDTOImpls;
+	private Collection<CategoryDTOImpl> categoryDTOImpls;
+	private Collection<AuthorDTOImpl> authorDTOImpls;
 
 	@Override
 	public String getTitle() {
@@ -103,32 +100,32 @@ public class ArticleDTOImpl extends AbstractIdDTOImpl<BigInteger> implements Art
 	}
 
 	@Override
-	public List<MediumDTOImpl> getMediumDTOs() {
+	public Collection<MediumDTOImpl> getMediumDTOs() {
 		return mediumDTOImpls;
 	}
 
 	@Override
-	public void setMediumDTOs(final List<MediumDTOImpl> mediumDTOImpls) {
+	public void setMediumDTOs(final Collection<MediumDTOImpl> mediumDTOImpls) {
 		this.mediumDTOImpls=mediumDTOImpls;
 	}
 
 	@Override
-	public List<CategoryDTOImpl> getCategoryDTOs() {
+	public Collection<CategoryDTOImpl> getCategoryDTOs() {
 		return categoryDTOImpls;
 	}
 
 	@Override
-	public void setCategoryDTOs(final List<CategoryDTOImpl> categoryDTOImpls) {
+	public void setCategoryDTOs(final Collection<CategoryDTOImpl> categoryDTOImpls) {
 		this.categoryDTOImpls=categoryDTOImpls;
 	}
 
 	@Override
-	public List<AuthorDTOImpl> getAuthorDTOs() {
+	public Collection<AuthorDTOImpl> getAuthorDTOs() {
 		return authorDTOImpls;
 	}
 
 	@Override
-	public void setAuthorDTOs(final List<AuthorDTOImpl> authorDTOImpls) {
+	public void setAuthorDTOs(final Collection<AuthorDTOImpl> authorDTOImpls) {
 		this.authorDTOImpls=authorDTOImpls;
 	}
 			
@@ -164,19 +161,7 @@ public class ArticleDTOImpl extends AbstractIdDTOImpl<BigInteger> implements Art
 	
 	@Override
 	public String toString(){
-		final Map<String,Object> fields=new HashMap<String,Object>();
-		fields.put("id",id);
-		fields.put("title",title);
-		fields.put("link",link);
-		fields.put("description",description);
-		fields.put("publicationDate",publicationDate);
-		fields.put("read",read);
-		fields.put("archived",archived);
-		fields.put("favorite",favorite);
-		fields.put("mediumDTOImpls",mediumDTOImpls);
-		fields.put("categoryDTOImpls",categoryDTOImpls);
-		fields.put("authorDTOImpls",authorDTOImpls);
-		return DTOUtil.stringBuilder("articleDTOImpl", fields);
+		return ObjectUtil.toString(this);
 	}
 
 }

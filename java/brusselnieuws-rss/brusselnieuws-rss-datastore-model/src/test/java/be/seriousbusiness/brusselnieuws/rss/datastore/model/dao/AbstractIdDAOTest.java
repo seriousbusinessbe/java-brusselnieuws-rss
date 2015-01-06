@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
+import java.util.ArrayList;
+
 import org.junit.Test;
 
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.util.DAOTestUtil;
@@ -59,7 +61,7 @@ public abstract class AbstractIdDAOTest<ID,
 		DAOTestUtil.assertFindAll(getDAO(),0);
 		setDTO(getDAO().save(getDTO()));
 		assertNotNull("The saved DTO id should not be null",getDTO().getId());
-		assertEquals("The found DTO is not equal to the one saved",getDTO(),DAOTestUtil.assertFindAll(getDAO(),1).get(0));
+		assertEquals("The found DTO is not equal to the one saved",getDTO(),new ArrayList<IDDTO>(DAOTestUtil.assertFindAll(getDAO(),1)).get(0));
 	}
 
 }

@@ -1,17 +1,14 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl;
 
 import java.math.BigInteger;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.Collection;
 
+import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.FeedDTO;
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.util.DTOUtil;
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.util.ObjectUtil;
 
 public class FeedDTOImpl extends AbstractIdDTOImpl<BigInteger> implements FeedDTO<MediumTypeDTOImpl,MediumDTOImpl,CategoryDTOImpl,AuthorDTOImpl,ArticleDTOImpl> {
 	private String title,link,description;
-	private List<ArticleDTOImpl> articleDTOImpls;
+	private Collection<ArticleDTOImpl> articleDTOImpls;
 
 	@Override
 	public String getTitle() {
@@ -44,12 +41,12 @@ public class FeedDTOImpl extends AbstractIdDTOImpl<BigInteger> implements FeedDT
 	}
 
 	@Override
-	public List<ArticleDTOImpl> getArticleDTOs() {
+	public Collection<ArticleDTOImpl> getArticleDTOs() {
 		return articleDTOImpls;
 	}
 
 	@Override
-	public void setArticleDTOs(final List<ArticleDTOImpl> articleDTOImpls) {
+	public void setArticleDTOs(final Collection<ArticleDTOImpl> articleDTOImpls) {
 		this.articleDTOImpls=articleDTOImpls;
 	}
 	
@@ -73,13 +70,7 @@ public class FeedDTOImpl extends AbstractIdDTOImpl<BigInteger> implements FeedDT
 	
 	@Override
 	public String toString(){
-		final Map<String,Object> fields=new HashMap<String,Object>();
-		fields.put("id",id);
-		fields.put("title",title);
-		fields.put("link",link);
-		fields.put("description",description);
-		fields.put("articleDTOImpls",articleDTOImpls);
-		return DTOUtil.stringBuilder("feedDTOImpl", fields);
+		return ObjectUtil.toString(this);
 	}
 
 }

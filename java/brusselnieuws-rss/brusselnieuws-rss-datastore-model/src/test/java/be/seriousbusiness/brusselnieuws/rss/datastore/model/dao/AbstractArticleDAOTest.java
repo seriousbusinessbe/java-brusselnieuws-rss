@@ -6,6 +6,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.joda.time.DateTime;
@@ -99,11 +100,11 @@ public abstract class AbstractArticleDAOTest extends AbstractIdDAOTest<BigIntege
 	 */
 	@Test
 	public void testFindByTitle(){
-		List<ArticleDTOImpl> articleDTOImpls=getDAO().findByTitle(getDTO().getTitle());
+		List<ArticleDTOImpl> articleDTOImpls=new ArrayList<ArticleDTOImpl>(getDAO().findByTitle(getDTO().getTitle()));
 		assertNotNull("The List of ArticleDTO should not be null before saving",articleDTOImpls);
 		assertTrue("The List of ArticleDTO should be empty before saving",articleDTOImpls.isEmpty());
 		setDTO(getDAO().save(getDTO()));
-		articleDTOImpls=getDAO().findByTitle(getDTO().getTitle());
+		articleDTOImpls=new ArrayList<ArticleDTOImpl>(getDAO().findByTitle(getDTO().getTitle()));
 		assertNotNull("The List of ArticleDTO should not be null after saving",articleDTOImpls);
 		assertFalse("The List of ArticleDTO should not be empty after saving",articleDTOImpls.isEmpty());
 		assertEquals("The List of ArticleDTO should contain one ArticleDTO after saving",1,articleDTOImpls.size());
@@ -112,14 +113,14 @@ public abstract class AbstractArticleDAOTest extends AbstractIdDAOTest<BigIntege
 	
 	@Test
 	public void testFindByTitleNull(){
-		List<ArticleDTOImpl> articleDTOImpls=getDAO().findByTitle(null);
+		List<ArticleDTOImpl> articleDTOImpls=new ArrayList<ArticleDTOImpl>(getDAO().findByTitle(null));
 		assertNotNull("The List of ArticleDTO should not be null",articleDTOImpls);
 		assertTrue("The List of ArticleDTO should be empty",articleDTOImpls.isEmpty());
 	}
 	
 	@Test
 	public void testFindByTitleEmpty(){
-		List<ArticleDTOImpl> articleDTOImpls=getDAO().findByTitle("");
+		List<ArticleDTOImpl> articleDTOImpls=new ArrayList<ArticleDTOImpl>(getDAO().findByTitle(""));
 		assertNotNull("The List of ArticleDTO should not be null",articleDTOImpls);
 		assertTrue("The List of ArticleDTO should be empty",articleDTOImpls.isEmpty());
 	}
@@ -132,11 +133,11 @@ public abstract class AbstractArticleDAOTest extends AbstractIdDAOTest<BigIntege
 	public void testFindBetweenPublicationDates(){
 		final DateTime from=new DateTime(getDTO().getPublicationDate()).minusDays(1);
 		final DateTime to=new DateTime(getDTO().getPublicationDate()).plusDays(1);
-		List<ArticleDTOImpl> articleDTOImpls=getDAO().findByPublicationDateBetween(from,to);
+		List<ArticleDTOImpl> articleDTOImpls=new ArrayList<ArticleDTOImpl>(getDAO().findByPublicationDateBetween(from,to));
 		assertNotNull("The List of ArticleDTO should not be null before saving",articleDTOImpls);
 		assertTrue("The List of ArticleDTO should be empty before saving",articleDTOImpls.isEmpty());
 		setDTO(getDAO().save(getDTO()));
-		articleDTOImpls=getDAO().findByPublicationDateBetween(from,to);
+		articleDTOImpls=new ArrayList<ArticleDTOImpl>(getDAO().findByPublicationDateBetween(from,to));
 		assertNotNull("The List of ArticleDTO should not be null after saving",articleDTOImpls);
 		assertFalse("The List of ArticleDTO should not be empty after saving",articleDTOImpls.isEmpty());
 		assertEquals("The List of ArticleDTO should contain one ArticleDTO after saving",1,articleDTOImpls.size());
@@ -150,7 +151,7 @@ public abstract class AbstractArticleDAOTest extends AbstractIdDAOTest<BigIntege
 	public void testFindBetweenPublicationDatesExact(){
 		setDTO(getDAO().save(getDTO()));
 		final DateTime exactDateTime=new DateTime(getDTO().getPublicationDate());
-		final List<ArticleDTOImpl> articleDTOImpls=getDAO().findByPublicationDateBetween(exactDateTime,exactDateTime);
+		final List<ArticleDTOImpl> articleDTOImpls=new ArrayList<ArticleDTOImpl>(getDAO().findByPublicationDateBetween(exactDateTime,exactDateTime));
 		assertNotNull("The List of ArticleDTO should not be null after saving",articleDTOImpls);
 		assertFalse("The List of ArticleDTO should not be empty after saving",articleDTOImpls.isEmpty());
 		assertEquals("The List of ArticleDTO should contain one ArticleDTO after saving",1,articleDTOImpls.size());
@@ -162,7 +163,7 @@ public abstract class AbstractArticleDAOTest extends AbstractIdDAOTest<BigIntege
 	 */
 	@Test 
 	public void testFindBetweenPublicationDatesNull(){
-		List<ArticleDTOImpl> articleDTOImpls=getDAO().findByPublicationDateBetween(null,null);
+		List<ArticleDTOImpl> articleDTOImpls=new ArrayList<ArticleDTOImpl>(getDAO().findByPublicationDateBetween(null,null));
 		assertNotNull("The List of ArticleDTO should not be null before saving",articleDTOImpls);
 		assertTrue("The List of ArticleDTO should be empty before saving",articleDTOImpls.isEmpty());
 	}
@@ -173,11 +174,11 @@ public abstract class AbstractArticleDAOTest extends AbstractIdDAOTest<BigIntege
 	 */
 	@Test 
 	public void testFindByRead(){
-		List<ArticleDTOImpl> articleDTOiMPLs=getDAO().findByRead(getDTO().isRead());
+		List<ArticleDTOImpl> articleDTOiMPLs=new ArrayList<ArticleDTOImpl>(getDAO().findByRead(getDTO().isRead()));
 		assertNotNull("The List of ArticleDTO should not be null before saving",articleDTOiMPLs);
 		assertTrue("The List of ArticleDTO should be empty before saving",articleDTOiMPLs.isEmpty());
 		setDTO(getDAO().save(getDTO()));
-		articleDTOiMPLs=getDAO().findByRead(getDTO().isRead());
+		articleDTOiMPLs=new ArrayList<ArticleDTOImpl>(getDAO().findByRead(getDTO().isRead()));
 		assertNotNull("The List of ArticleDTO should not be null after saving",articleDTOiMPLs);
 		assertFalse("The List of ArticleDTO should not be empty after saving",articleDTOiMPLs.isEmpty());
 		assertEquals("The List of ArticleDTO should contain one ArticleDTO after saving",1,articleDTOiMPLs.size());
@@ -190,11 +191,11 @@ public abstract class AbstractArticleDAOTest extends AbstractIdDAOTest<BigIntege
 	 */
 	@Test 
 	public void testFindByFavorite(){
-		List<ArticleDTOImpl> articleDTOImpls=getDAO().findByFavorite(getDTO().isFavorite());
+		List<ArticleDTOImpl> articleDTOImpls=new ArrayList<ArticleDTOImpl>(getDAO().findByFavorite(getDTO().isFavorite()));
 		assertNotNull("The List of ArticleDTO should not be null before saving",articleDTOImpls);
 		assertTrue("The List of ArticleDTO should be empty before saving",articleDTOImpls.isEmpty());
 		setDTO(getDAO().save(getDTO()));
-		articleDTOImpls=getDAO().findByFavorite(getDTO().isFavorite());
+		articleDTOImpls=new ArrayList<ArticleDTOImpl>(getDAO().findByFavorite(getDTO().isFavorite()));
 		assertNotNull("The List of ArticleDTO should not be null after saving",articleDTOImpls);
 		assertFalse("The List of ArticleDTO should not be empty after saving",articleDTOImpls.isEmpty());
 		assertEquals("The List of ArticleDTO should contain one ArticleDTO after saving",1,articleDTOImpls.size());
@@ -207,11 +208,11 @@ public abstract class AbstractArticleDAOTest extends AbstractIdDAOTest<BigIntege
 	 */
 	@Test 
 	public void testFindByArchived(){
-		List<ArticleDTOImpl> articleDTOImpls=getDAO().findByArchived(getDTO().isArchived());
+		List<ArticleDTOImpl> articleDTOImpls=new ArrayList<ArticleDTOImpl>(getDAO().findByArchived(getDTO().isArchived()));
 		assertNotNull("The List of ArticleDTO should not be null before saving",articleDTOImpls);
 		assertTrue("The List of ArticleDTO should be empty before saving",articleDTOImpls.isEmpty());
 		setDTO(getDAO().save(getDTO()));
-		articleDTOImpls=getDAO().findByArchived(getDTO().isArchived());
+		articleDTOImpls=new ArrayList<ArticleDTOImpl>(getDAO().findByArchived(getDTO().isArchived()));
 		assertNotNull("The List of ArticleDTO should not be null after saving",articleDTOImpls);
 		assertFalse("The List of ArticleDTO should not be empty after saving",articleDTOImpls.isEmpty());
 		assertEquals("The List of ArticleDTO should contain one ArticleDTO after saving",1,articleDTOImpls.size());
@@ -224,14 +225,16 @@ public abstract class AbstractArticleDAOTest extends AbstractIdDAOTest<BigIntege
 	 */
 	@Test 
 	public void testFindByCategory(){
-		final CategoryDTOImpl categoryDTOImpl=categoryDAO.save(getDTO().getCategoryDTOs().get(0));
-		getDTO().getCategoryDTOs().set(0,categoryDTOImpl);
+		final CategoryDTOImpl categoryDTOImpl=categoryDAO.save(new ArrayList<CategoryDTOImpl>(getDTO().getCategoryDTOs()).get(0));
+		final List<CategoryDTOImpl> categoryDTOImpls=new ArrayList<CategoryDTOImpl>(getDTO().getCategoryDTOs()); 
+		categoryDTOImpls.set(0,categoryDTOImpl);
+		getDTO().setCategoryDTOs(categoryDTOImpls);
 		assertNotNull("The List of CategoryDTO should not be null",categoryDTOImpl);
-		List<ArticleDTOImpl> articleDTOImpls=getDAO().findByCategory(categoryDTOImpl);
+		List<ArticleDTOImpl> articleDTOImpls=new ArrayList<ArticleDTOImpl>(getDAO().findByCategory(categoryDTOImpl));
 		assertNotNull("The List of ArticleDTO should not be null before saving",articleDTOImpls);
 		assertTrue("The List of ArticleDTO should be empty before saving",articleDTOImpls.isEmpty());
 		setDTO(getDAO().save(getDTO()));
-		articleDTOImpls=getDAO().findByCategory(categoryDTOImpl);
+		articleDTOImpls=new ArrayList<ArticleDTOImpl>(getDAO().findByCategory(categoryDTOImpl));
 		assertNotNull("The List of ArticleDTO should not be null after saving",articleDTOImpls);
 		assertFalse("The List of ArticleDTO should not be empty after saving",articleDTOImpls.isEmpty());
 		assertEquals("The List of ArticleDTO should contain one ArticleDTO after saving",1,articleDTOImpls.size());
@@ -240,7 +243,7 @@ public abstract class AbstractArticleDAOTest extends AbstractIdDAOTest<BigIntege
 	
 	@Test 
 	public void testFindByCategoryNull(){
-		List<ArticleDTOImpl> articleDTOImpls=getDAO().findByCategory(null);
+		List<ArticleDTOImpl> articleDTOImpls=new ArrayList<ArticleDTOImpl>(getDAO().findByCategory(null));
 		assertNotNull("The List of ArticleDTO should not be null",articleDTOImpls);
 		assertTrue("The List of ArticleDTO should be empty",articleDTOImpls.isEmpty());
 	}
@@ -251,14 +254,16 @@ public abstract class AbstractArticleDAOTest extends AbstractIdDAOTest<BigIntege
 	 */
 	@Test 
 	public void testFindByAuthor(){
-		final AuthorDTOImpl authorDTOImpl=authorDAO.save(getDTO().getAuthorDTOs().get(0));
-		getDTO().getAuthorDTOs().add(0,authorDTOImpl);
+		final AuthorDTOImpl authorDTOImpl=authorDAO.save(new ArrayList<AuthorDTOImpl>(getDTO().getAuthorDTOs()).get(0));
+		final List<AuthorDTOImpl> authorDTOImpls=new ArrayList<AuthorDTOImpl>(getDTO().getAuthorDTOs());  
+		authorDTOImpls.add(0,authorDTOImpl);
+		getDTO().setAuthorDTOs(authorDTOImpls);
 		assertNotNull("The List of AuthorDTO should not be null",authorDTOImpl);
-		List<ArticleDTOImpl> articleDTOImpls=getDAO().findByAuthor(authorDTOImpl);
+		List<ArticleDTOImpl> articleDTOImpls=new ArrayList<ArticleDTOImpl>(getDAO().findByAuthor(authorDTOImpl));
 		assertNotNull("The List of ArticleDTO should not be null before saving",articleDTOImpls);
 		assertTrue("The List of ArticleDTO should be empty before saving",articleDTOImpls.isEmpty());
 		setDTO(getDAO().save(getDTO()));
-		articleDTOImpls=getDAO().findByAuthor(authorDTOImpl);
+		articleDTOImpls=new ArrayList<ArticleDTOImpl>(getDAO().findByAuthor(authorDTOImpl));
 		assertNotNull("The List of ArticleDTO should not be null after saving",articleDTOImpls);
 		assertFalse("The List of ArticleDTO should not be empty after saving",articleDTOImpls.isEmpty());
 		assertEquals("The List of ArticleDTO should contain one ArticleDTO after saving",1,articleDTOImpls.size());
@@ -267,7 +272,7 @@ public abstract class AbstractArticleDAOTest extends AbstractIdDAOTest<BigIntege
 	
 	@Test 
 	public void testFindByAuthorNull(){
-		List<ArticleDTOImpl> articleDTOImpls=getDAO().findByAuthor(null);
+		List<ArticleDTOImpl> articleDTOImpls=new ArrayList<ArticleDTOImpl>(getDAO().findByAuthor(null));
 		assertNotNull("The List of ArticleDTO should not be null",articleDTOImpls);
 		assertTrue("The List of ArticleDTO should be empty",articleDTOImpls.isEmpty());
 	}

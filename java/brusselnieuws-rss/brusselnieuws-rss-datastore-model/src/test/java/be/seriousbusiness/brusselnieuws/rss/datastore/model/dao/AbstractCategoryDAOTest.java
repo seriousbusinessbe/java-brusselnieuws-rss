@@ -5,6 +5,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
@@ -37,11 +38,11 @@ public abstract class AbstractCategoryDAOTest extends AbstractIdDAOTest<BigInteg
 	 */
 	@Test
 	public void testFindByName(){
-		List<CategoryDTOImpl> categoryDTOImpls=getDAO().findByName(getDTO().getName());
+		List<CategoryDTOImpl> categoryDTOImpls=new ArrayList<CategoryDTOImpl>(getDAO().findByName(getDTO().getName()));
 		assertNotNull("The list of CategoryDTO should be null when nothing is saved",categoryDTOImpls);
 		assertEquals("The list of CategoryDTO should be emtpy when nothing is saved",0,categoryDTOImpls.size());
 		setDTO(getDAO().save(getDTO()));
-		categoryDTOImpls=getDAO().findByName(getDTO().getName());
+		categoryDTOImpls=new ArrayList<CategoryDTOImpl>(getDAO().findByName(getDTO().getName()));
 		assertNotNull("The list of CetegoryDTO should not be null",categoryDTOImpls);
 		assertEquals("The list of CategoryDTO should contain the saved DTO",1,categoryDTOImpls.size());
 		assertEquals("The found CategoryDTO should be equal to the one saved",getDTO(),categoryDTOImpls.get(0));
@@ -49,14 +50,14 @@ public abstract class AbstractCategoryDAOTest extends AbstractIdDAOTest<BigInteg
 	
 	@Test
 	public void testFindByNameNull(){
-		final List<CategoryDTOImpl> categoryDTOImpls=getDAO().findByName(null);
+		final List<CategoryDTOImpl> categoryDTOImpls=new ArrayList<CategoryDTOImpl>(getDAO().findByName(null));
 		assertNotNull("The list of CategoryDTO should be null",categoryDTOImpls);
 		assertEquals("The list of CategoryDTO should be emtpy",0,categoryDTOImpls.size());
 	}
 	
 	@Test
 	public void testFindByNameEmpty(){
-		final List<CategoryDTOImpl> categoryDTOImpls=getDAO().findByName("");
+		final List<CategoryDTOImpl> categoryDTOImpls=new ArrayList<CategoryDTOImpl>(getDAO().findByName(""));
 		assertNotNull("The list of CategoryDTO should be null",categoryDTOImpls);
 		assertEquals("The list of CategoryDTO should be emtpy",0,categoryDTOImpls.size());
 	}

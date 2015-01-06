@@ -1,7 +1,7 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto;
 
 /**
- * Represents a DTO (data transfer object) responsible for id information transfer</br>
+ * Represents a DTO (data transfer object) responsible for {@link ID} (identifier) information transfer</br>
  * between a datastore and model.
  * @author stefanborghys
  *
@@ -10,13 +10,13 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto;
 public interface IdDTO<ID> {
 	
 	/**
-	 * Get the unique id.
-	 * @return unique id, <code>null</code> when not set
+	 * Get the unique {@link ID}.
+	 * @return unique {@link ID}, <code>null</code> when not set
 	 */
 	ID getId();
 	
 	/**
-	 * Set a unique id.
+	 * Set a unique {@link ID}.
 	 * @param id
 	 */
 	void setId(final ID id);

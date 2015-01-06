@@ -5,16 +5,20 @@
   <parent>
     <groupId>be.seriousbusiness.brusselnieuws.rss</groupId>
     <artifactId>brusselnieuws-rss</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${parent.version}</version>
   </parent>
   <groupId>be.seriousbusiness.brusselnieuws.rss.datastore.mongodb</groupId>
   <artifactId>brusselnieuws-rss-datastore-mongodb</artifactId>
   <name>Brussel Nieuws RSS Datastore Mongodb</name>
   <url>http://www.seriousbusiness.be</url>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+  
   <dependencies>
+  	<!-- Brussel Nieuws RSS Common -->
+    <dependency>
+      <groupId>be.seriousbusiness.brusselnieuws.rss.common</groupId>
+  	  <artifactId>brusselnieuws-rss-common</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
   	<!-- Brussel Nieuws RSS Datastore Model -->
     <dependency>
       <groupId>be.seriousbusiness.brusselnieuws.rss.datastore.model</groupId>
@@ -32,7 +36,7 @@
     <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-context</artifactId>
-        <version>4.0.6.RELEASE</version>
+        <version>${spring.context.version}</version>
     </dependency>
     <!-- Spring Data -->
     <dependency>
@@ -44,7 +48,7 @@
     <dependency>
 		<groupId>org.springframework</groupId>
 		<artifactId>spring-test</artifactId>
-		<version>4.0.6.RELEASE</version>
+		<version>${spring.test.version}</version>
 		<scope>test</scope>
 	</dependency>
     <!-- Flapdoodle -->
@@ -64,7 +68,7 @@
 	<dependency>
 	    <groupId>net.sf.dozer</groupId>
 	    <artifactId>dozer</artifactId>
-	    <version>5.4.0</version>
+	    <version>${dozer.version}</version>
 	    <exclusions>
 	      <!-- Exclude of dozer SLF4J & LOG4J -->
 	      <exclusion> 

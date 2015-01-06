@@ -1,5 +1,6 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.controller;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.dozer.Mapper;
@@ -7,11 +8,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import be.seriousbusiness.brusselnieuws.rss.common.mapping.util.MapperUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.MediumDAO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.exception.NotUniqueException;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.MediumDTOImpl;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.MediumTypeDTOImpl;
-import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.controller.mapping.util.MapUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoMedium;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.repository.MongoMediumRepository;
 
@@ -48,7 +49,7 @@ public class MongoMediumDAO implements MediumDAO {
 	@Override
 	public List<MediumDTOImpl> findAll() {
 		LOGGER.debug("Find all MediumDTOImpl(s)");
-		return MapUtil.map(mapper,(List<MongoMedium>)mongoMediumRepository.findAll(),MediumDTOImpl.class);
+		return MapperUtil.map(mapper,(Collection<MongoMedium>)mongoMediumRepository.findAll(),MediumDTOImpl.class);
 	}
 
 	@Override

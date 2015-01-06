@@ -8,7 +8,6 @@
 		http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.5.xsd">
 	
 	<!-- General configuration -->
-
 	
 	<context:component-scan base-package="be.seriousbusiness.brusselnieuws.rss.datastore.mongodb"/>
 

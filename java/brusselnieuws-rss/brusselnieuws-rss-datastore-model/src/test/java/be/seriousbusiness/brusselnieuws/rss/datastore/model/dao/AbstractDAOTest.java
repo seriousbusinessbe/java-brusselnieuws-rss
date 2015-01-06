@@ -3,6 +3,8 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dao;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import java.util.ArrayList;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -108,7 +110,7 @@ public abstract class AbstractDAOTest<DTO,D extends DAO<DTO>> implements DAOTest
 	public void testSaveDTO(){
 		DAOTestUtil.assertFindAll(dao,0);
 		setDTO(dao.save(dto));
-		assertEquals("The found DTO is not equal to the one saved",dto,DAOTestUtil.assertFindAll(dao,1).get(0));
+		assertEquals("The found DTO is not equal to the one saved",dto,new ArrayList<DTO>(DAOTestUtil.assertFindAll(dao,1)).get(0));
 	}
 	
 	/**
@@ -132,7 +134,7 @@ public abstract class AbstractDAOTest<DTO,D extends DAO<DTO>> implements DAOTest
 	public void testFindAll(){
 		DAOTestUtil.assertFindAll(dao,0);
 		setDTO(dao.save(dto));
-		assertEquals("The found DTO is not equal to the one saved",dto,DAOTestUtil.assertFindAll(dao,1).get(0));
+		assertEquals("The found DTO is not equal to the one saved",dto,new ArrayList<DTO>(DAOTestUtil.assertFindAll(dao,1)).get(0));
 	}
 
 }

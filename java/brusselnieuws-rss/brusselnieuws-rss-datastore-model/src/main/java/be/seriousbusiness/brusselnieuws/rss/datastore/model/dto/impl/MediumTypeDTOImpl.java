@@ -1,12 +1,9 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl;
 
 import java.math.BigInteger;
-import java.util.HashMap;
-import java.util.Map;
 
+import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.MediumTypeDTO;
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.util.DTOUtil;
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.util.ObjectUtil;
 
 public class MediumTypeDTOImpl extends AbstractIdDTOImpl<BigInteger> implements MediumTypeDTO {
 	private String type;
@@ -34,10 +31,7 @@ public class MediumTypeDTOImpl extends AbstractIdDTOImpl<BigInteger> implements 
 	
 	@Override
 	public String toString(){
-		final Map<String,Object> fields=new HashMap<String,Object>();
-		fields.put("id",id);
-		fields.put("type",type);
-		return DTOUtil.stringBuilder("mediumTypeDTOImpl", fields);
+		return ObjectUtil.toString(this);
 	}
 
 }

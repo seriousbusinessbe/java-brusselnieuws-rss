@@ -10,7 +10,7 @@ public abstract class AbstractArticleDTOImplMappingTest<A extends ArticleDTO<?,?
 
 	@Override
 	protected ArticleDTOImpl createDTOB() {
-		return ArticleDTOImplFactory.create();
+		return ArticleDTOImplFactory.createArticleMichelBorcy();
 	}
 
 	@Override

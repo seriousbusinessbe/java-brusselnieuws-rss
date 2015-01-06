@@ -1,7 +1,7 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto;
 
 import java.math.BigInteger;
-import java.util.List;
+import java.util.Collection;
 
 /**
  * Represents a DTO (data transfer object) responsible for article information transfer</br>
@@ -123,38 +123,38 @@ public interface ArticleDTO<MEDIUMTYPEDTO extends MediumTypeDTO,
 	
 	/**
 	 * Get all attached {@link MEDIUMDTO}(s)
-	 * @return a List of {@link MEDIUMDTO}, <code>null</code> when not set
+	 * @return a {@link Collection} of {@link MEDIUMDTO}, <code>null</code> when not set
 	 */
-	List<MEDIUMDTO> getMediumDTOs();
+	Collection<MEDIUMDTO> getMediumDTOs();
 	
 	/**
 	 * Set all attached {@link MEDIUMDTO}(s).
-	 * @param mediumDTOs a List of {@link MEDIUMDTO}
+	 * @param mediumDTOs a {@link Collection} of {@link MEDIUMDTO}
 	 */
-	void setMediumDTOs(final List<MEDIUMDTO> mediumDTOs);
+	void setMediumDTOs(final Collection<MEDIUMDTO> mediumDTOs);
 	
 	/**
 	 * Get all attached {@link CATEGORYDTO}(s).
-	 * @return a List of {@link CATEGORYDTO}, <code>null</code> when not set
+	 * @return a {@link Collection} of {@link CATEGORYDTO}, <code>null</code> when not set
 	 */
-	List<CATEGORYDTO> getCategoryDTOs();
+	Collection<CATEGORYDTO> getCategoryDTOs();
 	
 	/**
 	 * Set all attached {@link CATEGORYDTO}(s).
-	 * @param categoryDTOs a List of {@link CATEGORYDTO}
+	 * @param categoryDTOs a {@link Collection} of {@link CATEGORYDTO}
 	 */
-	void setCategoryDTOs(final List<CATEGORYDTO> categoryDTOs);
+	void setCategoryDTOs(final Collection<CATEGORYDTO> categoryDTOs);
 	
 	/**
 	 * Get all attached {@link AuthorDTO}(s).
-	 * @return a List of {@link AuthorDTO}, <code>null</code> when not set
+	 * @return a {@link Collection} of {@link AuthorDTO}, <code>null</code> when not set
 	 */ 
-	List<AUTHORDTO> getAuthorDTOs();
+	Collection<AUTHORDTO> getAuthorDTOs();
 	
 	/**
 	 * Set all attached {@link AUTHORDTO}(s).
-	 * @param authorDTOs a List of {@link AUTHORDTO}
+	 * @param authorDTOs a {@link Collection} of {@link AUTHORDTO}
 	 */
-	void setAuthorDTOs(final List<AUTHORDTO> authorDTOs);
+	void setAuthorDTOs(final Collection<AUTHORDTO> authorDTOs);
 
 }

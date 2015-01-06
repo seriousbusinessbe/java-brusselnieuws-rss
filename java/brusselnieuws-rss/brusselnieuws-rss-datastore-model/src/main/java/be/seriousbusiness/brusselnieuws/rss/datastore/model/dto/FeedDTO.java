@@ -1,7 +1,7 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto;
 
 import java.math.BigInteger;
-import java.util.List;
+import java.util.Collection;
 
 /**
  * Represents a DTO (data transfer object) responsible for feed information transfer</br>
@@ -58,14 +58,14 @@ public interface FeedDTO<MEDIUMTYPEDTO extends MediumTypeDTO,
 	
 	/**
 	 * Get all published {@link ARTICLEDTO}(s)
-	 * @return a Set of {@link ARTICLEDTO}, <code>null</code> when not set
+	 * @return a {@link Collection} of {@link ARTICLEDTO}, <code>null</code> when not set
 	 */
-	List<ARTICLEDTO> getArticleDTOs();
+	Collection<ARTICLEDTO> getArticleDTOs();
 	
 	/**
 	 * Set all published {@link ArticleDTO}(s)
-	 * @param articleDTOs a List of {@link ArticleDTO}
+	 * @param articleDTOs a {@link Collection} of {@link ArticleDTO}
 	 */
-	void setArticleDTOs(final List<ARTICLEDTO> articleDTOs);
+	void setArticleDTOs(final Collection<ARTICLEDTO> articleDTOs);
 
 }
