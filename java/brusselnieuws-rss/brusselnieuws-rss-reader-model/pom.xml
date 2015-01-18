@@ -9,8 +9,10 @@
   </parent>
   <groupId>be.seriousbusiness.brusselnieuws.rss.reader.model</groupId>
   <artifactId>brusselnieuws-rss-reader-model</artifactId>
-  <name>brusselnieuws-rss-reader-model</name>
-  <url>http://maven.apache.org</url>
+  <version>1.0-SNAPSHOT</version>
+  <description>Java API defining brusselnieuws.be RSS feeds business model</description>
+  <name>Brussel Nieuws RSS Reader Model</name>
+  <url>http://www.seriousbusiness.be</url>
   
   <dependencies>
   	<!-- Brussel Nieuws RSS Common -->

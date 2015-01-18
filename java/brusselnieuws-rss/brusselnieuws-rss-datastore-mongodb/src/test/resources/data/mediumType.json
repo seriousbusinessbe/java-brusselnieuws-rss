@@ -1,7 +1,0 @@
-[ { "_class" : "be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoMediumType",
-"id" : "1",
-"type" : "image/jpeg" },
-{ "_class" : "be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoMediumType",
-"id" : "2",
-"type" : "image/png" }
-]

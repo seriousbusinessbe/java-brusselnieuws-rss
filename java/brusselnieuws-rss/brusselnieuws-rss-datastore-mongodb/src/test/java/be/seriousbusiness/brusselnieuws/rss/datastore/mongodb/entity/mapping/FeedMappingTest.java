@@ -12,7 +12,7 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoFeed;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.factory.MongoFeedFactory;
 
 @RunWith(SpringJUnit4ClassRunner.class) 
-@ContextConfiguration("classpath:config/test-dozer-config.xml")
+@ContextConfiguration("classpath:config/test-brusselnieuws-rss-datastore-mongodb-config.xml")
 public class FeedMappingTest extends AbstractFeedDTOImplMappingTest<MongoFeed> {
 	@Autowired
 	private Mapper mapper;

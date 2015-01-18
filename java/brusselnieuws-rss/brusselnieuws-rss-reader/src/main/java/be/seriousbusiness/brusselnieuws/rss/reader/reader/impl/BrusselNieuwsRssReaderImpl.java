@@ -11,13 +11,13 @@ import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import be.seriousbusiness.brusselnieuws.rss.reader.BrusselNieuwsRssReader;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.ArticleImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.AuthorImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.CategoryImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.FeedImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.MediumImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.MediumTypeImpl;
-import be.seriousbusiness.brusselnieuws.rss.reader.reader.BrusselNieuwsRssReader;
 
 import com.sun.syndication.feed.synd.SyndCategory;
 import com.sun.syndication.feed.synd.SyndEnclosure;

@@ -12,7 +12,7 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoMedium
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.factory.MongoMediumTypeFactory;
 
 @RunWith(SpringJUnit4ClassRunner.class) 
-@ContextConfiguration("classpath:config/test-dozer-config.xml")
+@ContextConfiguration("classpath:config/test-brusselnieuws-rss-datastore-mongodb-config.xml")
 public class MediumTypeMappingTest extends AbstractMediumTypeDTOImplMappingTest<MongoMediumType> {
 	@Autowired
 	private Mapper mapper;

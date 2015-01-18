@@ -10,7 +10,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class) 
-@ContextConfiguration("classpath:config/test-application-config.xml")
+@ContextConfiguration("classpath:config/test-brusselnieuws-rss-datastore-mongodb-config.xml")
 public class MongoMediumRepositoryTest {
 	@Autowired
 	private MongoMediumRepository mongoMediumRepository;

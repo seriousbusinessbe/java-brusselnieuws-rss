@@ -14,7 +14,7 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.MediumDAO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.MediumTypeDAO;
 
 @RunWith(SpringJUnit4ClassRunner.class) 
-@ContextConfiguration("classpath:config/test-application-config.xml")
+@ContextConfiguration("classpath:config/test-brusselnieuws-rss-datastore-mongodb-config.xml")
 public class MongoFeedDAOTest extends AbstractFeedDAOTest {
 	@Autowired
 	private MongoFeedDAO mongoFeedDAO;

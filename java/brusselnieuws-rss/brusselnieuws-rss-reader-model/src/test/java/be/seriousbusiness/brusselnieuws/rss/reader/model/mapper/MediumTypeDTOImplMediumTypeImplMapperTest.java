@@ -17,7 +17,7 @@ import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.factory.MediumType
 import be.seriousbusiness.brusselnieuws.rss.reader.model.mapper.util.MediumTypeDTOMediumTypeMapperUtil;
 
 @RunWith(SpringJUnit4ClassRunner.class) 
-@ContextConfiguration("classpath:config/test-dozer-config.xml")
+@ContextConfiguration("classpath:config/test-brussel-rss-reader-model-dozer-config.xml")
 public class MediumTypeDTOImplMediumTypeImplMapperTest {
 	@Autowired
 	private Mapper mapper;

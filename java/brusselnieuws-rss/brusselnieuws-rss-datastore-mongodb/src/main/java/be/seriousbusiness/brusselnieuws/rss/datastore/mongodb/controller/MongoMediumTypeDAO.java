@@ -45,7 +45,7 @@ public class MongoMediumTypeDAO implements MediumTypeDAO {
 				final MongoMediumType savedMediumType=mongoMediumTypeRepository.save(mediumType);
 				return mapper.map(savedMediumType, MediumTypeDTOImpl.class);
 			}catch(final DuplicateKeyException e){
-				LOGGER.warn("MediumTypeDTOImpl '{}' could not be saved because type '{}' is already in use",mediumTypeDTOImpl,mediumTypeDTOImpl.getType(),e);
+				LOGGER.debug("MediumTypeDTOImpl '{}' could not be saved because type '{}' is already in use",mediumTypeDTOImpl,mediumTypeDTOImpl.getType(),e);
 				final NotUniqueException notUniqueException=new NotUniqueException("type",mediumTypeDTOImpl.getType(),e.getCause());
 				notUniqueException.setStackTrace(e.getStackTrace());
 				throw notUniqueException;

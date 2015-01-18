@@ -9,7 +9,7 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.AbstractCategory
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.CategoryDAO;
 
 @RunWith(SpringJUnit4ClassRunner.class) 
-@ContextConfiguration("classpath:config/test-application-config.xml")
+@ContextConfiguration("classpath:config/test-brusselnieuws-rss-datastore-mongodb-config.xml")
 public class MongoCategoryDAOTest extends AbstractCategoryDAOTest {
 	@Autowired
 	private MongoCategoryDAO mongoCategoryDAO;

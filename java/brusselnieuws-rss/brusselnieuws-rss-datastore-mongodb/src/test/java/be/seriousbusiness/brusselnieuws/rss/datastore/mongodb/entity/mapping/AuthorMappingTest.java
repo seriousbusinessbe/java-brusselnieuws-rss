@@ -12,7 +12,7 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoAuthor
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.factory.MongoAuthorFactory;
 
 @RunWith(SpringJUnit4ClassRunner.class) 
-@ContextConfiguration("classpath:config/test-dozer-config.xml")
+@ContextConfiguration("classpath:config/test-brusselnieuws-rss-datastore-mongodb-config.xml")
 public class AuthorMappingTest extends AbstractAuthorDTOImplMappingTest<MongoAuthor> {
 	@Autowired
 	private Mapper mapper;

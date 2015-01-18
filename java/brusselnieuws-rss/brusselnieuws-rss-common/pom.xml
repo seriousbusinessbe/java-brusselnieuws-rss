@@ -10,8 +10,8 @@
   <groupId>be.seriousbusiness.brusselnieuws.rss.common</groupId>
   <artifactId>brusselnieuws-rss-common</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>brusselnieuws-rss-common</name>
-  <url>http://maven.apache.org</url>
+  <name>Brussel Nieuws RSS Common</name>
+  <url>http://www.seriousbusiness.be</url>
   <dependencies>
   	<!-- Javax Validation -->
 	<dependency>
@@ -37,4 +37,5 @@
 	    </exclusions> 
 	</dependency>
   </dependencies>
+  <description>Java API containing reusable logic</description>
 </project>

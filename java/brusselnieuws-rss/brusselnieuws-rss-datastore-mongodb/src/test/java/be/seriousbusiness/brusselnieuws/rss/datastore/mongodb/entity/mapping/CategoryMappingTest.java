@@ -12,7 +12,7 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoCatego
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.factory.MongoCategoryFactory;
 
 @RunWith(SpringJUnit4ClassRunner.class) 
-@ContextConfiguration("classpath:config/test-dozer-config.xml")
+@ContextConfiguration("classpath:config/test-brusselnieuws-rss-datastore-mongodb-config.xml")
 public class CategoryMappingTest extends AbstractCategoryDTOImplMappingTest<MongoCategory> {
 	@Autowired
 	private Mapper mapper;
