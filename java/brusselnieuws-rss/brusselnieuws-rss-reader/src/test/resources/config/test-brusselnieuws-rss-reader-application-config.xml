@@ -35,6 +35,7 @@
 		<property name="brusselNieuwsRssReader" ref="brusselNieuwsRssReaderImpl"/>
 		<property name="feedFactory" ref="feedImplFactory"/>
 		<property name="feedManager" ref="feedManagerImpl"/>
+		<!-- NEWS -->
 		<property name="awelMerciNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.news.awel_merci}"/>
@@ -85,313 +86,194 @@
 				<constructor-arg value="${rss.news.people}"/>
 			</bean>
 		</property>
-	</bean>
-	
-	<!-- CULTURE -->
-	<!-- 
-	<bean id="cultureSurveyRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		<!-- CULTURE -->
+		<property name="cultureSurveyURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.culture.survey}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="cultureGeneralRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="generalCultureNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.culture.general}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="cultureExpoRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="expoNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.culture.expo}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="cultureMusicRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="musicalNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.culture.music}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="cultureFilmRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="filmNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.culture.film}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="cultureStageRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="stageNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.culture.stage}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="cultureEventRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="eventNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.culture.event}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="cultureShoppingRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="shoppingNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.culture.shopping}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="cultureChildrenRssReader" parent="RssReader">
-		<constructor-arg index="0">
-			<bean id="url" class="java.net.URL">
-				<constructor-arg value="${rss.culture.children}"/>
-			</bean>
-		</constructor-arg>
-	</bean>
-	 -->
-	
-	<!-- FOOD and DRINKS -->
-	<!-- 
-	<bean id="foodAndDrinksSurveyRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<!-- FOOD & DRINKS -->
+		<property name="foodAndDrinksSurveyURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.food_and_drinks.survey}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="foodAndDrinksGeneralRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="generalFoodAndDrinksNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.food_and_drinks.general}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="foodAndDrinksCulinaryRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="culinaryNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.food_and_drinks.culinary}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="foodAndDrinksBarsRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="barNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.food_and_drinks.bars}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="foodAndDrinksRestaurantsRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="restaurantNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.food_and_drinks.restaurants}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	 -->
-	<!-- Opinion -->
-	<!-- 
-	<bean id="opinionSurveyRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<!-- OPINION -->
+		<property name="opinionSurveyURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.opinion.survey}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	 -->
-	<!-- MUNICIPALITIES -->
-	<!-- 
-	<bean id="municipalityAnderlechtRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<!-- MUNICIPALITIES -->
+		<property name="anderlechtNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.municipality.anderlecht}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="municipalityBrusselRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="brusselNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.municipality.brussel}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="municipalityElseneRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="elseneNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.municipality.elsene}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="municipalityEtterbeekRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="etterbeekNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.municipality.etterbeek}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="municipalityEvereRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="evereNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.municipality.evere}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="municipalityGanshorenRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="ganshorenNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.municipality.ganshoren}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="municipalityHarenRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="harenNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.municipality.haren}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="municipalityJetteRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="jetteNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.municipality.jette}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="municipalityKoekelbergRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="koekelbergNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.municipality.koekelberg}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="municipalityLakenRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="lakenNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.municipality.laken}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="municipalityNederOverHeembeekRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="nederOverHeembeekNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.municipality.neder-over-heembeek}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="municipalityOudergemRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="oudergemNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.municipality.oudergem}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="municipalitySchaarbeekRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="schaarbeekNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.municipality.schaarbeek}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="municipalitySintAgathaBerchemRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="sintAgathaBerchemNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.municipality.sint-agatha-berchem}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="municipalitySintGillisRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="sintGillisNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.municipality.sint-gillis}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="municipalitySintJansMolenbeekRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="sintJansMolenbeekNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.municipality.sint-jans-molenbeek}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="municipalitySintJoostTenNodeRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="sintJoostTenNodeNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.municipality.sint-joost-ten-node}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="municipalitySintLambrechtsWoluweRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="sintLambrechtsWoluweNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.municipality.sint-lambrechts-woluwe}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="municipalitySintPietersWoluweRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="sintPietersWoluweNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.municipality.sint-pieters-woluwe}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="municipalityUkkelRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="ukkelNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.municipality.ukkel}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="municipalityVorstRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="vorstNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.municipality.vorst}"/>
 			</bean>
-		</constructor-arg>
-	</bean>
-	
-	<bean id="municipalityWatermaalBosvoordeRssReader" parent="RssReader">
-		<constructor-arg index="0">
+		</property>
+		<property name="watermaalBosvoordeNewsURL">
 			<bean id="url" class="java.net.URL">
 				<constructor-arg value="${rss.municipality.watermaal-bosvoorde}"/>
 			</bean>
-		</constructor-arg>
+		</property>
 	</bean>
 	
+	<!-- MUNICIPALITIES -->
+	<!-- 
 	<util:map id="municipalitiesReadersMap" 
 	key-type="be.seriousbusiness.brusselnieuws.rss.model.Municipality" 
 	value-type="be.seriousbusiness.brusselnieuws.rss.reader.RssReader" 

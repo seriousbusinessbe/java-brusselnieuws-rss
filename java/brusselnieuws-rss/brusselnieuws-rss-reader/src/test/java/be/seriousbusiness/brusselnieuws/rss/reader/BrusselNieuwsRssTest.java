@@ -37,6 +37,8 @@ public class BrusselNieuwsRssTest {
 		LOGGER.debug("{}",feed);
 	}
 	
+	/* NEWS */
+	
 	@Test
 	public void testGetAwelMerciNews() {
 		testGetFeed(brusselNieuwsRss.getAwelMerciNews());
@@ -85,6 +87,189 @@ public class BrusselNieuwsRssTest {
 	@Test
 	public void testGetSportsNews() {
 		testGetFeed(brusselNieuwsRss.getSportsNews());
+	}
+	
+	/* CULTURE */
+	
+	@Test
+	public void testGetCultureSurvey() {
+		testGetFeed(brusselNieuwsRss.getCultureSurvey());
+	}
+	
+	@Test
+	public void testGetGeneralCultureNews() {
+		testGetFeed(brusselNieuwsRss.getGeneralCultureNews());
+	}
+	
+	@Test
+	public void testGetExpoNews() {
+		testGetFeed(brusselNieuwsRss.getExpoNews());
+	}
+	
+	@Test
+	public void testGetMusicalNews() {
+		testGetFeed(brusselNieuwsRss.getMusicalNews());
+	}
+	
+	@Test
+	public void testGetFilmNews() {
+		testGetFeed(brusselNieuwsRss.getFilmNews());
+	}
+		
+	@Test
+	public void testGetStageNews() {
+		testGetFeed(brusselNieuwsRss.getStageNews());
+	}
+	
+	@Test
+	public void testGetEventNews() {
+		testGetFeed(brusselNieuwsRss.getEventNews());
+	}
+	
+	@Test
+	public void testGetShoppingNews() {
+		testGetFeed(brusselNieuwsRss.getShoppingNews());
+	}
+	
+	/* FOOD & DRINKS */
+	
+	@Test
+	public void testGetFoodAndDrinksSurvey() {
+		testGetFeed(brusselNieuwsRss.getFoodAndDrinksSurvey());
+	}
+	
+	@Test
+	public void testGetGeneralFoodAndDrinksNews() {
+		testGetFeed(brusselNieuwsRss.getGeneralFoodAndDrinksNews());
+	}
+	
+	@Test
+	public void testGetCulinaryNews() {
+		testGetFeed(brusselNieuwsRss.getCulinaryNews());
+	}
+	
+	@Test
+	public void testGetBarNews() {
+		testGetFeed(brusselNieuwsRss.getBarNews());
+	}
+	
+	@Test
+	public void testGetRestaurantNews() {
+		testGetFeed(brusselNieuwsRss.getRestaurantNews());
+	}
+	
+	/* OPINION */
+	
+	@Test
+	public void testGetOpinionSurvey() {
+		testGetFeed(brusselNieuwsRss.getOpinionSurvey());
+	}
+	
+	/* MUNICIPALITIES */
+	
+	@Test
+	public void testGetAnderlechtNews() {
+		testGetFeed(brusselNieuwsRss.getAnderlechtNews());
+	}
+	
+	@Test
+	public void testGetBrusselNews() {
+		testGetFeed(brusselNieuwsRss.getBrusselNews());
+	}
+	
+	@Test
+	public void testGetElseneNews() {
+		testGetFeed(brusselNieuwsRss.getElseneNews());
+	}
+	
+	@Test
+	public void testGetEvereNews() {
+		testGetFeed(brusselNieuwsRss.getEvereNews());
+	}
+	
+	@Test
+	public void testGetGanshorenNews() {
+		testGetFeed(brusselNieuwsRss.getGanshorenNews());
+	}
+	
+	@Test
+	public void testGetHarenNews() {
+		testGetFeed(brusselNieuwsRss.getHarenNews());
+	}
+	
+	@Test
+	public void testGetJetteNews() {
+		testGetFeed(brusselNieuwsRss.getJetteNews());
+	}
+	
+	@Test
+	public void testGetKoekelbergNews() {
+		testGetFeed(brusselNieuwsRss.getKoekelbergNews());
+	}
+	
+	@Test
+	public void testGetLakenNews() {
+		testGetFeed(brusselNieuwsRss.getLakenNews());
+	}
+	
+	@Test
+	public void testGetNederOverHeembeekNews() {
+		testGetFeed(brusselNieuwsRss.getNederOverHeembeekNews());
+	}
+	
+	@Test
+	public void testGetOudergemNews() {
+		testGetFeed(brusselNieuwsRss.getOudergemNews());
+	}
+	
+	@Test
+	public void testGetSchaarbeekNews() {
+		testGetFeed(brusselNieuwsRss.getSchaarbeekNews());
+	}
+	
+	@Test
+	public void testGetSintAgathaBerchemNews() {
+		testGetFeed(brusselNieuwsRss.getSintAgathaBerchemNews());
+	}
+	
+	@Test
+	public void testGetSintGillisNews() {
+		testGetFeed(brusselNieuwsRss.getSintGillisNews());
+	}
+	
+	@Test
+	public void testGetSintJansMolenbeekNews() {
+		testGetFeed(brusselNieuwsRss.getSintJansMolenbeekNews());
+	}
+	
+	@Test
+	public void testGetSintJoostTenNodeNews() {
+		testGetFeed(brusselNieuwsRss.getSintJoostTenNodeNews());
+	}
+	
+	@Test
+	public void testGetSintLambrechtsWoluweNews() {
+		testGetFeed(brusselNieuwsRss.getSintLambrechtsWoluweNews());
+	}
+	
+	@Test
+	public void testGetSintPietersWoluweNews() {
+		testGetFeed(brusselNieuwsRss.getSintPietersWoluweNews());
+	}
+	
+	@Test
+	public void testGetUkkelNews() {
+		testGetFeed(brusselNieuwsRss.getUkkelNews());
+	}
+	
+	@Test
+	public void testGetVorstNews() {
+		testGetFeed(brusselNieuwsRss.getVorstNews());
+	}
+	
+	@Test
+	public void testGetWatermaalBosvoordeNews() {
+		testGetFeed(brusselNieuwsRss.getWatermaalBosvoordeNews());
 	}
 	 
 	@Ignore

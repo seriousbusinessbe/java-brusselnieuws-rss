@@ -1,31 +1,156 @@
-18/01/15 00:41 INFO  BrusselNieuwsRssTest - Check for news headline updates...
-18/01/15 00:41 INFO  BrusselNieuwsRssTest - BREAKING! - Gearresteerden Griekenland geen terreurverdachten
-18/01/15 00:41 INFO  BrusselNieuwsRssTest - BREAKING! - Galant in beroep tegen ordonnantie vliegroutes
-18/01/15 01:28 INFO  GenericApplicationContext - Closing org.springframework.context.support.GenericApplicationContext@1f34b721: startup date [Sat Jan 17 22:47:11 CET 2015]; root of context hierarchy
-18/01/15 01:28 INFO  EmbeddedMongoFactoryBean - Stopping embedded MongoDB instance
-18/01/15 01:39 INFO  TestContextManager - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
-18/01/15 01:39 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-reader-application-config.xml]
-18/01/15 01:39 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-datastore-mongodb-config.xml]
-18/01/15 01:39 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
-18/01/15 01:39 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-datastore-mongodb-flapdoodle-config.xml]
-18/01/15 01:39 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brussel-rss-reader-model-dozer-config.xml]
-18/01/15 01:39 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/test-brusselnieuws-rss-datastore-mongodb-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/test-brussel-rss-reader-model-dozer-config.xml]]
-18/01/15 01:39 INFO  GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@359e4725: startup date [Sun Jan 18 01:39:06 CET 2015]; root of context hierarchy
-18/01/15 01:39 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/test-brusselnieuws-rss-reader-configuration.properties]
-18/01/15 01:39 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/test-brusselnieuws-rss-datastore-mongodb-mongo.properties]
-18/01/15 01:39 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/test-brusselnieuws-rss-datastore-mongodb-mongod.properties]
-18/01/15 01:39 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
-18/01/15 01:39 INFO  GlobalSettings - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/classes/dozer.properties] for Dozer global property configuration
-18/01/15 01:39 INFO  GlobalSettings - Reading Dozer properties from URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/classes/dozer.properties]
-18/01/15 01:39 INFO  DozerInitializer - Initializing Dozer. Version: 5.4.0, Thread Name: main
-18/01/15 01:39 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
-18/01/15 01:39 INFO  EmbeddedMongoBuilder - Initializing embedded MongoDB instance
-18/01/15 01:39 INFO  Downloader - Extract /Users/stefanborghys/.embedmongo/osx/mongodb-osx-x86_64-2.4.5.tgz : starting...
-18/01/15 01:39 INFO  Downloader - Extract /Users/stefanborghys/.embedmongo/osx/mongodb-osx-x86_64-2.4.5.tgz : finished
-18/01/15 01:39 INFO  EmbeddedMongoBuilder - Starting embedded MongoDB instance
-18/01/15 01:39 INFO  DozerBeanMapper - Using the following xml files to load custom mappings for the bean mapper instance: [config/test-brussel-rss-reader-model-dozer-mapping-config.xml]
-18/01/15 01:39 INFO  DozerBeanMapper - Trying to find xml mapping file: config/test-brussel-rss-reader-model-dozer-mapping-config.xml
-18/01/15 01:39 INFO  DozerBeanMapper - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/test-classes/config/test-brussel-rss-reader-model-dozer-mapping-config.xml] to load custom xml mappings
-18/01/15 01:39 INFO  DozerBeanMapper - Successfully loaded custom xml mappings from URL: [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/test-classes/config/test-brussel-rss-reader-model-dozer-mapping-config.xml]
-18/01/15 01:39 INFO  GenericApplicationContext - Closing org.springframework.context.support.GenericApplicationContext@359e4725: startup date [Sun Jan 18 01:39:06 CET 2015]; root of context hierarchy
-18/01/15 01:39 INFO  EmbeddedMongoFactoryBean - Stopping embedded MongoDB instance
+19/01/15 00:40 INFO  TestContextManager - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+19/01/15 00:40 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-reader-application-config.xml]
+19/01/15 00:40 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-datastore-mongodb-config.xml]
+19/01/15 00:40 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
+19/01/15 00:40 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-datastore-mongodb-flapdoodle-config.xml]
+19/01/15 00:40 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brussel-rss-reader-model-dozer-config.xml]
+19/01/15 00:40 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/test-brusselnieuws-rss-datastore-mongodb-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/test-brussel-rss-reader-model-dozer-config.xml]]
+19/01/15 00:40 INFO  GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@509d5bae: startup date [Mon Jan 19 00:40:18 CET 2015]; root of context hierarchy
+19/01/15 00:40 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/test-brusselnieuws-rss-reader-configuration.properties]
+19/01/15 00:40 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/test-brusselnieuws-rss-datastore-mongodb-mongo.properties]
+19/01/15 00:40 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/test-brusselnieuws-rss-datastore-mongodb-mongod.properties]
+19/01/15 00:40 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+19/01/15 00:40 INFO  GlobalSettings - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/classes/dozer.properties] for Dozer global property configuration
+19/01/15 00:40 INFO  GlobalSettings - Reading Dozer properties from URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/classes/dozer.properties]
+19/01/15 00:40 INFO  DozerInitializer - Initializing Dozer. Version: 5.4.0, Thread Name: main
+19/01/15 00:40 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+19/01/15 00:40 INFO  EmbeddedMongoBuilder - Initializing embedded MongoDB instance
+19/01/15 00:40 INFO  Downloader - Extract /Users/stefanborghys/.embedmongo/osx/mongodb-osx-x86_64-2.4.5.tgz : starting...
+19/01/15 00:40 INFO  Downloader - Extract /Users/stefanborghys/.embedmongo/osx/mongodb-osx-x86_64-2.4.5.tgz : finished
+19/01/15 00:40 INFO  EmbeddedMongoBuilder - Starting embedded MongoDB instance
+19/01/15 00:40 INFO  DozerBeanMapper - Using the following xml files to load custom mappings for the bean mapper instance: [config/test-brussel-rss-reader-model-dozer-mapping-config.xml]
+19/01/15 00:40 INFO  DozerBeanMapper - Trying to find xml mapping file: config/test-brussel-rss-reader-model-dozer-mapping-config.xml
+19/01/15 00:40 INFO  DozerBeanMapper - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/test-classes/config/test-brussel-rss-reader-model-dozer-mapping-config.xml] to load custom xml mappings
+19/01/15 00:40 INFO  DozerBeanMapper - Successfully loaded custom xml mappings from URL: [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/test-classes/config/test-brussel-rss-reader-model-dozer-mapping-config.xml]
+19/01/15 00:40 INFO  GenericApplicationContext - Closing org.springframework.context.support.GenericApplicationContext@509d5bae: startup date [Mon Jan 19 00:40:18 CET 2015]; root of context hierarchy
+19/01/15 00:40 INFO  EmbeddedMongoFactoryBean - Stopping embedded MongoDB instance
+19/01/15 00:46 INFO  TestContextManager - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+19/01/15 00:46 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-reader-application-config.xml]
+19/01/15 00:46 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-datastore-mongodb-config.xml]
+19/01/15 00:46 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
+19/01/15 00:46 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-datastore-mongodb-flapdoodle-config.xml]
+19/01/15 00:46 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brussel-rss-reader-model-dozer-config.xml]
+19/01/15 00:46 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/test-brusselnieuws-rss-datastore-mongodb-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/test-brussel-rss-reader-model-dozer-config.xml]]
+19/01/15 00:46 INFO  GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@67b467e9: startup date [Mon Jan 19 00:46:58 CET 2015]; root of context hierarchy
+19/01/15 00:46 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/test-brusselnieuws-rss-reader-configuration.properties]
+19/01/15 00:46 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/test-brusselnieuws-rss-datastore-mongodb-mongo.properties]
+19/01/15 00:46 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/test-brusselnieuws-rss-datastore-mongodb-mongod.properties]
+19/01/15 00:46 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+19/01/15 00:46 INFO  GlobalSettings - Using URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/brusselnieuws-rss-reader-model-1.0-SNAPSHOT.jar!/dozer.properties] for Dozer global property configuration
+19/01/15 00:46 INFO  GlobalSettings - Reading Dozer properties from URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/brusselnieuws-rss-reader-model-1.0-SNAPSHOT.jar!/dozer.properties]
+19/01/15 00:46 INFO  DozerInitializer - Initializing Dozer. Version: 5.4.0, Thread Name: main
+19/01/15 00:46 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+19/01/15 00:46 INFO  EmbeddedMongoBuilder - Initializing embedded MongoDB instance
+19/01/15 00:46 INFO  Downloader - Extract /Users/stefanborghys/.embedmongo/osx/mongodb-osx-x86_64-2.4.5.tgz : starting...
+19/01/15 00:47 INFO  Downloader - Extract /Users/stefanborghys/.embedmongo/osx/mongodb-osx-x86_64-2.4.5.tgz : finished
+19/01/15 00:47 INFO  EmbeddedMongoBuilder - Starting embedded MongoDB instance
+19/01/15 00:47 INFO  DozerBeanMapper - Using the following xml files to load custom mappings for the bean mapper instance: [config/test-brussel-rss-reader-model-dozer-mapping-config.xml]
+19/01/15 00:47 INFO  DozerBeanMapper - Trying to find xml mapping file: config/test-brussel-rss-reader-model-dozer-mapping-config.xml
+19/01/15 00:47 INFO  DozerBeanMapper - Using URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/brusselnieuws-rss-reader-model-1.0-SNAPSHOT-tests.jar!/config/test-brussel-rss-reader-model-dozer-mapping-config.xml] to load custom xml mappings
+19/01/15 00:47 INFO  DozerBeanMapper - Successfully loaded custom xml mappings from URL: [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/brusselnieuws-rss-reader-model-1.0-SNAPSHOT-tests.jar!/config/test-brussel-rss-reader-model-dozer-mapping-config.xml]
+19/01/15 00:47 INFO  GenericApplicationContext - Closing org.springframework.context.support.GenericApplicationContext@67b467e9: startup date [Mon Jan 19 00:46:58 CET 2015]; root of context hierarchy
+19/01/15 00:47 INFO  EmbeddedMongoFactoryBean - Stopping embedded MongoDB instance
+19/01/15 00:50 INFO  TestContextManager - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+19/01/15 00:50 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-reader-application-config.xml]
+19/01/15 00:50 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-datastore-mongodb-config.xml]
+19/01/15 00:50 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
+19/01/15 00:50 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-datastore-mongodb-flapdoodle-config.xml]
+19/01/15 00:50 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brussel-rss-reader-model-dozer-config.xml]
+19/01/15 00:50 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/test-brusselnieuws-rss-datastore-mongodb-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/test-brussel-rss-reader-model-dozer-config.xml]]
+19/01/15 00:50 INFO  GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@7e0e6aa2: startup date [Mon Jan 19 00:50:27 CET 2015]; root of context hierarchy
+19/01/15 00:50 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/test-brusselnieuws-rss-reader-configuration.properties]
+19/01/15 00:50 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/test-brusselnieuws-rss-datastore-mongodb-mongo.properties]
+19/01/15 00:50 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/test-brusselnieuws-rss-datastore-mongodb-mongod.properties]
+19/01/15 00:50 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+19/01/15 00:50 INFO  GlobalSettings - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/classes/dozer.properties] for Dozer global property configuration
+19/01/15 00:50 INFO  GlobalSettings - Reading Dozer properties from URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/classes/dozer.properties]
+19/01/15 00:50 INFO  DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+19/01/15 00:50 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+19/01/15 00:50 INFO  EmbeddedMongoBuilder - Initializing embedded MongoDB instance
+19/01/15 00:50 INFO  Downloader - Extract /Users/stefanborghys/.embedmongo/osx/mongodb-osx-x86_64-2.4.5.tgz : starting...
+19/01/15 00:50 INFO  Downloader - Extract /Users/stefanborghys/.embedmongo/osx/mongodb-osx-x86_64-2.4.5.tgz : finished
+19/01/15 00:50 INFO  EmbeddedMongoBuilder - Starting embedded MongoDB instance
+19/01/15 00:50 INFO  DozerBeanMapper - Using the following xml files to load custom mappings for the bean mapper instance: [config/test-brussel-rss-reader-model-dozer-mapping-config.xml]
+19/01/15 00:50 INFO  DozerBeanMapper - Trying to find xml mapping file: config/test-brussel-rss-reader-model-dozer-mapping-config.xml
+19/01/15 00:50 INFO  DozerBeanMapper - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/test-classes/config/test-brussel-rss-reader-model-dozer-mapping-config.xml] to load custom xml mappings
+19/01/15 00:50 INFO  DozerBeanMapper - Successfully loaded custom xml mappings from URL: [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/test-classes/config/test-brussel-rss-reader-model-dozer-mapping-config.xml]
+19/01/15 00:50 INFO  GenericApplicationContext - Closing org.springframework.context.support.GenericApplicationContext@7e0e6aa2: startup date [Mon Jan 19 00:50:27 CET 2015]; root of context hierarchy
+19/01/15 00:50 INFO  EmbeddedMongoFactoryBean - Stopping embedded MongoDB instance
+19/01/15 00:57 INFO  TestContextManager - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+19/01/15 00:57 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-reader-application-config.xml]
+19/01/15 00:57 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-datastore-mongodb-config.xml]
+19/01/15 00:57 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
+19/01/15 00:57 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-datastore-mongodb-flapdoodle-config.xml]
+19/01/15 00:57 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brussel-rss-reader-model-dozer-config.xml]
+19/01/15 00:57 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/test-brusselnieuws-rss-datastore-mongodb-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/test-brussel-rss-reader-model-dozer-config.xml]]
+19/01/15 00:57 INFO  GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@5c072e3f: startup date [Mon Jan 19 00:57:12 CET 2015]; root of context hierarchy
+19/01/15 00:57 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/test-brusselnieuws-rss-reader-configuration.properties]
+19/01/15 00:57 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/test-brusselnieuws-rss-datastore-mongodb-mongo.properties]
+19/01/15 00:57 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/test-brusselnieuws-rss-datastore-mongodb-mongod.properties]
+19/01/15 00:57 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+19/01/15 00:57 INFO  GlobalSettings - Using URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/brusselnieuws-rss-reader-model-1.0-SNAPSHOT.jar!/dozer.properties] for Dozer global property configuration
+19/01/15 00:57 INFO  GlobalSettings - Reading Dozer properties from URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/brusselnieuws-rss-reader-model-1.0-SNAPSHOT.jar!/dozer.properties]
+19/01/15 00:57 INFO  DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+19/01/15 00:57 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+19/01/15 00:57 INFO  EmbeddedMongoBuilder - Initializing embedded MongoDB instance
+19/01/15 00:57 INFO  Downloader - Extract /Users/stefanborghys/.embedmongo/osx/mongodb-osx-x86_64-2.4.5.tgz : starting...
+19/01/15 00:57 INFO  Downloader - Extract /Users/stefanborghys/.embedmongo/osx/mongodb-osx-x86_64-2.4.5.tgz : finished
+19/01/15 00:57 INFO  EmbeddedMongoBuilder - Starting embedded MongoDB instance
+19/01/15 00:57 INFO  DozerBeanMapper - Using the following xml files to load custom mappings for the bean mapper instance: [config/test-brussel-rss-reader-model-dozer-mapping-config.xml]
+19/01/15 00:57 INFO  DozerBeanMapper - Trying to find xml mapping file: config/test-brussel-rss-reader-model-dozer-mapping-config.xml
+19/01/15 00:57 INFO  DozerBeanMapper - Using URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/brusselnieuws-rss-reader-model-1.0-SNAPSHOT-tests.jar!/config/test-brussel-rss-reader-model-dozer-mapping-config.xml] to load custom xml mappings
+19/01/15 00:57 INFO  DozerBeanMapper - Successfully loaded custom xml mappings from URL: [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/brusselnieuws-rss-reader-model-1.0-SNAPSHOT-tests.jar!/config/test-brussel-rss-reader-model-dozer-mapping-config.xml]
+19/01/15 00:57 INFO  GenericApplicationContext - Closing org.springframework.context.support.GenericApplicationContext@5c072e3f: startup date [Mon Jan 19 00:57:12 CET 2015]; root of context hierarchy
+19/01/15 00:57 INFO  EmbeddedMongoFactoryBean - Stopping embedded MongoDB instance
+19/01/15 01:12 INFO  TestContextManager - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+19/01/15 01:12 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-reader-application-config.xml]
+19/01/15 01:12 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-datastore-mongodb-config.xml]
+19/01/15 01:12 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
+19/01/15 01:12 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-datastore-mongodb-flapdoodle-config.xml]
+19/01/15 01:12 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brussel-rss-reader-model-dozer-config.xml]
+19/01/15 01:12 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/test-brusselnieuws-rss-datastore-mongodb-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/test-brussel-rss-reader-model-dozer-config.xml]]
+19/01/15 01:12 INFO  GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@1cc50164: startup date [Mon Jan 19 01:12:20 CET 2015]; root of context hierarchy
+19/01/15 01:12 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/test-brusselnieuws-rss-reader-configuration.properties]
+19/01/15 01:12 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/test-brusselnieuws-rss-datastore-mongodb-mongo.properties]
+19/01/15 01:12 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/test-brusselnieuws-rss-datastore-mongodb-mongod.properties]
+19/01/15 01:12 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+19/01/15 01:12 INFO  GlobalSettings - Using URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/brusselnieuws-rss-reader-model-1.0-SNAPSHOT.jar!/dozer.properties] for Dozer global property configuration
+19/01/15 01:12 INFO  GlobalSettings - Reading Dozer properties from URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/brusselnieuws-rss-reader-model-1.0-SNAPSHOT.jar!/dozer.properties]
+19/01/15 01:12 INFO  DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+19/01/15 01:12 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+19/01/15 01:12 INFO  EmbeddedMongoBuilder - Initializing embedded MongoDB instance
+19/01/15 01:12 INFO  Downloader - Extract /Users/stefanborghys/.embedmongo/osx/mongodb-osx-x86_64-2.4.5.tgz : starting...
+19/01/15 01:12 INFO  Downloader - Extract /Users/stefanborghys/.embedmongo/osx/mongodb-osx-x86_64-2.4.5.tgz : finished
+19/01/15 01:12 INFO  EmbeddedMongoBuilder - Starting embedded MongoDB instance
+19/01/15 01:12 INFO  DozerBeanMapper - Using the following xml files to load custom mappings for the bean mapper instance: [config/test-brussel-rss-reader-model-dozer-mapping-config.xml]
+19/01/15 01:12 INFO  DozerBeanMapper - Trying to find xml mapping file: config/test-brussel-rss-reader-model-dozer-mapping-config.xml
+19/01/15 01:12 INFO  DozerBeanMapper - Using URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/brusselnieuws-rss-reader-model-1.0-SNAPSHOT-tests.jar!/config/test-brussel-rss-reader-model-dozer-mapping-config.xml] to load custom xml mappings
+19/01/15 01:12 INFO  DozerBeanMapper - Successfully loaded custom xml mappings from URL: [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/brusselnieuws-rss-reader-model-1.0-SNAPSHOT-tests.jar!/config/test-brussel-rss-reader-model-dozer-mapping-config.xml]
+19/01/15 01:12 INFO  GenericApplicationContext - Closing org.springframework.context.support.GenericApplicationContext@1cc50164: startup date [Mon Jan 19 01:12:20 CET 2015]; root of context hierarchy
+19/01/15 01:12 INFO  EmbeddedMongoFactoryBean - Stopping embedded MongoDB instance
+19/01/15 01:16 INFO  TestContextManager - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+19/01/15 01:16 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-reader-application-config.xml]
+19/01/15 01:16 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-datastore-mongodb-config.xml]
+19/01/15 01:16 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
+19/01/15 01:16 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brusselnieuws-rss-datastore-mongodb-flapdoodle-config.xml]
+19/01/15 01:16 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/test-brussel-rss-reader-model-dozer-config.xml]
+19/01/15 01:16 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/test-brusselnieuws-rss-datastore-mongodb-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/test-brussel-rss-reader-model-dozer-config.xml]]
+19/01/15 01:16 INFO  GenericApplicationContext - Refreshing org.springframework.context.support.GenericApplicationContext@44d74990: startup date [Mon Jan 19 01:16:04 CET 2015]; root of context hierarchy
+19/01/15 01:16 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/test-brusselnieuws-rss-reader-configuration.properties]
+19/01/15 01:16 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/test-brusselnieuws-rss-datastore-mongodb-mongo.properties]
+19/01/15 01:16 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/test-brusselnieuws-rss-datastore-mongodb-mongod.properties]
+19/01/15 01:16 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+19/01/15 01:16 INFO  GlobalSettings - Using URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/brusselnieuws-rss-reader-model-1.0-SNAPSHOT.jar!/dozer.properties] for Dozer global property configuration
+19/01/15 01:16 INFO  GlobalSettings - Reading Dozer properties from URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/brusselnieuws-rss-reader-model-1.0-SNAPSHOT.jar!/dozer.properties]
+19/01/15 01:16 INFO  DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+19/01/15 01:16 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+19/01/15 01:16 INFO  EmbeddedMongoBuilder - Initializing embedded MongoDB instance
+19/01/15 01:16 INFO  Downloader - Extract /Users/stefanborghys/.embedmongo/osx/mongodb-osx-x86_64-2.4.5.tgz : starting...
+19/01/15 01:16 INFO  Downloader - Extract /Users/stefanborghys/.embedmongo/osx/mongodb-osx-x86_64-2.4.5.tgz : finished
+19/01/15 01:16 INFO  EmbeddedMongoBuilder - Starting embedded MongoDB instance
+19/01/15 01:16 INFO  DozerBeanMapper - Using the following xml files to load custom mappings for the bean mapper instance: [config/test-brussel-rss-reader-model-dozer-mapping-config.xml]
+19/01/15 01:16 INFO  DozerBeanMapper - Trying to find xml mapping file: config/test-brussel-rss-reader-model-dozer-mapping-config.xml
+19/01/15 01:16 INFO  DozerBeanMapper - Using URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/brusselnieuws-rss-reader-model-1.0-SNAPSHOT-tests.jar!/config/test-brussel-rss-reader-model-dozer-mapping-config.xml] to load custom xml mappings
+19/01/15 01:16 INFO  DozerBeanMapper - Successfully loaded custom xml mappings from URL: [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/brusselnieuws-rss-reader-model-1.0-SNAPSHOT-tests.jar!/config/test-brussel-rss-reader-model-dozer-mapping-config.xml]
+19/01/15 01:16 INFO  GenericApplicationContext - Closing org.springframework.context.support.GenericApplicationContext@44d74990: startup date [Mon Jan 19 01:16:04 CET 2015]; root of context hierarchy
+19/01/15 01:16 INFO  EmbeddedMongoFactoryBean - Stopping embedded MongoDB instance
