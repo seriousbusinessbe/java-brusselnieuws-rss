@@ -3,6 +3,13 @@ package be.seriousbusiness.brusselnieuws.rss.common.util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * {@link ObjectUtil} test {@link Object}.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version %I%, %G%
+ * @since 1.0
+ */
 public class TestObject {
 	@SuppressWarnings("unused")
 	private static final Logger LOGGER=LoggerFactory.getLogger(TestObject.class);

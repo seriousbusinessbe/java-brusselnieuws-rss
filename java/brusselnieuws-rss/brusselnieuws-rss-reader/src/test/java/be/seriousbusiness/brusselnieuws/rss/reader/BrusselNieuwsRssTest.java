@@ -281,14 +281,16 @@ public class BrusselNieuwsRssTest {
 			
 			@Override
 			public void notify(Feed<?, ?, ?, ?, ?> feed, Article<?, ?, ?, ?> article) {
-				LOGGER.info("BREAKING! - {}",article.getTitle());
+				LOGGER.error("BREAKING! - {}",article.getTitle());
+				LOGGER.error("Feed: {}",feed);
+				LOGGER.error("Article: {}",article);
 			}
 		});
 		LOGGER.debug("News headlines: \n{}",feed);
 		while(true) {
 			LOGGER.info("Check for news headline updates...");
 			brusselNieuwsRss.update(feed);
-			Thread.sleep(60000);
+			Thread.sleep(300000); // every 5 mins
 		}
 	}
 }
