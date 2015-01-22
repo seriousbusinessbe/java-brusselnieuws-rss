@@ -3,6 +3,13 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl;
 import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.MediumDTO;
 
+/**
+ * 
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ */
 public class MediumDTOImpl implements MediumDTO<MediumTypeDTOImpl>  {
 	private String link;
 	private MediumTypeDTOImpl mediumTypeDTOImpl;

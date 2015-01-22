@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
  * {@link Object} helper.
  * @author Serious Business
  * @author Stefan Borghys
- * @version %I%, %G%
+ * @version 1.0
  * @since 1.0
  */
 public class ObjectUtil {

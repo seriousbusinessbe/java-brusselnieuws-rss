@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
  * {@link ObjectUtil} test case.
  * @author Serious Business
  * @author Stefan Borghys
- * @version %I%, %G%
+ * @version 1.0
  * @since 1.0
  */
 public class ObjectUtilTest {

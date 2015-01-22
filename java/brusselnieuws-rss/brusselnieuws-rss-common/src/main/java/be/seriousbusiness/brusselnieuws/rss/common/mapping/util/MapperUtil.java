@@ -10,7 +10,7 @@ import org.dozer.Mapper;
  * Dozer {@link Mapper} helper.
  * @author Serious Business
  * @author Stefan Borghys
- * @version %I%, %G%
+ * @version 1.0
  * @since 1.0
  */
 public class MapperUtil {

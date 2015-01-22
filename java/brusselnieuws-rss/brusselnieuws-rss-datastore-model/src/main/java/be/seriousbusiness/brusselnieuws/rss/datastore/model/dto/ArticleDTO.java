@@ -4,10 +4,11 @@ import java.math.BigInteger;
 import java.util.Collection;
 
 /**
- * Represents a DTO (data transfer object) responsible for article information transfer</br>
- * between a datastore and model.
- * @author stefanborghys
- *
+ * Represents a DTO (data transfer object) responsible for article information transfer between a datastore and model.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
  * @param <MEDIUMTYPEDTO> the type of {@link MediumTypeDTO} implementation
  * @param <MEDIUMDTO> the type of {@link MediumDTO} implementation
  * @param <CATEGORYDTO> the type of {@link CategoryDTO} implementation
@@ -19,140 +20,140 @@ public interface ArticleDTO<MEDIUMTYPEDTO extends MediumTypeDTO,
 							AUTHORDTO extends AuthorDTO> extends IdDTO<BigInteger> {
 	
 	/**
-	 * Get the title
+	 * Gets the title.
 	 * @return title, <code>null</code> when not set
 	 */
 	String getTitle();
 	
 	/**
-	 * Set a title
+	 * Sets the title.
 	 * @param title
 	 */
 	void setTitle(final String title);
 	
 	/**
-	 * Get the URL location of this article. 
-	 * @return <code>String</code> URL location, <code>null</code> when not set
+	 * Gets the URL location of this article. 
+	 * @return <code>String</code> URL location or <code>null</code> when not set
 	 */
 	String getLink();
 	
 	/**
-	 * Set the URL location of this article
+	 * Sets the URL location of this article
 	 * @param link <code>String</code> URL location
 	 */
 	void setLink(String link);
 	
 	/**
-	 * Get the description
-	 * @return description, <code>null</code> when not set
+	 * Gets the description.
+	 * @return description or <code>null</code> when not set
 	 */
 	String getDescription();
 	
 	/**
-	 * Set a description
+	 * Sets the description.
 	 * @param description
 	 */
 	void setDescription(final String description);
 	
 	/**
-	 * Get the publication date of elapsed milliseconds since midnight, January 1, 1970 UTC and the moment of publication.
+	 * Gets the publication date expressed as the number of elapsed milliseconds since midnight, January 1, 1970 UTC and the moment of publication.
 	 * @return the difference, measured in milliseconds, between the publication time and midnight, January 1, 1970 UTC</br>
-	 * <code>null</code> when not set
+	 * 		   or <code>null</code> when not set
 	 */
 	Long getPublicationDate();
 	
 	/**
-	 * Set the publication date of elapsed milliseconds since midnight, January 1, 1970 UTC.
+	 * Sets the publication date as the number of elapsed milliseconds since midnight, January 1, 1970 UTC.
 	 * @param publicationDate in milliseconds since 01/01/1970 UTC
 	 */
 	void setPublicationDate(final Long publicationDate);
 	
 	/**
-	 * Check if this article is read or not.
-	 * @return <code>true</code> when read
+	 * Checks if this article is marked read or not.
+	 * @return <code>true</code> when marked read, otherwise <code>false</code>
 	 */
 	Boolean isRead();
 	
 	/**
-	 * Set if the article is read or not.
-	 * @param read <code>true</code> when read
+	 * Marks this article read or not.
+	 * @param read <code>true</code> when read or <code>false</code> when not
 	 */
 	void setRead(final Boolean read);
 	
 	/**
-	 * Get if the article is read or not.
-	 * @return <code>true</code> when read
+	 * Checks if this article is marked read or not.
+	 * @return <code>true</code> when marked read, otherwise <code>false</code>
 	 */
 	Boolean getRead();
 	
 	/**
-	 * Check if this article is archived or not.
-	 * @return <code>true</code> when archived
+	 * Checks if this article is marked archived or not.
+	 * @return <code>true</code> when archived, otherwise <code>false</code>
 	 */
 	Boolean isArchived();
 	
 	/**
-	 * Set if the article is archived or not.
-	 * @param archived <code>true</code> when archived
+	 * Mark this article archived or not.
+	 * @param archived <code>true</code> when archived or <code>false</code> when not
 	 */
 	void setArchived(final Boolean archived);
 	
 	/**
-	 * Get if the article is archived or not.
-	 * @return <code>true</code> when archived
+	 * Checks if this article is marked archived or not.
+	 * @return <code>true</code> when archived, otherwise <code>false</code>
 	 */
 	Boolean getArchived();
 	
 	/**
 	 * Check if this article is marked favorite or not.
-	 * @return <code>true</code> when a favorite
+	 * @return <code>true</code> when marked favorite, othrwise <code>false</code>
 	 */
 	Boolean isFavorite();
 	
 	/**
-	 * Set if the article is a favorite or not.
+	 * Mark this article favorite or not.
 	 * @param favorite <code>true</code> when favorite
 	 */
 	void setFavorite(final Boolean favorite);
 	
 	/**
-	 * Get if the article is a favorite or not.
-	 * @return <code>true</code> when favorite
+	 * Check if this article is marked favorite or not.
+	 * @return <code>true</code> when favorite, otherwise <code>false</code>
 	 */
 	Boolean getFavorite();
 	
 	/**
-	 * Get all attached {@link MEDIUMDTO}(s)
-	 * @return a {@link Collection} of {@link MEDIUMDTO}, <code>null</code> when not set
+	 * Gets all attached {@link MEDIUMDTO}(s).
+	 * @return a {@link Collection} of {@link MEDIUMDTO} or <code>null</code> when not set
 	 */
 	Collection<MEDIUMDTO> getMediumDTOs();
 	
 	/**
-	 * Set all attached {@link MEDIUMDTO}(s).
+	 * Sets all attached {@link MEDIUMDTO}(s).
 	 * @param mediumDTOs a {@link Collection} of {@link MEDIUMDTO}
 	 */
 	void setMediumDTOs(final Collection<MEDIUMDTO> mediumDTOs);
 	
 	/**
-	 * Get all attached {@link CATEGORYDTO}(s).
-	 * @return a {@link Collection} of {@link CATEGORYDTO}, <code>null</code> when not set
+	 * Gets all attached {@link CATEGORYDTO}(s).
+	 * @return a {@link Collection} of {@link CATEGORYDTO} or <code>null</code> when not set
 	 */
 	Collection<CATEGORYDTO> getCategoryDTOs();
 	
 	/**
-	 * Set all attached {@link CATEGORYDTO}(s).
+	 * Sets all attached {@link CATEGORYDTO}(s).
 	 * @param categoryDTOs a {@link Collection} of {@link CATEGORYDTO}
 	 */
 	void setCategoryDTOs(final Collection<CATEGORYDTO> categoryDTOs);
 	
 	/**
-	 * Get all attached {@link AuthorDTO}(s).
-	 * @return a {@link Collection} of {@link AuthorDTO}, <code>null</code> when not set
+	 * Gets all attached {@link AuthorDTO}(s).
+	 * @return a {@link Collection} of {@link AuthorDTO} or <code>null</code> when not set
 	 */ 
 	Collection<AUTHORDTO> getAuthorDTOs();
 	
 	/**
-	 * Set all attached {@link AUTHORDTO}(s).
+	 * Sets all attached {@link AUTHORDTO}(s).
 	 * @param authorDTOs a {@link Collection} of {@link AUTHORDTO}
 	 */
 	void setAuthorDTOs(final Collection<AUTHORDTO> authorDTOs);

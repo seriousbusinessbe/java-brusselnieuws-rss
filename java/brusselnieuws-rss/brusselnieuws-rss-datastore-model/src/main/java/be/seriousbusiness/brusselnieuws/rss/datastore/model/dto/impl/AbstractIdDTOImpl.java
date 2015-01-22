@@ -3,6 +3,14 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl;
 import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.IdDTO;
 
+/**
+ * 
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ * @param <ID>
+ */
 public abstract class AbstractIdDTOImpl<ID> implements IdDTO<ID> {
 	protected ID id;
 
