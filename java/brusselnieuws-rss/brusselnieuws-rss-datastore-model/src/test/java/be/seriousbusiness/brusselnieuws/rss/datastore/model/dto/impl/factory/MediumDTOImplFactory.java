@@ -2,6 +2,13 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.factory;
 
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.MediumDTOImpl;
 
+/**
+ * {@link MediumDTOImpl} factory.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ */
 public class MediumDTOImplFactory {
 	
 	public static final MediumDTOImpl createNewPNGImage() {

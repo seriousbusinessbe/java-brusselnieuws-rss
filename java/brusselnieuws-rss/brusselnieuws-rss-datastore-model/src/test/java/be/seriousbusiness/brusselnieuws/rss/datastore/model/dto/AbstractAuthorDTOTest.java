@@ -8,16 +8,18 @@ import java.math.BigInteger;
 import org.junit.Test;
 
 /**
- * Abstract Test Case for AuthorDTO implementations.
- * @author stefanborghys
- *
+ * Abstract test case for {@link AuthorDTO} implementations.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
  * @param <AUTHORDTO> the type of {@link AuthorDTO} implementation
  */
 public abstract class AbstractAuthorDTOTest<AUTHORDTO extends AuthorDTO> extends AbstractIdDTOTest<BigInteger,AUTHORDTO> {
 	private final String name;
 
 	/**
-	 * Create a new Test Case for AuthorDTO implementations.
+	 * Create a new test case for {@link AuthorDTO} implementations.
 	 * @param id a positive, non zero id
 	 * @param name a valid non <code>null</code> link
 	 */

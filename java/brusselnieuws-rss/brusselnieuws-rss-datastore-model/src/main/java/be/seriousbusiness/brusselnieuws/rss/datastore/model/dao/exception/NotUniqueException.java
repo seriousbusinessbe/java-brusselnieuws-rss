@@ -1,9 +1,11 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.exception;
 
 /**
- * Throw a {@link NotUniqueException} when a field value is not unique</br>
- * while being saved or updated into a datastore.
- * @author stefanborghys
+ * Thrown when a value is marked not unique while being saved or updated into a datastore.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
  */
 public class NotUniqueException extends RuntimeException {
 	private static final long serialVersionUID = 5923556422660858554L;
@@ -11,11 +13,10 @@ public class NotUniqueException extends RuntimeException {
 	private final Object fieldValue; 
 	
 	/**
-	 * Create a new {@link NotUniqueException}</br>
-	 * when saving or updating a field fails because it's not unique.
-	 * @param fieldName the failing field name
-	 * @param fieldValue the failing field value 
-	 * @param cause the specific cause thrown by the datastore implementation
+	 * Creates a new {@link NotUniqueException}.
+	 * @param fieldName the failing field's name
+	 * @param fieldValue the failing field's value 
+	 * @param cause the specific cause thrown by the datastore implementation when a value is non-unique when required to be unique
 	 */
 	public NotUniqueException(final String fieldName,final Object fieldValue,final Throwable cause){
 		super("Field '"+fieldName+"' with value '"+fieldValue.toString()+"' is not unique",cause);
@@ -24,16 +25,16 @@ public class NotUniqueException extends RuntimeException {
 	}
 	
 	/**
-	 * Get the not unique field name. 
-	 * @return
+	 * Gets the non unique field name. 
+	 * @return non unique field name
 	 */
 	public String getFieldName(){
 		return fieldName;
 	}
 	
 	/**
-	 * Get the not unique field value.
-	 * @return
+	 * Gets the non unique field value.
+	 * @return non unique field value
 	 */
 	public Object getFieldValue(){
 		return fieldValue;

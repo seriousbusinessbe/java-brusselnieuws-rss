@@ -7,6 +7,13 @@ import java.util.List;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.ArticleDTOImpl;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.FeedDTOImpl;
 
+/**
+ * {@link FeedDTOImpl} factory.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ */
 public class FeedDTOImplFactory {
 	
 	public static final FeedDTOImpl createPolitiek(){

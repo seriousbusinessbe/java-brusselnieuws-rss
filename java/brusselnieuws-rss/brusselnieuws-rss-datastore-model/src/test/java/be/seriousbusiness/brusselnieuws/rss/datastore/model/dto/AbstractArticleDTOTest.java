@@ -9,9 +9,11 @@ import java.util.List;
 import org.junit.Test;
 
 /**
- * Defines {@link ARTICLEDTO} base tests.
- * @author stefanborghys
- *
+ * Defines {@link ArticleDTO} base tests.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
  * @param <MEDIUMTYPEDTO> the type of {@link MediumTypeDTO} implementation
  * @param <MEDIUMDTO> the type of {@link MediumDTO} implementation
  * @param <CATEGORYDTO> the type of {@link CategoryDTO} implementation
@@ -31,7 +33,7 @@ public abstract class AbstractArticleDTOTest<MEDIUMTYPEDTO extends MediumTypeDTO
 	private boolean archived,favorite,read;
 
 	/**
-	 * Create a new Test Case for ArticleDTO implementations.
+	 * Creates a new test case for {@link ArticleDTO} implementations.
 	 * @param id a positive, non zero id
 	 * @param authorDTOs a valid non <code>null</code> set of AuthorDTO's
 	 * @param categoryDTOs a valid non <code>null</code> set of CategoryDTO's

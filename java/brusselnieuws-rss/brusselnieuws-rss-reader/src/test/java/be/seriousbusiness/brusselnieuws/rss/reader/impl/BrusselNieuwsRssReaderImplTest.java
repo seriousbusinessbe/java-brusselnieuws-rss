@@ -24,6 +24,13 @@ import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.FeedImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.MediumImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.reader.impl.BrusselNieuwsRssReaderImpl;
 
+/**
+ * {@link BrusselNieuwsRssReaderImpl} test case implementation.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ */
 public class BrusselNieuwsRssReaderImplTest {
 	private BrusselNieuwsRssReaderImpl brusselNieuwsRssReaderImpl;
 	
@@ -34,7 +41,7 @@ public class BrusselNieuwsRssReaderImplTest {
 
 	
 	/**
-	 * Tests the reader by providing a locally stored xml feed</br>
+	 * Tests the {@link BrusselNieuwsRssReaderImpl} by providing a locally stored xml feed</br>
 	 * and checks if all data is retrieved correctly.
 	 * @throws MalformedURLException
 	 */
@@ -83,7 +90,7 @@ public class BrusselNieuwsRssReaderImplTest {
 	}
 	
 	/**
-	 * Tests the reader by retrieving content from "http://www.brusselnieuws.be/nl/hoofdpunten/feed".
+	 * Tests the {@link BrusselNieuwsRssReaderImpl} by retrieving live content from <a href="http://www.brusselnieuws.be/nl/hoofdpunten/feed">http://www.brusselnieuws.be/nl/hoofdpunten/feed</a>.
 	 * @throws MalformedURLException when the given {@link URL} is incorrect
 	 */
 	@Test

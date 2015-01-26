@@ -8,16 +8,18 @@ import java.math.BigInteger;
 import org.junit.Test;
 
 /**
- * Abstract Test Case for CategoryDTO implementations.
- * @author stefanborghys
- *
+ * Abstract test case for {@link CategoryDTO} implementations.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
  * @param <CATEGORYDTO> the type of {@link CategoryDTO} implementation
  */
 public abstract class AbstractCategoryDTOTest<CATEGORYDTO extends CategoryDTO> extends AbstractIdDTOTest<BigInteger,CATEGORYDTO> {
 	private final String link,name;
 
 	/**
-	 * Create a new Test Case for CategoryDTO implementations.
+	 * Creates a new test case for {@link CategoryDTO} implementations.
 	 * @param id a positive, non zero id
 	 * @param link a valid non <code>null</code> link
 	 * @param name a valid non <code>null</code> name

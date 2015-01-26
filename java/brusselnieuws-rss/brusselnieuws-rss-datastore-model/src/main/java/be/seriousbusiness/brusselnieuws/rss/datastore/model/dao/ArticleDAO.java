@@ -11,23 +11,25 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.AuthorDTOIm
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.CategoryDTOImpl;
 
 /**
- * Describes a DAO (Data Access Object), specific for handling {@link ArticleDTOImpl}.
- * @author stefanborghys
- *
+ * Describes a DAO (Data Access Object) for handling {@link ArticleDTOImpl}.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
  * @param <ARTICLEDTO> the type of {@link ArticleDTO} implementation
  */
 public interface ArticleDAO extends IdDAO<BigInteger,ArticleDTOImpl> {
 	
 	/**
-	 * Find all {@link ArticleDTOImpl} by title.</br>
+	 * Finds all {@link ArticleDTOImpl} by title.</br>
 	 * Ordered by publication date from most recent to oldest.
-	 * @param title the title to look for
+	 * @param title the article title to look for
 	 * @return a {@link Collection} of {@link ArticleDTOImpl}, empty when none found
 	 */
 	Collection<ArticleDTOImpl> findByTitle(final String title);
 	
 	/**
-	 * Find all {@link ArticleDTOImpl} published in a given period.</br>
+	 * Finds all {@link ArticleDTOImpl} published in a given period.</br>
 	 * Ordered by publication date from most recent to oldest.
 	 * @param from the start of the period
 	 * @param to the end of the period
@@ -36,25 +38,25 @@ public interface ArticleDAO extends IdDAO<BigInteger,ArticleDTOImpl> {
 	Collection<ArticleDTOImpl> findByPublicationDateBetween(final DateTime from,final DateTime to);
 	
 	/**
-	 * Find all {@link ArticleDTOImpl} marked read.</br>
+	 * Finds all {@link ArticleDTOImpl} marked read.</br>
 	 * Ordered by publication date from most recent to oldest.
-	 * @param read <code>true</code> to look for read, otherwise <code>false</code>
+	 * @param read <code>true</code> to look for read articles, <code>false</code> for non-read articles
 	 * @return a {@link Collection} of {@link ArticleDTOImpl}, empty when none found
 	 */
 	Collection<ArticleDTOImpl> findByRead(final boolean read);
 	
 	/**
-	 * Find all {@link ArticleDTOImpl} marked favorite.</br>
+	 * Finds all {@link ArticleDTOImpl} marked favorite.</br>
 	 * Ordered by publication date from most recent to oldest.
-	 * @param favorite <code>true</code> to look for favorite, otherwise <code>false</code>
+	 * @param favorite <code>true</code> to look for favorite articles, <code>false</code> for non-favorite articles
 	 * @return a {@link Collection} of {@link ArticleDTOImpl}, empty when none found
 	 */
 	Collection<ArticleDTOImpl> findByFavorite(final boolean favorite);
 	
 	/**
-	 * Find all {@link ArticleDTOImpl} marked archived.</br>
+	 * Finds all {@link ArticleDTOImpl} marked archived.</br>
 	 * Ordered by publication date from most recent to oldest.
-	 * @param archived <code>true</code> to look for archived, otherwise <code>false</code>
+	 * @param archived <code>true</code> to look for archived articles, <code>false</code> for non-archived articles
 	 * @return a {@link Collection} of {@link ArticleDTOImpl}, empty when none found
 	 */
 	Collection<ArticleDTOImpl> findByArchived(final boolean archived);
@@ -68,7 +70,7 @@ public interface ArticleDAO extends IdDAO<BigInteger,ArticleDTOImpl> {
 	Collection<ArticleDTOImpl> findByCategory(final CategoryDTOImpl categoryDTOImpl);
 	
 	/**
-	 * Find all {@link ArticleDTOImpl} by {@link AuthorDTOImpl}.</br>
+	 * Finds all {@link ArticleDTOImpl} by {@link AuthorDTOImpl}.</br>
 	 * Ordered by publication date from most recent to oldest.
 	 * @param authorDTO the {@link AuthorDTOImpl} to look for
 	 * @return a {@link Collection} of {@link ArticleDTOImpl}, empty when none found

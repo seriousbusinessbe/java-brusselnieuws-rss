@@ -20,6 +20,13 @@ import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.MediumImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.MediumTypeImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.listener.FeedListener;
 
+/**
+ * {@link BrusselNieuwsRss} test case implementation.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ */
 @RunWith(SpringJUnit4ClassRunner.class) 
 @ContextConfiguration("classpath:config/test-brusselnieuws-rss-reader-application-config.xml")
 public class BrusselNieuwsRssTest {
@@ -27,6 +34,9 @@ public class BrusselNieuwsRssTest {
 	@Autowired
 	private BrusselNieuwsRss<MediumTypeImpl,MediumImpl,CategoryImpl,AuthorImpl,ArticleImpl,FeedImpl> brusselNieuwsRss;
 	
+	/**
+	 * Tests if the {@link BrusselNieuwsRss} implementation under test is set.
+	 */
 	@Test
 	public void testBrusselNieuwsRss() {
 		Assert.assertNotNull("The brusselNieuwsRss cannot be null",brusselNieuwsRss);

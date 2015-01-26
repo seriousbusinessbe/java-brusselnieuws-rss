@@ -7,9 +7,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Abstract Test Case for IdDTO implementations.
- * @author stefanborghys
- *
+ * Abstract Test Case for {@link IdDTO} implementations.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
  * @param <ID> the type of id
  * @param <IDDTO> the type of {@link IdDTO<ID>} implementation
  */
@@ -18,7 +20,7 @@ public abstract class AbstractIdDTOTest<ID,IDDTO extends IdDTO<ID>> implements D
 	private final ID id;
 	
 	/**
-	 * Create a new Test Case for IdDTO implementations.
+	 * Creates a new Test Case for {@link IdDTO} implementations.
 	 * @param id a valid non <code>null</code> id
 	 */
 	AbstractIdDTOTest(final ID id){

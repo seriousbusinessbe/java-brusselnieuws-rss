@@ -13,6 +13,19 @@ import be.seriousbusiness.brusselnieuws.rss.reader.model.MediumType;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.factory.FeedFactory;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.manager.FeedManager;
 
+/**
+ * Manages all Brussel Nieuws RSS {@link Feed}.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ * @param <MEDIUMTYPE>
+ * @param <MEDIUM>
+ * @param <CATEGORY>
+ * @param <AUTHOR>
+ * @param <ARTICLE>
+ * @param <FEED>
+ */
 public class BrusselNieuwsRss<MEDIUMTYPE extends MediumType,
 						   MEDIUM extends Medium<MEDIUMTYPE>,
 						   CATEGORY extends Category,

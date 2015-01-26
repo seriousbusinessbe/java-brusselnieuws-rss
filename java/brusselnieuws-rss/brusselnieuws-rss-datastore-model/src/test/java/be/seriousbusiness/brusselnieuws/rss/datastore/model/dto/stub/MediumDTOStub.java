@@ -3,6 +3,13 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.stub;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.MediumDTO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.MediumTypeDTO;
 
+/**
+ * {@link MediumDTO} stub implementation.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ */
 public class MediumDTOStub implements MediumDTO<MediumTypeDTO> {
 	private MediumTypeDTO mediumTypeDTO=new MediumTypeDTOStub();
 

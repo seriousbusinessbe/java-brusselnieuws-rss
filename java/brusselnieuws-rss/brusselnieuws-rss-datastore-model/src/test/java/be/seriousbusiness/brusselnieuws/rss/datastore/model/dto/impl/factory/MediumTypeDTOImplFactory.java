@@ -4,6 +4,13 @@ import java.math.BigInteger;
 
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.MediumTypeDTOImpl;
 
+/**
+ * {@link MediumTypeDTOImpl} factory.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ */
 public class MediumTypeDTOImplFactory {
 	
 	public static final MediumTypeDTOImpl createPNG() {

@@ -9,8 +9,20 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AuthorDTO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.CategoryDTO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.MediumDTO;
 
+/**
+ * {@link ArticleDTO} test helper methods. 
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ */
 public class ArticleDTOUtil {
 	
+	/**
+	 * Asserts two {@link ArticleDTO} for equality.
+	 * @param articleDTOA the first {@link ArticleDTO}
+	 * @param articleDTOB the second {@link ArticleDTO}
+	 */
 	@SuppressWarnings("unchecked")
 	public static final void assertEquals(final ArticleDTO<?,?,?,?> articleDTOA,final ArticleDTO<?,?,?,?> articleDTOB) {
 		Assert.assertNotNull("ArticleDTO A cannot be null",articleDTOA);

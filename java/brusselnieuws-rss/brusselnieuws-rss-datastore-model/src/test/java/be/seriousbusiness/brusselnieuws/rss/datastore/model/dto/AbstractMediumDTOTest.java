@@ -7,9 +7,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Abstract Test Case for MediumDTO implementations.
- * @author stefanborghys
- *
+ * Abstract Test Case for {@link MediumDTO} implementations.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
  * @param <MEDIUMDTO> the type of {@link MediumDTO} implementation
  */
 public abstract class AbstractMediumDTOTest<MEDIUMTYPEDTO extends MediumTypeDTO,
@@ -20,7 +22,7 @@ public abstract class AbstractMediumDTOTest<MEDIUMTYPEDTO extends MediumTypeDTO,
 	private final long size;
 	
 	/**
-	 * Create a new Test Case for MediumDTO implementations.
+	 * Creates a new test case for {@link MediumDTO} implementations.
 	 * @param link a valid non <code>null</code> link
 	 * @param mediumTypeDTO a valid non <code>null</code> {@link MediumTypeDTO}
 	 * @param size a valid size

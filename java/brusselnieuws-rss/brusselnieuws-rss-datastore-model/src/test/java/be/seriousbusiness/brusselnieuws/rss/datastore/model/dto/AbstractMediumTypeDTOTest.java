@@ -8,16 +8,18 @@ import java.math.BigInteger;
 import org.junit.Test;
 
 /**
- * Abstract Test Case for MediumTypeDTO implementations.
- * @author stefanborghys
- *
+ * Abstract Test Case for {@link MediumTypeDTO} implementations.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
  * @param <MEDIUMTYPEDTO> the type of {@link MediumTypeDTO} implementation
  */
 public abstract class AbstractMediumTypeDTOTest<MEDIUMTYPEDTO extends MediumTypeDTO> extends AbstractIdDTOTest<BigInteger,MEDIUMTYPEDTO> {
 	private final String type;
 
 	/**
-	 * Create a new Test Case for MediumTypeDTO implementations.
+	 * Creates a new Test Case for MediumTypeDTO implementations.
 	 * @param id a positive, non zero id
 	 * @param type a valid non <code>null</code> type
 	 */

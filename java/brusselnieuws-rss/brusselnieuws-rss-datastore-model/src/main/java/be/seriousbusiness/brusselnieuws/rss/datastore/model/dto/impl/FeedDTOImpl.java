@@ -7,7 +7,7 @@ import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.FeedDTO;
 
 /**
- * 
+ * {@link FeedDTO} implementation.
  * @author Serious Business
  * @author Stefan Borghys
  * @version 1.0

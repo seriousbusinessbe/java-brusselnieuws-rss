@@ -9,8 +9,19 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.AuthorDTOIm
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.CategoryDTOImpl;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.MediumDTOImpl;
 
+/**
+ * {@link ArticleDTOImpl} factory.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ */
 public class ArticleDTOImplFactory {
 	
+	/**
+	 * Creates an existing {@link ArticleDTOImpl}.
+	 * @return
+	 */
 	public static final ArticleDTOImpl createArticleMichelBorcy(){
 		final ArticleDTOImpl articleDTOImpl=new ArticleDTOImpl();
 		articleDTOImpl.setId(BigInteger.valueOf(4732769322l));
@@ -36,6 +47,10 @@ public class ArticleDTOImplFactory {
 		return articleDTOImpl;
 	}
 	
+	/**
+	 * Creates an existing {@link ArticleDTOImpl}.
+	 * @return
+	 */
 	public static final ArticleDTOImpl createArticleNlFilmsiteCinebelVerdwijnt(){
 		final ArticleDTOImpl articleDTOImpl=new ArticleDTOImpl();
 		articleDTOImpl.setId(BigInteger.valueOf(8374823412l));
@@ -59,6 +74,10 @@ public class ArticleDTOImplFactory {
 		return articleDTOImpl;
 	}
 	
+	/**
+	 * Creates a new {@link ArticleDTOImpl}.
+	 * @return
+	 */
 	public static final ArticleDTOImpl createNew(){
 		final ArticleDTOImpl articleDTOImpl=new ArticleDTOImpl();
 		articleDTOImpl.setArchived(true);

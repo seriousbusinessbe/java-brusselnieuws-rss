@@ -3,10 +3,12 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto;
 import org.junit.Test;
 
 /**
- * Defines {@link DTO} base tests.
- * @author stefanborghys
- *
- * @param <DTO> a type of DTO (Data Transfer Object) implementation
+ * Describes base {@link DTO} tests.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ * @param <DTO> the type of DTO (Data Transfer Object) implementation
  */
 public interface DTOTest<DTO> {
 	
@@ -17,21 +19,23 @@ public interface DTOTest<DTO> {
 	DTO create();
 	
 	/**
-	 * Get the {@link DTO} under test.
+	 * Gets the {@link DTO} under test.
 	 * @return the {@link DTO} under test
 	 */
 	DTO getDTO();
 	
 	/**
-	 * Test a new {@link DTO} after construction.</br>
+	 * Tests a new {@link DTO} after construction.</br>
 	 * All values should be <code>null</code>.
 	 */
-	@Test void test();
+	@Test 
+	void test();
 	
 	/**
-	 * Test a new {@link DTO} by setting all variables</br>
+	 * Tests a new {@link DTO} by setting all variables</br>
 	 * and verifying if it's getter results are equal.
 	 */
-	@Test void testGettersAndSetters();
+	@Test 
+	 void testGettersAndSetters();
 
 }

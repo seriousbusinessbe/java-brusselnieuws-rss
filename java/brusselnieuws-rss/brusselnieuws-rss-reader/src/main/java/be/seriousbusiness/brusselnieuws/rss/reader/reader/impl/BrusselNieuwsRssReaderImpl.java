@@ -28,6 +28,13 @@ import com.sun.syndication.io.FeedException;
 import com.sun.syndication.io.SyndFeedInput;
 import com.sun.syndication.io.XmlReader;
 
+/**
+ * {@link BrusselNieuwsRssReader} {@link FeedImpl} implementation.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ */
 public class BrusselNieuwsRssReaderImpl implements BrusselNieuwsRssReader<FeedImpl> {
 	private static final Logger LOGGER=LoggerFactory.getLogger(BrusselNieuwsRssReaderImpl.class);
 	
