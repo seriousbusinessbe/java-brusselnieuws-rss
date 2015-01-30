@@ -47,7 +47,7 @@ public class BrusselNieuwsRssReaderImplTest {
 	 */
 	@Test
 	public void testLocal() throws MalformedURLException{
-		final FeedImpl feed=new FeedImpl.Builder().link(new File("src/test/resources/brusselnieuws_be_nl_hoofdpunten_feed.xml").toURI().toURL()).title("test").build();
+		final FeedImpl feed=new FeedImpl.Builder().link(new File("src/test/resources/data/brusselnieuws_be_nl_hoofdpunten_feed.xml").toURI().toURL()).title("test").build();
 		Assert.assertNotNull("The collection of articles cannot be null",feed.getArticles());
 		Assert.assertTrue("The collection of articles should be empty",feed.getArticles().isEmpty());
 		brusselNieuwsRssReaderImpl.updateFeed(feed);

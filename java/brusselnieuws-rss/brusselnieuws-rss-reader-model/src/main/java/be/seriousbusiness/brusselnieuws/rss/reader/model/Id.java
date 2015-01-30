@@ -2,20 +2,23 @@ package be.seriousbusiness.brusselnieuws.rss.reader.model;
 
 /**
  * Represents a unique {@link ID} (identifier).
- * @author stefanborghys
- * @param <ID>
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ * @param <ID> the type of identifier 
  */
 public interface Id<ID> {
 	
 	/**
-	 * Get the unique id.
-	 * @return unique id or <code>null</code> when not yet set
+	 * Gets the unique identifier.
+	 * @return unique identifier or <code>null</code> when not yet set
 	 */
 	ID getId();
 	
 	/**
-	 * Set a unique id.
-	 * @param id
+	 * Sets a unique identifier.
+	 * @param id the unique identifier
 	 */
 	void setId(final ID id);
 

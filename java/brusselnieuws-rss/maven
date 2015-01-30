@@ -10,6 +10,10 @@ mvn archetype:create -DgroupId=be.seriousbusiness.brusselnieuws.rss.reader.model
 
 mvn archetype:create -DgroupId=be.seriousbusiness.brusselnieuws.rss.common -DartifactId=brusselnieuws-rss-common
 
+mvn archetype:create -DgroupId=be.seriousbusiness.brusselnieuws.rss.webservice -DartifactId=brusselnieuws-rss-webservice
+
+mvn archetype:create -DgroupId=be.seriousbusiness.brusselnieuws.rss.webservice.model -DartifactId=brusselnieuws-rss-webservice-model
+
 
 
 

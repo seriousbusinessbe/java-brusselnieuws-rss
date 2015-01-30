@@ -3,9 +3,11 @@ package be.seriousbusiness.brusselnieuws.rss.reader.model;
 import java.math.BigInteger;
 
 /**
- * Represents an {@link Article} author.
- * @author Stefan Borghys
+ * Represents an {@link Article}'s author.
  * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
  */
 public interface Author extends Id<BigInteger> {
 	

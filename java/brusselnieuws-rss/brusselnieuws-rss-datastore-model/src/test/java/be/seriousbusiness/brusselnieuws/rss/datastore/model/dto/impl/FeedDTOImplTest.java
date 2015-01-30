@@ -5,6 +5,13 @@ import java.util.ArrayList;
 
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AbstractFeedDTOTest;
 
+/**
+ * {@link FeedDTOImpl test implementation.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ */
 public class FeedDTOImplTest extends AbstractFeedDTOTest<MediumTypeDTOImpl,
 														MediumDTOImpl,
 														CategoryDTOImpl,

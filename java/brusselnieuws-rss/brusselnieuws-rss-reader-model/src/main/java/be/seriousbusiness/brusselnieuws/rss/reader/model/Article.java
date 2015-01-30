@@ -7,10 +7,11 @@ import java.util.Collection;
 import org.joda.time.DateTime;
 
 /**
- * Represents an {@link Article} published on a {@link Feed}.
- * @author Stefan Borghys
+ * Represents an article published on a {@link Feed}.
  * @author Serious Business
- * 
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
  * @param <MEDIUMTYPE> the type of {@link MediumType} implementation
  * @param <MEDIUM> the type of {@link Medium} implementation
  * @param <CATEGORY> the type of {@link Category} implementation

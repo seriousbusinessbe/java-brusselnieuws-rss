@@ -13,9 +13,9 @@
 	
 	<!-- Mongo configuration -->
 	
-	<context:property-placeholder location="classpath:properties/mongo.properties" ignore-unresolvable="true"/>
+	<context:property-placeholder location="classpath:properties/brusselnieuws-rss-datastore-mongodb-mongo.properties" ignore-unresolvable="true"/>
 	
-	<import resource="classpath:config/dozer-config.xml"/>
+	<import resource="classpath:config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml"/>
 	
 	<mongo:mongo host="${mongo.host}" port="${mongo.port}"> 
 		<mongo:options connections-per-host="${mongo.connectionsPerHost}"

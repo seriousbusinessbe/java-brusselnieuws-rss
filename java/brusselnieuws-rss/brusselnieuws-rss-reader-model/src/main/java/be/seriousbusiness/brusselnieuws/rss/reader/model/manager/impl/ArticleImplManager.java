@@ -24,7 +24,7 @@ public class ArticleImplManager implements ArticleManager<MediumTypeImpl,MediumI
 	private ArticleDAO articleDAO;
 	@Autowired
 	private Mapper mapper;
-	private static final Comparator<Article<?,?,?,?>> articleComparator=new ArticlePublicationDateComparator();
+	private static final Comparator<Article<?,?,?,?>> ARTICLE_COMPARATOR=new ArticlePublicationDateComparator();
 
 	@Override
 	public Collection<ArticleImpl> findAll() {
@@ -36,7 +36,7 @@ public class ArticleImplManager implements ArticleManager<MediumTypeImpl,MediumI
 				articles.add(article);
 			}
 		}
-		Collections.sort(articles,articleComparator);
+		Collections.sort(articles,ARTICLE_COMPARATOR);
 		return articles;
 	}
 	

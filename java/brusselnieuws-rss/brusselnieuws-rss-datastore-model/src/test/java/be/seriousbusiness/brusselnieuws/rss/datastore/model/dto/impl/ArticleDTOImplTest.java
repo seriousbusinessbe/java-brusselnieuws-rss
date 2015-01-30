@@ -5,6 +5,13 @@ import java.util.ArrayList;
 
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AbstractArticleDTOTest;
 
+/**
+ * {@link ArticleDTOImpl test implementation.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ */
 public class ArticleDTOImplTest extends AbstractArticleDTOTest<MediumTypeDTOImpl,
 															MediumDTOImpl,
 															CategoryDTOImpl,

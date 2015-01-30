@@ -5,20 +5,13 @@
   <parent>
     <groupId>be.seriousbusiness.brusselnieuws.rss</groupId>
     <artifactId>brusselnieuws-rss</artifactId>
-    <version>${parent.version}</version>
+  	<version>1.0-SNAPSHOT</version>
   </parent>
   <groupId>be.seriousbusiness.brusselnieuws.rss.common</groupId>
   <artifactId>brusselnieuws-rss-common</artifactId>
-  <version>1.0-SNAPSHOT</version>
   <name>Brussel Nieuws RSS Common</name>
   <url>http://www.seriousbusiness.be</url>
   <dependencies>
-  	<!-- Javax Validation -->
-	<dependency>
-		<groupId>javax.validation</groupId>
-		<artifactId>validation-api</artifactId>
-		<version>1.1.0.Final</version>
-	</dependency>
   	<!-- Dozer -->
 	<dependency>
 	    <groupId>net.sf.dozer</groupId>

@@ -17,7 +17,7 @@ import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.factory.FeedImplFa
 import be.seriousbusiness.brusselnieuws.rss.reader.model.mapper.util.FeedDTOFeedMapperUtil;
 
 @RunWith(SpringJUnit4ClassRunner.class) 
-@ContextConfiguration("classpath:config/test-brussel-rss-reader-model-dozer-config.xml")
+@ContextConfiguration("classpath:config/test-brusselnieuws-rss-reader-model-dozer-config.xml")
 public class FeedDTOImplFeedImplMapperTest {
 	@Autowired
 	private Mapper mapper;

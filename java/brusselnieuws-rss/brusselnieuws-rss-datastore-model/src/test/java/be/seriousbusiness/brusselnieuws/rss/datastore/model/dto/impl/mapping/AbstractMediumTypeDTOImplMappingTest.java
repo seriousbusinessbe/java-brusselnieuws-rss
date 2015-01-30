@@ -6,6 +6,14 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.factory.Med
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.mapping.AbstractMappingTest;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.util.MediumTypeDTOUtil;
 
+/**
+ * Abstract {@link MediumTypeDTOImpl} mapping test implementation.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ * @param <A> the type of {@link MediumTypeDTO} to perform a mapping test against
+ */
 public abstract class AbstractMediumTypeDTOImplMappingTest<A extends MediumTypeDTO> extends AbstractMappingTest<MediumTypeDTO,A,MediumTypeDTOImpl> {
 
 	@Override

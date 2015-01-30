@@ -5,13 +5,12 @@
   <parent>
     <groupId>be.seriousbusiness.brusselnieuws.rss</groupId>
     <artifactId>brusselnieuws-rss</artifactId>
-    <version>${parent.version}</version>
+  	<version>1.0-SNAPSHOT</version>
   </parent>
   <groupId>be.seriousbusiness.brusselnieuws.rss.reader</groupId>
   <artifactId>brusselnieuws-rss-reader</artifactId>
   <name>Brussel Nieuws RSS Reader</name>
   <url>http://www.seriousbusiness.be</url>
-  <version>1.0-SNAPSHOT</version>
   <description>Java API to read brusselnieuws.be RSS feeds</description>
   
   <dependencies>
@@ -21,6 +20,7 @@
   	  <artifactId>brusselnieuws-rss-reader-model</artifactId>
       <version>1.0-SNAPSHOT</version>
     </dependency>
+    <!-- Brussel Nieuws RSS Reader Model test -->
     <dependency>
       <groupId>be.seriousbusiness.brusselnieuws.rss.reader.model</groupId>
 	  <artifactId>brusselnieuws-rss-reader-model</artifactId>
@@ -28,13 +28,14 @@
       <scope>test</scope>
       <type>test-jar</type>
     </dependency>
-    <!-- Brussel Nieuws RSS Datastore Model -->
+    <!-- Brussel Nieuws RSS Datastore MongoDB -->
     <dependency>
       <groupId>be.seriousbusiness.brusselnieuws.rss.datastore.mongodb</groupId>
   	  <artifactId>brusselnieuws-rss-datastore-mongodb</artifactId>
       <version>1.0-SNAPSHOT</version>
       <scope>test</scope>
     </dependency>
+    <!-- Brussel Nieuws RSS Datastore MongoDB test -->
     <dependency>
       <groupId>be.seriousbusiness.brusselnieuws.rss.datastore.mongodb</groupId>
   	  <artifactId>brusselnieuws-rss-datastore-mongodb</artifactId>
@@ -52,24 +53,15 @@
 	<dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-context</artifactId>
-        <version>4.0.6.RELEASE</version>
+        <version>${spring.context.version}</version>
     </dependency>
     <!-- Spring Test Context -->
     <dependency>
 		<groupId>org.springframework</groupId>
 		<artifactId>spring-test</artifactId>
-		<version>4.0.6.RELEASE</version>
+		<version>${spring.test.version}</version>
 		<scope>test</scope>
 	</dependency>
-	<!-- Apache Commons Lang -->
-	<!-- 
-	<dependency>
-		<groupId>org.apache.commons</groupId>
-		<artifactId>commons-lang3</artifactId>
-		<version>3.3.2</version>
-		<scope>test</scope>
-	</dependency>
-	-->
 	<!-- Hamcres - http://hamcrest.org/JavaHamcrest/ -->
 	<!-- 
 	<dependency>

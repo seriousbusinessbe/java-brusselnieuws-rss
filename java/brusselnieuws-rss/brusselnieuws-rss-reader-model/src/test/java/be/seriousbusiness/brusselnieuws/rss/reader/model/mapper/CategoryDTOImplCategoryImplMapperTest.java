@@ -18,7 +18,7 @@ import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.factory.CategoryIm
 import be.seriousbusiness.brusselnieuws.rss.reader.model.mapper.util.CategoryDTOCategoryMapperUtil;
 
 @RunWith(SpringJUnit4ClassRunner.class) 
-@ContextConfiguration("classpath:config/test-brussel-rss-reader-model-dozer-config.xml")
+@ContextConfiguration("classpath:config/test-brusselnieuws-rss-reader-model-dozer-config.xml")
 public class CategoryDTOImplCategoryImplMapperTest {
 	@Autowired
 	private Mapper mapper;

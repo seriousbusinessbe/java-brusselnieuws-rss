@@ -44,18 +44,27 @@ public class BrusselNieuwsRss<MEDIUMTYPE extends MediumType,
 				sintGillisNewsURL,sintJansMolenbeekNewsURL,sintJoostTenNodeNewsURL,sintLambrechtsWoluweNewsURL,sintPietersWoluweNewsURL,
 				ukkelNewsURL,vorstNewsURL,watermaalBosvoordeNewsURL;
 	
+	/**
+	 * Retrieves a feed by {@link URL} link location.
+	 * @param url the {@link URL} link location
+	 * @return an updated feed
+	 */
 	private final FEED getFeed(final URL url) {
-		FEED feed=feedManager.findByLink(url);
-		feed=feed==null ? feedFactory.create(url) : feed;
-		update(feed);
-		return feed;
+		final FEED feed=feedManager.findByLink(url);
+		return update(feed==null ? feedFactory.create(url) : feed);
 	}
 	
-	public void update(final FEED feed) {
+	/**
+	 * Updates and saves an existing feed.
+	 * @param feed non <code>null</code> feed containing a non <code>null</code> link
+	 * @return the updated feed
+	 */
+	public FEED update(final FEED feed) {
 		if(feed!=null && feed.getLink()!=null) {
 			brusselNieuwsRssReader.updateFeed(feed);
 			feedManager.save(feed);
 		}
+		return feed;
 	}
 	
 	/* FEED GETTERS */

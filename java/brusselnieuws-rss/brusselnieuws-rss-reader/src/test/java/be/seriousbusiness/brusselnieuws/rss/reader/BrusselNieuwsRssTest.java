@@ -28,7 +28,7 @@ import be.seriousbusiness.brusselnieuws.rss.reader.model.listener.FeedListener;
  * @since 1.0
  */
 @RunWith(SpringJUnit4ClassRunner.class) 
-@ContextConfiguration("classpath:config/test-brusselnieuws-rss-reader-application-config.xml")
+@ContextConfiguration("classpath:config/test-brusselnieuws-rss-reader-config.xml")
 public class BrusselNieuwsRssTest {
 	private static final Logger LOGGER=LoggerFactory.getLogger(BrusselNieuwsRssTest.class);
 	@Autowired

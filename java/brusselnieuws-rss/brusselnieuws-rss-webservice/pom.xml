@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>be.seriousbusiness.brusselnieuws.rss</groupId>
+    <artifactId>brusselnieuws-rss</artifactId>
+  	<version>1.0-SNAPSHOT</version>
+  </parent>
+  <groupId>be.seriousbusiness.brusselnieuws.rss.webservice</groupId>
+  <artifactId>brusselnieuws-rss-webservice</artifactId>
+  <name>Brussel Nieuws RSS Webservice</name>
+  <url>http://www.seriousbusiness.be</url>
+  <description>Java API defining brusselnieuws.be RSS feeds webservice</description>
+  
+  <properties>
+    <spring.boot.version>1.2.1.RELEASE</spring.boot.version>
+  </properties>
+  
+  <dependencies>
+  	<!-- Brussel Nieuws RSS Webservice Model -->
+    <dependency>
+      <groupId>be.seriousbusiness.brusselnieuws.rss.webservice.model</groupId>
+  	  <artifactId>brusselnieuws-rss-webservice-model</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+    <!-- Brussel Nieuws RSS Reader Model -->
+    <dependency>
+      <groupId>be.seriousbusiness.brusselnieuws.rss.reader.model</groupId>
+  	  <artifactId>brusselnieuws-rss-reader-model</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>be.seriousbusiness.brusselnieuws.rss.reader.model</groupId>
+	  <artifactId>brusselnieuws-rss-reader-model</artifactId>
+	  <version>1.0-SNAPSHOT</version>
+	  <!-- 
+      <scope>test</scope>
+      -->
+      <type>test-jar</type>
+    </dependency>
+    <!-- Brussel Nieuws RSS Reader -->
+    <dependency>
+      <groupId>be.seriousbusiness.brusselnieuws.rss.reader</groupId>
+  	  <artifactId>brusselnieuws-rss-reader</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>be.seriousbusiness.brusselnieuws.rss.reader</groupId>
+  	  <artifactId>brusselnieuws-rss-reader</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <!--  
+      <scope>test</scope>
+      -->
+      <type>test-jar</type>
+    </dependency>
+    <!-- Brussel Nieuws RSS Datastore MongoDB -->
+    <dependency>
+      <groupId>be.seriousbusiness.brusselnieuws.rss.datastore.mongodb</groupId>
+  	  <artifactId>brusselnieuws-rss-datastore-mongodb</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>be.seriousbusiness.brusselnieuws.rss.datastore.mongodb</groupId>
+  	  <artifactId>brusselnieuws-rss-datastore-mongodb</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <!-- 
+      <scope>test</scope>
+      -->
+      <type>test-jar</type>
+    </dependency>
+    <!-- Spring Core -->
+	<dependency>
+       <groupId>org.springframework</groupId>
+       <artifactId>spring-context</artifactId>
+       <version>${spring.context.version}</version>
+    </dependency>
+    <!-- Spring Boot Starter web -->
+    <dependency>
+       <groupId>org.springframework.boot</groupId>
+       <artifactId>spring-boot-starter-web</artifactId>
+       <version>${spring.boot.version}</version>
+    </dependency>
+    <!-- Spring Boot Starter test -->
+    <dependency>
+	   <groupId>org.springframework.boot</groupId>
+	   <artifactId>spring-boot-starter-test</artifactId>
+	   <version>${spring.boot.version}</version>
+	   <scope>test</scope>
+	</dependency>
+    <!-- Spring Test Context -->
+    <dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-test</artifactId>
+		<version>${spring.test.version}</version>
+		<scope>test</scope>
+	</dependency>
+    <!-- Dozer -->
+	<dependency>
+	    <groupId>net.sf.dozer</groupId>
+	    <artifactId>dozer</artifactId>
+	    <version>${dozer.version}</version>
+	    <exclusions>
+	      <!-- Exclude of dozer SLF4J & LOG4J -->
+	      <exclusion> 
+	        <groupId>org.slf4j</groupId>
+	        <artifactId>slf4j-log4j12</artifactId>
+	      </exclusion>
+	      <exclusion> 
+	        <groupId>log4j</groupId>
+	        <artifactId>log4j</artifactId>
+	      </exclusion>
+	    </exclusions> 
+	</dependency>
+  </dependencies>
+  
+  <build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+        </plugin>
+    </plugins>
+  </build>
+</project>

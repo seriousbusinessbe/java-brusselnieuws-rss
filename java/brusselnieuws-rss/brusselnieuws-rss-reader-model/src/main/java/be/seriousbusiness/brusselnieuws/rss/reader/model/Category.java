@@ -4,9 +4,11 @@ import java.math.BigInteger;
 import java.net.URL;
 
 /**
- * Represents an {@link Article} category.
- * @author Stefan Borghys
+ * Represents an {@link Article}'s category.
  * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
  */
 public interface Category extends Id<BigInteger> {
 	

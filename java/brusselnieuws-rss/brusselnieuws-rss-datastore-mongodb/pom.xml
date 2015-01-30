@@ -5,12 +5,13 @@
   <parent>
     <groupId>be.seriousbusiness.brusselnieuws.rss</groupId>
     <artifactId>brusselnieuws-rss</artifactId>
-    <version>${parent.version}</version>
+  	<version>1.0-SNAPSHOT</version>
   </parent>
   <groupId>be.seriousbusiness.brusselnieuws.rss.datastore.mongodb</groupId>
   <artifactId>brusselnieuws-rss-datastore-mongodb</artifactId>
   <name>Brussel Nieuws RSS Datastore Mongodb</name>
   <url>http://www.seriousbusiness.be</url>
+  <description>Java API implementing brusselnieuws.be RSS feeds storage model using Mongodb</description>
   
   <dependencies>
   	<!-- Brussel Nieuws RSS Common -->
@@ -25,6 +26,7 @@
   	  <artifactId>brusselnieuws-rss-datastore-model</artifactId>
       <version>1.0-SNAPSHOT</version>
     </dependency>
+    <!-- Brussel Nieuws RSS Datastore Model Test -->
     <dependency>
       <groupId>be.seriousbusiness.brusselnieuws.rss.datastore.model</groupId>
   	  <artifactId>brusselnieuws-rss-datastore-model</artifactId>
@@ -57,8 +59,7 @@
 	    <artifactId>de.flapdoodle.embed.mongo</artifactId>
 	    <version>1.46.0</version>
 	</dependency>
-	<!-- Spring Factory Bean for EmbedMongo -->
-	<!-- https://github.com/jirutka/embedmongo-spring -->
+	<!-- Spring Factory Bean for EmbedMongo - https://github.com/jirutka/embedmongo-spring -->
 	<dependency>
 	    <groupId>cz.jirutka.spring</groupId>
 	    <artifactId>embedmongo-spring</artifactId>
@@ -82,6 +83,5 @@
 	    </exclusions> 
 	</dependency>
   </dependencies>
-  <version>1.0-SNAPSHOT</version>
-  <description>Java API implementing brusselnieuws.be RSS feeds storage model using Mongodb</description>
+  
 </project>

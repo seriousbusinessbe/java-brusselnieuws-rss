@@ -3,6 +3,13 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AbstractMediumDTOTest;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.stub.PNGMediumTypeDTOImplStub;
 
+/**
+ * {@link MediumDTOImpl test implementation.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ */
 public class MediumDTOImplTest extends AbstractMediumDTOTest<MediumTypeDTOImpl,MediumDTOImpl> {
 
 	public MediumDTOImplTest() {

@@ -4,6 +4,13 @@ import java.math.BigInteger;
 
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AbstractCategoryDTOTest;
 
+/**
+ * {@link CategoryDTOImpl test implementation.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ */
 public class CategoryDTOImplTest extends AbstractCategoryDTOTest<CategoryDTOImpl> {
 
 	public CategoryDTOImplTest() {

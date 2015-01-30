@@ -26,7 +26,7 @@
             <maxHistory>5</maxHistory>
         </rollingPolicy>
         <encoder>
-            <pattern>%date{dd/MM/yy HH:mm} %-5level %logger{0} - %msg%n</pattern>
+            <pattern>%date{dd/MM/yy HH:mm:ss} %-5level %logger{0} - %msg%n</pattern>
         </encoder>
     </appender>
 
@@ -40,14 +40,14 @@
         </rollingPolicy>
         <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
             <layout class="ch.qos.logback.classic.html.HTMLLayout">
-                <pattern>%relative%level%logger{0}%msg</pattern>
+                <pattern>%date{dd/MM/yy HH:mm:ss}%level%logger{0}%msg</pattern>
             </layout>
         </encoder>
     </appender>
     
-    <logger name="be.seriousbusiness.brusselnieuws.rss.reader" level="INFO"/>
+    <logger name="be.seriousbusiness.brusselnieuws.rss.reader" level="DEBUG"/>
 
-    <root level="INFO">
+    <root level="DEBUG">
         <!-- <appender-ref ref="EMAIL"/> -->
         <appender-ref ref="FILE" />
         <appender-ref ref="HTML" />

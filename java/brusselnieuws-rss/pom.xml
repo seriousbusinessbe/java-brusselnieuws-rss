@@ -4,7 +4,7 @@
 
   <groupId>be.seriousbusiness.brusselnieuws.rss</groupId>
   <artifactId>brusselnieuws-rss</artifactId>
-  <version>${parent.version}</version>
+  <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <url>http://www.seriousbusiness.be</url>
@@ -16,7 +16,6 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <parent.version>1.0-SNAPSHOT</parent.version>
     <dozer.version>5.5.1</dozer.version>
     <spring.context.version>4.1.4.RELEASE</spring.context.version>
     <spring.test.version>4.1.4.RELEASE</spring.test.version>
@@ -77,6 +76,8 @@
 	  <module>brusselnieuws-rss-reader</module>
 	  <module>brusselnieuws-rss-reader-model</module>
     <module>brusselnieuws-rss-common</module>
+    <module>brusselnieuws-rss-webservice</module>
+    <module>brusselnieuws-rss-webservice-model</module>
   </modules>
   <name>Brussel Nieuws RSS</name>
   

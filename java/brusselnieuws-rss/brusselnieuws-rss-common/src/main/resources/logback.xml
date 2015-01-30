@@ -1,0 +1,56 @@
+<configuration scan="true">
+  	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss} %-5level %logger{0} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+	<!-- 
+    <appender name="EMAIL" class="be.imes.framework.logging.JndiMailAppender">
+        <smtpHost>ADDRESS-OF-YOUR-SMTP-HOST</smtpHost>
+        <to>test.logging@brusselnieuwsrss.be</to>
+        <from>test.logging.noreply@brusselnieuwsrss.be</from>
+        <subject>Test Brussel Nieuws RSS Datastore Mongodb : %logger{0} - %m</subject>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%date{dd/MM/yy HH:mm} %-5level %logger{0} - %msg%n</pattern>
+        </layout>
+    </appender>
+    -->
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/brusselnieuws-rss-common-log.txt</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>logs/brusselnieuws-rss-common-log-%d{yyyy-MM-dd}.txt</fileNamePattern>
+            <!-- keep 5 days' worth of history -->
+            <maxHistory>5</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date{dd/MM/yy HH:mm:ss} %-5level %logger{0} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="HTML" class="ch.qos.logback.core.FileAppender">
+        <file>logs/brusselnieuws-rss-common-log.html</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>logs/brusselnieuws-rss-common-log-%d{yyyy-MM-dd}.html</fileNamePattern>
+            <!-- keep 5 days' worth of history -->
+            <maxHistory>5</maxHistory>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="ch.qos.logback.classic.html.HTMLLayout">
+                <pattern>%date{dd/MM/yy HH:mm:ss}%level%logger{0}%msg</pattern>
+            </layout>
+        </encoder>
+    </appender>
+    
+    <logger name="be.seriousbusiness.brusselnieuws.rss.common" level="DEBUG"/>
+
+    <root level="DEBUG">
+        <!-- <appender-ref ref="EMAIL"/> -->
+        <appender-ref ref="FILE" />
+        <appender-ref ref="HTML" />
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

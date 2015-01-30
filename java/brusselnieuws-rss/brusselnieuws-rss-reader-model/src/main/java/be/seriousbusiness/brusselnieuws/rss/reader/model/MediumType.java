@@ -4,20 +4,22 @@ import java.math.BigInteger;
 
 /**
  * Represents a unique medium type.
- * @author stefanborghys
- *
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
  */
 public interface MediumType extends Id<BigInteger>, Comparable<MediumType> {
 	
 	/**
-	 * Get the medium type representation.
-	 * @return a <code>String</code> medium type representation, <code>null</code> when not set
+	 * Gets the medium type.
+	 * @return a <code>String</code> medium type or <code>null</code> when not set
 	 */
 	String getType();
 	
 	/**
-	 * Set the medium type representation.
-	 * @param type
+	 * Sets the medium type.
+	 * @param type the medium type
 	 * @throws IllegalArgumentException when the type is <code>null</code> or empty
 	 */
 	void setType(final String type) throws IllegalArgumentException;
