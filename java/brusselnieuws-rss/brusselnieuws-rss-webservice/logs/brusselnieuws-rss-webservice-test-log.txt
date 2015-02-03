@@ -1,0 +1,888 @@
+03/02/15 01:18:13 DEBUG SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebserviceIntegrationTest].
+03/02/15 01:18:13 DEBUG BootstrapUtils - Instantiating TestContextBootstrapper from class [org.springframework.boot.test.WebAppIntegrationTestContextBootstrapper]
+03/02/15 01:18:13 DEBUG WebAppIntegrationTestContextBootstrapper - Found explicit ContextLoader class [org.springframework.boot.test.SpringApplicationContextLoader] for context configuration attributes [ContextConfigurationAttributes@2acdd8a declaringClass = 'be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebserviceIntegrationTest', classes = '{class be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebservice}', locations = '{}', inheritLocations = true, initializers = '{}', inheritInitializers = true, name = [null], contextLoaderClass = 'org.springframework.boot.test.SpringApplicationContextLoader']
+03/02/15 01:18:13 DEBUG ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebserviceIntegrationTest]
+03/02/15 01:18:13 DEBUG ReflectionTestUtils - Setting field [propertySourceProperties] of type [null] on target [[WebMergedContextConfiguration@523e2446 testClass = BrusselNieuwsRssWebserviceIntegrationTest, locations = '{}', classes = '{class be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebservice}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', resourceBasePath = '', contextLoader = 'org.springframework.boot.test.SpringApplicationContextLoader', parent = [null]]] to value [[Ljava.lang.String;@6dbf99d8]
+03/02/15 01:18:13 DEBUG WebAppIntegrationTestContextBootstrapper - @TestExecutionListeners is not present for class [be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebserviceIntegrationTest]: using defaults.
+03/02/15 01:18:13 INFO  WebAppIntegrationTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+03/02/15 01:18:13 INFO  WebAppIntegrationTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6eb1c2fe, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5878ea78, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6a6999a8, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3ae71b2c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1aa903ea]
+03/02/15 01:18:13 DEBUG ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebserviceIntegrationTest]
+03/02/15 01:18:13 DEBUG ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebserviceIntegrationTest]
+03/02/15 01:18:13 DEBUG ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebserviceIntegrationTest]
+03/02/15 01:18:13 DEBUG ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebserviceIntegrationTest]
+03/02/15 01:18:13 DEBUG ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebserviceIntegrationTest]
+03/02/15 01:18:13 DEBUG ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebserviceIntegrationTest]
+03/02/15 01:18:14 DEBUG DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@29dd8a94 testClass = BrusselNieuwsRssWebserviceIntegrationTest, testInstance = be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebserviceIntegrationTest@fb51005, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@523e2446 testClass = BrusselNieuwsRssWebserviceIntegrationTest, locations = '{}', classes = '{class be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebservice}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{server.port=0, org.springframework.boot.test.IntegrationTest=true}', resourceBasePath = '', contextLoader = 'org.springframework.boot.test.SpringApplicationContextLoader', parent = [null]]]].
+03/02/15 01:18:14 DEBUG StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+03/02/15 01:18:14 DEBUG StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+03/02/15 01:18:14 DEBUG StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+03/02/15 01:18:14 DEBUG StandardEnvironment - Adding [integrationTest] PropertySource with search precedence immediately lower than [systemEnvironment]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'context.listener.classes' in [systemProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'context.listener.classes' in [systemEnvironment]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'context.listener.classes' in [random]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'context.listener.classes' in [integrationTest]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'context.listener.classes' in [applicationConfigurationProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Could not find key 'context.listener.classes' in any property source. Returning [null]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'banner.location' in [systemProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'banner.location' in [systemEnvironment]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'banner.location' in [random]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'banner.location' in [integrationTest]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'banner.location' in [applicationConfigurationProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Could not find key 'banner.location' in any property source. Returning [null]
+03/02/15 01:18:14 DEBUG StandardServletEnvironment - Adding [servletConfigInitParams] PropertySource with lowest search precedence
+03/02/15 01:18:14 DEBUG StandardServletEnvironment - Adding [servletContextInitParams] PropertySource with lowest search precedence
+03/02/15 01:18:14 DEBUG StandardServletEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+03/02/15 01:18:14 DEBUG StandardServletEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+03/02/15 01:18:14 DEBUG StandardServletEnvironment - Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+03/02/15 01:18:14 DEBUG ClassPathBeanDefinitionScanner - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'context.initializer.classes' in [systemProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'context.initializer.classes' in [systemEnvironment]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'context.initializer.classes' in [random]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'context.initializer.classes' in [integrationTest]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'context.initializer.classes' in [applicationConfigurationProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Could not find key 'context.initializer.classes' in any property source. Returning [null]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.config.name:application' in [systemProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.config.name:application' in [systemEnvironment]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.config.name:application' in [random]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.config.name:application' in [integrationTest]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.config.name:application' in [applicationConfigurationProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Could not find key 'spring.config.name:application' in any property source. Returning [null]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.config.name' in [systemProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.config.name' in [systemEnvironment]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.config.name' in [random]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.config.name' in [integrationTest]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.config.name' in [applicationConfigurationProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Could not find key 'spring.config.name' in any property source. Returning [null]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.application.name:application' in [systemProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.application.name:application' in [systemEnvironment]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.application.name:application' in [random]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.application.name:application' in [integrationTest]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.application.name:application' in [applicationConfigurationProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Could not find key 'spring.application.name:application' in any property source. Returning [null]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.application.name' in [systemProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.application.name' in [systemEnvironment]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.application.name' in [random]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.application.name' in [integrationTest]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.application.name' in [applicationConfigurationProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Could not find key 'spring.application.name' in any property source. Returning [null]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'vcap.application.name:application' in [systemProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'vcap.application.name:application' in [systemEnvironment]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'vcap.application.name:application' in [random]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'vcap.application.name:application' in [integrationTest]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'vcap.application.name:application' in [applicationConfigurationProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Could not find key 'vcap.application.name:application' in any property source. Returning [null]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'vcap.application.name' in [systemProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'vcap.application.name' in [systemEnvironment]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'vcap.application.name' in [random]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'vcap.application.name' in [integrationTest]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'vcap.application.name' in [applicationConfigurationProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Could not find key 'vcap.application.name' in any property source. Returning [null]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'PORT:null' in [systemProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'PORT:null' in [systemEnvironment]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'PORT:null' in [random]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'PORT:null' in [integrationTest]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'PORT:null' in [applicationConfigurationProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Could not find key 'PORT:null' in any property source. Returning [null]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'PORT' in [systemProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'PORT' in [systemEnvironment]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'PORT' in [random]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'PORT' in [integrationTest]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'PORT' in [applicationConfigurationProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Could not find key 'PORT' in any property source. Returning [null]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'server.port:null' in [systemProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'server.port:null' in [systemEnvironment]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'server.port:null' in [random]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'server.port:null' in [integrationTest]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'server.port:null' in [applicationConfigurationProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Could not find key 'server.port:null' in any property source. Returning [null]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'server.port' in [systemProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'server.port' in [systemEnvironment]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'server.port' in [random]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'server.port' in [integrationTest]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Found key 'server.port' in [integrationTest] with type [String] and value '0'
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.application.index:0' in [systemProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.application.index:0' in [systemEnvironment]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.application.index:0' in [random]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.application.index:0' in [integrationTest]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.application.index:0' in [applicationConfigurationProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Could not find key 'spring.application.index:0' in any property source. Returning [null]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.application.index' in [systemProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.application.index' in [systemEnvironment]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.application.index' in [random]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.application.index' in [integrationTest]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.application.index' in [applicationConfigurationProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Could not find key 'spring.application.index' in any property source. Returning [null]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'vcap.application.instance_index:0' in [systemProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'vcap.application.instance_index:0' in [systemEnvironment]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'vcap.application.instance_index:0' in [random]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'vcap.application.instance_index:0' in [integrationTest]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'vcap.application.instance_index:0' in [applicationConfigurationProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Could not find key 'vcap.application.instance_index:0' in any property source. Returning [null]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'vcap.application.instance_index' in [systemProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'vcap.application.instance_index' in [systemEnvironment]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'vcap.application.instance_index' in [random]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'vcap.application.instance_index' in [integrationTest]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'vcap.application.instance_index' in [applicationConfigurationProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Could not find key 'vcap.application.instance_index' in any property source. Returning [null]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.profiles.active' in [systemProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.profiles.active' in [systemEnvironment]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.profiles.active' in [random]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.profiles.active' in [integrationTest]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.profiles.active' in [applicationConfigurationProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Could not find key 'spring.profiles.active' in any property source. Returning [null]
+03/02/15 01:18:14 INFO  ForkedBooter - Starting ForkedBooter v2.12.4 on Stefans-MacBook-Pro.local with PID 31926 (/Users/stefanborghys/.m2/org/apache/maven/surefire/surefire-booter/2.12.4/surefire-booter-2.12.4.jar started by stefanborghys in /Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice)
+03/02/15 01:18:14 DEBUG ForkedBooter - Running with Spring Boot v1.2.1.RELEASE, Spring v4.1.4.RELEASE
+03/02/15 01:18:14 DEBUG SpringApplication - Loading source class be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebservice
+03/02/15 01:18:14 DEBUG ClassPathBeanDefinitionScanner - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+03/02/15 01:18:14 DEBUG ConfigFileApplicationListener - Skipped config file 'file:./config/application.yaml' resource not found
+03/02/15 01:18:14 DEBUG ConfigFileApplicationListener - Skipped config file 'file:./config/application.xml' resource not found
+03/02/15 01:18:14 DEBUG ConfigFileApplicationListener - Skipped config file 'file:./config/application.properties' resource not found
+03/02/15 01:18:14 DEBUG ConfigFileApplicationListener - Skipped config file 'file:./config/application.yml' resource not found
+03/02/15 01:18:14 DEBUG ConfigFileApplicationListener - Skipped config file 'file:./application.yaml' resource not found
+03/02/15 01:18:14 DEBUG ConfigFileApplicationListener - Skipped config file 'file:./application.xml' resource not found
+03/02/15 01:18:14 DEBUG ConfigFileApplicationListener - Skipped config file 'file:./application.properties' resource not found
+03/02/15 01:18:14 DEBUG ConfigFileApplicationListener - Skipped config file 'file:./application.yml' resource not found
+03/02/15 01:18:14 DEBUG ConfigFileApplicationListener - Skipped config file 'classpath:/config/application.yaml' resource not found
+03/02/15 01:18:14 DEBUG ConfigFileApplicationListener - Skipped config file 'classpath:/config/application.xml' resource not found
+03/02/15 01:18:14 DEBUG ConfigFileApplicationListener - Skipped config file 'classpath:/config/application.properties' resource not found
+03/02/15 01:18:14 DEBUG ConfigFileApplicationListener - Skipped config file 'classpath:/config/application.yml' resource not found
+03/02/15 01:18:14 DEBUG ConfigFileApplicationListener - Skipped config file 'classpath:/application.yaml' resource not found
+03/02/15 01:18:14 DEBUG ConfigFileApplicationListener - Skipped config file 'classpath:/application.xml' resource not found
+03/02/15 01:18:14 DEBUG ConfigFileApplicationListener - Skipped config file 'classpath:/application.properties' resource not found
+03/02/15 01:18:14 DEBUG ConfigFileApplicationListener - Skipped config file 'classpath:/application.yml' resource not found
+03/02/15 01:18:14 INFO  AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2a7655aa: startup date [Tue Feb 03 01:18:14 CET 2015]; root of context hierarchy
+03/02/15 01:18:14 DEBUG AnnotationConfigEmbeddedWebApplicationContext - Bean factory for org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2a7655aa: org.springframework.beans.factory.support.DefaultListableBeanFactory@287ae776: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,brusselNieuwsRssWebservice]; root of factory hierarchy
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Creating instance of bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor' to allow for resolving potential circular references
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+03/02/15 01:18:14 DEBUG StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+03/02/15 01:18:14 DEBUG StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+03/02/15 01:18:14 DEBUG StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+03/02/15 01:18:14 DEBUG ClassPathBeanDefinitionScanner - JSR-250 'javax.annotation.ManagedBean' found and supported for component scanning
+03/02/15 01:18:14 DEBUG PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/test-classes/be/seriousbusiness/brusselnieuws/rss/webservice]
+03/02/15 01:18:14 DEBUG PathMatchingResourcePatternResolver - Searching directory [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/test-classes/be/seriousbusiness/brusselnieuws/rss/webservice] for files matching pattern [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/test-classes/be/seriousbusiness/brusselnieuws/rss/webservice/**/*.class]
+03/02/15 01:18:14 DEBUG PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice]
+03/02/15 01:18:14 DEBUG PathMatchingResourcePatternResolver - Searching directory [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice] for files matching pattern [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/**/*.class]
+03/02/15 01:18:14 DEBUG PathMatchingResourcePatternResolver - Searching directory [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/controller] for files matching pattern [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/**/*.class]
+03/02/15 01:18:14 DEBUG PathMatchingResourcePatternResolver - Looking for matching resources in jar file [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice-model/target/brusselnieuws-rss-webservice-model-1.0-SNAPSHOT.jar]
+03/02/15 01:18:14 DEBUG PathMatchingResourcePatternResolver - Resolved location pattern [classpath*:be/seriousbusiness/brusselnieuws/rss/webservice/**/*.class] to resources [file [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/test-classes/be/seriousbusiness/brusselnieuws/rss/webservice/BrusselNieuwsRssWebserviceIntegrationTest.class], file [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/BrusselNieuwsRssWebservice.class], file [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/controller/FeedCategoryMetaEnum.class], file [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/controller/FeedMetaEnum.class], file [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/controller/FeedRestControllerImpl$1.class], file [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/controller/FeedRestControllerImpl.class], URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice-model/target/brusselnieuws-rss-webservice-model-1.0-SNAPSHOT.jar!/be/seriousbusiness/brusselnieuws/rss/webservice/model/comparator/FeedMetaResponseCategoryDutchNameComparator.class], URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice-model/target/brusselnieuws-rss-webservice-model-1.0-SNAPSHOT.jar!/be/seriousbusiness/brusselnieuws/rss/webservice/model/controller/FeedRestController.class], URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice-model/target/brusselnieuws-rss-webservice-model-1.0-SNAPSHOT.jar!/be/seriousbusiness/brusselnieuws/rss/webservice/model/response/AbstractIdResponse.class], URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice-model/target/brusselnieuws-rss-webservice-model-1.0-SNAPSHOT.jar!/be/seriousbusiness/brusselnieuws/rss/webservice/model/response/ArticleResponse.class], URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice-model/target/brusselnieuws-rss-webservice-model-1.0-SNAPSHOT.jar!/be/seriousbusiness/brusselnieuws/rss/webservice/model/response/AuthorResponse.class], URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice-model/target/brusselnieuws-rss-webservice-model-1.0-SNAPSHOT.jar!/be/seriousbusiness/brusselnieuws/rss/webservice/model/response/CategoryResponse.class], URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice-model/target/brusselnieuws-rss-webservice-model-1.0-SNAPSHOT.jar!/be/seriousbusiness/brusselnieuws/rss/webservice/model/response/FeedMetaListResponse.class], URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice-model/target/brusselnieuws-rss-webservice-model-1.0-SNAPSHOT.jar!/be/seriousbusiness/brusselnieuws/rss/webservice/model/response/FeedMetaResponse.class], URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice-model/target/brusselnieuws-rss-webservice-model-1.0-SNAPSHOT.jar!/be/seriousbusiness/brusselnieuws/rss/webservice/model/response/FeedResponse.class], URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice-model/target/brusselnieuws-rss-webservice-model-1.0-SNAPSHOT.jar!/be/seriousbusiness/brusselnieuws/rss/webservice/model/response/MediumResponse.class]]
+03/02/15 01:18:14 DEBUG ClassPathBeanDefinitionScanner - Identified candidate component class: file [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/controller/FeedRestControllerImpl.class]
+03/02/15 01:18:14 DEBUG AnnotationAttributesReadingVisitor - Failed to class-load type while reading annotation metadata. This is a non-fatal error, but certain annotation metadata may be unavailable.
+java.lang.ClassNotFoundException: org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366) ~[na:1.7.0_60]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355) ~[na:1.7.0_60]
+	at java.security.AccessController.doPrivileged(Native Method) ~[na:1.7.0_60]
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354) ~[na:1.7.0_60]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425) ~[na:1.7.0_60]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308) ~[na:1.7.0_60]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358) ~[na:1.7.0_60]
+	at org.springframework.core.type.classreading.RecursiveAnnotationAttributesVisitor.visitEnd(RecursiveAnnotationAttributesVisitor.java:47) ~[spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.asm.ClassReader.readAnnotationValues(ClassReader.java:1802) [spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.asm.ClassReader.accept(ClassReader.java:642) [spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.asm.ClassReader.accept(ClassReader.java:508) [spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.core.type.classreading.SimpleMetadataReader.<init>(SimpleMetadataReader.java:64) [spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:98) [spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.core.type.classreading.CachingMetadataReaderFactory.getMetadataReader(CachingMetadataReaderFactory.java:102) [spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:93) [spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.boot.autoconfigure.AutoConfigurationSorter$AutoConfigurationClasses.<init>(AutoConfigurationSorter.java:121) [spring-boot-autoconfigure-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.boot.autoconfigure.AutoConfigurationSorter.getInPriorityOrder(AutoConfigurationSorter.java:60) [spring-boot-autoconfigure-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.boot.autoconfigure.EnableAutoConfigurationImportSelector.selectImports(EnableAutoConfigurationImportSelector.java:72) [spring-boot-autoconfigure-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.processDeferredImportSelectors(ConfigurationClassParser.java:423) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:180) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:306) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:239) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:254) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:94) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:606) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:462) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118) [spring-boot-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:691) [spring-boot-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) [spring-boot-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.boot.test.SpringApplicationContextLoader.loadContext(SpringApplicationContextLoader.java:98) [spring-boot-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:252) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:254) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:217) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:68) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252) [surefire-junit4-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141) [surefire-junit4-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112) [surefire-junit4-2.12.4.jar:2.12.4]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.7.0_60]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57) ~[na:1.7.0_60]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.7.0_60]
+	at java.lang.reflect.Method.invoke(Method.java:606) ~[na:1.7.0_60]
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189) [surefire-api-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165) [surefire-booter-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85) [surefire-booter-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115) [surefire-booter-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75) [surefire-booter-2.12.4.jar:2.12.4]
+03/02/15 01:18:14 DEBUG AnnotationAttributesReadingVisitor - Failed to class-load type while reading annotation metadata. This is a non-fatal error, but certain annotation metadata may be unavailable.
+java.lang.ClassNotFoundException: org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366) ~[na:1.7.0_60]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355) ~[na:1.7.0_60]
+	at java.security.AccessController.doPrivileged(Native Method) ~[na:1.7.0_60]
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354) ~[na:1.7.0_60]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425) ~[na:1.7.0_60]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308) ~[na:1.7.0_60]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358) ~[na:1.7.0_60]
+	at org.springframework.core.type.classreading.RecursiveAnnotationAttributesVisitor.visitEnd(RecursiveAnnotationAttributesVisitor.java:47) ~[spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.asm.ClassReader.readAnnotationValues(ClassReader.java:1802) [spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.asm.ClassReader.accept(ClassReader.java:642) [spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.asm.ClassReader.accept(ClassReader.java:508) [spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.core.type.classreading.SimpleMetadataReader.<init>(SimpleMetadataReader.java:64) [spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:98) [spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.core.type.classreading.CachingMetadataReaderFactory.getMetadataReader(CachingMetadataReaderFactory.java:102) [spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:93) [spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.asSourceClass(ConfigurationClassParser.java:591) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.asSourceClasses(ConfigurationClassParser.java:573) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.processDeferredImportSelectors(ConfigurationClassParser.java:424) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:180) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:306) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:239) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:254) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:94) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:606) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:462) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118) [spring-boot-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:691) [spring-boot-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) [spring-boot-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.boot.test.SpringApplicationContextLoader.loadContext(SpringApplicationContextLoader.java:98) [spring-boot-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:252) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:254) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:217) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:68) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252) [surefire-junit4-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141) [surefire-junit4-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112) [surefire-junit4-2.12.4.jar:2.12.4]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.7.0_60]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57) ~[na:1.7.0_60]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.7.0_60]
+	at java.lang.reflect.Method.invoke(Method.java:606) ~[na:1.7.0_60]
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189) [surefire-api-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165) [surefire-booter-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85) [surefire-booter-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115) [surefire-booter-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75) [surefire-booter-2.12.4.jar:2.12.4]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.messages.basename' in [systemProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.messages.basename' in [systemEnvironment]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.messages.basename' in [random]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.messages.basename' in [integrationTest]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.messages.basename' in [applicationConfigurationProperties]
+03/02/15 01:18:14 DEBUG PropertySourcesPropertyResolver - Could not find key 'spring.messages.basename' in any property source. Returning [null]
+03/02/15 01:18:14 DEBUG PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/test-classes]
+03/02/15 01:18:14 DEBUG PathMatchingResourcePatternResolver - Searching directory [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/test-classes] for files matching pattern [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/test-classes/messages*.properties]
+03/02/15 01:18:14 DEBUG PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes]
+03/02/15 01:18:14 DEBUG PathMatchingResourcePatternResolver - Searching directory [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes] for files matching pattern [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/messages*.properties]
+03/02/15 01:18:14 DEBUG PathMatchingResourcePatternResolver - Looking for matching resources in jar file [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/surefire/surefirebooter2846540472713465153.jar]
+03/02/15 01:18:14 DEBUG PathMatchingResourcePatternResolver - Resolved location pattern [classpath*:messages*.properties] to resources []
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:14 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.jmx.enabled' in [systemProperties]
+03/02/15 01:18:15 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.jmx.enabled' in [systemEnvironment]
+03/02/15 01:18:15 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.jmx.enabled' in [random]
+03/02/15 01:18:15 DEBUG PropertySourcesPropertyResolver - Searching for key 'spring.jmx.enabled' in [integrationTest]
+03/02/15 01:18:15 DEBUG PropertySourcesPropertyResolver - Found key 'spring.jmx.enabled' in [integrationTest] with type [String] and value 'false'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.boot.autoconfigure.PropertyPlaceholderAutoConfiguration
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Creating instance of bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry' to allow for resolving potential circular references
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer()
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration$EmbeddedTomcat
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration$EmbeddedTomcat.tomcatEmbeddedServletContainerFactory()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration$DispatcherServletConfiguration
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration$DispatcherServletConfiguration.dispatcherServlet()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration$DispatcherServletConfiguration.dispatcherServletRegistration()
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.error()
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.beanNameViewResolver()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration.errorAttributes()
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration.basicErrorController()
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration.requestMappingHandlerAdapter()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration.requestMappingHandlerMapping()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration.mvcContentNegotiationManager()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration.viewControllerHandlerMapping()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration.beanNameHandlerMapping()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration.resourceHandlerMapping()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration.mvcResourceUrlProvider()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration.defaultServletHandlerMapping()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration.mvcConversionService()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration.mvcValidator()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration.mvcPathMatcher()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration.mvcUrlPathHelper()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration.mvcUriComponentsContributor()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration.httpRequestHandlerAdapter()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration.simpleControllerHandlerAdapter()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration.handlerExceptionResolver()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration.mvcViewResolver()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$FaviconConfiguration
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$FaviconConfiguration.faviconHandlerMapping()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$FaviconConfiguration.faviconRequestHandler()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.defaultViewResolver()
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.requestContextListener()
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.beanNameViewResolver()
+03/02/15 01:18:15 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.viewResolver()
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration.hiddenHttpMethodFilter()
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration.persistenceExceptionTranslationPostProcessor()
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration.mongo()
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.boot.autoconfigure.data.mongo.MongoRepositoriesAutoConfiguration
+03/02/15 01:18:15 DEBUG StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+03/02/15 01:18:15 DEBUG StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+03/02/15 01:18:15 DEBUG StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.AutoConfigurationPackages'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Creating instance of bean 'org.springframework.boot.autoconfigure.AutoConfigurationPackages'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.boot.autoconfigure.AutoConfigurationPackages' to allow for resolving potential circular references
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.boot.autoconfigure.AutoConfigurationPackages'
+03/02/15 01:18:15 DEBUG AutoConfigurationPackages - @EnableAutoConfiguration was declared on a class in the package 'be.seriousbusiness.brusselnieuws.rss.webservice'. Automatic @Repository and @Entity scanning is enabled.
+03/02/15 01:18:15 DEBUG PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/test-classes/be/seriousbusiness/brusselnieuws/rss/webservice]
+03/02/15 01:18:15 DEBUG PathMatchingResourcePatternResolver - Searching directory [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/test-classes/be/seriousbusiness/brusselnieuws/rss/webservice] for files matching pattern [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/test-classes/be/seriousbusiness/brusselnieuws/rss/webservice/**/*.class]
+03/02/15 01:18:15 DEBUG PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice]
+03/02/15 01:18:15 DEBUG PathMatchingResourcePatternResolver - Searching directory [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice] for files matching pattern [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/**/*.class]
+03/02/15 01:18:15 DEBUG PathMatchingResourcePatternResolver - Searching directory [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/controller] for files matching pattern [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/**/*.class]
+03/02/15 01:18:15 DEBUG PathMatchingResourcePatternResolver - Looking for matching resources in jar file [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice-model/target/brusselnieuws-rss-webservice-model-1.0-SNAPSHOT.jar]
+03/02/15 01:18:15 DEBUG PathMatchingResourcePatternResolver - Resolved location pattern [classpath*:be/seriousbusiness/brusselnieuws/rss/webservice/**/*.class] to resources [file [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/test-classes/be/seriousbusiness/brusselnieuws/rss/webservice/BrusselNieuwsRssWebserviceIntegrationTest.class], file [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/BrusselNieuwsRssWebservice.class], file [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/controller/FeedCategoryMetaEnum.class], file [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/controller/FeedMetaEnum.class], file [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/controller/FeedRestControllerImpl$1.class], file [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/controller/FeedRestControllerImpl.class], URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice-model/target/brusselnieuws-rss-webservice-model-1.0-SNAPSHOT.jar!/be/seriousbusiness/brusselnieuws/rss/webservice/model/comparator/FeedMetaResponseCategoryDutchNameComparator.class], URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice-model/target/brusselnieuws-rss-webservice-model-1.0-SNAPSHOT.jar!/be/seriousbusiness/brusselnieuws/rss/webservice/model/controller/FeedRestController.class], URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice-model/target/brusselnieuws-rss-webservice-model-1.0-SNAPSHOT.jar!/be/seriousbusiness/brusselnieuws/rss/webservice/model/response/AbstractIdResponse.class], URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice-model/target/brusselnieuws-rss-webservice-model-1.0-SNAPSHOT.jar!/be/seriousbusiness/brusselnieuws/rss/webservice/model/response/ArticleResponse.class], URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice-model/target/brusselnieuws-rss-webservice-model-1.0-SNAPSHOT.jar!/be/seriousbusiness/brusselnieuws/rss/webservice/model/response/AuthorResponse.class], URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice-model/target/brusselnieuws-rss-webservice-model-1.0-SNAPSHOT.jar!/be/seriousbusiness/brusselnieuws/rss/webservice/model/response/CategoryResponse.class], URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice-model/target/brusselnieuws-rss-webservice-model-1.0-SNAPSHOT.jar!/be/seriousbusiness/brusselnieuws/rss/webservice/model/response/FeedMetaListResponse.class], URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice-model/target/brusselnieuws-rss-webservice-model-1.0-SNAPSHOT.jar!/be/seriousbusiness/brusselnieuws/rss/webservice/model/response/FeedMetaResponse.class], URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice-model/target/brusselnieuws-rss-webservice-model-1.0-SNAPSHOT.jar!/be/seriousbusiness/brusselnieuws/rss/webservice/model/response/FeedResponse.class], URL [jar:file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice-model/target/brusselnieuws-rss-webservice-model-1.0-SNAPSHOT.jar!/be/seriousbusiness/brusselnieuws/rss/webservice/model/response/MediumResponse.class]]
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration.jacksonObjectMapperBuilder()
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration.jacksonObjectMapper()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration.stringHttpMessageConverter()
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$MappingJackson2HttpMessageConverterConfiguration
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$MappingJackson2HttpMessageConverterConfiguration.mappingJackson2HttpMessageConverter()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration.messageConverters()
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.data.web.config.SpringDataWebConfiguration
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.data.web.config.SpringDataWebConfiguration.pageableResolver()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.data.web.config.SpringDataWebConfiguration.sortResolver()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.data.web.config.SpringDataJacksonConfiguration
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.data.web.config.SpringDataJacksonConfiguration.jacksonGeoModule()
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.boot.autoconfigure.mongo.MongoDataAutoConfiguration
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.mongo.MongoDataAutoConfiguration.mongoDbFactory()
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.mongo.MongoDataAutoConfiguration.mongoTemplate()
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.mongo.MongoDataAutoConfiguration.mappingMongoConverter()
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.mongo.MongoDataAutoConfiguration.gridFsTemplate()
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.boot.autoconfigure.web.HttpEncodingAutoConfiguration
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.HttpEncodingAutoConfiguration.characterEncodingFilter()
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.boot.autoconfigure.web.MultipartAutoConfiguration
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.MultipartAutoConfiguration.multipartConfigElement()
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.MultipartAutoConfiguration.multipartResolver()
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registered bean definition for imported @Configuration class org.springframework.boot.autoconfigure.web.ServerPropertiesAutoConfiguration
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'autoConfigurationReport'
+03/02/15 01:18:15 DEBUG ConfigurationClassBeanDefinitionReader - Registering bean definition for @Bean method org.springframework.boot.autoconfigure.web.ServerPropertiesAutoConfiguration.serverProperties()
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.boot.autoconfigure.PropertyPlaceholderAutoConfiguration; enhanced class name is: org.springframework.boot.autoconfigure.PropertyPlaceholderAutoConfiguration$$EnhancerBySpringCGLIB$$ca9ae6fd
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'org.springframework.boot.autoconfigure.PropertyPlaceholderAutoConfiguration' existing class name 'org.springframework.boot.autoconfigure.PropertyPlaceholderAutoConfiguration' with enhanced class name 'org.springframework.boot.autoconfigure.PropertyPlaceholderAutoConfiguration$$EnhancerBySpringCGLIB$$ca9ae6fd'
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.boot.autoconfigure.PropertyPlaceholderAutoConfiguration; enhanced class name is: org.springframework.boot.autoconfigure.PropertyPlaceholderAutoConfiguration$$EnhancerBySpringCGLIB$$ca9ae6fd
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'propertySourcesPlaceholderConfigurer' existing class name 'org.springframework.boot.autoconfigure.PropertyPlaceholderAutoConfiguration' with enhanced class name 'org.springframework.boot.autoconfigure.PropertyPlaceholderAutoConfiguration$$EnhancerBySpringCGLIB$$ca9ae6fd'
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration$EmbeddedTomcat; enhanced class name is: org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration$EmbeddedTomcat$$EnhancerBySpringCGLIB$$102ad55f
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration$EmbeddedTomcat' existing class name 'org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration$EmbeddedTomcat' with enhanced class name 'org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration$EmbeddedTomcat$$EnhancerBySpringCGLIB$$102ad55f'
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration; enhanced class name is: org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration$$EnhancerBySpringCGLIB$$ddb98e03
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration' existing class name 'org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration' with enhanced class name 'org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration$$EnhancerBySpringCGLIB$$ddb98e03'
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration$DispatcherServletConfiguration; enhanced class name is: org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration$DispatcherServletConfiguration$$EnhancerBySpringCGLIB$$ad6bf2d5
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration$DispatcherServletConfiguration' existing class name 'org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration$DispatcherServletConfiguration' with enhanced class name 'org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration$DispatcherServletConfiguration$$EnhancerBySpringCGLIB$$ad6bf2d5'
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration; enhanced class name is: org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration$$EnhancerBySpringCGLIB$$804c4d97
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration' existing class name 'org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration' with enhanced class name 'org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration$$EnhancerBySpringCGLIB$$804c4d97'
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; enhanced class name is: org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration$$EnhancerBySpringCGLIB$$f26fa171
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration' existing class name 'org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration' with enhanced class name 'org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration$$EnhancerBySpringCGLIB$$f26fa171'
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration; enhanced class name is: org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$$EnhancerBySpringCGLIB$$3012a137
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration' existing class name 'org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration' with enhanced class name 'org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$$EnhancerBySpringCGLIB$$3012a137'
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration; enhanced class name is: org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration$$EnhancerBySpringCGLIB$$9f77daac
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration' existing class name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration' with enhanced class name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration$$EnhancerBySpringCGLIB$$9f77daac'
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$FaviconConfiguration; enhanced class name is: org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$FaviconConfiguration$$EnhancerBySpringCGLIB$$c0988337
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$FaviconConfiguration' existing class name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$FaviconConfiguration' with enhanced class name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$FaviconConfiguration$$EnhancerBySpringCGLIB$$c0988337'
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; enhanced class name is: org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$$EnhancerBySpringCGLIB$$10bfddbf
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' existing class name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' with enhanced class name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$$EnhancerBySpringCGLIB$$10bfddbf'
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration; enhanced class name is: org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$$EnhancerBySpringCGLIB$$bc7a8703
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration' existing class name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration' with enhanced class name 'org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$$EnhancerBySpringCGLIB$$bc7a8703'
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration; enhanced class name is: org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration$$EnhancerBySpringCGLIB$$579e1361
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration' existing class name 'org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration' with enhanced class name 'org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration$$EnhancerBySpringCGLIB$$579e1361'
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.boot.autoconfigure.data.mongo.MongoRepositoriesAutoConfiguration; enhanced class name is: org.springframework.boot.autoconfigure.data.mongo.MongoRepositoriesAutoConfiguration$$EnhancerBySpringCGLIB$$7dd70c05
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'org.springframework.boot.autoconfigure.data.mongo.MongoRepositoriesAutoConfiguration' existing class name 'org.springframework.boot.autoconfigure.data.mongo.MongoRepositoriesAutoConfiguration' with enhanced class name 'org.springframework.boot.autoconfigure.data.mongo.MongoRepositoriesAutoConfiguration$$EnhancerBySpringCGLIB$$7dd70c05'
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration; enhanced class name is: org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration$$EnhancerBySpringCGLIB$$2fe31a2d
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration' existing class name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration' with enhanced class name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration$$EnhancerBySpringCGLIB$$2fe31a2d'
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration; enhanced class name is: org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration$$EnhancerBySpringCGLIB$$f310a734
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration' existing class name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration' with enhanced class name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration$$EnhancerBySpringCGLIB$$f310a734'
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration; enhanced class name is: org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$$EnhancerBySpringCGLIB$$1823bee3
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration' existing class name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration' with enhanced class name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$$EnhancerBySpringCGLIB$$1823bee3'
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration; enhanced class name is: org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration$$EnhancerBySpringCGLIB$$f03ecec3
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration' existing class name 'org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration' with enhanced class name 'org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration$$EnhancerBySpringCGLIB$$f03ecec3'
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$MappingJackson2HttpMessageConverterConfiguration; enhanced class name is: org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$MappingJackson2HttpMessageConverterConfiguration$$EnhancerBySpringCGLIB$$8a7f8c59
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$MappingJackson2HttpMessageConverterConfiguration' existing class name 'org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$MappingJackson2HttpMessageConverterConfiguration' with enhanced class name 'org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$MappingJackson2HttpMessageConverterConfiguration$$EnhancerBySpringCGLIB$$8a7f8c59'
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration; enhanced class name is: org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$$EnhancerBySpringCGLIB$$d5359823
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration' existing class name 'org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration' with enhanced class name 'org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$$EnhancerBySpringCGLIB$$d5359823'
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.data.web.config.SpringDataWebConfiguration; enhanced class name is: org.springframework.data.web.config.SpringDataWebConfiguration$$EnhancerBySpringCGLIB$$399aa5b6
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'org.springframework.data.web.config.SpringDataWebConfiguration' existing class name 'org.springframework.data.web.config.SpringDataWebConfiguration' with enhanced class name 'org.springframework.data.web.config.SpringDataWebConfiguration$$EnhancerBySpringCGLIB$$399aa5b6'
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.data.web.config.SpringDataJacksonConfiguration; enhanced class name is: org.springframework.data.web.config.SpringDataJacksonConfiguration$$EnhancerBySpringCGLIB$$a7164f17
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'org.springframework.data.web.config.SpringDataJacksonConfiguration' existing class name 'org.springframework.data.web.config.SpringDataJacksonConfiguration' with enhanced class name 'org.springframework.data.web.config.SpringDataJacksonConfiguration$$EnhancerBySpringCGLIB$$a7164f17'
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration; enhanced class name is: org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration$$EnhancerBySpringCGLIB$$b6304bc4
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration' existing class name 'org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration' with enhanced class name 'org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration$$EnhancerBySpringCGLIB$$b6304bc4'
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.boot.autoconfigure.mongo.MongoDataAutoConfiguration; enhanced class name is: org.springframework.boot.autoconfigure.mongo.MongoDataAutoConfiguration$$EnhancerBySpringCGLIB$$6b5c35d7
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'org.springframework.boot.autoconfigure.mongo.MongoDataAutoConfiguration' existing class name 'org.springframework.boot.autoconfigure.mongo.MongoDataAutoConfiguration' with enhanced class name 'org.springframework.boot.autoconfigure.mongo.MongoDataAutoConfiguration$$EnhancerBySpringCGLIB$$6b5c35d7'
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.boot.autoconfigure.web.HttpEncodingAutoConfiguration; enhanced class name is: org.springframework.boot.autoconfigure.web.HttpEncodingAutoConfiguration$$EnhancerBySpringCGLIB$$1162b30e
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'org.springframework.boot.autoconfigure.web.HttpEncodingAutoConfiguration' existing class name 'org.springframework.boot.autoconfigure.web.HttpEncodingAutoConfiguration' with enhanced class name 'org.springframework.boot.autoconfigure.web.HttpEncodingAutoConfiguration$$EnhancerBySpringCGLIB$$1162b30e'
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.boot.autoconfigure.web.MultipartAutoConfiguration; enhanced class name is: org.springframework.boot.autoconfigure.web.MultipartAutoConfiguration$$EnhancerBySpringCGLIB$$84128849
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'org.springframework.boot.autoconfigure.web.MultipartAutoConfiguration' existing class name 'org.springframework.boot.autoconfigure.web.MultipartAutoConfiguration' with enhanced class name 'org.springframework.boot.autoconfigure.web.MultipartAutoConfiguration$$EnhancerBySpringCGLIB$$84128849'
+03/02/15 01:18:15 DEBUG ConfigurationClassEnhancer - Successfully enhanced org.springframework.boot.autoconfigure.web.ServerPropertiesAutoConfiguration; enhanced class name is: org.springframework.boot.autoconfigure.web.ServerPropertiesAutoConfiguration$$EnhancerBySpringCGLIB$$2f340793
+03/02/15 01:18:15 DEBUG ConfigurationClassPostProcessor - Replacing bean definition 'org.springframework.boot.autoconfigure.web.ServerPropertiesAutoConfiguration' existing class name 'org.springframework.boot.autoconfigure.web.ServerPropertiesAutoConfiguration' with enhanced class name 'org.springframework.boot.autoconfigure.web.ServerPropertiesAutoConfiguration$$EnhancerBySpringCGLIB$$2f340793'
+03/02/15 01:18:15 DEBUG StandardEnvironment - Removing [applicationConfigurationProperties] PropertySource
+03/02/15 01:18:15 DEBUG StandardEnvironment - Removing [defaultProperties] PropertySource
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Creating shared instance of singleton bean 'propertySourcesPlaceholderConfigurer'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Creating instance of bean 'propertySourcesPlaceholderConfigurer'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Eagerly caching bean 'propertySourcesPlaceholderConfigurer' to allow for resolving potential circular references
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Finished creating instance of bean 'propertySourcesPlaceholderConfigurer'
+03/02/15 01:18:15 DEBUG MutablePropertySources - Adding [environmentProperties] PropertySource with lowest search precedence
+03/02/15 01:18:15 DEBUG MutablePropertySources - Adding [localProperties] PropertySource with lowest search precedence
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor.store'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Creating instance of bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor.store'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor.store' to allow for resolving potential circular references
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor.store'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Creating instance of bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor' to allow for resolving potential circular references
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Creating instance of bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor' to allow for resolving potential circular references
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Creating instance of bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor' to allow for resolving potential circular references
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor' to allow for resolving potential circular references
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor' to allow for resolving potential circular references
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Creating instance of bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor'
+03/02/15 01:18:15 DEBUG StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+03/02/15 01:18:15 DEBUG StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+03/02/15 01:18:15 DEBUG StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor' to allow for resolving potential circular references
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor.store'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Invoking afterPropertiesSet() on bean with name 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Returning cached instance of singleton bean 'propertySourcesPlaceholderConfigurer'
+03/02/15 01:18:15 DEBUG logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider
+03/02/15 01:18:15 INFO  Version - HV000001: Hibernate Validator 5.1.3.Final
+03/02/15 01:18:15 DEBUG DefaultTraversableResolver - Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+03/02/15 01:18:15 DEBUG ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+03/02/15 01:18:15 DEBUG ConfigurationImpl - Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+03/02/15 01:18:15 DEBUG ConfigurationImpl - Setting custom ParameterNameProvider of type com.sun.proxy.$Proxy34
+03/02/15 01:18:15 DEBUG ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+03/02/15 01:18:15 DEBUG ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Creating instance of bean 'org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0' to allow for resolving potential circular references
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Creating shared instance of singleton bean 'persistenceExceptionTranslationPostProcessor'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Creating instance of bean 'persistenceExceptionTranslationPostProcessor'
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Eagerly caching bean 'persistenceExceptionTranslationPostProcessor' to allow for resolving potential circular references
+03/02/15 01:18:15 WARN  AnnotationConfigEmbeddedWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'persistenceExceptionTranslationPostProcessor' defined in class path resource [org/springframework/boot/autoconfigure/dao/PersistenceExceptionTranslationAutoConfiguration.class]: Initialization of bean failed; nested exception is java.lang.IllegalStateException: No persistence exception translators found in bean factory. Cannot perform exception translation.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:547) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:220) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:615) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:465) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118) [spring-boot-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:691) [spring-boot-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) [spring-boot-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.boot.test.SpringApplicationContextLoader.loadContext(SpringApplicationContextLoader.java:98) [spring-boot-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:252) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:254) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:217) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:68) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252) [surefire-junit4-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141) [surefire-junit4-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112) [surefire-junit4-2.12.4.jar:2.12.4]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.7.0_60]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57) ~[na:1.7.0_60]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.7.0_60]
+	at java.lang.reflect.Method.invoke(Method.java:606) ~[na:1.7.0_60]
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189) [surefire-api-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165) [surefire-booter-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85) [surefire-booter-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115) [surefire-booter-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75) [surefire-booter-2.12.4.jar:2.12.4]
+Caused by: java.lang.IllegalStateException: No persistence exception translators found in bean factory. Cannot perform exception translation.
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.detectPersistenceExceptionTranslators(PersistenceExceptionTranslationInterceptor.java:142) ~[spring-tx-3.2.10.RELEASE.jar:3.2.10.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.<init>(PersistenceExceptionTranslationInterceptor.java:79) ~[spring-tx-3.2.10.RELEASE.jar:3.2.10.RELEASE]
+	at org.springframework.dao.annotation.PersistenceExceptionTranslationAdvisor.<init>(PersistenceExceptionTranslationAdvisor.java:71) ~[spring-tx-3.2.10.RELEASE.jar:3.2.10.RELEASE]
+	at org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor.setBeanFactory(PersistenceExceptionTranslationPostProcessor.java:84) ~[spring-tx-3.2.10.RELEASE.jar:3.2.10.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeAwareMethods(AbstractAutowireCapableBeanFactory.java:1585) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1553) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	... 45 common frames omitted
+03/02/15 01:18:15 DEBUG DefaultListableBeanFactory - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@287ae776: defining beans [org.springframework.context.annotation.internalConfigurationAnnotationProcessor,org.springframework.context.annotation.internalAutowiredAnnotationProcessor,org.springframework.context.annotation.internalRequiredAnnotationProcessor,org.springframework.context.annotation.internalCommonAnnotationProcessor,brusselNieuwsRssWebservice,org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor,org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor,feedRestControllerImpl,org.springframework.boot.autoconfigure.AutoConfigurationPackages,org.springframework.boot.autoconfigure.PropertyPlaceholderAutoConfiguration,org.springframework.boot.autoconfigure.condition.BeanTypeRegistry,propertySourcesPlaceholderConfigurer,org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration$EmbeddedTomcat,tomcatEmbeddedServletContainerFactory,org.springframework.boot.autoconfigure.web.EmbeddedServletContainerAutoConfiguration,embeddedServletContainerCustomizerBeanPostProcessor,org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration$DispatcherServletConfiguration,dispatcherServlet,dispatcherServletRegistration,org.springframework.boot.autoconfigure.web.DispatcherServletAutoConfiguration,org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration,error,beanNameViewResolver,org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration,errorAttributes,basicErrorController,org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$EnableWebMvcConfiguration,requestMappingHandlerAdapter,requestMappingHandlerMapping,mvcContentNegotiationManager,viewControllerHandlerMapping,beanNameHandlerMapping,resourceHandlerMapping,mvcResourceUrlProvider,defaultServletHandlerMapping,mvcConversionService,mvcValidator,mvcPathMatcher,mvcUrlPathHelper,mvcUriComponentsContributor,httpRequestHandlerAdapter,simpleControllerHandlerAdapter,handlerExceptionResolver,mvcViewResolver,org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$FaviconConfiguration,faviconHandlerMapping,faviconRequestHandler,org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter,defaultViewResolver,requestContextListener,viewResolver,spring.mvc.CONFIGURATION_PROPERTIES,spring.resources.CONFIGURATION_PROPERTIES,org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor,org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor.store,org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration,hiddenHttpMethodFilter,org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration,persistenceExceptionTranslationPostProcessor,org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration,mongo,spring.data.mongodb.CONFIGURATION_PROPERTIES,org.springframework.boot.autoconfigure.data.mongo.MongoRepositoriesAutoConfiguration,org.springframework.data.mongodb.repository.config.MongoRepositoryConfigurationExtension#0,org.springframework.data.repository.core.support.RepositoryInterfaceAwareBeanPostProcessor#0,mongoMappingContext,org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration,jacksonObjectMapperBuilder,http.mappers.CONFIGURATION_PROPERTIES,spring.jackson.CONFIGURATION_PROPERTIES,org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration,jacksonObjectMapper,org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration,org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration,stringHttpMessageConverter,spring.http.encoding.CONFIGURATION_PROPERTIES,org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration$MappingJackson2HttpMessageConverterConfiguration,mappingJackson2HttpMessageConverter,org.springframework.boot.autoconfigure.web.HttpMessageConvertersAutoConfiguration,messageConverters,org.springframework.data.web.config.SpringDataWebConfiguration,pageableResolver,sortResolver,org.springframework.data.web.config.SpringDataJacksonConfiguration,jacksonGeoModule,org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration,org.springframework.boot.autoconfigure.mongo.MongoDataAutoConfiguration,mongoDbFactory,mongoTemplate,mappingMongoConverter,gridFsTemplate,org.springframework.boot.autoconfigure.web.HttpEncodingAutoConfiguration,characterEncodingFilter,org.springframework.boot.autoconfigure.web.MultipartAutoConfiguration,multipartConfigElement,multipartResolver,multipart.CONFIGURATION_PROPERTIES,org.springframework.boot.autoconfigure.web.ServerPropertiesAutoConfiguration,serverProperties]; root of factory hierarchy
+03/02/15 01:18:15 DEBUG DisposableBeanAdapter - Invoking destroy() on bean with name 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor'
+03/02/15 01:18:15 INFO  ClasspathLoggingApplicationListener - Application failed to start with classpath: [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/surefire/surefirebooter2846540472713465153.jar]
+03/02/15 01:18:15 ERROR SpringApplication - Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'persistenceExceptionTranslationPostProcessor' defined in class path resource [org/springframework/boot/autoconfigure/dao/PersistenceExceptionTranslationAutoConfiguration.class]: Initialization of bean failed; nested exception is java.lang.IllegalStateException: No persistence exception translators found in bean factory. Cannot perform exception translation.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:547) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:220) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:615) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:465) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118) ~[spring-boot-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:691) ~[spring-boot-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.boot.test.SpringApplicationContextLoader.loadContext(SpringApplicationContextLoader.java:98) [spring-boot-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:252) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:254) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:217) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:68) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252) [surefire-junit4-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141) [surefire-junit4-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112) [surefire-junit4-2.12.4.jar:2.12.4]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.7.0_60]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57) ~[na:1.7.0_60]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.7.0_60]
+	at java.lang.reflect.Method.invoke(Method.java:606) ~[na:1.7.0_60]
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189) [surefire-api-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165) [surefire-booter-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85) [surefire-booter-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115) [surefire-booter-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75) [surefire-booter-2.12.4.jar:2.12.4]
+Caused by: java.lang.IllegalStateException: No persistence exception translators found in bean factory. Cannot perform exception translation.
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.detectPersistenceExceptionTranslators(PersistenceExceptionTranslationInterceptor.java:142) ~[spring-tx-3.2.10.RELEASE.jar:3.2.10.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.<init>(PersistenceExceptionTranslationInterceptor.java:79) ~[spring-tx-3.2.10.RELEASE.jar:3.2.10.RELEASE]
+	at org.springframework.dao.annotation.PersistenceExceptionTranslationAdvisor.<init>(PersistenceExceptionTranslationAdvisor.java:71) ~[spring-tx-3.2.10.RELEASE.jar:3.2.10.RELEASE]
+	at org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor.setBeanFactory(PersistenceExceptionTranslationPostProcessor.java:84) ~[spring-tx-3.2.10.RELEASE.jar:3.2.10.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeAwareMethods(AbstractAutowireCapableBeanFactory.java:1585) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1553) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	... 45 common frames omitted
+03/02/15 01:18:15 ERROR TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5878ea78] to prepare test instance [be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebserviceIntegrationTest@fb51005]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:94) ~[spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.DefaultTestContext.getApplicationContext(DefaultTestContext.java:72) ~[spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117) ~[spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) ~[spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:212) ~[spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:200) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:252) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:254) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:217) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:83) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:68) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:163) [spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252) [surefire-junit4-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141) [surefire-junit4-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112) [surefire-junit4-2.12.4.jar:2.12.4]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.7.0_60]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57) ~[na:1.7.0_60]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.7.0_60]
+	at java.lang.reflect.Method.invoke(Method.java:606) ~[na:1.7.0_60]
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189) [surefire-api-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165) [surefire-booter-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85) [surefire-booter-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115) [surefire-booter-2.12.4.jar:2.12.4]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75) [surefire-booter-2.12.4.jar:2.12.4]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'persistenceExceptionTranslationPostProcessor' defined in class path resource [org/springframework/boot/autoconfigure/dao/PersistenceExceptionTranslationAutoConfiguration.class]: Initialization of bean failed; nested exception is java.lang.IllegalStateException: No persistence exception translators found in bean factory. Cannot perform exception translation.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:547) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.registerBeanPostProcessors(PostProcessorRegistrationDelegate.java:220) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.registerBeanPostProcessors(AbstractApplicationContext.java:615) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:465) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:118) ~[spring-boot-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:691) ~[spring-boot-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.boot.test.SpringApplicationContextLoader.loadContext(SpringApplicationContextLoader.java:98) ~[spring-boot-1.2.1.RELEASE.jar:1.2.1.RELEASE]
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:68) ~[spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.test.context.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:86) ~[spring-test-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	... 31 common frames omitted
+Caused by: java.lang.IllegalStateException: No persistence exception translators found in bean factory. Cannot perform exception translation.
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.detectPersistenceExceptionTranslators(PersistenceExceptionTranslationInterceptor.java:142) ~[spring-tx-3.2.10.RELEASE.jar:3.2.10.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.<init>(PersistenceExceptionTranslationInterceptor.java:79) ~[spring-tx-3.2.10.RELEASE.jar:3.2.10.RELEASE]
+	at org.springframework.dao.annotation.PersistenceExceptionTranslationAdvisor.<init>(PersistenceExceptionTranslationAdvisor.java:71) ~[spring-tx-3.2.10.RELEASE.jar:3.2.10.RELEASE]
+	at org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor.setBeanFactory(PersistenceExceptionTranslationPostProcessor.java:84) ~[spring-tx-3.2.10.RELEASE.jar:3.2.10.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeAwareMethods(AbstractAutowireCapableBeanFactory.java:1585) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1553) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
+	... 45 common frames omitted
+03/02/15 01:18:15 DEBUG DirtiesContextTestExecutionListener - After test class: context [DefaultTestContext@29dd8a94 testClass = BrusselNieuwsRssWebserviceIntegrationTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@523e2446 testClass = BrusselNieuwsRssWebserviceIntegrationTest, locations = '{}', classes = '{class be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebservice}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{server.port=0, org.springframework.boot.test.IntegrationTest=true}', resourceBasePath = '', contextLoader = 'org.springframework.boot.test.SpringApplicationContextLoader', parent = [null]]], dirtiesContext [false].

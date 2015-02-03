@@ -17,7 +17,7 @@
 	
 	<import resource="classpath:config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml"/>
 	
-	<mongo:mongo host="${mongo.host}" port="${mongo.port}"> 
+	<mongo:mongo host="${mongo.host}" port="${mongo.port}">
 		<mongo:options connections-per-host="${mongo.connectionsPerHost}"
 			threads-allowed-to-block-for-connection-multiplier="${mongo.threadsAllowedToBlockForConnectionMultiplier}" 
 			connect-timeout="${mongo.connectTimeout}"
@@ -30,17 +30,35 @@
 			write-timeout="0" 
 			write-fsync="true"/>
   	</mongo:mongo>
+  	
+  	<!-- host="${mongo.host}" port="${mongo.port}" -->
 
   	<mongo:db-factory id="mongoDbFactory" 
-  		mongo-ref="mongo"
-  		host="${mongo.host}"
-  		port="${mongo.port}" 
+  		mongo-ref="mongo" 
   		dbname="${mongo.dbname}" 
   		username="${mongo.username}" 
   		password="${mongo.password}"/>
   		
+  	<!-- 
+  	writeResultChecking :
+  	When in development it is very handy to either log or throw an exception 
+  	if the com.mongodb.WriteResult returned from any MongoDB operation contains an error. 
+  	It is quite common to forget to do this during development and then end up with an application 
+  	that looks like it runs successfully but in fact the database was not modified according to your expectations. 
+  	Set MongoTemplate’s property to an enum with the following values, LOG, EXCEPTION, or NONE 
+  	to either log the error, throw and exception or do nothing. 
+  	The default is to use a WriteResultChecking value of NONE. 
+  	
+  	writeConcern:
+  	You can set the com.mongodb.WriteConcern property that the MongoTemplate will use for write operations 
+  	if it has not yet been specified via the driver at a higher level such as com.mongodb.Mongo. 
+  	If MongoTemplate’s WriteConcern property is not set it will default to the one set in the MongoDB driver’s DB 
+  	or Collection setting.
+  	-->
+  		
   	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate"> 
 		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>
+		<property name="writeConcern" value="NORMAL"/>
 		<property name="writeResultChecking" value="LOG"/>
 	</bean>
 	

@@ -9,7 +9,7 @@
 	
 	<!-- <import resource="classpath:config/test-brusselnieuws-rss-datastore-mongodb-config.xml"/> -->
 	<!-- <import resource="classpath:config/test-brusselnieuws-rss-reader-model-config.xml"/> -->
-	<import resource="classpath:config/test-brusselnieuws-rss-reader-config.xml"/>
+	<import resource="classpath:config/brusselnieuws-rss-reader-config.xml"/>
 	
 	<import resource="classpath:config/brusselnieuws-rss-webservice-dozer-config.xml"/>
 	

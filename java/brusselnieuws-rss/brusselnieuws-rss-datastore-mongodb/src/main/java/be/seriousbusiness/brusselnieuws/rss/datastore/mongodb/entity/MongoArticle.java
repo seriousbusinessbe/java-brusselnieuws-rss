@@ -1,6 +1,7 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity;
 
 import java.math.BigInteger;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -14,6 +15,14 @@ import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.ArticleDTO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.util.EntityUtil;
 
+/**
+ * Spring-data {@link MongoArticle} entity.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ * @see Spring-data mongodb reference: <a href="http://docs.spring.io/spring-data/mongodb/docs/current/reference/">http://docs.spring.io/spring-data/mongodb/docs/current/reference/</a>
+ */
 @Document(collection="article")
 public class MongoArticle implements ArticleDTO<MongoMediumType,MongoMedium,MongoCategory,MongoAuthor> {
 	@Id

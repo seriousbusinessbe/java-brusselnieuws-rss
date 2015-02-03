@@ -2,6 +2,13 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.util;
 
 import java.util.Map;
 
+/**
+ * Entity utility helper.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ */
 public class EntityUtil {
 	
 	/**

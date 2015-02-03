@@ -29,11 +29,12 @@ import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedMetaRe
 import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedResponse;
 
 /**
- * {@link FeedRestController} implementation.
+ * Spring-boot {@link FeedRestController} implementation.
  * @author Serious Business
  * @author Stefan Borghys
  * @version 1.0
  * @since 1.0
+ * @see Spring-boot reference: <a href="http://docs.spring.io/spring-boot/docs/current/reference/">http://docs.spring.io/spring-boot/docs/current/reference/</a>
  */
 @RestController()
 public class FeedRestControllerImpl<MEDIUMTYPE extends MediumType,

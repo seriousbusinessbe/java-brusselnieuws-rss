@@ -9,6 +9,14 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoArticl
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoAuthor;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoCategory;
 
+/**
+ * Spring-data {@link MongoArticle} repository.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ * @see Spring-data mongodb reference: <a href="http://docs.spring.io/spring-data/mongodb/docs/current/reference/">http://docs.spring.io/spring-data/mongodb/docs/current/reference/</a>
+ */
 public interface MongoArticleRepository extends CrudRepository<MongoArticle,BigInteger> {
 	
 	Collection<MongoArticle> findByTitle(final String title);

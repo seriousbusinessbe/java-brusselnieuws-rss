@@ -14,6 +14,14 @@ import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.FeedDTO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.util.EntityUtil;
 
+/**
+ * Spring-data {@link MongoFeed} entity.
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ * @see Spring-data mongodb reference: <a href="http://docs.spring.io/spring-data/mongodb/docs/current/reference/">http://docs.spring.io/spring-data/mongodb/docs/current/reference/</a>
+ */
 @Document(collection="feed")
 public class MongoFeed implements FeedDTO<MongoMediumType,MongoMedium,MongoCategory,MongoAuthor,MongoArticle> {
 	@Id
