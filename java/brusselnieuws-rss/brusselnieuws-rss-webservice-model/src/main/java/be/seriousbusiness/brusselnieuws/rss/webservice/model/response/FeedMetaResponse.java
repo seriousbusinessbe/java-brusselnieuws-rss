@@ -12,12 +12,24 @@ public class FeedMetaResponse {
 	private int requestId;
 	private String category;
 	
+	/**
+	 * Constructor mandatory for Jackson REST mapping.
+	 */
+	public FeedMetaResponse() {}
+
+	
+	/**
+	 * Creates a new {@link FeedMetaResponse} containing the required Dutch name, request id and category name.
+	 * @param dutchName the Dutch name
+	 * @param requestId the feed request id
+	 * @param category the category name
+	 */
 	public FeedMetaResponse(final String dutchName,final int requestId,final String category) {
 		setDutchName(dutchName);
 		setRequestId(requestId);
 		setCategory(category);
 	}
-	
+		
 	/**
 	 * Retrieves this feed name in Dutch.
 	 * @return Dutch feed name

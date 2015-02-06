@@ -10,9 +10,9 @@ import java.util.Map;
 import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import be.seriousbusiness.brusselnieuws.rss.reader.BrusselNieuwsRss;
@@ -113,8 +113,8 @@ public class FeedRestControllerImpl<MEDIUMTYPE extends MediumType,
 	}
 	
 	@Override
-	@RequestMapping(value="/feed", method=RequestMethod.GET)
-	public FeedResponse getFeed(final @RequestParam(value="id", defaultValue="0") int id) {
+	@RequestMapping(value="/feed/{id}", method=RequestMethod.GET)
+	public FeedResponse getFeed(final @PathVariable(value="id") int id) {
 		final FeedMetaEnum feedMetaEnum=FeedMetaEnum.find(id);
 		return feedMetaEnum==null ? new FeedResponse() : mapper.map(getFeed(feedMetaEnum),FeedResponse.class);
 	}
@@ -122,13 +122,12 @@ public class FeedRestControllerImpl<MEDIUMTYPE extends MediumType,
 	@Override
 	@RequestMapping(value="/feedlist", method=RequestMethod.GET)
 	public FeedMetaListResponse getFeedList() {
-		final FeedMetaListResponse feedMetaListResponse=new FeedMetaListResponse();
 		final List<FeedMetaResponse> feedMetaResponses=new ArrayList<FeedMetaResponse>();
 		for(final FeedMetaEnum feedMetaEnum : FeedMetaEnum.values()) {
 			feedMetaResponses.add(new FeedMetaResponse(feedMetaEnum.getDutchName(),feedMetaEnum.getRequestId(),feedMetaEnum.getCategory().name()));
 		}		
 		Collections.sort(feedMetaResponses,FEEDMETARESPONSE_COMPARATOR);
-		feedMetaListResponse.setFeedMetaResponses(feedMetaResponses);
+		final FeedMetaListResponse feedMetaListResponse=new FeedMetaListResponse(feedMetaResponses);		
 		return feedMetaListResponse;
 	}
 	

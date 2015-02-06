@@ -38,7 +38,7 @@ public class FeedManagerImpl implements FeedManager<MediumTypeImpl,MediumImpl,Ca
 	public FeedImpl findByLink(final URL url) {
 		final FeedDTOImpl feedDTOImpl=feedDAO.findByLink(url.toString());
 		if(feedDTOImpl!=null) {
-			return mapper.map(feedDTOImpl, FeedImpl.class);
+			return mapper.map(feedDTOImpl,FeedImpl.class);
 		}
 		return null;
 	}

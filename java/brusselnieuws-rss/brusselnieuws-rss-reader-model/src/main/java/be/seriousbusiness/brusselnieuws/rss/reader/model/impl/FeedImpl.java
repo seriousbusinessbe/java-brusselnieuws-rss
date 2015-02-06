@@ -24,7 +24,7 @@ public class FeedImpl extends AbstractIdImpl<BigInteger> implements Feed<MediumT
 	private String description;
 	private Collection<ArticleImpl> articles=new ArrayList<ArticleImpl>();
 	private Set<FeedListener> feedListeners=new HashSet<FeedListener>();
-	private static final Comparator<Article<?,?,?,?>> articleComparator=new ArticlePublicationDateComparator();
+	private static final Comparator<Article<?,?,?,?>> ARTICLE_COMPARATOR=new ArticlePublicationDateComparator();
 	
 	/**
 	 * Constructor solely used for {@link Mapper} functionality.
@@ -149,7 +149,7 @@ public class FeedImpl extends AbstractIdImpl<BigInteger> implements Feed<MediumT
 	@Override
 	public Collection<ArticleImpl> getArticles() {
 		final List<ArticleImpl> articles=new ArrayList<ArticleImpl>(this.articles);
-		Collections.sort(articles,articleComparator);
+		Collections.sort(articles,ARTICLE_COMPARATOR);
 		return articles;
 	}
 
@@ -164,8 +164,8 @@ public class FeedImpl extends AbstractIdImpl<BigInteger> implements Feed<MediumT
 	
 	@Override
 	public void add(final ArticleImpl article) {
-		if(article!=null && !this.articles.contains(article)){
-			this.articles.add(article);
+		if(article!=null && !articles.contains(article)){
+			articles.add(article);
 			notifyFeedListeners(article);
 		}
 	}
@@ -183,7 +183,7 @@ public class FeedImpl extends AbstractIdImpl<BigInteger> implements Feed<MediumT
 				articles.add(article);
 			}
 		}
-		Collections.sort(articles,articleComparator);
+		Collections.sort(articles,ARTICLE_COMPARATOR);
 		return articles;
 	}
 
@@ -195,7 +195,7 @@ public class FeedImpl extends AbstractIdImpl<BigInteger> implements Feed<MediumT
 				articles.add(article);
 			}
 		}
-		Collections.sort(articles,articleComparator);
+		Collections.sort(articles,ARTICLE_COMPARATOR);
 		return articles;
 	}
 
@@ -207,7 +207,7 @@ public class FeedImpl extends AbstractIdImpl<BigInteger> implements Feed<MediumT
 				articles.add(article);
 			}
 		}
-		Collections.sort(articles,articleComparator);
+		Collections.sort(articles,ARTICLE_COMPARATOR);
 		return articles;
 	}
 	

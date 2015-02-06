@@ -12,6 +12,11 @@ public class MediumResponse {
 	private String link;
 	private String type;
 	
+	/**
+	 * Constructor solely used for {@link Mapper} functionality.
+	 */
+	public MediumResponse() {}
+	
 	public long getSize() {
 		return size;
 	}

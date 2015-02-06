@@ -9,6 +9,11 @@ package be.seriousbusiness.brusselnieuws.rss.webservice.model.response;
  */
 public class AuthorResponse extends AbstractIdResponse {
 	private String name;
+	
+	/**
+	 * Constructor solely used for {@link Mapper} functionality.
+	 */
+	public AuthorResponse() {}
 
 	public String getName() {
 		return name;

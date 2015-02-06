@@ -12,6 +12,19 @@ import java.util.Collection;
  */
 public class FeedMetaListResponse {
 	private Collection<FeedMetaResponse> feedMetaResponses=new ArrayList<FeedMetaResponse>();
+	
+	/**
+	 * Constructor mandatory for Jackson REST mapping.
+	 */
+	public FeedMetaListResponse() {}
+	
+	/**
+	 * Creates a new {@link FeedMetaListResponse} containing {@link FeedMetaResponse}(s).
+	 * @param feedMetaResponses a non <code>null</code> {@link Collection} of {@link FeedMetaResponse}(s)
+	 */
+	public FeedMetaListResponse(final Collection<FeedMetaResponse> feedMetaResponses) {
+		this.feedMetaResponses=feedMetaResponses;
+	}
 
 	/**
 	 * Retrieves a {@link Collection} of {@link FeedMetaResponse}(s).

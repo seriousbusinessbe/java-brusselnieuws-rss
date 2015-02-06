@@ -16,6 +16,11 @@ public class FeedResponse extends AbstractIdResponse {
 	private String description;
 	private Collection<ArticleResponse> articles;
 	
+	/**
+	 * Constructor solely used for {@link Mapper} functionality.
+	 */
+	public FeedResponse() {}
+	
 	public String getTitle() {
 		return title;
 	}

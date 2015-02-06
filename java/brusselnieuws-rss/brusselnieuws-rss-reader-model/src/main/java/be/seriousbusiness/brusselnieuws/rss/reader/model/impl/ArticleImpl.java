@@ -29,8 +29,8 @@ public class ArticleImpl extends AbstractIdImpl<BigInteger> implements Article<M
 	private boolean read=false;
 	private boolean archived=false;
 	private boolean favorite=false;
-	private static final Comparator<Author> authorComparator=new AuthorNameComparator(); 
-	private static final Comparator<Category> categoryComparator=new CategoryNameComparator();
+	private static final Comparator<Author> AUTHOR_COMPARATOR=new AuthorNameComparator(); 
+	private static final Comparator<Category> CATEGORY_COMPARATOR=new CategoryNameComparator();
 	
 	/**
 	 * Constructor solely used for {@link Mapper} functionality.
@@ -183,7 +183,7 @@ public class ArticleImpl extends AbstractIdImpl<BigInteger> implements Article<M
 	@Override
 	public Collection<AuthorImpl> getAuthors() {
 		final List<AuthorImpl> authors=new ArrayList<AuthorImpl>(this.authors);
-		Collections.sort(authors,authorComparator);
+		Collections.sort(authors,AUTHOR_COMPARATOR);
 		return authors;
 	}
 
@@ -216,7 +216,7 @@ public class ArticleImpl extends AbstractIdImpl<BigInteger> implements Article<M
 	@Override
 	public Collection<CategoryImpl> getCategories() {
 		final List<CategoryImpl> categories=new ArrayList<CategoryImpl>(this.categories);
-		Collections.sort(categories,categoryComparator);
+		Collections.sort(categories,CATEGORY_COMPARATOR);
 		return categories;
 	}
 

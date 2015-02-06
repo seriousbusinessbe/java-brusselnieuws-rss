@@ -1,685 +1,199 @@
-03/02/15 00:31:11 INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7f31797d: startup date [Tue Feb 03 00:31:11 CET 2015]; root of context hierarchy
-03/02/15 00:31:11 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-config.xml]
-03/02/15 00:31:11 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-config.xml]
-03/02/15 00:31:11 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-config.xml]
-03/02/15 00:31:11 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
-03/02/15 00:31:11 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-config.xml]
-03/02/15 00:31:11 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]
-03/02/15 00:31:11 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]]
-03/02/15 00:31:11 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]
-03/02/15 00:31:11 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]]
-03/02/15 00:31:11 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-datastore-mongodb-mongo.properties]
-03/02/15 00:31:11 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-reader.properties]
-03/02/15 00:31:12 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
-03/02/15 00:31:12 INFO  GlobalSettings - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties] for Dozer global property configuration
-03/02/15 00:31:12 INFO  GlobalSettings - Reading Dozer properties from URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties]
-03/02/15 00:31:12 INFO  DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
-03/02/15 00:31:12 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
-03/02/15 00:31:12 WARN  ClassPathXmlApplicationContext - Exception encountered during context initialization - cancelling refresh attempt
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongoMediumTypeRepository': Invocation of init method failed; nested exception is com.mongodb.MongoServerSelectionException: Unable to connect to any server that matches AnyServerSelector{}
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1566) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:743) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebservice.main(BrusselNieuwsRssWebservice.java:14) [classes/:na]
-Caused by: com.mongodb.MongoServerSelectionException: Unable to connect to any server that matches AnyServerSelector{}
-	at com.mongodb.BaseCluster.getServer(BaseCluster.java:80) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBTCPConnector.getServer(DBTCPConnector.java:666) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBTCPConnector.access$300(DBTCPConnector.java:42) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBTCPConnector$MyPort.getConnection(DBTCPConnector.java:511) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBTCPConnector$MyPort.get(DBTCPConnector.java:459) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBTCPConnector.authenticate(DBTCPConnector.java:636) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBApiLayer.doAuthenticate(DBApiLayer.java:195) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DB.authenticateCommandHelper(DB.java:763) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DB.authenticate(DB.java:719) ~[mongo-java-driver-2.12.1.jar:na]
-	at org.springframework.data.mongodb.core.MongoDbUtils.doGetDB(MongoDbUtils.java:123) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.MongoDbUtils.getDB(MongoDbUtils.java:81) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.getDb(SimpleMongoDbFactory.java:145) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.getDb(SimpleMongoDbFactory.java:134) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.createIndex(MongoPersistentEntityIndexCreator.java:135) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.checkForAndCreateIndexes(MongoPersistentEntityIndexCreator.java:129) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.checkForIndexes(MongoPersistentEntityIndexCreator.java:121) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.onApplicationEvent(MongoPersistentEntityIndexCreator.java:105) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.onApplicationEvent(MongoPersistentEntityIndexCreator.java:46) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:151) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:128) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:331) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.data.mapping.context.AbstractMappingContext.addPersistentEntity(AbstractMappingContext.java:307) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:181) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:141) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:67) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactory.getEntityInformation(MongoRepositoryFactory.java:141) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactory.getTargetRepository(MongoRepositoryFactory.java:83) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:158) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.initAndReturn(RepositoryFactoryBeanSupport.java:224) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:210) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactoryBean.afterPropertiesSet(MongoRepositoryFactoryBean.java:108) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1625) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1562) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	... 12 common frames omitted
-03/02/15 00:35:38 INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@75bee6fc: startup date [Tue Feb 03 00:35:38 CET 2015]; root of context hierarchy
-03/02/15 00:35:38 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-config.xml]
-03/02/15 00:35:38 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-config.xml]
-03/02/15 00:35:38 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-config.xml]
-03/02/15 00:35:38 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
-03/02/15 00:35:38 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-config.xml]
-03/02/15 00:35:38 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]
-03/02/15 00:35:38 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]]
-03/02/15 00:35:38 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]
-03/02/15 00:35:38 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]]
-03/02/15 00:35:38 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-datastore-mongodb-mongo.properties]
-03/02/15 00:35:38 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-reader.properties]
-03/02/15 00:35:39 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
-03/02/15 00:35:39 INFO  GlobalSettings - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties] for Dozer global property configuration
-03/02/15 00:35:39 INFO  GlobalSettings - Reading Dozer properties from URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties]
-03/02/15 00:35:39 INFO  DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
-03/02/15 00:35:39 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
-03/02/15 00:35:39 WARN  ClassPathXmlApplicationContext - Exception encountered during context initialization - cancelling refresh attempt
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongoMediumRepository': Invocation of init method failed; nested exception is com.mongodb.MongoServerSelectionException: Unable to connect to any server that matches AnyServerSelector{}
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1566) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:743) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebservice.main(BrusselNieuwsRssWebservice.java:14) [classes/:na]
-Caused by: com.mongodb.MongoServerSelectionException: Unable to connect to any server that matches AnyServerSelector{}
-	at com.mongodb.BaseCluster.getServer(BaseCluster.java:80) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBTCPConnector.getServer(DBTCPConnector.java:666) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBTCPConnector.access$300(DBTCPConnector.java:42) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBTCPConnector$MyPort.getConnection(DBTCPConnector.java:511) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBTCPConnector$MyPort.get(DBTCPConnector.java:459) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBTCPConnector.authenticate(DBTCPConnector.java:636) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBApiLayer.doAuthenticate(DBApiLayer.java:195) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DB.authenticateCommandHelper(DB.java:763) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DB.authenticate(DB.java:719) ~[mongo-java-driver-2.12.1.jar:na]
-	at org.springframework.data.mongodb.core.MongoDbUtils.doGetDB(MongoDbUtils.java:123) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.MongoDbUtils.getDB(MongoDbUtils.java:81) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.getDb(SimpleMongoDbFactory.java:145) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.getDb(SimpleMongoDbFactory.java:134) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.createIndex(MongoPersistentEntityIndexCreator.java:135) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.checkForAndCreateIndexes(MongoPersistentEntityIndexCreator.java:129) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.checkForIndexes(MongoPersistentEntityIndexCreator.java:121) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.onApplicationEvent(MongoPersistentEntityIndexCreator.java:105) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.onApplicationEvent(MongoPersistentEntityIndexCreator.java:46) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:151) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:128) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:331) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.data.mapping.context.AbstractMappingContext.addPersistentEntity(AbstractMappingContext.java:307) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.createAndRegisterProperty(AbstractMappingContext.java:470) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.doWith(AbstractMappingContext.java:427) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:607) ~[spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.data.mapping.context.AbstractMappingContext.addPersistentEntity(AbstractMappingContext.java:295) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:181) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:141) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:67) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactory.getEntityInformation(MongoRepositoryFactory.java:141) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactory.getTargetRepository(MongoRepositoryFactory.java:83) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:158) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.initAndReturn(RepositoryFactoryBeanSupport.java:224) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:210) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactoryBean.afterPropertiesSet(MongoRepositoryFactoryBean.java:108) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1625) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1562) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	... 12 common frames omitted
-03/02/15 00:47:55 INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@75bee6fc: startup date [Tue Feb 03 00:47:55 CET 2015]; root of context hierarchy
-03/02/15 00:47:55 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-config.xml]
-03/02/15 00:47:55 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-config.xml]
-03/02/15 00:47:55 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-config.xml]
-03/02/15 00:47:55 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
-03/02/15 00:47:55 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-config.xml]
-03/02/15 00:47:55 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]
-03/02/15 00:47:55 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]]
-03/02/15 00:47:55 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]
-03/02/15 00:47:55 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]]
-03/02/15 00:47:56 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-datastore-mongodb-mongo.properties]
-03/02/15 00:47:56 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-reader.properties]
-03/02/15 00:47:56 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
-03/02/15 00:47:56 INFO  GlobalSettings - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties] for Dozer global property configuration
-03/02/15 00:47:56 INFO  GlobalSettings - Reading Dozer properties from URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties]
-03/02/15 00:47:56 INFO  DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
-03/02/15 00:47:56 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
-03/02/15 00:47:57 WARN  ClassPathXmlApplicationContext - Exception encountered during context initialization - cancelling refresh attempt
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongoMediumRepository': Invocation of init method failed; nested exception is com.mongodb.MongoTimeoutException: Timed out while waiting for a server that matches AnyServerSelector{} after 999 ms
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1566) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:743) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebservice.main(BrusselNieuwsRssWebservice.java:14) [classes/:na]
-Caused by: com.mongodb.MongoTimeoutException: Timed out while waiting for a server that matches AnyServerSelector{} after 999 ms
-	at com.mongodb.BaseCluster.getServer(BaseCluster.java:89) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBTCPConnector.getServer(DBTCPConnector.java:666) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBTCPConnector.access$300(DBTCPConnector.java:42) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBTCPConnector$MyPort.getConnection(DBTCPConnector.java:511) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBTCPConnector$MyPort.get(DBTCPConnector.java:459) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBTCPConnector.authenticate(DBTCPConnector.java:636) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBApiLayer.doAuthenticate(DBApiLayer.java:195) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DB.authenticateCommandHelper(DB.java:763) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DB.authenticate(DB.java:719) ~[mongo-java-driver-2.12.1.jar:na]
-	at org.springframework.data.mongodb.core.MongoDbUtils.doGetDB(MongoDbUtils.java:123) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.MongoDbUtils.getDB(MongoDbUtils.java:81) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.getDb(SimpleMongoDbFactory.java:145) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.getDb(SimpleMongoDbFactory.java:134) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.createIndex(MongoPersistentEntityIndexCreator.java:135) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.checkForAndCreateIndexes(MongoPersistentEntityIndexCreator.java:129) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.checkForIndexes(MongoPersistentEntityIndexCreator.java:121) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.onApplicationEvent(MongoPersistentEntityIndexCreator.java:105) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.onApplicationEvent(MongoPersistentEntityIndexCreator.java:46) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:151) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:128) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:331) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.data.mapping.context.AbstractMappingContext.addPersistentEntity(AbstractMappingContext.java:307) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.createAndRegisterProperty(AbstractMappingContext.java:470) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.doWith(AbstractMappingContext.java:427) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:607) ~[spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.data.mapping.context.AbstractMappingContext.addPersistentEntity(AbstractMappingContext.java:295) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:181) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:141) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:67) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactory.getEntityInformation(MongoRepositoryFactory.java:141) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactory.getTargetRepository(MongoRepositoryFactory.java:83) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:158) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.initAndReturn(RepositoryFactoryBeanSupport.java:224) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:210) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactoryBean.afterPropertiesSet(MongoRepositoryFactoryBean.java:108) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1625) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1562) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	... 12 common frames omitted
-03/02/15 00:50:58 INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593e6421: startup date [Tue Feb 03 00:50:58 CET 2015]; root of context hierarchy
-03/02/15 00:50:58 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-config.xml]
-03/02/15 00:50:58 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-config.xml]
-03/02/15 00:50:58 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-config.xml]
-03/02/15 00:50:58 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
-03/02/15 00:50:58 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-config.xml]
-03/02/15 00:50:58 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]
-03/02/15 00:50:58 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]]
-03/02/15 00:50:58 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]
-03/02/15 00:50:58 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]]
-03/02/15 00:50:59 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-datastore-mongodb-mongo.properties]
-03/02/15 00:50:59 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-reader.properties]
-03/02/15 00:50:59 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
-03/02/15 00:50:59 INFO  GlobalSettings - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties] for Dozer global property configuration
-03/02/15 00:50:59 INFO  GlobalSettings - Reading Dozer properties from URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties]
-03/02/15 00:50:59 INFO  DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
-03/02/15 00:50:59 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
-03/02/15 00:51:00 WARN  ClassPathXmlApplicationContext - Exception encountered during context initialization - cancelling refresh attempt
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongoFeedRepository': Invocation of init method failed; nested exception is com.mongodb.MongoTimeoutException: Timed out while waiting for a server that matches AnyServerSelector{} after 999 ms
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1566) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:743) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebservice.main(BrusselNieuwsRssWebservice.java:14) [classes/:na]
-Caused by: com.mongodb.MongoTimeoutException: Timed out while waiting for a server that matches AnyServerSelector{} after 999 ms
-	at com.mongodb.BaseCluster.getServer(BaseCluster.java:89) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBTCPConnector.getServer(DBTCPConnector.java:666) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBTCPConnector.access$300(DBTCPConnector.java:42) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBTCPConnector$MyPort.getConnection(DBTCPConnector.java:511) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBTCPConnector$MyPort.get(DBTCPConnector.java:459) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBTCPConnector.authenticate(DBTCPConnector.java:636) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBApiLayer.doAuthenticate(DBApiLayer.java:195) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DB.authenticateCommandHelper(DB.java:763) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DB.authenticate(DB.java:719) ~[mongo-java-driver-2.12.1.jar:na]
-	at org.springframework.data.mongodb.core.MongoDbUtils.doGetDB(MongoDbUtils.java:123) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.MongoDbUtils.getDB(MongoDbUtils.java:81) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.getDb(SimpleMongoDbFactory.java:145) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.getDb(SimpleMongoDbFactory.java:134) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.createIndex(MongoPersistentEntityIndexCreator.java:135) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.checkForAndCreateIndexes(MongoPersistentEntityIndexCreator.java:129) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.checkForIndexes(MongoPersistentEntityIndexCreator.java:121) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.onApplicationEvent(MongoPersistentEntityIndexCreator.java:105) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.onApplicationEvent(MongoPersistentEntityIndexCreator.java:46) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:151) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:128) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:331) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.data.mapping.context.AbstractMappingContext.addPersistentEntity(AbstractMappingContext.java:307) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.createAndRegisterProperty(AbstractMappingContext.java:470) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.doWith(AbstractMappingContext.java:427) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:607) ~[spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.data.mapping.context.AbstractMappingContext.addPersistentEntity(AbstractMappingContext.java:295) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.createAndRegisterProperty(AbstractMappingContext.java:470) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.doWith(AbstractMappingContext.java:427) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:607) ~[spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.data.mapping.context.AbstractMappingContext.addPersistentEntity(AbstractMappingContext.java:295) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.createAndRegisterProperty(AbstractMappingContext.java:470) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.doWith(AbstractMappingContext.java:427) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:607) ~[spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.data.mapping.context.AbstractMappingContext.addPersistentEntity(AbstractMappingContext.java:295) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:181) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:141) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:67) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactory.getEntityInformation(MongoRepositoryFactory.java:141) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactory.getTargetRepository(MongoRepositoryFactory.java:83) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:158) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.initAndReturn(RepositoryFactoryBeanSupport.java:224) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:210) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactoryBean.afterPropertiesSet(MongoRepositoryFactoryBean.java:108) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1625) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1562) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	... 12 common frames omitted
-03/02/15 00:52:37 INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@27069691: startup date [Tue Feb 03 00:52:37 CET 2015]; root of context hierarchy
-03/02/15 00:52:37 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-config.xml]
-03/02/15 00:52:37 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-config.xml]
-03/02/15 00:52:38 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-config.xml]
-03/02/15 00:52:38 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
-03/02/15 00:52:38 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-config.xml]
-03/02/15 00:52:38 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]
-03/02/15 00:52:38 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]]
-03/02/15 00:52:38 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]
-03/02/15 00:52:38 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]]
-03/02/15 00:52:38 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-datastore-mongodb-mongo.properties]
-03/02/15 00:52:38 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-reader.properties]
-03/02/15 00:52:38 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
-03/02/15 00:52:38 INFO  GlobalSettings - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties] for Dozer global property configuration
-03/02/15 00:52:38 INFO  GlobalSettings - Reading Dozer properties from URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties]
-03/02/15 00:52:38 INFO  DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
-03/02/15 00:52:38 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
-03/02/15 00:52:38 WARN  ClassPathXmlApplicationContext - Exception encountered during context initialization - cancelling refresh attempt
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongoMediumTypeRepository': Invocation of init method failed; nested exception is org.springframework.data.mongodb.CannotGetMongoDbConnectionException: Failed to authenticate to database [test_brusselnieuws], username = [test_admin], password = [t*****************d]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1566) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:743) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebservice.main(BrusselNieuwsRssWebservice.java:14) [classes/:na]
-Caused by: org.springframework.data.mongodb.CannotGetMongoDbConnectionException: Failed to authenticate to database [test_brusselnieuws], username = [test_admin], password = [t*****************d]
-	at org.springframework.data.mongodb.core.MongoDbUtils.doGetDB(MongoDbUtils.java:124) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.MongoDbUtils.getDB(MongoDbUtils.java:81) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.getDb(SimpleMongoDbFactory.java:145) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.getDb(SimpleMongoDbFactory.java:134) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.createIndex(MongoPersistentEntityIndexCreator.java:135) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.checkForAndCreateIndexes(MongoPersistentEntityIndexCreator.java:129) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.checkForIndexes(MongoPersistentEntityIndexCreator.java:121) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.onApplicationEvent(MongoPersistentEntityIndexCreator.java:105) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.onApplicationEvent(MongoPersistentEntityIndexCreator.java:46) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:151) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:128) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:331) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.data.mapping.context.AbstractMappingContext.addPersistentEntity(AbstractMappingContext.java:307) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:181) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:141) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:67) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactory.getEntityInformation(MongoRepositoryFactory.java:141) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactory.getTargetRepository(MongoRepositoryFactory.java:83) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:158) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.initAndReturn(RepositoryFactoryBeanSupport.java:224) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:210) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactoryBean.afterPropertiesSet(MongoRepositoryFactoryBean.java:108) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1625) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1562) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	... 12 common frames omitted
-03/02/15 01:23:53 INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@91f3ec8: startup date [Tue Feb 03 01:23:53 CET 2015]; root of context hierarchy
-03/02/15 01:23:53 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-config.xml]
-03/02/15 01:23:53 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-config.xml]
-03/02/15 01:23:53 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-config.xml]
-03/02/15 01:23:53 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
-03/02/15 01:23:53 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-config.xml]
-03/02/15 01:23:53 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]
-03/02/15 01:23:53 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]]
-03/02/15 01:23:53 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]
-03/02/15 01:23:54 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]]
-03/02/15 01:23:54 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-datastore-mongodb-mongo.properties]
-03/02/15 01:23:54 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-reader.properties]
-03/02/15 01:23:54 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
-03/02/15 01:23:54 INFO  GlobalSettings - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties] for Dozer global property configuration
-03/02/15 01:23:54 INFO  GlobalSettings - Reading Dozer properties from URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties]
-03/02/15 01:23:54 INFO  DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
-03/02/15 01:23:54 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
-03/02/15 01:23:54 WARN  ClassPathXmlApplicationContext - Exception encountered during context initialization - cancelling refresh attempt
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongoMediumTypeRepository': Invocation of init method failed; nested exception is org.springframework.data.mongodb.CannotGetMongoDbConnectionException: Failed to authenticate to database [test_brusselnieuws], username = [test_admin], password = [t*****************d]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1566) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:743) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebservice.main(BrusselNieuwsRssWebservice.java:14) [classes/:na]
-Caused by: org.springframework.data.mongodb.CannotGetMongoDbConnectionException: Failed to authenticate to database [test_brusselnieuws], username = [test_admin], password = [t*****************d]
-	at org.springframework.data.mongodb.core.MongoDbUtils.doGetDB(MongoDbUtils.java:124) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.MongoDbUtils.getDB(MongoDbUtils.java:81) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.getDb(SimpleMongoDbFactory.java:145) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.getDb(SimpleMongoDbFactory.java:134) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.createIndex(MongoPersistentEntityIndexCreator.java:135) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.checkForAndCreateIndexes(MongoPersistentEntityIndexCreator.java:129) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.checkForIndexes(MongoPersistentEntityIndexCreator.java:121) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.onApplicationEvent(MongoPersistentEntityIndexCreator.java:105) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.onApplicationEvent(MongoPersistentEntityIndexCreator.java:46) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:151) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:128) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:331) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.data.mapping.context.AbstractMappingContext.addPersistentEntity(AbstractMappingContext.java:307) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:181) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:141) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:67) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactory.getEntityInformation(MongoRepositoryFactory.java:141) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactory.getTargetRepository(MongoRepositoryFactory.java:83) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:158) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.initAndReturn(RepositoryFactoryBeanSupport.java:224) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:210) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactoryBean.afterPropertiesSet(MongoRepositoryFactoryBean.java:108) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1625) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1562) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	... 12 common frames omitted
-03/02/15 01:36:31 INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593e6421: startup date [Tue Feb 03 01:36:31 CET 2015]; root of context hierarchy
-03/02/15 01:36:31 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-config.xml]
-03/02/15 01:36:31 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-config.xml]
-03/02/15 01:36:31 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-config.xml]
-03/02/15 01:36:31 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
-03/02/15 01:36:31 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-config.xml]
-03/02/15 01:36:31 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]
-03/02/15 01:36:31 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]]
-03/02/15 01:36:32 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]
-03/02/15 01:36:32 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]]
-03/02/15 01:36:32 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-datastore-mongodb-mongo.properties]
-03/02/15 01:36:32 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-reader.properties]
-03/02/15 01:36:32 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
-03/02/15 01:36:32 INFO  GlobalSettings - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties] for Dozer global property configuration
-03/02/15 01:36:32 INFO  GlobalSettings - Reading Dozer properties from URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties]
-03/02/15 01:36:32 INFO  DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
-03/02/15 01:36:32 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
-03/02/15 01:36:32 WARN  ClassPathXmlApplicationContext - Exception encountered during context initialization - cancelling refresh attempt
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongoFeedRepository': Invocation of init method failed; nested exception is com.mongodb.MongoServerSelectionException: Unable to connect to any server that matches AnyServerSelector{}
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1566) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:743) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebservice.main(BrusselNieuwsRssWebservice.java:14) [classes/:na]
-Caused by: com.mongodb.MongoServerSelectionException: Unable to connect to any server that matches AnyServerSelector{}
-	at com.mongodb.BaseCluster.getServer(BaseCluster.java:80) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBTCPConnector.getServer(DBTCPConnector.java:666) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBTCPConnector.access$300(DBTCPConnector.java:42) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBTCPConnector$MyPort.getConnection(DBTCPConnector.java:511) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBTCPConnector$MyPort.get(DBTCPConnector.java:459) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBTCPConnector.authenticate(DBTCPConnector.java:636) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DBApiLayer.doAuthenticate(DBApiLayer.java:195) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DB.authenticateCommandHelper(DB.java:763) ~[mongo-java-driver-2.12.1.jar:na]
-	at com.mongodb.DB.authenticate(DB.java:719) ~[mongo-java-driver-2.12.1.jar:na]
-	at org.springframework.data.mongodb.core.MongoDbUtils.doGetDB(MongoDbUtils.java:123) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.MongoDbUtils.getDB(MongoDbUtils.java:81) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.getDb(SimpleMongoDbFactory.java:145) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.getDb(SimpleMongoDbFactory.java:134) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.createIndex(MongoPersistentEntityIndexCreator.java:135) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.checkForAndCreateIndexes(MongoPersistentEntityIndexCreator.java:129) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.checkForIndexes(MongoPersistentEntityIndexCreator.java:121) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.onApplicationEvent(MongoPersistentEntityIndexCreator.java:105) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.onApplicationEvent(MongoPersistentEntityIndexCreator.java:46) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:151) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:128) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:331) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.data.mapping.context.AbstractMappingContext.addPersistentEntity(AbstractMappingContext.java:307) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.createAndRegisterProperty(AbstractMappingContext.java:470) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.doWith(AbstractMappingContext.java:427) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:607) ~[spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.data.mapping.context.AbstractMappingContext.addPersistentEntity(AbstractMappingContext.java:295) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.createAndRegisterProperty(AbstractMappingContext.java:470) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.doWith(AbstractMappingContext.java:427) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:607) ~[spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.data.mapping.context.AbstractMappingContext.addPersistentEntity(AbstractMappingContext.java:295) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.createAndRegisterProperty(AbstractMappingContext.java:470) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.doWith(AbstractMappingContext.java:427) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:607) ~[spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.data.mapping.context.AbstractMappingContext.addPersistentEntity(AbstractMappingContext.java:295) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:181) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:141) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:67) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactory.getEntityInformation(MongoRepositoryFactory.java:141) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactory.getTargetRepository(MongoRepositoryFactory.java:83) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:158) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.initAndReturn(RepositoryFactoryBeanSupport.java:224) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:210) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactoryBean.afterPropertiesSet(MongoRepositoryFactoryBean.java:108) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1625) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1562) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	... 12 common frames omitted
-03/02/15 02:17:59 INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593e6421: startup date [Tue Feb 03 02:17:59 CET 2015]; root of context hierarchy
-03/02/15 02:17:59 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-config.xml]
-03/02/15 02:17:59 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-config.xml]
-03/02/15 02:17:59 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-config.xml]
-03/02/15 02:17:59 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
-03/02/15 02:17:59 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-config.xml]
-03/02/15 02:17:59 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]
-03/02/15 02:17:59 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]]
-03/02/15 02:17:59 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]
-03/02/15 02:17:59 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]]
-03/02/15 02:17:59 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-datastore-mongodb-mongo.properties]
-03/02/15 02:17:59 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-reader.properties]
-03/02/15 02:18:00 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
-03/02/15 02:18:00 INFO  GlobalSettings - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties] for Dozer global property configuration
-03/02/15 02:18:00 INFO  GlobalSettings - Reading Dozer properties from URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties]
-03/02/15 02:18:00 INFO  DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
-03/02/15 02:18:00 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
-03/02/15 02:18:00 WARN  ClassPathXmlApplicationContext - Exception encountered during context initialization - cancelling refresh attempt
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongoFeedRepository': Invocation of init method failed; nested exception is org.springframework.data.mongodb.CannotGetMongoDbConnectionException: Failed to authenticate to database [test_brusselnieuws], username = [test_admin], password = [t*****************d]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1566) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:743) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebservice.main(BrusselNieuwsRssWebservice.java:14) [classes/:na]
-Caused by: org.springframework.data.mongodb.CannotGetMongoDbConnectionException: Failed to authenticate to database [test_brusselnieuws], username = [test_admin], password = [t*****************d]
-	at org.springframework.data.mongodb.core.MongoDbUtils.doGetDB(MongoDbUtils.java:124) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.MongoDbUtils.getDB(MongoDbUtils.java:81) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.getDb(SimpleMongoDbFactory.java:145) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.getDb(SimpleMongoDbFactory.java:134) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.createIndex(MongoPersistentEntityIndexCreator.java:135) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.checkForAndCreateIndexes(MongoPersistentEntityIndexCreator.java:129) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.checkForIndexes(MongoPersistentEntityIndexCreator.java:121) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.onApplicationEvent(MongoPersistentEntityIndexCreator.java:105) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.onApplicationEvent(MongoPersistentEntityIndexCreator.java:46) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:151) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:128) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:331) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.data.mapping.context.AbstractMappingContext.addPersistentEntity(AbstractMappingContext.java:307) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.createAndRegisterProperty(AbstractMappingContext.java:470) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.doWith(AbstractMappingContext.java:427) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:607) ~[spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.data.mapping.context.AbstractMappingContext.addPersistentEntity(AbstractMappingContext.java:295) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.createAndRegisterProperty(AbstractMappingContext.java:470) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.doWith(AbstractMappingContext.java:427) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:607) ~[spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.data.mapping.context.AbstractMappingContext.addPersistentEntity(AbstractMappingContext.java:295) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.createAndRegisterProperty(AbstractMappingContext.java:470) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.doWith(AbstractMappingContext.java:427) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:607) ~[spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.data.mapping.context.AbstractMappingContext.addPersistentEntity(AbstractMappingContext.java:295) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:181) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:141) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:67) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactory.getEntityInformation(MongoRepositoryFactory.java:141) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactory.getTargetRepository(MongoRepositoryFactory.java:83) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:158) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.initAndReturn(RepositoryFactoryBeanSupport.java:224) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:210) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactoryBean.afterPropertiesSet(MongoRepositoryFactoryBean.java:108) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1625) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1562) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	... 12 common frames omitted
-03/02/15 02:28:09 INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593e6421: startup date [Tue Feb 03 02:28:09 CET 2015]; root of context hierarchy
-03/02/15 02:28:09 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-config.xml]
-03/02/15 02:28:09 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-config.xml]
-03/02/15 02:28:09 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-config.xml]
-03/02/15 02:28:09 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
-03/02/15 02:28:09 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-config.xml]
-03/02/15 02:28:09 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]
-03/02/15 02:28:09 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]]
-03/02/15 02:28:09 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]
-03/02/15 02:28:09 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]]
-03/02/15 02:28:10 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-datastore-mongodb-mongo.properties]
-03/02/15 02:28:10 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-reader.properties]
-03/02/15 02:28:10 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
-03/02/15 02:28:10 INFO  GlobalSettings - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties] for Dozer global property configuration
-03/02/15 02:28:10 INFO  GlobalSettings - Reading Dozer properties from URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties]
-03/02/15 02:28:10 INFO  DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
-03/02/15 02:28:10 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
-03/02/15 02:28:10 WARN  ClassPathXmlApplicationContext - Exception encountered during context initialization - cancelling refresh attempt
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongoFeedRepository': Invocation of init method failed; nested exception is org.springframework.data.mongodb.CannotGetMongoDbConnectionException: Failed to authenticate to database [test_brusselnieuws], username = [test_admin], password = [t*****************d]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1566) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:743) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebservice.main(BrusselNieuwsRssWebservice.java:14) [classes/:na]
-Caused by: org.springframework.data.mongodb.CannotGetMongoDbConnectionException: Failed to authenticate to database [test_brusselnieuws], username = [test_admin], password = [t*****************d]
-	at org.springframework.data.mongodb.core.MongoDbUtils.doGetDB(MongoDbUtils.java:124) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.MongoDbUtils.getDB(MongoDbUtils.java:81) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.getDb(SimpleMongoDbFactory.java:145) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.getDb(SimpleMongoDbFactory.java:134) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.createIndex(MongoPersistentEntityIndexCreator.java:135) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.checkForAndCreateIndexes(MongoPersistentEntityIndexCreator.java:129) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.checkForIndexes(MongoPersistentEntityIndexCreator.java:121) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.onApplicationEvent(MongoPersistentEntityIndexCreator.java:105) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.onApplicationEvent(MongoPersistentEntityIndexCreator.java:46) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:151) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:128) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:331) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.data.mapping.context.AbstractMappingContext.addPersistentEntity(AbstractMappingContext.java:307) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.createAndRegisterProperty(AbstractMappingContext.java:470) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.doWith(AbstractMappingContext.java:427) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:607) ~[spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.data.mapping.context.AbstractMappingContext.addPersistentEntity(AbstractMappingContext.java:295) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.createAndRegisterProperty(AbstractMappingContext.java:470) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.doWith(AbstractMappingContext.java:427) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:607) ~[spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.data.mapping.context.AbstractMappingContext.addPersistentEntity(AbstractMappingContext.java:295) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.createAndRegisterProperty(AbstractMappingContext.java:470) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.doWith(AbstractMappingContext.java:427) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:607) ~[spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.data.mapping.context.AbstractMappingContext.addPersistentEntity(AbstractMappingContext.java:295) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:181) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:141) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:67) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactory.getEntityInformation(MongoRepositoryFactory.java:141) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactory.getTargetRepository(MongoRepositoryFactory.java:83) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:158) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.initAndReturn(RepositoryFactoryBeanSupport.java:224) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:210) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactoryBean.afterPropertiesSet(MongoRepositoryFactoryBean.java:108) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1625) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1562) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	... 12 common frames omitted
-03/02/15 02:33:07 INFO  ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@593aa24f: startup date [Tue Feb 03 02:33:07 CET 2015]; root of context hierarchy
-03/02/15 02:33:07 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-config.xml]
-03/02/15 02:33:08 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-config.xml]
-03/02/15 02:33:08 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-config.xml]
-03/02/15 02:33:08 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
-03/02/15 02:33:08 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-config.xml]
-03/02/15 02:33:08 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]
-03/02/15 02:33:08 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]]
-03/02/15 02:33:08 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]
-03/02/15 02:33:08 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]]
-03/02/15 02:33:08 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-datastore-mongodb-mongo.properties]
-03/02/15 02:33:08 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-reader.properties]
-03/02/15 02:33:08 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
-03/02/15 02:33:08 INFO  GlobalSettings - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties] for Dozer global property configuration
-03/02/15 02:33:08 INFO  GlobalSettings - Reading Dozer properties from URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties]
-03/02/15 02:33:08 INFO  DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
-03/02/15 02:33:08 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
-03/02/15 02:33:09 WARN  ClassPathXmlApplicationContext - Exception encountered during context initialization - cancelling refresh attempt
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'mongoMediumRepository': Invocation of init method failed; nested exception is org.springframework.data.mongodb.CannotGetMongoDbConnectionException: Failed to authenticate to database [test_brusselnieuws], username = [test_admin], password = [t*****************d]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1566) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:743) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:83) [spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at be.seriousbusiness.brusselnieuws.rss.webservice.BrusselNieuwsRssWebservice.main(BrusselNieuwsRssWebservice.java:14) [classes/:na]
-Caused by: org.springframework.data.mongodb.CannotGetMongoDbConnectionException: Failed to authenticate to database [test_brusselnieuws], username = [test_admin], password = [t*****************d]
-	at org.springframework.data.mongodb.core.MongoDbUtils.doGetDB(MongoDbUtils.java:124) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.MongoDbUtils.getDB(MongoDbUtils.java:81) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.getDb(SimpleMongoDbFactory.java:145) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.SimpleMongoDbFactory.getDb(SimpleMongoDbFactory.java:134) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.createIndex(MongoPersistentEntityIndexCreator.java:135) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.checkForAndCreateIndexes(MongoPersistentEntityIndexCreator.java:129) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.checkForIndexes(MongoPersistentEntityIndexCreator.java:121) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.onApplicationEvent(MongoPersistentEntityIndexCreator.java:105) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.core.index.MongoPersistentEntityIndexCreator.onApplicationEvent(MongoPersistentEntityIndexCreator.java:46) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:151) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:128) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:331) ~[spring-context-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.data.mapping.context.AbstractMappingContext.addPersistentEntity(AbstractMappingContext.java:307) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.createAndRegisterProperty(AbstractMappingContext.java:470) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext$PersistentPropertyCreator.doWith(AbstractMappingContext.java:427) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.util.ReflectionUtils.doWithFields(ReflectionUtils.java:607) ~[spring-core-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.data.mapping.context.AbstractMappingContext.addPersistentEntity(AbstractMappingContext.java:295) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:181) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:141) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mapping.context.AbstractMappingContext.getPersistentEntity(AbstractMappingContext.java:67) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactory.getEntityInformation(MongoRepositoryFactory.java:141) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactory.getTargetRepository(MongoRepositoryFactory.java:83) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:158) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.initAndReturn(RepositoryFactoryBeanSupport.java:224) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:210) ~[spring-data-commons-1.8.4.RELEASE.jar:na]
-	at org.springframework.data.mongodb.repository.support.MongoRepositoryFactoryBean.afterPropertiesSet(MongoRepositoryFactoryBean.java:108) ~[spring-data-mongodb-1.5.4.RELEASE.jar:na]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1625) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1562) ~[spring-beans-4.1.4.RELEASE.jar:4.1.4.RELEASE]
-	... 12 common frames omitted
+06/02/15 00:05:18 INFO  BrusselNieuwsRssWebservice - Starting BrusselNieuwsRssWebservice on Stefans-MacBook-Pro.local with PID 4163 (/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes started by stefanborghys in /Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice)
+06/02/15 00:05:18 INFO  AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1c313f4e: startup date [Fri Feb 06 00:05:18 CET 2015]; root of context hierarchy
+06/02/15 00:05:19 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-config.xml]
+06/02/15 00:05:19 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-config.xml]
+06/02/15 00:05:19 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-config.xml]
+06/02/15 00:05:19 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
+06/02/15 00:05:19 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-config.xml]
+06/02/15 00:05:19 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]
+06/02/15 00:05:19 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]]
+06/02/15 00:05:19 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]
+06/02/15 00:05:19 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]]
+06/02/15 00:05:19 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'feedRestControllerImpl': replacing [Generic bean: class [be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/controller/FeedRestControllerImpl.class]] with [Generic bean: class [be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-webservice-config.xml]]
+06/02/15 00:05:20 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+06/02/15 00:05:20 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-datastore-mongodb-mongo.properties]
+06/02/15 00:05:20 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-reader.properties]
+06/02/15 00:05:20 INFO  Version - HV000001: Hibernate Validator 5.1.3.Final
+06/02/15 00:05:20 INFO  TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+06/02/15 00:05:21 INFO  StandardService - Starting service Tomcat
+06/02/15 00:05:21 INFO  StandardEngine - Starting Servlet Engine: Apache Tomcat/8.0.15
+06/02/15 00:05:21 INFO  [/] - Initializing Spring embedded WebApplicationContext
+06/02/15 00:05:21 INFO  ContextLoader - Root WebApplicationContext: initialization completed in 2348 ms
+06/02/15 00:05:22 INFO  ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+06/02/15 00:05:22 INFO  FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+06/02/15 00:05:22 INFO  FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+06/02/15 00:05:22 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+06/02/15 00:05:22 INFO  GlobalSettings - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties] for Dozer global property configuration
+06/02/15 00:05:22 INFO  GlobalSettings - Reading Dozer properties from URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties]
+06/02/15 00:05:22 INFO  DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+06/02/15 00:05:22 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+06/02/15 00:05:22 INFO  RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1c313f4e: startup date [Fri Feb 06 00:05:18 CET 2015]; root of context hierarchy
+06/02/15 00:05:22 INFO  RequestMappingHandlerMapping - Mapped "{[/feed/{id}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedResponse be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl.getFeed(int)
+06/02/15 00:05:22 INFO  RequestMappingHandlerMapping - Mapped "{[/feedlist],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedMetaListResponse be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl.getFeedList()
+06/02/15 00:05:22 INFO  RequestMappingHandlerMapping - Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+06/02/15 00:05:22 INFO  RequestMappingHandlerMapping - Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[text/html],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+06/02/15 00:05:22 INFO  SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+06/02/15 00:05:22 INFO  SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+06/02/15 00:05:22 INFO  SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+06/02/15 00:05:23 INFO  AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+06/02/15 00:05:23 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+06/02/15 00:05:23 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+06/02/15 00:05:23 INFO  NioSelectorPool - Using a shared selector for servlet write/read
+06/02/15 00:05:23 INFO  TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+06/02/15 00:05:23 INFO  BrusselNieuwsRssWebservice - Started BrusselNieuwsRssWebservice in 4.598 seconds (JVM running for 5.878)
+06/02/15 00:05:32 INFO  [/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+06/02/15 00:05:32 INFO  DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+06/02/15 00:05:32 INFO  DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 16 ms
+06/02/15 00:05:32 INFO  DozerBeanMapper - Using the following xml files to load custom mappings for the bean mapper instance: [config/brusselnieuws-rss-webservice-dozer-mapping-config.xml]
+06/02/15 00:05:32 INFO  DozerBeanMapper - Trying to find xml mapping file: config/brusselnieuws-rss-webservice-dozer-mapping-config.xml
+06/02/15 00:05:32 INFO  DozerBeanMapper - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/config/brusselnieuws-rss-webservice-dozer-mapping-config.xml] to load custom xml mappings
+06/02/15 00:05:32 INFO  DozerBeanMapper - Successfully loaded custom xml mappings from URL: [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/config/brusselnieuws-rss-webservice-dozer-mapping-config.xml]
+06/02/15 00:27:34 INFO  AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1c313f4e: startup date [Fri Feb 06 00:05:18 CET 2015]; root of context hierarchy
+06/02/15 00:27:34 INFO  AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+06/02/15 00:27:44 INFO  BrusselNieuwsRssWebservice - Starting BrusselNieuwsRssWebservice on Stefans-MacBook-Pro.local with PID 4190 (/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes started by stefanborghys in /Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice)
+06/02/15 00:27:44 INFO  AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@19d9ba9: startup date [Fri Feb 06 00:27:44 CET 2015]; root of context hierarchy
+06/02/15 00:27:44 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-config.xml]
+06/02/15 00:27:44 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-config.xml]
+06/02/15 00:27:45 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-config.xml]
+06/02/15 00:27:45 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
+06/02/15 00:27:45 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-config.xml]
+06/02/15 00:27:45 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]
+06/02/15 00:27:45 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]]
+06/02/15 00:27:45 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]
+06/02/15 00:27:45 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]]
+06/02/15 00:27:45 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'feedRestControllerImpl': replacing [Generic bean: class [be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/controller/FeedRestControllerImpl.class]] with [Generic bean: class [be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-webservice-config.xml]]
+06/02/15 00:27:45 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+06/02/15 00:27:45 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-datastore-mongodb-mongo.properties]
+06/02/15 00:27:45 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-reader.properties]
+06/02/15 00:27:45 INFO  Version - HV000001: Hibernate Validator 5.1.3.Final
+06/02/15 00:27:46 INFO  TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+06/02/15 00:27:46 INFO  StandardService - Starting service Tomcat
+06/02/15 00:27:46 INFO  StandardEngine - Starting Servlet Engine: Apache Tomcat/8.0.15
+06/02/15 00:27:46 INFO  [/] - Initializing Spring embedded WebApplicationContext
+06/02/15 00:27:46 INFO  ContextLoader - Root WebApplicationContext: initialization completed in 2105 ms
+06/02/15 00:27:47 INFO  ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+06/02/15 00:27:47 INFO  FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+06/02/15 00:27:47 INFO  FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+06/02/15 00:27:47 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+06/02/15 00:27:47 INFO  GlobalSettings - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties] for Dozer global property configuration
+06/02/15 00:27:47 INFO  GlobalSettings - Reading Dozer properties from URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties]
+06/02/15 00:27:47 INFO  DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+06/02/15 00:27:47 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+06/02/15 00:27:47 INFO  RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@19d9ba9: startup date [Fri Feb 06 00:27:44 CET 2015]; root of context hierarchy
+06/02/15 00:27:47 INFO  RequestMappingHandlerMapping - Mapped "{[/feed/{id}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedResponse be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl.getFeed(int)
+06/02/15 00:27:47 INFO  RequestMappingHandlerMapping - Mapped "{[/feedlist],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedMetaListResponse be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl.getFeedList()
+06/02/15 00:27:47 INFO  RequestMappingHandlerMapping - Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+06/02/15 00:27:47 INFO  RequestMappingHandlerMapping - Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[text/html],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+06/02/15 00:27:47 INFO  SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+06/02/15 00:27:47 INFO  SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+06/02/15 00:27:47 INFO  SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+06/02/15 00:27:48 INFO  AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+06/02/15 00:27:48 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+06/02/15 00:27:48 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+06/02/15 00:27:48 INFO  NioSelectorPool - Using a shared selector for servlet write/read
+06/02/15 00:27:48 INFO  TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+06/02/15 00:27:48 INFO  BrusselNieuwsRssWebservice - Started BrusselNieuwsRssWebservice in 4.108 seconds (JVM running for 5.047)
+06/02/15 00:28:41 INFO  [/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+06/02/15 00:28:41 INFO  DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+06/02/15 00:28:41 INFO  DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 14 ms
+06/02/15 00:28:41 INFO  DozerBeanMapper - Using the following xml files to load custom mappings for the bean mapper instance: [config/brusselnieuws-rss-webservice-dozer-mapping-config.xml]
+06/02/15 00:28:41 INFO  DozerBeanMapper - Trying to find xml mapping file: config/brusselnieuws-rss-webservice-dozer-mapping-config.xml
+06/02/15 00:28:41 INFO  DozerBeanMapper - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/config/brusselnieuws-rss-webservice-dozer-mapping-config.xml] to load custom xml mappings
+06/02/15 00:28:41 INFO  DozerBeanMapper - Successfully loaded custom xml mappings from URL: [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/config/brusselnieuws-rss-webservice-dozer-mapping-config.xml]
+06/02/15 00:45:08 INFO  AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@19d9ba9: startup date [Fri Feb 06 00:27:44 CET 2015]; root of context hierarchy
+06/02/15 00:45:08 INFO  AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+06/02/15 00:45:20 INFO  BrusselNieuwsRssWebservice - Starting BrusselNieuwsRssWebservice on Stefans-MacBook-Pro.local with PID 4222 (/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes started by stefanborghys in /Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice)
+06/02/15 00:45:20 INFO  AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6a360482: startup date [Fri Feb 06 00:45:20 CET 2015]; root of context hierarchy
+06/02/15 00:45:21 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-config.xml]
+06/02/15 00:45:21 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-config.xml]
+06/02/15 00:45:21 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-config.xml]
+06/02/15 00:45:21 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
+06/02/15 00:45:21 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-config.xml]
+06/02/15 00:45:21 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]
+06/02/15 00:45:21 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]]
+06/02/15 00:45:21 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]
+06/02/15 00:45:21 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]]
+06/02/15 00:45:21 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'feedRestControllerImpl': replacing [Generic bean: class [be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/controller/FeedRestControllerImpl.class]] with [Generic bean: class [be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-webservice-config.xml]]
+06/02/15 00:45:21 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+06/02/15 00:45:21 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-datastore-mongodb-mongo.properties]
+06/02/15 00:45:21 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-reader.properties]
+06/02/15 00:45:21 INFO  Version - HV000001: Hibernate Validator 5.1.3.Final
+06/02/15 00:45:22 INFO  TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+06/02/15 00:45:22 INFO  StandardService - Starting service Tomcat
+06/02/15 00:45:22 INFO  StandardEngine - Starting Servlet Engine: Apache Tomcat/8.0.15
+06/02/15 00:45:22 INFO  [/] - Initializing Spring embedded WebApplicationContext
+06/02/15 00:45:22 INFO  ContextLoader - Root WebApplicationContext: initialization completed in 2142 ms
+06/02/15 00:45:23 INFO  ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+06/02/15 00:45:23 INFO  FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+06/02/15 00:45:23 INFO  FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+06/02/15 00:45:23 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+06/02/15 00:45:23 INFO  GlobalSettings - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties] for Dozer global property configuration
+06/02/15 00:45:23 INFO  GlobalSettings - Reading Dozer properties from URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties]
+06/02/15 00:45:23 INFO  DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+06/02/15 00:45:23 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+06/02/15 00:45:23 INFO  RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6a360482: startup date [Fri Feb 06 00:45:20 CET 2015]; root of context hierarchy
+06/02/15 00:45:24 INFO  RequestMappingHandlerMapping - Mapped "{[/feed/{id}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedResponse be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl.getFeed(int)
+06/02/15 00:45:24 INFO  RequestMappingHandlerMapping - Mapped "{[/feedlist],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedMetaListResponse be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl.getFeedList()
+06/02/15 00:45:24 INFO  RequestMappingHandlerMapping - Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+06/02/15 00:45:24 INFO  RequestMappingHandlerMapping - Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[text/html],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+06/02/15 00:45:24 INFO  SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+06/02/15 00:45:24 INFO  SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+06/02/15 00:45:24 INFO  SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+06/02/15 00:45:24 INFO  AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+06/02/15 00:45:24 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+06/02/15 00:45:24 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+06/02/15 00:45:24 INFO  NioSelectorPool - Using a shared selector for servlet write/read
+06/02/15 00:45:24 INFO  TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+06/02/15 00:45:24 INFO  BrusselNieuwsRssWebservice - Started BrusselNieuwsRssWebservice in 4.065 seconds (JVM running for 5.013)
+06/02/15 00:46:46 INFO  [/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+06/02/15 00:46:46 INFO  DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+06/02/15 00:46:46 INFO  DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 13 ms
+06/02/15 00:46:46 INFO  DozerBeanMapper - Using the following xml files to load custom mappings for the bean mapper instance: [config/brusselnieuws-rss-webservice-dozer-mapping-config.xml]
+06/02/15 00:46:46 INFO  DozerBeanMapper - Trying to find xml mapping file: config/brusselnieuws-rss-webservice-dozer-mapping-config.xml
+06/02/15 00:46:46 INFO  DozerBeanMapper - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/config/brusselnieuws-rss-webservice-dozer-mapping-config.xml] to load custom xml mappings
+06/02/15 00:46:46 INFO  DozerBeanMapper - Successfully loaded custom xml mappings from URL: [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/config/brusselnieuws-rss-webservice-dozer-mapping-config.xml]
+06/02/15 01:14:05 INFO  AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6a360482: startup date [Fri Feb 06 00:45:20 CET 2015]; root of context hierarchy
+06/02/15 01:14:05 INFO  AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+06/02/15 01:14:52 INFO  BrusselNieuwsRssWebservice - Starting BrusselNieuwsRssWebservice on Stefans-MacBook-Pro.local with PID 4247 (/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes started by stefanborghys in /Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice)
+06/02/15 01:14:52 INFO  AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@a50243d: startup date [Fri Feb 06 01:14:52 CET 2015]; root of context hierarchy
+06/02/15 01:14:53 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-config.xml]
+06/02/15 01:14:53 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-config.xml]
+06/02/15 01:14:53 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-config.xml]
+06/02/15 01:14:53 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
+06/02/15 01:14:53 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-config.xml]
+06/02/15 01:14:53 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]
+06/02/15 01:14:53 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]]
+06/02/15 01:14:54 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]
+06/02/15 01:14:54 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'dozerBeanMapper': replacing [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]] with [Generic bean: class [org.dozer.DozerBeanMapper]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]]
+06/02/15 01:14:54 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'feedRestControllerImpl': replacing [Generic bean: class [be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/controller/FeedRestControllerImpl.class]] with [Generic bean: class [be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-webservice-config.xml]]
+06/02/15 01:14:54 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+06/02/15 01:14:54 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-datastore-mongodb-mongo.properties]
+06/02/15 01:14:54 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-reader.properties]
+06/02/15 01:14:54 INFO  Version - HV000001: Hibernate Validator 5.1.3.Final
+06/02/15 01:14:55 INFO  TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+06/02/15 01:14:55 INFO  StandardService - Starting service Tomcat
+06/02/15 01:14:55 INFO  StandardEngine - Starting Servlet Engine: Apache Tomcat/8.0.15
+06/02/15 01:14:55 INFO  [/] - Initializing Spring embedded WebApplicationContext
+06/02/15 01:14:55 INFO  ContextLoader - Root WebApplicationContext: initialization completed in 2304 ms
+06/02/15 01:14:56 INFO  ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+06/02/15 01:14:56 INFO  FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+06/02/15 01:14:56 INFO  FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+06/02/15 01:14:56 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+06/02/15 01:14:56 INFO  GlobalSettings - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties] for Dozer global property configuration
+06/02/15 01:14:56 INFO  GlobalSettings - Reading Dozer properties from URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties]
+06/02/15 01:14:56 INFO  DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+06/02/15 01:14:56 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+06/02/15 01:14:56 INFO  RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@a50243d: startup date [Fri Feb 06 01:14:52 CET 2015]; root of context hierarchy
+06/02/15 01:14:57 INFO  RequestMappingHandlerMapping - Mapped "{[/feed/{id}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedResponse be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl.getFeed(int)
+06/02/15 01:14:57 INFO  RequestMappingHandlerMapping - Mapped "{[/feedlist],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedMetaListResponse be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl.getFeedList()
+06/02/15 01:14:57 INFO  RequestMappingHandlerMapping - Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+06/02/15 01:14:57 INFO  RequestMappingHandlerMapping - Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[text/html],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+06/02/15 01:14:57 INFO  SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+06/02/15 01:14:57 INFO  SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+06/02/15 01:14:57 INFO  SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+06/02/15 01:14:57 INFO  AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+06/02/15 01:14:57 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+06/02/15 01:14:57 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+06/02/15 01:14:57 INFO  NioSelectorPool - Using a shared selector for servlet write/read
+06/02/15 01:14:57 INFO  TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+06/02/15 01:14:57 INFO  BrusselNieuwsRssWebservice - Started BrusselNieuwsRssWebservice in 4.729 seconds (JVM running for 5.799)

@@ -31,10 +31,10 @@
 			write-fsync="true"/>
   	</mongo:mongo>
   	
-  	<!-- host="${mongo.host}" port="${mongo.port}" -->
-
   	<mongo:db-factory id="mongoDbFactory" 
   		mongo-ref="mongo" 
+  		host="${mongo.host}" 
+  		port="${mongo.port}"
   		dbname="${mongo.dbname}" 
   		username="${mongo.username}" 
   		password="${mongo.password}"/>
@@ -49,7 +49,7 @@
   	to either log the error, throw and exception or do nothing. 
   	The default is to use a WriteResultChecking value of NONE. 
   	
-  	writeConcern:
+  	writeConcern: <property name="writeConcern" value="NORMAL"/>
   	You can set the com.mongodb.WriteConcern property that the MongoTemplate will use for write operations 
   	if it has not yet been specified via the driver at a higher level such as com.mongodb.Mongo. 
   	If MongoTemplate’s WriteConcern property is not set it will default to the one set in the MongoDB driver’s DB 
@@ -58,7 +58,6 @@
   		
   	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate"> 
 		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>
-		<property name="writeConcern" value="NORMAL"/>
 		<property name="writeResultChecking" value="LOG"/>
 	</bean>
 	

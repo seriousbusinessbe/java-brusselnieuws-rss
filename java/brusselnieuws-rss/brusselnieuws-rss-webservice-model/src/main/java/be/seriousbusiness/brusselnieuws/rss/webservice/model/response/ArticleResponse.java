@@ -3,8 +3,6 @@ package be.seriousbusiness.brusselnieuws.rss.webservice.model.response;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.joda.time.DateTime;
-
 /**
  * Web service response bean containing article data.
  * @author Serious Business
@@ -19,10 +17,15 @@ public class ArticleResponse extends AbstractIdResponse {
 	private Collection<AuthorResponse> authors=new ArrayList<AuthorResponse>();
 	private Collection<CategoryResponse> categories=new ArrayList<CategoryResponse>();
 	private Collection<MediumResponse> media=new ArrayList<MediumResponse>();
-	private DateTime publicationDate;
+	private String publicationDate;
 	private boolean read=false;
 	private boolean archived=false;
 	private boolean favorite=false;
+	
+	/**
+	 * Constructor solely used for {@link Mapper} functionality.
+	 */
+	public ArticleResponse() {}
 	
 	public String getTitle() {
 		return title;
@@ -72,11 +75,11 @@ public class ArticleResponse extends AbstractIdResponse {
 		this.media = media;
 	}
 	
-	public DateTime getPublicationDate() {
+	public String getPublicationDate() {
 		return publicationDate;
 	}
 	
-	public void setPublicationDate(final DateTime publicationDate) {
+	public void setPublicationDate(final String publicationDate) {
 		this.publicationDate = publicationDate;
 	}
 	

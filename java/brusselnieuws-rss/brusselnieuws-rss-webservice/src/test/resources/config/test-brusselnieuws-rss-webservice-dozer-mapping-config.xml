@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+          
+  <configuration>
+    <custom-converters>
+      <converter type="be.seriousbusiness.brusselnieuws.rss.webservice.dozer.converter.URLURLDozerConverter" >
+        <class-a>java.net.URL</class-a>
+        <class-b>java.net.URL</class-b>
+      </converter>
+      <converter type="be.seriousbusiness.brusselnieuws.rss.webservice.dozer.converter.DateTimeStringDozerConverter" >
+        <class-a>org.joda.time.DateTime</class-a>
+        <class-b>java.lang.String</class-b>
+      </converter>
+    </custom-converters>     
+  </configuration>
+  
+  <mapping type="one-way"> 
+    <class-a>be.seriousbusiness.brusselnieuws.rss.reader.model.impl.MediumImpl</class-a>
+    <class-b>be.seriousbusiness.brusselnieuws.rss.webservice.model.response.MediumResponse</class-b>   
+    <field>
+      <a>type.type</a>
+      <b>type</b>
+    </field>
+  </mapping>
+
+</mappings> 

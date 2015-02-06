@@ -1,6 +1,7 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
@@ -17,9 +18,9 @@ public class ArticleDTOImpl extends AbstractIdDTOImpl<BigInteger> implements Art
 	private String title,link,description;
 	private Long publicationDate;
 	private Boolean read,archived,favorite;
-	private Collection<MediumDTOImpl> mediumDTOImpls;
-	private Collection<CategoryDTOImpl> categoryDTOImpls;
-	private Collection<AuthorDTOImpl> authorDTOImpls;
+	private Collection<MediumDTOImpl> mediumDTOImpls=new ArrayList<MediumDTOImpl>();
+	private Collection<CategoryDTOImpl> categoryDTOImpls=new ArrayList<CategoryDTOImpl>();
+	private Collection<AuthorDTOImpl> authorDTOImpls=new ArrayList<AuthorDTOImpl>();
 
 	@Override
 	public String getTitle() {
