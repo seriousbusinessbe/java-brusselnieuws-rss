@@ -1,5 +1,7 @@
 package be.seriousbusiness.brusselnieuws.rss.reader;
 
+import java.util.Collection;
+
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -44,6 +46,52 @@ public class BrusselNieuwsRssTest {
 	
 	private static final void testGetFeed(final FeedImpl feed) {
 		Assert.assertNotNull("The retrieved feed should not be null",feed);
+		Assert.assertNotNull("A feed id should not be null",feed.getId());
+		Assert.assertNotNull("A feed title should not be null",feed.getTitle());
+		Assert.assertFalse("A feed title should not be empty",feed.getTitle().isEmpty());
+		// Articles:
+		final Collection<ArticleImpl> articleImpls=feed.getArticles();
+		Assert.assertNotNull("The collection of retrieved articles should not be null",articleImpls);
+		Assert.assertFalse("The collection of retrieved articles should not be empty",articleImpls.isEmpty());
+		for(final ArticleImpl article : articleImpls) {
+			Assert.assertNotNull("An article should not be null",article);
+			Assert.assertNotNull("An article's id should not be null",article.getId());
+			Assert.assertNotNull("An article's title should not be null",article.getTitle());
+			Assert.assertFalse("An article's title should not be empty",article.getTitle().isEmpty());
+			Assert.assertNotNull("An article's description should not be null",article.getDescription());
+			Assert.assertFalse("An article's description should not be empty",article.getDescription().isEmpty());
+			Assert.assertNotNull("An article's publication date should not be null",article.getPublicationDate());
+			// Authors:
+			final Collection<AuthorImpl> authorImpls=article.getAuthors();
+			Assert.assertNotNull("The collection of article authors should not be null",authorImpls);
+			for(final AuthorImpl author : authorImpls) {
+				Assert.assertNotNull("An article's author should not be null",author);
+				Assert.assertNotNull("An article's author id should not be null",author.getId());
+				Assert.assertNotNull("An article's author name should not be null",author.getName());
+				Assert.assertFalse("An article's author name should not be empty",author.getName().isEmpty());
+			}
+			// Categories:
+			final Collection<CategoryImpl> categoryImpls=article.getCategories();
+			Assert.assertNotNull("The collection of article categories should not be null",categoryImpls);
+			for(final CategoryImpl categoryImpl : categoryImpls) {
+				Assert.assertNotNull("An article's category should not be null",categoryImpl);
+				Assert.assertNotNull("An article's category id should not be null",categoryImpl.getId());
+				Assert.assertNotNull("An article's category name should not be null",categoryImpl.getName());
+				Assert.assertFalse("An article's category name should not be empty",categoryImpl.getName().isEmpty());
+				Assert.assertNotNull("An article's category link should not be null",categoryImpl.getLink());
+			}
+			// Media:
+			final Collection<MediumImpl> mediumImpls=article.getMedia();
+			Assert.assertNotNull("The collection of article media should not be null",mediumImpls);
+			for(final MediumImpl mediumImpl : mediumImpls) {
+				Assert.assertNotNull("An article's medium should not be null",mediumImpl);
+				Assert.assertNotNull("An article's medium link should not be null",mediumImpl.getLink());
+				Assert.assertNotNull("An article's medium size should not be null",mediumImpl.getSize());
+				Assert.assertNotNull("An article's medium type should not be null",mediumImpl.getType());
+				Assert.assertNotNull("An article's medium type id should not be null",mediumImpl.getType().getId());
+				Assert.assertNotNull("An article's medium type type should not be null",mediumImpl.getType().getType());
+			}
+		}
 		LOGGER.debug("{}",feed);
 	}
 	

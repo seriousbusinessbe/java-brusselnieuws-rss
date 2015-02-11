@@ -8,6 +8,7 @@ import org.dozer.Mapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.dao.DuplicateKeyException;
 
 import be.seriousbusiness.brusselnieuws.rss.common.mapping.util.MapperUtil;
@@ -19,7 +20,8 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.repository.MongoMe
 
 public class MongoMediumTypeDAO implements MediumTypeDAO {
 	private static final Logger LOGGER=LoggerFactory.getLogger(MongoMediumTypeDAO.class);
-	@Autowired
+	@Autowired(required=true)
+	@Qualifier("brusselNieuwsRssDatastoreMongoDbDozerBeanMapper")
 	private Mapper mapper;
 	@Autowired
 	private MongoMediumTypeRepository mongoMediumTypeRepository;

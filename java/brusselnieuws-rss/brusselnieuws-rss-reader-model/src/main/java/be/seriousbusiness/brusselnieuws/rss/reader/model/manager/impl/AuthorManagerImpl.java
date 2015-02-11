@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.AuthorDAO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.AuthorDTOImpl;
@@ -17,9 +18,10 @@ import be.seriousbusiness.brusselnieuws.rss.reader.model.manager.AuthorManager;
 
 public class AuthorManagerImpl implements AuthorManager {
 	private AuthorDAO authorDAO;
-	@Autowired
+	@Autowired(required=true)
+	@Qualifier("brusselNieuwsRssReaderModelDozerBeanMapper")
 	private Mapper mapper;
-	private static final Comparator<Author> authorComparator=new AuthorNameComparator();
+	private static final Comparator<Author> AUTHOR_COMPARATOR=new AuthorNameComparator();
 
 	@Override
 	public Collection<Author> findAll() {
@@ -31,7 +33,7 @@ public class AuthorManagerImpl implements AuthorManager {
 				authors.add(author);
 			}
 		}
-		Collections.sort(authors,authorComparator);
+		Collections.sort(authors,AUTHOR_COMPARATOR);
 		return authors;
 	}
 	

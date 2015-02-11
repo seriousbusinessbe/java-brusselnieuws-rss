@@ -7,6 +7,7 @@ import org.dozer.Mapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import be.seriousbusiness.brusselnieuws.rss.common.mapping.util.MapperUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.MediumDAO;
@@ -18,7 +19,8 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.repository.MongoMe
 
 public class MongoMediumDAO implements MediumDAO {
 	private static final Logger LOGGER=LoggerFactory.getLogger(MongoMediumDAO.class);
-	@Autowired
+	@Autowired(required=true)
+	@Qualifier("brusselNieuwsRssDatastoreMongoDbDozerBeanMapper")
 	private Mapper mapper;
 	@Autowired
 	private MongoMediumRepository mongoMediumRepository;

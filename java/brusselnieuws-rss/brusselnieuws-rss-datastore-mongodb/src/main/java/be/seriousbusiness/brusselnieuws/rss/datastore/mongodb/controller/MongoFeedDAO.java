@@ -9,6 +9,7 @@ import org.dozer.Mapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import be.seriousbusiness.brusselnieuws.rss.common.mapping.util.MapperUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.FeedDAO;
@@ -19,7 +20,8 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.repository.MongoFe
 
 public class MongoFeedDAO implements FeedDAO {
 	private static final Logger LOGGER=LoggerFactory.getLogger(MongoFeedDAO.class);
-	@Autowired
+	@Autowired(required=true)
+	@Qualifier("brusselNieuwsRssDatastoreMongoDbDozerBeanMapper")
 	private Mapper mapper;
 	@Autowired
 	private MongoFeedRepository mongoFeedRepository;

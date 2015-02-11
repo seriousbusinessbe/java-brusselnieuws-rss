@@ -32,5 +32,7 @@ public interface MongoArticleRepository extends CrudRepository<MongoArticle,BigI
 	Collection<MongoArticle> findByMongoAuthors(final MongoAuthor author);
 	
 	Collection<MongoArticle> findByPublicationDateBetween(final Long from,final Long to);
+	
+	MongoArticle findByTitleAndPublicationDate(final String title,final Long publicationDate);
 
 }

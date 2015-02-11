@@ -62,7 +62,7 @@ public class BrusselNieuwsRss<MEDIUMTYPE extends MediumType,
 	public FEED update(final FEED feed) {
 		if(feed!=null && feed.getLink()!=null) {
 			brusselNieuwsRssReader.updateFeed(feed);
-			feedManager.save(feed);
+			return feedManager.save(feed);
 		}
 		return feed;
 	}

@@ -7,6 +7,7 @@ import org.dozer.Mapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -19,7 +20,8 @@ import be.seriousbusiness.brusselnieuws.rss.reader.model.mapper.util.FeedDTOFeed
 @RunWith(SpringJUnit4ClassRunner.class) 
 @ContextConfiguration("classpath:config/test-brusselnieuws-rss-reader-model-dozer-config.xml")
 public class FeedDTOImplFeedImplMapperTest {
-	@Autowired
+	@Autowired(required=true)
+	@Qualifier("brusselNieuwsRssReaderModelDozerBeanMapper")
 	private Mapper mapper;
 	
 	@Test
@@ -31,7 +33,7 @@ public class FeedDTOImplFeedImplMapperTest {
 	
 	@Test
 	public void testFeedImplToFeedDTOImplMapping() throws IllegalArgumentException, MalformedURLException{
-		final FeedImpl feedImpl=FeedImplFactory.create();
+		final FeedImpl feedImpl=FeedImplFactory.createNieuws();
 		final FeedDTOImpl feedDTOImpl=mapper.map(feedImpl,FeedDTOImpl.class);
 		FeedDTOFeedMapperUtil.assertEquals(feedDTOImpl, feedImpl);
 	}

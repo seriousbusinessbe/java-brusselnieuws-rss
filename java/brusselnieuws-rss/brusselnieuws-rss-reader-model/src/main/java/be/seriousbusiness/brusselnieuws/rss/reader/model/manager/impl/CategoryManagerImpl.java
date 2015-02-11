@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.CategoryDAO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.CategoryDTOImpl;
@@ -17,9 +18,10 @@ import be.seriousbusiness.brusselnieuws.rss.reader.model.manager.CategoryManager
 
 public class CategoryManagerImpl implements CategoryManager {
 	private CategoryDAO categoryDAO;
-	@Autowired
+	@Autowired(required=true)
+	@Qualifier("brusselNieuwsRssReaderModelDozerBeanMapper")
 	private Mapper mapper;
-	private static final Comparator<Category> categoryComparator=new CategoryNameComparator();
+	private static final Comparator<Category> CATEGORY_COMPARATOR=new CategoryNameComparator();
 	
 	@Override
 	public Collection<Category> findAll(){
@@ -31,7 +33,7 @@ public class CategoryManagerImpl implements CategoryManager {
 				categories.add(category);
 			}
 		}
-		Collections.sort(categories,categoryComparator);
+		Collections.sort(categories,CATEGORY_COMPARATOR);
 		return categories;
 	}
 	

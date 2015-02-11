@@ -77,4 +77,12 @@ public interface ArticleDAO extends IdDAO<BigInteger,ArticleDTOImpl> {
 	 */
 	Collection<ArticleDTOImpl> findByAuthor(final AuthorDTOImpl authorDTOImpl);
 	
+	/**
+	 * Finds a {@link ArticleDTOImpl} by title and publication date.
+	 * @param title the article's title 
+	 * @param publicationDate the article's publication date
+	 * @return the found {@link ArticleDTOImpl} or <code>null</code> when not found
+	 */
+	ArticleDTOImpl findByTitleAndPublicationDate(final String title,final DateTime publicationDate);
+	
 }

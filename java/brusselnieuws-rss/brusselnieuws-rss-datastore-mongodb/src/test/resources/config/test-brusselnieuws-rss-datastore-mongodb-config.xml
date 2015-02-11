@@ -16,7 +16,6 @@
 	<context:property-placeholder location="classpath:properties/test-brusselnieuws-rss-datastore-mongodb-mongo.properties" ignore-unresolvable="true"/>
 	
 	<import resource="classpath:config/test-brusselnieuws-rss-datastore-mongodb-dozer-config.xml"/>
-	
 	<import resource="classpath:config/test-brusselnieuws-rss-datastore-mongodb-flapdoodle-config.xml"/> <!-- contains 'embeddedMongoDbFactory' -->
   	 
 	<mongo:db-factory id="mongoDbFactory" 

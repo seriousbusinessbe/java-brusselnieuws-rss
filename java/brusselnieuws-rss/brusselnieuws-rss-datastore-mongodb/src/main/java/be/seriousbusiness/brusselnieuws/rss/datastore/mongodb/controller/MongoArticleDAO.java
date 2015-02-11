@@ -10,6 +10,7 @@ import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import be.seriousbusiness.brusselnieuws.rss.common.mapping.util.MapperUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.ArticleDAO;
@@ -24,7 +25,8 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.repository.MongoAr
 
 public class MongoArticleDAO implements ArticleDAO {
 	private static final Logger LOGGER=LoggerFactory.getLogger(MongoArticleDAO.class);
-	@Autowired
+	@Autowired(required=true)
+	@Qualifier("brusselNieuwsRssDatastoreMongoDbDozerBeanMapper")
 	private Mapper mapper;
 	@Autowired
 	private MongoArticleRepository mongoArticleRepository;
@@ -51,23 +53,81 @@ public class MongoArticleDAO implements ArticleDAO {
 	public ArticleDTOImpl save(final ArticleDTOImpl articleDTOImpl) {
 		LOGGER.debug("Save ArticleDTOImpl:\n{}",articleDTOImpl);
 		if(articleDTOImpl!=null){
-			final List<MediumDTOImpl> mediumDTOImpls=new ArrayList<MediumDTOImpl>(articleDTOImpl.getMediumDTOs().size());
-			for(final MediumDTOImpl mediumDTOImpl : articleDTOImpl.getMediumDTOs()){
-				mediumDTOImpls.add(mongoMediumDAO.save(mediumDTOImpl));
+			ArticleDTOImpl saveableArticleDTOImpl=null;
+			if(articleDTOImpl.getId()==null) {
+				final ArticleDTOImpl foundByTitleAndPublicationDateArticleDTOImpl=findByTitleAndPublicationDate(articleDTOImpl.getTitle(),new DateTime(articleDTOImpl.getPublicationDate()));
+				if(foundByTitleAndPublicationDateArticleDTOImpl==null) {
+					final List<MediumDTOImpl> mediumDTOImpls=new ArrayList<MediumDTOImpl>(articleDTOImpl.getMediumDTOs().size());
+					for(final MediumDTOImpl mediumDTOImpl : articleDTOImpl.getMediumDTOs()){
+						mediumDTOImpls.add(mongoMediumDAO.save(mediumDTOImpl));
+					}
+					articleDTOImpl.setMediumDTOs(mediumDTOImpls);
+					final List<CategoryDTOImpl> categoryDTOImpls=new ArrayList<CategoryDTOImpl>(articleDTOImpl.getCategoryDTOs().size());
+					for(final CategoryDTOImpl categoryDTOImpl : articleDTOImpl.getCategoryDTOs()){
+						categoryDTOImpls.add(mongoCategoryDAO.save(categoryDTOImpl));
+					}
+					articleDTOImpl.setCategoryDTOs(categoryDTOImpls);
+					final List<AuthorDTOImpl> authorDTOImpls=new ArrayList<AuthorDTOImpl>(articleDTOImpl.getAuthorDTOs().size());
+					for(final AuthorDTOImpl authorDTOImpl : articleDTOImpl.getAuthorDTOs()){
+						authorDTOImpls.add(mongoAuthorDAO.save(authorDTOImpl));
+					}
+					articleDTOImpl.setAuthorDTOs(authorDTOImpls);
+					saveableArticleDTOImpl=articleDTOImpl;
+				}else {
+					foundByTitleAndPublicationDateArticleDTOImpl.setArchived(articleDTOImpl.isArchived());
+					foundByTitleAndPublicationDateArticleDTOImpl.setDescription(articleDTOImpl.getDescription());
+					foundByTitleAndPublicationDateArticleDTOImpl.setFavorite(articleDTOImpl.isFavorite());
+					foundByTitleAndPublicationDateArticleDTOImpl.setLink(articleDTOImpl.getLink());
+					foundByTitleAndPublicationDateArticleDTOImpl.setPublicationDate(articleDTOImpl.getPublicationDate());
+					foundByTitleAndPublicationDateArticleDTOImpl.setRead(articleDTOImpl.isRead());
+					foundByTitleAndPublicationDateArticleDTOImpl.setTitle(articleDTOImpl.getTitle());
+					final List<MediumDTOImpl> mediumDTOImpls=new ArrayList<MediumDTOImpl>(articleDTOImpl.getMediumDTOs().size());
+					for(final MediumDTOImpl mediumDTOImpl : articleDTOImpl.getMediumDTOs()){
+						mediumDTOImpls.add(mongoMediumDAO.save(mediumDTOImpl));
+					}
+					foundByTitleAndPublicationDateArticleDTOImpl.setMediumDTOs(mediumDTOImpls);
+					final List<CategoryDTOImpl> categoryDTOImpls=new ArrayList<CategoryDTOImpl>(articleDTOImpl.getCategoryDTOs().size());
+					for(final CategoryDTOImpl categoryDTOImpl : articleDTOImpl.getCategoryDTOs()){
+						categoryDTOImpls.add(mongoCategoryDAO.save(categoryDTOImpl));
+					}
+					foundByTitleAndPublicationDateArticleDTOImpl.setCategoryDTOs(categoryDTOImpls);
+					final List<AuthorDTOImpl> authorDTOImpls=new ArrayList<AuthorDTOImpl>(articleDTOImpl.getAuthorDTOs().size());
+					for(final AuthorDTOImpl authorDTOImpl : articleDTOImpl.getAuthorDTOs()){
+						authorDTOImpls.add(mongoAuthorDAO.save(authorDTOImpl));
+					}
+					foundByTitleAndPublicationDateArticleDTOImpl.setAuthorDTOs(authorDTOImpls);
+					saveableArticleDTOImpl=foundByTitleAndPublicationDateArticleDTOImpl;
+				}
+			}else {
+				final ArticleDTOImpl foundByIdArticleDTOImpl=findById(articleDTOImpl.getId());
+				foundByIdArticleDTOImpl.setArchived(articleDTOImpl.isArchived());
+ 				foundByIdArticleDTOImpl.setDescription(articleDTOImpl.getDescription());
+				foundByIdArticleDTOImpl.setFavorite(articleDTOImpl.isFavorite());
+				foundByIdArticleDTOImpl.setLink(articleDTOImpl.getLink());
+				foundByIdArticleDTOImpl.setPublicationDate(articleDTOImpl.getPublicationDate());
+				foundByIdArticleDTOImpl.setRead(articleDTOImpl.isRead());
+				foundByIdArticleDTOImpl.setTitle(articleDTOImpl.getTitle());
+				final List<MediumDTOImpl> mediumDTOImpls=new ArrayList<MediumDTOImpl>(articleDTOImpl.getMediumDTOs().size());
+				for(final MediumDTOImpl mediumDTOImpl : articleDTOImpl.getMediumDTOs()){
+					mediumDTOImpls.add(mongoMediumDAO.save(mediumDTOImpl));
+				}
+				foundByIdArticleDTOImpl.setMediumDTOs(mediumDTOImpls);
+				final List<CategoryDTOImpl> categoryDTOImpls=new ArrayList<CategoryDTOImpl>(articleDTOImpl.getCategoryDTOs().size());
+				for(final CategoryDTOImpl categoryDTOImpl : articleDTOImpl.getCategoryDTOs()){
+					categoryDTOImpls.add(mongoCategoryDAO.save(categoryDTOImpl));
+				}
+				foundByIdArticleDTOImpl.setCategoryDTOs(categoryDTOImpls);
+				final List<AuthorDTOImpl> authorDTOImpls=new ArrayList<AuthorDTOImpl>(articleDTOImpl.getAuthorDTOs().size());
+				for(final AuthorDTOImpl authorDTOImpl : articleDTOImpl.getAuthorDTOs()){
+					authorDTOImpls.add(mongoAuthorDAO.save(authorDTOImpl));
+				}
+				foundByIdArticleDTOImpl.setAuthorDTOs(authorDTOImpls);
+				saveableArticleDTOImpl=foundByIdArticleDTOImpl;
 			}
-			articleDTOImpl.setMediumDTOs(mediumDTOImpls);
-			final List<CategoryDTOImpl> categoryDTOImpls=new ArrayList<CategoryDTOImpl>(articleDTOImpl.getCategoryDTOs().size());
-			for(final CategoryDTOImpl categoryDTOImpl : articleDTOImpl.getCategoryDTOs()){
-				categoryDTOImpls.add(mongoCategoryDAO.save(categoryDTOImpl));
+			if(saveableArticleDTOImpl!=null) {
+				final MongoArticle savedArticle=mongoArticleRepository.save(mapper.map(saveableArticleDTOImpl,MongoArticle.class));
+				return mapper.map(savedArticle, ArticleDTOImpl.class);
 			}
-			articleDTOImpl.setCategoryDTOs(categoryDTOImpls);
-			final List<AuthorDTOImpl> authorDTOImpls=new ArrayList<AuthorDTOImpl>(articleDTOImpl.getAuthorDTOs().size());
-			for(final AuthorDTOImpl authorDTOImpl : articleDTOImpl.getAuthorDTOs()){
-				authorDTOImpls.add(mongoAuthorDAO.save(authorDTOImpl));
-			}
-			articleDTOImpl.setAuthorDTOs(authorDTOImpls);
-			final MongoArticle savedArticle=mongoArticleRepository.save(mapper.map(articleDTOImpl,MongoArticle.class));
-			return mapper.map(savedArticle, ArticleDTOImpl.class);
 		}
 		return articleDTOImpl;
 	}
@@ -138,6 +198,18 @@ public class MongoArticleDAO implements ArticleDAO {
 		if(articleDTOImpl!=null && articleDTOImpl.getId()!=null){
 			mongoArticleRepository.delete(mapper.map(articleDTOImpl,MongoArticle.class));
 		}
+	}
+
+	@Override
+	public ArticleDTOImpl findByTitleAndPublicationDate(final String title,final DateTime publicationDate) {
+		LOGGER.debug("Find ArticleDTOImpl by title '{}' and publication date '{}'",title,publicationDate);
+		if(title!=null && publicationDate!=null) {
+			final MongoArticle mongoArticle=mongoArticleRepository.findByTitleAndPublicationDate(title,publicationDate.getMillis());
+			if(mongoArticle!=null) {
+				return mapper.map(mongoArticle,ArticleDTOImpl.class);
+			}
+		}
+		return null;
 	}
 
 }

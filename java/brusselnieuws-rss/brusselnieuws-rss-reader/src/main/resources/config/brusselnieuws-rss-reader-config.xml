@@ -29,7 +29,7 @@
 	<bean id="feedManagerImpl"
 	      class="be.seriousbusiness.brusselnieuws.rss.reader.model.manager.impl.FeedManagerImpl"
 	      scope="singleton">
-	      <property name="feedDAO" ref="mongoFeedDAO"></property>
+	      <property name="feedDAO" ref="mongoFeedDAO"/>
 	</bean>
 		
 	<bean id="brusselNieuwsRss" class="be.seriousbusiness.brusselnieuws.rss.reader.BrusselNieuwsRss">

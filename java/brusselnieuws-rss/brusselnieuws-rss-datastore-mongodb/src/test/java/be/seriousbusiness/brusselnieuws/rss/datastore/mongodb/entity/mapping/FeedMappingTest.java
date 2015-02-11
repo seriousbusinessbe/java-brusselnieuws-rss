@@ -3,6 +3,7 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.mapping;
 import org.dozer.Mapper;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -14,7 +15,8 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.factory.Mon
 @RunWith(SpringJUnit4ClassRunner.class) 
 @ContextConfiguration("classpath:config/test-brusselnieuws-rss-datastore-mongodb-config.xml")
 public class FeedMappingTest extends AbstractFeedDTOImplMappingTest<MongoFeed> {
-	@Autowired
+	@Autowired(required=true)
+	@Qualifier("brusselNieuwsRssDatastoreMongoDbDozerBeanMapper")
 	private Mapper mapper;
 
 	@Override

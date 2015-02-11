@@ -15,7 +15,7 @@ public class FeedMetaResponse {
 	/**
 	 * Constructor mandatory for Jackson REST mapping.
 	 */
-	public FeedMetaResponse() {}
+	private FeedMetaResponse() {}
 
 	
 	/**

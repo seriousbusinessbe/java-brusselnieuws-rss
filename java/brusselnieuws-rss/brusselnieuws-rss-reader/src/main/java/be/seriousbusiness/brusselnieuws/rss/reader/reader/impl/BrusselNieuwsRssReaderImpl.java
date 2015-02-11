@@ -37,13 +37,14 @@ import com.sun.syndication.io.XmlReader;
  */
 public class BrusselNieuwsRssReaderImpl implements BrusselNieuwsRssReader<FeedImpl> {
 	private static final Logger LOGGER=LoggerFactory.getLogger(BrusselNieuwsRssReaderImpl.class);
+	private static final SyndFeedInput SYNDFEEDINPUT=new SyndFeedInput();
 	
 	@Override
 	public void updateFeed(final FeedImpl feed) {
 		if(feed!=null && feed.getLink()!=null) {
 			final URL link=feed.getLink();
 			try {
-				final SyndFeed syndFeed=new SyndFeedInput().build(new XmlReader(link));
+				final SyndFeed syndFeed=SYNDFEEDINPUT.build(new XmlReader(link));
 				feed.setLink(new URL(syndFeed.getLink()));
 				feed.setTitle(syndFeed.getTitle());
 				feed.setDescription(syndFeed.getDescription());

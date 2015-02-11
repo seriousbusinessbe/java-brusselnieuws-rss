@@ -9,16 +9,19 @@ import org.dozer.Mapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import be.seriousbusiness.brusselnieuws.rss.common.mapping.util.MapperUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.CategoryDAO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.CategoryDTOImpl;
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.util.CategoryDTOImplUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoCategory;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.repository.MongoCategoryRepository;
 
 public class MongoCategoryDAO implements CategoryDAO {
 	private static final Logger LOGGER=LoggerFactory.getLogger(MongoCategoryDAO.class);
-	@Autowired
+	@Autowired(required=true)
+	@Qualifier("brusselNieuwsRssDatastoreMongoDbDozerBeanMapper")
 	private Mapper mapper;
 	@Autowired
 	private MongoCategoryRepository mongoCategoryRepository;
@@ -39,8 +42,21 @@ public class MongoCategoryDAO implements CategoryDAO {
 	public CategoryDTOImpl save(final CategoryDTOImpl categoryDTOImpl) {
 		LOGGER.debug("Save CategoryDTOImpl:\n{}",categoryDTOImpl);
 		if(categoryDTOImpl!=null){
-			final MongoCategory savedCategory=mongoCategoryRepository.save(mapper.map(categoryDTOImpl, MongoCategory.class));
-			return mapper.map(savedCategory, CategoryDTOImpl.class);
+			CategoryDTOImpl saveableCategoryDTOImpl=null;
+			if(categoryDTOImpl.getId()==null) { 
+				final CategoryDTOImpl foundByLinkCategoryDTOImpl=findByLink(categoryDTOImpl.getLink());
+				if(foundByLinkCategoryDTOImpl==null) {
+					saveableCategoryDTOImpl=categoryDTOImpl;
+				}else {
+					saveableCategoryDTOImpl=CategoryDTOImplUtil.update(foundByLinkCategoryDTOImpl,categoryDTOImpl);
+				}
+			}else { // Retrieve by id and update:
+				saveableCategoryDTOImpl=CategoryDTOImplUtil.update(findById(categoryDTOImpl.getId()),categoryDTOImpl);
+			}
+			if(saveableCategoryDTOImpl!=null) {
+				final MongoCategory savedCategory=mongoCategoryRepository.save(mapper.map(categoryDTOImpl, MongoCategory.class));
+				return mapper.map(savedCategory, CategoryDTOImpl.class);
+			}
 		}
 		return categoryDTOImpl;
 	}

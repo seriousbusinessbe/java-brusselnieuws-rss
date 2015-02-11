@@ -14,7 +14,7 @@ public class CategoryResponse extends AbstractIdResponse {
 	/**
 	 * Constructor solely used for {@link Mapper} functionality.
 	 */
-	public CategoryResponse() {}
+	private CategoryResponse() {}
 	
 	public String getName() {
 		return name;

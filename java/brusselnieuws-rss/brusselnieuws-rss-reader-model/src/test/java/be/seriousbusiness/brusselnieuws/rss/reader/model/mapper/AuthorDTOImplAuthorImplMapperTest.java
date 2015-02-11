@@ -8,6 +8,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -19,7 +20,8 @@ import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.factory.AuthorImpl
 @RunWith(SpringJUnit4ClassRunner.class) 
 @ContextConfiguration("classpath:config/test-brusselnieuws-rss-reader-model-dozer-config.xml")
 public class AuthorDTOImplAuthorImplMapperTest {
-	@Autowired
+	@Autowired(required=true)
+	@Qualifier("brusselNieuwsRssReaderModelDozerBeanMapper")
 	private Mapper mapper;
 	
 	@Test

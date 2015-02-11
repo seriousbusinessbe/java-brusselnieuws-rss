@@ -15,7 +15,7 @@ public class MediumResponse {
 	/**
 	 * Constructor solely used for {@link Mapper} functionality.
 	 */
-	public MediumResponse() {}
+	private MediumResponse() {}
 	
 	public long getSize() {
 		return size;

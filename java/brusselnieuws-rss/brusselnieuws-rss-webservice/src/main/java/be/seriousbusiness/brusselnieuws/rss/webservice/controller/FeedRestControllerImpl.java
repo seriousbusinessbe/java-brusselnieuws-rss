@@ -9,6 +9,7 @@ import java.util.Map;
 
 import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,7 +46,8 @@ public class FeedRestControllerImpl<MEDIUMTYPE extends MediumType,
 									FEED extends Feed<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,ARTICLE>> implements FeedRestController {
 	private static final Comparator<FeedMetaResponse> FEEDMETARESPONSE_COMPARATOR=new FeedMetaResponseCategoryDutchNameComparator();
 	private final Map<FeedMetaEnum,FEED> FEEDS_MAP=new HashMap<FeedMetaEnum,FEED>();
-	@Autowired
+	@Autowired(required=true)
+	@Qualifier("brusselNieuwsRssWebserviceDozerBeanMapper")
 	private Mapper mapper;
 	private BrusselNieuwsRss<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,ARTICLE,FEED> brusselNieuwsRss;
 	

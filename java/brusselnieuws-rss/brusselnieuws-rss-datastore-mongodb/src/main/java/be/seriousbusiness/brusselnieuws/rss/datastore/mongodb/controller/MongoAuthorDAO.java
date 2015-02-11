@@ -9,6 +9,7 @@ import org.dozer.Mapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import be.seriousbusiness.brusselnieuws.rss.common.mapping.util.MapperUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.AuthorDAO;
@@ -18,7 +19,8 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.repository.MongoAu
 
 public class MongoAuthorDAO implements AuthorDAO {
 	private static final Logger LOGGER=LoggerFactory.getLogger(MongoAuthorDAO.class);
-	@Autowired
+	@Autowired(required=true)
+	@Qualifier("brusselNieuwsRssDatastoreMongoDbDozerBeanMapper")
 	private Mapper mapper;
 	@Autowired
 	private MongoAuthorRepository mongoAuthorRepository;
@@ -39,7 +41,26 @@ public class MongoAuthorDAO implements AuthorDAO {
 	public AuthorDTOImpl save(final AuthorDTOImpl authorDTOImpl) {
 		LOGGER.debug("Save AuthorDTOImpl:\n{}",authorDTOImpl);
 		if(authorDTOImpl!=null){
-			return mapper.map(mongoAuthorRepository.save(mapper.map(authorDTOImpl, MongoAuthor.class)),AuthorDTOImpl.class);
+			AuthorDTOImpl saveableAuthorDTOImpl=null;
+			if(authorDTOImpl.getId()==null) { 
+				final AuthorDTOImpl foundByNameAuthorDTOImpl=null; // TODO: findByName(authorDTOImpl.getName());
+				if(foundByNameAuthorDTOImpl==null) {
+					saveableAuthorDTOImpl=authorDTOImpl;
+				}
+				/* TODO: 
+				else {
+					foundByNameAuthorDTOImpl.setName(authorDTOImpl.getName());
+					saveableAuthorDTOImpl=foundByNameAuthorDTOImpl;
+				}
+				*/
+			}else { // Retrieve by id and update:
+				final AuthorDTOImpl foundByIdAuthorDTOImpl=findById(authorDTOImpl.getId());
+				foundByIdAuthorDTOImpl.setName(authorDTOImpl.getName());
+				saveableAuthorDTOImpl=foundByIdAuthorDTOImpl;
+			}
+			if(saveableAuthorDTOImpl!=null) {
+				return mapper.map(mongoAuthorRepository.save(mapper.map(saveableAuthorDTOImpl, MongoAuthor.class)),AuthorDTOImpl.class);
+			}
 		}
 		return authorDTOImpl;
 	}

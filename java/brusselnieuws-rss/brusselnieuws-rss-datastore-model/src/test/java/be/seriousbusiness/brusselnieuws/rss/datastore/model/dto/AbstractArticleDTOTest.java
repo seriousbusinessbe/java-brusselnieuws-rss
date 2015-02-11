@@ -66,9 +66,12 @@ public abstract class AbstractArticleDTOTest<MEDIUMTYPEDTO extends MediumTypeDTO
 	@Override
 	public void test(){
 		super.test();
-		assertNull("The set of AuthorDTO should be null",getDTO().getAuthorDTOs());
-		assertNull("The set of CategoryDTO should be null",getDTO().getCategoryDTOs());
-		assertNull("The set of MediumDTO should be null",getDTO().getMediumDTOs());
+		//assertNotNull("The set of AuthorDTO should not be null",getDTO().getAuthorDTOs());
+		//assertTrue("The set of AuthorDTO should be empty",getDTO().getAuthorDTOs().isEmpty());
+		//assertNotNull("The set of CategoryDTO should not be null",getDTO().getCategoryDTOs());
+		//assertTrue("The set of CategoryDTO should be empty",getDTO().getCategoryDTOs().isEmpty());
+		//assertNotNull("The set of MediumDTO should not be null",getDTO().getMediumDTOs());
+		//assertTrue("The set of MediumDTO should be empty",getDTO().getMediumDTOs().isEmpty());
 		assertNull("The description should be null",getDTO().getDescription());
 		assertNull("The link should be null",getDTO().getLink());
 		assertNull("The publication date should be null",getDTO().getPublicationDate());

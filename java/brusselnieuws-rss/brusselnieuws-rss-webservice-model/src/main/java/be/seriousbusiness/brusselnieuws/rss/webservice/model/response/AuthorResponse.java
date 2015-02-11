@@ -13,7 +13,7 @@ public class AuthorResponse extends AbstractIdResponse {
 	/**
 	 * Constructor solely used for {@link Mapper} functionality.
 	 */
-	public AuthorResponse() {}
+	private AuthorResponse() {}
 
 	public String getName() {
 		return name;

@@ -6,6 +6,7 @@ import java.util.Collection;
 
 import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.FeedDAO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.FeedDTOImpl;
@@ -19,7 +20,8 @@ import be.seriousbusiness.brusselnieuws.rss.reader.model.manager.FeedManager;
 
 public class FeedManagerImpl implements FeedManager<MediumTypeImpl,MediumImpl,CategoryImpl,AuthorImpl,ArticleImpl,FeedImpl> {
 	private FeedDAO feedDAO;
-	@Autowired
+	@Autowired(required=true)
+	@Qualifier("brusselNieuwsRssReaderModelDozerBeanMapper")
 	private Mapper mapper;
 	
 	public Collection<FeedImpl> findAll(){
@@ -44,10 +46,13 @@ public class FeedManagerImpl implements FeedManager<MediumTypeImpl,MediumImpl,Ca
 	}
 	
 	@Override
-	public void save(final FeedImpl feed) {
+	public FeedImpl save(final FeedImpl feed) {
 		if(feed!=null) {
-			feedDAO.save(mapper.map(feed,FeedDTOImpl.class));
+			final FeedDTOImpl feedDTOImpl=mapper.map(feed,FeedDTOImpl.class);
+			final FeedDTOImpl savedFeedDTOImpl=feedDAO.save(feedDTOImpl);
+			return mapper.map(savedFeedDTOImpl,FeedImpl.class);
 		}
+		return feed;
 	}
 	
 	public void setFeedDAO(final FeedDAO feedDAO){

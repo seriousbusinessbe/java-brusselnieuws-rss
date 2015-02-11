@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.ArticleDAO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.ArticleDTOImpl;
@@ -22,7 +23,8 @@ import be.seriousbusiness.brusselnieuws.rss.reader.model.manager.ArticleManager;
 
 public class ArticleImplManager implements ArticleManager<MediumTypeImpl,MediumImpl,CategoryImpl,AuthorImpl,ArticleImpl> {
 	private ArticleDAO articleDAO;
-	@Autowired
+	@Autowired(required=true)
+	@Qualifier("brusselNieuwsRssReaderModelDozerBeanMapper")
 	private Mapper mapper;
 	private static final Comparator<Article<?,?,?,?>> ARTICLE_COMPARATOR=new ArticlePublicationDateComparator();
 

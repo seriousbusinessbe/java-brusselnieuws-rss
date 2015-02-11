@@ -35,9 +35,12 @@ public interface FeedManager<MEDIUMTYPE extends MediumType,
 	FEED findByLink(final URL url);
 	
 	/**
-	 * Save a {@link Feed} and all of it's {@link Article}.
+	 * Save a {@link Feed} and all of it's {@link Article}.</br>
+	 * Use the returned instance for further operations</br>
+	 * as the save operation might have changed the entity instance completely.
 	 * @param feed
+	 * @return the saved {@link Feed}
 	 */
-	void save(final FEED feed);
+	FEED save(final FEED feed);
 
 }

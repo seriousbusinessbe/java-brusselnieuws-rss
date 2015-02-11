@@ -8,5 +8,7 @@
 		http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.5.xsd">
 	
 	<import resource="classpath:config/test-brusselnieuws-rss-reader-model-dozer-config.xml"/>
+		
+	<bean id="feedManagerImpl" class="be.seriousbusiness.brusselnieuws.rss.reader.model.manager.impl.FeedManagerImpl"/>
 
 </beans>

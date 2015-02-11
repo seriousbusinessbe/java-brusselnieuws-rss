@@ -7,7 +7,7 @@
 	By default, Dozer will look for a file named dozer.properties to load configuration properties. 
 	If a properties file is not found or specified, default values will be used. -->
 
-	<bean id="dozerBeanMapper" class="org.dozer.DozerBeanMapper">
+	<bean id="brusselNieuwsRssReaderModelDozerBeanMapper" class="org.dozer.DozerBeanMapper">
 		<property name="mappingFiles" value="config/brusselnieuws-rss-reader-model-dozer-mapping-config.xml"/> <!-- classpath: -->
 	</bean>
 

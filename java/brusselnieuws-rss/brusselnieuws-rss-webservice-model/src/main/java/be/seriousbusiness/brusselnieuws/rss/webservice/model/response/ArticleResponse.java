@@ -25,7 +25,7 @@ public class ArticleResponse extends AbstractIdResponse {
 	/**
 	 * Constructor solely used for {@link Mapper} functionality.
 	 */
-	public ArticleResponse() {}
+	private ArticleResponse() {}
 	
 	public String getTitle() {
 		return title;

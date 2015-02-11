@@ -50,7 +50,8 @@ public abstract class AbstractFeedDTOTest<MEDIUMTYPEDTO extends MediumTypeDTO,
 	@Override
 	public void test(){
 		super.test();
-		assertNull("The set of ArticleDTO should be null",getDTO().getArticleDTOs());
+		//assertNotNull("The set of ArticleDTO should not be null",getDTO().getArticleDTOs());
+		//assertTrue("The set of AuthorDTO should be empty",getDTO().getArticleDTOs().isEmpty());
 		assertNull("The description should be null",getDTO().getDescription());
 		assertNull("The link should be null",getDTO().getLink());
 		assertNull("The title should be null",getDTO().getTitle());	
