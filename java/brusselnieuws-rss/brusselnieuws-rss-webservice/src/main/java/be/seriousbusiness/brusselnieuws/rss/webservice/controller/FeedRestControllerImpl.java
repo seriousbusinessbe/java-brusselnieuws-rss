@@ -62,7 +62,7 @@ public class FeedRestControllerImpl<MEDIUMTYPE extends MediumType,
 	private final FEED getFeed(final FeedMetaEnum feedMetaEnum) {
 		FEED feed=null;
 		if(FEEDS_MAP.containsKey(feedMetaEnum)) {
-			feed=FEEDS_MAP.get(feedMetaEnum);
+			feed=brusselNieuwsRss.update(FEEDS_MAP.get(feedMetaEnum));
 		} else {
 			switch(feedMetaEnum) {
 				case CITY_NEWS : feed=brusselNieuwsRss.getCityNews(); break;
@@ -112,9 +112,9 @@ public class FeedRestControllerImpl<MEDIUMTYPE extends MediumType,
 				case VORST_NEWS : feed=brusselNieuwsRss.getVorstNews(); break;
 				case WATERMAAL_BOSVOORDE : feed=brusselNieuwsRss.getWatermaalBosvoordeNews(); break;
 			}
-			FEEDS_MAP.put(feedMetaEnum,feed);
 		}
-		return brusselNieuwsRss.update(feed);
+		FEEDS_MAP.put(feedMetaEnum,feed);
+		return feed;
 	}
 	
 	@Override

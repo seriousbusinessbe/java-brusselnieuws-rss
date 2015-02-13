@@ -127,9 +127,12 @@ public class BrusselNieuwsRssReaderImpl implements BrusselNieuwsRssReader<FeedIm
 								publicationDate(new DateTime(syndEntry.getPublishedDate().getTime())).
 								read(false).
 								title(syndEntry.getTitle()).build();
-							feed.add(article);
+							if(!feed.hasArticle(article)) {
+								LOGGER.info("{}",article.getTitle());
+								feed.add(article);
+							}
 						}catch(final MalformedURLException e){
-							LOGGER.error("The article's link was incorrect",e);
+							LOGGER.error("The article's link is incorrect",e);
 						}					
 					}
 				}

@@ -60,13 +60,14 @@ public class MediumTypeImpl extends AbstractIdImpl<BigInteger> implements Medium
 	
 	@Override
 	public boolean equals(final Object obj){
-		return obj!=null && obj instanceof MediumTypeImpl && super.equals(obj) && 
+		return obj!=null && obj instanceof MediumTypeImpl && //super.equals(obj) && 
 				ObjectUtil.isNullOrEqual(type,((MediumTypeImpl)obj).type);
 	}
 	
 	@Override
 	public int hashCode(){
-		return super.hashCode() * ObjectUtil.hashCode(type);
+		return //super.hashCode() * 
+				ObjectUtil.hashCode(type);
 	}
 	
 	@Override

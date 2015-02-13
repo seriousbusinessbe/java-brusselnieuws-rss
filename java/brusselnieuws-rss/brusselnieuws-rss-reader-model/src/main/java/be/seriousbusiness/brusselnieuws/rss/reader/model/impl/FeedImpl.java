@@ -213,7 +213,7 @@ public class FeedImpl extends AbstractIdImpl<BigInteger> implements Feed<MediumT
 	
 	@Override
 	public boolean equals(final Object obj){
-		return obj!=null && obj instanceof FeedImpl && super.equals(obj) &&
+		return obj!=null && obj instanceof FeedImpl && //super.equals(obj) &&
 				ObjectUtil.isNullOrEqual(title,((FeedImpl)obj).title) &&
 				ObjectUtil.isNullOrEqual(link,((FeedImpl)obj).link) &&
 				ObjectUtil.isNullOrEqual(description,((FeedImpl)obj).description) &&
@@ -222,7 +222,7 @@ public class FeedImpl extends AbstractIdImpl<BigInteger> implements Feed<MediumT
 	
 	@Override
 	public int hashCode(){
-		return super.hashCode() * 
+		return //super.hashCode() * 
 				ObjectUtil.hashCode(title) * 
 				ObjectUtil.hashCode(link) *
 				ObjectUtil.hashCode(description) *

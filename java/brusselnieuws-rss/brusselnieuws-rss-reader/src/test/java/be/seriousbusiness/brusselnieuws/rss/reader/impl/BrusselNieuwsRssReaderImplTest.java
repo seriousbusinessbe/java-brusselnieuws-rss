@@ -81,7 +81,7 @@ public class BrusselNieuwsRssReaderImplTest {
 		assertEquals(new URL("http://www.brusselnieuws.be/nl/bn-section/politiek"),politicalCategory.getLink());
 		final Collection<MediumImpl> media=article.getMedia();
 		assertNotNull("The article's list of medium's should not be null",media);
-		assertEquals(1,media.size());
+		assertEquals(2,media.size());
 		final MediumImpl medium=new ArrayList<MediumImpl>(media).get(0);
 		assertNotNull(medium);
 		assertEquals("image/jpeg",medium.getType().getType());
