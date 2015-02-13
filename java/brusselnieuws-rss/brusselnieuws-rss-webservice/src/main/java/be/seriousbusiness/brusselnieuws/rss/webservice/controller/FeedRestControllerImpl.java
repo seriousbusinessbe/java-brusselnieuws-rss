@@ -1,7 +1,6 @@
 package be.seriousbusiness.brusselnieuws.rss.webservice.controller;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -24,12 +23,14 @@ import be.seriousbusiness.brusselnieuws.rss.reader.model.Category;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Feed;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Medium;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.MediumType;
-import be.seriousbusiness.brusselnieuws.rss.webservice.model.comparator.FeedMetaResponseCategoryDutchNameComparator;
+import be.seriousbusiness.brusselnieuws.rss.webservice.model.comparator.FeedCategoryResponseTranslatedNameComparator;
+import be.seriousbusiness.brusselnieuws.rss.webservice.model.comparator.FeedMetaResponseCategoryTranslatedNameComparator;
 import be.seriousbusiness.brusselnieuws.rss.webservice.model.controller.FeedRestController;
-import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedCategoriesResponse;
-import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedsMetaResponse;
+import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedCategoryResponse;
 import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedMetaResponse;
 import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedResponse;
+import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedsCategoriesResponse;
+import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedsMetaResponse;
 
 /**
  * Spring-boot {@link FeedRestController} implementation.
@@ -46,13 +47,14 @@ public class FeedRestControllerImpl<MEDIUMTYPE extends MediumType,
 									AUTHOR extends Author,
 									ARTICLE extends Article<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR>,
 									FEED extends Feed<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,ARTICLE>> implements FeedRestController {
-	private static final Comparator<FeedMetaResponse> FEEDMETARESPONSE_COMPARATOR=new FeedMetaResponseCategoryDutchNameComparator();
+	private static final Comparator<FeedMetaResponse> FEEDMETARESPONSE_COMPARATOR=new FeedMetaResponseCategoryTranslatedNameComparator();
+	private static final Comparator<FeedCategoryResponse> FEEDCATEGORYRESPONSE_COMPARATOR=new FeedCategoryResponseTranslatedNameComparator();
 	private final Map<FeedMetaEnum,FEED> FEEDS_MAP=new HashMap<FeedMetaEnum,FEED>();
 	@Autowired(required=true)
 	@Qualifier("brusselNieuwsRssWebserviceDozerBeanMapper")
 	private Mapper mapper;
 	private BrusselNieuwsRss<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,ARTICLE,FEED> brusselNieuwsRss;
-	public static final String FEED="feed",FEEDS_META="feedsMeta",FEED_CATEGORIES="feedCategories";
+	public static final String FEED="feed",FEEDS_META="feedsMeta",FEED_CATEGORIES="feedsCategories";
 	
 	/**
 	 * Retrieves a feed by {@link FeedMetaEnum}.
@@ -119,12 +121,13 @@ public class FeedRestControllerImpl<MEDIUMTYPE extends MediumType,
 	
 	@Override
 	@RequestMapping(value="/"+FEED_CATEGORIES, method=RequestMethod.GET)
-	public FeedCategoriesResponse getFeedCategories() {
-		final Collection<String> feedCategories=new ArrayList<String>();
+	public FeedsCategoriesResponse getFeedCategories() {
+		final List<FeedCategoryResponse> feedCategoryResponses=new ArrayList<FeedCategoryResponse>();
 		for(final FeedCategoryMetaEnum feedCategoryMetaEnum : FeedCategoryMetaEnum.values()) {
-			feedCategories.add(feedCategoryMetaEnum.name());
+			feedCategoryResponses.add(new FeedCategoryResponse(feedCategoryMetaEnum.name(),feedCategoryMetaEnum.getTranslatedName()));
 		}
-		return new FeedCategoriesResponse(feedCategories);
+		Collections.sort(feedCategoryResponses,FEEDCATEGORYRESPONSE_COMPARATOR);
+		return new FeedsCategoriesResponse(feedCategoryResponses);
 	}
 	
 	@Override

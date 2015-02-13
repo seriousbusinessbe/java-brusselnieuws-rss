@@ -31,25 +31,22 @@
 		});
 	}]);
 
-	var globalCategory='CULTURE';
-
-	app.controller('FeedCategoriesController',['$http', function($http){
+	app.controller('FeedsCategoriesController',['$http', function($http){
 		var store = this;
-		store.feedCategoriesResponse = [];
+		store.feedsCategoriesResponse = [];
 
-		$http.get('http://127.0.0.1:8080/feedCategories').success(function(data){
-			store.feedCategoriesResponse = data;
+		$http.get('http://127.0.0.1:8080/feedsCategories').success(function(data){
+			store.feedsCategoriesResponse = data;
 		});
 
-		this.category = 'CULTURE';
+		this.feedCategoryResponseName = 'CULTURE';
 
-		this.selectCategory = function(category) {
-			this.category = category;
-			globalCategory=category;
+		this.selectCategoryByName = function(feedCategoryResponseName) {
+			this.feedCategoryResponseName = feedCategoryResponseName;
 		};
 
-		this.isSelected = function(category) {
-			return this.category === category;
+		this.isSelected = function(feedCategoryResponseName) {
+			return this.feedCategoryResponseName === feedCategoryResponseName;
 		};
 	}]);
 

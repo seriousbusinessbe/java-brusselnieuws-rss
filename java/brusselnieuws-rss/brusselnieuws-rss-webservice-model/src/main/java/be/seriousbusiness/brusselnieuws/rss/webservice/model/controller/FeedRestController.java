@@ -1,6 +1,6 @@
 package be.seriousbusiness.brusselnieuws.rss.webservice.model.controller;
 
-import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedCategoriesResponse;
+import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedsCategoriesResponse;
 import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedsMetaResponse;
 import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedResponse;
 
@@ -14,10 +14,10 @@ import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedRespon
 public interface FeedRestController {
 	
 	/**
-	 * Returns a {@link FeedCategoriesResponse} containing all feed categories
-	 * @return a {@link FeedCategoriesResponse}
+	 * Returns a {@link FeedsCategoriesResponse} containing all feed categories
+	 * @return a {@link FeedsCategoriesResponse}
 	 */
-	FeedCategoriesResponse getFeedCategories();
+	FeedsCategoriesResponse getFeedCategories();
 	
 	/**
 	 * Returns a {@link FeedsMetaResponse} containing all retrievable feeds meta data.  

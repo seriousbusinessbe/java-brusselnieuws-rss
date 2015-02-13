@@ -8,42 +8,42 @@ package be.seriousbusiness.brusselnieuws.rss.webservice.model.response;
  * @since 1.0
  */
 public class FeedMetaResponse {
-	private String dutchName;
+	private String translatedName;
 	private int requestId;
 	private String category;
 	
 	/**
 	 * Constructor mandatory for Jackson REST mapping.
 	 */
+	@SuppressWarnings("unused")
 	private FeedMetaResponse() {}
 
-	
 	/**
 	 * Creates a new {@link FeedMetaResponse} containing the required Dutch name, request id and category name.
-	 * @param dutchName the Dutch name
+	 * @param translatedName the translated name
 	 * @param requestId the feed request id
 	 * @param category the category name
 	 */
-	public FeedMetaResponse(final String dutchName,final int requestId,final String category) {
-		setDutchName(dutchName);
+	public FeedMetaResponse(final String translatedName,final int requestId,final String category) {
+		setTranslatedName(translatedName);
 		setRequestId(requestId);
 		setCategory(category);
 	}
 		
 	/**
-	 * Retrieves this feed name in Dutch.
-	 * @return Dutch feed name
+	 * Retrieves this feed's translated name.
+	 * @return translated feed name
 	 */
-	public String getDutchName() {
-		return dutchName;
+	public String getTranslatedName() {
+		return translatedName;
 	}
 	
 	/**
-	 * Sets this feed name in Dutch.
-	 * @param dutchName non empty, non <code>null</code> unique name
+	 * Sets this feed's translated name.
+	 * @param non empty, non <code>null</code> translated feed name
 	 */
-	public void setDutchName(final String dutchName) {
-		this.dutchName = dutchName;
+	public void setTranslatedName(final String translatedName) {
+		this.translatedName = translatedName;
 	}
 	
 	/**
@@ -65,7 +65,7 @@ public class FeedMetaResponse {
 	}
 	
 	/**
-	 * Retrieves this feed's category
+	 * Retrieves this feed's category.
 	 * @return category
 	 */
 	public String getCategory() {
@@ -73,7 +73,7 @@ public class FeedMetaResponse {
 	}
 	
 	/**
-	 * Sets this feed's category
+	 * Sets this feed's category.
 	 * @param category non empty, non <code>null</code> category
 	 */
 	public void setCategory(final String category) {

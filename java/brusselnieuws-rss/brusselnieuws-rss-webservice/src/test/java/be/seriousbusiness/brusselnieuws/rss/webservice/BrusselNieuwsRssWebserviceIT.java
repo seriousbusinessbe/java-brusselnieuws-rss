@@ -25,7 +25,8 @@ import org.springframework.web.client.RestTemplate;
 import be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedMetaEnum;
 import be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedCategoryMetaEnum;
 import be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl;
-import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedCategoriesResponse;
+import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedCategoryResponse;
+import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedsCategoriesResponse;
 import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedsMetaResponse;
 import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedMetaResponse;
 import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedResponse;
@@ -41,7 +42,7 @@ import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedRespon
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = BrusselNieuwsRssWebservice.class)
-@WebIntegrationTest({"server.port=0"}) // ,"management.port=0"
+@WebIntegrationTest({"server.port=0"})
 public class BrusselNieuwsRssWebserviceIT {
 	private RestTemplate restTemplate;
 	private String baseURL;
@@ -60,20 +61,20 @@ public class BrusselNieuwsRssWebserviceIT {
     
     @Test
 	public void testFeedCategories() throws RestClientException, URISyntaxException {
-		final FeedCategoriesResponse feedCategoriesResponse=restTemplate.getForObject(new URI(baseURL+FeedRestControllerImpl.FEED_CATEGORIES),FeedCategoriesResponse.class);
+		final FeedsCategoriesResponse feedCategoriesResponse=restTemplate.getForObject(new URI(baseURL+FeedRestControllerImpl.FEED_CATEGORIES),FeedsCategoriesResponse.class);
 		Assert.assertNotNull(feedCategoriesResponse);
-		final Collection<String> feedCategories=feedCategoriesResponse.getFeedCategories();
-		Assert.assertNotNull(feedCategories);
-		Assert.assertFalse(feedCategories.isEmpty());
-		Assert.assertEquals(FeedCategoryMetaEnum.values().length, feedCategories.size());
-		for(final String feedCategory : feedCategories) {
-			Assert.assertNotNull(FeedCategoryMetaEnum.find(feedCategory));
+		final Collection<FeedCategoryResponse> feedCategoryResponses=feedCategoriesResponse.getFeedCategoryResponses();
+		Assert.assertNotNull(feedCategoryResponses);
+		Assert.assertFalse(feedCategoryResponses.isEmpty());
+		Assert.assertEquals(FeedCategoryMetaEnum.values().length, feedCategoryResponses.size());
+		for(final FeedCategoryResponse feedCategoryResponse : feedCategoryResponses) {
+			Assert.assertNotNull(FeedCategoryMetaEnum.find(feedCategoryResponse.getName()));
 		}
 	}
     
     @Test
 	public void testFeedCategoriesStatus() throws RestClientException, URISyntaxException {
-		final ResponseEntity<FeedCategoriesResponse> feedCategoriesResponse=restTemplate.getForEntity(new URI(baseURL+FeedRestControllerImpl.FEED_CATEGORIES),FeedCategoriesResponse.class);
+		final ResponseEntity<FeedsCategoriesResponse> feedCategoriesResponse=restTemplate.getForEntity(new URI(baseURL+FeedRestControllerImpl.FEED_CATEGORIES),FeedsCategoriesResponse.class);
 		Assert.assertEquals(HttpStatus.OK,feedCategoriesResponse.getStatusCode());
 	}
 	

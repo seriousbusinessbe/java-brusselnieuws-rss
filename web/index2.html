@@ -10,17 +10,17 @@
 		<script type="text/javascript" src="bower_components/angular-filter/dist/angular-filter.min.js"></script> -->
 		<script type="text/javascript" src="js/brusselNieuwsRss.js"></script>
 		<p>{{"Brussel Nieuws RSS"}}</p>
-		<section ng-controller="FeedCategoriesController as feedCategoriesController">
+		<section ng-controller="FeedsCategoriesController as feedsCategoriesController">
 			<ul class="nav nav-pills">
-				<li ng-repeat="feedCategory in feedCategoriesController.feedCategoriesResponse.feedCategories | orderBy:feedCategory"
-					ng-class="{active:feedCategoriesController.isSelected(feedCategory)}">
-					<a href ng-click="feedCategoriesController.selectCategory(feedCategory)">{{feedCategory}}</a>
+				<li ng-repeat="feedCategoryResponse in feedsCategoriesController.feedsCategoriesResponse.feedCategoryResponses | orderBy:feedCategoryResponse.translatedName"
+					ng-class="{active:feedsCategoriesController.isSelected(feedCategoryResponse.name)}">
+					<a href ng-click="feedsCategoriesController.selectCategoryByName(feedCategoryResponse.name)">{{feedCategoryResponse.translatedName}}</a>
 				</li>
 			</ul>
-			{{feedCategoriesController.category}}
+			{{feedsCategoriesController.feedCategoryResponseName}}
 			<ul ng-controller="FeedsMetaController as feedsMetaController" class="nav nav-pills">
-				<li ng-repeat="feedmeta in feedsMetaController.feedsMetaResponse.feedMetaResponses | orderBy:feedmeta.dutchName" ng-show="feedmeta.category=='CULTURE'">
-					<a>{{feedmeta.dutchName}}</a>
+				<li ng-repeat="feedmeta in feedsMetaController.feedsMetaResponse.feedMetaResponses | orderBy:feedmeta.translatedName" ng-show="feedmeta.category=='CULTURE'">
+					<a>{{feedmeta.translatedName}}</a>
 					<!--
 					<h2>{{feedmeta.requestId}}</h2>
 					<h3>{{feedmeta.category}}</h3>

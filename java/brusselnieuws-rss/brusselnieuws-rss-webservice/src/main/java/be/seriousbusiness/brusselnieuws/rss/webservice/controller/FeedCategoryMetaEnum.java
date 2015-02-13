@@ -8,11 +8,25 @@ package be.seriousbusiness.brusselnieuws.rss.webservice.controller;
  * @since 1.0
  */
 public enum FeedCategoryMetaEnum {
-	NEWS,
-	CULTURE,
-	FOOD_AND_DRINKS,
-	OPINION,
-	MUNICIPALITY;
+	NEWS("Nieuws"),
+	CULTURE("Cultuur"),
+	FOOD_AND_DRINKS("Eten en drinken"),
+	OPINION("Opinie"),
+	MUNICIPALITY("Gemeenten");
+	
+	private String translatedName;
+	
+	private FeedCategoryMetaEnum(final String translatedName) {
+		this.translatedName=translatedName;
+	}
+	
+	/**
+	 * Returns this category translated name.
+	 * @return category translated name
+	 */
+	public String getTranslatedName() {
+		return translatedName;
+	}
 	
 	/**
 	 * Finds {@link FeedCategoryMetaEnum} by feed category.
