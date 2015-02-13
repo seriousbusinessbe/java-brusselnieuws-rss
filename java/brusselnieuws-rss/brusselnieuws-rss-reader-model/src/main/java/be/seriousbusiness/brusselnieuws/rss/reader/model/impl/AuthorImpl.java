@@ -55,14 +55,13 @@ public class AuthorImpl extends AbstractIdImpl<BigInteger> implements Author {
 	
 	@Override
 	public boolean equals(final Object obj){
-		return obj!=null && obj instanceof AuthorImpl && //super.equals(obj) &&
+		return obj!=null && obj instanceof AuthorImpl && 
 				ObjectUtil.isNullOrEqual(name,((AuthorImpl)obj).name);
 	}
 	
 	@Override
 	public int hashCode(){
-		return //super.hashCode() * 
-				ObjectUtil.hashCode(name);
+		return ObjectUtil.hashCode(name);
 	}
 	
 	@Override

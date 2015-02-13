@@ -77,15 +77,14 @@ public class CategoryImpl extends AbstractIdImpl<BigInteger> implements Category
 	
 	@Override
 	public boolean equals(final Object obj){
-		return obj!=null && obj instanceof CategoryImpl && //super.equals(obj) &&
+		return obj!=null && obj instanceof CategoryImpl && 
 				ObjectUtil.isNullOrEqual(name,((CategoryImpl)obj).name) &&
 				ObjectUtil.isNullOrEqual(link,((CategoryImpl)obj).link);
 	}
 	
 	@Override
 	public int hashCode(){
-		return //super.hashCode() * 
-				ObjectUtil.hashCode(name) * ObjectUtil.hashCode(link);
+		return ObjectUtil.hashCode(name) * ObjectUtil.hashCode(link);
 	}
 	
 	@Override

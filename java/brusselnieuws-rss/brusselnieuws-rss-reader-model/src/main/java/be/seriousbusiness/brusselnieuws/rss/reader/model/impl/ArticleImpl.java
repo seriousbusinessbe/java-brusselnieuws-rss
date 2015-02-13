@@ -328,7 +328,7 @@ public class ArticleImpl extends AbstractIdImpl<BigInteger> implements Article<M
 	
 	@Override
 	public boolean equals(final Object obj){
-		return obj!=null && obj instanceof ArticleImpl && //super.equals(obj) &&
+		return obj!=null && obj instanceof ArticleImpl && 
 				ObjectUtil.isNullOrEqual(title,((ArticleImpl)obj).title) &&
 				ObjectUtil.isNullOrEqual(link,((ArticleImpl)obj).link) &&
 				ObjectUtil.isNullOrEqual(description,((ArticleImpl)obj).description) &&
@@ -343,8 +343,7 @@ public class ArticleImpl extends AbstractIdImpl<BigInteger> implements Article<M
 	
 	@Override
 	public int hashCode(){
-		return //super.hashCode() * 
-				ObjectUtil.hashCode(title) * 
+		return ObjectUtil.hashCode(title) * 
 				ObjectUtil.hashCode(link) *
 				ObjectUtil.hashCode(description) *
 				ObjectUtil.hashCode(publicationDate) *

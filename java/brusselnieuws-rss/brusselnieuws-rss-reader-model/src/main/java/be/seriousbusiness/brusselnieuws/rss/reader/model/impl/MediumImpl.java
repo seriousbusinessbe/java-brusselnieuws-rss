@@ -98,8 +98,7 @@ public class MediumImpl implements Medium<MediumTypeImpl> {
 	
 	@Override
 	public int hashCode(){
-		return //super.hashCode() * 
-				ObjectUtil.hashCode(link) *
+		return ObjectUtil.hashCode(link) *
 				ObjectUtil.hashCode(size) *
 				ObjectUtil.hashCode(mediumTypeImpl);
 	}
