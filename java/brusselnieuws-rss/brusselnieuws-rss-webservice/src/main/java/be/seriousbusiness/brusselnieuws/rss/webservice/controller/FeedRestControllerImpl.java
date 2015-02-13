@@ -1,6 +1,7 @@
 package be.seriousbusiness.brusselnieuws.rss.webservice.controller;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -25,7 +26,8 @@ import be.seriousbusiness.brusselnieuws.rss.reader.model.Medium;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.MediumType;
 import be.seriousbusiness.brusselnieuws.rss.webservice.model.comparator.FeedMetaResponseCategoryDutchNameComparator;
 import be.seriousbusiness.brusselnieuws.rss.webservice.model.controller.FeedRestController;
-import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedMetaListResponse;
+import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedCategoriesResponse;
+import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedsMetaResponse;
 import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedMetaResponse;
 import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedResponse;
 
@@ -50,6 +52,7 @@ public class FeedRestControllerImpl<MEDIUMTYPE extends MediumType,
 	@Qualifier("brusselNieuwsRssWebserviceDozerBeanMapper")
 	private Mapper mapper;
 	private BrusselNieuwsRss<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,ARTICLE,FEED> brusselNieuwsRss;
+	public static final String FEED="feed",FEEDS_META="feedsMeta",FEED_CATEGORIES="feedCategories";
 	
 	/**
 	 * Retrieves a feed by {@link FeedMetaEnum}.
@@ -115,22 +118,32 @@ public class FeedRestControllerImpl<MEDIUMTYPE extends MediumType,
 	}
 	
 	@Override
-	@RequestMapping(value="/feed/{id}", method=RequestMethod.GET)
-	public FeedResponse getFeed(final @PathVariable(value="id") int id) {
-		final FeedMetaEnum feedMetaEnum=FeedMetaEnum.find(id);
-		return feedMetaEnum==null ? new FeedResponse() : mapper.map(getFeed(feedMetaEnum),FeedResponse.class);
+	@RequestMapping(value="/"+FEED_CATEGORIES, method=RequestMethod.GET)
+	public FeedCategoriesResponse getFeedCategories() {
+		final Collection<String> feedCategories=new ArrayList<String>();
+		for(final FeedCategoryMetaEnum feedCategoryMetaEnum : FeedCategoryMetaEnum.values()) {
+			feedCategories.add(feedCategoryMetaEnum.name());
+		}
+		return new FeedCategoriesResponse(feedCategories);
 	}
-
+	
 	@Override
-	@RequestMapping(value="/feedlist", method=RequestMethod.GET)
-	public FeedMetaListResponse getFeedList() {
+	@RequestMapping(value="/"+FEEDS_META, method=RequestMethod.GET)
+	public FeedsMetaResponse getFeedsMeta() {
 		final List<FeedMetaResponse> feedMetaResponses=new ArrayList<FeedMetaResponse>();
 		for(final FeedMetaEnum feedMetaEnum : FeedMetaEnum.values()) {
 			feedMetaResponses.add(new FeedMetaResponse(feedMetaEnum.getDutchName(),feedMetaEnum.getRequestId(),feedMetaEnum.getCategory().name()));
 		}		
 		Collections.sort(feedMetaResponses,FEEDMETARESPONSE_COMPARATOR);
-		final FeedMetaListResponse feedMetaListResponse=new FeedMetaListResponse(feedMetaResponses);		
+		final FeedsMetaResponse feedMetaListResponse=new FeedsMetaResponse(feedMetaResponses);		
 		return feedMetaListResponse;
+	}
+	
+	@Override
+	@RequestMapping(value="/"+FEED+"/{id}", method=RequestMethod.GET)
+	public FeedResponse getFeed(final @PathVariable(value="id") int id) {
+		final FeedMetaEnum feedMetaEnum=FeedMetaEnum.find(id);
+		return feedMetaEnum==null ? new FeedResponse() : mapper.map(getFeed(feedMetaEnum),FeedResponse.class);
 	}
 	
 	/* SETTERS */

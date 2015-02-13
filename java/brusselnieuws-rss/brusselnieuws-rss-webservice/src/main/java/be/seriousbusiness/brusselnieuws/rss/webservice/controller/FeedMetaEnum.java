@@ -1,6 +1,10 @@
 package be.seriousbusiness.brusselnieuws.rss.webservice.controller;
 
-import static be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedCategoryMetaEnum.*;
+import static be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedCategoryMetaEnum.CULTURE;
+import static be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedCategoryMetaEnum.FOOD_AND_DRINKS;
+import static be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedCategoryMetaEnum.MUNICIPALITY;
+import static be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedCategoryMetaEnum.NEWS;
+import static be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedCategoryMetaEnum.OPINION;
 
 /**
  * Lists all feed meta data.

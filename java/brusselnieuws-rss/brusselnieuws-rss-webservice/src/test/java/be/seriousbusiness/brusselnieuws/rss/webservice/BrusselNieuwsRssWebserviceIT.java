@@ -23,7 +23,10 @@ import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedMetaEnum;
-import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedMetaListResponse;
+import be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedCategoryMetaEnum;
+import be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl;
+import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedCategoriesResponse;
+import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedsMetaResponse;
 import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedMetaResponse;
 import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedResponse;
 
@@ -54,10 +57,29 @@ public class BrusselNieuwsRssWebserviceIT {
     	restTemplate = new TestRestTemplate();
     	baseURL="http://localhost:"+port+"/";
     }
+    
+    @Test
+	public void testFeedCategories() throws RestClientException, URISyntaxException {
+		final FeedCategoriesResponse feedCategoriesResponse=restTemplate.getForObject(new URI(baseURL+FeedRestControllerImpl.FEED_CATEGORIES),FeedCategoriesResponse.class);
+		Assert.assertNotNull(feedCategoriesResponse);
+		final Collection<String> feedCategories=feedCategoriesResponse.getFeedCategories();
+		Assert.assertNotNull(feedCategories);
+		Assert.assertFalse(feedCategories.isEmpty());
+		Assert.assertEquals(FeedCategoryMetaEnum.values().length, feedCategories.size());
+		for(final String feedCategory : feedCategories) {
+			Assert.assertNotNull(FeedCategoryMetaEnum.find(feedCategory));
+		}
+	}
+    
+    @Test
+	public void testFeedCategoriesStatus() throws RestClientException, URISyntaxException {
+		final ResponseEntity<FeedCategoriesResponse> feedCategoriesResponse=restTemplate.getForEntity(new URI(baseURL+FeedRestControllerImpl.FEED_CATEGORIES),FeedCategoriesResponse.class);
+		Assert.assertEquals(HttpStatus.OK,feedCategoriesResponse.getStatusCode());
+	}
 	
 	@Test
-	public void testFeedlist() throws RestClientException, URISyntaxException {
-		final FeedMetaListResponse feedMetaListResponse=restTemplate.getForObject(new URI(baseURL+"feedlist"),FeedMetaListResponse.class);
+	public void testFeedsMeta() throws RestClientException, URISyntaxException {
+		final FeedsMetaResponse feedMetaListResponse=restTemplate.getForObject(new URI(baseURL+FeedRestControllerImpl.FEEDS_META),FeedsMetaResponse.class);
 		Assert.assertNotNull(feedMetaListResponse);
 		final Collection<FeedMetaResponse> feedMetaResponses=feedMetaListResponse.getFeedMetaResponses();
 		Assert.assertNotNull(feedMetaResponses);
@@ -69,19 +91,19 @@ public class BrusselNieuwsRssWebserviceIT {
 	}
 	
 	@Test
-	public void testFeedlistStatus() throws RestClientException, URISyntaxException {
-		final ResponseEntity<FeedMetaListResponse> feedMetaListResponse=restTemplate.getForEntity(new URI(baseURL+"feedlist"),FeedMetaListResponse.class);
+	public void testFeedsMetaStatus() throws RestClientException, URISyntaxException {
+		final ResponseEntity<FeedsMetaResponse> feedMetaListResponse=restTemplate.getForEntity(new URI(baseURL+FeedRestControllerImpl.FEEDS_META),FeedsMetaResponse.class);
 		Assert.assertEquals(HttpStatus.OK,feedMetaListResponse.getStatusCode());
 	}
 	
 	@Test
 	public void testFeedStatus() throws RestClientException, URISyntaxException {
-		ResponseEntity<FeedResponse> feedResponse=restTemplate.getForEntity(new URI(baseURL+"feed/{id}") ,FeedResponse.class);
-		Assert.assertEquals(HttpStatus.OK,feedResponse.getStatusCode());
+		ResponseEntity<FeedResponse> feedResponse=restTemplate.getForEntity(new URI(baseURL+FeedRestControllerImpl.FEED) ,FeedResponse.class);
+		Assert.assertEquals(HttpStatus.NOT_FOUND,feedResponse.getStatusCode());
 		for(final FeedMetaEnum feedMetaEnum : FeedMetaEnum.values()) {
 			final Map<String,Integer> urlVariables=new HashMap<String,Integer>();
 			urlVariables.put("id", feedMetaEnum.getRequestId());
-			feedResponse=restTemplate.getForEntity(baseURL+"feed",FeedResponse.class,urlVariables);
+			feedResponse=restTemplate.getForEntity(baseURL+"feed/{id}",FeedResponse.class,urlVariables);
 			Assert.assertEquals(HttpStatus.OK,feedResponse.getStatusCode());
 		}
 	}

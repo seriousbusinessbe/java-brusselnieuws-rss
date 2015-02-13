@@ -38,6 +38,8 @@ import com.sun.syndication.io.XmlReader;
 public class BrusselNieuwsRssReaderImpl implements BrusselNieuwsRssReader<FeedImpl> {
 	private static final Logger LOGGER=LoggerFactory.getLogger(BrusselNieuwsRssReaderImpl.class);
 	private static final SyndFeedInput SYNDFEEDINPUT=new SyndFeedInput();
+	private static final String CROPPED_IMAGE_URL_PART="bn_220_crop";
+	private static final String NORMAL_IMAGE_URL_PART="bn_460";
 	
 	@Override
 	public void updateFeed(final FeedImpl feed) {
@@ -91,18 +93,26 @@ public class BrusselNieuwsRssReaderImpl implements BrusselNieuwsRssReader<FeedIm
 							for(final SyndEnclosure syndEnclosure : syndEnclosures){
 								MediumImpl medium=null; 
 								final MediumTypeImpl mediumType=new MediumTypeImpl.Builder().type(syndEnclosure.getType()).build();
-								try {
+								try { // Add cropped thumbnail:
 									medium=new MediumImpl.Builder().
 										link(new URL(syndEnclosure.getUrl())).
 										size(syndEnclosure.getLength()).
 										type(mediumType).build();
+									media.add(medium);
 								} catch (final MalformedURLException e) {
-									LOGGER.error("The medium's link was incorrect",e);
-									medium=new MediumImpl.Builder().
-											size(syndEnclosure.getLength()).
-											type(mediumType).build();
+									LOGGER.debug("The medium's link was incorrect",e);
 								}
-								media.add(medium);
+								if(syndEnclosure.getUrl().contains(CROPPED_IMAGE_URL_PART)) {
+									try { // Add (guessed) original image:
+										medium=new MediumImpl.Builder().
+												link(new URL(syndEnclosure.getUrl().replace(CROPPED_IMAGE_URL_PART,NORMAL_IMAGE_URL_PART))).
+												size(syndEnclosure.getLength()*2).
+												type(mediumType).build();
+										media.add(medium);
+									} catch (final MalformedURLException e) {
+										LOGGER.debug("The medium's link was incorrect",e);
+									}
+								}
 							}
 						}
 						try {

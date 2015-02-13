@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html ng-app="brusselNieuwsRss">
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/brusselnieuws.css" />
+	</head>
+	<body ng-controller="FeedmetalistController as feedmetalistController">
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/feedlist.js"></script>
+		<p>
+			{{"Hello" + " world"}}
+		</p>
+
+		<ul class="list-group" ng-controller="FeedmetalistliveController as feedmetalistliveController">
+			<li class="list-group-item" ng-repeat="feed in feedmetalistliveController.store.feedmetalistlive">
+				<h1>{{feed.title}}</h1>
+			</li>	
+		</ul>
+		
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="feedmeta in feedmetalistController.feedmetalist | orderBy:'price'" ng-hide="feedmeta.soldout">
+				<!--
+				<h3 ng-include="'feedmetatitle.html'"></h3>
+				<feedmeta-title></feedmeta-title>
+				-->
+				<!--
+				<h1>{{feedmeta.name | uppercase}}</h1>
+				<h2>{{feedmeta.price | currency}}</h2>
+				-->
+				<p>{{feedmeta.description}}</p>
+				<img ng-src="{{feedmeta.media[1].link}}"/>
+				<p>{{feedmeta.publicationDate | date:'dd/MM/yyyy @ h:mma'}}</p>
+				<section ng-controller="FeedmetalistPanelController as feedmetalistPanelController"> <!-- ng-init="tab = 1" -->
+					<ul class="nav nav-pills">
+						<li ng-class="{ active:feedmetalistPanelController.isSelected(1)}">
+							<a href ng-click="feedmetalistPanelController.selectTab(1)">Description</a>
+						</li>
+						<li ng-class="{ active:feedmetalistPanelController.isSelected(2)}">
+							<a href ng-click="feedmetalistPanelController.selectTab(2)">Specification</a>
+						</li>
+						<li ng-class="{ active:feedmetalistPanelController.isSelected(3)}">
+							<a href ng-click="feedmetalistPanelController.selectTab(3)">Reviews</a>
+						</li>
+					</ul>
+
+					<div class="panel" ng-show="feedmetalistPanelController.isSelected(1)">
+						<h4>Description</h4>
+						<blockquote>{{feedmeta.description}}</blockquote>
+					</div>
+
+					<div class="panel" ng-show="feedmetalistPanelController.isSelected(2)">
+						<h4>Specification</h4>
+						<blockquote>None yet</blockquote>
+					</div>
+
+					<div class="panel" ng-show="feedmetalistPanelController.isSelected(3)">
+						<h4>Reviews</h4>
+						<blockquote ng-repeat="review in feedmeta.reviews">
+							<b>{{review.stars}}</b>
+							<cite>by: {{review.author}}</cite>
+						</blockquote>
+
+						<form name="reviewForm" 
+							ng-controller="ReviewController as reviewCtrl" 
+							ng-submit="reviewForm.$valid && reviewCtrl.addReview(feedmeta)" novalidate>
+							<!-- live preview -->
+							<blockquote>
+								<b>Stars: {{reviewCtrl.review.stars}}</b>
+								<cite>by: {{reviewCtrl.review.author}}</cite>
+							</blockquote>
+							<!--  Review Form -->
+			                <h4>Submit a Review</h4>
+			                <div>ReviewForm is {{reviewForm.$valid}}</div>
+			                <fieldset class="form-group">
+								<select ng-model="reviewCtrl.review.stars" ng-options="stars for stars in [5,4,3,2,1]"  
+								title="Stars" required>
+									<option value="">Rate the product</option>
+								</select>
+							</fieldset>
+							<fieldset class="form-group">
+								<textarea ng-model="reviewCtrl.review.body" required></textarea>
+							</fieldset>
+							<fieldset class="form-group">
+								<label>by:</label>
+								<input ng-model="reviewCtrl.review.author" type="email" required/>
+							</fieldset>
+							<fieldset class="form-group">
+								<input type="submit" value="Submit"/>
+							</fieldset>
+						</form>
+					</div>
+				</section>
+				<button ng-show="feedmeta.buyable">Buy me</button>
+			</li>
+		</ul>
+	</body>
+</html>

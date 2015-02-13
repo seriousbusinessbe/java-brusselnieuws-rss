@@ -37,7 +37,7 @@ public interface Medium<MEDIUMTYPE extends MediumType> {
 	 * @throws IllegalArgumentException when the {@link URL} is <code>null</code>.
 	 */
 	void setLink(final URL link) throws IllegalArgumentException;
-	
+		
 	/**
 	 * Gets this medium's {@link MEDIUMTYPE}.
 	 * @return the content {@link MEDIUMTYPE}

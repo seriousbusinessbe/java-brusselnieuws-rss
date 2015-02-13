@@ -10,7 +10,7 @@
         <class-a>java.net.URL</class-a>
         <class-b>java.net.URL</class-b>
       </converter>
-      <converter type="be.seriousbusiness.brusselnieuws.rss.webservice.dozer.converter.DateTimeStringDozerConverter" >
+      <converter type="be.seriousbusiness.brusselnieuws.rss.webservice.dozer.converter.DateTimeStringMillisDozerConverter" >
         <class-a>org.joda.time.DateTime</class-a>
         <class-b>java.lang.String</class-b>
       </converter>
