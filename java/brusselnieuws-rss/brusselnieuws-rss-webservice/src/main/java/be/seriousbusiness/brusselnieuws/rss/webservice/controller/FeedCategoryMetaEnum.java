@@ -10,7 +10,7 @@ package be.seriousbusiness.brusselnieuws.rss.webservice.controller;
 public enum FeedCategoryMetaEnum {
 	NEWS("Nieuws"),
 	CULTURE("Cultuur"),
-	FOOD_AND_DRINKS("Eten en drinken"),
+	FOOD_AND_DRINKS("Eten & Drinken"),
 	OPINION("Opinie"),
 	MUNICIPALITY("Gemeenten");
 	

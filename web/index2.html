@@ -17,16 +17,21 @@
 					<a href ng-click="feedsCategoriesController.selectCategoryByName(feedCategoryResponse.name)">{{feedCategoryResponse.translatedName}}</a>
 				</li>
 			</ul>
-			{{feedsCategoriesController.feedCategoryResponseName}}
-			<ul ng-controller="FeedsMetaController as feedsMetaController" class="nav nav-pills">
-				<li ng-repeat="feedmeta in feedsMetaController.feedsMetaResponse.feedMetaResponses | orderBy:feedmeta.translatedName" ng-show="feedmeta.category=='CULTURE'">
-					<a>{{feedmeta.translatedName}}</a>
-					<!--
-					<h2>{{feedmeta.requestId}}</h2>
-					<h3>{{feedmeta.category}}</h3>
-					-->
-				</li>	
-			</ul>
+			<section ng-controller="FeedsMetaController as feedsMetaController">
+				<ul class="nav nav-pills">
+					<li ng-repeat="feedMetaResponse in feedsMetaController.feedsMetaResponse.feedMetaResponses | orderBy:feedMetaResponse.translatedName" 
+						ng-class="{active:feedsMetaController.isSelected(feedMetaResponse.requestId)}"
+					    ng-show="feedMetaResponse.category==feedsCategoriesController.getCategoryName()">
+						<a href ng-click="feedsMetaController.selectFeedByRequestId(feedMetaResponse.requestId)">{{feedMetaResponse.translatedName}}</a>
+					</li>	
+				</ul>
+				<section ng-controller="FeedController as feedController">
+					<a href="{{feedController.feedResponse.link}}">{{feedController.feedResponse.title}}</a>
+					<ul>
+						<li ng-repeat="article in feedController.feedResponse.articles">{{article.title}}</li>
+					</ul>
+				</section>
+			</section>
 		</section>
 	</body>
 </html>

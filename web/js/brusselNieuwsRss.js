@@ -22,15 +22,6 @@
 		//$httpProvider.defaults.headers.get = { 'Access-Control-Allow-Origin' : '*' };
 	});
 
-	app.controller('FeedsMetaController',['$http', function($http){
-		var store = this;
-		store.feedsMetaResponse = [];
-
-		$http.get('http://127.0.0.1:8080/feedsMeta').success(function(data){
-			store.feedsMetaResponse = data;
-		});
-	}]);
-
 	app.controller('FeedsCategoriesController',['$http', function($http){
 		var store = this;
 		store.feedsCategoriesResponse = [];
@@ -48,9 +39,51 @@
 		this.isSelected = function(feedCategoryResponseName) {
 			return this.feedCategoryResponseName === feedCategoryResponseName;
 		};
+
+		this.getCategoryName = function() {
+			return this.feedCategoryResponseName;
+		};
 	}]);
 
-	
+	app.controller('FeedsMetaController',['$http','$scope', function($http,$scope){
+		var store = this;
+		store.feedsMetaResponse = [];
+
+		$http.get('http://127.0.0.1:8080/feedsMeta').success(function(data){
+			store.feedsMetaResponse = data;
+		});
+
+		this.feedMetaResponseRequestId = 0;
+		$scope.feedRequestId = 1;
+
+		this.selectFeedByRequestId = function(feedMetaResponseRequestId) {
+			this.feedMetaResponseRequestId = feedMetaResponseRequestId;
+			$scope.feedRequestId = feedMetaResponseRequestId;
+		};
+
+		this.isSelected = function(feedMetaResponseRequestId) {
+			return this.feedMetaResponseRequestId === feedMetaResponseRequestId;
+		};
+
+		this.getFeedRequestId = function() {
+			return feedMetaResponseRequestId;
+		}
+
+	}]);
+
+	app.controller('FeedController',['$http','$scope', function($http,$scope){
+		var store = this;
+		store.feedResponse = [];
+
+		$scope.$watch('feedRequestId', function(newValue, oldValue) {
+			store.feedResponse = [];
+
+			$http.get('http://127.0.0.1:8080/feed/' + newValue).success(function(data){
+				store.feedResponse = data;
+			});
+		});
+
+	}]);
 
 	/*
 	app.controller('FeedmetalistController', function(){
