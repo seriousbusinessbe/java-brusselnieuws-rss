@@ -38,9 +38,9 @@ import be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedsMetaR
  * @author Stefan Borghys
  * @version 1.0
  * @since 1.0
- * @see Spring-boot reference: <a href="http://docs.spring.io/spring-boot/docs/current/reference/">http://docs.spring.io/spring-boot/docs/current/reference/</a>
- * @see Spring-boot example: Building a RESTful Web Service - <a href="http://spring.io/guides/gs/rest-service/">http://spring.io/guides/gs/rest-service/</a>
- * @see Spring-boot example: Building an Application with Spring Boot - <a href="http://spring.io/guides/gs/spring-boot/">http://spring.io/guides/gs/spring-boot/</a>
+ * @see Spring-boot reference: <a href="http://docs.spring.io/spring-boot/docs/current/reference/">http://docs.spring.io/spring-boot/docs/current/reference/</a></br>
+ * @see Spring-boot example: Building a RESTful Web Service - <a href="http://spring.io/guides/gs/rest-service/">http://spring.io/guides/gs/rest-service/</a></br>
+ * @see Spring-boot example: Building an Application with Spring Boot - <a href="http://spring.io/guides/gs/spring-boot/">http://spring.io/guides/gs/spring-boot/</a></br>
  */
 @RestController()
 public class FeedRestControllerImpl<MEDIUMTYPE extends MediumType,

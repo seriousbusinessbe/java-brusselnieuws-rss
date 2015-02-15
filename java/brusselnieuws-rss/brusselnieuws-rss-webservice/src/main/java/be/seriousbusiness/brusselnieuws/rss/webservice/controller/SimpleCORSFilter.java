@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
  * @author Stefan Borghys
  * @version 1.0
  * @since 1.0
- * @see <a href="https://spring.io/guides/gs/rest-service-cors/">https://spring.io/guides/gs/rest-service-cors/</a>
+ * @see Example: Enabling Cross Origin Requests for a RESTful Web Service - <a href="https://spring.io/guides/gs/rest-service-cors/">https://spring.io/guides/gs/rest-service-cors/</a>
  */
 @Component
 public class SimpleCORSFilter implements Filter {
