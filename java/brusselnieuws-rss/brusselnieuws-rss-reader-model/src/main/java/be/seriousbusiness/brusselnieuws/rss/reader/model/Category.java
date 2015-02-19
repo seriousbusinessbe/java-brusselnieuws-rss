@@ -10,7 +10,7 @@ import java.net.URL;
  * @version 1.0
  * @since 1.0
  */
-public interface Category extends Id<BigInteger> {
+public interface Category extends Id<BigInteger>, Cloneable {
 	
 	/**
 	 * Get the name.

@@ -65,5 +65,14 @@ public class MediumDTOImpl implements MediumDTO<MediumTypeDTOImpl>  {
 	public String toString(){
 		return ObjectUtil.toString(this);
 	}
+	
+	@Override
+	public Object clone() {
+		final MediumDTOImpl mediumDTOImpl=new MediumDTOImpl();
+		mediumDTOImpl.setLink(link);
+		mediumDTOImpl.setMediumTypeDTO((MediumTypeDTOImpl)mediumTypeDTOImpl.clone());
+		mediumDTOImpl.setSize(size);
+		return mediumDTOImpl;
+	}
 
 }

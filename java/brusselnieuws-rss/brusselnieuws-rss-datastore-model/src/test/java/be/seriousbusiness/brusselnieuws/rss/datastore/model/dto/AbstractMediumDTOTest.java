@@ -32,15 +32,15 @@ public abstract class AbstractMediumDTOTest<MEDIUMTYPEDTO extends MediumTypeDTO,
 		this.mediumTypeDTO=mediumTypeDTO;
 		this.size=size;
 	}
-
-	@Override
-	public MEDIUMDTO getDTO() {
-		return dto;
-	}
 	
 	@Before 
 	public void before(){
 		dto=create();
+	}
+
+	@Override
+	public MEDIUMDTO getDTO() {
+		return dto;
 	}
 
 	@Test

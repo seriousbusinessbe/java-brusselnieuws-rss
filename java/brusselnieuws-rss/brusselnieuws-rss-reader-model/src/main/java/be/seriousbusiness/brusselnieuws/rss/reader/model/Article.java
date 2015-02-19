@@ -20,7 +20,7 @@ import org.joda.time.DateTime;
 public interface Article<MEDIUMTYPE extends MediumType,
 						MEDIUM extends Medium<MEDIUMTYPE>,
 						CATEGORY extends Category,
-						AUTHOR extends Author> extends Id<BigInteger> {
+						AUTHOR extends Author> extends Id<BigInteger>, Cloneable {
 	
 	/**
 	 * Get the title.

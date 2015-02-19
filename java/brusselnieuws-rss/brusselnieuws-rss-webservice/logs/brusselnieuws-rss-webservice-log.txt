@@ -1,78 +1,96 @@
-15/02/15 00:12:02 INFO  BrusselNieuwsRssWebservice - Starting BrusselNieuwsRssWebservice on Stefans-MacBook-Pro.local with PID 13344 (/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes started by stefanborghys in /Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice)
-15/02/15 00:12:02 INFO  AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5720e7e1: startup date [Sun Feb 15 00:12:02 CET 2015]; root of context hierarchy
-15/02/15 00:12:03 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-config.xml]
-15/02/15 00:12:03 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-config.xml]
-15/02/15 00:12:03 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-config.xml]
-15/02/15 00:12:03 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
-15/02/15 00:12:04 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-config.xml]
-15/02/15 00:12:04 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]
-15/02/15 00:12:04 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]
-15/02/15 00:12:04 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'feedRestControllerImpl': replacing [Generic bean: class [be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/controller/FeedRestControllerImpl.class]] with [Generic bean: class [be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-webservice-config.xml]]
-15/02/15 00:12:04 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
-15/02/15 00:12:04 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-datastore-mongodb-mongo.properties]
-15/02/15 00:12:04 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-reader.properties]
-15/02/15 00:12:04 INFO  Version - HV000001: Hibernate Validator 5.1.3.Final
-15/02/15 00:12:05 INFO  TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
-15/02/15 00:12:05 INFO  StandardService - Starting service Tomcat
-15/02/15 00:12:05 INFO  StandardEngine - Starting Servlet Engine: Apache Tomcat/8.0.15
-15/02/15 00:12:05 INFO  [/] - Initializing Spring embedded WebApplicationContext
-15/02/15 00:12:05 INFO  ContextLoader - Root WebApplicationContext: initialization completed in 2824 ms
-15/02/15 00:12:06 INFO  ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
-15/02/15 00:12:06 INFO  FilterRegistrationBean - Mapping filter: 'metricFilter' to: [/*]
-15/02/15 00:12:06 INFO  FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
-15/02/15 00:12:06 INFO  FilterRegistrationBean - Mapping filter: 'webRequestLoggingFilter' to: [/*]
-15/02/15 00:12:06 INFO  FilterRegistrationBean - Mapping filter: 'simpleCORSFilter' to: [/*]
-15/02/15 00:12:06 INFO  FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
-15/02/15 00:12:06 INFO  FilterRegistrationBean - Mapping filter: 'applicationContextIdFilter' to: [/*]
-15/02/15 00:12:06 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
-15/02/15 00:12:06 INFO  GlobalSettings - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties] for Dozer global property configuration
-15/02/15 00:12:06 INFO  GlobalSettings - Reading Dozer properties from URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties]
-15/02/15 00:12:06 INFO  DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
-15/02/15 00:12:06 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
-15/02/15 00:12:06 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
-15/02/15 00:12:06 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
-15/02/15 00:12:07 INFO  RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5720e7e1: startup date [Sun Feb 15 00:12:02 CET 2015]; root of context hierarchy
-15/02/15 00:12:07 INFO  RequestMappingHandlerMapping - Mapped "{[/feed/{id}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedResponse be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl.getFeed(int)
-15/02/15 00:12:07 INFO  RequestMappingHandlerMapping - Mapped "{[/feedsCategories],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedsCategoriesResponse be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl.getFeedCategories()
-15/02/15 00:12:07 INFO  RequestMappingHandlerMapping - Mapped "{[/feedsMeta],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedsMetaResponse be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl.getFeedsMeta()
-15/02/15 00:12:07 INFO  RequestMappingHandlerMapping - Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
-15/02/15 00:12:07 INFO  RequestMappingHandlerMapping - Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[text/html],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
-15/02/15 00:12:07 INFO  SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-15/02/15 00:12:07 INFO  SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-15/02/15 00:12:07 INFO  SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
-15/02/15 00:12:07 INFO  EndpointHandlerMapping - Mapped "{[/metrics/{name:.*}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
-15/02/15 00:12:07 INFO  EndpointHandlerMapping - Mapped "{[/metrics],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
-15/02/15 00:12:07 INFO  EndpointHandlerMapping - Mapped "{[/info],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
-15/02/15 00:12:07 INFO  EndpointHandlerMapping - Mapped "{[/shutdown],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.ShutdownMvcEndpoint.invoke()
-15/02/15 00:12:07 INFO  EndpointHandlerMapping - Mapped "{[/autoconfig],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
-15/02/15 00:12:07 INFO  EndpointHandlerMapping - Mapped "{[/configprops],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
-15/02/15 00:12:07 INFO  EndpointHandlerMapping - Mapped "{[/trace],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
-15/02/15 00:12:07 INFO  EndpointHandlerMapping - Mapped "{[/mappings],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
-15/02/15 00:12:07 INFO  EndpointHandlerMapping - Mapped "{[/beans],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
-15/02/15 00:12:07 INFO  EndpointHandlerMapping - Mapped "{[/health],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(java.security.Principal)
-15/02/15 00:12:07 INFO  EndpointHandlerMapping - Mapped "{[/env/{name:.*}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
-15/02/15 00:12:07 INFO  EndpointHandlerMapping - Mapped "{[/env],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
-15/02/15 00:12:07 INFO  EndpointHandlerMapping - Mapped "{[/dump],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
-15/02/15 00:12:07 INFO  AnnotationMBeanExporter - Registering beans for JMX exposure on startup
-15/02/15 00:12:07 INFO  EndpointMBeanExporter - Registering beans for JMX exposure on startup
-15/02/15 00:12:07 INFO  DefaultLifecycleProcessor - Starting beans in phase 0
-15/02/15 00:12:07 INFO  EndpointMBeanExporter - Located managed bean 'requestMappingEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=requestMappingEndpoint]
-15/02/15 00:12:07 INFO  EndpointMBeanExporter - Located managed bean 'environmentEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=environmentEndpoint]
-15/02/15 00:12:08 INFO  EndpointMBeanExporter - Located managed bean 'healthEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=healthEndpoint]
-15/02/15 00:12:08 INFO  EndpointMBeanExporter - Located managed bean 'beansEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=beansEndpoint]
-15/02/15 00:12:08 INFO  EndpointMBeanExporter - Located managed bean 'infoEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=infoEndpoint]
-15/02/15 00:12:08 INFO  EndpointMBeanExporter - Located managed bean 'metricsEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=metricsEndpoint]
-15/02/15 00:12:08 INFO  EndpointMBeanExporter - Located managed bean 'traceEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=traceEndpoint]
-15/02/15 00:12:08 INFO  EndpointMBeanExporter - Located managed bean 'dumpEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=dumpEndpoint]
-15/02/15 00:12:08 INFO  EndpointMBeanExporter - Located managed bean 'autoConfigurationAuditEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=autoConfigurationAuditEndpoint]
-15/02/15 00:12:08 INFO  EndpointMBeanExporter - Located managed bean 'shutdownEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=shutdownEndpoint]
-15/02/15 00:12:08 INFO  EndpointMBeanExporter - Located managed bean 'configurationPropertiesReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=configurationPropertiesReportEndpoint]
-15/02/15 00:12:08 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-15/02/15 00:12:08 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-15/02/15 00:12:08 INFO  NioSelectorPool - Using a shared selector for servlet write/read
-15/02/15 00:12:08 INFO  TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
-15/02/15 00:12:08 INFO  BrusselNieuwsRssWebservice - Started BrusselNieuwsRssWebservice in 5.737 seconds (JVM running for 6.988)
-15/02/15 00:12:48 INFO  [/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
-15/02/15 00:12:48 INFO  DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
-15/02/15 00:12:48 INFO  DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 19 ms
-15/02/15 00:26:52 WARN  PageNotFound - Request method 'GET' not supported
+19/02/15 00:29:48 INFO  BrusselNieuwsRssWebservice - Starting BrusselNieuwsRssWebservice on Stefans-MacBook-Pro.local with PID 3796 (/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes started by stefanborghys in /Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice)
+19/02/15 00:29:48 INFO  AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@10a74ad1: startup date [Thu Feb 19 00:29:48 CET 2015]; root of context hierarchy
+19/02/15 00:29:49 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-config.xml]
+19/02/15 00:29:50 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-config.xml]
+19/02/15 00:29:50 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-config.xml]
+19/02/15 00:29:50 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
+19/02/15 00:29:50 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-config.xml]
+19/02/15 00:29:50 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]
+19/02/15 00:29:50 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]
+19/02/15 00:29:50 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'feedRestControllerImpl': replacing [Generic bean: class [be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/controller/FeedRestControllerImpl.class]] with [Generic bean: class [be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-webservice-config.xml]]
+19/02/15 00:29:50 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+19/02/15 00:29:50 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-datastore-mongodb-mongo.properties]
+19/02/15 00:29:50 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-reader.properties]
+19/02/15 00:29:50 INFO  Version - HV000001: Hibernate Validator 5.1.3.Final
+19/02/15 00:29:51 INFO  ThreadPoolTaskExecutor - Initializing ExecutorService 
+19/02/15 00:29:51 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'executor' of type [class org.springframework.scheduling.config.TaskExecutorFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+19/02/15 00:29:51 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'executor' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+19/02/15 00:29:51 INFO  ThreadPoolTaskScheduler - Initializing ExecutorService  'scheduler'
+19/02/15 00:29:51 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'scheduler' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+19/02/15 00:29:51 INFO  TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+19/02/15 00:29:51 INFO  StandardService - Starting service Tomcat
+19/02/15 00:29:51 INFO  StandardEngine - Starting Servlet Engine: Apache Tomcat/8.0.15
+19/02/15 00:29:51 INFO  [/] - Initializing Spring embedded WebApplicationContext
+19/02/15 00:29:51 INFO  ContextLoader - Root WebApplicationContext: initialization completed in 3064 ms
+19/02/15 00:29:53 INFO  ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+19/02/15 00:29:53 INFO  FilterRegistrationBean - Mapping filter: 'metricFilter' to: [/*]
+19/02/15 00:29:53 INFO  FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+19/02/15 00:29:53 INFO  FilterRegistrationBean - Mapping filter: 'webRequestLoggingFilter' to: [/*]
+19/02/15 00:29:53 INFO  FilterRegistrationBean - Mapping filter: 'simpleCORSFilter' to: [/*]
+19/02/15 00:29:53 INFO  FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+19/02/15 00:29:53 INFO  FilterRegistrationBean - Mapping filter: 'applicationContextIdFilter' to: [/*]
+19/02/15 00:29:53 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+19/02/15 00:29:53 INFO  GlobalSettings - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties] for Dozer global property configuration
+19/02/15 00:29:53 INFO  GlobalSettings - Reading Dozer properties from URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties]
+19/02/15 00:29:53 INFO  DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+19/02/15 00:29:53 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+19/02/15 00:29:53 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+19/02/15 00:29:53 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+19/02/15 00:29:53 INFO  RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@10a74ad1: startup date [Thu Feb 19 00:29:48 CET 2015]; root of context hierarchy
+19/02/15 00:29:53 INFO  RequestMappingHandlerMapping - Mapped "{[/feed/{id}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedResponse be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl.getFeed(int)
+19/02/15 00:29:53 INFO  RequestMappingHandlerMapping - Mapped "{[/feedsCategories],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedsCategoriesResponse be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl.getFeedCategories()
+19/02/15 00:29:53 INFO  RequestMappingHandlerMapping - Mapped "{[/feedsMeta],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedsMetaResponse be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl.getFeedsMeta()
+19/02/15 00:29:53 INFO  RequestMappingHandlerMapping - Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+19/02/15 00:29:53 INFO  RequestMappingHandlerMapping - Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[text/html],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+19/02/15 00:29:54 INFO  SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+19/02/15 00:29:54 INFO  SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+19/02/15 00:29:54 INFO  SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+19/02/15 00:29:54 INFO  EndpointHandlerMapping - Mapped "{[/beans],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+19/02/15 00:29:54 INFO  EndpointHandlerMapping - Mapped "{[/health],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(java.security.Principal)
+19/02/15 00:29:54 INFO  EndpointHandlerMapping - Mapped "{[/env/{name:.*}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+19/02/15 00:29:54 INFO  EndpointHandlerMapping - Mapped "{[/env],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+19/02/15 00:29:54 INFO  EndpointHandlerMapping - Mapped "{[/info],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+19/02/15 00:29:54 INFO  EndpointHandlerMapping - Mapped "{[/dump],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+19/02/15 00:29:54 INFO  EndpointHandlerMapping - Mapped "{[/metrics/{name:.*}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+19/02/15 00:29:54 INFO  EndpointHandlerMapping - Mapped "{[/metrics],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+19/02/15 00:29:54 INFO  EndpointHandlerMapping - Mapped "{[/configprops],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+19/02/15 00:29:54 INFO  EndpointHandlerMapping - Mapped "{[/autoconfig],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+19/02/15 00:29:54 INFO  EndpointHandlerMapping - Mapped "{[/mappings],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+19/02/15 00:29:54 INFO  EndpointHandlerMapping - Mapped "{[/trace],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+19/02/15 00:29:54 INFO  AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+19/02/15 00:29:54 INFO  EndpointMBeanExporter - Registering beans for JMX exposure on startup
+19/02/15 00:29:54 INFO  DefaultLifecycleProcessor - Starting beans in phase 0
+19/02/15 00:29:54 INFO  EndpointMBeanExporter - Located managed bean 'requestMappingEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=requestMappingEndpoint]
+19/02/15 00:29:54 INFO  EndpointMBeanExporter - Located managed bean 'environmentEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=environmentEndpoint]
+19/02/15 00:29:54 INFO  EndpointMBeanExporter - Located managed bean 'healthEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=healthEndpoint]
+19/02/15 00:29:54 INFO  EndpointMBeanExporter - Located managed bean 'beansEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=beansEndpoint]
+19/02/15 00:29:54 INFO  EndpointMBeanExporter - Located managed bean 'infoEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=infoEndpoint]
+19/02/15 00:29:54 INFO  EndpointMBeanExporter - Located managed bean 'metricsEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=metricsEndpoint]
+19/02/15 00:29:54 INFO  EndpointMBeanExporter - Located managed bean 'traceEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=traceEndpoint]
+19/02/15 00:29:54 INFO  EndpointMBeanExporter - Located managed bean 'dumpEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=dumpEndpoint]
+19/02/15 00:29:54 INFO  EndpointMBeanExporter - Located managed bean 'autoConfigurationAuditEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=autoConfigurationAuditEndpoint]
+19/02/15 00:29:54 INFO  EndpointMBeanExporter - Located managed bean 'shutdownEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=shutdownEndpoint]
+19/02/15 00:29:54 INFO  EndpointMBeanExporter - Located managed bean 'configurationPropertiesReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=configurationPropertiesReportEndpoint]
+19/02/15 00:29:54 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+19/02/15 00:29:54 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+19/02/15 00:29:54 INFO  NioSelectorPool - Using a shared selector for servlet write/read
+19/02/15 00:29:54 INFO  TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+19/02/15 00:29:54 INFO  BrusselNieuwsRssWebservice - Started BrusselNieuwsRssWebservice in 6.417 seconds (JVM running for 7.784)
+19/02/15 00:31:07 INFO  [/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+19/02/15 00:31:07 INFO  DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+19/02/15 00:31:07 INFO  DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 20 ms
+19/02/15 00:31:07 INFO  DozerBeanMapper - Using the following xml files to load custom mappings for the bean mapper instance: [config/brusselnieuws-rss-reader-model-dozer-mapping-config.xml]
+19/02/15 00:31:07 INFO  DozerBeanMapper - Trying to find xml mapping file: config/brusselnieuws-rss-reader-model-dozer-mapping-config.xml
+19/02/15 00:31:07 INFO  DozerBeanMapper - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/classes/config/brusselnieuws-rss-reader-model-dozer-mapping-config.xml] to load custom xml mappings
+19/02/15 00:31:07 INFO  DozerBeanMapper - Successfully loaded custom xml mappings from URL: [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/classes/config/brusselnieuws-rss-reader-model-dozer-mapping-config.xml]
+19/02/15 00:31:08 INFO  DozerBeanMapper - Using the following xml files to load custom mappings for the bean mapper instance: [config/brusselnieuws-rss-webservice-dozer-mapping-config.xml]
+19/02/15 00:31:08 INFO  DozerBeanMapper - Trying to find xml mapping file: config/brusselnieuws-rss-webservice-dozer-mapping-config.xml
+19/02/15 00:31:08 INFO  DozerBeanMapper - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/config/brusselnieuws-rss-webservice-dozer-mapping-config.xml] to load custom xml mappings
+19/02/15 00:31:08 INFO  DozerBeanMapper - Successfully loaded custom xml mappings from URL: [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/config/brusselnieuws-rss-webservice-dozer-mapping-config.xml]
+19/02/15 00:34:38 INFO  AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@10a74ad1: startup date [Thu Feb 19 00:29:48 CET 2015]; root of context hierarchy
+19/02/15 00:34:38 INFO  DefaultLifecycleProcessor - Stopping beans in phase 0
+19/02/15 00:34:38 INFO  EndpointMBeanExporter - Unregistering JMX-exposed beans on shutdown
+19/02/15 00:34:38 INFO  EndpointMBeanExporter - Unregistering JMX-exposed beans
+19/02/15 00:34:38 INFO  AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+19/02/15 00:34:38 INFO  ThreadPoolTaskScheduler - Shutting down ExecutorService 'scheduler'
+19/02/15 00:34:38 INFO  ThreadPoolTaskExecutor - Shutting down ExecutorService

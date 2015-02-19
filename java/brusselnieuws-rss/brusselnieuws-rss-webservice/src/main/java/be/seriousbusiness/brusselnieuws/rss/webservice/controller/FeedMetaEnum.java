@@ -61,22 +61,22 @@ public enum FeedMetaEnum {
 	VORST_NEWS("Vorst",45,MUNICIPALITY),
 	WATERMAAL_BOSVOORDE("Watermaal-Bosvoorde",46,MUNICIPALITY);
 	
-	private String dutchName;
+	private String translatedName;
 	private int requestId;
 	private FeedCategoryMetaEnum category;
 	
-	private FeedMetaEnum(final String dutchName,final int requestId,final FeedCategoryMetaEnum category) {
-		this.dutchName=dutchName;
+	private FeedMetaEnum(final String translatedName,final int requestId,final FeedCategoryMetaEnum category) {
+		this.translatedName=translatedName;
 		this.requestId=requestId;
 		this.category=category;
 	}
 	
 	/**
-	 * Returns this feed's Dutch name.
-	 * @return Dutch feed name
+	 * Returns this feed's translated name.
+	 * @return translated feed name
 	 */
-	public String getDutchName() {
-		return dutchName;
+	public String getTranslatedName() {
+		return translatedName;
 	}
 	
 	/**

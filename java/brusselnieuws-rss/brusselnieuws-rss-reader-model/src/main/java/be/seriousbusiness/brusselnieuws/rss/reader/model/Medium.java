@@ -10,7 +10,7 @@ import java.net.URL;
  * @since 1.0
  * @param <MEDIUMTYPE> the type of {@link MediumType} implementation
  */
-public interface Medium<MEDIUMTYPE extends MediumType> {
+public interface Medium<MEDIUMTYPE extends MediumType> extends Cloneable {
 	
 	/**
 	 * Gets this medium's size in bytes.

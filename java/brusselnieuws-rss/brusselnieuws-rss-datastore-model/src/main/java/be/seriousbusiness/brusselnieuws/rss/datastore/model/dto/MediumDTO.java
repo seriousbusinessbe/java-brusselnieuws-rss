@@ -8,7 +8,7 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto;
  * @since 1.0
  * @param <MEDIUMTYPEDTO> the {@link MediumTypeDTO} implementation
  */
-public interface MediumDTO<MEDIUMTYPEDTO extends MediumTypeDTO> {
+public interface MediumDTO<MEDIUMTYPEDTO extends MediumTypeDTO> extends Cloneable {
 	
 	/**
 	 * Gets the URL location. 

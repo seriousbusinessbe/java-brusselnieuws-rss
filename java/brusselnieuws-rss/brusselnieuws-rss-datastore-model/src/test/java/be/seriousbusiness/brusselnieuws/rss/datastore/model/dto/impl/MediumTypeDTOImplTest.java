@@ -2,6 +2,10 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl;
 
 import java.math.BigInteger;
 
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
+
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AbstractMediumTypeDTOTest;
 
 /**
@@ -20,6 +24,15 @@ public class MediumTypeDTOImplTest extends AbstractMediumTypeDTOTest<MediumTypeD
 	@Override
 	public MediumTypeDTOImpl create() {
 		return new MediumTypeDTOImpl();
+	}
+	
+	@Ignore
+	@Test
+	public void testCloneable() {
+		final MediumTypeDTOImpl clonedMediumTypeDTOImpl=(MediumTypeDTOImpl) getDTO().clone();
+		Assert.assertEquals("The clone should be equal to the one it's cloned from",getDTO(),clonedMediumTypeDTOImpl);
+		clonedMediumTypeDTOImpl.setType(String.valueOf(System.currentTimeMillis()));
+		Assert.assertNotEquals("The clone should not be equal to the one it's cloned from after altering it",getDTO(),clonedMediumTypeDTOImpl);
 	}
 
 }

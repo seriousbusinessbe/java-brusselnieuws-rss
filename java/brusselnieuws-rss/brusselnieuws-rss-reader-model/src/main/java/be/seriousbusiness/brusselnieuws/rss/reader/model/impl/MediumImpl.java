@@ -107,5 +107,10 @@ public class MediumImpl implements Medium<MediumTypeImpl> {
 	public String toString(){
 		return ObjectUtil.toString(this);
 	}
+	
+	@Override
+	public Object clone() {
+		return new Builder().link(link).size(size).type((MediumTypeImpl)mediumTypeImpl.clone()).build();
+	}
 
 }

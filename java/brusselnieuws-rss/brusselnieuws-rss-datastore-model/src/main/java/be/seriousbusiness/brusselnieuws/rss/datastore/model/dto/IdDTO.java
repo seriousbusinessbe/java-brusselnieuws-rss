@@ -8,7 +8,7 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto;
  * @since 1.0
  * @param <ID> the type of id
  */
-public interface IdDTO<ID> {
+public interface IdDTO<ID> extends Cloneable {
 	
 	/**
 	 * Gets the unique {@link ID} identifier.

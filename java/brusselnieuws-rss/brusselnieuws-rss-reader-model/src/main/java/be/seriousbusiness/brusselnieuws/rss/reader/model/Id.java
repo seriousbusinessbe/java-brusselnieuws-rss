@@ -8,7 +8,7 @@ package be.seriousbusiness.brusselnieuws.rss.reader.model;
  * @since 1.0
  * @param <ID> the type of identifier 
  */
-public interface Id<ID> {
+public interface Id<ID> extends Cloneable {
 	
 	/**
 	 * Gets the unique identifier.

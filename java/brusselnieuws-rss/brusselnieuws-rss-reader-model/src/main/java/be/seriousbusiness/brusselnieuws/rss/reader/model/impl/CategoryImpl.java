@@ -91,5 +91,10 @@ public class CategoryImpl extends AbstractIdImpl<BigInteger> implements Category
 	public String toString(){
 		return ObjectUtil.toString(this);
 	}
+	
+	@Override
+	public Object clone() {
+		return new Builder().id(id).name(name).link(link).build();
+	}
 
 }

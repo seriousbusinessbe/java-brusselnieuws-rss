@@ -2,6 +2,10 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl;
 
 import java.math.BigInteger;
 
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
+
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AbstractAuthorDTOTest;
 
 /**
@@ -20,6 +24,15 @@ public class AuthorDTOImplTest extends AbstractAuthorDTOTest<AuthorDTOImpl> {
 	@Override
 	public AuthorDTOImpl create() {
 		return new AuthorDTOImpl();
+	}
+	
+	@Ignore
+	@Test
+	public void testCLoneable() {
+		final AuthorDTOImpl clonedAuthorDTOImpl=(AuthorDTOImpl) getDTO().clone();
+		Assert.assertEquals("The clone should be equal to the one it's cloned from",getDTO(),clonedAuthorDTOImpl);
+		clonedAuthorDTOImpl.setName(String.valueOf(System.currentTimeMillis()));
+		Assert.assertNotEquals("The clone should not be equal to the one it's cloned from after altering it",getDTO(),clonedAuthorDTOImpl);
 	}
 
 }

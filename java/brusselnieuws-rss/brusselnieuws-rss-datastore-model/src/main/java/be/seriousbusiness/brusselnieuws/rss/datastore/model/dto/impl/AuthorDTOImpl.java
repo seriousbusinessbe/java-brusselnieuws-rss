@@ -40,5 +40,13 @@ public class AuthorDTOImpl extends AbstractIdDTOImpl<BigInteger> implements Auth
 	public String toString(){
 		return ObjectUtil.toString(this);
 	}
+	
+	@Override
+	public Object clone() {
+		final AuthorDTOImpl authorDTOImpl=new AuthorDTOImpl();
+		authorDTOImpl.setId(id);
+		authorDTOImpl.setName(name);
+		return authorDTOImpl;
+	}
 
 }

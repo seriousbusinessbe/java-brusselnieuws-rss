@@ -73,5 +73,10 @@ public class MediumTypeImpl extends AbstractIdImpl<BigInteger> implements Medium
 	public String toString(){
 		return ObjectUtil.toString(this);
 	}
+	
+	@Override
+	public Object clone() {
+		return new Builder().id(id).type(type).build();
+	}
 
 }

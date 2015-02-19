@@ -40,5 +40,13 @@ public class MediumTypeDTOImpl extends AbstractIdDTOImpl<BigInteger> implements 
 	public String toString(){
 		return ObjectUtil.toString(this);
 	}
+	
+	@Override
+	public Object clone() {
+		final MediumTypeDTOImpl mediumTypeDTOImpl=new MediumTypeDTOImpl();
+		mediumTypeDTOImpl.setId(id);
+		mediumTypeDTOImpl.setType(type);
+		return mediumTypeDTOImpl;
+	}
 
 }

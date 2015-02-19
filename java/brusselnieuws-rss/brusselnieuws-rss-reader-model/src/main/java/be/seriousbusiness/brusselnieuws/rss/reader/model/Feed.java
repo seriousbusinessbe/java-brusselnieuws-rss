@@ -22,7 +22,7 @@ public interface Feed<MEDIUMTYPE extends MediumType,
 						MEDIUM extends Medium<MEDIUMTYPE>,
 						CATEGORY extends Category,
 						AUTHOR extends Author,
-						ARTICLE extends Article<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR>> extends Id<BigInteger>, FeedListenerManager {
+						ARTICLE extends Article<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR>> extends Id<BigInteger>, FeedListenerManager, Cloneable {
 	
 	/**
 	 * Gets this feed's title.

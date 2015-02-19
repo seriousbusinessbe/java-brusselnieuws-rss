@@ -68,5 +68,10 @@ public class AuthorImpl extends AbstractIdImpl<BigInteger> implements Author {
 	public String toString(){
 		return ObjectUtil.toString(this);
 	}
+	
+	@Override
+	public Object clone() {
+		return new Builder().id(id).name(name).build();
+	}
 
 }

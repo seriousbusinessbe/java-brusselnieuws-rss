@@ -44,13 +44,47 @@ public class MongoFeedDAO implements FeedDAO {
 	public FeedDTOImpl save(final FeedDTOImpl feedDTOImpl) {
 		LOGGER.debug("Save FeedDTOImpl:\n{}",feedDTOImpl);
 		if(feedDTOImpl!=null){
-			final List<ArticleDTOImpl> articleDTOImpls=new ArrayList<ArticleDTOImpl>(feedDTOImpl.getArticleDTOs().size());
-			for(final ArticleDTOImpl articleDTOImpl : feedDTOImpl.getArticleDTOs()){
-				articleDTOImpls.add(mapper.map(mongoArticleDAO.save(articleDTOImpl),ArticleDTOImpl.class));
+			FeedDTOImpl saveableFeedDTOImpl=null;
+			if(feedDTOImpl.getId()==null) {
+				final FeedDTOImpl foundByLinkFeedDTOImpl=findByLink(feedDTOImpl.getLink());
+				if(foundByLinkFeedDTOImpl==null) { // New feed:
+					final List<ArticleDTOImpl> articleDTOImpls=new ArrayList<ArticleDTOImpl>(feedDTOImpl.getArticleDTOs().size());
+					for(final ArticleDTOImpl articleDTOImpl : feedDTOImpl.getArticleDTOs()){
+						articleDTOImpls.add(mapper.map(mongoArticleDAO.save(articleDTOImpl),ArticleDTOImpl.class));
+					}
+					feedDTOImpl.setArticleDTOs(articleDTOImpls);
+					saveableFeedDTOImpl=feedDTOImpl;
+				}else { // Existing feed:
+					final FeedDTOImpl clonedFeedDTOImpl=(FeedDTOImpl) feedDTOImpl.clone();
+					clonedFeedDTOImpl.setId(foundByLinkFeedDTOImpl.getId());
+					if(clonedFeedDTOImpl.equals(foundByLinkFeedDTOImpl)) {
+						return foundByLinkFeedDTOImpl;
+					}
+					foundByLinkFeedDTOImpl.setDescription(feedDTOImpl.getDescription());
+					foundByLinkFeedDTOImpl.setLink(feedDTOImpl.getLink());
+					foundByLinkFeedDTOImpl.setTitle(feedDTOImpl.getTitle());
+					for(final ArticleDTOImpl articleDTOImpl : feedDTOImpl.getArticleDTOs()){
+						foundByLinkFeedDTOImpl.add(mapper.map(mongoArticleDAO.save(articleDTOImpl),ArticleDTOImpl.class));
+					}
+					saveableFeedDTOImpl=foundByLinkFeedDTOImpl;
+				}
+			}else {
+				final FeedDTOImpl foundByIdFeedDTOImpl=findById(feedDTOImpl.getId());
+				if(feedDTOImpl.equals(foundByIdFeedDTOImpl)) {
+					return foundByIdFeedDTOImpl;
+				}
+				foundByIdFeedDTOImpl.setDescription(feedDTOImpl.getDescription());
+				foundByIdFeedDTOImpl.setLink(feedDTOImpl.getLink());
+				foundByIdFeedDTOImpl.setTitle(feedDTOImpl.getTitle());
+				for(final ArticleDTOImpl articleDTOImpl : feedDTOImpl.getArticleDTOs()){
+					foundByIdFeedDTOImpl.add(mapper.map(mongoArticleDAO.save(articleDTOImpl),ArticleDTOImpl.class));
+				}
+				saveableFeedDTOImpl=foundByIdFeedDTOImpl;
 			}
-			feedDTOImpl.setArticleDTOs(articleDTOImpls);
-			final MongoFeed savedFeed=mongoFeedRepository.save(mapper.map(feedDTOImpl,MongoFeed.class));
-			return mapper.map(savedFeed, FeedDTOImpl.class);
+			if(saveableFeedDTOImpl!=null) {
+				final MongoFeed savedFeed=mongoFeedRepository.save(mapper.map(saveableFeedDTOImpl,MongoFeed.class));
+				return mapper.map(savedFeed, FeedDTOImpl.class);
+			}
 		}
 		return feedDTOImpl;
 	}

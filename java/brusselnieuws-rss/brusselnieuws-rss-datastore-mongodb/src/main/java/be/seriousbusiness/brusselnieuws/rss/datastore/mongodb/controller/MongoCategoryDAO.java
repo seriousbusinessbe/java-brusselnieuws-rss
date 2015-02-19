@@ -45,13 +45,23 @@ public class MongoCategoryDAO implements CategoryDAO {
 			CategoryDTOImpl saveableCategoryDTOImpl=null;
 			if(categoryDTOImpl.getId()==null) { 
 				final CategoryDTOImpl foundByLinkCategoryDTOImpl=findByLink(categoryDTOImpl.getLink());
-				if(foundByLinkCategoryDTOImpl==null) {
+				if(foundByLinkCategoryDTOImpl==null) { // New category:
 					saveableCategoryDTOImpl=categoryDTOImpl;
-				}else {
+				}else { // Exsisting category:
+					final CategoryDTOImpl clonedCategoryDTOImpl=(CategoryDTOImpl) categoryDTOImpl.clone();
+					clonedCategoryDTOImpl.setId(foundByLinkCategoryDTOImpl.getId());
+					if(foundByLinkCategoryDTOImpl.equals(clonedCategoryDTOImpl)) { // Return the existing CategoryDTOImpl:
+						return foundByLinkCategoryDTOImpl; 
+					}
+					// Update the changes:
 					saveableCategoryDTOImpl=CategoryDTOImplUtil.update(foundByLinkCategoryDTOImpl,categoryDTOImpl);
 				}
 			}else { // Retrieve by id and update:
-				saveableCategoryDTOImpl=CategoryDTOImplUtil.update(findById(categoryDTOImpl.getId()),categoryDTOImpl);
+				final CategoryDTOImpl foundByIdCategoryDTOImpl=findById(categoryDTOImpl.getId());
+				if(foundByIdCategoryDTOImpl.equals(categoryDTOImpl)) {
+					return foundByIdCategoryDTOImpl;
+				}
+				saveableCategoryDTOImpl=CategoryDTOImplUtil.update(foundByIdCategoryDTOImpl,categoryDTOImpl);
 			}
 			if(saveableCategoryDTOImpl!=null) {
 				final MongoCategory savedCategory=mongoCategoryRepository.save(mapper.map(categoryDTOImpl, MongoCategory.class));

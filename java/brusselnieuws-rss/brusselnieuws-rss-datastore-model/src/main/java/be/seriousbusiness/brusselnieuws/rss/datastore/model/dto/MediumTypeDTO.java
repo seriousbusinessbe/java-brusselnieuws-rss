@@ -9,7 +9,7 @@ import java.math.BigInteger;
  * @version 1.0
  * @since 1.0
  */
-public interface MediumTypeDTO extends IdDTO<BigInteger> {
+public interface MediumTypeDTO extends IdDTO<BigInteger>, Cloneable {
 	
 	/**
 	 * Gets the medium type representation.

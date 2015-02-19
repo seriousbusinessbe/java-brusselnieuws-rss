@@ -80,5 +80,27 @@ public class FeedDTOImpl extends AbstractIdDTOImpl<BigInteger> implements FeedDT
 	public String toString(){
 		return ObjectUtil.toString(this);
 	}
+	
+	@Override
+	public Object clone() {
+		final Collection<ArticleDTOImpl> clonedArticleDTOImpls=new ArrayList<ArticleDTOImpl>();
+		for(final ArticleDTOImpl articleDTOImpl : articleDTOImpls) {
+			clonedArticleDTOImpls.add((ArticleDTOImpl)articleDTOImpl.clone());
+		}
+		final FeedDTOImpl feedDTOImpl=new FeedDTOImpl();
+		feedDTOImpl.setId(id);
+		feedDTOImpl.setDescription(description);
+		feedDTOImpl.setLink(link);
+		feedDTOImpl.setTitle(title);
+		feedDTOImpl.setArticleDTOs(clonedArticleDTOImpls);
+		return feedDTOImpl;
+	}
+
+	@Override
+	public void add(final ArticleDTOImpl articleDTO) {
+		if(articleDTO!=null && !articleDTOImpls.contains(articleDTO)) {
+			articleDTOImpls.add(articleDTO);
+		}
+	}
 
 }

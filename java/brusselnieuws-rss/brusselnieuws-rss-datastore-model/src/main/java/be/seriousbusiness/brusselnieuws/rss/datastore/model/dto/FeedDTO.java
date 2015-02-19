@@ -19,7 +19,7 @@ public interface FeedDTO<MEDIUMTYPEDTO extends MediumTypeDTO,
 						MEDIUM extends MediumDTO<MEDIUMTYPEDTO>,
 						CATEGORYDTO extends CategoryDTO,
 						AUTHORDTO extends AuthorDTO,
-						ARTICLEDTO extends ArticleDTO<MEDIUMTYPEDTO,MEDIUM,CATEGORYDTO,AUTHORDTO>> extends IdDTO<BigInteger> {
+						ARTICLEDTO extends ArticleDTO<MEDIUMTYPEDTO,MEDIUM,CATEGORYDTO,AUTHORDTO>> extends IdDTO<BigInteger>, Cloneable {
 	
 	/**
 	 * Gets the title.
@@ -68,5 +68,12 @@ public interface FeedDTO<MEDIUMTYPEDTO extends MediumTypeDTO,
 	 * @param articleDTOs a {@link Collection} of {@link ArticleDTO}
 	 */
 	void setArticleDTOs(final Collection<ARTICLEDTO> articleDTOs);
+	
+	/**
+	 * Adds a unique non <code>null</code> {@link ARTICLEDTO}.</br>
+	 * Not added when <code>null</code> or already added.
+	 * @param article
+	 */
+	void add(final ARTICLEDTO articleDTO);
 
 }

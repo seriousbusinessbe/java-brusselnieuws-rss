@@ -9,7 +9,7 @@ import java.math.BigInteger;
  * @version 1.0
  * @since 1.0
  */
-public interface MediumType extends Id<BigInteger>, Comparable<MediumType> {
+public interface MediumType extends Id<BigInteger>, Comparable<MediumType>, Cloneable {
 	
 	/**
 	 * Gets the medium type.

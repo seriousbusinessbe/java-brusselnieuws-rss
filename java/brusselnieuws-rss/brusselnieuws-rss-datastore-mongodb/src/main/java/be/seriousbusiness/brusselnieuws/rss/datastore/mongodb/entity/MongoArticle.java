@@ -152,6 +152,13 @@ public class MongoArticle implements ArticleDTO<MongoMediumType,MongoMedium,Mong
 	public void setMediumDTOs(final Collection<MongoMedium> mongoMediums) {
 		this.mongoMediums=mongoMediums;
 	}
+	
+	@Override
+	public void add(final MongoMedium mongoMedium) {
+		if(mongoMedium!=null && !mongoMediums.contains(mongoMedium)) {
+			mongoMediums.add(mongoMedium);
+		}
+	}
 
 	@Override
 	public Collection<MongoCategory> getCategoryDTOs() {
@@ -162,6 +169,13 @@ public class MongoArticle implements ArticleDTO<MongoMediumType,MongoMedium,Mong
 	public void setCategoryDTOs(final Collection<MongoCategory> mongoCategories) {
 		this.mongoCategories=mongoCategories;
 	}
+	
+	@Override
+	public void add(final MongoCategory mongoCategory) {
+		if(mongoCategory!=null && !mongoCategories.contains(mongoCategory)) {
+			mongoCategories.add(mongoCategory);
+		}
+	}
 
 	@Override
 	public Collection<MongoAuthor> getAuthorDTOs() {
@@ -171,6 +185,13 @@ public class MongoArticle implements ArticleDTO<MongoMediumType,MongoMedium,Mong
 	@Override
 	public void setAuthorDTOs(final Collection<MongoAuthor> mongoAuthors) {
 		this.mongoAuthors=mongoAuthors;
+	}
+	
+	@Override
+	public void add(final MongoAuthor mongoAuthor) {
+		if(mongoAuthor!=null && !mongoAuthors.contains(mongoAuthor)) {
+			mongoAuthors.add(mongoAuthor);
+		}
 	}
 	
 	@Override

@@ -359,5 +359,32 @@ public class ArticleImpl extends AbstractIdImpl<BigInteger> implements Article<M
 	public String toString(){
 		return ObjectUtil.toString(this);
 	}
-
+	
+	@Override
+	public Object clone() {
+		final Collection<AuthorImpl> clonedAuthors=new ArrayList<AuthorImpl>();
+		for(final AuthorImpl authorImpl : authors) {
+			clonedAuthors.add((AuthorImpl)authorImpl.clone());
+		}
+		final Collection<CategoryImpl> clonedCategories=new ArrayList<CategoryImpl>();
+		for(final CategoryImpl categoryImpl : categories) {
+			clonedCategories.add((CategoryImpl)categoryImpl.clone());
+		}
+		final Collection<MediumImpl> clonedMedia=new ArrayList<MediumImpl>();
+		for(final MediumImpl mediumImpl : media) {
+			clonedMedia.add((MediumImpl)mediumImpl.clone());
+		}
+		return new Builder().id(id)
+				.title(title)
+				.link(link)
+				.description(description)
+				.publicationDate(publicationDate)
+				.read(read)
+				.archived(archived)
+				.favorite(favorite)
+				.authors(clonedAuthors)
+				.categories(clonedCategories)
+				.media(clonedMedia).build();
+	}
+	
 }

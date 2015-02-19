@@ -32,8 +32,8 @@ public class BrusselNieuwsRss<MEDIUMTYPE extends MediumType,
 						   AUTHOR extends Author,
 						   ARTICLE extends Article<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR>,
 						   FEED extends Feed<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,ARTICLE>> {
-	private FeedManager<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,ARTICLE,FEED> feedManager;
-	private BrusselNieuwsRssReader<FEED> brusselNieuwsRssReader;
+	protected FeedManager<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,ARTICLE,FEED> feedManager;
+	protected BrusselNieuwsRssReader<FEED> brusselNieuwsRssReader;
 	private FeedFactory<FEED> feedFactory;
 	private URL newsHeadlinesURL,newsSurveyURL,societyNewsURL,politicalNewsURL,economicalNewsURL,sportsNewsURL,awelMerciNewsURL,childrensNewsURL,cityNewsURL,peopleNewsURL;
 	private URL cultureSurveyURL,generalCultureNewsURL,expoNewsURL,musicalNewsURL,filmNewsURL,stageNewsURL,eventNewsURL,shoppingNewsURL;

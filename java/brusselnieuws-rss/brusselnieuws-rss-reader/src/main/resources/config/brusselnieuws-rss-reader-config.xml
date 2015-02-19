@@ -32,7 +32,7 @@
 	      <property name="feedDAO" ref="mongoFeedDAO"/>
 	</bean>
 		
-	<bean id="brusselNieuwsRss" class="be.seriousbusiness.brusselnieuws.rss.reader.BrusselNieuwsRss">
+	<bean id="brusselNieuwsRssImpl" class="be.seriousbusiness.brusselnieuws.rss.reader.impl.BrusselNieuwsRssImpl">
 		<property name="brusselNieuwsRssReader" ref="brusselNieuwsRssReaderImpl"/>
 		<property name="feedFactory" ref="feedImplFactory"/>
 		<property name="feedManager" ref="feedManagerImpl"/>

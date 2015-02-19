@@ -3,6 +3,10 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl;
 import java.math.BigInteger;
 import java.util.ArrayList;
 
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
+
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AbstractArticleDTOTest;
 
 /**
@@ -32,6 +36,43 @@ public class ArticleDTOImplTest extends AbstractArticleDTOTest<MediumTypeDTOImpl
 	@Override
 	public ArticleDTOImpl create() {
 		return new ArticleDTOImpl();
+	}
+	
+	@Ignore
+	@Test
+	public void testCloneble() {
+		ArticleDTOImpl clonedArticleDTOImpl=(ArticleDTOImpl) getDTO().clone();
+		Assert.assertEquals("The clone should be equal to the one it's cloned from",getDTO(),clonedArticleDTOImpl);
+		clonedArticleDTOImpl.setDescription(String.valueOf(System.currentTimeMillis()));
+		Assert.assertNotEquals("The clone should not be equal to the one it's cloned from after altering it",getDTO(),clonedArticleDTOImpl);
+		// AuthorDTOImpl:
+		clonedArticleDTOImpl=(ArticleDTOImpl) getDTO().clone();
+		for(final AuthorDTOImpl authorDTOImpl : clonedArticleDTOImpl.getAuthorDTOs()) {
+			authorDTOImpl.setName(String.valueOf(System.currentTimeMillis()));
+			break;
+		}
+		Assert.assertNotEquals("The clone should not be equal to the one it's cloned from after altering it",getDTO(),clonedArticleDTOImpl);
+		// CategoryDTOImpl:
+		clonedArticleDTOImpl=(ArticleDTOImpl) getDTO().clone();
+		for(final CategoryDTOImpl categoryDTOImpl : clonedArticleDTOImpl.getCategoryDTOs()) {
+			categoryDTOImpl.setName(String.valueOf(System.currentTimeMillis()));
+			break;
+		}
+		Assert.assertNotEquals("The clone should not be equal to the one it's cloned from after altering it",getDTO(),clonedArticleDTOImpl);
+		// MediumDTOImpl:
+		clonedArticleDTOImpl=(ArticleDTOImpl) getDTO().clone();
+		for(final MediumDTOImpl mediumDTOImpl : clonedArticleDTOImpl.getMediumDTOs()) {
+			mediumDTOImpl.setSize(System.currentTimeMillis());
+			break;
+		}
+		Assert.assertNotEquals("The clone should not be equal to the one it's cloned from after altering it",getDTO(),clonedArticleDTOImpl);
+		// MediumTypeDTOImpl:
+		clonedArticleDTOImpl=(ArticleDTOImpl) getDTO().clone();
+		for(final MediumDTOImpl mediumDTOImpl : clonedArticleDTOImpl.getMediumDTOs()) {
+			mediumDTOImpl.getMediumTypeDTO().setType(String.valueOf(System.currentTimeMillis()));
+			break;
+		}
+		Assert.assertNotEquals("The clone should not be equal to the one it's cloned from after altering it",getDTO(),clonedArticleDTOImpl);
 	}
 
 }

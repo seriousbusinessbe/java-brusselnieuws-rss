@@ -86,6 +86,13 @@ public class MongoFeed implements FeedDTO<MongoMediumType,MongoMedium,MongoCateg
 	}
 	
 	@Override
+	public void add(final MongoArticle mongoArticle) {
+		if(mongoArticle!=null && !mongoArticles.contains(mongoArticle)) {
+			mongoArticles.add(mongoArticle);
+		}
+	}
+	
+	@Override
 	public boolean equals(final Object obj){
 		return obj!=null && obj instanceof MongoFeed && 
 				ObjectUtil.isNullOrEqual(id,((MongoFeed)obj).id) &&

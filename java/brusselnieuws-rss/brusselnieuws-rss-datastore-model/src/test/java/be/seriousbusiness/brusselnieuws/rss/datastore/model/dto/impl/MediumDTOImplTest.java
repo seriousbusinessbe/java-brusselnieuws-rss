@@ -1,5 +1,9 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl;
 
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
+
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AbstractMediumDTOTest;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.stub.PNGMediumTypeDTOImplStub;
 
@@ -20,6 +24,21 @@ public class MediumDTOImplTest extends AbstractMediumDTOTest<MediumTypeDTOImpl,M
 	@Override
 	public MediumDTOImpl create() {
 		return new MediumDTOImpl();
+	}
+	
+	@Ignore
+	@Test
+	public void testCloneable() {
+		// Alter clone:
+		MediumDTOImpl clonedMediumDTOImpl=(MediumDTOImpl) getDTO().clone();
+		Assert.assertEquals("The clone should be equal to the one it's cloned from",getDTO(),clonedMediumDTOImpl);
+		clonedMediumDTOImpl.setSize(System.currentTimeMillis());
+		Assert.assertNotEquals("The clone should not be equal to the one it's cloned from after altering it",getDTO(),clonedMediumDTOImpl);
+		// Alter clone's nested {@link MediumTypeDTOImpl}:
+		clonedMediumDTOImpl=(MediumDTOImpl) getDTO().clone();
+		Assert.assertEquals("The clone should be equal to the one it's cloned from",getDTO(),clonedMediumDTOImpl);
+		clonedMediumDTOImpl.getMediumTypeDTO().setType(String.valueOf(System.currentTimeMillis()));
+		Assert.assertNotEquals("The clone should not be equal to the one it's cloned from after altering it",getDTO(),clonedMediumDTOImpl);
 	}
 
 }

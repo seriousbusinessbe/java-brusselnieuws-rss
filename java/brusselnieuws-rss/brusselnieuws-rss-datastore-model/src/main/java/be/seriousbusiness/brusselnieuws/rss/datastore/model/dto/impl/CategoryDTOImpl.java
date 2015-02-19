@@ -51,5 +51,14 @@ public class CategoryDTOImpl extends AbstractIdDTOImpl<BigInteger> implements Ca
 	public String toString(){
 		return ObjectUtil.toString(this);
 	}
+	
+	@Override
+	public Object clone() {
+		final CategoryDTOImpl categoryDTOImpl=new CategoryDTOImpl();
+		categoryDTOImpl.setId(id);
+		categoryDTOImpl.setLink(link);
+		categoryDTOImpl.setName(name);
+		return categoryDTOImpl;
+	}
 
 }

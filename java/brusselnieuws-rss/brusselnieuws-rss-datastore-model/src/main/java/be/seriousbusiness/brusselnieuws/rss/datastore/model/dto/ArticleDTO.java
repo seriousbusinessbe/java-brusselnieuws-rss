@@ -17,7 +17,7 @@ import java.util.Collection;
 public interface ArticleDTO<MEDIUMTYPEDTO extends MediumTypeDTO,
 							MEDIUMDTO extends MediumDTO<MEDIUMTYPEDTO>,
 							CATEGORYDTO extends CategoryDTO,
-							AUTHORDTO extends AuthorDTO> extends IdDTO<BigInteger> {
+							AUTHORDTO extends AuthorDTO> extends IdDTO<BigInteger>, Cloneable {
 	
 	/**
 	 * Gets the title.
@@ -135,6 +135,13 @@ public interface ArticleDTO<MEDIUMTYPEDTO extends MediumTypeDTO,
 	void setMediumDTOs(final Collection<MEDIUMDTO> mediumDTOs);
 	
 	/**
+	 * Adds a unique non <code>null</code> {@link MEDIUMDTO}.</br>
+	 * Not added when <code>null</code> or already added.
+	 * @param mediumDTO
+	 */
+	void add(final MEDIUMDTO mediumDTO);
+	
+	/**
 	 * Gets all attached {@link CATEGORYDTO}(s).
 	 * @return a {@link Collection} of {@link CATEGORYDTO} or <code>null</code> when not set
 	 */
@@ -147,6 +154,13 @@ public interface ArticleDTO<MEDIUMTYPEDTO extends MediumTypeDTO,
 	void setCategoryDTOs(final Collection<CATEGORYDTO> categoryDTOs);
 	
 	/**
+	 * Adds a unique non <code>null</code> {@link CATEGORYDTO}.</br>
+	 * Not added when <code>null</code> or already added.
+	 * @param categoryDTO
+	 */
+	void add(final CATEGORYDTO categoryDTO);
+	
+	/**
 	 * Gets all attached {@link AuthorDTO}(s).
 	 * @return a {@link Collection} of {@link AuthorDTO} or <code>null</code> when not set
 	 */ 
@@ -157,5 +171,12 @@ public interface ArticleDTO<MEDIUMTYPEDTO extends MediumTypeDTO,
 	 * @param authorDTOs a {@link Collection} of {@link AUTHORDTO}
 	 */
 	void setAuthorDTOs(final Collection<AUTHORDTO> authorDTOs);
+	
+	/**
+	 * Adds a unique non <code>null</code> {@link AUTHORDTO}.</br>
+	 * Not added when <code>null</code> or already added.
+	 * @param article
+	 */
+	void add(final AUTHORDTO authorDTO);
 
 }

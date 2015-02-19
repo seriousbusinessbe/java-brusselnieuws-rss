@@ -11,6 +11,8 @@ import java.util.List;
 import java.util.Set;
 
 import org.dozer.Mapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Article;
@@ -19,6 +21,7 @@ import be.seriousbusiness.brusselnieuws.rss.reader.model.comparator.ArticlePubli
 import be.seriousbusiness.brusselnieuws.rss.reader.model.listener.FeedListener;
 
 public class FeedImpl extends AbstractIdImpl<BigInteger> implements Feed<MediumTypeImpl,MediumImpl,CategoryImpl,AuthorImpl,ArticleImpl> {
+	private static final Logger LOGGER=LoggerFactory.getLogger(FeedImpl.class);
 	private String title;
 	private URL link;
 	private String description;
@@ -167,6 +170,7 @@ public class FeedImpl extends AbstractIdImpl<BigInteger> implements Feed<MediumT
 		if(article!=null && !articles.contains(article)){
 			articles.add(article);
 			notifyFeedListeners(article);
+			LOGGER.debug("Added article '{}' to feed '{}'",article.getTitle(),title);
 		}
 	}
 
@@ -231,6 +235,15 @@ public class FeedImpl extends AbstractIdImpl<BigInteger> implements Feed<MediumT
 	@Override
 	public String toString(){
 		return ObjectUtil.toString(this);
+	}
+	
+	@Override
+	public Object clone() {
+		final Collection<ArticleImpl> clonedAuthors=new ArrayList<ArticleImpl>();
+		for(final ArticleImpl articleImpl : articles) {
+			clonedAuthors.add((ArticleImpl)articleImpl.clone());
+		}
+		return new Builder().id(id).description(description).link(link).title(title).articles(clonedAuthors).build();
 	}
 
 }
