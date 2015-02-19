@@ -23,6 +23,13 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoAuthor
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoCategory;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.repository.MongoArticleRepository;
 
+/**
+ * MongoDb {@link ArticleDAO} implementation. 
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ */
 public class MongoArticleDAO implements ArticleDAO {
 	private static final Logger LOGGER=LoggerFactory.getLogger(MongoArticleDAO.class);
 	@Autowired(required=true)
@@ -55,7 +62,7 @@ public class MongoArticleDAO implements ArticleDAO {
 		if(articleDTOImpl!=null){
 			ArticleDTOImpl saveableArticleDTOImpl=null;
 			if(articleDTOImpl.getId()==null) {
-				final ArticleDTOImpl foundByTitleAndPublicationDateArticleDTOImpl=findByTitleAndPublicationDate(articleDTOImpl.getTitle(),new DateTime(articleDTOImpl.getPublicationDate()));
+				final ArticleDTOImpl foundByTitleAndPublicationDateArticleDTOImpl=findFirstByTitle(articleDTOImpl.getTitle());
 				if(foundByTitleAndPublicationDateArticleDTOImpl==null) { // New article:
 					final List<MediumDTOImpl> mediumDTOImpls=new ArrayList<MediumDTOImpl>(articleDTOImpl.getMediumDTOs().size());
 					for(final MediumDTOImpl mediumDTOImpl : articleDTOImpl.getMediumDTOs()){
@@ -98,9 +105,8 @@ public class MongoArticleDAO implements ArticleDAO {
 					saveableArticleDTOImpl=foundByTitleAndPublicationDateArticleDTOImpl;
 				}
 			}else { // Existing article:
-				final ArticleDTOImpl clonedArticleDTOImpl=(ArticleDTOImpl) articleDTOImpl.clone();
 				final ArticleDTOImpl foundByIdArticleDTOImpl=findById(articleDTOImpl.getId());
-				if(clonedArticleDTOImpl.equals(foundByIdArticleDTOImpl)) {
+				if(articleDTOImpl.equals(foundByIdArticleDTOImpl)) {
 					return foundByIdArticleDTOImpl;
 				}
 				foundByIdArticleDTOImpl.setArchived(articleDTOImpl.isArchived());
@@ -202,6 +208,18 @@ public class MongoArticleDAO implements ArticleDAO {
 		LOGGER.debug("Find ArticleDTOImpl by title '{}' and publication date '{}'",title,publicationDate);
 		if(title!=null && publicationDate!=null) {
 			final MongoArticle mongoArticle=mongoArticleRepository.findByTitleAndPublicationDate(title,publicationDate.getMillis());
+			if(mongoArticle!=null) {
+				return mapper.map(mongoArticle,ArticleDTOImpl.class);
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public ArticleDTOImpl findFirstByTitle(final String title) {
+		LOGGER.debug("Find first ArticleDTOImpl by title '{}'",title);
+		if(title!=null) {
+			final MongoArticle mongoArticle=mongoArticleRepository.findFirstByTitle(title);
 			if(mongoArticle!=null) {
 				return mapper.map(mongoArticle,ArticleDTOImpl.class);
 			}

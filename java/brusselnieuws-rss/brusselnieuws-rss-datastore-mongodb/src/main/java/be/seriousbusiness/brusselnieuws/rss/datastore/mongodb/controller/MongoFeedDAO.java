@@ -18,6 +18,13 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.FeedDTOImpl
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoFeed;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.repository.MongoFeedRepository;
 
+/**
+ * MongoDb {@link FeedDAO} implementation. 
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ */
 public class MongoFeedDAO implements FeedDAO {
 	private static final Logger LOGGER=LoggerFactory.getLogger(MongoFeedDAO.class);
 	@Autowired(required=true)

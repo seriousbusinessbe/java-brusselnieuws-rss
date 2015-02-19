@@ -18,6 +18,13 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.util.Catego
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoCategory;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.repository.MongoCategoryRepository;
 
+/**
+ * MongoDb {@link CategoryDAO} implementation. 
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ */
 public class MongoCategoryDAO implements CategoryDAO {
 	private static final Logger LOGGER=LoggerFactory.getLogger(MongoCategoryDAO.class);
 	@Autowired(required=true)

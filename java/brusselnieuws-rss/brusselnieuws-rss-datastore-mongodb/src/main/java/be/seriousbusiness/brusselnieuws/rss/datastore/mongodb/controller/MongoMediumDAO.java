@@ -11,12 +11,17 @@ import org.springframework.beans.factory.annotation.Qualifier;
 
 import be.seriousbusiness.brusselnieuws.rss.common.mapping.util.MapperUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.MediumDAO;
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.exception.NotUniqueException;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.MediumDTOImpl;
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.MediumTypeDTOImpl;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoMedium;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.repository.MongoMediumRepository;
 
+/**
+ * MongoDb {@link MediumDAO} implementation. 
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ */
 public class MongoMediumDAO implements MediumDAO {
 	private static final Logger LOGGER=LoggerFactory.getLogger(MongoMediumDAO.class);
 	@Autowired(required=true)
@@ -31,21 +36,25 @@ public class MongoMediumDAO implements MediumDAO {
 	public MediumDTOImpl save(final MediumDTOImpl mediumDTOImpl) {
 		LOGGER.debug("Save MediumDTOImpl:\n{}",mediumDTOImpl);
 		if(mediumDTOImpl!=null){
-			final MediumTypeDTOImpl mediumTypeDTOImpl=mediumDTOImpl.getMediumTypeDTO();
-			if(mediumTypeDTOImpl.getId()==null){
-				try{
-					// A Medium with new MediumType is given, save the MediumType before saving the Medium:
-					mediumDTOImpl.setMediumTypeDTO(mongoMediumTypeDAO.save(mediumDTOImpl.getMediumTypeDTO()));	
-				}catch(final NotUniqueException e){
-					// An MediumType of the same type was already stored, let's retrieve this one:
-					mediumDTOImpl.setMediumTypeDTO(mongoMediumTypeDAO.findByType(mediumTypeDTOImpl.getType()));
+			MediumDTOImpl saveableMediumDTOImpl=null;
+			final MediumDTOImpl foundByLinkMediumDTOImpl=findByLink(mediumDTOImpl.getLink());
+			if(foundByLinkMediumDTOImpl==null) { // New medium:
+				mediumDTOImpl.setMediumTypeDTO(mongoMediumTypeDAO.save(mediumDTOImpl.getMediumTypeDTO()));
+				saveableMediumDTOImpl=mediumDTOImpl;
+			}else {
+				if(mediumDTOImpl.equals(foundByLinkMediumDTOImpl)) {
+					return foundByLinkMediumDTOImpl;
 				}
+				foundByLinkMediumDTOImpl.setMediumTypeDTO(mongoMediumTypeDAO.save(mediumDTOImpl.getMediumTypeDTO()));
+				foundByLinkMediumDTOImpl.setSize(mediumDTOImpl.getSize());
+				saveableMediumDTOImpl=foundByLinkMediumDTOImpl;
 			}
-			final MongoMedium savedMedium=mongoMediumRepository.save(mapper.map(mediumDTOImpl, MongoMedium.class));
-			return mapper.map(savedMedium, MediumDTOImpl.class);
+			if(saveableMediumDTOImpl!=null) {
+				final MongoMedium savedMedium=mongoMediumRepository.save(mapper.map(saveableMediumDTOImpl,MongoMedium.class));
+				return mapper.map(savedMedium, MediumDTOImpl.class);
+			}
 		}
 		return mediumDTOImpl;
-		
 	}
 
 	@Override

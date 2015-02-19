@@ -17,6 +17,13 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.AuthorDTOIm
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoAuthor;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.repository.MongoAuthorRepository;
 
+/**
+ * MongoDb {@link AuthorDAO} implementation. 
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ */
 public class MongoAuthorDAO implements AuthorDAO {
 	private static final Logger LOGGER=LoggerFactory.getLogger(MongoAuthorDAO.class);
 	@Autowired(required=true)
@@ -43,18 +50,17 @@ public class MongoAuthorDAO implements AuthorDAO {
 		if(authorDTOImpl!=null){
 			AuthorDTOImpl saveableAuthorDTOImpl=null;
 			if(authorDTOImpl.getId()==null) { 
-				final AuthorDTOImpl foundByNameAuthorDTOImpl=null; // TODO: findByName(authorDTOImpl.getName());
-				if(foundByNameAuthorDTOImpl==null) {
+				final AuthorDTOImpl foundByNameAuthorDTOImpl=findFirstByName(authorDTOImpl.getName());
+				if(foundByNameAuthorDTOImpl==null) { // New author:
 					saveableAuthorDTOImpl=authorDTOImpl;
+				}else { // Existing author:
+					return foundByNameAuthorDTOImpl;
 				}
-				/* TODO: 
-				else {
-					foundByNameAuthorDTOImpl.setName(authorDTOImpl.getName());
-					saveableAuthorDTOImpl=foundByNameAuthorDTOImpl;
-				}
-				*/
 			}else { // Retrieve by id and update:
 				final AuthorDTOImpl foundByIdAuthorDTOImpl=findById(authorDTOImpl.getId());
+				if(authorDTOImpl.equals(foundByIdAuthorDTOImpl)) {
+					return foundByIdAuthorDTOImpl;
+				}
 				foundByIdAuthorDTOImpl.setName(authorDTOImpl.getName());
 				saveableAuthorDTOImpl=foundByIdAuthorDTOImpl;
 			}
@@ -86,6 +92,18 @@ public class MongoAuthorDAO implements AuthorDAO {
 		if(authorDTOImpl!=null && authorDTOImpl.getId()!=null){
 			mongoAuthorRepository.delete(mapper.map(authorDTOImpl, MongoAuthor.class));
 		}
+	}
+
+	@Override
+	public AuthorDTOImpl findFirstByName(String name) {
+		LOGGER.debug("Find first AuthorDTOImpl by name '{}'",name);
+		if(name!=null) {
+			final MongoAuthor mongoAuthor=mongoAuthorRepository.findFirstByName(name);
+			if(mongoAuthor!=null) {
+				mapper.map(mongoAuthor,AuthorDTOImpl.class);
+			}
+		}
+		return null;
 	}
 
 }

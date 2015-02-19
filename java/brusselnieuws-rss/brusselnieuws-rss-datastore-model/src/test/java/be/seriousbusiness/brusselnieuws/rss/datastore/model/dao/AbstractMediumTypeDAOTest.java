@@ -8,7 +8,6 @@ import java.math.BigInteger;
 import org.junit.Assert;
 import org.junit.Test;
 
-import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.exception.NotUniqueException;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.MediumTypeDTOImpl;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.factory.MediumTypeDTOImplFactory;
 
@@ -56,10 +55,9 @@ public abstract class AbstractMediumTypeDAOTest extends AbstractIdDAOTest<BigInt
 	}
 	
 	/**
-	 * Test saving a {@link MediumTypeDTOImpl} twice,</br>
-	 * which should throw a {@link NotUniqueException}.
+	 * Test saving a {@link MediumTypeDTOImpl} twice.
 	 */
-	@Test(expected=NotUniqueException.class)
+	@Test
 	public void testSaveDTONotUniqueException(){
 		final MediumTypeDTOImpl mediumTypeDTOImpl=getDTO();
 		setDTO(getDAO().save(mediumTypeDTOImpl));

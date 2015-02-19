@@ -20,5 +20,12 @@ public interface AuthorDAO extends IdDAO<BigInteger,AuthorDTOImpl> {
 	 * @return a {@link Collection} of {@link AuthorDTOImpl}, empty when none found
 	 */
 	Collection<AuthorDTOImpl> findByName(final String name);
+	
+	/**
+	 * Finds the first {@link AuthorDTOImpl} by name.
+	 * @param name the author name to look for
+	 * @return the found {@link MongoAuthor} <code>null</code> when not found
+	 */
+	AuthorDTOImpl findFirstByName(final String name);
 
 }

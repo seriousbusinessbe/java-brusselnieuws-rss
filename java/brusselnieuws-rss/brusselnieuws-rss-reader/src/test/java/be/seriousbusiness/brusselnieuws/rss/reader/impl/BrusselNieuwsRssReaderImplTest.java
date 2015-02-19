@@ -60,7 +60,7 @@ public class BrusselNieuwsRssReaderImplTest {
 		final ArticleImpl article=new ArrayList<ArticleImpl>(articles).get(0);
 		assertEquals("Wat staat er nog in het VGC-akkoord?",article.getTitle());
 		assertEquals(new URL("http://www.brusselnieuws.be/nl/nieuws/wat-staat-er-nog-het-vgc-akkoord"),article.getLink());
-		final String expectedDescription=StringEscapeUtils.unescapeHtml4("&lt;p&gt;Een kinderarmoedeplan, meer aandacht voor vernieuwende stadsprojecten, een nieuwe fuifzaal en de aankoop van een avontuurlijk speeldomein. Het zijn maar enkele concrete elementen uit het nieuwe VGC-akkoord, dat de titel &#039;Goesting in Brussel&#039; meekreeg.&lt;/p&gt;Kris Hendrickx © brusselnieuws.be");
+		final String expectedDescription=StringEscapeUtils.unescapeHtml4("Een kinderarmoedeplan, meer aandacht voor vernieuwende stadsprojecten, een nieuwe fuifzaal en de aankoop van een avontuurlijk speeldomein. Het zijn maar enkele concrete elementen uit het nieuwe VGC-akkoord, dat de titel &#039;Goesting in Brussel&#039; meekreeg.Kris Hendrickx © brusselnieuws.be");
 		assertEquals(expectedDescription,article.getDescription());
 		assertEquals(new DateTime(2014,07,20,18,17,14),article.getPublicationDate());
 		final Collection<AuthorImpl> authors=article.getAuthors();

@@ -2,14 +2,13 @@
 <html ng-app="brusselNieuwsRss">
 	<head>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<title>Brussel Nieuws RSS Reader</title>
 	</head>
 	<body>
 		<!--<script type="text/javascript" src="js/angular.min.js"></script>-->
 		<script type="text/javascript" src="js/angular.js"></script>
-		<!--<script type="text/javascript" src="bower_components/angular/angular.js"></script>
-		<script type="text/javascript" src="bower_components/angular-filter/dist/angular-filter.min.js"></script> -->
 		<script type="text/javascript" src="js/brusselNieuwsRss.js"></script>
-		<p>{{"Brussel Nieuws RSS"}}</p>
+		<p>{{"Brussel Nieuws RSS Reader"}}</p>
 		<section ng-controller="FeedsCategoriesController as feedsCategoriesController">
 			<ul class="nav nav-pills">
 				<li ng-repeat="feedCategoryResponse in feedsCategoriesController.feedsCategoriesResponse.feedCategoryResponses | orderBy:feedCategoryResponse.translatedName"
@@ -26,9 +25,28 @@
 					</li>	
 				</ul>
 				<section ng-controller="FeedController as feedController">
-					<a href="{{feedController.feedResponse.link}}">{{feedController.feedResponse.title}}</a>
+					<a href="{{feedController.feedResponse.link}}" target="_blank">{{feedController.feedResponse.title}}</a>
 					<ul>
-						<li ng-repeat="article in feedController.feedResponse.articles">{{article.title}}</li>
+						<li ng-repeat="article in feedController.feedResponse.articles">
+							<p>{{article.publicationDate | date:'HH:mm dd/MM/yy'}} - {{article.title}} 
+								<a href="{{article.link}}" target="_blank">
+									<img src="http://www.brusselnieuws.be/sites/all/themes/custom/brusselnieuws_zen/icons/favicon.ico" 
+					     				 alt="{{article.title}}" 
+					     				 style="width:15px;height:15px">
+					 			</a>
+							</p>
+							<p><img ng-src="{{article.media[0].link}}"/></p>
+							<p>{{article.description}}</p>
+							<ul ng-repeat="category in article.categories">
+								<li>{{category.name}}
+									<a href="{{category.link}}" target="_blank">
+										<img src="http://www.brusselnieuws.be/sites/all/themes/custom/brusselnieuws_zen/icons/favicon.ico" 
+					     				 alt="{{article.title}}" 
+					     				 style="width:15px;height:15px">
+									</a>
+								</li>
+							</ul>
+						</li>
 					</ul>
 				</section>
 			</section>

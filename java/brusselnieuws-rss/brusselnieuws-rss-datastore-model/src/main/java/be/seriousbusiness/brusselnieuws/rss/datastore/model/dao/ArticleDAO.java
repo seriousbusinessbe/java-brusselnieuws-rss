@@ -85,4 +85,11 @@ public interface ArticleDAO extends IdDAO<BigInteger,ArticleDTOImpl> {
 	 */
 	ArticleDTOImpl findByTitleAndPublicationDate(final String title,final DateTime publicationDate);
 	
+	/**
+	 * Finds the first {@link ArticleDTOImpl} by title.</br>
+	 * @param title the title to look for
+	 * @return the found {@link ArticleDTOImpl} <code>null</code> when not found
+	 */
+	ArticleDTOImpl findFirstByTitle(final String title);
+	
 }

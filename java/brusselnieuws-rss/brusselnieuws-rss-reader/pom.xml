@@ -49,6 +49,20 @@
 		<artifactId>rome</artifactId>
 		<version>1.0</version>
 	</dependency>
+	<!-- JSoup - Java HTML parser -->
+	<dependency>
+		<groupId>org.jsoup</groupId>
+		<artifactId>jsoup</artifactId>
+		<version>1.8.1</version>
+	</dependency>
+	<!-- Apache Tika -->
+	<!--  
+	<dependency>
+		<groupId>org.apache.tika</groupId>
+		<artifactId>tika-core</artifactId>
+		<version>1.7</version>
+	</dependency>
+	-->
 	<!-- Spring Core -->
 	<dependency>
         <groupId>org.springframework</groupId>

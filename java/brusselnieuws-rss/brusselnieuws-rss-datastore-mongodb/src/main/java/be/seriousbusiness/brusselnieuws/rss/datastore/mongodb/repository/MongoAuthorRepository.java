@@ -17,6 +17,18 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoAuthor
  */
 public interface MongoAuthorRepository extends CrudRepository<MongoAuthor,BigInteger> {
 	
+	/**
+	 * Finds all {@link MongoAuthor}(s) by name.
+	 * @param name the name to look for
+	 * @return a collection of found {@link MongoAuthor}(s) <code>null</code> when none found
+	 */
 	Collection<MongoAuthor> findByName(final String name);
+	
+	/**
+	 * Finds the first {@link MongoAuthor} by name.
+	 * @param name the name to look for
+	 * @return the found {@link MongoAuthor} <code>null</code> when not found
+	 */
+	MongoAuthor findFirstByName(final String name);
 
 }

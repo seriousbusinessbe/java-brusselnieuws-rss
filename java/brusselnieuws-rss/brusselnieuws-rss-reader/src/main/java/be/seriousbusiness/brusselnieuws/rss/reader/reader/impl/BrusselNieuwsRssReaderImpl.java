@@ -18,6 +18,7 @@ import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.CategoryImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.FeedImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.MediumImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.MediumTypeImpl;
+import be.seriousbusiness.brusselnieuws.rss.reader.util.StringUtil;
 
 import com.sun.syndication.feed.synd.SyndCategory;
 import com.sun.syndication.feed.synd.SyndEnclosure;
@@ -49,12 +50,13 @@ public class BrusselNieuwsRssReaderImpl implements BrusselNieuwsRssReader<FeedIm
 				final SyndFeed syndFeed=SYNDFEEDINPUT.build(new XmlReader(link));
 				feed.setLink(new URL(syndFeed.getLink()));
 				feed.setTitle(syndFeed.getTitle());
-				feed.setDescription(syndFeed.getDescription());
+				feed.setDescription(StringUtil.removeHTMLTags(syndFeed.getDescription()));
 				// Add articles:
 				@SuppressWarnings("unchecked")
 				final List<SyndEntry> feedEntries=syndFeed.getEntries();
 				if(feedEntries!=null){
-					for(final SyndEntry syndEntry : feedEntries){
+					for(final SyndEntry syndEntry : feedEntries){	
+						syndEntry.getModules();
 						// Add article:
 						// Add authors:
 						final Collection<AuthorImpl> authors=new HashSet<AuthorImpl>();
@@ -66,6 +68,13 @@ public class BrusselNieuwsRssReaderImpl implements BrusselNieuwsRssReader<FeedIm
 								authors.add(author);
 							}
 						}
+						// Add copyright owner as author:
+						/*
+						final String copyright=((description).split("\u00A9",2))[1];
+						if(copyright!=null) {
+							authors.add(new AuthorImpl.Builder().name(copyright.trim()).build() );
+						}
+						*/
 						// Add categories:
 						final Collection<CategoryImpl> categories=new HashSet<CategoryImpl>();
 						@SuppressWarnings("unchecked")
@@ -120,7 +129,7 @@ public class BrusselNieuwsRssReaderImpl implements BrusselNieuwsRssReader<FeedIm
 								archived(false).
 								authors(authors).
 								categories(categories).
-								description(syndEntry.getDescription().getValue()).
+								description(StringUtil.removeHTMLTags(syndEntry.getDescription().getValue())).
 								favorite(false).
 								link(new URL(syndEntry.getLink())).
 								media(media).

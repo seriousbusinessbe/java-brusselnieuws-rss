@@ -33,6 +33,19 @@ public interface MongoArticleRepository extends CrudRepository<MongoArticle,BigI
 	
 	Collection<MongoArticle> findByPublicationDateBetween(final Long from,final Long to);
 	
+	/**
+	 * Finds a {@link MongoArticle} by title and publication date.
+	 * @param title the title to look for
+	 * @param publicationDate the publication date to look for
+	 * @return the found {@link MongoArticle} <code>null</code> when not found
+	 */
 	MongoArticle findByTitleAndPublicationDate(final String title,final Long publicationDate);
+	
+	/**
+	 * Finds the first {@link MongoArticle} by title.</br>
+	 * @param title the title to look for
+	 * @return the found {@link MongoArticle} <code>null</code> when not found
+	 */
+	MongoArticle findFirstByTitle(final String title);
 
 }

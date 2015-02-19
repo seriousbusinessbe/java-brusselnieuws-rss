@@ -9,7 +9,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.dao.DuplicateKeyException;
 
 import be.seriousbusiness.brusselnieuws.rss.common.mapping.util.MapperUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.MediumTypeDAO;
@@ -18,6 +17,13 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.MediumTypeD
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoMediumType;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.repository.MongoMediumTypeRepository;
 
+/**
+ * MongoDb {@link MediumTypeDAO} implementation. 
+ * @author Serious Business
+ * @author Stefan Borghys
+ * @version 1.0
+ * @since 1.0
+ */
 public class MongoMediumTypeDAO implements MediumTypeDAO {
 	private static final Logger LOGGER=LoggerFactory.getLogger(MongoMediumTypeDAO.class);
 	@Autowired(required=true)
@@ -42,15 +48,31 @@ public class MongoMediumTypeDAO implements MediumTypeDAO {
 	public MediumTypeDTOImpl save(final MediumTypeDTOImpl mediumTypeDTOImpl) throws NotUniqueException {
 		LOGGER.debug("Save MediumTypeDTOImpl:\n{}",mediumTypeDTOImpl);
 		if(mediumTypeDTOImpl!=null){
-			try{
-				final MongoMediumType mediumType=mapper.map(mediumTypeDTOImpl, MongoMediumType.class);
-				final MongoMediumType savedMediumType=mongoMediumTypeRepository.save(mediumType);
+			MediumTypeDTOImpl saveableMediumTypeDTOImpl=null;
+			if(mediumTypeDTOImpl.getId()==null) {
+				final MediumTypeDTOImpl foundByTypeMediumTypeDTOImpl=findByType(mediumTypeDTOImpl.getType());
+				if(foundByTypeMediumTypeDTOImpl==null) {
+					saveableMediumTypeDTOImpl=mediumTypeDTOImpl;
+				}else {
+					final MediumTypeDTOImpl clonedMediumTypeDTOImpl=(MediumTypeDTOImpl) mediumTypeDTOImpl.clone();
+					clonedMediumTypeDTOImpl.setId(foundByTypeMediumTypeDTOImpl.getId());
+					if(clonedMediumTypeDTOImpl.equals(foundByTypeMediumTypeDTOImpl)) {
+						return foundByTypeMediumTypeDTOImpl;
+					}
+					foundByTypeMediumTypeDTOImpl.setType(mediumTypeDTOImpl.getType());
+					saveableMediumTypeDTOImpl=foundByTypeMediumTypeDTOImpl;
+				}
+			}else {
+				final MediumTypeDTOImpl foundByIdMediumTypeDTOImpl=findById(mediumTypeDTOImpl.getId());
+				if(mediumTypeDTOImpl.equals(foundByIdMediumTypeDTOImpl)) {
+					return foundByIdMediumTypeDTOImpl;
+				}
+				foundByIdMediumTypeDTOImpl.setType(mediumTypeDTOImpl.getType());
+				saveableMediumTypeDTOImpl=foundByIdMediumTypeDTOImpl;
+			}
+			if(saveableMediumTypeDTOImpl!=null) {
+				final MongoMediumType savedMediumType=mongoMediumTypeRepository.save(mapper.map(saveableMediumTypeDTOImpl,MongoMediumType.class));
 				return mapper.map(savedMediumType, MediumTypeDTOImpl.class);
-			}catch(final DuplicateKeyException e){
-				LOGGER.debug("MediumTypeDTOImpl '{}' could not be saved because type '{}' is already in use",mediumTypeDTOImpl,mediumTypeDTOImpl.getType(),e);
-				final NotUniqueException notUniqueException=new NotUniqueException("type",mediumTypeDTOImpl.getType(),e.getCause());
-				notUniqueException.setStackTrace(e.getStackTrace());
-				throw notUniqueException;
 			}
 		}
 		return mediumTypeDTOImpl;
