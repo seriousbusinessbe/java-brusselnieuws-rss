@@ -5,10 +5,12 @@ import org.junit.Assert;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.ArticleDTO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AuthorDTO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.CategoryDTO;
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.CreatorDTO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.MediumDTO;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Article;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Author;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Category;
+import be.seriousbusiness.brusselnieuws.rss.reader.model.Creator;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Medium;
 
 public class ArticleDTOArticleMapperUtil {
@@ -18,7 +20,7 @@ public class ArticleDTOArticleMapperUtil {
 	 * @param articleDTO
 	 * @param article
 	 */
-	public static final void assertEquals(final ArticleDTO<?,?,?,?> articleDTO,final Article<?,?,?,?> article){		
+	public static final void assertEquals(final ArticleDTO<?,?,?,?,?> articleDTO,final Article<?,?,?,?,?> article){		
 		Assert.assertEquals("The ids are not equal",articleDTO.getId(),article.getId());
 		Assert.assertEquals("The articles are not equally marked archived",articleDTO.isArchived(),article.isArchived());
 		Assert.assertEquals("The articles are not equally marked archived",articleDTO.getArchived(),article.isArchived());
@@ -69,6 +71,19 @@ public class ArticleDTOArticleMapperUtil {
 		}
 		Assert.assertEquals("Not all mediums are equal",articleDTO.getMediumDTOs().size(),i);
 		Assert.assertEquals("Not all mediums are equal",article.getMedia().size(),i);
+		// Creators:
+		Assert.assertEquals("The creators are not equal",articleDTO.getCreatorDTOs().size(),article.getCreators().size());
+		i=0;
+		for(final CreatorDTO creatorDTO : articleDTO.getCreatorDTOs()){
+			for(final Creator creator : article.getCreators()){
+				if(creatorDTO.getId().equals(creator.getId())){
+					CreatorDTOCreatorMapperUtil.assertEquals(creatorDTO,creator);
+					i++;
+				}
+			}
+		}
+		Assert.assertEquals("Not all creators are equal",articleDTO.getCreatorDTOs().size(),i);
+		Assert.assertEquals("Not all creators are equal",article.getCreators().size(),i);
 	}
 
 }

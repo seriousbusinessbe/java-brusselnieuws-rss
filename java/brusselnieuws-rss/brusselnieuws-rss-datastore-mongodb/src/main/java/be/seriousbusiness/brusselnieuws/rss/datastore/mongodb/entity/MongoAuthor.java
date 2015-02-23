@@ -4,7 +4,9 @@ import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.dozer.Mapper;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -25,7 +27,38 @@ public class MongoAuthor implements AuthorDTO {
 	@Id
 	private BigInteger id;
 	@Field("name")
+	@Indexed(unique = true)
 	private String name;
+	
+	/**
+	 * Constructor solely used for {@link Mapper} functionality.
+	 */
+	private MongoAuthor(){}
+	
+	private MongoAuthor(final Builder builder) throws IllegalArgumentException{
+		setId(builder.id);
+		setName(builder.name);
+	}
+	
+	public static class Builder{
+		private BigInteger id;
+		private String name;
+		
+		public MongoAuthor build() throws IllegalArgumentException{
+			return new MongoAuthor(this);
+		}
+		
+		public Builder id(final BigInteger id){
+			this.id=id;
+			return this;
+		}
+		
+		public Builder name(final String name){
+			this.name=name;
+			return this;
+		}
+		
+	}
 
 	@Override
 	public BigInteger getId() {

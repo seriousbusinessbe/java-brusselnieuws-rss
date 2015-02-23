@@ -14,9 +14,7 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.MediumTypeD
 public class MediumTypeDTOImplFactory {
 	
 	public static final MediumTypeDTOImpl createPNG() {
-		final MediumTypeDTOImpl mediumTypeDTOImpl=createNewPNG();
-		mediumTypeDTOImpl.setId(BigInteger.valueOf(51942l));
-		return mediumTypeDTOImpl;
+		return new MediumTypeDTOImpl.Builder().id(BigInteger.valueOf(51942l)).type("image/png").build();
 	}
 	
 	/**
@@ -24,21 +22,15 @@ public class MediumTypeDTOImplFactory {
 	 * @return a new {@link MediumTypeDTOImpl}
 	 */
 	public static final MediumTypeDTOImpl createNewPNG() {
-		final MediumTypeDTOImpl mediumTypeDTOImpl=new MediumTypeDTOImpl();
-		mediumTypeDTOImpl.setType("image/png");
-		return mediumTypeDTOImpl;
+		return new MediumTypeDTOImpl.Builder().type("image/png").build();
 	}
 	
 	public static final MediumTypeDTOImpl createJPEG() {
-		final MediumTypeDTOImpl mediumTypeDTOImpl=createNewJPEG();
-		mediumTypeDTOImpl.setId(BigInteger.valueOf(45236772244l));
-		return mediumTypeDTOImpl;
+		return new MediumTypeDTOImpl.Builder().id(BigInteger.valueOf(45236772244l)).type("image/jpeg").build();
 	}
 	
 	public static final MediumTypeDTOImpl createNewJPEG() {
-		final MediumTypeDTOImpl mediumTypeDTOImpl=new MediumTypeDTOImpl();
-		mediumTypeDTOImpl.setType("image/jpeg");
-		return mediumTypeDTOImpl;
+		return new MediumTypeDTOImpl.Builder().type("image/jpeg").build();
 	}
 
 }

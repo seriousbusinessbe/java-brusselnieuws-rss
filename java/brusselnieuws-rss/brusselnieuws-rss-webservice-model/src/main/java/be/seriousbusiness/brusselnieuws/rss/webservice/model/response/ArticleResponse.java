@@ -17,6 +17,7 @@ public class ArticleResponse extends AbstractIdResponse {
 	private Collection<AuthorResponse> authors=new ArrayList<AuthorResponse>();
 	private Collection<CategoryResponse> categories=new ArrayList<CategoryResponse>();
 	private Collection<MediumResponse> media=new ArrayList<MediumResponse>();
+	private Collection<CreatorResponse> creators=new ArrayList<CreatorResponse>();
 	private String publicationDate;
 	private boolean read=false;
 	private boolean archived=false;
@@ -57,6 +58,14 @@ public class ArticleResponse extends AbstractIdResponse {
 	
 	public void setAuthors(final Collection<AuthorResponse> authors) {
 		this.authors = authors;
+	}
+	
+	public Collection<CreatorResponse> getCreators() {
+		return creators;
+	}
+	
+	public void setCreators(final Collection<CreatorResponse> creators) {
+		this.creators = creators;
 	}
 	
 	public Collection<CategoryResponse> getCategories() {

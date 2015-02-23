@@ -11,11 +11,9 @@ public class MongoCategoryFactory {
 	 * @return
 	 */
 	public static final MongoCategory createMonoCategoryArtikel(){
-		final MongoCategory category=new MongoCategory();
-		category.setId(BigInteger.valueOf(4972658l));
-		category.setLink("http://www.brusselnieuws.be/nl/media-type/artikel");
-		category.setName("artikel");
-		return category;
+		return new MongoCategory.Builder().id(BigInteger.valueOf(4972658l))
+				.link("http://www.brusselnieuws.be/nl/media-type/artikel")
+				.name("artikel").build();
 	}
 	
 	/**
@@ -23,11 +21,9 @@ public class MongoCategoryFactory {
 	 * @return
 	 */
 	public static final MongoCategory createMongoCategoryEconomie(){
-		final MongoCategory category=new MongoCategory();
-		category.setId(BigInteger.valueOf(32654382277l));
-		category.setLink("http://www.brusselnieuws.be/nl/bn-section/economie");
-		category.setName("Economie");
-		return category;
+		return new MongoCategory.Builder().id(BigInteger.valueOf(32654382277l))
+				.link("http://www.brusselnieuws.be/nl/bn-section/economie")
+				.name("Economie").build();
 	}
 
 }

@@ -9,6 +9,7 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.AbstractArticleD
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.ArticleDAO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.AuthorDAO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.CategoryDAO;
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.CreatorDAO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.MediumDAO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.MediumTypeDAO;
 
@@ -25,6 +26,8 @@ public class MongoArticleDAOTest extends AbstractArticleDAOTest {
 	private MongoMediumDAO mongoMediumDAO;
 	@Autowired
 	private MongoMediumTypeDAO mongoMediumTypeDAO;
+	@Autowired
+	private MongoCreatorDAO mongoCreatorDAO;
 
 	@Override
 	public ArticleDAO createDAO() {
@@ -49,6 +52,11 @@ public class MongoArticleDAOTest extends AbstractArticleDAOTest {
 	@Override
 	protected MediumTypeDAO createMediumTypeDAO() {
 		return mongoMediumTypeDAO;
+	}
+	
+	@Override
+	protected CreatorDAO createCreatorDAO() {
+		return mongoCreatorDAO;
 	}
 
 }

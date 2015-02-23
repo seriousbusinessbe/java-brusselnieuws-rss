@@ -13,11 +13,13 @@ import java.util.Collection;
  * @param <MEDIUMDTO> the type of {@link MediumDTO} implementation
  * @param <CATEGORYDTO> the type of {@link CategoryDTO} implementation
  * @param <AUTHORDTO> the type of {@link AuthorDTO} implementation
+ * @param <CREATORDTO> the type of {@link CreatorDTO} implementation
  */
 public interface ArticleDTO<MEDIUMTYPEDTO extends MediumTypeDTO,
 							MEDIUMDTO extends MediumDTO<MEDIUMTYPEDTO>,
 							CATEGORYDTO extends CategoryDTO,
-							AUTHORDTO extends AuthorDTO> extends IdDTO<BigInteger>, Cloneable {
+							AUTHORDTO extends AuthorDTO,
+							CREATORDTO extends CreatorDTO> extends IdDTO<BigInteger>, Cloneable {
 	
 	/**
 	 * Gets the title.
@@ -178,5 +180,24 @@ public interface ArticleDTO<MEDIUMTYPEDTO extends MediumTypeDTO,
 	 * @param article
 	 */
 	void add(final AUTHORDTO authorDTO);
+	
+	/**
+	 * Gets all attached {@link CREATORDTO}(s).
+	 * @return a {@link Collection} of {@link CREATORDTO} or <code>null</code> when not set
+	 */
+	Collection<CREATORDTO> getCreatorDTOs();
+	
+	/**
+	 * Sets all attached {@link CREATORDTO}(s).
+	 * @param creatorDTOs a {@link Collection} of {@link CREATORDTO}
+	 */
+	void setCreatorDTOs(final Collection<CREATORDTO> creatorDTOs);
+	
+	/**
+	 * Adds a unique non <code>null</code> {@link CREATORDTO}.</br>
+	 * Not added when <code>null</code> or already added.
+	 * @param creatorDTO
+	 */
+	void add(final CREATORDTO creatorDTO);
 
 }

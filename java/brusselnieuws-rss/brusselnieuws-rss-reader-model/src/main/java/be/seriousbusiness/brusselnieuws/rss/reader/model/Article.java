@@ -16,11 +16,13 @@ import org.joda.time.DateTime;
  * @param <MEDIUM> the type of {@link Medium} implementation
  * @param <CATEGORY> the type of {@link Category} implementation
  * @param <AUTHOR> the type of {@link Author} implementation
+ * @param <CREATOR> the type of {@link Creator} implementation
  */
 public interface Article<MEDIUMTYPE extends MediumType,
 						MEDIUM extends Medium<MEDIUMTYPE>,
 						CATEGORY extends Category,
-						AUTHOR extends Author> extends Id<BigInteger>, Cloneable {
+						AUTHOR extends Author,
+						CREATOR extends Creator> extends Id<BigInteger>, Cloneable {
 	
 	/**
 	 * Get the title.
@@ -161,6 +163,40 @@ public interface Article<MEDIUMTYPE extends MediumType,
 	 * @param category
 	 */
 	void add(final MEDIUM medium);
+	
+	/**
+	 * Get the number of {@link Creator}(s) who created this article.
+	 * @return the number of creators, 0 if none
+	 */
+	int numberOfCreators();
+	
+	/**
+	 * Get the creators.
+	 * @return the {@link Collection} of {@link CREATOR} who created this article, empty when none
+	 */
+	Collection<CREATOR> getCreators();
+	
+	/**
+	 * Set a {@link Collection} of {@link CREATOR}.</br>
+	 * <code>null</code> entries are not added.</br>
+	 * Already added {@link CREATOR} are also not added.
+	 * @param creators
+	 */
+	void setCreators(final Collection<CREATOR> creators);
+	
+	/**
+	 * Add a unique, not <code>null</code> {@link CREATOR}.</br>
+	 * Not added when <code>null</code> or already added.
+	 * @param creator
+	 */
+	void add(final CREATOR creator);
+	
+	/**
+	 * Check if this {@link Article} is written by a specific {@link CREATOR}.
+	 * @param creator the {@link CREATOR} to look for
+	 * @return <code>true</code> when this {@link Article} is created by a given {@link CREATOR}
+	 */
+	boolean hasCreator(final CREATOR creator);
 	
 	/**
 	 * Get the publication date.

@@ -10,7 +10,7 @@ import org.junit.Test;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AbstractArticleDTOTest;
 
 /**
- * {@link ArticleDTOImpl test implementation.
+ * {@link ArticleDTOImpl} test implementation.
  * @author Serious Business
  * @author Stefan Borghys
  * @version 1.0
@@ -20,6 +20,7 @@ public class ArticleDTOImplTest extends AbstractArticleDTOTest<MediumTypeDTOImpl
 															MediumDTOImpl,
 															CategoryDTOImpl,
 															AuthorDTOImpl,
+															CreatorDTOImpl,
 															ArticleDTOImpl> {
 
 	public ArticleDTOImplTest() {
@@ -27,6 +28,7 @@ public class ArticleDTOImplTest extends AbstractArticleDTOTest<MediumTypeDTOImpl
 				new ArrayList<AuthorDTOImpl>(),
 				new ArrayList<CategoryDTOImpl>(),
 				new ArrayList<MediumDTOImpl>(),
+				new ArrayList<CreatorDTOImpl>(),
 				"&lt;p&gt;Wie zijn kroost of petekind nog eens vanuit een telefooncel wil laten bellen, moet zich reppen. Belgacom is bezig de allerlaatste duizend exemplaren weg te halen, waarvan 109 in Brussel. Vooral in Ukkel kunt u er nog makkelijk een vinden.&lt;/p&gt;SDS © brusselnieuws.be",
 				"http://www.brusselnieuws.be/nl/nieuws/laatste-1000-telefoonhokjes-verdwijnen-definitief",
 				"Laatste 1.000 telefoonhokjes verdwijnen definitief",
@@ -35,7 +37,7 @@ public class ArticleDTOImplTest extends AbstractArticleDTOTest<MediumTypeDTOImpl
 
 	@Override
 	public ArticleDTOImpl create() {
-		return new ArticleDTOImpl();
+		return new ArticleDTOImpl.Builder().build();
 	}
 	
 	@Ignore

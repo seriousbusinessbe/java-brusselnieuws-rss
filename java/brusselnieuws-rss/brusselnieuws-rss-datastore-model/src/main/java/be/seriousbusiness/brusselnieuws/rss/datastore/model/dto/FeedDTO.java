@@ -13,13 +13,15 @@ import java.util.Collection;
  * @param <MEDIUM> the type of {@link MediumDTO} implementation
  * @param <CATEGORYDTO> the type of {@link CategoryDTO} implementation
  * @param <AUTHORDTO> the type of {@link AuthorDTO} implementation
+ * @param <CREATORDOT> the type of {@link CreatorDTO} implementation
  * @param <ARTICLEDTO> the type of {@link ArticleDTO} implementation
  */
 public interface FeedDTO<MEDIUMTYPEDTO extends MediumTypeDTO,
 						MEDIUM extends MediumDTO<MEDIUMTYPEDTO>,
 						CATEGORYDTO extends CategoryDTO,
 						AUTHORDTO extends AuthorDTO,
-						ARTICLEDTO extends ArticleDTO<MEDIUMTYPEDTO,MEDIUM,CATEGORYDTO,AUTHORDTO>> extends IdDTO<BigInteger>, Cloneable {
+						CREATORDTO extends CreatorDTO,
+						ARTICLEDTO extends ArticleDTO<MEDIUMTYPEDTO,MEDIUM,CATEGORYDTO,AUTHORDTO,CREATORDTO>> extends IdDTO<BigInteger>, Cloneable {
 	
 	/**
 	 * Gets the title.

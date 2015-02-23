@@ -9,6 +9,7 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.ArticleDTO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.ArticleDTOImpl;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.AuthorDTOImpl;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.CategoryDTOImpl;
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.CreatorDTOImpl;
 
 /**
  * Describes a DAO (Data Access Object) for handling {@link ArticleDTOImpl}.
@@ -76,6 +77,14 @@ public interface ArticleDAO extends IdDAO<BigInteger,ArticleDTOImpl> {
 	 * @return a {@link Collection} of {@link ArticleDTOImpl}, empty when none found
 	 */
 	Collection<ArticleDTOImpl> findByAuthor(final AuthorDTOImpl authorDTOImpl);
+	
+	/**
+	 * Finds all {@link ArticleDTOImpl} by {@link CreatorDTOImpl}.</br>
+	 * Ordered by publication date from most recent to oldest.
+	 * @param creatorDTOImpl the {@link CreatorDTOImpl} to look for
+	 * @return a {@link Collection} of {@link ArticleDTOImpl}, empty when none found
+	 */
+	Collection<ArticleDTOImpl> findByCreator(final CreatorDTOImpl creatorDTOImpl);
 	
 	/**
 	 * Finds a {@link ArticleDTOImpl} by title and publication date.

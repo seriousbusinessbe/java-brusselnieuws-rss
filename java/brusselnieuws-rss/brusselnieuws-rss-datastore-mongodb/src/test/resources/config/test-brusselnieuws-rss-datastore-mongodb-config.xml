@@ -38,6 +38,7 @@
 	<bean id="mongoMediumTypeDAO" class="be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.controller.MongoMediumTypeDAO" scope="singleton"/>
 	<bean id="mongoMediumDAO" class="be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.controller.MongoMediumDAO" scope="singleton"/>
 	<bean id="mongoAuthorDAO" class="be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.controller.MongoAuthorDAO" scope="singleton"/>
+	<bean id="mongoCreatorDAO" class="be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.controller.MongoCreatorDAO" scope="singleton"/>
 	<bean id="mongoCategoryDAO" class="be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.controller.MongoCategoryDAO" scope="singleton"/>
 	<bean id="mongoArticleDAO" class="be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.controller.MongoArticleDAO" scope="singleton"/>
 	<bean id="mongoFeedDAO" class="be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.controller.MongoFeedDAO" scope="singleton"/>

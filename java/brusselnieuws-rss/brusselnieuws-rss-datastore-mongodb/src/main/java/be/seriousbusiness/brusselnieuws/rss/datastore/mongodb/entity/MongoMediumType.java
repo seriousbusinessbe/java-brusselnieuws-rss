@@ -4,6 +4,7 @@ import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.dozer.Mapper;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -28,6 +29,36 @@ public class MongoMediumType implements MediumTypeDTO {
 	@Field("type")
 	@Indexed(unique = true)
 	private String type;
+	
+	/**
+	 * Constructor solely used for {@link Mapper} functionality.
+	 */
+	private MongoMediumType(){}
+	
+	private MongoMediumType(final Builder builder) throws IllegalArgumentException{
+		setId(builder.id);
+		setType(builder.type);
+	}
+	
+	public static class Builder{
+		private BigInteger id;
+		private String type;
+		
+		public MongoMediumType build() throws IllegalArgumentException{
+			return new MongoMediumType(this);
+		}
+		
+		public Builder id(final BigInteger id){
+			this.id=id;
+			return this;
+		}
+		
+		public Builder type(final String type){
+			this.type=type;
+			return this;
+		}
+		
+	}
 
 	@Override
 	public BigInteger getId() {

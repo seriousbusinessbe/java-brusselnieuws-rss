@@ -9,7 +9,7 @@ import org.junit.Test;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AbstractAuthorDTOTest;
 
 /**
- * {@link AuthorDTOImpl test implementation.
+ * {@link AuthorDTOImpl} test implementation.
  * @author Serious Business
  * @author Stefan Borghys
  * @version 1.0
@@ -23,7 +23,7 @@ public class AuthorDTOImplTest extends AbstractAuthorDTOTest<AuthorDTOImpl> {
 
 	@Override
 	public AuthorDTOImpl create() {
-		return new AuthorDTOImpl();
+		return new AuthorDTOImpl.Builder().build();
 	}
 	
 	@Ignore

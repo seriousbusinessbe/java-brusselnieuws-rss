@@ -11,10 +11,7 @@ public class MongoAuthorFactory {
 	 * @return
 	 */
 	public static final MongoAuthor createMongoAuthorBrusselDezeWeek(){
-		final MongoAuthor author=new MongoAuthor();
-		author.setId(BigInteger.valueOf(632893557l));
-		author.setName("Brussel Deze Week");
-		return author;
+		return new MongoAuthor.Builder().id(BigInteger.valueOf(632893557l)).name("Brussel Deze Week").build();
 	}
 	
 	/**
@@ -22,10 +19,7 @@ public class MongoAuthorFactory {
 	 * @return
 	 */
 	public static final MongoAuthor createMongoAuthorFMBrussel(){
-		final MongoAuthor author=new MongoAuthor();
-		author.setId(BigInteger.valueOf(432167534l));
-		author.setName("FM Brussel");
-		return author;
+		return new MongoAuthor.Builder().id(BigInteger.valueOf(432167534l)).name("FM Brussel").build();
 	}
 
 }

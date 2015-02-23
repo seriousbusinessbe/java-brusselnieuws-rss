@@ -15,11 +15,13 @@ import be.seriousbusiness.brusselnieuws.rss.reader.BrusselNieuwsRssReader;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.ArticleImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.AuthorImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.CategoryImpl;
+import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.CreatorImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.FeedImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.MediumImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.MediumTypeImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.util.StringUtil;
 
+import com.sun.syndication.feed.module.DCModuleImpl;
 import com.sun.syndication.feed.synd.SyndCategory;
 import com.sun.syndication.feed.synd.SyndEnclosure;
 import com.sun.syndication.feed.synd.SyndEntry;
@@ -56,8 +58,23 @@ public class BrusselNieuwsRssReaderImpl implements BrusselNieuwsRssReader<FeedIm
 				final List<SyndEntry> feedEntries=syndFeed.getEntries();
 				if(feedEntries!=null){
 					for(final SyndEntry syndEntry : feedEntries){	
-						syndEntry.getModules();
 						// Add article:
+						// Add creators:
+						final Collection<CreatorImpl> creators=new HashSet<CreatorImpl>();
+						for(final Object obj : syndEntry.getModules()) {
+							if(obj instanceof DCModuleImpl) {
+								final DCModuleImpl dcModuleImpl=(DCModuleImpl)obj;
+								final String creator=dcModuleImpl.getCreator();
+								if(creator!=null) {
+									final String[] brusselNieuwsCreators=((creator).split("[\u00A9,/,@]"));
+									for(final String brusselNieuwsCreator : brusselNieuwsCreators) {
+										if(brusselNieuwsCreator!=null && !brusselNieuwsCreator.isEmpty()) {
+											creators.add(new CreatorImpl.Builder().name(brusselNieuwsCreator.trim()).build());
+										}
+									}
+								}
+							}
+						}
 						// Add authors:
 						final Collection<AuthorImpl> authors=new HashSet<AuthorImpl>();
 						@SuppressWarnings("unchecked")
@@ -129,6 +146,7 @@ public class BrusselNieuwsRssReaderImpl implements BrusselNieuwsRssReader<FeedIm
 								archived(false).
 								authors(authors).
 								categories(categories).
+								creators(creators).
 								description(StringUtil.removeHTMLTags(syndEntry.getDescription().getValue())).
 								favorite(false).
 								link(new URL(syndEntry.getLink())).

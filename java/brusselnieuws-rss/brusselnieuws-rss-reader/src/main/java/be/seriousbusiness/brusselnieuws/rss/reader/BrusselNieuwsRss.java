@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Required;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Article;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Author;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Category;
+import be.seriousbusiness.brusselnieuws.rss.reader.model.Creator;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Feed;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Medium;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.MediumType;
@@ -30,9 +31,10 @@ public class BrusselNieuwsRss<MEDIUMTYPE extends MediumType,
 						   MEDIUM extends Medium<MEDIUMTYPE>,
 						   CATEGORY extends Category,
 						   AUTHOR extends Author,
-						   ARTICLE extends Article<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR>,
-						   FEED extends Feed<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,ARTICLE>> {
-	protected FeedManager<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,ARTICLE,FEED> feedManager;
+						   CREATOR extends Creator,
+						   ARTICLE extends Article<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,CREATOR>,
+						   FEED extends Feed<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,CREATOR,ARTICLE>> {
+	protected FeedManager<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,CREATOR,ARTICLE,FEED> feedManager;
 	protected BrusselNieuwsRssReader<FEED> brusselNieuwsRssReader;
 	private FeedFactory<FEED> feedFactory;
 	private URL newsHeadlinesURL,newsSurveyURL,societyNewsURL,politicalNewsURL,economicalNewsURL,sportsNewsURL,awelMerciNewsURL,childrensNewsURL,cityNewsURL,peopleNewsURL;
@@ -266,7 +268,7 @@ public class BrusselNieuwsRss<MEDIUMTYPE extends MediumType,
 	/* SETTERS */
 
 	@Required
-	public void setFeedManager(final FeedManager<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,ARTICLE,FEED> feedManager) {
+	public void setFeedManager(final FeedManager<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,CREATOR,ARTICLE,FEED> feedManager) {
 		this.feedManager = feedManager;
 	}
 	

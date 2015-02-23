@@ -10,7 +10,7 @@
 		<script type="text/javascript" src="js/brusselNieuwsRss.js"></script>
 		<p>{{"Brussel Nieuws RSS Reader"}}</p>
 		<section ng-controller="FeedsCategoriesController as feedsCategoriesController">
-			<ul class="nav nav-pills">
+			<ul class="nav nav-tabs">
 				<li ng-repeat="feedCategoryResponse in feedsCategoriesController.feedsCategoriesResponse.feedCategoryResponses | orderBy:feedCategoryResponse.translatedName"
 					ng-class="{active:feedsCategoriesController.isSelected(feedCategoryResponse.name)}">
 					<a href ng-click="feedsCategoriesController.selectCategoryByName(feedCategoryResponse.name)">{{feedCategoryResponse.translatedName}}</a>
@@ -26,28 +26,76 @@
 				</ul>
 				<section ng-controller="FeedController as feedController">
 					<a href="{{feedController.feedResponse.link}}" target="_blank">{{feedController.feedResponse.title}}</a>
-					<ul>
-						<li ng-repeat="article in feedController.feedResponse.articles">
-							<p>{{article.publicationDate | date:'HH:mm dd/MM/yy'}} - {{article.title}} 
-								<a href="{{article.link}}" target="_blank">
-									<img src="http://www.brusselnieuws.be/sites/all/themes/custom/brusselnieuws_zen/icons/favicon.ico" 
-					     				 alt="{{article.title}}" 
-					     				 style="width:15px;height:15px">
-					 			</a>
-							</p>
-							<p><img ng-src="{{article.media[0].link}}"/></p>
-							<p>{{article.description}}</p>
-							<ul ng-repeat="category in article.categories">
-								<li>{{category.name}}
-									<a href="{{category.link}}" target="_blank">
-										<img src="http://www.brusselnieuws.be/sites/all/themes/custom/brusselnieuws_zen/icons/favicon.ico" 
-					     				 alt="{{article.title}}" 
-					     				 style="width:15px;height:15px">
-									</a>
+					<div class="media" ng-repeat="article in feedController.feedResponse.articles">
+						<div class="media-left">
+							<img class="media-object" ng-src="{{article.media[0].link}}" style="width:200px;">
+						</div>
+						<div class="media-body">
+							<h6>
+						    	<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+						    	{{article.publicationDate | date:'HH:mm - dd/MM/yy'}}
+						    </h6>
+						    <h4 class="media-heading">{{article.title}}</h4>
+						    <p>{{article.description}}</p>
+						    <ul class="list-inline" style="list-style-type:none">
+						    	<li>
+									<ul class="list-inline">
+										<li ng-repeat="creator in article.creators">
+											<h6><span class="glyphicon glyphicon-pencil"></span>{{creator.name}}</h6>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<ul class="list-inline">
+										<li ng-repeat="category in article.categories">
+											<h6>
+												<span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+												{{category.name}}
+												<a href="{{category.link}}" target="_blank">
+													<img src="http://www.brusselnieuws.be/sites/all/themes/custom/brusselnieuws_zen/icons/favicon.ico" 
+								     				 alt="{{article.title}}" 
+								     				 style="width:12px;height:12px">
+												</a>
+											</h6>
+										</li>
+									</ul>
 								</li>
 							</ul>
-						</li>
-					</ul>
+						</div>
+
+					</div>
+<!--
+					<div class="row">
+						<div class="col-sm-6 col-md-4" ng-repeat="article in feedController.feedResponse.articles">
+							<div class="thumbnail" >
+								<img ng-src="{{article.media[0].link}}"/>
+								<div class="caption">
+							    	<h3>{{article.publicationDate | date:'HH:mm dd/MM/yy'}} - {{article.title}}</h3>
+							    	<a href="{{article.link}}" target="_blank">
+										<img src="http://www.brusselnieuws.be/sites/all/themes/custom/brusselnieuws_zen/icons/favicon.ico" 
+						     				 alt="{{article.title}}" 
+						     				 style="width:15px;height:15px">
+						 			</a>
+							        <p>{{article.description}}</p>
+							        Categorie&#235;n:
+									<ul class="nav nav-pills" ng-repeat="category in article.categories">
+										<li>{{category.name}}
+											<a href="{{category.link}}" target="_blank">
+												<img src="http://www.brusselnieuws.be/sites/all/themes/custom/brusselnieuws_zen/icons/favicon.ico" 
+							     				 alt="{{article.title}}" 
+							     				 style="width:15px;height:15px">
+											</a>
+										</li>
+									</ul>
+									Door:
+									<ul class="nav nav-pills" ng-repeat="creator in article.creators">
+										<li>{{creator.name}}</li>
+									</ul>
+							    </div>
+							</div>
+						</div>
+					</div>
+				-->
 				</section>
 			</section>
 		</section>

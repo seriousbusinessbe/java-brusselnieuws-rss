@@ -17,16 +17,17 @@ import be.seriousbusiness.brusselnieuws.rss.reader.model.comparator.ArticlePubli
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.ArticleImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.AuthorImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.CategoryImpl;
+import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.CreatorImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.MediumImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.MediumTypeImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.manager.ArticleManager;
 
-public class ArticleImplManager implements ArticleManager<MediumTypeImpl,MediumImpl,CategoryImpl,AuthorImpl,ArticleImpl> {
+public class ArticleImplManager implements ArticleManager<MediumTypeImpl,MediumImpl,CategoryImpl,AuthorImpl,CreatorImpl,ArticleImpl> {
 	private ArticleDAO articleDAO;
 	@Autowired(required=true)
 	@Qualifier("brusselNieuwsRssReaderModelDozerBeanMapper")
 	private Mapper mapper;
-	private static final Comparator<Article<?,?,?,?>> ARTICLE_COMPARATOR=new ArticlePublicationDateComparator();
+	private static final Comparator<Article<?,?,?,?,?>> ARTICLE_COMPARATOR=new ArticlePublicationDateComparator();
 
 	@Override
 	public Collection<ArticleImpl> findAll() {

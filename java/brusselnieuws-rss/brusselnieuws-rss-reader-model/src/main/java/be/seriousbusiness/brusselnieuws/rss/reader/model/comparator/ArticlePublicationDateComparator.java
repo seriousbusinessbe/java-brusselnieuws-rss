@@ -12,13 +12,13 @@ import be.seriousbusiness.brusselnieuws.rss.reader.model.Article;
  * @since 1.0
  * @see {@link Article}
  */
-public class ArticlePublicationDateComparator implements Comparator<Article<?,?,?,?>> {
+public class ArticlePublicationDateComparator implements Comparator<Article<?,?,?,?,?>> {
 
 	/**
 	 * Compares two {@link Article}s by publication date, newest to oldest.
 	 */
 	@Override
-	public int compare(final Article<?,?,?,?> article1,final Article<?,?,?,?> article2) {
+	public int compare(final Article<?,?,?,?,?> article1,final Article<?,?,?,?,?> article2) {
 		return article2.getPublicationDate().compareTo(article1.getPublicationDate());
 	}
 

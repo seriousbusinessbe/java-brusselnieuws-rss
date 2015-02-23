@@ -13,12 +13,13 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.FeedDTOImpl
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.ArticleImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.AuthorImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.CategoryImpl;
+import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.CreatorImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.FeedImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.MediumImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.MediumTypeImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.manager.FeedManager;
 
-public class FeedManagerImpl implements FeedManager<MediumTypeImpl,MediumImpl,CategoryImpl,AuthorImpl,ArticleImpl,FeedImpl> {
+public class FeedManagerImpl implements FeedManager<MediumTypeImpl,MediumImpl,CategoryImpl,AuthorImpl,CreatorImpl,ArticleImpl,FeedImpl> {
 	private FeedDAO feedDAO;
 	@Autowired(required=true)
 	@Qualifier("brusselNieuwsRssReaderModelDozerBeanMapper")

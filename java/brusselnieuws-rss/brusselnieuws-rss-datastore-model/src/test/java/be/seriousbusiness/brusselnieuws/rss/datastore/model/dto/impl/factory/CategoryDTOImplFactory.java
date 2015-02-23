@@ -14,55 +14,35 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.CategoryDTO
 public class CategoryDTOImplFactory {
 	
 	public static final CategoryDTOImpl createPolitiek(){
-		final CategoryDTOImpl categoryDTOImpl=createNewPolitiek();
-		categoryDTOImpl.setId(BigInteger.valueOf(468238l));
-		return categoryDTOImpl;
+		return new CategoryDTOImpl.Builder().link("http://www.brusselnieuws.be/nl/bn-section/politiek").id(BigInteger.valueOf(468238l)).name("Politiek").build();
 	}
 	
 	public static final CategoryDTOImpl createNewPolitiek(){
-		final CategoryDTOImpl categoryDTOImpl=new CategoryDTOImpl();
-		categoryDTOImpl.setLink("http://www.brusselnieuws.be/nl/bn-section/politiek");
-		categoryDTOImpl.setName("Politiek");
-		return categoryDTOImpl;
+		return new CategoryDTOImpl.Builder().link("http://www.brusselnieuws.be/nl/bn-section/politiek").name("Politiek").build();
 	}
 	
 	public static final CategoryDTOImpl createSamenleving(){
-		final CategoryDTOImpl categoryDTOImpl=createNewSamenleving();
-		categoryDTOImpl.setId(BigInteger.valueOf(532178900l));
-		return categoryDTOImpl;
+		return new CategoryDTOImpl.Builder().id(BigInteger.valueOf(532178900l)).link("http://www.brusselnieuws.be/nl/bn-section/samenleving").name("Samenleving").build();
 	}
 	
 	public static final CategoryDTOImpl createFilm(){
-		final CategoryDTOImpl categoryDTOImpl=createNewFilm();
-		categoryDTOImpl.setId(BigInteger.valueOf(58939213l));
-		return categoryDTOImpl;
+		return new CategoryDTOImpl.Builder().id(BigInteger.valueOf(58939213l)).link("http://www.brusselnieuws.be/nl/bn-section/film").name("Film").build();
 	}
 	
 	public static final CategoryDTOImpl createArtikel(){
-		final CategoryDTOImpl categoryDTOImpl=createNewArtikel();
-		categoryDTOImpl.setId(BigInteger.valueOf(6983942l));
-		return categoryDTOImpl;
+		return new CategoryDTOImpl.Builder().id(BigInteger.valueOf(6983942l)).link("http://www.brusselnieuws.be/nl/media-type/artikel").name("artikel").build();
 	}
 	
 	public static final CategoryDTOImpl createNewSamenleving(){
-		final CategoryDTOImpl categoryDTOImpl=new CategoryDTOImpl();
-		categoryDTOImpl.setLink("http://www.brusselnieuws.be/nl/bn-section/samenleving");
-		categoryDTOImpl.setName("Samenleving");
-		return categoryDTOImpl;
+		return new CategoryDTOImpl.Builder().link("http://www.brusselnieuws.be/nl/bn-section/samenleving").name("Samenleving").build();
 	}
 	
 	public static final CategoryDTOImpl createNewFilm(){
-		final CategoryDTOImpl categoryDTOImpl=new CategoryDTOImpl();
-		categoryDTOImpl.setLink("http://www.brusselnieuws.be/nl/bn-section/film");
-		categoryDTOImpl.setName("Film");
-		return categoryDTOImpl;
+		return new CategoryDTOImpl.Builder().link("http://www.brusselnieuws.be/nl/bn-section/film").name("Film").build();
 	}
 	
 	public static final CategoryDTOImpl createNewArtikel(){
-		final CategoryDTOImpl categoryDTOImpl=new CategoryDTOImpl();
-		categoryDTOImpl.setLink("http://www.brusselnieuws.be/nl/media-type/artikel");
-		categoryDTOImpl.setName("artikel");
-		return categoryDTOImpl;
+		return new CategoryDTOImpl.Builder().link("http://www.brusselnieuws.be/nl/media-type/artikel").name("artikel").build();
 	}
 
 }

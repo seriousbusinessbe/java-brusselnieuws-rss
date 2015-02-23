@@ -4,6 +4,8 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import org.dozer.Mapper;
+
 import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.ArticleDTO;
 
@@ -14,13 +16,110 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.ArticleDTO;
  * @version 1.0
  * @since 1.0
  */
-public class ArticleDTOImpl extends AbstractIdDTOImpl<BigInteger> implements ArticleDTO<MediumTypeDTOImpl,MediumDTOImpl,CategoryDTOImpl,AuthorDTOImpl> {
+public class ArticleDTOImpl extends AbstractIdDTOImpl<BigInteger> implements ArticleDTO<MediumTypeDTOImpl,MediumDTOImpl,CategoryDTOImpl,AuthorDTOImpl,CreatorDTOImpl> {
 	private String title,link,description;
 	private Long publicationDate;
 	private Boolean read,archived,favorite;
 	private Collection<MediumDTOImpl> mediumDTOImpls=new ArrayList<MediumDTOImpl>();
 	private Collection<CategoryDTOImpl> categoryDTOImpls=new ArrayList<CategoryDTOImpl>();
 	private Collection<AuthorDTOImpl> authorDTOImpls=new ArrayList<AuthorDTOImpl>();
+	private Collection<CreatorDTOImpl> creatorDTOImpls=new ArrayList<CreatorDTOImpl>();
+	
+	/**
+	 * Constructor solely used for {@link Mapper} functionality.
+	 */
+	private ArticleDTOImpl(){}
+	
+	private ArticleDTOImpl(final Builder builder) throws IllegalArgumentException{
+		setId(builder.id);
+		setTitle(builder.title);
+		setLink(builder.link);
+		setDescription(builder.description);
+		setPublicationDate(builder.publicationDate);
+		setRead(builder.read);
+		setArchived(builder.archived);
+		setFavorite(builder.favorite);
+		setMediumDTOs(builder.mediumDTOImpls);
+		setCategoryDTOs(builder.categoryDTOImpls);
+		setAuthorDTOs(builder.authorDTOImpls);
+		setCreatorDTOs(builder.creatorDTOImpls);
+	}
+	
+	public static class Builder{
+		private BigInteger id;
+		private String title,link,description;
+		private Long publicationDate;
+		private Boolean read,archived,favorite;
+		private Collection<MediumDTOImpl> mediumDTOImpls=new ArrayList<MediumDTOImpl>();
+		private Collection<CategoryDTOImpl> categoryDTOImpls=new ArrayList<CategoryDTOImpl>();
+		private Collection<AuthorDTOImpl> authorDTOImpls=new ArrayList<AuthorDTOImpl>();
+		private Collection<CreatorDTOImpl> creatorDTOImpls=new ArrayList<CreatorDTOImpl>();
+		
+		public ArticleDTOImpl build() throws IllegalArgumentException{
+			return new ArticleDTOImpl(this);
+		}
+		
+		public Builder id(final BigInteger id){
+			this.id=id;
+			return this;
+		}
+		
+		public Builder title(final String title){
+			this.title=title;
+			return this;
+		}
+		
+		public Builder link(final String link) {
+			this.link=link;
+			return this;
+		}
+		
+		public Builder description(final String description) {
+			this.description=description;
+			return this;
+		}
+		
+		public Builder publicationDate(final Long publicationDate) {
+			this.publicationDate=publicationDate;
+			return this;
+		}
+		
+		public Builder read(final Boolean read) {
+			this.read=read;
+			return this;
+		}
+		
+		public Builder archived(final Boolean archived) {
+			this.archived=archived;
+			return this;
+		}
+		
+		public Builder favorite(final Boolean favorite) {
+			this.favorite=favorite;
+			return this;
+		}
+				
+		public Builder mediumDTOs(final Collection<MediumDTOImpl> mediumDTOImpls) {
+			this.mediumDTOImpls=mediumDTOImpls;
+			return this;
+		}
+		
+		public Builder categoryDTOs(final Collection<CategoryDTOImpl> categoryDTOImpls) {
+			this.categoryDTOImpls=categoryDTOImpls;
+			return this;
+		}
+		
+		public Builder authorDTOs(final Collection<AuthorDTOImpl> authorDTOImpls) {
+			this.authorDTOImpls=authorDTOImpls;
+			return this;
+		}
+		
+		public Builder creatorDTOs(final Collection<CreatorDTOImpl> creatorDTOImpls) {
+			this.creatorDTOImpls=creatorDTOImpls;
+			return this;
+		}
+		
+	}
 
 	@Override
 	public String getTitle() {
@@ -157,6 +256,23 @@ public class ArticleDTOImpl extends AbstractIdDTOImpl<BigInteger> implements Art
 			authorDTOImpls.add(authorDTOImpl);
 		}
 	}
+	
+	@Override
+	public Collection<CreatorDTOImpl> getCreatorDTOs() {
+		return creatorDTOImpls;
+	}
+
+	@Override
+	public void setCreatorDTOs(final Collection<CreatorDTOImpl> creatorDTOImpls) {
+		this.creatorDTOImpls=creatorDTOImpls;
+	}
+	
+	@Override
+	public void add(final CreatorDTOImpl creatorDTOImpl) {
+		if(creatorDTOImpl!=null && !creatorDTOImpls.contains(creatorDTOImpl)) {
+			creatorDTOImpls.add(creatorDTOImpl);
+		}
+	}
 			
 	@Override
 	public boolean equals(final Object obj){
@@ -170,7 +286,8 @@ public class ArticleDTOImpl extends AbstractIdDTOImpl<BigInteger> implements Art
 				ObjectUtil.isNullOrEqual(favorite,((ArticleDTOImpl)obj).favorite) &&
 				ObjectUtil.isNullOrEqual(mediumDTOImpls,((ArticleDTOImpl)obj).mediumDTOImpls) &&
 				ObjectUtil.isNullOrEqual(categoryDTOImpls,((ArticleDTOImpl)obj).categoryDTOImpls) &&
-				ObjectUtil.isNullOrEqual(authorDTOImpls,((ArticleDTOImpl)obj).authorDTOImpls);
+				ObjectUtil.isNullOrEqual(authorDTOImpls,((ArticleDTOImpl)obj).authorDTOImpls) &&
+				ObjectUtil.isNullOrEqual(creatorDTOImpls,((ArticleDTOImpl)obj).creatorDTOImpls);
 	}
 	
 	@Override
@@ -185,7 +302,8 @@ public class ArticleDTOImpl extends AbstractIdDTOImpl<BigInteger> implements Art
 				ObjectUtil.hashCode(favorite) *
 				ObjectUtil.hashCode(mediumDTOImpls) *
 				ObjectUtil.hashCode(categoryDTOImpls) *
-				ObjectUtil.hashCode(authorDTOImpls);
+				ObjectUtil.hashCode(authorDTOImpls) *
+				ObjectUtil.hashCode(creatorDTOImpls);
 	}
 	
 	@Override
@@ -207,19 +325,14 @@ public class ArticleDTOImpl extends AbstractIdDTOImpl<BigInteger> implements Art
 		for(final AuthorDTOImpl authorDTOImpl : authorDTOImpls) {
 			clonedAuthorDTOImpls.add((AuthorDTOImpl)authorDTOImpl.clone());
 		}
-		final ArticleDTOImpl articleDTOImpl=new ArticleDTOImpl();
-		articleDTOImpl.setId(id);
-		articleDTOImpl.setTitle(title);
-		articleDTOImpl.setDescription(description);
-		articleDTOImpl.setLink(link);
-		articleDTOImpl.setPublicationDate(publicationDate);
-		articleDTOImpl.setRead(read);
-		articleDTOImpl.setArchived(archived);
-		articleDTOImpl.setFavorite(favorite);
-		articleDTOImpl.setMediumDTOs(clonedMediumDTOImpls);
-		articleDTOImpl.setCategoryDTOs(clonedCategoryDTOImpls);
-		articleDTOImpl.setAuthorDTOs(clonedAuthorDTOImpls);
-		return articleDTOImpl;
+		final Collection<CreatorDTOImpl> clonedCreatorDTOImpls=new ArrayList<CreatorDTOImpl>();
+		for(final CreatorDTOImpl creatorDTOImpl : creatorDTOImpls) {
+			clonedCreatorDTOImpls.add((CreatorDTOImpl)creatorDTOImpl.clone());
+		}
+		return new Builder().id(id).title(title).description(description).link(link).publicationDate(publicationDate)
+				.read(read).archived(archived).favorite(favorite)
+				.mediumDTOs(clonedMediumDTOImpls).categoryDTOs(clonedCategoryDTOImpls)
+				.authorDTOs(clonedAuthorDTOImpls).creatorDTOs(clonedCreatorDTOImpls).build();
 	}
 
 }

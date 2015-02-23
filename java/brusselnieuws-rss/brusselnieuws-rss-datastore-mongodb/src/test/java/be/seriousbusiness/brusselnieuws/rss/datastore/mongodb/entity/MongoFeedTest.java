@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AbstractFeedDTOTest;
 
-public class MongoFeedTest extends AbstractFeedDTOTest<MongoMediumType,MongoMedium,MongoCategory,MongoAuthor,MongoArticle,MongoFeed> {
+public class MongoFeedTest extends AbstractFeedDTOTest<MongoMediumType,MongoMedium,MongoCategory,MongoAuthor,MongoCreator,MongoArticle,MongoFeed> {
 
 	public MongoFeedTest() {
 		super(BigInteger.valueOf(689321l),
@@ -16,7 +16,7 @@ public class MongoFeedTest extends AbstractFeedDTOTest<MongoMediumType,MongoMedi
 
 	@Override
 	public MongoFeed create() {
-		return new MongoFeed();
+		return new MongoFeed.Builder().build();
 	}
 
 }

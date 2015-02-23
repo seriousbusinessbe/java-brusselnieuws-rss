@@ -17,6 +17,7 @@ import be.seriousbusiness.brusselnieuws.rss.reader.model.Feed;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.ArticleImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.AuthorImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.CategoryImpl;
+import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.CreatorImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.FeedImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.MediumImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.MediumTypeImpl;
@@ -34,7 +35,7 @@ import be.seriousbusiness.brusselnieuws.rss.reader.model.listener.FeedListener;
 public class BrusselNieuwsRssTest {
 	private static final Logger LOGGER=LoggerFactory.getLogger(BrusselNieuwsRssTest.class);
 	@Autowired
-	private BrusselNieuwsRss<MediumTypeImpl,MediumImpl,CategoryImpl,AuthorImpl,ArticleImpl,FeedImpl> brusselNieuwsRss;
+	private BrusselNieuwsRss<MediumTypeImpl,MediumImpl,CategoryImpl,AuthorImpl,CreatorImpl,ArticleImpl,FeedImpl> brusselNieuwsRss;
 	
 	/**
 	 * Tests if the {@link BrusselNieuwsRss} implementation under test is set.
@@ -69,6 +70,15 @@ public class BrusselNieuwsRssTest {
 				Assert.assertNotNull("An article's author id should not be null",author.getId());
 				Assert.assertNotNull("An article's author name should not be null",author.getName());
 				Assert.assertFalse("An article's author name should not be empty",author.getName().isEmpty());
+			}
+			// Creators:
+			final Collection<CreatorImpl> creatorImpls=article.getCreators();
+			Assert.assertNotNull("The collection of article creators should not be null",creatorImpls);
+			for(final CreatorImpl creator : creatorImpls) {
+				Assert.assertNotNull("An article's creator should not be null",creator);
+				Assert.assertNotNull("An article's creator id should not be null",creator.getId());
+				Assert.assertNotNull("An article's creator name should not be null",creator.getName());
+				Assert.assertFalse("An article's creator name should not be empty",creator.getName().isEmpty());
 			}
 			// Categories:
 			final Collection<CategoryImpl> categoryImpls=article.getCategories();
@@ -336,9 +346,8 @@ public class BrusselNieuwsRssTest {
 		Assert.assertNotNull("The brusselNieuwsRss cannot be null",brusselNieuwsRss);
 		final FeedImpl feed=brusselNieuwsRss.getNewsHeadLines();
 		feed.attach(new FeedListener() {
-			
 			@Override
-			public void notify(Feed<?, ?, ?, ?, ?> feed, Article<?, ?, ?, ?> article) {
+			public void notify(Feed<?,?,?,?,?,?> feed, Article<?,?,?,?,?> article) {
 				LOGGER.error("BREAKING! - {}",article.getTitle());
 				LOGGER.error("Feed: {}",feed);
 				LOGGER.error("Article: {}",article);

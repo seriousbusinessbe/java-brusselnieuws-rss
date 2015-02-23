@@ -8,6 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoArticle;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoAuthor;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoCategory;
+import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoCreator;
 
 /**
  * Spring-data {@link MongoArticle} repository.
@@ -30,6 +31,8 @@ public interface MongoArticleRepository extends CrudRepository<MongoArticle,BigI
 	Collection<MongoArticle> findByMongoCategories(final MongoCategory category);
 	
 	Collection<MongoArticle> findByMongoAuthors(final MongoAuthor author);
+	
+	Collection<MongoArticle> findByMongoCreators(final MongoCreator creator);
 	
 	Collection<MongoArticle> findByPublicationDateBetween(final Long from,final Long to);
 	

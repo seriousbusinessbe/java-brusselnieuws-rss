@@ -1,10 +1,12 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.dozer.Mapper;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -23,7 +25,7 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.util.Entity
  * @see Spring-data mongodb reference: <a href="http://docs.spring.io/spring-data/mongodb/docs/current/reference/">http://docs.spring.io/spring-data/mongodb/docs/current/reference/</a>
  */
 @Document(collection="feed")
-public class MongoFeed implements FeedDTO<MongoMediumType,MongoMedium,MongoCategory,MongoAuthor,MongoArticle> {
+public class MongoFeed implements FeedDTO<MongoMediumType,MongoMedium,MongoCategory,MongoAuthor,MongoCreator,MongoArticle> {
 	@Id
 	private BigInteger id;
 	@Field("title")
@@ -34,6 +36,55 @@ public class MongoFeed implements FeedDTO<MongoMediumType,MongoMedium,MongoCateg
 	private String description;
 	@DBRef
 	private Collection<MongoArticle> mongoArticles;
+	
+	/**
+	 * Constructor solely used for {@link Mapper} functionality.
+	 */
+	private MongoFeed(){}
+	
+	private MongoFeed(final Builder builder) throws IllegalArgumentException{
+		setId(builder.id);
+		setTitle(builder.title);
+		setLink(builder.link);
+		setDescription(builder.description);
+		setArticleDTOs(builder.mongoArticles);
+	}
+	
+	public static class Builder{
+		private BigInteger id;
+		private String title,link,description;
+		private Collection<MongoArticle> mongoArticles=new ArrayList<MongoArticle>();
+		
+		public MongoFeed build() throws IllegalArgumentException{
+			return new MongoFeed(this);
+		}
+		
+		public Builder id(final BigInteger id){
+			this.id=id;
+			return this;
+		}
+		
+		public Builder title(final String title){
+			this.title=title;
+			return this;
+		}
+		
+		public Builder link(final String link) {
+			this.link=link;
+			return this;
+		}
+		
+		public Builder description(final String description) {
+			this.description=description;
+			return this;
+		}
+		
+		public Builder articleDTOs(final Collection<MongoArticle> mongoArticles) {
+			this.mongoArticles=mongoArticles;
+			return this;
+		}
+		
+	}
 
 	@Override
 	public BigInteger getId() {
@@ -109,7 +160,6 @@ public class MongoFeed implements FeedDTO<MongoMediumType,MongoMedium,MongoCateg
 				ObjectUtil.hashCode(link) *
 				ObjectUtil.hashCode(description) *
 				ObjectUtil.hashCode(mongoArticles);
-
 	}
 	
 	@Override

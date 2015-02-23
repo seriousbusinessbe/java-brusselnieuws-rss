@@ -11,7 +11,7 @@ import be.seriousbusiness.brusselnieuws.rss.reader.model.Feed;
  * @since 1.0
  * @param <FEED> the type of {@link Feed} to retrieve
  */
-public interface BrusselNieuwsRssReader<FEED extends Feed<?,?,?,?,?>> {
+public interface BrusselNieuwsRssReader<FEED extends Feed<?,?,?,?,?,?>> {
 	
 	/**
 	 * Updates a {@link Feed} with new {@link Article}(s) if found.</br>

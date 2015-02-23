@@ -12,35 +12,31 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.MediumDTOIm
 public class MediumDTOImplFactory {
 	
 	public static final MediumDTOImpl createNewPNGImage() {
-		final MediumDTOImpl mediumDTOImpl=new MediumDTOImpl();
-		mediumDTOImpl.setLink("http://www.brusselnieuws.be/sites/default/files/styles/bn_220_crop/public/article_media/images/nmbs_1.jpg?itok=0prpIVwm");
-		mediumDTOImpl.setMediumTypeDTO(MediumTypeDTOImplFactory.createNewPNG());
-		mediumDTOImpl.setSize(34190l);
-		return mediumDTOImpl;
+		return new MediumDTOImpl.Builder()
+		.link("http://www.brusselnieuws.be/sites/default/files/styles/bn_220_crop/public/article_media/images/nmbs_1.jpg?itok=0prpIVwm")
+		.mediumTypeDTO(MediumTypeDTOImplFactory.createNewPNG())
+		.size(351690l).build();
 	}
 	
 	public static final MediumDTOImpl createPNGImage() {
-		final MediumDTOImpl mediumDTOImpl=new MediumDTOImpl();
-		mediumDTOImpl.setLink("http://www.brusselnieuws.be/sites/default/files/styles/bn_220_crop/public/article_media/images/nmbs_1.jpg?itok=0prpIVwm");
-		mediumDTOImpl.setMediumTypeDTO(MediumTypeDTOImplFactory.createPNG());
-		mediumDTOImpl.setSize(34190l);
-		return mediumDTOImpl;
+		return new MediumDTOImpl.Builder()
+				.link("http://www.brusselnieuws.be/sites/default/files/styles/bn_220_crop/public/article_media/images/nmbs_1.jpg?itok=0prpIVwm")
+				.mediumTypeDTO(MediumTypeDTOImplFactory.createPNG())
+				.size(34190l).build();
 	}
 	
 	public static final MediumDTOImpl createJPEGImage() {
-		final MediumDTOImpl mediumDTOImpl=new MediumDTOImpl();
-		mediumDTOImpl.setLink("http://www.brusselnieuws.be/sites/default/files/styles/bn_220_crop/public/article_media/images/michel_borcy_plat.jpg?itok=MAKUDTl1");
-		mediumDTOImpl.setMediumTypeDTO(MediumTypeDTOImplFactory.createJPEG());
-		mediumDTOImpl.setSize(22934l);
-		return mediumDTOImpl;
+		return new MediumDTOImpl.Builder()
+			.link("http://www.brusselnieuws.be/sites/default/files/styles/bn_220_crop/public/article_media/images/michel_borcy_plat.jpg?itok=MAKUDTl1")
+			.mediumTypeDTO(MediumTypeDTOImplFactory.createJPEG())
+			.size(22934l).build();
 	}
 	
 	public static final MediumDTOImpl createNewJPEGImage() {
-		final MediumDTOImpl mediumDTOImpl=new MediumDTOImpl();
-		mediumDTOImpl.setLink("http://www.brusselnieuws.be/sites/default/files/styles/bn_220_crop/public/article_media/images/michel_borcy_plat.jpg?itok=MAKUDTl1");
-		mediumDTOImpl.setMediumTypeDTO(MediumTypeDTOImplFactory.createNewJPEG());
-		mediumDTOImpl.setSize(22934l);
-		return mediumDTOImpl;
+		return new MediumDTOImpl.Builder()
+			.link("http://www.brusselnieuws.be/sites/default/files/styles/bn_220_crop/public/article_media/images/michel_borcy_plat.jpg?itok=MAKUDTl1")
+			.mediumTypeDTO(MediumTypeDTOImplFactory.createNewJPEG())
+			.size(22432934l).build();
 	}
 
 }

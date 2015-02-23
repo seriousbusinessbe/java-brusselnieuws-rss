@@ -20,14 +20,14 @@ import be.seriousbusiness.brusselnieuws.rss.reader.model.Feed;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.comparator.ArticlePublicationDateComparator;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.listener.FeedListener;
 
-public class FeedImpl extends AbstractIdImpl<BigInteger> implements Feed<MediumTypeImpl,MediumImpl,CategoryImpl,AuthorImpl,ArticleImpl> {
+public class FeedImpl extends AbstractIdImpl<BigInteger> implements Feed<MediumTypeImpl,MediumImpl,CategoryImpl,AuthorImpl,CreatorImpl,ArticleImpl> {
 	private static final Logger LOGGER=LoggerFactory.getLogger(FeedImpl.class);
 	private String title;
 	private URL link;
 	private String description;
 	private Collection<ArticleImpl> articles=new ArrayList<ArticleImpl>();
 	private Set<FeedListener> feedListeners=new HashSet<FeedListener>();
-	private static final Comparator<Article<?,?,?,?>> ARTICLE_COMPARATOR=new ArticlePublicationDateComparator();
+	private static final Comparator<Article<?,?,?,?,?>> ARTICLE_COMPARATOR=new ArticlePublicationDateComparator();
 	
 	/**
 	 * Constructor solely used for {@link Mapper} functionality.

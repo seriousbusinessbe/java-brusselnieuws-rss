@@ -14,7 +14,7 @@ public class FeedDTOFeedMapperUtil {
 	 * @param feedDTO
 	 * @param feed
 	 */
-	public static final void assertEquals(final FeedDTO<?,?,?,?,?> feedDTO,final Feed<?,?,?,?,?> feed){		
+	public static final void assertEquals(final FeedDTO<?,?,?,?,?,?> feedDTO,final Feed<?,?,?,?,?,?> feed){		
 		Assert.assertEquals("The ids are not equal",feedDTO.getId(),feed.getId());
 		if(feedDTO.getDescription()!=null && feedDTO.getDescription().isEmpty()){
 			Assert.assertNull("The descriptions is not null",feed.getDescription());
@@ -26,8 +26,8 @@ public class FeedDTOFeedMapperUtil {
 		// Articles:
 		Assert.assertEquals("The articles are not equal",feedDTO.getArticleDTOs().size(),feed.getArticles().size());
 		int i=0;
-		for(final ArticleDTO<?,?,?,?> articleDTO : feedDTO.getArticleDTOs()){
-			for(final Article<?,?,?,?> article : feed.getArticles()){
+		for(final ArticleDTO<?,?,?,?,?> articleDTO : feedDTO.getArticleDTOs()){
+			for(final Article<?,?,?,?,?> article : feed.getArticles()){
 				if(articleDTO.getId().equals(article.getId())){
 					ArticleDTOArticleMapperUtil.assertEquals(articleDTO, article);
 					i++;

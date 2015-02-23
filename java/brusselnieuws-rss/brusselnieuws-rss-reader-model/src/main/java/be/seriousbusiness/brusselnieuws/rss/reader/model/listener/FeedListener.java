@@ -14,5 +14,5 @@ public interface FeedListener {
 	 * @param feed the {@link Feed} sending the notification
 	 * @param article the added {@link Article}
 	 */
-	void notify(final Feed<?,?,?,?,?> feed,final Article<?,?,?,?> article);
+	void notify(final Feed<?,?,?,?,?,?> feed,final Article<?,?,?,?,?> article);
 }

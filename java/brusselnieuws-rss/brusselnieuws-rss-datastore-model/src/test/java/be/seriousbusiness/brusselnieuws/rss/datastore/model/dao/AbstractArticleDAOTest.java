@@ -17,6 +17,7 @@ import org.junit.Test;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.ArticleDTOImpl;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.AuthorDTOImpl;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.CategoryDTOImpl;
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.CreatorDTOImpl;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.MediumDTOImpl;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.factory.ArticleDTOImplFactory;
 
@@ -30,6 +31,9 @@ public abstract class AbstractArticleDAOTest extends AbstractIdDAOTest<BigIntege
 	protected CategoryDAO categoryDAO;
 	protected MediumDAO mediumDAO;
 	protected MediumTypeDAO mediumTypeDAO;
+	protected CreatorDAO creatorDAO;
+	
+	protected abstract CreatorDAO createCreatorDAO();
 	
 	protected abstract AuthorDAO createAuthorDAO();
 	
@@ -38,7 +42,7 @@ public abstract class AbstractArticleDAOTest extends AbstractIdDAOTest<BigIntege
 	protected abstract MediumDAO createMediumDAO();
 	
 	protected abstract MediumTypeDAO createMediumTypeDAO();
-	
+		
 	@Override
 	public ArticleDTOImpl createDTO() {
 		return ArticleDTOImplFactory.createNew();
@@ -56,6 +60,8 @@ public abstract class AbstractArticleDAOTest extends AbstractIdDAOTest<BigIntege
 		assert mediumDAO!=null;
 		mediumTypeDAO=createMediumTypeDAO();
 		assert mediumTypeDAO!=null;
+		creatorDAO=createCreatorDAO();
+		assert creatorDAO!=null;
 	}
 	
 	@Override
@@ -71,6 +77,9 @@ public abstract class AbstractArticleDAOTest extends AbstractIdDAOTest<BigIntege
 		for(final AuthorDTOImpl authorDTOImpl : getDTO().getAuthorDTOs()){
 			authorDAO.delete(authorDTOImpl);
 		}
+		for(final CreatorDTOImpl creatorDTOImpl : getDTO().getCreatorDTOs()) {
+			creatorDAO.delete(creatorDTOImpl);
+		}
 		super.after();
 	}
 
@@ -78,21 +87,23 @@ public abstract class AbstractArticleDAOTest extends AbstractIdDAOTest<BigIntege
 	@Test
 	public void testGetDTO(){
 		super.testGetDTO();
-		assertNotNull("The created CategoryDTO link should not be null",getDTO().getLink());
-		assertNotNull("The created CategoryDTO title should not be null",getDTO().getTitle());
-		assertNotNull("The created CategoryDTO publication date should not be null",getDTO().getPublicationDate());
-		assertNotNull("The created CategoryDTO read should not be null",getDTO().isRead());
-		assertTrue("The created CategoryDTO read should be set true",getDTO().isRead());
-		assertNotNull("The created CategoryDTO favorite should not be null",getDTO().isFavorite());
-		assertTrue("The created CategoryDTO favorite should be set true",getDTO().isFavorite());
-		assertNotNull("The created CategoryDTO archived should not be null",getDTO().isArchived());
-		assertTrue("The created CategoryDTO archived should be set true",getDTO().isArchived());
-		assertNotNull("The created CategoryDTO List of AuthorDTO should not be null",getDTO().getAuthorDTOs());
-		assertFalse("The created CategoryDTO List of AuthorDTO should not be empty",getDTO().getAuthorDTOs().isEmpty());
-		assertNotNull("The created CategoryDTO List of CategoryDTO should not be null",getDTO().getCategoryDTOs());
-		assertFalse("The created CategoryDTO List of CategoryDTO should not be empty",getDTO().getAuthorDTOs().isEmpty());
-		assertNotNull("The created CategoryDTO List of MediumDTO should not be null",getDTO().getMediumDTOs());
-		assertFalse("The created CategoryDTO List of MediumDTO should not be empty",getDTO().getAuthorDTOs().isEmpty());
+		assertNotNull("The created ArticleDTO link should not be null",getDTO().getLink());
+		assertNotNull("The created ArticleDTO title should not be null",getDTO().getTitle());
+		assertNotNull("The created ArticleDTO publication date should not be null",getDTO().getPublicationDate());
+		assertNotNull("The created ArticleDTO read should not be null",getDTO().isRead());
+		assertTrue("The created ArticleDTO read should be set true",getDTO().isRead());
+		assertNotNull("The created ArticleDTO favorite should not be null",getDTO().isFavorite());
+		assertTrue("The created ArticleDTO favorite should be set true",getDTO().isFavorite());
+		assertNotNull("The created ArticleDTO archived should not be null",getDTO().isArchived());
+		assertTrue("The created ArticleDTO archived should be set true",getDTO().isArchived());
+		assertNotNull("The created ArticleDTO List of AuthorDTO should not be null",getDTO().getAuthorDTOs());
+		assertFalse("The created ArticleDTO List of AuthorDTO should not be empty",getDTO().getAuthorDTOs().isEmpty());
+		assertNotNull("The created ArticleDTO List of CreatorDTO should not be null",getDTO().getCreatorDTOs());
+		assertFalse("The created ArticleDTO List of CreatorDTO should not be empty",getDTO().getCreatorDTOs().isEmpty());
+		assertNotNull("The created ArticleDTO List of CategoryDTO should not be null",getDTO().getCategoryDTOs());
+		assertFalse("The created ArticleDTO List of CategoryDTO should not be empty",getDTO().getCategoryDTOs().isEmpty());
+		assertNotNull("The created ArticleDTO List of MediumDTO should not be null",getDTO().getMediumDTOs());
+		assertFalse("The created ArticleDTO List of MediumDTO should not be empty",getDTO().getMediumDTOs().isEmpty());
 	}
 	
 	/**
@@ -256,7 +267,7 @@ public abstract class AbstractArticleDAOTest extends AbstractIdDAOTest<BigIntege
 	public void testFindByAuthor(){
 		final AuthorDTOImpl authorDTOImpl=authorDAO.save(new ArrayList<AuthorDTOImpl>(getDTO().getAuthorDTOs()).get(0));
 		final List<AuthorDTOImpl> authorDTOImpls=new ArrayList<AuthorDTOImpl>(getDTO().getAuthorDTOs());  
-		authorDTOImpls.add(0,authorDTOImpl);
+		authorDTOImpls.set(0,authorDTOImpl);
 		getDTO().setAuthorDTOs(authorDTOImpls);
 		assertNotNull("The List of AuthorDTO should not be null",authorDTOImpl);
 		List<ArticleDTOImpl> articleDTOImpls=new ArrayList<ArticleDTOImpl>(getDAO().findByAuthor(authorDTOImpl));
@@ -273,6 +284,35 @@ public abstract class AbstractArticleDAOTest extends AbstractIdDAOTest<BigIntege
 	@Test 
 	public void testFindByAuthorNull(){
 		List<ArticleDTOImpl> articleDTOImpls=new ArrayList<ArticleDTOImpl>(getDAO().findByAuthor(null));
+		assertNotNull("The List of ArticleDTO should not be null",articleDTOImpls);
+		assertTrue("The List of ArticleDTO should be empty",articleDTOImpls.isEmpty());
+	}
+	
+	/**
+	 * Test finding an {@link ArticleDTOImpl} by one of it's {@link AuthorDTOImpl},</br>
+	 * before an after saving.
+	 */
+	@Test 
+	public void testFindByCreator(){
+		final CreatorDTOImpl creatorDTOImpl=creatorDAO.save(new ArrayList<CreatorDTOImpl>(getDTO().getCreatorDTOs()).get(0));
+		final List<CreatorDTOImpl> creatorDTOImpls=new ArrayList<CreatorDTOImpl>(getDTO().getCreatorDTOs());  
+		creatorDTOImpls.set(0,creatorDTOImpl);
+		getDTO().setCreatorDTOs(creatorDTOImpls);
+		assertNotNull("The List of CreatorDTO should not be null",creatorDTOImpl);
+		List<ArticleDTOImpl> articleDTOImpls=new ArrayList<ArticleDTOImpl>(getDAO().findByCreator(creatorDTOImpl));
+		assertNotNull("The List of ArticleDTO should not be null before saving",articleDTOImpls);
+		assertTrue("The List of ArticleDTO should be empty before saving",articleDTOImpls.isEmpty());
+		setDTO(getDAO().save(getDTO()));
+		articleDTOImpls=new ArrayList<ArticleDTOImpl>(getDAO().findByCreator(creatorDTOImpl));
+		assertNotNull("The List of ArticleDTO should not be null after saving",articleDTOImpls);
+		assertFalse("The List of ArticleDTO should not be empty after saving",articleDTOImpls.isEmpty());
+		assertEquals("The List of ArticleDTO should contain one ArticleDTO after saving",1,articleDTOImpls.size());
+		assertEquals("The found ArticleDTO should be equal to the one saved",getDTO(),articleDTOImpls.get(0));
+	}
+	
+	@Test 
+	public void testFindByCreatorNull(){
+		List<ArticleDTOImpl> articleDTOImpls=new ArrayList<ArticleDTOImpl>(getDAO().findByCreator(null));
 		assertNotNull("The List of ArticleDTO should not be null",articleDTOImpls);
 		assertTrue("The List of ArticleDTO should be empty",articleDTOImpls.isEmpty());
 	}

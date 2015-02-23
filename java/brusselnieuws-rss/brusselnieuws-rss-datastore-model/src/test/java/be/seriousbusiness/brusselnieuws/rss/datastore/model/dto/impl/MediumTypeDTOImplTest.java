@@ -9,7 +9,7 @@ import org.junit.Test;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AbstractMediumTypeDTOTest;
 
 /**
- * {@link MediumTypeDTOImpl test implementation.
+ * {@link MediumTypeDTOImpl} test implementation.
  * @author Serious Business
  * @author Stefan Borghys
  * @version 1.0
@@ -23,7 +23,7 @@ public class MediumTypeDTOImplTest extends AbstractMediumTypeDTOTest<MediumTypeD
 
 	@Override
 	public MediumTypeDTOImpl create() {
-		return new MediumTypeDTOImpl();
+		return new MediumTypeDTOImpl.Builder().build();
 	}
 	
 	@Ignore

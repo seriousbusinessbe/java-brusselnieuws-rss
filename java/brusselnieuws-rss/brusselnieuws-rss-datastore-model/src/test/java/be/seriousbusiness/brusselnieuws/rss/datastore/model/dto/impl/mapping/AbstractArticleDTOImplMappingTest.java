@@ -14,7 +14,7 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.util.ArticleDTOU
  * @since 1.0
  * @param <A> the type of {@link Article} to perform a mapping test against
  */
-public abstract class AbstractArticleDTOImplMappingTest<A extends ArticleDTO<?,?,?,?>> extends AbstractMappingTest<ArticleDTO<?,?,?,?>,A,ArticleDTOImpl> {
+public abstract class AbstractArticleDTOImplMappingTest<A extends ArticleDTO<?,?,?,?,?>> extends AbstractMappingTest<ArticleDTO<?,?,?,?,?>,A,ArticleDTOImpl> {
 
 	@Override
 	protected ArticleDTOImpl createDTOB() {

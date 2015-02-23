@@ -65,7 +65,7 @@ public class MongoAuthorDAO implements AuthorDAO {
 				saveableAuthorDTOImpl=foundByIdAuthorDTOImpl;
 			}
 			if(saveableAuthorDTOImpl!=null) {
-				return mapper.map(mongoAuthorRepository.save(mapper.map(saveableAuthorDTOImpl, MongoAuthor.class)),AuthorDTOImpl.class);
+				return mapper.map(mongoAuthorRepository.save(mapper.map(saveableAuthorDTOImpl,MongoAuthor.class)),AuthorDTOImpl.class);
 			}
 		}
 		return authorDTOImpl;
@@ -90,17 +90,17 @@ public class MongoAuthorDAO implements AuthorDAO {
 	public void delete(final AuthorDTOImpl authorDTOImpl) {
 		LOGGER.debug("Delete AuthorDTOImpl:\n{}",authorDTOImpl);
 		if(authorDTOImpl!=null && authorDTOImpl.getId()!=null){
-			mongoAuthorRepository.delete(mapper.map(authorDTOImpl, MongoAuthor.class));
+			mongoAuthorRepository.delete(mapper.map(authorDTOImpl,MongoAuthor.class));
 		}
 	}
 
 	@Override
-	public AuthorDTOImpl findFirstByName(String name) {
+	public AuthorDTOImpl findFirstByName(final String name) {
 		LOGGER.debug("Find first AuthorDTOImpl by name '{}'",name);
 		if(name!=null) {
 			final MongoAuthor mongoAuthor=mongoAuthorRepository.findFirstByName(name);
 			if(mongoAuthor!=null) {
-				mapper.map(mongoAuthor,AuthorDTOImpl.class);
+				return mapper.map(mongoAuthor,AuthorDTOImpl.class);
 			}
 		}
 		return null;

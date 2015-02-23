@@ -37,6 +37,10 @@
       <a>mediumDTOs</a>
       <b>media</b>
     </field>
+    <field>
+      <a>creatorDTOs</a>
+      <b>creators</b>
+    </field>
   </mapping>
   
   <mapping>

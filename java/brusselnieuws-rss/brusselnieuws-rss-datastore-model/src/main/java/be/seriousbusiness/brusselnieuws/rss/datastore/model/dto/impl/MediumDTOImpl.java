@@ -1,5 +1,7 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl;
 
+import org.dozer.Mapper;
+
 import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.MediumDTO;
 
@@ -14,6 +16,43 @@ public class MediumDTOImpl implements MediumDTO<MediumTypeDTOImpl>  {
 	private String link;
 	private MediumTypeDTOImpl mediumTypeDTOImpl;
 	private Long size;
+	
+	/**
+	 * Constructor solely used for {@link Mapper} functionality.
+	 */
+	private MediumDTOImpl(){}
+	
+	private MediumDTOImpl(final Builder builder) throws IllegalArgumentException{
+		setLink(builder.link);
+		setSize(builder.size);
+		setMediumTypeDTO(builder.mediumTypeDTOImpl);
+	}
+	
+	public static class Builder{
+		private String link;
+		private MediumTypeDTOImpl mediumTypeDTOImpl;
+		private Long size;
+		
+		public MediumDTOImpl build() throws IllegalArgumentException{
+			return new MediumDTOImpl(this);
+		}
+		
+		public Builder size(final Long size) {
+			this.size=size;
+			return this;
+		}
+		
+		public Builder link(final String link) {
+			this.link=link;
+			return this;
+		}
+		
+		public Builder mediumTypeDTO(final MediumTypeDTOImpl mediumTypeDTOImpl) {
+			this.mediumTypeDTOImpl=mediumTypeDTOImpl;
+			return this;
+		}
+		
+	}
 
 	@Override
 	public String getLink() {
@@ -68,11 +107,7 @@ public class MediumDTOImpl implements MediumDTO<MediumTypeDTOImpl>  {
 	
 	@Override
 	public Object clone() {
-		final MediumDTOImpl mediumDTOImpl=new MediumDTOImpl();
-		mediumDTOImpl.setLink(link);
-		mediumDTOImpl.setMediumTypeDTO((MediumTypeDTOImpl)mediumTypeDTOImpl.clone());
-		mediumDTOImpl.setSize(size);
-		return mediumDTOImpl;
+		return new Builder().link(link).mediumTypeDTO(mediumTypeDTOImpl).size(size).build();
 	}
 
 }

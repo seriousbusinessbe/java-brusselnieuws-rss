@@ -4,6 +4,7 @@ import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.dozer.Mapper;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -28,6 +29,42 @@ public class MongoCategory implements CategoryDTO {
 	private String name;
 	@Field("link")
 	private String link;
+	
+	/**
+	 * Constructor solely used for {@link Mapper} functionality.
+	 */
+	private MongoCategory(){}
+	
+	private MongoCategory(final Builder builder) throws IllegalArgumentException{
+		setId(builder.id);
+		setName(builder.name);
+		setLink(builder.link);
+	}
+	
+	public static class Builder{
+		private BigInteger id;
+		private String name,link;
+		
+		public MongoCategory build() throws IllegalArgumentException{
+			return new MongoCategory(this);
+		}
+		
+		public Builder id(final BigInteger id){
+			this.id=id;
+			return this;
+		}
+		
+		public Builder name(final String name){
+			this.name=name;
+			return this;
+		}
+		
+		public Builder link(final String link) {
+			this.link=link;
+			return this;
+		}
+		
+	}
 
 	@Override
 	public BigInteger getId() {

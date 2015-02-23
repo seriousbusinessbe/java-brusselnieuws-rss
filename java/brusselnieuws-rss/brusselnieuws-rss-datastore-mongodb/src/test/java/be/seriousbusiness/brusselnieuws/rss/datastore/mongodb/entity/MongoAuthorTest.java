@@ -12,7 +12,7 @@ public class MongoAuthorTest extends AbstractAuthorDTOTest<MongoAuthor> {
 
 	@Override
 	public MongoAuthor create() {
-		return new MongoAuthor();
+		return new MongoAuthor.Builder().build();
 	}
 
 }

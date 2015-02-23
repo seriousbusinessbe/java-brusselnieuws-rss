@@ -9,11 +9,9 @@ public class MongoMediumFactory {
 	 * @return
 	 */
 	public static final MongoMedium createMongoMediumJPGImage() {
-		final MongoMedium medium=new MongoMedium();
-		medium.setLink("http://www.brusselnieuws.be/sites/default/files/styles/bn_220_crop/public/article_media/images/thumbnails/jellab_zoubida.jpg?itok=KY3z2BZc");
-		medium.setSize(20166l);
-		medium.setMediumTypeDTO(MongoMediumTypeFactory.createMongoMediumTypeJPG());
-		return medium;
+		return new MongoMedium.Builder().link("http://www.brusselnieuws.be/sites/default/files/styles/bn_220_crop/public/article_media/images/thumbnails/jellab_zoubida.jpg?itok=KY3z2BZc")
+				.size(20166l)
+				.mediumTypeDTO(MongoMediumTypeFactory.createMongoMediumTypeJPG()).build();
 	}
 	
 	/**
@@ -21,11 +19,9 @@ public class MongoMediumFactory {
 	 * @return
 	 */
 	public static final MongoMedium createMongoMediumPNGImage() {
-		final MongoMedium medium=new MongoMedium();
-		medium.setLink("http://www.brusselnieuws.be/sites/default/files/styles/bn_220_crop/public/article_media/images/dapp.png?itok=OyzHfATx");
-		medium.setSize(3462896211l);
-		medium.setMediumTypeDTO(MongoMediumTypeFactory.createMongoMediumTypePNG());
-		return medium;
+		return new MongoMedium.Builder().link("http://www.brusselnieuws.be/sites/default/files/styles/bn_220_crop/public/article_media/images/dapp.png?itok=OyzHfATx")
+				.size(3462896211l)
+				.mediumTypeDTO(MongoMediumTypeFactory.createMongoMediumTypePNG()).build();
 	}
 
 }

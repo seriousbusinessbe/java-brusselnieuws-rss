@@ -25,8 +25,9 @@ public abstract class AbstractFeedDTOTest<MEDIUMTYPEDTO extends MediumTypeDTO,
 										MEDIUMDTO extends MediumDTO<MEDIUMTYPEDTO>,
 										CATEGORYDTO extends CategoryDTO,
 										AUTHORDTO extends AuthorDTO,
-										ARTICLEDTO extends ArticleDTO<MEDIUMTYPEDTO,MEDIUMDTO,CATEGORYDTO,AUTHORDTO>,
-										FEEDDTO extends FeedDTO<MEDIUMTYPEDTO,MEDIUMDTO,CATEGORYDTO,AUTHORDTO,ARTICLEDTO>> extends AbstractIdDTOTest<BigInteger,FEEDDTO> {
+										CREATORDTO extends CreatorDTO,
+										ARTICLEDTO extends ArticleDTO<MEDIUMTYPEDTO,MEDIUMDTO,CATEGORYDTO,AUTHORDTO,CREATORDTO>,
+										FEEDDTO extends FeedDTO<MEDIUMTYPEDTO,MEDIUMDTO,CATEGORYDTO,AUTHORDTO,CREATORDTO,ARTICLEDTO>> extends AbstractIdDTOTest<BigInteger,FEEDDTO> {
 	private List<ARTICLEDTO> articleDTOs;
 	private String description,title,link;
 
@@ -50,8 +51,6 @@ public abstract class AbstractFeedDTOTest<MEDIUMTYPEDTO extends MediumTypeDTO,
 	@Override
 	public void test(){
 		super.test();
-		//assertNotNull("The set of ArticleDTO should not be null",getDTO().getArticleDTOs());
-		//assertTrue("The set of AuthorDTO should be empty",getDTO().getArticleDTOs().isEmpty());
 		assertNull("The description should be null",getDTO().getDescription());
 		assertNull("The link should be null",getDTO().getLink());
 		assertNull("The title should be null",getDTO().getTitle());	

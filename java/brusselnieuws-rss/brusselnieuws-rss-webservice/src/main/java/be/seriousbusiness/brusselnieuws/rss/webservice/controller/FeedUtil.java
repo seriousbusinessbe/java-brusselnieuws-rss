@@ -4,6 +4,7 @@ import be.seriousbusiness.brusselnieuws.rss.reader.BrusselNieuwsRss;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Article;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Author;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Category;
+import be.seriousbusiness.brusselnieuws.rss.reader.model.Creator;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Feed;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Medium;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.MediumType;
@@ -27,9 +28,10 @@ public class FeedUtil {
 			MEDIUM extends Medium<MEDIUMTYPE>,
 			CATEGORY extends Category,
 			AUTHOR extends Author,
-			ARTICLE extends Article<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR>,
-			FEED extends Feed<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,ARTICLE>> FEED getFeed(final FeedMetaEnum feedMetaEnum,
-																					   final BrusselNieuwsRss<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,ARTICLE,FEED> brusselNieuwsRss) {
+			CREATOR extends Creator,
+			ARTICLE extends Article<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,CREATOR>,
+			FEED extends Feed<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,CREATOR,ARTICLE>> FEED getFeed(final FeedMetaEnum feedMetaEnum,
+																					   final BrusselNieuwsRss<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,CREATOR,ARTICLE,FEED> brusselNieuwsRss) {
 		FEED feed=null;
 		switch(feedMetaEnum) {
 			case CITY_NEWS : feed=brusselNieuwsRss.getCityNews(); break;

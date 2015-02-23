@@ -2,6 +2,8 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl;
 
 import java.math.BigInteger;
 
+import org.dozer.Mapper;
+
 import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.CategoryDTO;
 
@@ -14,6 +16,42 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.CategoryDTO;
  */
 public class CategoryDTOImpl extends AbstractIdDTOImpl<BigInteger> implements CategoryDTO {
 	private String name,link;
+	
+	/**
+	 * Constructor solely used for {@link Mapper} functionality.
+	 */
+	private CategoryDTOImpl(){}
+	
+	private CategoryDTOImpl(final Builder builder) throws IllegalArgumentException{
+		setId(builder.id);
+		setName(builder.name);
+		setLink(builder.link);
+	}
+	
+	public static class Builder{
+		private BigInteger id;
+		private String name,link;
+		
+		public CategoryDTOImpl build() throws IllegalArgumentException{
+			return new CategoryDTOImpl(this);
+		}
+		
+		public Builder id(final BigInteger id){
+			this.id=id;
+			return this;
+		}
+		
+		public Builder name(final String name){
+			this.name=name;
+			return this;
+		}
+		
+		public Builder link(final String link) {
+			this.link=link;
+			return this;
+		}
+		
+	}
 
 	@Override
 	public String getName() {
@@ -54,11 +92,7 @@ public class CategoryDTOImpl extends AbstractIdDTOImpl<BigInteger> implements Ca
 	
 	@Override
 	public Object clone() {
-		final CategoryDTOImpl categoryDTOImpl=new CategoryDTOImpl();
-		categoryDTOImpl.setId(id);
-		categoryDTOImpl.setLink(link);
-		categoryDTOImpl.setName(name);
-		return categoryDTOImpl;
+		return new Builder().id(id).link(link).name(name).build();
 	}
 
 }

@@ -17,10 +17,12 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.model.dao.ArticleDAO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.ArticleDTOImpl;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.AuthorDTOImpl;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.CategoryDTOImpl;
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.CreatorDTOImpl;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.MediumDTOImpl;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoArticle;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoAuthor;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoCategory;
+import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.MongoCreator;
 import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.repository.MongoArticleRepository;
 
 /**
@@ -43,6 +45,8 @@ public class MongoArticleDAO implements ArticleDAO {
 	private MongoCategoryDAO mongoCategoryDAO;
 	@Autowired
 	private MongoAuthorDAO mongoAuthorDAO;
+	@Autowired
+	private MongoCreatorDAO mongoCreatorDAO;
 
 	@Override
 	public ArticleDTOImpl findById(final BigInteger id) {
@@ -79,6 +83,11 @@ public class MongoArticleDAO implements ArticleDAO {
 						authorDTOImpls.add(mongoAuthorDAO.save(authorDTOImpl));
 					}
 					articleDTOImpl.setAuthorDTOs(authorDTOImpls);
+					final List<CreatorDTOImpl> creatorDTOImpls=new ArrayList<CreatorDTOImpl>(articleDTOImpl.getCreatorDTOs().size());
+					for(final CreatorDTOImpl creatorDTOImpl : articleDTOImpl.getCreatorDTOs()){
+						creatorDTOImpls.add(mongoCreatorDAO.save(creatorDTOImpl));
+					}
+					articleDTOImpl.setCreatorDTOs(creatorDTOImpls);
 					saveableArticleDTOImpl=articleDTOImpl;
 				}else { // Existing article:
 					final ArticleDTOImpl clonedArticleDTOImpl=(ArticleDTOImpl) articleDTOImpl.clone();
@@ -102,6 +111,9 @@ public class MongoArticleDAO implements ArticleDAO {
 					for(final AuthorDTOImpl authorDTOImpl : articleDTOImpl.getAuthorDTOs()){
 						foundByTitleAndPublicationDateArticleDTOImpl.add(mongoAuthorDAO.save(authorDTOImpl));
 					}
+					for(final CreatorDTOImpl creatorDTOImpl : articleDTOImpl.getCreatorDTOs()){
+						foundByTitleAndPublicationDateArticleDTOImpl.add(mongoCreatorDAO.save(creatorDTOImpl));
+					}
 					saveableArticleDTOImpl=foundByTitleAndPublicationDateArticleDTOImpl;
 				}
 			}else { // Existing article:
@@ -124,6 +136,9 @@ public class MongoArticleDAO implements ArticleDAO {
 				}
 				for(final AuthorDTOImpl authorDTOImpl : articleDTOImpl.getAuthorDTOs()){
 					foundByIdArticleDTOImpl.add(mongoAuthorDAO.save(authorDTOImpl));
+				}
+				for(final CreatorDTOImpl creatorDTOImpl : articleDTOImpl.getCreatorDTOs()){
+					foundByIdArticleDTOImpl.add(mongoCreatorDAO.save(creatorDTOImpl));
 				}
 				saveableArticleDTOImpl=foundByIdArticleDTOImpl;
 			}
@@ -191,6 +206,15 @@ public class MongoArticleDAO implements ArticleDAO {
 		LOGGER.debug("Find ArticleDTOImpl(s) by authorDTOImpl '{}'",authorDTOImpl);
 		if(authorDTOImpl!=null){
 			return MapperUtil.map(mapper,(Collection<MongoArticle>)mongoArticleRepository.findByMongoAuthors(mapper.map(authorDTOImpl,MongoAuthor.class)),ArticleDTOImpl.class);
+		}
+		return new ArrayList<ArticleDTOImpl>();
+	}
+	
+	@Override
+	public Collection<ArticleDTOImpl> findByCreator(final CreatorDTOImpl creatorDTOImpl) {
+		LOGGER.debug("Find ArticleDTOImpl(s) by creatorDTOImpl '{}'",creatorDTOImpl);
+		if(creatorDTOImpl!=null){
+			return MapperUtil.map(mapper,(Collection<MongoArticle>)mongoArticleRepository.findByMongoCreators(mapper.map(creatorDTOImpl,MongoCreator.class)),ArticleDTOImpl.class);
 		}
 		return new ArrayList<ArticleDTOImpl>();
 	}

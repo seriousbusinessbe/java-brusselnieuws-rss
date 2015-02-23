@@ -16,13 +16,15 @@ import be.seriousbusiness.brusselnieuws.rss.reader.model.listener.FeedListenerMa
  * @param <MEDIUM> the type of {@link Medium} implementation
  * @param <CATEGORY> the type of {@link Category} implementation
  * @param <AUTHOR> the type of {@link Author} implementation
+ * @param <CREATOR> the type of {@link Creator} implementation
  * @param <ARTICLE> the type of {@link Article} implementation
  */
 public interface Feed<MEDIUMTYPE extends MediumType,
 						MEDIUM extends Medium<MEDIUMTYPE>,
 						CATEGORY extends Category,
 						AUTHOR extends Author,
-						ARTICLE extends Article<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR>> extends Id<BigInteger>, FeedListenerManager, Cloneable {
+						CREATOR extends Creator,
+						ARTICLE extends Article<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,CREATOR>> extends Id<BigInteger>, FeedListenerManager, Cloneable {
 	
 	/**
 	 * Gets this feed's title.

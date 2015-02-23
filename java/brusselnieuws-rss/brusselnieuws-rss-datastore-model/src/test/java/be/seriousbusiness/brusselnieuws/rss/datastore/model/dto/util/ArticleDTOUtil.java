@@ -7,6 +7,7 @@ import org.junit.Assert;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.ArticleDTO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AuthorDTO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.CategoryDTO;
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.CreatorDTO;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.MediumDTO;
 
 /**
@@ -24,7 +25,7 @@ public class ArticleDTOUtil {
 	 * @param articleDTOB the second {@link ArticleDTO}
 	 */
 	@SuppressWarnings("unchecked")
-	public static final void assertEquals(final ArticleDTO<?,?,?,?> articleDTOA,final ArticleDTO<?,?,?,?> articleDTOB) {
+	public static final void assertEquals(final ArticleDTO<?,?,?,?,?> articleDTOA,final ArticleDTO<?,?,?,?,?> articleDTOB) {
 		Assert.assertNotNull("ArticleDTO A cannot be null",articleDTOA);
 		Assert.assertNotNull("ArticleDTO B cannot be null",articleDTOB);
 		Assert.assertEquals("The ArticleDTO ids are not equal",articleDTOA.getId(), articleDTOB.getId());
@@ -38,6 +39,7 @@ public class ArticleDTOUtil {
 		assertEqualsAuthorDTOList((List<AuthorDTO>)articleDTOA.getAuthorDTOs(), (List<AuthorDTO>)articleDTOB.getAuthorDTOs());
 		assertEqualsCategoryDTOList((List<CategoryDTO>)articleDTOA.getCategoryDTOs(), (List<CategoryDTO>)articleDTOB.getCategoryDTOs());
 		assertEqualsMediumDTOList((List<MediumDTO<?>>)articleDTOA.getMediumDTOs(), (List<MediumDTO<?>>)articleDTOB.getMediumDTOs());
+		assertEqualsCreatorDTOList((List<CreatorDTO>)articleDTOA.getCreatorDTOs(), (List<CreatorDTO>)articleDTOB.getCreatorDTOs());
 	}
 	
 	private static final void assertEqualsAuthorDTOList(final List<AuthorDTO> authorDTOAs,final List<AuthorDTO> authorDTOBs){
@@ -54,6 +56,22 @@ public class ArticleDTOUtil {
 		}
 		Assert.assertEquals("ArticleDTO A List of AuthorDTO is not equal",authorDTOAs.size(),numberOfAsserted);
 		Assert.assertEquals("ArticleDTO B List of AuthorDTO is not equal",authorDTOBs.size(),numberOfAsserted);
+	}
+	
+	private static final void assertEqualsCreatorDTOList(final List<CreatorDTO> creatorDTOAs,final List<CreatorDTO> creatorDTOBs){
+		Assert.assertNotNull("CreatorDTO A List of CreatorDTO cannot be null",creatorDTOAs);
+		Assert.assertNotNull("CreatorDTO B List of CreatorDTO cannot be null",creatorDTOBs);
+		int numberOfAsserted=0;
+		for(final CreatorDTO creatorDTOA : creatorDTOAs){
+			for(final CreatorDTO creatorDTOB : creatorDTOBs){
+				if(creatorDTOB.getId()==creatorDTOA.getId()){
+					CreatorDTOUtil.assertEquals(creatorDTOA, creatorDTOB);
+					numberOfAsserted++;
+				}
+			}
+		}
+		Assert.assertEquals("CreatorDTO A List of CreatorDTO is not equal",creatorDTOAs.size(),numberOfAsserted);
+		Assert.assertEquals("CreatorDTO B List of CreatorDTO is not equal",creatorDTOBs.size(),numberOfAsserted);
 	}
 	
 	private static final void assertEqualsCategoryDTOList(final List<CategoryDTO> categoryDTOAs,final List<CategoryDTO> categoryDTOBs){

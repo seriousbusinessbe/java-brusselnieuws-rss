@@ -9,7 +9,7 @@ import org.junit.Test;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AbstractCategoryDTOTest;
 
 /**
- * {@link CategoryDTOImpl test implementation.
+ * {@link CategoryDTOImpl} test implementation.
  * @author Serious Business
  * @author Stefan Borghys
  * @version 1.0
@@ -23,7 +23,7 @@ public class CategoryDTOImplTest extends AbstractCategoryDTOTest<CategoryDTOImpl
 
 	@Override
 	public CategoryDTOImpl create() {
-		return new CategoryDTOImpl();
+		return new CategoryDTOImpl.Builder().build();
 	}
 	
 	@Ignore

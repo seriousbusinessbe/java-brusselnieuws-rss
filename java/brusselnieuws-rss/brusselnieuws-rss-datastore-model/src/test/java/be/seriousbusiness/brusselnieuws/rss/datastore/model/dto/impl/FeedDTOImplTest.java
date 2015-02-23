@@ -10,7 +10,7 @@ import org.junit.Test;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AbstractFeedDTOTest;
 
 /**
- * {@link FeedDTOImpl test implementation.
+ * {@link FeedDTOImpl} test implementation.
  * @author Serious Business
  * @author Stefan Borghys
  * @version 1.0
@@ -20,6 +20,7 @@ public class FeedDTOImplTest extends AbstractFeedDTOTest<MediumTypeDTOImpl,
 														MediumDTOImpl,
 														CategoryDTOImpl,
 														AuthorDTOImpl,
+														CreatorDTOImpl,
 														ArticleDTOImpl,
 														FeedDTOImpl> {
 
@@ -33,7 +34,7 @@ public class FeedDTOImplTest extends AbstractFeedDTOTest<MediumTypeDTOImpl,
 
 	@Override
 	public FeedDTOImpl create() {
-		return new FeedDTOImpl();
+		return new FeedDTOImpl.Builder().build();
 	}
 	
 	@Ignore

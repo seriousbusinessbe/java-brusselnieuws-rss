@@ -15,22 +15,26 @@ import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Article;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Author;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Category;
+import be.seriousbusiness.brusselnieuws.rss.reader.model.Creator;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.comparator.AuthorNameComparator;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.comparator.CategoryNameComparator;
+import be.seriousbusiness.brusselnieuws.rss.reader.model.comparator.CreatorNameComparator;
 
-public class ArticleImpl extends AbstractIdImpl<BigInteger> implements Article<MediumTypeImpl,MediumImpl,CategoryImpl,AuthorImpl> {
+public class ArticleImpl extends AbstractIdImpl<BigInteger> implements Article<MediumTypeImpl,MediumImpl,CategoryImpl,AuthorImpl,CreatorImpl> {
 	private String title;
 	private URL link;
 	private String description;
 	private Collection<AuthorImpl> authors=new ArrayList<AuthorImpl>();
 	private Collection<CategoryImpl> categories=new ArrayList<CategoryImpl>();
 	private Collection<MediumImpl> media=new ArrayList<MediumImpl>();
+	private Collection<CreatorImpl> creators=new ArrayList<CreatorImpl>();
 	private DateTime publicationDate;
 	private boolean read=false;
 	private boolean archived=false;
 	private boolean favorite=false;
 	private static final Comparator<Author> AUTHOR_COMPARATOR=new AuthorNameComparator(); 
 	private static final Comparator<Category> CATEGORY_COMPARATOR=new CategoryNameComparator();
+	private static final Comparator<Creator> CREATOR_COMPARATOR=new CreatorNameComparator();
 	
 	/**
 	 * Constructor solely used for {@link Mapper} functionality.
@@ -47,6 +51,7 @@ public class ArticleImpl extends AbstractIdImpl<BigInteger> implements Article<M
 		setAuthors(builder.authors);
 		setCategories(builder.categories);
 		setMedia(builder.media);
+		setCreators(builder.creators);
 		setPublicationDate(builder.publicationDate);
 		if(builder.read!=null){
 			setRead(builder.read);
@@ -66,6 +71,7 @@ public class ArticleImpl extends AbstractIdImpl<BigInteger> implements Article<M
 		private Collection<AuthorImpl> authors=new ArrayList<AuthorImpl>();
 		private Collection<CategoryImpl> categories=new ArrayList<CategoryImpl>();
 		private Collection<MediumImpl> media=new ArrayList<MediumImpl>();
+		private Collection<CreatorImpl> creators=new ArrayList<CreatorImpl>();
 		private DateTime publicationDate;
 		private Boolean read,archived,favorite;
 		
@@ -95,6 +101,11 @@ public class ArticleImpl extends AbstractIdImpl<BigInteger> implements Article<M
 		
 		public Builder authors(final Collection<AuthorImpl> authors){
 			this.authors=authors;
+			return this;
+		}
+		
+		public Builder creators(final Collection<CreatorImpl> creators){
+			this.creators=creators;
 			return this;
 		}
 		
@@ -206,6 +217,39 @@ public class ArticleImpl extends AbstractIdImpl<BigInteger> implements Article<M
 	@Override
 	public boolean hasAuthor(AuthorImpl author) {
 		return authors.contains(author);
+	}
+	
+	@Override
+	public int numberOfCreators() {
+		return creators.size();
+	}
+
+	@Override
+	public Collection<CreatorImpl> getCreators() {
+		final List<CreatorImpl> creators=new ArrayList<CreatorImpl>(this.creators);
+		Collections.sort(creators,CREATOR_COMPARATOR);
+		return creators;
+	}
+
+	@Override
+	public void setCreators(final Collection<CreatorImpl> creators) {
+		if(creators!=null){
+			for(final CreatorImpl creator : creators){
+				add(creator);
+			}
+		}
+	}
+
+	@Override
+	public void add(final CreatorImpl creator) {
+		if(creator!=null && !creators.contains(creator)){
+			creators.add(creator);
+		}
+	}
+
+	@Override
+	public boolean hasCreator(final CreatorImpl creator) {
+		return creators.contains(creator);
 	}
 
 	@Override
@@ -338,7 +382,8 @@ public class ArticleImpl extends AbstractIdImpl<BigInteger> implements Article<M
 				ObjectUtil.isNullOrEqual(favorite,((ArticleImpl)obj).favorite) &&
 				ObjectUtil.isNullOrEqual(media,((ArticleImpl)obj).media) &&
 				ObjectUtil.isNullOrEqual(categories,((ArticleImpl)obj).categories) &&
-				ObjectUtil.isNullOrEqual(authors,((ArticleImpl)obj).authors);
+				ObjectUtil.isNullOrEqual(authors,((ArticleImpl)obj).authors) &&
+				ObjectUtil.isNullOrEqual(creators,((ArticleImpl)obj).creators);
 	}
 	
 	@Override
@@ -352,7 +397,8 @@ public class ArticleImpl extends AbstractIdImpl<BigInteger> implements Article<M
 				ObjectUtil.hashCode(favorite) *
 				ObjectUtil.hashCode(media) *
 				ObjectUtil.hashCode(categories) *
-				ObjectUtil.hashCode(authors);
+				ObjectUtil.hashCode(authors) *
+				ObjectUtil.hashCode(creators);
 	}
 	
 	@Override
@@ -374,6 +420,10 @@ public class ArticleImpl extends AbstractIdImpl<BigInteger> implements Article<M
 		for(final MediumImpl mediumImpl : media) {
 			clonedMedia.add((MediumImpl)mediumImpl.clone());
 		}
+		final Collection<CreatorImpl> clonedCreators=new ArrayList<CreatorImpl>();
+		for(final CreatorImpl creatorImpl : creators) {
+			clonedCreators.add((CreatorImpl)creatorImpl.clone());
+		}
 		return new Builder().id(id)
 				.title(title)
 				.link(link)
@@ -384,6 +434,7 @@ public class ArticleImpl extends AbstractIdImpl<BigInteger> implements Article<M
 				.favorite(favorite)
 				.authors(clonedAuthors)
 				.categories(clonedCategories)
+				.creators(clonedCreators)
 				.media(clonedMedia).build();
 	}
 	

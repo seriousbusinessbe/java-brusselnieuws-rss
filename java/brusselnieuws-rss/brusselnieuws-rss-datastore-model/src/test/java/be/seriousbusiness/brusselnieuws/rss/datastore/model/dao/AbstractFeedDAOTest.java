@@ -14,6 +14,7 @@ import org.junit.Test;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.ArticleDTOImpl;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.AuthorDTOImpl;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.CategoryDTOImpl;
+import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.CreatorDTOImpl;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.FeedDTOImpl;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.MediumDTOImpl;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.factory.FeedDTOImplFactory;
@@ -29,6 +30,7 @@ public abstract class AbstractFeedDAOTest extends AbstractIdDAOTest<BigInteger,F
 	protected CategoryDAO categoryDAO;
 	protected MediumTypeDAO mediumTypeDAO;
 	protected MediumDAO mediumDAO;
+	protected CreatorDAO creatorDAO;
 	
 	@Override
 	@Before
@@ -44,6 +46,8 @@ public abstract class AbstractFeedDAOTest extends AbstractIdDAOTest<BigInteger,F
 		assert mediumTypeDAO!=null;
 		mediumDAO=createMediumDAO();
 		assert mediumDAO!=null;
+		creatorDAO=createCreatorDAO();
+		assert creatorDAO!=null;
 	}
 	
 	/**
@@ -63,6 +67,9 @@ public abstract class AbstractFeedDAOTest extends AbstractIdDAOTest<BigInteger,F
 				mediumTypeDAO.delete(mediumDTOImpl.getMediumTypeDTO());
 				mediumDAO.delete(mediumDTOImpl);
 			}
+			for(final CreatorDTOImpl creatorDTOImpl : articleDTOImpl.getCreatorDTOs()) {
+				creatorDAO.delete(creatorDTOImpl);
+			}
 			articleDAO.delete(articleDTOImpl);
 		}
 		super.after();
@@ -77,6 +84,8 @@ public abstract class AbstractFeedDAOTest extends AbstractIdDAOTest<BigInteger,F
 	protected abstract MediumTypeDAO createMediumTypeDAO();
 	
 	protected abstract MediumDAO createMediumDAO();
+	
+	protected abstract CreatorDAO createCreatorDAO();
 	
 	@Override
 	public FeedDTOImpl createDTO() {

@@ -24,6 +24,7 @@ import be.seriousbusiness.brusselnieuws.rss.reader.BrusselNieuwsRss;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Article;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Author;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Category;
+import be.seriousbusiness.brusselnieuws.rss.reader.model.Creator;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Feed;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Medium;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.MediumType;
@@ -53,8 +54,9 @@ public class FeedRestControllerImpl<MEDIUMTYPE extends MediumType,
 									MEDIUM extends Medium<MEDIUMTYPE>,
 									CATEGORY extends Category,
 									AUTHOR extends Author,
-									ARTICLE extends Article<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR>,
-									FEED extends Feed<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,ARTICLE>> implements FeedRestController {
+									CREATOR extends Creator,
+									ARTICLE extends Article<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,CREATOR>,
+									FEED extends Feed<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,CREATOR,ARTICLE>> implements FeedRestController {
 	private static final Logger LOGGER=LoggerFactory.getLogger(FeedRestControllerImpl.class);
 	private static final Comparator<FeedMetaResponse> FEEDMETARESPONSE_COMPARATOR=new FeedMetaResponseCategoryTranslatedNameComparator();
 	private static final Comparator<FeedCategoryResponse> FEEDCATEGORYRESPONSE_COMPARATOR=new FeedCategoryResponseTranslatedNameComparator();
@@ -62,7 +64,7 @@ public class FeedRestControllerImpl<MEDIUMTYPE extends MediumType,
 	@Autowired(required=true)
 	@Qualifier("brusselNieuwsRssWebserviceDozerBeanMapper")
 	private Mapper mapper;
-	private BrusselNieuwsRss<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,ARTICLE,FEED> brusselNieuwsRss;
+	private BrusselNieuwsRss<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,CREATOR,ARTICLE,FEED> brusselNieuwsRss;
 	public static final String FEED="feed",FEEDS_META="feedsMeta",FEED_CATEGORIES="feedsCategories";
 	
 	/**
@@ -143,7 +145,7 @@ public class FeedRestControllerImpl<MEDIUMTYPE extends MediumType,
 	/* SETTERS */
 	
 	@Required
-	public void setBrusselNieuwsRss(final BrusselNieuwsRss<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,ARTICLE,FEED> brusselNieuwsRss) {
+	public void setBrusselNieuwsRss(final BrusselNieuwsRss<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,CREATOR,ARTICLE,FEED> brusselNieuwsRss) {
 		this.brusselNieuwsRss = brusselNieuwsRss;
 	}
 

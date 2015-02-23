@@ -11,10 +11,7 @@ public class MongoMediumTypeFactory {
 	 * @return
 	 */
 	public static final MongoMediumType createMongoMediumTypeJPG() {
-		final MongoMediumType mediumType=new MongoMediumType();
-		mediumType.setId(BigInteger.valueOf(8739l));
-		mediumType.setType("image/jpg");
-		return mediumType;
+		return new MongoMediumType.Builder().id(BigInteger.valueOf(8739l)).type("image/jpg").build();
 	}
 	
 	/**
@@ -22,10 +19,7 @@ public class MongoMediumTypeFactory {
 	 * @return
 	 */
 	public static final MongoMediumType createMongoMediumTypePNG() {
-		final MongoMediumType mediumType=new MongoMediumType();
-		mediumType.setId(BigInteger.valueOf(523853465433l));
-		mediumType.setType("image/png");
-		return mediumType;
+		return new MongoMediumType.Builder().id(BigInteger.valueOf(523853465433l)).type("image/png").build();
 	}
 
 }

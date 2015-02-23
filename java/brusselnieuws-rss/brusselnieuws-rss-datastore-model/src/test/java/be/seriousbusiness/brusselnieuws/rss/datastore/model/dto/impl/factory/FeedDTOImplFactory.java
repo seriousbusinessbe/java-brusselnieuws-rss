@@ -17,27 +17,23 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl.FeedDTOImpl
 public class FeedDTOImplFactory {
 	
 	public static final FeedDTOImpl createPolitiek(){
-		final FeedDTOImpl feedDTOImpl=new FeedDTOImpl();
-		feedDTOImpl.setId(BigInteger.valueOf(5123456789076432l));
-		feedDTOImpl.setDescription("");
-		feedDTOImpl.setLink("http://www.brusselnieuws.be/nl/rubriek/4797/feed");
-		feedDTOImpl.setTitle("BrusselNieuws RSS - Politiek");
 		final List<ArticleDTOImpl> articleDTOImpls=new ArrayList<ArticleDTOImpl>();
 		articleDTOImpls.add(ArticleDTOImplFactory.createArticleMichelBorcy());
 		articleDTOImpls.add(ArticleDTOImplFactory.createArticleNlFilmsiteCinebelVerdwijnt());
-		feedDTOImpl.setArticleDTOs(articleDTOImpls);
-		return feedDTOImpl;
+		return new FeedDTOImpl.Builder().articleDTOs(articleDTOImpls)
+				.id(BigInteger.valueOf(5123456789076432l))
+				.title("BrusselNieuws RSS - Politiek")
+				.link("http://www.brusselnieuws.be/nl/rubriek/4797/feed")
+				.description("").build();
 	}
 	
 	public static final FeedDTOImpl createNewPolitiek(){
-		final FeedDTOImpl feedDTOImpl=new FeedDTOImpl();
-		feedDTOImpl.setDescription("");
-		feedDTOImpl.setLink("http://www.brusselnieuws.be/nl/rubriek/4797/feed");
-		feedDTOImpl.setTitle("BrusselNieuws RSS - Politiek");
 		final List<ArticleDTOImpl> articleDTOImpls=new ArrayList<ArticleDTOImpl>();
 		articleDTOImpls.add(ArticleDTOImplFactory.createNew());
-		feedDTOImpl.setArticleDTOs(articleDTOImpls);
-		return feedDTOImpl;
+		return new FeedDTOImpl.Builder().articleDTOs(articleDTOImpls)
+				.title("BrusselNieuws RSS - Politiek")
+				.link("http://www.brusselnieuws.be/nl/rubriek/4797/feed")
+				.description("").build();
 	}
 
 }

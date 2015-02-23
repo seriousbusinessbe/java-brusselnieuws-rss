@@ -24,10 +24,12 @@ public abstract class AbstractArticleDTOTest<MEDIUMTYPEDTO extends MediumTypeDTO
 											MEDIUMDTO extends MediumDTO<MEDIUMTYPEDTO>,
 											CATEGORYDTO extends CategoryDTO,
 											AUTHORDTO extends AuthorDTO,
-											ARTICLEDTO extends ArticleDTO<MEDIUMTYPEDTO,MEDIUMDTO,CATEGORYDTO,AUTHORDTO>> extends AbstractIdDTOTest<BigInteger,ARTICLEDTO> {
+											CREATORDTO extends CreatorDTO,
+											ARTICLEDTO extends ArticleDTO<MEDIUMTYPEDTO,MEDIUMDTO,CATEGORYDTO,AUTHORDTO,CREATORDTO>> extends AbstractIdDTOTest<BigInteger,ARTICLEDTO> {
 	private List<AUTHORDTO> authorDTOs;
 	private List<CATEGORYDTO> categoryDTOs;
 	private List<MEDIUMDTO> mediumDTOs;
+	private List<CREATORDTO> creatorDTOs;
 	private String description,link,title;
 	private long publicationDate;
 	private boolean archived,favorite,read;
@@ -46,13 +48,18 @@ public abstract class AbstractArticleDTOTest<MEDIUMTYPEDTO extends MediumTypeDTO
 	 * @param favorite <code>true</code> or <code>false</code>
 	 * @param read <code>true</code> or <code>false</code>
 	 */
-	public AbstractArticleDTOTest(final BigInteger id,final List<AUTHORDTO> authorDTOs,final List<CATEGORYDTO> categoryDTOs,final List<MEDIUMDTO> mediumDTOs,
+	public AbstractArticleDTOTest(final BigInteger id,
+			final List<AUTHORDTO> authorDTOs,
+			final List<CATEGORYDTO> categoryDTOs,
+			final List<MEDIUMDTO> mediumDTOs,
+			final List<CREATORDTO> creatorDTOs,
 			final String description,final String link,final String title,final long publicationDate,
 			final boolean archived,final boolean favorite,final boolean read) {
 		super(id);
 		this.authorDTOs=authorDTOs;
 		this.categoryDTOs=categoryDTOs;
 		this.mediumDTOs=mediumDTOs;
+		this.creatorDTOs=creatorDTOs;
 		this.description=description;
 		this.link=link;
 		this.title=title;
@@ -66,12 +73,6 @@ public abstract class AbstractArticleDTOTest<MEDIUMTYPEDTO extends MediumTypeDTO
 	@Override
 	public void test(){
 		super.test();
-		//assertNotNull("The set of AuthorDTO should not be null",getDTO().getAuthorDTOs());
-		//assertTrue("The set of AuthorDTO should be empty",getDTO().getAuthorDTOs().isEmpty());
-		//assertNotNull("The set of CategoryDTO should not be null",getDTO().getCategoryDTOs());
-		//assertTrue("The set of CategoryDTO should be empty",getDTO().getCategoryDTOs().isEmpty());
-		//assertNotNull("The set of MediumDTO should not be null",getDTO().getMediumDTOs());
-		//assertTrue("The set of MediumDTO should be empty",getDTO().getMediumDTOs().isEmpty());
 		assertNull("The description should be null",getDTO().getDescription());
 		assertNull("The link should be null",getDTO().getLink());
 		assertNull("The publication date should be null",getDTO().getPublicationDate());
@@ -86,6 +87,8 @@ public abstract class AbstractArticleDTOTest<MEDIUMTYPEDTO extends MediumTypeDTO
 	public void testGettersAndSetters(){
 		getDTO().setAuthorDTOs(authorDTOs);
 		assertEquals("The retrieved set of AuthorDTO is not equal to the one set",authorDTOs,getDTO().getAuthorDTOs());
+		getDTO().setCreatorDTOs(creatorDTOs);
+		assertEquals("The retrieved set of CreatorDTO is not equal to the one set",authorDTOs,getDTO().getCreatorDTOs());
 		getDTO().setCategoryDTOs(categoryDTOs);
 		assertEquals("The retrieved set of CategoryDTO is not equal to the one set",categoryDTOs,getDTO().getCategoryDTOs());
 		getDTO().setMediumDTOs(mediumDTOs);

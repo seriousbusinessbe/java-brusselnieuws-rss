@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.ArticleImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.AuthorImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.CategoryImpl;
+import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.CreatorImpl;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.impl.MediumImpl;
 
 public class ArticleImplFactory {
@@ -26,11 +27,15 @@ public class ArticleImplFactory {
 			categories.add(CategoryImplFactory.createStad());
 			final Collection<MediumImpl> media=new ArrayList<MediumImpl>();
 			media.add(MediumImplFactory.createJPEG());
+			final Collection<CreatorImpl> creators=new ArrayList<CreatorImpl>();
+			creators.add(CreatorImplFactory.createBrusselNieuws());
+			creators.add(CreatorImplFactory.createFMBrussel());
 			return new ArticleImpl.Builder().
 					id(BigInteger.valueOf(98472733l))
 					.archived(true)
 					.authors(authors)
 					.categories(categories)
+					.creators(creators)
 					.description("&lt;p&gt;27.500 gefietste kilometers en een karrenvracht fantastische verhalen: dat is het resultaat van de wereldreis die Quentin Jossen (28), Mélik Khiari (29) en Yvan Paquot (28) het afgelopen jaar hebben afgewerkt. Ze zamelden duizenden euro’s in voor het Nationaal Centrum voor Ontwikkelingssamenwerking en ontdekten hoe gastvrij de mens wel kan zijn.&lt;/p&gt;Tim Schoonjans  © Brussel Deze Week")
 					.favorite(false)
 					.link(new URL("http://www.brusselnieuws.be/nl/nieuws/drie-brusselaars-fietsen-wereld-rond-met-bike-meet-you"))
@@ -55,9 +60,13 @@ public class ArticleImplFactory {
 			categories.add(CategoryImplFactory.createNewStad());
 			final Collection<MediumImpl> media=new ArrayList<MediumImpl>();
 			media.add(MediumImplFactory.createNewJPEG());
+			final Collection<CreatorImpl> creators=new ArrayList<CreatorImpl>();
+			creators.add(CreatorImplFactory.createNewBrusselNieuws());
+			creators.add(CreatorImplFactory.createNewFMBrussel());
 			return new ArticleImpl.Builder().archived(true)
 					.authors(authors)
 					.categories(categories)
+					.creators(creators)
 					.description("&lt;p&gt;27.500 gefietste kilometers en een karrenvracht fantastische verhalen: dat is het resultaat van de wereldreis die Quentin Jossen (28), Mélik Khiari (29) en Yvan Paquot (28) het afgelopen jaar hebben afgewerkt. Ze zamelden duizenden euro’s in voor het Nationaal Centrum voor Ontwikkelingssamenwerking en ontdekten hoe gastvrij de mens wel kan zijn.&lt;/p&gt;Tim Schoonjans  © Brussel Deze Week")
 					.favorite(false)
 					.link(new URL("http://www.brusselnieuws.be/nl/nieuws/drie-brusselaars-fietsen-wereld-rond-met-bike-meet-you"))
@@ -84,11 +93,15 @@ public class ArticleImplFactory {
 			final Collection<MediumImpl> media=new ArrayList<MediumImpl>();
 			media.add(MediumImplFactory.createPNG());
 			media.add(MediumImplFactory.createJPEG());
+			final Collection<CreatorImpl> creators=new ArrayList<CreatorImpl>();
+			creators.add(CreatorImplFactory.createBrusselNieuws());
+			creators.add(CreatorImplFactory.createFMBrussel());
 			return new ArticleImpl.Builder().
 					id(BigInteger.valueOf(424344344l))
 					.archived(false)
 					.authors(authors)
 					.categories(categories)
+					.creators(creators)
 					.description("&lt;p&gt;Vlaams minister van Cultuur Sven Gatz (Open VLD) begrijpt de teleurstelling van de kunstencentra die niet door hem zijn voorgedragen als Kunstinstelling van de Vlaamse Gemeenschap. Volgens hem gaat het echter om “disproportionele emotionele reacties”.&lt;/p&gt;Eric Vancoppenolle © brusselnieuws.be")
 					.favorite(false)
 					.link(new URL("http://www.brusselnieuws.be/nl/nieuws/gatz-over-kaaitheater-emotionele-reactie-buiten-proportie"))
@@ -115,9 +128,13 @@ public class ArticleImplFactory {
 			final Collection<MediumImpl> media=new ArrayList<MediumImpl>();
 			media.add(MediumImplFactory.createNewPNG());
 			media.add(MediumImplFactory.createNewJPEG());
+			final Collection<CreatorImpl> creators=new ArrayList<CreatorImpl>();
+			creators.add(CreatorImplFactory.createNewBrusselNieuws());
+			creators.add(CreatorImplFactory.createNewFMBrussel());
 			return new ArticleImpl.Builder().archived(false)
 					.authors(authors)
 					.categories(categories)
+					.creators(creators)
 					.description("&lt;p&gt;Vlaams minister van Cultuur Sven Gatz (Open VLD) begrijpt de teleurstelling van de kunstencentra die niet door hem zijn voorgedragen als Kunstinstelling van de Vlaamse Gemeenschap. Volgens hem gaat het echter om “disproportionele emotionele reacties”.&lt;/p&gt;Eric Vancoppenolle © brusselnieuws.be")
 					.favorite(false)
 					.link(new URL("http://www.brusselnieuws.be/nl/nieuws/gatz-over-kaaitheater-emotionele-reactie-buiten-proportie"))

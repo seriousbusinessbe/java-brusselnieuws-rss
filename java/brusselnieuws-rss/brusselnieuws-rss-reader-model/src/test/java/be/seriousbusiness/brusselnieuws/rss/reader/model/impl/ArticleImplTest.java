@@ -51,6 +51,13 @@ public class ArticleImplTest {
 			break;
 		}
 		Assert.assertNotEquals("The clone should not be equal to the one it's cloned from after altering it",articleImpl,clonedArticleImpl);
+		// CreatorImpl:
+		clonedArticleImpl=(ArticleImpl) articleImpl.clone();
+		for(final CreatorImpl creatorImpl : clonedArticleImpl.getCreators()) {
+			creatorImpl.setName(String.valueOf(System.currentTimeMillis()));
+			break;
+		}
+		Assert.assertNotEquals("The clone should not be equal to the one it's cloned from after altering it",articleImpl,clonedArticleImpl);
 	}
 	
 	/**

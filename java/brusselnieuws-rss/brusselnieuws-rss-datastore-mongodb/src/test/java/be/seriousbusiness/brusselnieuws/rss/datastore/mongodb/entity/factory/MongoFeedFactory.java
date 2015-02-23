@@ -14,15 +14,13 @@ public class MongoFeedFactory {
 	 * @return
 	 */
 	public static final MongoFeed createMongoFeedSamenleving(){
-		final MongoFeed feed=new MongoFeed();
-		feed.setId(BigInteger.valueOf(44524253262634l));
-		feed.setDescription("");
-		feed.setLink("http://www.brusselnieuws.be/nl/rubriek/4795/feed");
-		feed.setTitle("BrusselNieuws RSS - Samenleving");
-		final List<MongoArticle> articles=new ArrayList<MongoArticle>();
-		articles.add(MongoArticleFactory.createMongoArticleEbola());
-		feed.setArticleDTOs(articles);
-		return feed;
+		final List<MongoArticle> mongoArticles=new ArrayList<MongoArticle>();
+		mongoArticles.add(MongoArticleFactory.createMongoArticleEbola());
+		return new MongoFeed.Builder().id(BigInteger.valueOf(44524253262634l))
+				.description("")
+				.link("http://www.brusselnieuws.be/nl/rubriek/4795/feed")
+				.title("BrusselNieuws RSS - Samenleving")
+				.articleDTOs(mongoArticles).build();
 	}
 
 }

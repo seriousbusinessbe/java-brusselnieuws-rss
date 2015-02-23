@@ -2,6 +2,8 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl;
 
 import java.math.BigInteger;
 
+import org.dozer.Mapper;
+
 import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AuthorDTO;
 
@@ -14,6 +16,36 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AuthorDTO;
  */
 public class AuthorDTOImpl extends AbstractIdDTOImpl<BigInteger> implements AuthorDTO  {
 	private String name;
+	
+	/**
+	 * Constructor solely used for {@link Mapper} functionality.
+	 */
+	private AuthorDTOImpl(){}
+	
+	private AuthorDTOImpl(final Builder builder) throws IllegalArgumentException{
+		setId(builder.id);
+		setName(builder.name);
+	}
+	
+	public static class Builder{
+		private BigInteger id;
+		private String name;
+		
+		public AuthorDTOImpl build() throws IllegalArgumentException{
+			return new AuthorDTOImpl(this);
+		}
+		
+		public Builder id(final BigInteger id){
+			this.id=id;
+			return this;
+		}
+		
+		public Builder name(final String name){
+			this.name=name;
+			return this;
+		}
+		
+	}
 
 	@Override
 	public String getName() {
@@ -43,10 +75,7 @@ public class AuthorDTOImpl extends AbstractIdDTOImpl<BigInteger> implements Auth
 	
 	@Override
 	public Object clone() {
-		final AuthorDTOImpl authorDTOImpl=new AuthorDTOImpl();
-		authorDTOImpl.setId(id);
-		authorDTOImpl.setName(name);
-		return authorDTOImpl;
+		return new Builder().id(id).name(name).build();
 	}
 
 }

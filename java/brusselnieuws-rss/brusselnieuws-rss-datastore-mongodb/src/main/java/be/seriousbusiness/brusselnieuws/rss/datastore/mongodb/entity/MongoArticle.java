@@ -1,11 +1,12 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity;
 
 import java.math.BigInteger;
-
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.dozer.Mapper;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -24,7 +25,7 @@ import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.util.Entity
  * @see Spring-data mongodb reference: <a href="http://docs.spring.io/spring-data/mongodb/docs/current/reference/">http://docs.spring.io/spring-data/mongodb/docs/current/reference/</a>
  */
 @Document(collection="article")
-public class MongoArticle implements ArticleDTO<MongoMediumType,MongoMedium,MongoCategory,MongoAuthor> {
+public class MongoArticle implements ArticleDTO<MongoMediumType,MongoMedium,MongoCategory,MongoAuthor,MongoCreator> {
 	@Id
 	private BigInteger id;
 	@Field("title")
@@ -47,6 +48,104 @@ public class MongoArticle implements ArticleDTO<MongoMediumType,MongoMedium,Mong
 	private Collection<MongoCategory> mongoCategories;
 	@DBRef
 	private Collection<MongoAuthor> mongoAuthors;
+	@DBRef
+	private Collection<MongoCreator> mongoCreators;
+	
+	/**
+	 * Constructor solely used for {@link Mapper} functionality.
+	 */
+	private MongoArticle(){}
+	
+	private MongoArticle(final Builder builder) throws IllegalArgumentException{
+		setId(builder.id);
+		setTitle(builder.title);
+		setLink(builder.link);
+		setDescription(builder.description);
+		setPublicationDate(builder.publicationDate);
+		setRead(builder.read);
+		setArchived(builder.archived);
+		setFavorite(builder.favorite);
+		setMediumDTOs(builder.mongoMediums);
+		setCategoryDTOs(builder.mongoCategories);
+		setAuthorDTOs(builder.mongoAuthors);
+		setCreatorDTOs(builder.mongoCreators);
+	}
+	
+	public static class Builder{
+		private BigInteger id;
+		private String title,link,description;
+		private Long publicationDate;
+		private Boolean read,archived,favorite;
+		private Collection<MongoMedium> mongoMediums=new ArrayList<MongoMedium>();
+		private Collection<MongoCategory> mongoCategories=new ArrayList<MongoCategory>();
+		private Collection<MongoAuthor> mongoAuthors=new ArrayList<MongoAuthor>();
+		private Collection<MongoCreator> mongoCreators=new ArrayList<MongoCreator>();
+		
+		public MongoArticle build() throws IllegalArgumentException{
+			return new MongoArticle(this);
+		}
+		
+		public Builder id(final BigInteger id){
+			this.id=id;
+			return this;
+		}
+		
+		public Builder title(final String title){
+			this.title=title;
+			return this;
+		}
+		
+		public Builder link(final String link) {
+			this.link=link;
+			return this;
+		}
+		
+		public Builder description(final String description) {
+			this.description=description;
+			return this;
+		}
+		
+		public Builder publicationDate(final Long publicationDate) {
+			this.publicationDate=publicationDate;
+			return this;
+		}
+		
+		public Builder read(final Boolean read) {
+			this.read=read;
+			return this;
+		}
+		
+		public Builder archived(final Boolean archived) {
+			this.archived=archived;
+			return this;
+		}
+		
+		public Builder favorite(final Boolean favorite) {
+			this.favorite=favorite;
+			return this;
+		}
+				
+		public Builder mediumDTOs(final Collection<MongoMedium> mongoMediums) {
+			this.mongoMediums=mongoMediums;
+			return this;
+		}
+		
+		public Builder categoryDTOs(final Collection<MongoCategory> mongoCategories) {
+			this.mongoCategories=mongoCategories;
+			return this;
+		}
+		
+		public Builder authorDTOs(final Collection<MongoAuthor> mongoAuthors) {
+			this.mongoAuthors=mongoAuthors;
+			return this;
+		}
+		
+		public Builder creatorDTOs(final Collection<MongoCreator> mongoCreators) {
+			this.mongoCreators=mongoCreators;
+			return this;
+		}
+		
+	}
 
 	@Override
 	public BigInteger getId() {
@@ -195,6 +294,23 @@ public class MongoArticle implements ArticleDTO<MongoMediumType,MongoMedium,Mong
 	}
 	
 	@Override
+	public Collection<MongoCreator> getCreatorDTOs() {
+		return mongoCreators;
+	}
+
+	@Override
+	public void setCreatorDTOs(final Collection<MongoCreator> mongoCreators) {
+		this.mongoCreators=mongoCreators;
+	}
+	
+	@Override
+	public void add(final MongoCreator mongoCreator) {
+		if(mongoCreator!=null && !mongoCreators.contains(mongoCreator)) {
+			mongoCreators.add(mongoCreator);
+		}
+	}
+	
+	@Override
 	public boolean equals(final Object obj){
 		return obj!=null && obj instanceof MongoArticle && 
 				ObjectUtil.isNullOrEqual(title,((MongoArticle)obj).title) &&
@@ -206,7 +322,8 @@ public class MongoArticle implements ArticleDTO<MongoMediumType,MongoMedium,Mong
 				ObjectUtil.isNullOrEqual(favorite,((MongoArticle)obj).favorite) &&
 				ObjectUtil.isNullOrEqual(mongoMediums,((MongoArticle)obj).mongoMediums) &&
 				ObjectUtil.isNullOrEqual(mongoCategories,((MongoArticle)obj).mongoCategories) &&
-				ObjectUtil.isNullOrEqual(mongoAuthors,((MongoArticle)obj).mongoAuthors);
+				ObjectUtil.isNullOrEqual(mongoAuthors,((MongoArticle)obj).mongoAuthors) &&
+				ObjectUtil.isNullOrEqual(mongoCreators,((MongoArticle)obj).mongoCreators);
 	}
 	
 	@Override
@@ -221,7 +338,8 @@ public class MongoArticle implements ArticleDTO<MongoMediumType,MongoMedium,Mong
 				ObjectUtil.hashCode(favorite) *
 				ObjectUtil.hashCode(mongoMediums) *
 				ObjectUtil.hashCode(mongoCategories) *
-				ObjectUtil.hashCode(mongoAuthors);
+				ObjectUtil.hashCode(mongoAuthors) *
+				ObjectUtil.hashCode(mongoCreators);
 	}
 	
 	@Override
@@ -238,6 +356,7 @@ public class MongoArticle implements ArticleDTO<MongoMediumType,MongoMedium,Mong
 		fields.put("mediums",mongoMediums);
 		fields.put("categories",mongoCategories);
 		fields.put("authors",mongoAuthors);
+		fields.put("creators",mongoCreators);
 		return EntityUtil.stringBuilder("mongoArticle", fields);
 	}
 

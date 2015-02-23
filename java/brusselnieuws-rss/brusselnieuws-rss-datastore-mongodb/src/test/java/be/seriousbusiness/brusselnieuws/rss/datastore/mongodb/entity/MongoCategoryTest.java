@@ -12,7 +12,7 @@ public class MongoCategoryTest extends AbstractCategoryDTOTest<MongoCategory> {
 
 	@Override
 	public MongoCategory create() {
-		return new MongoCategory();
+		return new MongoCategory.Builder().build();
 	}
 
 }

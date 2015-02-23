@@ -12,7 +12,7 @@ public class MongoMediumTypeTest extends AbstractMediumTypeDTOTest<MongoMediumTy
 
 	@Override
 	public MongoMediumType create() {
-		return new MongoMediumType();
+		return new MongoMediumType.Builder().build();
 	}
 
 }
