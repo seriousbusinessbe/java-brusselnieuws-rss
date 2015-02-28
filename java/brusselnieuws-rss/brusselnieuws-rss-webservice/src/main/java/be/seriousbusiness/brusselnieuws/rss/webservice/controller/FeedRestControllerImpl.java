@@ -84,10 +84,7 @@ public class FeedRestControllerImpl<MEDIUMTYPE extends MediumType,
 			   try {
 				   LOGGER.debug("STARTED scheduled update of feed '{}'",feedMetaEnum.getTranslatedName());
 				   final long startFeed=System.currentTimeMillis();
-				   final FEED feed=FEEDS_MAP.containsKey(feedMetaEnum) ?
-						brusselNieuwsRss.update(FEEDS_MAP.get(feedMetaEnum)) : 
-						FeedUtil.getFeed(feedMetaEnum, brusselNieuwsRss);
-						FEEDS_MAP.put(feedMetaEnum,feed);
+				   FEEDS_MAP.put(feedMetaEnum,brusselNieuwsRss.update(FeedUtil.getFeed(feedMetaEnum,brusselNieuwsRss)));
 				   final long stopFeed=System.currentTimeMillis();
 				   LOGGER.debug("FINISHED scheduled update of feed '{}' in {} {}",feedMetaEnum.getTranslatedName(),SimpleDateFormatUtil.format(stopFeed-startFeed),SimpleDateFormatUtil.isLessThanMinute(stopFeed-startFeed) ? "seconds" : "minute(s)");
 			   }catch(final Throwable t) {

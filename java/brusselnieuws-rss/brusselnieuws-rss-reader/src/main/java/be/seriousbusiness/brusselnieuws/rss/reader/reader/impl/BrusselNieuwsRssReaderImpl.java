@@ -85,13 +85,6 @@ public class BrusselNieuwsRssReaderImpl implements BrusselNieuwsRssReader<FeedIm
 								authors.add(author);
 							}
 						}
-						// Add copyright owner as author:
-						/*
-						final String copyright=((description).split("\u00A9",2))[1];
-						if(copyright!=null) {
-							authors.add(new AuthorImpl.Builder().name(copyright.trim()).build() );
-						}
-						*/
 						// Add categories:
 						final Collection<CategoryImpl> categories=new HashSet<CategoryImpl>();
 						@SuppressWarnings("unchecked")

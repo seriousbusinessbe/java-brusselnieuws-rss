@@ -1,0 +1,7 @@
+24/02/15 00:54:55 INFO  AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@35849ef8: startup date [Mon Feb 23 23:04:46 CET 2015]; root of context hierarchy
+24/02/15 00:54:55 INFO  DefaultLifecycleProcessor - Stopping beans in phase 0
+24/02/15 00:54:55 INFO  EndpointMBeanExporter - Unregistering JMX-exposed beans on shutdown
+24/02/15 00:54:55 INFO  EndpointMBeanExporter - Unregistering JMX-exposed beans
+24/02/15 00:54:55 INFO  AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+24/02/15 00:54:55 INFO  ThreadPoolTaskScheduler - Shutting down ExecutorService 'scheduler'
+24/02/15 00:54:55 INFO  ThreadPoolTaskExecutor - Shutting down ExecutorService

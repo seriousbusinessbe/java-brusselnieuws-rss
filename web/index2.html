@@ -28,14 +28,16 @@
 					<a href="{{feedController.feedResponse.link}}" target="_blank">{{feedController.feedResponse.title}}</a>
 					<div class="media" ng-repeat="article in feedController.feedResponse.articles">
 						<div class="media-left">
-							<img class="media-object" ng-src="{{article.media[0].link}}" style="width:200px;">
+							<a href="{{article.link}}" target="_blank">
+								<img class="media-object" ng-src="{{article.media[0].link}}" style="width:200px;">
+							</a>
 						</div>
 						<div class="media-body">
 							<h6>
 						    	<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
 						    	{{article.publicationDate | date:'HH:mm - dd/MM/yy'}}
 						    </h6>
-						    <h4 class="media-heading">{{article.title}}</h4>
+						    <h4 class="media-heading"><a href="{{article.link}}" target="_blank">{{article.title}}</a></h4>
 						    <p>{{article.description}}</p>
 						    <ul class="list-inline" style="list-style-type:none">
 						    	<li>
@@ -62,7 +64,6 @@
 								</li>
 							</ul>
 						</div>
-
 					</div>
 <!--
 					<div class="row">
