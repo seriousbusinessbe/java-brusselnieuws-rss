@@ -1,6 +1,10 @@
 package be.seriousbusiness.brusselnieuws.rss.reader.model.impl;
 
-import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Id;
 
 public abstract class AbstractIdImpl<ID> implements Id<ID> {
@@ -18,14 +22,23 @@ public abstract class AbstractIdImpl<ID> implements Id<ID> {
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public boolean equals(final Object obj){
-		return obj!=null && obj instanceof AbstractIdImpl && 
-				ObjectUtil.isNullOrEqual(id,((AbstractIdImpl<ID>)obj).id);
+	public boolean equals(final Object obj) {
+		if (obj == null) { return false; }
+		if (obj == this) { return true; }
+		if (obj.getClass() != getClass()) {
+			return false;
+		}
+		return new EqualsBuilder().append(id,((AbstractIdImpl<ID>) obj).getId()).isEquals();
 	}
 	
 	@Override
-	public int hashCode(){
-		return ObjectUtil.hashCode(id);
+	public int hashCode() {
+		return new HashCodeBuilder(73,13).append(id).toHashCode();
+	}
+	
+	@Override
+	public String toString() {
+		return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE).append("id",id).toString();
 	}
 
 }

@@ -2,9 +2,11 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl;
 
 import java.math.BigInteger;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.dozer.Mapper;
 
-import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AuthorDTO;
 
 /**
@@ -58,24 +60,32 @@ public class AuthorDTOImpl extends AbstractIdDTOImpl<BigInteger> implements Auth
 	}
 	
 	@Override
-	public boolean equals(final Object obj){
-		return obj!=null && obj instanceof AuthorDTOImpl && super.equals(obj) &&
-				ObjectUtil.isNullOrEqual(name,((AuthorDTOImpl)obj).name);
-	}
-	
-	@Override
-	public int hashCode(){
-		return super.hashCode() * ObjectUtil.hashCode(name);
-	}
-	
-	@Override
-	public String toString(){
-		return ObjectUtil.toString(this);
-	}
-	
-	@Override
 	public Object clone() {
 		return new Builder().id(id).name(name).build();
+	}
+	
+	@Override
+	public boolean equals(final Object obj) {
+		if (obj == null) { return false; }
+		if (obj == this) { return true; }
+		if (obj.getClass() != getClass()) {
+			return false;
+		}
+		final AuthorDTOImpl authorDTOImpl = (AuthorDTOImpl) obj;
+		return new EqualsBuilder()
+				.appendSuper(super.equals(obj))
+				.append(name,authorDTOImpl.getName())
+                .isEquals();
+	}
+	
+	@Override
+	public int hashCode() {
+		return new HashCodeBuilder(67,21).appendSuper(super.hashCode()).append(name).toHashCode();
+	}
+	
+	@Override
+	public String toString() {
+		return new ToStringBuilder(this).appendSuper(super.toString()).append("name",name).toString();
 	}
 
 }

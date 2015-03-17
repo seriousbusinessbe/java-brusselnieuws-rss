@@ -1,18 +1,17 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity;
 
 import java.math.BigInteger;
-import java.util.HashMap;
-import java.util.Map;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.dozer.Mapper;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.AuthorDTO;
-import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.util.EntityUtil;
 
 /**
  * Spring-data {@link MongoAuthor} entity.
@@ -81,23 +80,24 @@ public class MongoAuthor implements AuthorDTO {
 	}
 	
 	@Override
-	public boolean equals(final Object obj){
-		return obj!=null && obj instanceof MongoAuthor && 
-				ObjectUtil.isNullOrEqual(id,((MongoAuthor)obj).id) &&
-				ObjectUtil.isNullOrEqual(name,((MongoAuthor)obj).name);
+	public boolean equals(final Object obj) {
+		if (obj == null) { return false; }
+		if (obj == this) { return true; }
+		if (obj.getClass() != getClass()) {
+			return false;
+		}
+		final MongoAuthor mongoAuthor = (MongoAuthor) obj;
+		return new EqualsBuilder().append(id,mongoAuthor.getId()).append(name,mongoAuthor.getName()).isEquals();
 	}
 	
 	@Override
-	public int hashCode(){
-		return ObjectUtil.hashCode(id) * ObjectUtil.hashCode(name);
+	public int hashCode() {
+		return new HashCodeBuilder(37,43).append(id).append(name).toHashCode();
 	}
 	
 	@Override
-	public String toString(){
-		final Map<String,Object> fields=new HashMap<String,Object>();
-		fields.put("id",id);
-		fields.put("name",name);
-		return EntityUtil.stringBuilder("mongoAuthor", fields);
+	public String toString() {
+		return new ToStringBuilder(this).append(id).append(name).toString();
 	}
 
 }

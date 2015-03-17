@@ -2,6 +2,7 @@ package be.seriousbusiness.brusselnieuws.rss.reader.reader.impl;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.SocketException;
 import java.net.URL;
 import java.util.Collection;
 import java.util.HashSet;
@@ -148,15 +149,19 @@ public class BrusselNieuwsRssReaderImpl implements BrusselNieuwsRssReader<FeedIm
 								read(false).
 								title(syndEntry.getTitle()).build();
 							feed.add(article);
-						}catch(final MalformedURLException e){
+						} catch(final MalformedURLException e){
 							LOGGER.error("The article's link is incorrect",e);
-						}					
+						} catch(final IllegalArgumentException e) {
+							LOGGER.error("Article '{}' from feed '{}' could not be created",syndEntry.getTitle(),link.toString(),e);
+						}
 					}
 				}
 			} catch (final IllegalArgumentException e) {
-				LOGGER.error("Feed type '{}' could not be understood by the parsers",link.toString(),e);
+				LOGGER.error("Feed '{}' could not be understood by the parsers",link.toString(),e);
 			} catch (final FeedException e) {
 				LOGGER.error("Feed '{}' could not be parsed",link.toString(),e);
+			} catch (final SocketException e) {
+				LOGGER.error("Feed '{}' could not be read, possible due to connection problems",link.toString(),e);
 			} catch (final IOException e) {
 				LOGGER.error("URL stream '{}' could not be read",link.toString(),e);
 			}

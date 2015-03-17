@@ -1,0 +1,12 @@
+16/03/15 23:40:40 DEBUG ObjectUtilTest - TestObject [publicStringField='Public String field value',
+privateStringField='Private String field value',
+publicPrimitiveBooleanField=false,
+privatePrimitiveBooleanField=true]
+16/03/15 23:46:56 DEBUG ObjectUtilTest - TestObject [publicStringField='Public String field value',
+privateStringField='Private String field value',
+publicPrimitiveBooleanField=false,
+privatePrimitiveBooleanField=true]
+16/03/15 23:51:34 DEBUG ObjectUtilTest - TestObject [publicStringField='Public String field value',
+privateStringField='Private String field value',
+publicPrimitiveBooleanField=false,
+privatePrimitiveBooleanField=true]

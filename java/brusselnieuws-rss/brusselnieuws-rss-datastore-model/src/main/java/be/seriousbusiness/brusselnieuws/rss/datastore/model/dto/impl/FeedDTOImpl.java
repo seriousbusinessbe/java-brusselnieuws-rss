@@ -4,9 +4,12 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.dozer.Mapper;
 
-import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
+import be.seriousbusiness.brusselnieuws.rss.common.util.CollectionsUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.FeedDTO;
 
 /**
@@ -117,35 +120,50 @@ public class FeedDTOImpl extends AbstractIdDTOImpl<BigInteger> implements FeedDT
 	}
 	
 	@Override
-	public boolean equals(final Object obj){
-		return obj!=null && obj instanceof FeedDTOImpl && super.equals(obj) &&
-				ObjectUtil.isNullOrEqual(title,((FeedDTOImpl)obj).title) &&
-				ObjectUtil.isNullOrEqual(link,((FeedDTOImpl)obj).link) &&
-				ObjectUtil.isNullOrEqual(description,((FeedDTOImpl)obj).description) &&
-				ObjectUtil.isNullOrEqual(articleDTOImpls,((FeedDTOImpl)obj).articleDTOImpls);
-	}
-	
-	@Override
-	public int hashCode(){
-		return super.hashCode() * 
-				ObjectUtil.hashCode(title) * 
-				ObjectUtil.hashCode(link) *
-				ObjectUtil.hashCode(description) *
-				ObjectUtil.hashCode(articleDTOImpls);
-	}
-	
-	@Override
-	public String toString(){
-		return ObjectUtil.toString(this);
-	}
-	
-	@Override
 	public Object clone() {
 		final Collection<ArticleDTOImpl> clonedArticleDTOImpls=new ArrayList<ArticleDTOImpl>();
 		for(final ArticleDTOImpl articleDTOImpl : articleDTOImpls) {
 			clonedArticleDTOImpls.add((ArticleDTOImpl)articleDTOImpl.clone());
 		}
 		return new Builder().id(id).description(description).link(link).title(title).articleDTOs(clonedArticleDTOImpls).build();
+	}
+	
+	@Override
+	public boolean equals(final Object obj) {
+		if (obj == null) { return false; }
+		if (obj == this) { return true; }
+		if (obj.getClass() != getClass()) {
+			return false;
+		}
+		final FeedDTOImpl feedDTOImpl = (FeedDTOImpl) obj;
+		return new EqualsBuilder()
+				.appendSuper(super.equals(obj))
+				.append(title,feedDTOImpl.getTitle())
+				.append(link,feedDTOImpl.getLink())
+				.append(description,feedDTOImpl.getDescription())
+                .isEquals()
+                && CollectionsUtil.equals(articleDTOImpls,feedDTOImpl.getArticleDTOs());
+	}
+	
+	@Override
+	public int hashCode() {
+		return new HashCodeBuilder(33,63)
+			   .appendSuper(super.hashCode())
+		       .append(title)
+		       .append(link)
+		       .append(description)
+		       .append(articleDTOImpls)
+		       .toHashCode();
+	}
+	
+	@Override
+	public String toString() {
+		return new ToStringBuilder(this)
+				.appendSuper(super.toString())
+			    .append("title",title)
+			    .append("description",description)
+			    .append("articleDTOImpls",articleDTOImpls)
+				.toString();
 	}
 
 }

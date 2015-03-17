@@ -2,16 +2,22 @@ package be.seriousbusiness.brusselnieuws.rss.reader.model.impl;
 
 import java.math.BigInteger;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 import org.dozer.Mapper;
 import org.joda.time.DateTime;
 
-import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
+import be.seriousbusiness.brusselnieuws.rss.common.util.CollectionsUtil;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Article;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Author;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Category;
@@ -32,6 +38,7 @@ public class ArticleImpl extends AbstractIdImpl<BigInteger> implements Article<M
 	private boolean read=false;
 	private boolean archived=false;
 	private boolean favorite=false;
+	private static final SimpleDateFormat SIMPLE_DATE_FORMAT=new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 	private static final Comparator<Author> AUTHOR_COMPARATOR=new AuthorNameComparator(); 
 	private static final Comparator<Category> CATEGORY_COMPARATOR=new CategoryNameComparator();
 	private static final Comparator<Creator> CREATOR_COMPARATOR=new CreatorNameComparator();
@@ -317,10 +324,14 @@ public class ArticleImpl extends AbstractIdImpl<BigInteger> implements Article<M
 	}
 
 	@Override
-	public void setPublicationDate(DateTime publicationDate)
+	public void setPublicationDate(final DateTime publicationDate)
 			throws IllegalArgumentException {
-		if(publicationDate==null || publicationDate.isAfterNow()){
-			throw new IllegalArgumentException("The publication date is null or in the future");
+		if(publicationDate==null){
+			throw new IllegalArgumentException("The publication date is null");
+		}else if(publicationDate.isAfterNow()) {
+			final String simplePublicationDate=SIMPLE_DATE_FORMAT.format(publicationDate.toDate());
+			final String simpleNow=SIMPLE_DATE_FORMAT.format(new Date());
+			throw new IllegalArgumentException("The publication date '"+simplePublicationDate+"' is in the future (now : '"+simpleNow+"')") ;
 		}
 		this.publicationDate=publicationDate;
 	}
@@ -371,39 +382,60 @@ public class ArticleImpl extends AbstractIdImpl<BigInteger> implements Article<M
 	}
 	
 	@Override
-	public boolean equals(final Object obj){
-		return obj!=null && obj instanceof ArticleImpl && 
-				ObjectUtil.isNullOrEqual(title,((ArticleImpl)obj).title) &&
-				ObjectUtil.isNullOrEqual(link,((ArticleImpl)obj).link) &&
-				ObjectUtil.isNullOrEqual(description,((ArticleImpl)obj).description) &&
-				ObjectUtil.isNullOrEqual(publicationDate,((ArticleImpl)obj).publicationDate) &&
-				ObjectUtil.isNullOrEqual(read,((ArticleImpl)obj).read) &&
-				ObjectUtil.isNullOrEqual(archived,((ArticleImpl)obj).archived) &&
-				ObjectUtil.isNullOrEqual(favorite,((ArticleImpl)obj).favorite) &&
-				ObjectUtil.isNullOrEqual(media,((ArticleImpl)obj).media) &&
-				ObjectUtil.isNullOrEqual(categories,((ArticleImpl)obj).categories) &&
-				ObjectUtil.isNullOrEqual(authors,((ArticleImpl)obj).authors) &&
-				ObjectUtil.isNullOrEqual(creators,((ArticleImpl)obj).creators);
+	public boolean equals(final Object obj) {
+		if (obj == null) { return false; }
+		if (obj == this) { return true; }
+		if (obj.getClass() != getClass()) {
+			return false;
+		}
+		final ArticleImpl articleImpl = (ArticleImpl) obj;
+		return new EqualsBuilder()
+				.append(title,articleImpl.getTitle())
+				.append(link,articleImpl.getLink())
+				.append(description,articleImpl.getDescription())
+				.append(publicationDate,articleImpl.getPublicationDate())
+				.append(read,articleImpl.isRead())
+				.append(archived,articleImpl.isArchived())
+				.append(favorite,articleImpl.isFavorite())
+                .isEquals() 
+                && CollectionsUtil.equals(media,articleImpl.getMedia())
+                && CollectionsUtil.equals(categories,articleImpl.getCategories())
+                && CollectionsUtil.equals(authors,articleImpl.getAuthors())
+                && CollectionsUtil.equals(creators,articleImpl.getCreators());		
 	}
 	
 	@Override
-	public int hashCode(){
-		return ObjectUtil.hashCode(title) * 
-				ObjectUtil.hashCode(link) *
-				ObjectUtil.hashCode(description) *
-				ObjectUtil.hashCode(publicationDate) *
-				ObjectUtil.hashCode(read) *
-				ObjectUtil.hashCode(archived) *
-				ObjectUtil.hashCode(favorite) *
-				ObjectUtil.hashCode(media) *
-				ObjectUtil.hashCode(categories) *
-				ObjectUtil.hashCode(authors) *
-				ObjectUtil.hashCode(creators);
+	public int hashCode() {
+		return new HashCodeBuilder(57,53)
+		       .append(title)
+		       .append(link)
+		       .append(description)
+		       .append(publicationDate)
+		       .append(read)
+		       .append(archived)
+		       .append(favorite)
+		       .append(media)
+		       .append(categories)
+		       .append(authors)
+		       .append(creators)
+		       .toHashCode();
 	}
 	
 	@Override
-	public String toString(){
-		return ObjectUtil.toString(this);
+	public String toString() {
+		return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)
+			    .append("title",title)
+		        .append("link",link)
+		        .append("description",description)
+		        .append("publicationDate",publicationDate)
+		        .append("read",read)
+		        .append("archived",archived)
+		        .append("favorite",favorite)
+		        .append("media",media)
+		        .append("categories",categories)
+		        .append("authors",authors)
+		        .append("creators",creators)
+				.toString();
 	}
 	
 	@Override

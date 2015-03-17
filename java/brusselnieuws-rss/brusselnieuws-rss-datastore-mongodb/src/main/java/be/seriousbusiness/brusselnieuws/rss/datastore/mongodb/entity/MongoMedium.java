@@ -1,17 +1,15 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.dozer.Mapper;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.MediumDTO;
-import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.util.EntityUtil;
 
 /**
  * Spring-data {@link MongoMedium} entity.
@@ -98,27 +96,24 @@ public class MongoMedium implements MediumDTO<MongoMediumType> {
 	}
 	
 	@Override
-	public boolean equals(final Object obj){
-		return obj!=null && obj instanceof MongoMedium && 
-				ObjectUtil.isNullOrEqual(link,((MongoMedium)obj).link) &&
-				ObjectUtil.isNullOrEqual(size,((MongoMedium)obj).size) &&
-				ObjectUtil.isNullOrEqual(mongoMediumType,((MongoMedium)obj).mongoMediumType);
+	public boolean equals(final Object obj) {
+		if (obj == null) { return false; }
+		if (obj == this) { return true; }
+		if (obj.getClass() != getClass()) {
+			return false;
+		}
+		final MongoMedium mongoMedium = (MongoMedium) obj;
+		return new EqualsBuilder().append(link,mongoMedium.getLink()).append(mongoMediumType,mongoMedium.getMediumTypeDTO()).append(size,mongoMedium.getSize()).isEquals();
 	}
 	
 	@Override
-	public int hashCode(){
-		return ObjectUtil.hashCode(link) *
-				ObjectUtil.hashCode(size) *
-				ObjectUtil.hashCode(mongoMediumType);
+	public int hashCode() {
+		return new HashCodeBuilder(37,43).append(link).append(mongoMediumType).append(size).toHashCode();
 	}
 	
 	@Override
-	public String toString(){
-		final Map<String,Object> fields=new HashMap<String,Object>();
-		fields.put("link",link);
-		fields.put("mediumType",mongoMediumType);
-		fields.put("size",size);
-		return EntityUtil.stringBuilder("mongoMedium", fields);
+	public String toString() {
+		return new ToStringBuilder(this).append("id",link).append("mongoMediumType",mongoMediumType).append("size",size).toString();
 	}
 
 }

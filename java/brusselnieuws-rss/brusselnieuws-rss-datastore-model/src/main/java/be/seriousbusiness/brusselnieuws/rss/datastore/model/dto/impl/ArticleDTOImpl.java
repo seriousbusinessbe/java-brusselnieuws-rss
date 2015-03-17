@@ -4,9 +4,12 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.dozer.Mapper;
 
-import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
+import be.seriousbusiness.brusselnieuws.rss.common.util.CollectionsUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.ArticleDTO;
 
 /**
@@ -273,43 +276,6 @@ public class ArticleDTOImpl extends AbstractIdDTOImpl<BigInteger> implements Art
 			creatorDTOImpls.add(creatorDTOImpl);
 		}
 	}
-			
-	@Override
-	public boolean equals(final Object obj){
-		return obj!=null && obj instanceof ArticleDTOImpl && super.equals(obj) &&
-				ObjectUtil.isNullOrEqual(title,((ArticleDTOImpl)obj).title) &&
-				ObjectUtil.isNullOrEqual(link,((ArticleDTOImpl)obj).link) &&
-				ObjectUtil.isNullOrEqual(description,((ArticleDTOImpl)obj).description) &&
-				ObjectUtil.isNullOrEqual(publicationDate,((ArticleDTOImpl)obj).publicationDate) &&
-				ObjectUtil.isNullOrEqual(read,((ArticleDTOImpl)obj).read) &&
-				ObjectUtil.isNullOrEqual(archived,((ArticleDTOImpl)obj).archived) &&
-				ObjectUtil.isNullOrEqual(favorite,((ArticleDTOImpl)obj).favorite) &&
-				ObjectUtil.isNullOrEqual(mediumDTOImpls,((ArticleDTOImpl)obj).mediumDTOImpls) &&
-				ObjectUtil.isNullOrEqual(categoryDTOImpls,((ArticleDTOImpl)obj).categoryDTOImpls) &&
-				ObjectUtil.isNullOrEqual(authorDTOImpls,((ArticleDTOImpl)obj).authorDTOImpls) &&
-				ObjectUtil.isNullOrEqual(creatorDTOImpls,((ArticleDTOImpl)obj).creatorDTOImpls);
-	}
-	
-	@Override
-	public int hashCode(){
-		return super.hashCode() * 
-				ObjectUtil.hashCode(title) * 
-				ObjectUtil.hashCode(link) *
-				ObjectUtil.hashCode(description) *
-				ObjectUtil.hashCode(publicationDate) *
-				ObjectUtil.hashCode(read) *
-				ObjectUtil.hashCode(archived) *
-				ObjectUtil.hashCode(favorite) *
-				ObjectUtil.hashCode(mediumDTOImpls) *
-				ObjectUtil.hashCode(categoryDTOImpls) *
-				ObjectUtil.hashCode(authorDTOImpls) *
-				ObjectUtil.hashCode(creatorDTOImpls);
-	}
-	
-	@Override
-	public String toString(){
-		return ObjectUtil.toString(this);
-	}
 	
 	@Override
 	public Object clone() {
@@ -333,6 +299,66 @@ public class ArticleDTOImpl extends AbstractIdDTOImpl<BigInteger> implements Art
 				.read(read).archived(archived).favorite(favorite)
 				.mediumDTOs(clonedMediumDTOImpls).categoryDTOs(clonedCategoryDTOImpls)
 				.authorDTOs(clonedAuthorDTOImpls).creatorDTOs(clonedCreatorDTOImpls).build();
+	}
+	
+	@Override
+	public boolean equals(final Object obj) {
+		if (obj == null) { return false; }
+		if (obj == this) { return true; }
+		if (obj.getClass() != getClass()) {
+			return false;
+		}
+		final ArticleDTOImpl articleDTOImpl = (ArticleDTOImpl) obj;
+		return new EqualsBuilder()
+				.appendSuper(super.equals(obj))
+				.append(title,articleDTOImpl.getTitle())
+				.append(link,articleDTOImpl.getLink())
+				.append(description,articleDTOImpl.getDescription())
+				.append(publicationDate,articleDTOImpl.getPublicationDate())
+				.append(read,articleDTOImpl.getRead())
+				.append(archived,articleDTOImpl.getArchived())
+				.append(favorite,articleDTOImpl.getFavorite())
+                .isEquals()
+                && CollectionsUtil.equals(mediumDTOImpls,articleDTOImpl.getMediumDTOs())
+                && CollectionsUtil.equals(categoryDTOImpls,articleDTOImpl.getCategoryDTOs())
+                && CollectionsUtil.equals(authorDTOImpls,articleDTOImpl.getAuthorDTOs())
+                && CollectionsUtil.equals(creatorDTOImpls,articleDTOImpl.getCreatorDTOs());		
+	}
+	
+	@Override
+	public int hashCode() {
+		return new HashCodeBuilder(47,23)
+		       .appendSuper(super.hashCode())
+		       .append(title)
+		       .append(link)
+		       .append(description)
+		       .append(publicationDate)
+		       .append(read)
+		       .append(archived)
+		       .append(favorite)
+		       .append(mediumDTOImpls)
+		       .append(categoryDTOImpls)
+		       .append(authorDTOImpls)
+		       .append(creatorDTOImpls)
+		       .toHashCode();
+	}
+	
+	@Override
+	public String toString() {
+		return new ToStringBuilder(this)
+				.appendSuper(super.toString())
+			    .append(title)
+		        .append(link)
+		        .append(description)
+		        .append(publicationDate)
+		        .append(read)
+		        .append(archived)
+		        .append(favorite)
+		        .append(mediumDTOImpls)
+		        .append(categoryDTOImpls)
+		        .append(authorDTOImpls)
+		        .append(creatorDTOImpls)
+				.toString();
 	}
 
 }

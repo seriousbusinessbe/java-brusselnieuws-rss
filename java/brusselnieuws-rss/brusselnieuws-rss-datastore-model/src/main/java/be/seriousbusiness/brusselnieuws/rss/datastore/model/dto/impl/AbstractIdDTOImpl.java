@@ -1,6 +1,9 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl;
 
-import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.IdDTO;
 
 /**
@@ -26,14 +29,23 @@ public abstract class AbstractIdDTOImpl<ID> implements IdDTO<ID> {
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public boolean equals(final Object obj){
-		return obj!=null && obj instanceof AbstractIdDTOImpl && 
-				ObjectUtil.isNullOrEqual(id,((AbstractIdDTOImpl<ID>)obj).id);
+	public boolean equals(final Object obj) {
+		if (obj == null) { return false; }
+		if (obj == this) { return true; }
+		if (obj.getClass() != getClass()) {
+			return false;
+		}
+		return new EqualsBuilder().append(id,((AbstractIdDTOImpl<ID>) obj).getId()).isEquals();
 	}
 	
 	@Override
-	public int hashCode(){
-		return ObjectUtil.hashCode(id);
+	public int hashCode() {
+		return new HashCodeBuilder(43,33).append(id).toHashCode();
+	}
+	
+	@Override
+	public String toString() {
+		return new ToStringBuilder(this).append("id",id).toString();
 	}
 
 }

@@ -2,9 +2,11 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl;
 
 import java.math.BigInteger;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.dozer.Mapper;
 
-import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.CategoryDTO;
 
 /**
@@ -74,25 +76,29 @@ public class CategoryDTOImpl extends AbstractIdDTOImpl<BigInteger> implements Ca
 	}
 	
 	@Override
-	public boolean equals(final Object obj){
-		return obj!=null && obj instanceof CategoryDTOImpl && super.equals(obj) &&
-				ObjectUtil.isNullOrEqual(name,((CategoryDTOImpl)obj).name) &&
-				ObjectUtil.isNullOrEqual(link,((CategoryDTOImpl)obj).link);
-	}
-	
-	@Override
-	public int hashCode(){
-		return super.hashCode() * ObjectUtil.hashCode(name) * ObjectUtil.hashCode(link);
-	}
-	
-	@Override
-	public String toString(){
-		return ObjectUtil.toString(this);
-	}
-	
-	@Override
 	public Object clone() {
 		return new Builder().id(id).link(link).name(name).build();
+	}
+	
+	@Override
+	public boolean equals(final Object obj) {
+		if (obj == null) { return false; }
+		if (obj == this) { return true; }
+		if (obj.getClass() != getClass()) {
+			return false;
+		}
+		final CategoryDTOImpl accountDTOImpl = (CategoryDTOImpl) obj;
+		return new EqualsBuilder().appendSuper(super.equals(obj)).append(name,accountDTOImpl.getName()).append(link,accountDTOImpl.getLink()).isEquals();
+	}
+	
+	@Override
+	public int hashCode() {
+		return new HashCodeBuilder(51,85).appendSuper(super.hashCode()).append(name).append(link).toHashCode();
+	}
+	
+	@Override
+	public String toString() {
+		return new ToStringBuilder(this).appendSuper(super.toString()).append("name",name).append("link",link).toString();
 	}
 
 }

@@ -3,18 +3,18 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.dozer.Mapper;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
+import be.seriousbusiness.brusselnieuws.rss.common.util.CollectionsUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.ArticleDTO;
-import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.util.EntityUtil;
 
 /**
  * Spring-data {@link MongoArticle} entity.
@@ -311,53 +311,63 @@ public class MongoArticle implements ArticleDTO<MongoMediumType,MongoMedium,Mong
 	}
 	
 	@Override
-	public boolean equals(final Object obj){
-		return obj!=null && obj instanceof MongoArticle && 
-				ObjectUtil.isNullOrEqual(title,((MongoArticle)obj).title) &&
-				ObjectUtil.isNullOrEqual(link,((MongoArticle)obj).link) &&
-				ObjectUtil.isNullOrEqual(description,((MongoArticle)obj).description) &&
-				ObjectUtil.isNullOrEqual(publicationDate,((MongoArticle)obj).publicationDate) &&
-				ObjectUtil.isNullOrEqual(read,((MongoArticle)obj).read) &&
-				ObjectUtil.isNullOrEqual(archived,((MongoArticle)obj).archived) &&
-				ObjectUtil.isNullOrEqual(favorite,((MongoArticle)obj).favorite) &&
-				ObjectUtil.isNullOrEqual(mongoMediums,((MongoArticle)obj).mongoMediums) &&
-				ObjectUtil.isNullOrEqual(mongoCategories,((MongoArticle)obj).mongoCategories) &&
-				ObjectUtil.isNullOrEqual(mongoAuthors,((MongoArticle)obj).mongoAuthors) &&
-				ObjectUtil.isNullOrEqual(mongoCreators,((MongoArticle)obj).mongoCreators);
+	public boolean equals(final Object obj) {
+		if (obj == null) { return false; }
+		if (obj == this) { return true; }
+		if (obj.getClass() != getClass()) {
+			return false;
+		}
+		final MongoArticle mongoArticle = (MongoArticle) obj;
+		return new EqualsBuilder()
+				.append(id,mongoArticle.getId())
+				.append(title,mongoArticle.getTitle())
+				.append(link,mongoArticle.getLink())
+				.append(description,mongoArticle.getDescription())
+				.append(publicationDate,mongoArticle.getPublicationDate())
+				.append(read,mongoArticle.getRead())
+				.append(archived,mongoArticle.getArchived())
+				.append(favorite,mongoArticle.getFavorite())
+                .isEquals()
+                && CollectionsUtil.equals(mongoMediums,mongoArticle.getMediumDTOs())
+                && CollectionsUtil.equals(mongoCategories,mongoArticle.getCategoryDTOs())
+                && CollectionsUtil.equals(mongoAuthors,mongoArticle.getAuthorDTOs())
+                && CollectionsUtil.equals(mongoCreators,mongoArticle.getCreatorDTOs());
 	}
 	
 	@Override
-	public int hashCode(){
-		return ObjectUtil.hashCode(id) * 
-				ObjectUtil.hashCode(title) * 
-				ObjectUtil.hashCode(link) *
-				ObjectUtil.hashCode(description) *
-				ObjectUtil.hashCode(publicationDate) *
-				ObjectUtil.hashCode(read) *
-				ObjectUtil.hashCode(archived) *
-				ObjectUtil.hashCode(favorite) *
-				ObjectUtil.hashCode(mongoMediums) *
-				ObjectUtil.hashCode(mongoCategories) *
-				ObjectUtil.hashCode(mongoAuthors) *
-				ObjectUtil.hashCode(mongoCreators);
+	public int hashCode() {
+		return new HashCodeBuilder(99,5)
+		       .append(id)
+		       .append(title)
+		       .append(link)
+		       .append(description)
+		       .append(publicationDate)
+		       .append(read)
+			   .append(archived)
+			   .append(favorite)
+			   .append(mongoMediums)
+			   .append(mongoCategories)
+			   .append(mongoAuthors)
+			   .append(mongoCreators)
+		       .toHashCode();
 	}
 	
 	@Override
-	public String toString(){
-		final Map<String,Object> fields=new HashMap<String,Object>();
-		fields.put("id",id);
-		fields.put("title",title);
-		fields.put("link",link);
-		fields.put("description",description);
-		fields.put("publicationDate",publicationDate);
-		fields.put("read",read);
-		fields.put("archived",archived);
-		fields.put("favorite",favorite);
-		fields.put("mediums",mongoMediums);
-		fields.put("categories",mongoCategories);
-		fields.put("authors",mongoAuthors);
-		fields.put("creators",mongoCreators);
-		return EntityUtil.stringBuilder("mongoArticle", fields);
+	public String toString() {
+		return new ToStringBuilder(this)
+			    .append(id)
+			    .append(title)
+			    .append(link)
+			    .append(description)
+			    .append(publicationDate)
+			    .append(read)
+			    .append(archived)
+			    .append(favorite)
+			    .append(mongoMediums)
+			    .append(mongoCategories)
+			    .append(mongoAuthors)
+			    .append(mongoCreators)
+				.toString();
 	}
 
 }

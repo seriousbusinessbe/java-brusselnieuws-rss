@@ -2,9 +2,11 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl;
 
 import java.math.BigInteger;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.dozer.Mapper;
 
-import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.MediumTypeDTO;
 
 /**
@@ -58,24 +60,28 @@ public class MediumTypeDTOImpl extends AbstractIdDTOImpl<BigInteger> implements 
 	}
 	
 	@Override
-	public boolean equals(final Object obj){
-		return obj!=null && obj instanceof MediumTypeDTOImpl && super.equals(obj) && 
-				ObjectUtil.isNullOrEqual(type,((MediumTypeDTOImpl)obj).type);
+	public boolean equals(final Object obj) {
+		if (obj == null) { return false; }
+		if (obj == this) { return true; }
+		if (obj.getClass() != getClass()) {
+			return false;
+		}
+		return new EqualsBuilder().appendSuper(super.equals(obj)).append(type,((MediumTypeDTOImpl) obj).getType()).isEquals();
 	}
 	
 	@Override
-	public int hashCode(){
-		return super.hashCode() * ObjectUtil.hashCode(type);
-	}
-	
-	@Override
-	public String toString(){
-		return ObjectUtil.toString(this);
+	public int hashCode() {
+		return new HashCodeBuilder(25,89).appendSuper(super.hashCode()).append(type).toHashCode();
 	}
 	
 	@Override
 	public Object clone() {
 		return new Builder().id(id).type(type).build();
+	}
+	
+	@Override
+	public String toString() {
+		return new ToStringBuilder(this).appendSuper(super.toString()).append("type",type).toString();
 	}
 
 }

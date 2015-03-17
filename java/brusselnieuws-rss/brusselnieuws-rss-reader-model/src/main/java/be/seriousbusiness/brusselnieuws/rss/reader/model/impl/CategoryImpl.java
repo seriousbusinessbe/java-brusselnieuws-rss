@@ -3,9 +3,12 @@ package be.seriousbusiness.brusselnieuws.rss.reader.model.impl;
 import java.math.BigInteger;
 import java.net.URL;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 import org.dozer.Mapper;
 
-import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Category;
 
 public class CategoryImpl extends AbstractIdImpl<BigInteger> implements Category {
@@ -76,20 +79,24 @@ public class CategoryImpl extends AbstractIdImpl<BigInteger> implements Category
 	}
 	
 	@Override
-	public boolean equals(final Object obj){
-		return obj!=null && obj instanceof CategoryImpl && 
-				ObjectUtil.isNullOrEqual(name,((CategoryImpl)obj).name) &&
-				ObjectUtil.isNullOrEqual(link,((CategoryImpl)obj).link);
+	public boolean equals(final Object obj) {
+		if (obj == null) { return false; }
+		if (obj == this) { return true; }
+		if (obj.getClass() != getClass()) {
+			return false;
+		}
+		final CategoryImpl categoryImpl = (CategoryImpl) obj;
+		return new EqualsBuilder().append(name,categoryImpl.getName()).append(link,categoryImpl.getLink()).isEquals();
 	}
 	
 	@Override
-	public int hashCode(){
-		return ObjectUtil.hashCode(name) * ObjectUtil.hashCode(link);
+	public int hashCode() {
+		return new HashCodeBuilder(71,25).append(name).append(link).toHashCode();
 	}
 	
 	@Override
-	public String toString(){
-		return ObjectUtil.toString(this);
+	public String toString() {
+		return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE).append("name",name).append("link",link).toString();
 	}
 	
 	@Override

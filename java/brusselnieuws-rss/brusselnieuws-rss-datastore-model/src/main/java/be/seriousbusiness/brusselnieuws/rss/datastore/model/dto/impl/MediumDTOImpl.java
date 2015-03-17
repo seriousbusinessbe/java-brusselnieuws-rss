@@ -1,8 +1,10 @@
 package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.dozer.Mapper;
 
-import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.MediumDTO;
 
 /**
@@ -85,29 +87,41 @@ public class MediumDTOImpl implements MediumDTO<MediumTypeDTOImpl>  {
 	}
 	
 	@Override
-	public boolean equals(final Object obj){
-		return obj!=null && obj instanceof MediumDTOImpl && 
-				ObjectUtil.isNullOrEqual(link,((MediumDTOImpl)obj).link) &&
-				ObjectUtil.isNullOrEqual(size,((MediumDTOImpl)obj).size) &&
-				ObjectUtil.isNullOrEqual(mediumTypeDTOImpl,((MediumDTOImpl)obj).mediumTypeDTOImpl);
-	}
-	
-	@Override
-	public int hashCode(){
-		return super.hashCode() * 
-				ObjectUtil.hashCode(link) *
-				ObjectUtil.hashCode(size) *
-				ObjectUtil.hashCode(mediumTypeDTOImpl);
-	}
-	
-	@Override
-	public String toString(){
-		return ObjectUtil.toString(this);
-	}
-	
-	@Override
 	public Object clone() {
 		return new Builder().link(link).mediumTypeDTO(mediumTypeDTOImpl).size(size).build();
+	}
+	
+	@Override
+	public boolean equals(final Object obj) {
+		if (obj == null) { return false; }
+		if (obj == this) { return true; }
+		if (obj.getClass() != getClass()) {
+			return false;
+		}
+		final MediumDTOImpl mediumDTOImpl = (MediumDTOImpl) obj;
+		return new EqualsBuilder()
+				.append(link,mediumDTOImpl.getLink())
+				.append(size,mediumDTOImpl.getSize())
+				.append(mediumTypeDTOImpl,mediumDTOImpl.getMediumTypeDTO())
+                .isEquals();
+	}
+	
+	@Override
+	public int hashCode() {
+		return new HashCodeBuilder(63,737)
+		       .append(link)
+		       .append(size)
+		       .append(mediumTypeDTOImpl)
+		       .toHashCode();
+	}
+	
+	@Override
+	public String toString() {
+		return new ToStringBuilder(this)
+				.append("link",link)
+			    .append("size",size)
+			    .append("mediumTypeDTOImpl",mediumTypeDTOImpl)
+				.toString();
 	}
 
 }

@@ -3,18 +3,18 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.dozer.Mapper;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
+import be.seriousbusiness.brusselnieuws.rss.common.util.CollectionsUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.FeedDTO;
-import be.seriousbusiness.brusselnieuws.rss.datastore.mongodb.entity.util.EntityUtil;
 
 /**
  * Spring-data {@link MongoFeed} entity.
@@ -144,33 +144,42 @@ public class MongoFeed implements FeedDTO<MongoMediumType,MongoMedium,MongoCateg
 	}
 	
 	@Override
-	public boolean equals(final Object obj){
-		return obj!=null && obj instanceof MongoFeed && 
-				ObjectUtil.isNullOrEqual(id,((MongoFeed)obj).id) &&
-				ObjectUtil.isNullOrEqual(title,((MongoFeed)obj).title) &&
-				ObjectUtil.isNullOrEqual(link,((MongoFeed)obj).link) &&
-				ObjectUtil.isNullOrEqual(description,((MongoFeed)obj).description) &&
-				ObjectUtil.isNullOrEqual(mongoArticles,((MongoFeed)obj).mongoArticles);
+	public boolean equals(final Object obj) {
+		if (obj == null) { return false; }
+		if (obj == this) { return true; }
+		if (obj.getClass() != getClass()) {
+			return false;
+		}
+		final MongoFeed mongoFeed = (MongoFeed) obj;
+		return new EqualsBuilder()
+				.append(id,mongoFeed.getId())
+				.append(title,mongoFeed.getTitle())
+				.append(link,mongoFeed.getLink())
+				.append(description,mongoFeed.getDescription())
+                .isEquals()
+                && CollectionsUtil.equals(mongoArticles,mongoFeed.getArticleDTOs());
 	}
 	
 	@Override
-	public int hashCode(){
-		return ObjectUtil.hashCode(id) * 
-				ObjectUtil.hashCode(title) * 
-				ObjectUtil.hashCode(link) *
-				ObjectUtil.hashCode(description) *
-				ObjectUtil.hashCode(mongoArticles);
+	public int hashCode() {
+		return new HashCodeBuilder(13,37)
+		       .append(id)
+		       .append(title)
+		       .append(link)
+		       .append(description)
+		       .append(mongoArticles)
+		       .toHashCode();
 	}
 	
 	@Override
-	public String toString(){
-		final Map<String,Object> fields=new HashMap<String,Object>();
-		fields.put("id",id);
-		fields.put("title",title);
-		fields.put("link",link);
-		fields.put("description",description);
-		fields.put("articles",mongoArticles);
-		return EntityUtil.stringBuilder("mongoFeed", fields);
+	public String toString() {
+		return new ToStringBuilder(this)
+				.append(id)
+				.append(title)
+				.append(link)
+				.append(description)
+				.append(mongoArticles)
+				.toString();
 	}
 
 }

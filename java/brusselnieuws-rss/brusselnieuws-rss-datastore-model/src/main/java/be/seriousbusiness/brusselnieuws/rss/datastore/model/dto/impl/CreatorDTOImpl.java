@@ -2,9 +2,11 @@ package be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.impl;
 
 import java.math.BigInteger;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.dozer.Mapper;
 
-import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.CreatorDTO;
 
 /**
@@ -58,24 +60,28 @@ public class CreatorDTOImpl extends AbstractIdDTOImpl<BigInteger> implements Cre
 	}
 	
 	@Override
-	public boolean equals(final Object obj){
-		return obj!=null && obj instanceof CreatorDTOImpl && super.equals(obj) &&
-				ObjectUtil.isNullOrEqual(name,((CreatorDTOImpl)obj).name);
-	}
-	
-	@Override
-	public int hashCode(){
-		return super.hashCode() * ObjectUtil.hashCode(name);
-	}
-	
-	@Override
-	public String toString(){
-		return ObjectUtil.toString(this);
-	}
-	
-	@Override
 	public Object clone() {
 		return new Builder().id(id).name(name).build();
+	}
+	
+	@Override
+	public boolean equals(final Object obj) {
+		if (obj == null) { return false; }
+		if (obj == this) { return true; }
+		if (obj.getClass() != getClass()) {
+			return false;
+		}
+		return new EqualsBuilder().appendSuper(super.equals(obj)).append(name,((CreatorDTOImpl) obj).getName()).isEquals();
+	}
+	
+	@Override
+	public int hashCode() {
+		return new HashCodeBuilder(93,11).appendSuper(super.hashCode()).append(name).toHashCode();
+	}
+	
+	@Override
+	public String toString() {
+		return new ToStringBuilder(this).appendSuper(super.toString()).append("name",name).toString();
 	}
 
 }

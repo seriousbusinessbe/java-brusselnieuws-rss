@@ -2,9 +2,12 @@ package be.seriousbusiness.brusselnieuws.rss.reader.model.impl;
 
 import java.math.BigInteger;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 import org.dozer.Mapper;
 
-import be.seriousbusiness.brusselnieuws.rss.common.util.ObjectUtil;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.MediumType;
 
 public class MediumTypeImpl extends AbstractIdImpl<BigInteger> implements MediumType  {
@@ -59,19 +62,23 @@ public class MediumTypeImpl extends AbstractIdImpl<BigInteger> implements Medium
 	}
 	
 	@Override
-	public boolean equals(final Object obj){
-		return obj!=null && obj instanceof MediumTypeImpl && 
-				ObjectUtil.isNullOrEqual(type,((MediumTypeImpl)obj).type);
+	public boolean equals(final Object obj) {
+		if (obj == null) { return false; }
+		if (obj == this) { return true; }
+		if (obj.getClass() != getClass()) {
+			return false;
+		}
+		return new EqualsBuilder().append(type,((MediumTypeImpl) obj).getType()).isEquals();
 	}
 	
 	@Override
-	public int hashCode(){
-		return ObjectUtil.hashCode(type);
+	public int hashCode() {
+		return new HashCodeBuilder(85,69).append(type).toHashCode();
 	}
 	
 	@Override
-	public String toString(){
-		return ObjectUtil.toString(this);
+	public String toString() {
+		return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE).append("type",type).toString();
 	}
 	
 	@Override
