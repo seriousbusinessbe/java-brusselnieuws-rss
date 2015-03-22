@@ -1,0 +1,281 @@
+18/03/15 09:52:16 INFO  BrusselNieuwsRssWebservice - Starting BrusselNieuwsRssWebservice on Stefans-MacBook-Pro.local with PID 26429 (/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes started by stefanborghys in /Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice)
+18/03/15 09:52:16 INFO  AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5720e7e1: startup date [Wed Mar 18 09:52:16 CET 2015]; root of context hierarchy
+18/03/15 09:52:17 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-config.xml]
+18/03/15 09:52:17 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-config.xml]
+18/03/15 09:52:17 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-config.xml]
+18/03/15 09:52:17 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
+18/03/15 09:52:17 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-config.xml]
+18/03/15 09:52:17 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]
+18/03/15 09:52:17 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]
+18/03/15 09:52:17 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'feedRestControllerImpl': replacing [Generic bean: class [be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/controller/FeedRestControllerImpl.class]] with [Generic bean: class [be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-webservice-config.xml]]
+18/03/15 09:52:17 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+18/03/15 09:52:18 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-datastore-mongodb-mongo.properties]
+18/03/15 09:52:18 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-reader.properties]
+18/03/15 09:52:18 INFO  Version - HV000001: Hibernate Validator 5.1.3.Final
+18/03/15 09:52:18 INFO  ThreadPoolTaskExecutor - Initializing ExecutorService 
+18/03/15 09:52:18 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'executor' of type [class org.springframework.scheduling.config.TaskExecutorFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+18/03/15 09:52:18 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'executor' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+18/03/15 09:52:18 INFO  ThreadPoolTaskScheduler - Initializing ExecutorService  'scheduler'
+18/03/15 09:52:18 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'scheduler' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+18/03/15 09:52:19 INFO  TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+18/03/15 09:52:19 INFO  StandardService - Starting service Tomcat
+18/03/15 09:52:19 INFO  StandardEngine - Starting Servlet Engine: Apache Tomcat/8.0.15
+18/03/15 09:52:19 INFO  [/] - Initializing Spring embedded WebApplicationContext
+18/03/15 09:52:19 INFO  ContextLoader - Root WebApplicationContext: initialization completed in 3172 ms
+18/03/15 09:52:20 INFO  ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+18/03/15 09:52:20 INFO  FilterRegistrationBean - Mapping filter: 'metricFilter' to: [/*]
+18/03/15 09:52:20 INFO  FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+18/03/15 09:52:20 INFO  FilterRegistrationBean - Mapping filter: 'webRequestLoggingFilter' to: [/*]
+18/03/15 09:52:20 INFO  FilterRegistrationBean - Mapping filter: 'simpleCORSFilter' to: [/*]
+18/03/15 09:52:20 INFO  FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+18/03/15 09:52:20 INFO  FilterRegistrationBean - Mapping filter: 'applicationContextIdFilter' to: [/*]
+18/03/15 09:52:20 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+18/03/15 09:52:20 INFO  GlobalSettings - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties] for Dozer global property configuration
+18/03/15 09:52:20 INFO  GlobalSettings - Reading Dozer properties from URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties]
+18/03/15 09:52:20 INFO  DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+18/03/15 09:52:20 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+18/03/15 09:52:20 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+18/03/15 09:52:20 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+18/03/15 09:52:21 INFO  RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5720e7e1: startup date [Wed Mar 18 09:52:16 CET 2015]; root of context hierarchy
+18/03/15 09:52:21 INFO  RequestMappingHandlerMapping - Mapped "{[/feed/{id}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedResponse be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl.getFeed(int)
+18/03/15 09:52:21 INFO  RequestMappingHandlerMapping - Mapped "{[/feedsCategories],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedsCategoriesResponse be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl.getFeedCategories()
+18/03/15 09:52:21 INFO  RequestMappingHandlerMapping - Mapped "{[/feedsMeta],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedsMetaResponse be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl.getFeedsMeta()
+18/03/15 09:52:21 INFO  RequestMappingHandlerMapping - Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+18/03/15 09:52:21 INFO  RequestMappingHandlerMapping - Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[text/html],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+18/03/15 09:52:21 INFO  SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+18/03/15 09:52:21 INFO  SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+18/03/15 09:52:21 INFO  SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+18/03/15 09:52:22 INFO  EndpointHandlerMapping - Mapped "{[/env/{name:.*}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+18/03/15 09:52:22 INFO  EndpointHandlerMapping - Mapped "{[/env],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+18/03/15 09:52:22 INFO  EndpointHandlerMapping - Mapped "{[/metrics/{name:.*}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+18/03/15 09:52:22 INFO  EndpointHandlerMapping - Mapped "{[/metrics],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+18/03/15 09:52:22 INFO  EndpointHandlerMapping - Mapped "{[/info],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+18/03/15 09:52:22 INFO  EndpointHandlerMapping - Mapped "{[/dump],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+18/03/15 09:52:22 INFO  EndpointHandlerMapping - Mapped "{[/configprops],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+18/03/15 09:52:22 INFO  EndpointHandlerMapping - Mapped "{[/trace],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+18/03/15 09:52:22 INFO  EndpointHandlerMapping - Mapped "{[/health],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(java.security.Principal)
+18/03/15 09:52:22 INFO  EndpointHandlerMapping - Mapped "{[/autoconfig],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+18/03/15 09:52:22 INFO  EndpointHandlerMapping - Mapped "{[/beans],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+18/03/15 09:52:22 INFO  EndpointHandlerMapping - Mapped "{[/mappings],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+18/03/15 09:52:22 INFO  AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+18/03/15 09:52:22 INFO  EndpointMBeanExporter - Registering beans for JMX exposure on startup
+18/03/15 09:52:22 INFO  DefaultLifecycleProcessor - Starting beans in phase 0
+18/03/15 09:52:22 INFO  EndpointMBeanExporter - Located managed bean 'requestMappingEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=requestMappingEndpoint]
+18/03/15 09:52:22 INFO  EndpointMBeanExporter - Located managed bean 'environmentEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=environmentEndpoint]
+18/03/15 09:52:22 INFO  EndpointMBeanExporter - Located managed bean 'healthEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=healthEndpoint]
+18/03/15 09:52:22 INFO  EndpointMBeanExporter - Located managed bean 'beansEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=beansEndpoint]
+18/03/15 09:52:22 INFO  EndpointMBeanExporter - Located managed bean 'infoEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=infoEndpoint]
+18/03/15 09:52:22 INFO  EndpointMBeanExporter - Located managed bean 'metricsEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=metricsEndpoint]
+18/03/15 09:52:22 INFO  EndpointMBeanExporter - Located managed bean 'traceEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=traceEndpoint]
+18/03/15 09:52:22 INFO  EndpointMBeanExporter - Located managed bean 'dumpEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=dumpEndpoint]
+18/03/15 09:52:22 INFO  EndpointMBeanExporter - Located managed bean 'autoConfigurationAuditEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=autoConfigurationAuditEndpoint]
+18/03/15 09:52:22 INFO  EndpointMBeanExporter - Located managed bean 'shutdownEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=shutdownEndpoint]
+18/03/15 09:52:22 INFO  EndpointMBeanExporter - Located managed bean 'configurationPropertiesReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=configurationPropertiesReportEndpoint]
+18/03/15 09:52:22 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+18/03/15 09:52:22 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+18/03/15 09:52:22 INFO  NioSelectorPool - Using a shared selector for servlet write/read
+18/03/15 09:52:22 INFO  TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+18/03/15 09:52:22 INFO  BrusselNieuwsRssWebservice - Started BrusselNieuwsRssWebservice in 6.388 seconds (JVM running for 7.662)
+18/03/15 09:55:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 09:55:00 INFO  DozerBeanMapper - Using the following xml files to load custom mappings for the bean mapper instance: [config/brusselnieuws-rss-reader-model-dozer-mapping-config.xml]
+18/03/15 09:55:00 INFO  DozerBeanMapper - Trying to find xml mapping file: config/brusselnieuws-rss-reader-model-dozer-mapping-config.xml
+18/03/15 09:55:00 INFO  DozerBeanMapper - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/classes/config/brusselnieuws-rss-reader-model-dozer-mapping-config.xml] to load custom xml mappings
+18/03/15 09:55:00 INFO  DozerBeanMapper - Successfully loaded custom xml mappings from URL: [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/classes/config/brusselnieuws-rss-reader-model-dozer-mapping-config.xml]
+18/03/15 09:57:28 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:28 minute(s)
+18/03/15 10:00:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 10:00:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 45 seconds
+18/03/15 10:05:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 10:05:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 45 seconds
+18/03/15 10:10:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 10:10:44 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 44 seconds
+18/03/15 10:15:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 10:15:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 45 seconds
+18/03/15 10:20:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 10:20:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 45 seconds
+18/03/15 10:25:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 10:25:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 45 seconds
+18/03/15 10:30:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 10:30:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 45 seconds
+18/03/15 10:35:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 10:35:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 45 seconds
+18/03/15 10:40:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 10:40:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 45 seconds
+18/03/15 10:45:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 10:45:46 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 46 seconds
+18/03/15 10:50:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 10:52:53 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:53 minute(s)
+18/03/15 10:55:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 10:57:55 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:55 minute(s)
+18/03/15 11:00:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 11:02:33 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:33 minute(s)
+18/03/15 11:05:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 11:05:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 45 seconds
+18/03/15 11:10:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 11:10:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 45 seconds
+18/03/15 11:15:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 11:18:05 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 03:05 minute(s)
+18/03/15 11:20:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 11:20:44 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 44 seconds
+18/03/15 11:25:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 11:27:49 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:49 minute(s)
+18/03/15 11:30:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 11:32:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:45 minute(s)
+18/03/15 11:35:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 11:37:17 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:17 minute(s)
+18/03/15 11:40:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 11:42:39 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:39 minute(s)
+18/03/15 11:45:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 11:47:54 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:54 minute(s)
+18/03/15 11:50:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 11:51:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 01:45 minute(s)
+18/03/15 11:55:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 11:55:44 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 44 seconds
+18/03/15 12:00:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 12:03:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 03:01 minute(s)
+18/03/15 12:05:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 12:05:58 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 58 seconds
+18/03/15 12:10:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 12:11:46 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 01:46 minute(s)
+18/03/15 12:15:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 12:15:46 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 46 seconds
+18/03/15 12:20:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 12:20:46 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 46 seconds
+18/03/15 12:25:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 12:27:56 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:56 minute(s)
+18/03/15 12:30:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 12:30:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 45 seconds
+18/03/15 12:35:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 12:35:46 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 46 seconds
+18/03/15 12:40:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 12:40:51 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 51 seconds
+18/03/15 12:45:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 12:47:38 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:38 minute(s)
+18/03/15 12:50:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 12:52:52 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:52 minute(s)
+18/03/15 12:55:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 12:55:47 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 47 seconds
+18/03/15 13:00:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 13:00:47 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 47 seconds
+18/03/15 13:05:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 13:06:02 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 01:02 minute(s)
+18/03/15 13:10:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 13:12:37 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:37 minute(s)
+18/03/15 13:15:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 13:15:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 45 seconds
+18/03/15 13:20:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 13:20:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 45 seconds
+18/03/15 13:25:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 13:25:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 45 seconds
+18/03/15 13:30:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 13:30:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 45 seconds
+18/03/15 13:35:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 13:35:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 45 seconds
+18/03/15 13:40:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 13:42:53 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:53 minute(s)
+18/03/15 13:45:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 13:47:52 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:52 minute(s)
+18/03/15 13:50:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 13:50:44 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 44 seconds
+18/03/15 13:55:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 13:55:44 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 44 seconds
+18/03/15 14:00:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 14:02:40 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:40 minute(s)
+18/03/15 14:05:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 14:06:32 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 01:32 minute(s)
+18/03/15 14:10:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 14:11:00 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 01:00 minute(s)
+18/03/15 14:15:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 14:17:48 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:48 minute(s)
+18/03/15 14:20:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 14:20:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 45 seconds
+18/03/15 14:25:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 14:27:50 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:50 minute(s)
+18/03/15 14:30:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 14:33:00 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 03:00 minute(s)
+18/03/15 14:35:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 14:38:04 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 03:04 minute(s)
+18/03/15 14:40:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 14:42:55 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:55 minute(s)
+18/03/15 14:45:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 14:45:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 45 seconds
+18/03/15 14:50:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 14:52:47 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:47 minute(s)
+18/03/15 14:55:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 14:57:59 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:59 minute(s)
+18/03/15 15:00:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 15:02:17 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:17 minute(s)
+18/03/15 15:05:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 15:07:43 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:43 minute(s)
+18/03/15 15:10:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 15:12:39 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:39 minute(s)
+18/03/15 15:15:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 15:18:00 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 03:00 minute(s)
+18/03/15 15:20:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 15:21:50 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 01:50 minute(s)
+18/03/15 15:25:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 15:25:42 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 42 seconds
+18/03/15 15:30:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 15:32:58 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:58 minute(s)
+18/03/15 15:35:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 15:38:47 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 03:47 minute(s)
+18/03/15 15:40:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 15:43:02 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 03:02 minute(s)
+18/03/15 15:45:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 15:47:43 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:43 minute(s)
+18/03/15 15:50:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 15:52:44 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:44 minute(s)
+18/03/15 15:55:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 15:56:47 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 01:47 minute(s)
+18/03/15 16:00:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 16:00:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 45 seconds
+18/03/15 16:05:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 16:09:28 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 04:28 minute(s)
+18/03/15 16:10:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 16:11:31 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 01:31 minute(s)
+18/03/15 16:15:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 16:18:02 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 03:02 minute(s)
+18/03/15 16:20:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 16:20:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 45 seconds
+18/03/15 16:25:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 16:25:46 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 46 seconds
+18/03/15 16:30:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 16:30:46 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 46 seconds
+18/03/15 16:35:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 16:35:49 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 49 seconds
+18/03/15 16:40:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 16:42:47 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:47 minute(s)
+18/03/15 16:45:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 16:47:40 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:40 minute(s)
+18/03/15 16:50:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 16:53:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 03:01 minute(s)
+18/03/15 16:55:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 16:57:56 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:56 minute(s)
+18/03/15 17:00:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 17:03:08 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 03:08 minute(s)
+18/03/15 17:05:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 17:08:14 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 03:14 minute(s)
+18/03/15 17:10:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 17:12:59 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:59 minute(s)
+18/03/15 17:15:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 17:15:46 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 45 seconds
+18/03/15 17:20:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 17:22:56 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:56 minute(s)
+18/03/15 17:25:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 17:26:27 INFO  [/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+18/03/15 17:26:27 INFO  DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+18/03/15 17:26:27 INFO  DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 26 ms
+18/03/15 17:26:27 INFO  DozerBeanMapper - Using the following xml files to load custom mappings for the bean mapper instance: [config/brusselnieuws-rss-webservice-dozer-mapping-config.xml]
+18/03/15 17:26:27 INFO  DozerBeanMapper - Trying to find xml mapping file: config/brusselnieuws-rss-webservice-dozer-mapping-config.xml
+18/03/15 17:26:27 INFO  DozerBeanMapper - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/config/brusselnieuws-rss-webservice-dozer-mapping-config.xml] to load custom xml mappings
+18/03/15 17:26:27 INFO  DozerBeanMapper - Successfully loaded custom xml mappings from URL: [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/config/brusselnieuws-rss-webservice-dozer-mapping-config.xml]
+18/03/15 17:27:42 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:42 minute(s)
+18/03/15 17:30:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 17:32:56 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:56 minute(s)
+18/03/15 17:35:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+18/03/15 17:38:31 INFO  AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5720e7e1: startup date [Wed Mar 18 09:52:16 CET 2015]; root of context hierarchy
+18/03/15 17:38:31 INFO  DefaultLifecycleProcessor - Stopping beans in phase 0
+18/03/15 17:38:31 INFO  EndpointMBeanExporter - Unregistering JMX-exposed beans on shutdown
+18/03/15 17:38:31 INFO  EndpointMBeanExporter - Unregistering JMX-exposed beans
+18/03/15 17:38:31 INFO  AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+18/03/15 17:38:31 INFO  ThreadPoolTaskScheduler - Shutting down ExecutorService 'scheduler'
+18/03/15 17:38:31 INFO  ThreadPoolTaskExecutor - Shutting down ExecutorService

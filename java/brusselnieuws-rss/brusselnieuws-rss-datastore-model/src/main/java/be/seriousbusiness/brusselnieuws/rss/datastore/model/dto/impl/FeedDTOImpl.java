@@ -4,12 +4,12 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.dozer.Mapper;
 
-import be.seriousbusiness.brusselnieuws.rss.common.util.CollectionsUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.FeedDTO;
 
 /**
@@ -142,7 +142,7 @@ public class FeedDTOImpl extends AbstractIdDTOImpl<BigInteger> implements FeedDT
 				.append(link,feedDTOImpl.getLink())
 				.append(description,feedDTOImpl.getDescription())
                 .isEquals()
-                && CollectionsUtil.equals(articleDTOImpls,feedDTOImpl.getArticleDTOs());
+                && CollectionUtils.isEqualCollection(articleDTOImpls,feedDTOImpl.getArticleDTOs());
 	}
 	
 	@Override

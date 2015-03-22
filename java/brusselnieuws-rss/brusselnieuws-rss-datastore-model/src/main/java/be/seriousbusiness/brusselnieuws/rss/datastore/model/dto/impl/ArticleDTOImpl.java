@@ -4,12 +4,12 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.dozer.Mapper;
 
-import be.seriousbusiness.brusselnieuws.rss.common.util.CollectionsUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.ArticleDTO;
 
 /**
@@ -319,10 +319,10 @@ public class ArticleDTOImpl extends AbstractIdDTOImpl<BigInteger> implements Art
 				.append(archived,articleDTOImpl.getArchived())
 				.append(favorite,articleDTOImpl.getFavorite())
                 .isEquals()
-                && CollectionsUtil.equals(mediumDTOImpls,articleDTOImpl.getMediumDTOs())
-                && CollectionsUtil.equals(categoryDTOImpls,articleDTOImpl.getCategoryDTOs())
-                && CollectionsUtil.equals(authorDTOImpls,articleDTOImpl.getAuthorDTOs())
-                && CollectionsUtil.equals(creatorDTOImpls,articleDTOImpl.getCreatorDTOs());		
+                && CollectionUtils.isEqualCollection(mediumDTOImpls,articleDTOImpl.getMediumDTOs())
+                && CollectionUtils.isEqualCollection(categoryDTOImpls,articleDTOImpl.getCategoryDTOs())
+                && CollectionUtils.isEqualCollection(authorDTOImpls,articleDTOImpl.getAuthorDTOs())
+                && CollectionUtils.isEqualCollection(creatorDTOImpls,articleDTOImpl.getCreatorDTOs());		
 	}
 	
 	@Override

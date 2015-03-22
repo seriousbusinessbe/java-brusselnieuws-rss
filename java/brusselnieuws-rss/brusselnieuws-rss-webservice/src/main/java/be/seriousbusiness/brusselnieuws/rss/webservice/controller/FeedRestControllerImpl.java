@@ -28,6 +28,7 @@ import be.seriousbusiness.brusselnieuws.rss.reader.model.Creator;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Feed;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Medium;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.MediumType;
+import be.seriousbusiness.brusselnieuws.rss.reader.model.listener.ManagebleFeedListener;
 import be.seriousbusiness.brusselnieuws.rss.webservice.model.comparator.FeedCategoryResponseTranslatedNameComparator;
 import be.seriousbusiness.brusselnieuws.rss.webservice.model.comparator.FeedMetaResponseCategoryTranslatedNameComparator;
 import be.seriousbusiness.brusselnieuws.rss.webservice.model.controller.FeedRestController;
@@ -66,6 +67,9 @@ public class FeedRestControllerImpl<MEDIUMTYPE extends MediumType,
 	private Mapper mapper;
 	private BrusselNieuwsRss<MEDIUMTYPE,MEDIUM,CATEGORY,AUTHOR,CREATOR,ARTICLE,FEED> brusselNieuwsRss;
 	public static final String FEED="feed",FEEDS_META="feedsMeta",FEED_CATEGORIES="feedsCategories";
+	private static final ManagebleFeedListener singleFeedManagebleFeedListener=new ManagebleFeedListenerImpl();
+	private static final ManagebleFeedListener allFeedManagebleFeedListener=new ManagebleFeedListenerImpl();
+
 	
 	/**
 	 * Updates feeds on a daily schedule every 5 minutes from 8 to 24 midnight.</br>
@@ -80,19 +84,35 @@ public class FeedRestControllerImpl<MEDIUMTYPE extends MediumType,
 		if(FEEDS_MAP!=null && brusselNieuwsRss!=null) {
 			LOGGER.info("STARTED scheduled update of feeds");
 			final long startFeeds=System.currentTimeMillis();
+			allFeedManagebleFeedListener.reset();
 			for(final FeedMetaEnum feedMetaEnum : FeedMetaEnum.values()) {
 			   try {
 				   LOGGER.debug("STARTED scheduled update of feed '{}'",feedMetaEnum.getTranslatedName());
 				   final long startFeed=System.currentTimeMillis();
-				   FEEDS_MAP.put(feedMetaEnum,brusselNieuwsRss.update(FeedUtil.getFeed(feedMetaEnum,brusselNieuwsRss)));
+				   final FEED feed=FeedUtil.getFeed(feedMetaEnum,brusselNieuwsRss);
+				   singleFeedManagebleFeedListener.reset();
+				   feed.attach(singleFeedManagebleFeedListener);
+				   feed.attach(allFeedManagebleFeedListener);
+				   FEEDS_MAP.put(feedMetaEnum,brusselNieuwsRss.update(feed));
 				   final long stopFeed=System.currentTimeMillis();
-				   LOGGER.debug("FINISHED scheduled update of feed '{}' in {} {}",feedMetaEnum.getTranslatedName(),SimpleDateFormatUtil.format(stopFeed-startFeed),SimpleDateFormatUtil.isLessThanMinute(stopFeed-startFeed) ? "seconds" : "minute(s)");
+				   if(singleFeedManagebleFeedListener.getNumberOfNotifications()>0) {
+					   LOGGER.info("FINISHED scheduled update of {} article(s) of feed '{}' in {} {}",singleFeedManagebleFeedListener.getNumberOfNotifications(),feedMetaEnum.getTranslatedName(),SimpleDateFormatUtil.format(stopFeed-startFeed),SimpleDateFormatUtil.isLessThanMinute(stopFeed-startFeed) ? "seconds" : "minute(s)");
+					   for(final Article<?,?,?,?,?> article : singleFeedManagebleFeedListener.getNotifications().get(feed)) {
+						   LOGGER.info("{}",article.getTitle());
+					   }
+				   }else {
+					   LOGGER.debug("FINISHED scheduled update of feed '{}' in {} {}",feedMetaEnum.getTranslatedName(),SimpleDateFormatUtil.format(stopFeed-startFeed),SimpleDateFormatUtil.isLessThanMinute(stopFeed-startFeed) ? "seconds" : "minute(s)");
+				   }
 			   }catch(final Throwable t) {
 				   LOGGER.error("An unexpected error occurred while updating feed '{}'",feedMetaEnum.getTranslatedName(),t);
 			   }
 		    }
 			final long stopFeeds=System.currentTimeMillis();
-			LOGGER.info("FINISHED scheduled update of feeds in {} {}",SimpleDateFormatUtil.format(stopFeeds-startFeeds),SimpleDateFormatUtil.isLessThanMinute(stopFeeds-startFeeds) ? "seconds" : "minute(s)");
+			if(allFeedManagebleFeedListener.getNumberOfNotifications()>0) {
+				LOGGER.info("FINISHED scheduled update of feeds [added {} article(s)] in {} {}",allFeedManagebleFeedListener.getNumberOfNotifications(),SimpleDateFormatUtil.format(stopFeeds-startFeeds),SimpleDateFormatUtil.isLessThanMinute(stopFeeds-startFeeds) ? "seconds" : "minute(s)");
+			}else {
+				LOGGER.info("FINISHED scheduled update of feeds in {} {}",SimpleDateFormatUtil.format(stopFeeds-startFeeds),SimpleDateFormatUtil.isLessThanMinute(stopFeeds-startFeeds) ? "seconds" : "minute(s)");
+			}
 		}
 	}
 	

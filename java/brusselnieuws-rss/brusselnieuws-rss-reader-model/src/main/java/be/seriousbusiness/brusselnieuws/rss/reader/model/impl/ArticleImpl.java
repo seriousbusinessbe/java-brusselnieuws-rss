@@ -10,6 +10,7 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -17,7 +18,6 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import org.dozer.Mapper;
 import org.joda.time.DateTime;
 
-import be.seriousbusiness.brusselnieuws.rss.common.util.CollectionsUtil;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Article;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Author;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Category;
@@ -398,10 +398,10 @@ public class ArticleImpl extends AbstractIdImpl<BigInteger> implements Article<M
 				.append(archived,articleImpl.isArchived())
 				.append(favorite,articleImpl.isFavorite())
                 .isEquals() 
-                && CollectionsUtil.equals(media,articleImpl.getMedia())
-                && CollectionsUtil.equals(categories,articleImpl.getCategories())
-                && CollectionsUtil.equals(authors,articleImpl.getAuthors())
-                && CollectionsUtil.equals(creators,articleImpl.getCreators());		
+                && CollectionUtils.isEqualCollection(media,articleImpl.getMedia())
+                && CollectionUtils.isEqualCollection(categories,articleImpl.getCategories())
+                && CollectionUtils.isEqualCollection(authors,articleImpl.getAuthors())
+                && CollectionUtils.isEqualCollection(creators,articleImpl.getCreators());		
 	}
 	
 	@Override

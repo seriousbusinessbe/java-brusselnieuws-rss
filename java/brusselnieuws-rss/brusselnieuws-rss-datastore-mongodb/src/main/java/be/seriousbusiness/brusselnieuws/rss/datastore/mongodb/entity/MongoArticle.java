@@ -4,6 +4,7 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -13,7 +14,6 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import be.seriousbusiness.brusselnieuws.rss.common.util.CollectionsUtil;
 import be.seriousbusiness.brusselnieuws.rss.datastore.model.dto.ArticleDTO;
 
 /**
@@ -328,10 +328,10 @@ public class MongoArticle implements ArticleDTO<MongoMediumType,MongoMedium,Mong
 				.append(archived,mongoArticle.getArchived())
 				.append(favorite,mongoArticle.getFavorite())
                 .isEquals()
-                && CollectionsUtil.equals(mongoMediums,mongoArticle.getMediumDTOs())
-                && CollectionsUtil.equals(mongoCategories,mongoArticle.getCategoryDTOs())
-                && CollectionsUtil.equals(mongoAuthors,mongoArticle.getAuthorDTOs())
-                && CollectionsUtil.equals(mongoCreators,mongoArticle.getCreatorDTOs());
+                && CollectionUtils.isEqualCollection(mongoMediums,mongoArticle.getMediumDTOs())
+                && CollectionUtils.isEqualCollection(mongoCategories,mongoArticle.getCategoryDTOs())
+                && CollectionUtils.isEqualCollection(mongoAuthors,mongoArticle.getAuthorDTOs())
+                && CollectionUtils.isEqualCollection(mongoCreators,mongoArticle.getCreatorDTOs());
 	}
 	
 	@Override

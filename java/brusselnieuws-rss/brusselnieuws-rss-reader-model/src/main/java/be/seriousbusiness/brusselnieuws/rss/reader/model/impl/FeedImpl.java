@@ -10,6 +10,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -18,7 +19,6 @@ import org.dozer.Mapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import be.seriousbusiness.brusselnieuws.rss.common.util.CollectionsUtil;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Article;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.Feed;
 import be.seriousbusiness.brusselnieuws.rss.reader.model.comparator.ArticlePublicationDateComparator;
@@ -231,7 +231,7 @@ public class FeedImpl extends AbstractIdImpl<BigInteger> implements Feed<MediumT
 				.append(title,feedImpl.getTitle())
 				.append(link,feedImpl.getLink())
 				.append(description,feedImpl.getDescription())
-                .isEquals() && CollectionsUtil.equals(articles,feedImpl.getArticles());
+                .isEquals() && CollectionUtils.isEqualCollection(articles,feedImpl.getArticles());
 	}
 	
 	@Override

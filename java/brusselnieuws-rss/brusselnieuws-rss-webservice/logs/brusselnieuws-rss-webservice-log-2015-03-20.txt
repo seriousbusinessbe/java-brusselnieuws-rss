@@ -1,0 +1,896 @@
+20/03/15 09:27:35 INFO  BrusselNieuwsRssWebservice - Starting BrusselNieuwsRssWebservice on Stefans-MacBook-Pro.local with PID 29879 (/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes started by stefanborghys in /Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice)
+20/03/15 09:27:35 INFO  AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@35849ef8: startup date [Fri Mar 20 09:27:35 CET 2015]; root of context hierarchy
+20/03/15 09:27:36 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-config.xml]
+20/03/15 09:27:36 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-config.xml]
+20/03/15 09:27:36 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-config.xml]
+20/03/15 09:27:36 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
+20/03/15 09:27:37 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-config.xml]
+20/03/15 09:27:37 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]
+20/03/15 09:27:37 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]
+20/03/15 09:27:37 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'feedRestControllerImpl': replacing [Generic bean: class [be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/controller/FeedRestControllerImpl.class]] with [Generic bean: class [be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-webservice-config.xml]]
+20/03/15 09:27:37 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+20/03/15 09:27:37 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-datastore-mongodb-mongo.properties]
+20/03/15 09:27:37 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-reader.properties]
+20/03/15 09:27:37 INFO  Version - HV000001: Hibernate Validator 5.1.3.Final
+20/03/15 09:27:38 INFO  ThreadPoolTaskExecutor - Initializing ExecutorService 
+20/03/15 09:27:38 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'executor' of type [class org.springframework.scheduling.config.TaskExecutorFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+20/03/15 09:27:38 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'executor' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+20/03/15 09:27:38 INFO  ThreadPoolTaskScheduler - Initializing ExecutorService  'scheduler'
+20/03/15 09:27:38 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'scheduler' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+20/03/15 09:27:38 INFO  TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+20/03/15 09:27:38 INFO  StandardService - Starting service Tomcat
+20/03/15 09:27:38 INFO  StandardEngine - Starting Servlet Engine: Apache Tomcat/8.0.15
+20/03/15 09:27:38 INFO  [/] - Initializing Spring embedded WebApplicationContext
+20/03/15 09:27:38 INFO  ContextLoader - Root WebApplicationContext: initialization completed in 3266 ms
+20/03/15 09:27:40 INFO  ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+20/03/15 09:27:40 INFO  FilterRegistrationBean - Mapping filter: 'metricFilter' to: [/*]
+20/03/15 09:27:40 INFO  FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+20/03/15 09:27:40 INFO  FilterRegistrationBean - Mapping filter: 'webRequestLoggingFilter' to: [/*]
+20/03/15 09:27:40 INFO  FilterRegistrationBean - Mapping filter: 'simpleCORSFilter' to: [/*]
+20/03/15 09:27:40 INFO  FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+20/03/15 09:27:40 INFO  FilterRegistrationBean - Mapping filter: 'applicationContextIdFilter' to: [/*]
+20/03/15 09:27:40 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+20/03/15 09:27:40 INFO  GlobalSettings - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties] for Dozer global property configuration
+20/03/15 09:27:40 INFO  GlobalSettings - Reading Dozer properties from URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties]
+20/03/15 09:27:40 INFO  DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+20/03/15 09:27:40 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+20/03/15 09:27:40 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+20/03/15 09:27:40 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+20/03/15 09:27:40 INFO  RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@35849ef8: startup date [Fri Mar 20 09:27:35 CET 2015]; root of context hierarchy
+20/03/15 09:27:40 INFO  RequestMappingHandlerMapping - Mapped "{[/feed/{id}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedResponse be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl.getFeed(int)
+20/03/15 09:27:40 INFO  RequestMappingHandlerMapping - Mapped "{[/feedsCategories],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedsCategoriesResponse be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl.getFeedCategories()
+20/03/15 09:27:40 INFO  RequestMappingHandlerMapping - Mapped "{[/feedsMeta],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedsMetaResponse be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl.getFeedsMeta()
+20/03/15 09:27:40 INFO  RequestMappingHandlerMapping - Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+20/03/15 09:27:40 INFO  RequestMappingHandlerMapping - Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[text/html],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+20/03/15 09:27:40 INFO  SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+20/03/15 09:27:40 INFO  SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+20/03/15 09:27:41 INFO  SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+20/03/15 09:27:41 INFO  EndpointHandlerMapping - Mapped "{[/mappings],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 09:27:41 INFO  EndpointHandlerMapping - Mapped "{[/info],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 09:27:41 INFO  EndpointHandlerMapping - Mapped "{[/autoconfig],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 09:27:41 INFO  EndpointHandlerMapping - Mapped "{[/env/{name:.*}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+20/03/15 09:27:41 INFO  EndpointHandlerMapping - Mapped "{[/env],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 09:27:41 INFO  EndpointHandlerMapping - Mapped "{[/configprops],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 09:27:41 INFO  EndpointHandlerMapping - Mapped "{[/health],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(java.security.Principal)
+20/03/15 09:27:41 INFO  EndpointHandlerMapping - Mapped "{[/metrics/{name:.*}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+20/03/15 09:27:41 INFO  EndpointHandlerMapping - Mapped "{[/metrics],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 09:27:41 INFO  EndpointHandlerMapping - Mapped "{[/beans],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 09:27:41 INFO  EndpointHandlerMapping - Mapped "{[/dump],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 09:27:41 INFO  EndpointHandlerMapping - Mapped "{[/trace],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 09:27:41 INFO  AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+20/03/15 09:27:41 INFO  EndpointMBeanExporter - Registering beans for JMX exposure on startup
+20/03/15 09:27:41 INFO  DefaultLifecycleProcessor - Starting beans in phase 0
+20/03/15 09:27:41 INFO  EndpointMBeanExporter - Located managed bean 'requestMappingEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=requestMappingEndpoint]
+20/03/15 09:27:41 INFO  EndpointMBeanExporter - Located managed bean 'environmentEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=environmentEndpoint]
+20/03/15 09:27:41 INFO  EndpointMBeanExporter - Located managed bean 'healthEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=healthEndpoint]
+20/03/15 09:27:41 INFO  EndpointMBeanExporter - Located managed bean 'beansEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=beansEndpoint]
+20/03/15 09:27:41 INFO  EndpointMBeanExporter - Located managed bean 'infoEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=infoEndpoint]
+20/03/15 09:27:41 INFO  EndpointMBeanExporter - Located managed bean 'metricsEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=metricsEndpoint]
+20/03/15 09:27:41 INFO  EndpointMBeanExporter - Located managed bean 'traceEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=traceEndpoint]
+20/03/15 09:27:41 INFO  EndpointMBeanExporter - Located managed bean 'dumpEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=dumpEndpoint]
+20/03/15 09:27:41 INFO  EndpointMBeanExporter - Located managed bean 'autoConfigurationAuditEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=autoConfigurationAuditEndpoint]
+20/03/15 09:27:41 INFO  EndpointMBeanExporter - Located managed bean 'shutdownEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=shutdownEndpoint]
+20/03/15 09:27:41 INFO  EndpointMBeanExporter - Located managed bean 'configurationPropertiesReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=configurationPropertiesReportEndpoint]
+20/03/15 09:27:41 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+20/03/15 09:27:41 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+20/03/15 09:27:41 INFO  NioSelectorPool - Using a shared selector for servlet write/read
+20/03/15 09:27:41 INFO  TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+20/03/15 09:27:41 INFO  BrusselNieuwsRssWebservice - Started BrusselNieuwsRssWebservice in 6.539 seconds (JVM running for 7.599)
+20/03/15 09:30:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 09:30:01 INFO  DozerBeanMapper - Using the following xml files to load custom mappings for the bean mapper instance: [config/brusselnieuws-rss-reader-model-dozer-mapping-config.xml]
+20/03/15 09:30:01 INFO  DozerBeanMapper - Trying to find xml mapping file: config/brusselnieuws-rss-reader-model-dozer-mapping-config.xml
+20/03/15 09:30:01 INFO  DozerBeanMapper - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/classes/config/brusselnieuws-rss-reader-model-dozer-mapping-config.xml] to load custom xml mappings
+20/03/15 09:30:01 INFO  DozerBeanMapper - Successfully loaded custom xml mappings from URL: [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/classes/config/brusselnieuws-rss-reader-model-dozer-mapping-config.xml]
+20/03/15 09:32:57 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:57 minute(s)
+20/03/15 09:35:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 09:37:54 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:54 minute(s)
+20/03/15 09:40:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 09:42:56 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:56 minute(s)
+20/03/15 09:45:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 09:47:16 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:16 minute(s)
+20/03/15 09:50:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 09:52:55 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:55 minute(s)
+20/03/15 09:55:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 09:55:47 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 47 seconds
+20/03/15 10:00:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 10:02:30 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:30 minute(s)
+20/03/15 10:05:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 10:05:47 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 47 seconds
+20/03/15 10:10:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 10:12:44 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:44 minute(s)
+20/03/15 10:15:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 10:15:48 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 48 seconds
+20/03/15 10:20:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 10:22:35 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:35 minute(s)
+20/03/15 10:25:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 10:27:37 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:37 minute(s)
+20/03/15 10:30:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 10:32:29 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:29 minute(s)
+20/03/15 10:35:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 10:37:50 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:50 minute(s)
+20/03/15 10:40:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 10:42:39 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:39 minute(s)
+20/03/15 10:45:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 10:47:44 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:44 minute(s)
+20/03/15 10:50:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 10:52:52 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:52 minute(s)
+20/03/15 10:55:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 10:57:44 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:44 minute(s)
+20/03/15 11:00:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 11:02:35 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:34 minute(s)
+20/03/15 11:05:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 11:07:52 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:52 minute(s)
+20/03/15 11:10:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 11:12:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:03 minute(s)
+20/03/15 11:15:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 11:15:47 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 47 seconds
+20/03/15 11:20:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 11:21:49 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 01:49 minute(s)
+20/03/15 11:25:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 11:27:44 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:44 minute(s)
+20/03/15 11:30:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 11:30:47 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 47 seconds
+20/03/15 11:35:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 11:37:12 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:12 minute(s)
+20/03/15 11:40:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 11:42:39 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:39 minute(s)
+20/03/15 11:45:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 11:47:48 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:48 minute(s)
+20/03/15 11:50:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 11:52:37 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:37 minute(s)
+20/03/15 11:55:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 11:58:29 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 03:29 minute(s)
+20/03/15 12:00:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 12:02:42 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:42 minute(s)
+20/03/15 12:05:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 12:07:39 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:39 minute(s)
+20/03/15 12:10:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 12:12:33 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 02:33 minute(s)
+20/03/15 12:15:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 12:16:16 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds in 01:16 minute(s)
+20/03/15 12:17:19 INFO  AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@35849ef8: startup date [Fri Mar 20 09:27:35 CET 2015]; root of context hierarchy
+20/03/15 12:17:19 INFO  DefaultLifecycleProcessor - Stopping beans in phase 0
+20/03/15 12:17:19 INFO  EndpointMBeanExporter - Unregistering JMX-exposed beans on shutdown
+20/03/15 12:17:19 INFO  EndpointMBeanExporter - Unregistering JMX-exposed beans
+20/03/15 12:17:19 INFO  AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+20/03/15 12:17:20 INFO  ThreadPoolTaskScheduler - Shutting down ExecutorService 'scheduler'
+20/03/15 12:17:20 INFO  ThreadPoolTaskExecutor - Shutting down ExecutorService
+20/03/15 12:19:53 INFO  BrusselNieuwsRssWebservice - Starting BrusselNieuwsRssWebservice on Stefans-MacBook-Pro.local with PID 30173 (/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes started by stefanborghys in /Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice)
+20/03/15 12:19:53 INFO  AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@35849ef8: startup date [Fri Mar 20 12:19:53 CET 2015]; root of context hierarchy
+20/03/15 12:19:54 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-config.xml]
+20/03/15 12:19:54 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-config.xml]
+20/03/15 12:19:54 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-config.xml]
+20/03/15 12:19:54 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
+20/03/15 12:19:55 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-config.xml]
+20/03/15 12:19:55 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]
+20/03/15 12:19:55 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]
+20/03/15 12:19:55 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'feedRestControllerImpl': replacing [Generic bean: class [be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/controller/FeedRestControllerImpl.class]] with [Generic bean: class [be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-webservice-config.xml]]
+20/03/15 12:19:55 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+20/03/15 12:19:55 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-datastore-mongodb-mongo.properties]
+20/03/15 12:19:55 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-reader.properties]
+20/03/15 12:19:55 INFO  Version - HV000001: Hibernate Validator 5.1.3.Final
+20/03/15 12:19:55 INFO  ThreadPoolTaskExecutor - Initializing ExecutorService 
+20/03/15 12:19:55 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'executor' of type [class org.springframework.scheduling.config.TaskExecutorFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+20/03/15 12:19:55 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'executor' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+20/03/15 12:19:55 INFO  ThreadPoolTaskScheduler - Initializing ExecutorService  'scheduler'
+20/03/15 12:19:55 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'scheduler' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+20/03/15 12:19:56 INFO  TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+20/03/15 12:19:56 INFO  StandardService - Starting service Tomcat
+20/03/15 12:19:56 INFO  StandardEngine - Starting Servlet Engine: Apache Tomcat/8.0.15
+20/03/15 12:19:56 INFO  [/] - Initializing Spring embedded WebApplicationContext
+20/03/15 12:19:56 INFO  ContextLoader - Root WebApplicationContext: initialization completed in 3014 ms
+20/03/15 12:19:57 INFO  ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+20/03/15 12:19:57 INFO  FilterRegistrationBean - Mapping filter: 'metricFilter' to: [/*]
+20/03/15 12:19:57 INFO  FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+20/03/15 12:19:57 INFO  FilterRegistrationBean - Mapping filter: 'webRequestLoggingFilter' to: [/*]
+20/03/15 12:19:57 INFO  FilterRegistrationBean - Mapping filter: 'simpleCORSFilter' to: [/*]
+20/03/15 12:19:57 INFO  FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+20/03/15 12:19:57 INFO  FilterRegistrationBean - Mapping filter: 'applicationContextIdFilter' to: [/*]
+20/03/15 12:19:57 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+20/03/15 12:19:57 INFO  GlobalSettings - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties] for Dozer global property configuration
+20/03/15 12:19:57 INFO  GlobalSettings - Reading Dozer properties from URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties]
+20/03/15 12:19:57 INFO  DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+20/03/15 12:19:57 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+20/03/15 12:19:58 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+20/03/15 12:19:58 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+20/03/15 12:19:58 INFO  RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@35849ef8: startup date [Fri Mar 20 12:19:53 CET 2015]; root of context hierarchy
+20/03/15 12:19:58 INFO  RequestMappingHandlerMapping - Mapped "{[/feed/{id}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedResponse be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl.getFeed(int)
+20/03/15 12:19:58 INFO  RequestMappingHandlerMapping - Mapped "{[/feedsCategories],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedsCategoriesResponse be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl.getFeedCategories()
+20/03/15 12:19:58 INFO  RequestMappingHandlerMapping - Mapped "{[/feedsMeta],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedsMetaResponse be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl.getFeedsMeta()
+20/03/15 12:19:58 INFO  RequestMappingHandlerMapping - Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+20/03/15 12:19:58 INFO  RequestMappingHandlerMapping - Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[text/html],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+20/03/15 12:19:58 INFO  SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+20/03/15 12:19:58 INFO  SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+20/03/15 12:19:58 INFO  SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+20/03/15 12:19:59 INFO  EndpointHandlerMapping - Mapped "{[/beans],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 12:19:59 INFO  EndpointHandlerMapping - Mapped "{[/metrics/{name:.*}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+20/03/15 12:19:59 INFO  EndpointHandlerMapping - Mapped "{[/metrics],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 12:19:59 INFO  EndpointHandlerMapping - Mapped "{[/configprops],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 12:19:59 INFO  EndpointHandlerMapping - Mapped "{[/mappings],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 12:19:59 INFO  EndpointHandlerMapping - Mapped "{[/info],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 12:19:59 INFO  EndpointHandlerMapping - Mapped "{[/health],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(java.security.Principal)
+20/03/15 12:19:59 INFO  EndpointHandlerMapping - Mapped "{[/trace],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 12:19:59 INFO  EndpointHandlerMapping - Mapped "{[/autoconfig],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 12:19:59 INFO  EndpointHandlerMapping - Mapped "{[/dump],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 12:19:59 INFO  EndpointHandlerMapping - Mapped "{[/env/{name:.*}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+20/03/15 12:19:59 INFO  EndpointHandlerMapping - Mapped "{[/env],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 12:19:59 INFO  AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+20/03/15 12:19:59 INFO  EndpointMBeanExporter - Registering beans for JMX exposure on startup
+20/03/15 12:19:59 INFO  DefaultLifecycleProcessor - Starting beans in phase 0
+20/03/15 12:19:59 INFO  EndpointMBeanExporter - Located managed bean 'requestMappingEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=requestMappingEndpoint]
+20/03/15 12:19:59 INFO  EndpointMBeanExporter - Located managed bean 'environmentEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=environmentEndpoint]
+20/03/15 12:19:59 INFO  EndpointMBeanExporter - Located managed bean 'healthEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=healthEndpoint]
+20/03/15 12:19:59 INFO  EndpointMBeanExporter - Located managed bean 'beansEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=beansEndpoint]
+20/03/15 12:19:59 INFO  EndpointMBeanExporter - Located managed bean 'infoEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=infoEndpoint]
+20/03/15 12:19:59 INFO  EndpointMBeanExporter - Located managed bean 'metricsEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=metricsEndpoint]
+20/03/15 12:19:59 INFO  EndpointMBeanExporter - Located managed bean 'traceEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=traceEndpoint]
+20/03/15 12:19:59 INFO  EndpointMBeanExporter - Located managed bean 'dumpEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=dumpEndpoint]
+20/03/15 12:19:59 INFO  EndpointMBeanExporter - Located managed bean 'autoConfigurationAuditEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=autoConfigurationAuditEndpoint]
+20/03/15 12:19:59 INFO  EndpointMBeanExporter - Located managed bean 'shutdownEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=shutdownEndpoint]
+20/03/15 12:19:59 INFO  EndpointMBeanExporter - Located managed bean 'configurationPropertiesReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=configurationPropertiesReportEndpoint]
+20/03/15 12:19:59 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+20/03/15 12:19:59 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+20/03/15 12:19:59 INFO  NioSelectorPool - Using a shared selector for servlet write/read
+20/03/15 12:19:59 INFO  TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+20/03/15 12:19:59 INFO  BrusselNieuwsRssWebservice - Started BrusselNieuwsRssWebservice in 6.214 seconds (JVM running for 7.531)
+20/03/15 12:20:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 12:20:01 INFO  DozerBeanMapper - Using the following xml files to load custom mappings for the bean mapper instance: [config/brusselnieuws-rss-reader-model-dozer-mapping-config.xml]
+20/03/15 12:20:01 INFO  DozerBeanMapper - Trying to find xml mapping file: config/brusselnieuws-rss-reader-model-dozer-mapping-config.xml
+20/03/15 12:20:01 INFO  DozerBeanMapper - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/classes/config/brusselnieuws-rss-reader-model-dozer-mapping-config.xml] to load custom xml mappings
+20/03/15 12:20:01 INFO  DozerBeanMapper - Successfully loaded custom xml mappings from URL: [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/classes/config/brusselnieuws-rss-reader-model-dozer-mapping-config.xml]
+20/03/15 12:20:51 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 51 seconds
+20/03/15 12:25:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 12:25:47 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 47 seconds
+20/03/15 12:30:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 12:30:47 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 47 seconds
+20/03/15 12:35:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 12:37:12 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 02:12 minute(s)
+20/03/15 12:37:52 INFO  AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@35849ef8: startup date [Fri Mar 20 12:19:53 CET 2015]; root of context hierarchy
+20/03/15 12:37:52 INFO  DefaultLifecycleProcessor - Stopping beans in phase 0
+20/03/15 12:37:52 INFO  EndpointMBeanExporter - Unregistering JMX-exposed beans on shutdown
+20/03/15 12:37:52 INFO  EndpointMBeanExporter - Unregistering JMX-exposed beans
+20/03/15 12:37:52 INFO  AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+20/03/15 12:37:52 INFO  ThreadPoolTaskScheduler - Shutting down ExecutorService 'scheduler'
+20/03/15 12:37:52 INFO  ThreadPoolTaskExecutor - Shutting down ExecutorService
+20/03/15 12:38:03 INFO  BrusselNieuwsRssWebservice - Starting BrusselNieuwsRssWebservice on Stefans-MacBook-Pro.local with PID 30217 (/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes started by stefanborghys in /Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice)
+20/03/15 12:38:03 INFO  AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6a4fbccb: startup date [Fri Mar 20 12:38:03 CET 2015]; root of context hierarchy
+20/03/15 12:38:03 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-config.xml]
+20/03/15 12:38:04 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-config.xml]
+20/03/15 12:38:04 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-config.xml]
+20/03/15 12:38:04 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-datastore-mongodb-dozer-config.xml]
+20/03/15 12:38:04 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-config.xml]
+20/03/15 12:38:04 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-reader-model-dozer-config.xml]
+20/03/15 12:38:04 INFO  XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [config/brusselnieuws-rss-webservice-dozer-config.xml]
+20/03/15 12:38:04 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'feedRestControllerImpl': replacing [Generic bean: class [be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/be/seriousbusiness/brusselnieuws/rss/webservice/controller/FeedRestControllerImpl.class]] with [Generic bean: class [be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl]; scope=; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in class path resource [config/brusselnieuws-rss-webservice-config.xml]]
+20/03/15 12:38:04 INFO  DefaultListableBeanFactory - Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+20/03/15 12:38:04 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-datastore-mongodb-mongo.properties]
+20/03/15 12:38:04 INFO  PropertySourcesPlaceholderConfigurer - Loading properties file from class path resource [properties/brusselnieuws-rss-reader.properties]
+20/03/15 12:38:04 INFO  Version - HV000001: Hibernate Validator 5.1.3.Final
+20/03/15 12:38:05 INFO  ThreadPoolTaskExecutor - Initializing ExecutorService 
+20/03/15 12:38:05 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'executor' of type [class org.springframework.scheduling.config.TaskExecutorFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+20/03/15 12:38:05 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'executor' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+20/03/15 12:38:05 INFO  ThreadPoolTaskScheduler - Initializing ExecutorService  'scheduler'
+20/03/15 12:38:05 INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'scheduler' of type [class org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+20/03/15 12:38:05 INFO  TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+20/03/15 12:38:05 INFO  StandardService - Starting service Tomcat
+20/03/15 12:38:05 INFO  StandardEngine - Starting Servlet Engine: Apache Tomcat/8.0.15
+20/03/15 12:38:05 INFO  [/] - Initializing Spring embedded WebApplicationContext
+20/03/15 12:38:05 INFO  ContextLoader - Root WebApplicationContext: initialization completed in 2685 ms
+20/03/15 12:38:06 INFO  ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+20/03/15 12:38:06 INFO  FilterRegistrationBean - Mapping filter: 'metricFilter' to: [/*]
+20/03/15 12:38:06 INFO  FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+20/03/15 12:38:06 INFO  FilterRegistrationBean - Mapping filter: 'webRequestLoggingFilter' to: [/*]
+20/03/15 12:38:06 INFO  FilterRegistrationBean - Mapping filter: 'simpleCORSFilter' to: [/*]
+20/03/15 12:38:06 INFO  FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+20/03/15 12:38:06 INFO  FilterRegistrationBean - Mapping filter: 'applicationContextIdFilter' to: [/*]
+20/03/15 12:38:06 INFO  GlobalSettings - Trying to find Dozer configuration file: dozer.properties
+20/03/15 12:38:06 INFO  GlobalSettings - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties] for Dozer global property configuration
+20/03/15 12:38:06 INFO  GlobalSettings - Reading Dozer properties from URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/dozer.properties]
+20/03/15 12:38:06 INFO  DozerInitializer - Initializing Dozer. Version: 5.5.0, Thread Name: main
+20/03/15 12:38:06 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+20/03/15 12:38:06 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+20/03/15 12:38:06 INFO  DozerBeanMapper - Initializing a new instance of dozer bean mapper.
+20/03/15 12:38:07 INFO  RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6a4fbccb: startup date [Fri Mar 20 12:38:03 CET 2015]; root of context hierarchy
+20/03/15 12:38:07 INFO  RequestMappingHandlerMapping - Mapped "{[/feed/{id}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedResponse be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl.getFeed(int)
+20/03/15 12:38:07 INFO  RequestMappingHandlerMapping - Mapped "{[/feedsCategories],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedsCategoriesResponse be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl.getFeedCategories()
+20/03/15 12:38:07 INFO  RequestMappingHandlerMapping - Mapped "{[/feedsMeta],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public be.seriousbusiness.brusselnieuws.rss.webservice.model.response.FeedsMetaResponse be.seriousbusiness.brusselnieuws.rss.webservice.controller.FeedRestControllerImpl.getFeedsMeta()
+20/03/15 12:38:07 INFO  RequestMappingHandlerMapping - Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+20/03/15 12:38:07 INFO  RequestMappingHandlerMapping - Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[text/html],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+20/03/15 12:38:07 INFO  SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+20/03/15 12:38:07 INFO  SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+20/03/15 12:38:07 INFO  SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+20/03/15 12:38:08 INFO  EndpointHandlerMapping - Mapped "{[/beans],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 12:38:08 INFO  EndpointHandlerMapping - Mapped "{[/mappings],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 12:38:08 INFO  EndpointHandlerMapping - Mapped "{[/metrics/{name:.*}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+20/03/15 12:38:08 INFO  EndpointHandlerMapping - Mapped "{[/metrics],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 12:38:08 INFO  EndpointHandlerMapping - Mapped "{[/health],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(java.security.Principal)
+20/03/15 12:38:08 INFO  EndpointHandlerMapping - Mapped "{[/info],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 12:38:08 INFO  EndpointHandlerMapping - Mapped "{[/dump],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 12:38:08 INFO  EndpointHandlerMapping - Mapped "{[/autoconfig],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 12:38:08 INFO  EndpointHandlerMapping - Mapped "{[/trace],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 12:38:08 INFO  EndpointHandlerMapping - Mapped "{[/env/{name:.*}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+20/03/15 12:38:08 INFO  EndpointHandlerMapping - Mapped "{[/env],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 12:38:08 INFO  EndpointHandlerMapping - Mapped "{[/configprops],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+20/03/15 12:38:08 INFO  AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+20/03/15 12:38:08 INFO  EndpointMBeanExporter - Registering beans for JMX exposure on startup
+20/03/15 12:38:08 INFO  DefaultLifecycleProcessor - Starting beans in phase 0
+20/03/15 12:38:08 INFO  EndpointMBeanExporter - Located managed bean 'requestMappingEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=requestMappingEndpoint]
+20/03/15 12:38:08 INFO  EndpointMBeanExporter - Located managed bean 'environmentEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=environmentEndpoint]
+20/03/15 12:38:08 INFO  EndpointMBeanExporter - Located managed bean 'healthEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=healthEndpoint]
+20/03/15 12:38:08 INFO  EndpointMBeanExporter - Located managed bean 'beansEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=beansEndpoint]
+20/03/15 12:38:08 INFO  EndpointMBeanExporter - Located managed bean 'infoEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=infoEndpoint]
+20/03/15 12:38:08 INFO  EndpointMBeanExporter - Located managed bean 'metricsEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=metricsEndpoint]
+20/03/15 12:38:08 INFO  EndpointMBeanExporter - Located managed bean 'traceEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=traceEndpoint]
+20/03/15 12:38:08 INFO  EndpointMBeanExporter - Located managed bean 'dumpEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=dumpEndpoint]
+20/03/15 12:38:08 INFO  EndpointMBeanExporter - Located managed bean 'autoConfigurationAuditEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=autoConfigurationAuditEndpoint]
+20/03/15 12:38:08 INFO  EndpointMBeanExporter - Located managed bean 'shutdownEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=shutdownEndpoint]
+20/03/15 12:38:08 INFO  EndpointMBeanExporter - Located managed bean 'configurationPropertiesReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=configurationPropertiesReportEndpoint]
+20/03/15 12:38:08 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+20/03/15 12:38:08 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+20/03/15 12:38:08 INFO  NioSelectorPool - Using a shared selector for servlet write/read
+20/03/15 12:38:08 INFO  TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+20/03/15 12:38:08 INFO  BrusselNieuwsRssWebservice - Started BrusselNieuwsRssWebservice in 5.59 seconds (JVM running for 6.556)
+20/03/15 12:40:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 12:40:01 INFO  DozerBeanMapper - Using the following xml files to load custom mappings for the bean mapper instance: [config/brusselnieuws-rss-reader-model-dozer-mapping-config.xml]
+20/03/15 12:40:01 INFO  DozerBeanMapper - Trying to find xml mapping file: config/brusselnieuws-rss-reader-model-dozer-mapping-config.xml
+20/03/15 12:40:01 INFO  DozerBeanMapper - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/classes/config/brusselnieuws-rss-reader-model-dozer-mapping-config.xml] to load custom xml mappings
+20/03/15 12:40:01 INFO  DozerBeanMapper - Successfully loaded custom xml mappings from URL: [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-reader-model/target/classes/config/brusselnieuws-rss-reader-model-dozer-mapping-config.xml]
+20/03/15 12:40:04 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 04 seconds
+20/03/15 12:40:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 02 seconds
+20/03/15 12:40:08 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 12:40:10 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 12:40:11 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 00 seconds
+20/03/15 12:40:12 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 12:40:13 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 00 seconds
+20/03/15 12:40:15 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 01 seconds
+20/03/15 12:40:32 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 01 seconds
+20/03/15 12:40:41 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 01 seconds
+20/03/15 12:40:43 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 01 seconds
+20/03/15 12:40:51 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 51 seconds
+20/03/15 12:45:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 12:45:06 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 06 seconds
+20/03/15 12:45:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 12:45:09 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 12:45:11 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 12:45:12 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 00 seconds
+20/03/15 12:45:12 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 12:45:13 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 00 seconds
+20/03/15 12:45:15 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 01 seconds
+20/03/15 12:45:32 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 01 seconds
+20/03/15 12:45:41 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 01 seconds
+20/03/15 12:45:43 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 01 seconds
+20/03/15 12:45:51 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 51 seconds
+20/03/15 12:50:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 12:50:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 12:50:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 12:50:04 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 12:50:06 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 12:50:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 00 seconds
+20/03/15 12:50:08 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 12:50:09 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 00 seconds
+20/03/15 12:50:10 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 01 seconds
+20/03/15 12:50:27 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 01 seconds
+20/03/15 12:50:37 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 01 seconds
+20/03/15 12:50:39 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 01 seconds
+20/03/15 12:50:47 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 47 seconds
+20/03/15 12:55:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 12:55:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 12:55:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 12:55:04 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 12:55:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 12:55:08 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 00 seconds
+20/03/15 12:55:08 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 12:55:09 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 00 seconds
+20/03/15 12:55:11 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 01 seconds
+20/03/15 12:55:28 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 01 seconds
+20/03/15 12:55:38 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 01 seconds
+20/03/15 12:55:40 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 01 seconds
+20/03/15 12:55:48 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 48 seconds
+20/03/15 13:00:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 13:00:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 13:00:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 13:00:04 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 13:00:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 13:00:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 00 seconds
+20/03/15 13:00:08 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 13:00:09 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 00 seconds
+20/03/15 13:00:10 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 01 seconds
+20/03/15 13:00:27 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 01 seconds
+20/03/15 13:00:37 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 01 seconds
+20/03/15 13:00:39 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 01 seconds
+20/03/15 13:00:47 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 47 seconds
+20/03/15 13:05:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 13:05:02 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 02 seconds
+20/03/15 13:05:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 13:05:05 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 13:05:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 13:05:08 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 00 seconds
+20/03/15 13:05:08 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 13:05:09 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 00 seconds
+20/03/15 13:05:11 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 01 seconds
+20/03/15 13:05:28 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 01 seconds
+20/03/15 13:05:37 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 01 seconds
+20/03/15 13:05:39 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 01 seconds
+20/03/15 13:05:47 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 47 seconds
+20/03/15 13:10:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 13:10:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 13:10:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 13:10:04 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 13:10:06 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 13:10:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 00 seconds
+20/03/15 13:10:08 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 13:10:09 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 00 seconds
+20/03/15 13:10:10 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 01 seconds
+20/03/15 13:10:27 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 01 seconds
+20/03/15 13:10:37 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 01 seconds
+20/03/15 13:10:39 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 01 seconds
+20/03/15 13:10:47 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 47 seconds
+20/03/15 13:15:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 13:15:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 13:15:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 13:15:04 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 13:15:06 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 13:15:10 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 00 seconds
+20/03/15 13:15:10 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 13:15:16 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 02 seconds
+20/03/15 13:15:24 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 03 seconds
+20/03/15 13:16:20 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 05 seconds
+20/03/15 13:16:46 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 04 seconds
+20/03/15 13:16:50 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 04 seconds
+20/03/15 13:17:15 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 02:14 minute(s)
+20/03/15 13:20:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 13:20:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 13:20:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 13:20:04 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 13:20:06 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 13:20:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 00 seconds
+20/03/15 13:20:08 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 13:20:09 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 00 seconds
+20/03/15 13:20:10 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 00 seconds
+20/03/15 13:20:27 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 01 seconds
+20/03/15 13:20:40 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 01 seconds
+20/03/15 13:20:42 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 01 seconds
+20/03/15 13:20:50 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 50 seconds
+20/03/15 13:25:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 13:25:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 03 seconds
+20/03/15 13:25:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 03 seconds
+20/03/15 13:25:10 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 03 seconds
+20/03/15 13:25:17 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 04 seconds
+20/03/15 13:25:21 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 00 seconds
+20/03/15 13:25:22 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 13:25:30 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 02 seconds
+20/03/15 13:25:39 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 03 seconds
+20/03/15 13:26:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 05 seconds
+20/03/15 13:27:16 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 04 seconds
+20/03/15 13:27:21 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 05 seconds
+20/03/15 13:27:46 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 02:46 minute(s)
+20/03/15 13:28:25 INFO  [/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+20/03/15 13:28:25 INFO  DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+20/03/15 13:28:25 INFO  DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 18 ms
+20/03/15 13:28:25 INFO  DozerBeanMapper - Using the following xml files to load custom mappings for the bean mapper instance: [config/brusselnieuws-rss-webservice-dozer-mapping-config.xml]
+20/03/15 13:28:25 INFO  DozerBeanMapper - Trying to find xml mapping file: config/brusselnieuws-rss-webservice-dozer-mapping-config.xml
+20/03/15 13:28:25 INFO  DozerBeanMapper - Using URL [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/config/brusselnieuws-rss-webservice-dozer-mapping-config.xml] to load custom xml mappings
+20/03/15 13:28:25 INFO  DozerBeanMapper - Successfully loaded custom xml mappings from URL: [file:/Users/stefanborghys/projects/github/java-brusselnieuws-rss/java/brusselnieuws-rss/brusselnieuws-rss-webservice/target/classes/config/brusselnieuws-rss-webservice-dozer-mapping-config.xml]
+20/03/15 13:30:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 13:30:02 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 02 seconds
+20/03/15 13:30:06 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 04 seconds
+20/03/15 13:30:10 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 04 seconds
+20/03/15 13:30:17 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 04 seconds
+20/03/15 13:30:24 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 03 seconds
+20/03/15 13:30:27 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 03 seconds
+20/03/15 13:30:36 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 03 seconds
+20/03/15 13:30:46 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 03 seconds
+20/03/15 13:31:54 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 05 seconds
+20/03/15 13:32:25 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 04 seconds
+20/03/15 13:32:30 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 05 seconds
+20/03/15 13:32:56 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 02:56 minute(s)
+20/03/15 13:35:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 13:35:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 13:35:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 13:35:04 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 13:35:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 13:35:12 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 03 seconds
+20/03/15 13:35:13 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 13:35:21 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 02 seconds
+20/03/15 13:35:29 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 03 seconds
+20/03/15 13:36:26 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 05 seconds
+20/03/15 13:36:56 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 04 seconds
+20/03/15 13:37:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 05 seconds
+20/03/15 13:37:28 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 02:28 minute(s)
+20/03/15 13:40:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 13:40:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 13:40:06 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 04 seconds
+20/03/15 13:40:10 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 03 seconds
+20/03/15 13:40:14 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 13:40:17 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 03 seconds
+20/03/15 13:40:18 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 13:40:26 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 02 seconds
+20/03/15 13:40:35 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 02 seconds
+20/03/15 13:41:41 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 05 seconds
+20/03/15 13:42:10 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 04 seconds
+20/03/15 13:42:15 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 05 seconds
+20/03/15 13:42:41 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 02:41 minute(s)
+20/03/15 13:45:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 13:45:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 13:45:06 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 04 seconds
+20/03/15 13:45:10 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 04 seconds
+20/03/15 13:45:15 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 13:45:21 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 03 seconds
+20/03/15 13:45:24 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 02 seconds
+20/03/15 13:45:32 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 03 seconds
+20/03/15 13:45:43 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 03 seconds
+20/03/15 13:46:50 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 05 seconds
+20/03/15 13:47:20 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 04 seconds
+20/03/15 13:47:25 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 05 seconds
+20/03/15 13:47:51 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 02:51 minute(s)
+20/03/15 13:50:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 13:50:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 13:50:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 13:50:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 04 seconds
+20/03/15 13:50:09 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 13:50:15 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 03 seconds
+20/03/15 13:50:18 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 03 seconds
+20/03/15 13:50:25 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 00 seconds
+20/03/15 13:50:36 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 03 seconds
+20/03/15 13:51:43 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 05 seconds
+20/03/15 13:52:13 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 04 seconds
+20/03/15 13:52:18 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 04 seconds
+20/03/15 13:52:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 02:45 minute(s)
+20/03/15 13:55:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 13:55:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 13:55:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 13:55:04 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 13:55:12 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 04 seconds
+20/03/15 13:55:17 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 03 seconds
+20/03/15 13:55:20 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 02 seconds
+20/03/15 13:55:29 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 02 seconds
+20/03/15 13:55:38 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 02 seconds
+20/03/15 13:56:48 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 05 seconds
+20/03/15 13:57:18 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 04 seconds
+20/03/15 13:57:24 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 05 seconds
+20/03/15 13:57:49 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 02:48 minute(s)
+20/03/15 14:00:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 14:00:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 14:00:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 14:00:04 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 14:00:09 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 04 seconds
+20/03/15 14:00:17 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 03 seconds
+20/03/15 14:00:21 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 03 seconds
+20/03/15 14:00:30 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 03 seconds
+20/03/15 14:00:41 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 03 seconds
+20/03/15 14:01:58 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 06 seconds
+20/03/15 14:02:28 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 05 seconds
+20/03/15 14:02:33 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 05 seconds
+20/03/15 14:02:59 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 02:58 minute(s)
+20/03/15 14:05:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 14:05:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 2 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 14:05:06 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 04 seconds
+20/03/15 14:05:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 14:05:13 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 05 seconds
+20/03/15 14:05:16 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 03 seconds
+20/03/15 14:05:16 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 14:05:22 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 02 seconds
+20/03/15 14:05:33 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 03 seconds
+20/03/15 14:06:34 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 05 seconds
+20/03/15 14:07:04 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 05 seconds
+20/03/15 14:07:09 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 05 seconds
+20/03/15 14:07:35 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 16 articles] in 02:35 minute(s)
+20/03/15 14:10:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 14:10:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 14:10:05 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 03 seconds
+20/03/15 14:10:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 14:10:09 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 14:10:15 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 03 seconds
+20/03/15 14:10:15 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 14:10:22 INFO  FeedRestControllerImpl - FINISHED scheduled update of 2 articles for feed 'Algemeen' in 01 seconds
+20/03/15 14:10:33 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 03 seconds
+20/03/15 14:11:37 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 05 seconds
+20/03/15 14:12:09 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 05 seconds
+20/03/15 14:12:14 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 05 seconds
+20/03/15 14:12:38 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 16 articles] in 02:38 minute(s)
+20/03/15 14:15:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 14:15:02 INFO  FeedRestControllerImpl - FINISHED scheduled update of 2 articles for feed 'Hoofdpunten' in 02 seconds
+20/03/15 14:15:06 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 03 seconds
+20/03/15 14:15:10 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 04 seconds
+20/03/15 14:15:17 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 04 seconds
+20/03/15 14:15:23 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 03 seconds
+20/03/15 14:15:26 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 03 seconds
+20/03/15 14:15:35 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 03 seconds
+20/03/15 14:15:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 03 seconds
+20/03/15 14:16:52 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 05 seconds
+20/03/15 14:17:20 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 05 seconds
+20/03/15 14:17:25 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 04 seconds
+20/03/15 14:17:52 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 16 articles] in 02:52 minute(s)
+20/03/15 14:20:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 14:20:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 14:20:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 14:20:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 03 seconds
+20/03/15 14:20:14 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 04 seconds
+20/03/15 14:20:20 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 03 seconds
+20/03/15 14:20:23 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 03 seconds
+20/03/15 14:20:29 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 00 seconds
+20/03/15 14:20:39 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 03 seconds
+20/03/15 14:21:46 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 05 seconds
+20/03/15 14:22:16 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 05 seconds
+20/03/15 14:22:21 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 04 seconds
+20/03/15 14:22:48 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 02:48 minute(s)
+20/03/15 14:25:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 14:25:02 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 02 seconds
+20/03/15 14:25:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 14:25:05 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 14:25:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 14:25:08 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 00 seconds
+20/03/15 14:25:08 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 14:25:09 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 00 seconds
+20/03/15 14:25:11 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 01 seconds
+20/03/15 14:25:28 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 01 seconds
+20/03/15 14:25:38 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 01 seconds
+20/03/15 14:25:40 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 01 seconds
+20/03/15 14:25:48 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 48 seconds
+20/03/15 14:30:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 14:30:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 14:30:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 14:30:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 04 seconds
+20/03/15 14:30:12 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 04 seconds
+20/03/15 14:30:18 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 03 seconds
+20/03/15 14:30:20 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 02 seconds
+20/03/15 14:30:24 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 00 seconds
+20/03/15 14:30:33 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 03 seconds
+20/03/15 14:31:32 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 05 seconds
+20/03/15 14:32:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 05 seconds
+20/03/15 14:32:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 05 seconds
+20/03/15 14:32:32 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 02:32 minute(s)
+20/03/15 14:35:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 14:35:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 14:35:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 14:35:05 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 14:35:06 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 14:35:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 00 seconds
+20/03/15 14:35:08 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 14:35:09 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 00 seconds
+20/03/15 14:35:10 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 00 seconds
+20/03/15 14:35:27 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 01 seconds
+20/03/15 14:35:37 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 01 seconds
+20/03/15 14:35:42 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 05 seconds
+20/03/15 14:36:05 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 01:05 minute(s)
+20/03/15 14:40:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 14:40:02 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 02 seconds
+20/03/15 14:40:06 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 04 seconds
+20/03/15 14:40:10 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 03 seconds
+20/03/15 14:40:17 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 03 seconds
+20/03/15 14:40:22 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 03 seconds
+20/03/15 14:40:23 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 14:40:30 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 03 seconds
+20/03/15 14:40:38 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 03 seconds
+20/03/15 14:41:37 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 04 seconds
+20/03/15 14:42:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 05 seconds
+20/03/15 14:42:13 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 05 seconds
+20/03/15 14:42:39 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 02:39 minute(s)
+20/03/15 14:45:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 14:45:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 14:45:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 14:45:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 04 seconds
+20/03/15 14:45:12 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 04 seconds
+20/03/15 14:45:18 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 03 seconds
+20/03/15 14:45:19 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 01 seconds
+20/03/15 14:45:27 INFO  FeedRestControllerImpl - FINISHED scheduled update of 2 articles for feed 'Algemeen' in 03 seconds
+20/03/15 14:45:36 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 03 seconds
+20/03/15 14:46:35 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 05 seconds
+20/03/15 14:47:04 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 04 seconds
+20/03/15 14:47:09 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 05 seconds
+20/03/15 14:47:35 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 16 articles] in 02:35 minute(s)
+20/03/15 14:50:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 14:50:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 03 seconds
+20/03/15 14:50:05 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 02 seconds
+20/03/15 14:50:09 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 04 seconds
+20/03/15 14:50:14 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 14:50:20 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 03 seconds
+20/03/15 14:50:23 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 03 seconds
+20/03/15 14:50:31 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 03 seconds
+20/03/15 14:50:44 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 03 seconds
+20/03/15 14:51:50 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 04 seconds
+20/03/15 14:52:20 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 05 seconds
+20/03/15 14:52:25 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 05 seconds
+20/03/15 14:52:52 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 02:52 minute(s)
+20/03/15 14:55:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 14:55:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 14:55:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 14:55:08 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 04 seconds
+20/03/15 14:55:10 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 14:55:16 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 03 seconds
+20/03/15 14:55:16 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 14:55:24 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 03 seconds
+20/03/15 14:55:35 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 03 seconds
+20/03/15 14:56:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 04 seconds
+20/03/15 14:57:04 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 01 seconds
+20/03/15 14:57:06 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 01 seconds
+20/03/15 14:57:14 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 02:14 minute(s)
+20/03/15 15:00:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 15:00:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 15:00:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 15:00:04 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 15:00:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 15:00:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 00 seconds
+20/03/15 15:00:08 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 15:00:09 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 00 seconds
+20/03/15 15:00:11 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 01 seconds
+20/03/15 15:00:27 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 01 seconds
+20/03/15 15:00:37 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 01 seconds
+20/03/15 15:00:39 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 01 seconds
+20/03/15 15:00:47 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 47 seconds
+20/03/15 15:05:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 15:05:02 INFO  FeedRestControllerImpl - FINISHED scheduled update of 2 articles for feed 'Hoofdpunten' in 02 seconds
+20/03/15 15:05:04 INFO  FeedRestControllerImpl - FINISHED scheduled update of 2 articles for feed 'Overzicht' in 02 seconds
+20/03/15 15:05:05 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 15:05:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 15:05:08 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 00 seconds
+20/03/15 15:05:09 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 15:05:10 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Algemeen' in 00 seconds
+20/03/15 15:05:11 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 00 seconds
+20/03/15 15:05:28 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 01 seconds
+20/03/15 15:05:37 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 01 seconds
+20/03/15 15:05:39 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 01 seconds
+20/03/15 15:05:47 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 17 articles] in 47 seconds
+20/03/15 15:10:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 15:10:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 2 articles for feed 'Hoofdpunten' in 03 seconds
+20/03/15 15:10:06 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 03 seconds
+20/03/15 15:10:10 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 03 seconds
+20/03/15 15:10:18 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 04 seconds
+20/03/15 15:10:24 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 03 seconds
+20/03/15 15:10:27 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 03 seconds
+20/03/15 15:10:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 03 seconds
+20/03/15 15:11:48 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 05 seconds
+20/03/15 15:12:19 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 04 seconds
+20/03/15 15:12:24 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 04 seconds
+20/03/15 15:12:49 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 02:49 minute(s)
+20/03/15 15:15:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 15:15:02 INFO  FeedRestControllerImpl - FINISHED scheduled update of 2 articles for feed 'Hoofdpunten' in 02 seconds
+20/03/15 15:15:04 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 15:15:06 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 15:15:18 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 04 seconds
+20/03/15 15:15:24 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 03 seconds
+20/03/15 15:15:27 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 02 seconds
+20/03/15 15:15:44 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 02 seconds
+20/03/15 15:16:44 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 05 seconds
+20/03/15 15:17:12 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 05 seconds
+20/03/15 15:17:17 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 05 seconds
+20/03/15 15:17:43 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 02:43 minute(s)
+20/03/15 15:20:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 15:20:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 15:20:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 15:20:04 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 15:20:06 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 15:20:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 00 seconds
+20/03/15 15:20:08 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 15:20:10 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 01 seconds
+20/03/15 15:20:27 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 01 seconds
+20/03/15 15:20:36 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 01 seconds
+20/03/15 15:20:38 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 01 seconds
+20/03/15 15:20:46 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 14 articles] in 46 seconds
+20/03/15 15:25:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 15:25:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 15:25:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 15:25:04 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 15:25:06 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 15:25:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 00 seconds
+20/03/15 15:25:08 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 15:25:10 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 01 seconds
+20/03/15 15:25:27 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 02 seconds
+20/03/15 15:25:37 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 01 seconds
+20/03/15 15:25:38 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 01 seconds
+20/03/15 15:25:47 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 14 articles] in 47 seconds
+20/03/15 15:30:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 15:30:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 15:30:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 15:30:04 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 15:30:06 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 15:30:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 00 seconds
+20/03/15 15:30:08 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 15:30:10 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 01 seconds
+20/03/15 15:30:26 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 01 seconds
+20/03/15 15:30:36 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 01 seconds
+20/03/15 15:30:38 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 01 seconds
+20/03/15 15:30:46 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 14 articles] in 46 seconds
+20/03/15 15:35:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 15:35:02 INFO  FeedRestControllerImpl - FINISHED scheduled update of 2 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 15:35:06 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 04 seconds
+20/03/15 15:35:10 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 04 seconds
+20/03/15 15:35:17 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 04 seconds
+20/03/15 15:35:21 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 00 seconds
+20/03/15 15:35:24 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 02 seconds
+20/03/15 15:35:42 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 03 seconds
+20/03/15 15:36:47 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 05 seconds
+20/03/15 15:37:17 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 04 seconds
+20/03/15 15:37:22 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 04 seconds
+20/03/15 15:37:48 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 15 articles] in 02:48 minute(s)
+20/03/15 15:40:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 15:40:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 15:40:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 15:40:05 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 15:40:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 15:40:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 00 seconds
+20/03/15 15:40:08 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 15:40:10 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 01 seconds
+20/03/15 15:40:59 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 05 seconds
+20/03/15 15:41:30 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 05 seconds
+20/03/15 15:41:36 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 05 seconds
+20/03/15 15:42:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 14 articles] in 02:03 minute(s)
+20/03/15 15:45:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 15:45:02 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 02 seconds
+20/03/15 15:45:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 15:45:05 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 15:45:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 15:45:11 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 00 seconds
+20/03/15 15:45:11 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 15:45:30 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 10 seconds
+20/03/15 15:46:38 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 05 seconds
+20/03/15 15:47:09 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 05 seconds
+20/03/15 15:47:14 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 04 seconds
+20/03/15 15:47:41 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 14 articles] in 02:41 minute(s)
+20/03/15 15:50:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 15:50:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 15:50:06 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 04 seconds
+20/03/15 15:50:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 15:50:09 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 15:50:10 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 00 seconds
+20/03/15 15:50:11 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 15:50:26 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 03 seconds
+20/03/15 15:51:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 01 seconds
+20/03/15 15:51:12 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 01 seconds
+20/03/15 15:51:14 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 01 seconds
+20/03/15 15:51:22 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 14 articles] in 01:22 minute(s)
+20/03/15 15:55:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 15:55:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 15:55:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 15:55:04 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 15:55:06 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 15:55:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 00 seconds
+20/03/15 15:55:08 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 15:55:10 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 00 seconds
+20/03/15 15:55:26 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 01 seconds
+20/03/15 15:55:36 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 01 seconds
+20/03/15 15:55:38 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 01 seconds
+20/03/15 15:55:46 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 14 articles] in 46 seconds
+20/03/15 16:00:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 16:00:02 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 02 seconds
+20/03/15 16:00:06 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 03 seconds
+20/03/15 16:00:09 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 03 seconds
+20/03/15 16:00:11 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 16:00:17 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 03 seconds
+20/03/15 16:00:20 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 02 seconds
+20/03/15 16:00:38 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 03 seconds
+20/03/15 16:01:42 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 05 seconds
+20/03/15 16:02:12 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 04 seconds
+20/03/15 16:02:18 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 05 seconds
+20/03/15 16:02:46 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 14 articles] in 02:46 minute(s)
+20/03/15 16:05:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 16:05:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 16:05:04 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 03 seconds
+20/03/15 16:05:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 02 seconds
+20/03/15 16:05:12 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 04 seconds
+20/03/15 16:05:16 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 01 seconds
+20/03/15 16:05:18 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 01 seconds
+20/03/15 16:05:32 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 03 seconds
+20/03/15 16:06:45 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 05 seconds
+20/03/15 16:07:16 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 04 seconds
+20/03/15 16:07:18 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 01 seconds
+20/03/15 16:07:43 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 14 articles] in 02:43 minute(s)
+20/03/15 16:10:00 INFO  FeedRestControllerImpl - STARTED scheduled update of feeds
+20/03/15 16:10:01 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Hoofdpunten' in 01 seconds
+20/03/15 16:10:03 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Overzicht' in 01 seconds
+20/03/15 16:10:05 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Stad' in 01 seconds
+20/03/15 16:10:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 3 articles for feed 'Politiek' in 01 seconds
+20/03/15 16:10:07 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Economie' in 00 seconds
+20/03/15 16:10:08 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sport' in 00 seconds
+20/03/15 16:10:10 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Podium' in 00 seconds
+20/03/15 16:10:27 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Laken' in 01 seconds
+20/03/15 16:10:54 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Jans-Molenbeek' in 05 seconds
+20/03/15 16:10:59 INFO  FeedRestControllerImpl - FINISHED scheduled update of 1 articles for feed 'Sint-Joost-ten-Node' in 05 seconds
+20/03/15 16:11:25 INFO  FeedRestControllerImpl - FINISHED scheduled update of feeds [Added 14 articles] in 01:25 minute(s)
+20/03/15 16:13:52 INFO  AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6a4fbccb: startup date [Fri Mar 20 12:38:03 CET 2015]; root of context hierarchy
+20/03/15 16:13:52 INFO  DefaultLifecycleProcessor - Stopping beans in phase 0
+20/03/15 16:13:52 INFO  EndpointMBeanExporter - Unregistering JMX-exposed beans on shutdown
+20/03/15 16:13:52 INFO  EndpointMBeanExporter - Unregistering JMX-exposed beans
+20/03/15 16:13:52 INFO  AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+20/03/15 16:13:52 INFO  ThreadPoolTaskScheduler - Shutting down ExecutorService 'scheduler'
+20/03/15 16:13:52 INFO  ThreadPoolTaskExecutor - Shutting down ExecutorService

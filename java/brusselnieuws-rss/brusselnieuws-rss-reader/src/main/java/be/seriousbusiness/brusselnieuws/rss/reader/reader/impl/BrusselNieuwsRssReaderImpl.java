@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.SocketException;
 import java.net.URL;
+import java.net.UnknownHostException;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -162,8 +163,16 @@ public class BrusselNieuwsRssReaderImpl implements BrusselNieuwsRssReader<FeedIm
 				LOGGER.error("Feed '{}' could not be parsed",link.toString(),e);
 			} catch (final SocketException e) {
 				LOGGER.error("Feed '{}' could not be read, possible due to connection problems",link.toString(),e);
+			} catch(final UnknownHostException e) {
+				LOGGER.error("Feed '{}' could not be found, possible due to connection problems",link.toString(),e);
 			} catch (final IOException e) {
-				LOGGER.error("URL stream '{}' could not be read",link.toString(),e);
+				final StringBuilder error=new StringBuilder("URL stream '{}' could not be read");
+				if(e.getMessage().startsWith("Server returned HTTP response code:")) {
+					if(e.getMessage().contains("503")) {
+						error.append(", server returned STATUS CODE 503 - \"Service is unavailable\"");
+					}
+				}
+				LOGGER.error(error.toString(),link.toString(),e);
 			}
 		}
 	}
