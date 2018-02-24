@@ -98,7 +98,7 @@ public class FeedRestControllerImpl<MEDIUMTYPE extends MediumType,
 				   if(singleFeedManagebleFeedListener.getNumberOfNotifications()>0) {
 					   LOGGER.info("FINISHED scheduled update of {} article(s) of feed '{}' in {} {}",singleFeedManagebleFeedListener.getNumberOfNotifications(),feedMetaEnum.getTranslatedName(),SimpleDateFormatUtil.format(stopFeed-startFeed),SimpleDateFormatUtil.isLessThanMinute(stopFeed-startFeed) ? "seconds" : "minute(s)");
 					   for(final Article<?,?,?,?,?> article : singleFeedManagebleFeedListener.getNotifications().get(feed)) {
-						   LOGGER.info("{}",article.getTitle());
+						   LOGGER.info("[+] - {}",article.getTitle());
 					   }
 				   }else {
 					   LOGGER.debug("FINISHED scheduled update of feed '{}' in {} {}",feedMetaEnum.getTranslatedName(),SimpleDateFormatUtil.format(stopFeed-startFeed),SimpleDateFormatUtil.isLessThanMinute(stopFeed-startFeed) ? "seconds" : "minute(s)");

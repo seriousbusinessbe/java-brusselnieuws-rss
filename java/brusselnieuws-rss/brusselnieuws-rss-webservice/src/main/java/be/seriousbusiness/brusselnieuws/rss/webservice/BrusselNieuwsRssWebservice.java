@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ImportResource;
 
+import com.mangofactory.swagger.plugin.EnableSwagger;
+
 /**
  * Brussel Nieuws Rss webservice Spring-boot start-up class.  
  * @author Serious Business
@@ -36,6 +38,7 @@ import org.springframework.context.annotation.ImportResource;
 @ComponentScan
 @EnableAutoConfiguration
 @ImportResource("classpath:config/brusselnieuws-rss-webservice-config.xml")
+@EnableSwagger
 public class BrusselNieuwsRssWebservice {
 	
 	/**
